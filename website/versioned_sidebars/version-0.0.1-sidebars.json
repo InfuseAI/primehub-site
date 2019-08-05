@@ -1,0 +1,58 @@
+{
+  "version-0.0.1-docs": {
+    "Intro & Concept": [
+      {
+        "type": "subcategory",
+        "label": "Introduction",
+        "ids": [
+          "version-0.0.1-intro_concept/intro/mission",
+          "version-0.0.1-intro_concept/intro/features",
+          "version-0.0.1-intro_concept/intro/community",
+          "version-0.0.1-intro_concept/intro/roadmap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Core Concepts",
+        "ids": [
+          "version-0.0.1-intro_concept/concepts/concept1"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Designs",
+        "ids": [
+          "version-0.0.1-intro_concept/designs/sw_architecture"
+        ]
+      }
+    ],
+    "Setup & Deployment": [
+      "version-0.0.1-setup_deploy/quickstart"
+    ],
+    "Configuration": [
+      "version-0.0.1-configuration/config1"
+    ],
+    "Guides & Manuals": [
+      "version-0.0.1-guide_manual/guide1",
+      "version-0.0.1-guide_manual/admin_ui_man",
+      "version-0.0.1-guide_manual/primehub_man"
+    ],
+    "Tips & More": [
+      "version-0.0.1-tips/tip1"
+    ],
+    "References": [
+      "version-0.0.1-references/ref1"
+    ]
+  },
+  "version-0.0.1-docs-other": {
+    "First Category": [
+      "version-0.0.1-doc4",
+      "version-0.0.1-doc5"
+    ]
+  },
+  "version-0.0.1-release_notes": {
+    "PrimeHub v1": [
+      "version-0.0.1-release_notes/latest"
+    ]
+  }
+}
