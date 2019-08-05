@@ -110,7 +110,7 @@ class Index extends React.Component {
                 '<li>Rapid construction of research environments</li>' +
                 '<li>Expansion to hundreds of nodes</li>' +
                 '<li>Container orchestration with Kubernetes</li>' +
-                '<li>Supports to on-promise and cloud installations</li>' +
+                '<li>Supports to on-premises and cloud installations</li>' +
               '</ui>', 
             image: `${baseUrl}img/features/icon-cluster.png`,
             imageAlign: 'left',
