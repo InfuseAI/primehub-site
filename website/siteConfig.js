@@ -11,51 +11,63 @@
 // List of projects/orgs using your project for the users page.
 const users = [
   {
-    caption: 'User1',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/img/undraw_open_source.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true,
+    caption: 'Taiwan AI Academy',
+    image: 'img/clients/aia-512.png',
+    infoLink: 'https://aiacademy.tw',
+    pinned: true
   },
+  {
+    caption: 'AS GPU Cloud',
+    image: 'img/clients/client-asds.png',
+    infoLink: 'https://ds.sinica.edu.tw/',
+    pinned: true
+  },
+  {
+    caption: 'E.SUN Bank',
+    image: 'img/clients/client-esun.png',
+    infoLink: 'https://www.esunbank.com.tw/bank/bank-en',
+    pinned: true
+  }
 ];
 
 const siteConfig = {
-  title: 'Test Site', // Title for your website.
-  tagline: 'A website for testing',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  title: 'PrimeHub', // Title for your website.
+  tagline: 'Effortless Infrastructure for Machine Learning',
+  url: 'https://InfuseAI.github.io', // Your website URL
+  baseUrl: '/primehub-site/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'facebook',
+  projectName: 'primehub-site',
+  organizationName: 'InfuseAI',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    { doc: 'intro_concept/intro/mission', label: 'Docs'},
+    //{doc: 'doc4', label: 'API'},
+    { blog: true, label: 'Blog'},
+    { doc: 'release_notes/latest', label: 'Release Notes'},
+    { page: 'help', label: 'Community'},
+    { search: true },
   ],
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/PrimeHub_icon_64.png',
+  footerIcon: 'img/PrimeHub_icon_128.png',
+  favicon: 'img/PrimeHub_icon_32.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#a69967',
-    secondaryColor: '#746b48',
+    primaryColor: '#23356B',
+    secondaryColor: '#365ABD',
   },
 
   /* Custom fonts for website */
@@ -88,13 +100,12 @@ const siteConfig = {
   // No .html extensions for paths.
   cleanUrl: true,
 
+  // Collapsible Categories
+  docsSideNavCollapsible: true,
+
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
   twitterImage: 'img/undraw_tweetstorm.svg',
-
-  // For sites with a sizable amount of content, set collapsible to true.
-  // Expand/collapse the links and subcategories under categories.
-  // docsSideNavCollapsible: true,
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,

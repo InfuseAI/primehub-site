@@ -60,13 +60,12 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        <Logo img_src={`${baseUrl}img/PrimeHub_icon_512.png`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={docUrl('setup_deploy/quickstart.html')}>Quickstart</Button>
+            <Button href={docUrl('intro_concept/intro/mission.html')}>Introduction</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -83,9 +82,10 @@ class Index extends React.Component {
       <Container
         padding={['bottom', 'top']}
         id={props.id}
-        background={props.background}>
+        background={props.background}
+        align={props.align}>
         <GridBlock
-          align="center"
+          align={props.align}
           contents={props.children}
           layout={props.layout}
         />
@@ -97,18 +97,95 @@ class Index extends React.Component {
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
         <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <MarkdownBlock>These are **features** of this project</MarkdownBlock>
       </div>
     );
 
+    const ClusterComputingFeature = () => (
+      <Block id="cluster" background="dark">
+        {[
+          {
+            content:
+              '<ui>' +
+                '<li>Rapid construction of research environments</li>' +
+                '<li>Expansion to hundreds of nodes</li>' +
+                '<li>Container orchestration with Kubernetes</li>' +
+                '<li>Supports to on-promise and cloud installations</li>' +
+              '</ui>', 
+            image: `${baseUrl}img/features/icon-cluster.png`,
+            imageAlign: 'left',
+            title: 'Cluster Computing',
+          },
+        ]}
+      </Block>
+    );
+
+    const OneClickFeature= () => (
+      <Block id="oneclick" background="light">
+        {[
+          {
+            content:
+              '<ui>' +
+                '<li>Develop interactively with Jupyter</li>' +
+                '<li>Support various deep learning frameworks</li>' +
+                '<li>Visualize training progress</li>' +
+              '</ui>', 
+            image: `${baseUrl}img/features/icon-rocket.png`,
+            imageAlign: 'right',
+            title: 'One-Click Research Environment',
+          },
+        ]}
+      </Block>
+    );
+
+    const AccountManagementFeature = () => (
+      <Block id="account" background="dark">
+        {[
+          {
+            content:
+              '<ui>' +
+                '<li>2FA user account protection</li>' +
+                '<li>Support to Single Sign-On (SSO)</li>' +
+                '<li>Tools for internal auditing</li>' +
+              '</ui>', 
+            image: `${baseUrl}img/features/icon-security.png`,
+            imageAlign: 'left',
+            title: 'Enterprise-Class Account Management',
+          },
+        ]}
+      </Block>
+    );
+
+    const ResoureManagementFeature= () => (
+      <Block id="resource" background="light">
+        {[
+          {
+            content:
+              '<ui>' +
+                '<li>Personal and shared group folders</li>' +
+                '<li>Fine-grained quota allocation for members and groups</li>' +
+                '<li>Resource access privilieges for groups</li>' +
+              '</ui>', 
+            image: `${baseUrl}img/features/icon-management.png`,
+            imageAlign: 'right',
+            title: 'Management of Resource Qutoa and Privileges',
+          },
+        ]}
+      </Block>
+    );
+
     const TryOut = () => (
-      <Block id="try">
+      <Block id="try"> 
         {[
           {
             content:
               'To make your landing page more attractive, use illustrations! Check out ' +
               '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
+              'The illustrations you see on this page are from unDraw.' +
+              '<ui>' +
+                '<li>Rapid construction of research environments</li>' +
+                '<li>Expansion to hundreds of nodes</li>' +
+              '</ui>', 
             image: `${baseUrl}img/undraw_code_review.svg`,
             imageAlign: 'left',
             title: 'Wonderful SVG Illustrations',
@@ -146,19 +223,31 @@ class Index extends React.Component {
     );
 
     const Features = () => (
-      <Block layout="fourColumn">
+      <Block layout="fourColumn" align="center">
         {[
           {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
+            content: 'The content of my first feature',
+            image: `${baseUrl}img/features/cluster_computing.png`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Cluster<br>Computing',
           },
           {
             content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
+            image: `${baseUrl}img/features/one-click.png`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'One-click<br>Research Environment',
+          },
+          {
+            content: 'The content of my third feature',
+            image: `${baseUrl}img/features/enterprise-class.png`,
+            imageAlign: 'top',
+            title: 'Enterprise-class<br>Account Management',
+          },
+          {
+            content: 'The content of my fourth feature',
+            image: `${baseUrl}img/features/resources-management.png`,
+            imageAlign: 'top',
+            title: 'Resources Management',
           },
         ]}
       </Block>
@@ -181,14 +270,8 @@ class Index extends React.Component {
 
       return (
         <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
+          <h2>Our Enterprise Clients</h2>
           <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
         </div>
       );
     };
@@ -198,10 +281,10 @@ class Index extends React.Component {
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
+          <ClusterComputingFeature />
+          <OneClickFeature />
+          <AccountManagementFeature />
+          <ResoureManagementFeature />
           <Showcase />
         </div>
       </div>

@@ -1,10 +1,53 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Intro & Concept": [
+      {
+        "type": "subcategory",
+        "label": "Introduction",
+        "ids": [
+          "intro_concept/intro/mission",
+          "intro_concept/intro/features",
+          "intro_concept/intro/community",
+          "intro_concept/intro/roadmap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Core Concepts",
+        "ids": [
+          "intro_concept/concepts/concept1"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Designs",
+        "ids": [
+          "intro_concept/designs/sw_architecture"
+        ]
+      }
+    ],
+    "Setup & Deployment": [
+      "setup_deploy/quickstart"
+    ],
+    "Configuration": [
+      "configuration/config1" 
+    ],
+    "Guides & Manuals": [
+      "guide_manual/guide1",
+      "guide_manual/admin_ui_man",
+      "guide_manual/primehub_man"
+    ],
+    "Tips & More": [
+      "tips/tip1"
+    ],
+    "References": [
+      "references/ref1"
+    ]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
+  },
+  "release_notes": {
+    "PrimeHub v1": ["release_notes/latest"]
   }
 }
