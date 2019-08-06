@@ -63,10 +63,10 @@ class HomeSplash extends React.Component {
         <Logo img_src={`${baseUrl}img/PrimeHub_icon_512.png`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
-          <PromoSection>
+          {/*<PromoSection>
             <Button href={docUrl('setup_deploy/quickstart.html')}>Quickstart</Button>
             <Button href={docUrl('intro_concept/intro/mission.html')}>Introduction</Button>
-          </PromoSection>
+          </PromoSection>*/}
         </div>
       </SplashContainer>
     );
@@ -145,7 +145,7 @@ class Index extends React.Component {
             content:
               '<ui>' +
                 '<li>2FA user account protection</li>' +
-                '<li>Support to Single Sign-On (SSO)</li>' +
+                '<li>Support Single Sign-On (SSO)</li>' +
                 '<li>Tools for internal auditing</li>' +
               '</ui>', 
             image: `${baseUrl}img/features/icon-security.png`,
@@ -164,11 +164,25 @@ class Index extends React.Component {
               '<ui>' +
                 '<li>Personal and shared group folders</li>' +
                 '<li>Fine-grained quota allocation for members and groups</li>' +
-                '<li>Resource access privilieges for groups</li>' +
+                '<li>Resource access privileges for groups</li>' +
               '</ui>', 
             image: `${baseUrl}img/features/icon-management.png`,
             imageAlign: 'right',
-            title: 'Management of Resource Qutoa and Privileges',
+            title: 'Management of Resources Quota and Privileges',
+          },
+        ]}
+      </Block>
+    );
+
+    const InfuseAI = () => (
+      <Block id="try" align="center"> 
+        {[
+          {
+            //content: '', 
+            image: `${baseUrl}img/InfuseAI_icon_128.png`,
+            imageAlign: 'bottom',
+            title: 'The Force Behind PrimeHub',
+            imageLink: 'https://www.infuseai.io',
           },
         ]}
       </Block>
@@ -186,7 +200,7 @@ class Index extends React.Component {
                 '<li>Rapid construction of research environments</li>' +
                 '<li>Expansion to hundreds of nodes</li>' +
               '</ui>', 
-            image: `${baseUrl}img/undraw_code_review.svg`,
+            image: `${baseUrl}img/InfuseAI_icon_128.png.png`,
             imageAlign: 'left',
             title: 'Wonderful SVG Illustrations',
           },
@@ -226,25 +240,25 @@ class Index extends React.Component {
       <Block layout="fourColumn" align="center">
         {[
           {
-            content: 'The content of my first feature',
+            //content: 'The content of my first feature',
             image: `${baseUrl}img/features/cluster_computing.png`,
             imageAlign: 'top',
             title: 'Cluster<br>Computing',
           },
           {
-            content: 'The content of my second feature',
+            //content: 'The content of my second feature',
             image: `${baseUrl}img/features/one-click.png`,
             imageAlign: 'top',
-            title: 'One-click<br>Research Environment',
+            title: 'One-Click<br>Research Environment',
           },
           {
-            content: 'The content of my third feature',
+            //content: 'The content of my third feature',
             image: `${baseUrl}img/features/enterprise-class.png`,
             imageAlign: 'top',
-            title: 'Enterprise-class<br>Account Management',
+            title: 'Enterprise-Class<br>Account Management',
           },
           {
-            content: 'The content of my fourth feature',
+            //content: 'The content of my fourth feature',
             image: `${baseUrl}img/features/resources-management.png`,
             imageAlign: 'top',
             title: 'Resources Management',
@@ -253,6 +267,7 @@ class Index extends React.Component {
       </Block>
     );
 
+    
     const Showcase = () => {
       if ((siteConfig.users || []).length === 0) {
         return null;
@@ -270,7 +285,7 @@ class Index extends React.Component {
 
       return (
         <div className="productShowcaseSection paddingBottom">
-          <h2>Our Enterprise Clients</h2>
+          <h2>Users</h2>
           <div className="logos">{showcase}</div>
         </div>
       );
@@ -285,7 +300,7 @@ class Index extends React.Component {
           <OneClickFeature />
           <AccountManagementFeature />
           <ResoureManagementFeature />
-          <Showcase />
+          <InfuseAI />
         </div>
       </div>
     );
