@@ -4,5 +4,5 @@ title: PrimeHub Manual
 original_id: primehub_man
 ---
 
-## Overview
-This is a link to [another document.](intro/mission.md)  
+## Reference
+Please see [PrimeHub Manual](https://infuseai.zendesk.com/hc/en-us/sections/360004484532-PrimeHub-Manual). 

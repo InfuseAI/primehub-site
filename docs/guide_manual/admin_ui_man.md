@@ -3,5 +3,5 @@ id: admin_ui_man
 title: Admin UI Manual
 ---
 
-## Overview
-This is a link to [another document.](intro/mission.md)  
+## Reference
+Please see [Admin Manual](https://infuseai.zendesk.com/hc/en-us/sections/360004462151-Admin-Manual).

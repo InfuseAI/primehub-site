@@ -5,4 +5,4 @@ original_id: roadmap
 ---
 
 ## Roadmap
-This is a link to [another document.](intro/mission.md)  
+It is about Roadmap.

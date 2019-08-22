@@ -5,4 +5,4 @@ original_id: architecture
 ---
 
 ## Overview
-This is a link to [other document.](intro/mission.md)  
+It is about Architecture.

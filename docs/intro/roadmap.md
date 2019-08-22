@@ -4,4 +4,4 @@ title: Roadmap
 ---
 
 ## Roadmap
-This is a link to [another document.](intro/mission.md)  
+It is about Roadmap.

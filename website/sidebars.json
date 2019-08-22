@@ -2,7 +2,6 @@
   "docs": {
     "Introduction": [
       "introduction",
-      "intro/mission",
       "intro/features",
       "intro/community",
       "intro/roadmap"
@@ -10,9 +9,10 @@
     "Concept": [
       {
         "type": "subcategory",
-        "label": "Designs",
+        "label": "Design",
         "ids": [
           "concepts/designs/architecture",
+          "concepts/designs/jupyterhub-integration",
           "concepts/designs/crds",
           "concepts/designs/customization",
           "concepts/designs/data-model",
@@ -21,18 +21,33 @@
       }
     ],
     "Setup & Deployment": [
+      "setup_deploy/installation",
       "setup_deploy/quickstart"
     ],
     "Configuration": [
       "configuration/config1" 
     ],
     "Guides & Manuals": [
-      "guide_manual/guide1",
-      "guide_manual/admin_ui_man",
-      "guide_manual/primehub_man"
+      {
+        "type": "subcategory",
+        "label": "Manual",
+        "ids": [
+          "guide_manual/admin_ui_man",
+          "guide_manual/primehub_man"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Guide",
+        "ids": [
+          "guide_manual/cluster_shutdown",
+          "guide_manual/benchmark",
+          "guide_manual/airgap"
+        ]
+      }
     ],
     "Tips & More": [
-      "tips/tip1"
+      "tips/kibana-dashboard"
     ],
     "References": [
       "references/ref1"
