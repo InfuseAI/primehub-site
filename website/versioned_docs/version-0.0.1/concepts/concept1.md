@@ -5,4 +5,4 @@ original_id: concept1
 ---
 
 ## Concept1
-This is a link to [another document.](intro_concept/intro/mission.md)  
+This is a link to [another document.](intro/mission.md)  

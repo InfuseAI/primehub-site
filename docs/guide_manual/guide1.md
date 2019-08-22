@@ -4,4 +4,4 @@ title: Guide1
 ---
 
 ## Guide1
-This is a link to [another document.](intro_concept/intro/mission.md)  
+This is a link to [another document.](intro/mission.md)  

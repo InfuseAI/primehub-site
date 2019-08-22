@@ -65,7 +65,7 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           {/*<PromoSection>
             <Button href={docUrl('setup_deploy/quickstart.html')}>Quickstart</Button>
-            <Button href={docUrl('intro_concept/intro/mission.html')}>Introduction</Button>
+            <Button href={docUrl('intro/mission.html')}>Introduction</Button>
           </PromoSection>*/}
         </div>
       </SplashContainer>
@@ -261,7 +261,7 @@ class Index extends React.Component {
             //content: 'The content of my fourth feature',
             image: `${baseUrl}img/features/resources-management.png`,
             imageAlign: 'top',
-            title: 'Resources Management',
+            title: 'Resource<br>Management',
           },
         ]}
       </Block>

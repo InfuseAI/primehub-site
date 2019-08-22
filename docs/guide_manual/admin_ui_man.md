@@ -4,4 +4,4 @@ title: Admin UI Manual
 ---
 
 ## Overview
-This is a link to [another document.](intro_concept/intro/mission.md)  
+This is a link to [another document.](intro/mission.md)  

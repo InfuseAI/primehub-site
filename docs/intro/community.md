@@ -1,8 +1,7 @@
 ---
-id: version-0.0.1-ref1
-title: Ref1
-original_id: ref1
+id: community 
+title: Community
 ---
 
-## Reference1
+## Slack
 This is a link to [another document.](intro/mission.md)  

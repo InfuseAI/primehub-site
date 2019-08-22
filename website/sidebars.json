@@ -1,28 +1,22 @@
 {
   "docs": {
-    "Intro & Concept": [
-      {
-        "type": "subcategory",
-        "label": "Introduction",
-        "ids": [
-          "intro_concept/intro/mission",
-          "intro_concept/intro/features",
-          "intro_concept/intro/community",
-          "intro_concept/intro/roadmap"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Core Concepts",
-        "ids": [
-          "intro_concept/concepts/concept1"
-        ]
-      },
+    "Introduction": [
+      "introduction",
+      "intro/mission",
+      "intro/features",
+      "intro/community",
+      "intro/roadmap"
+    ],
+    "Concept": [
       {
         "type": "subcategory",
         "label": "Designs",
         "ids": [
-          "intro_concept/designs/sw_architecture"
+          "concepts/designs/architecture",
+          "concepts/designs/crds",
+          "concepts/designs/customization",
+          "concepts/designs/data-model",
+          "concepts/designs/unified-domain"
         ]
       }
     ],
