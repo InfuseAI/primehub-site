@@ -3,7 +3,6 @@
     "Introduction": [
       "introduction",
       "intro/features",
-      "intro/community",
       "intro/roadmap"
     ],
     "Concept": [
@@ -15,17 +14,18 @@
           "concepts/designs/jupyterhub-integration",
           "concepts/designs/crds",
           "concepts/designs/customization",
+          "concepts/designs/graphql",
           "concepts/designs/data-model",
-          "concepts/designs/unified-domain"
+          "concepts/designs/user-portal",
+          "concepts/designs/feature-flag"
         ]
       }
     ],
     "Setup & Deployment": [
-      "setup_deploy/installation",
-      "setup_deploy/quickstart"
+      "setup_deploy/installation"
     ],
     "Configuration": [
-      "configuration/config1" 
+      "configuration/" 
     ],
     "Guides & Manuals": [
       {
@@ -50,7 +50,7 @@
       "tips/kibana-dashboard"
     ],
     "References": [
-      "references/ref1"
+      "references/"
     ]
   },
   "docs-other": {

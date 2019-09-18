@@ -2,6 +2,7 @@
 id: customization 
 title: Customization
 ---
+
 ## Helm
 
 PrimeHub customization is based on helm. In the core PrimeHub component, we integrate these helm charts
@@ -27,11 +28,10 @@ In the common helm installation, it may look like the following command.
 
 ```
 helm install \
-  --name primehub-prerequisite \
-  --namespace primehub \
-  --version=~0.1.0 \
+  --name primehub \
+  --namespace hub \
   --values value.yaml \
-  ../../modules/charts/primehub-prerequisite 
+  modules/charts/primehub
 ```
 
 However, it is not convenient to issue this long command for each installation and not easy to be source-controlled as well. To solve this problem, we make use of [helmfile](https://github.com/roboll/helmfile). The above command would turn into the yaml file below.
@@ -156,6 +156,7 @@ Environment | Description | Optional
 `PRIMEHUB_DOMAIN`| Domain for user portal | No if `PRIMEHUB_FEATURE_USER_PORTAL` is enabled
 `PRIMEHUB_SCHEME`| Scheme for user portal | No if `PRIMEHUB_FEATURE_USER_PORTAL` is enabled
 `PRIMEHUB_PORT` | Port for user portal | Yes
+
 **The Environment Variables for Grafana**
 
 Environment | Description | Optional
@@ -173,20 +174,8 @@ Environment | Description | Optional
 
 ## Features and Feature Toggle
 
+Please see [Feature Flag](feature-flag.md).
 
-[Feature toggle](https://en.wikipedia.org/wiki/Feature_toggle) is a technique in software development that attempts to provide an alternative to maintaining multiple source-code branches (known as feature branches), such that a feature can be tested even before it is completed and ready for release.
-
-If PrimeHub, we use environment variable to enable a feature. For example, when `PRIMEHUB_FEATURE_USER_PORTAL=true`, The feature of user portal is enabled.
-
-### Alpha Features
-
-In order to test features as early as possible. We can define a feature as alpha feature. The alpha features are enabled by `PRIMEHUB_ENABLE_ALPHA=true` and the alpha feature list is defined in in [bin/phenv](../../bin/phenv)
-
-### Feature Flag Best Practice
-
-- Feature should be prefix with `PRIMEHUB_FEATURE_`
-- The application should never depends on `PRIMEHUB_ENABLE_ALPHA`. Instead, please depends on `PRIMEHUB_FEATURE_XXX`
-- In `.env` of dev and staging environment, don't define `PRIMEHUB_FEATURE_XXX=true` but use `PRIMEHUB_ENABLE_ALPHA=true` to enable the new alpha features.
 
 
 

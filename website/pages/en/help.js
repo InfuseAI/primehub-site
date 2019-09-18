@@ -21,19 +21,19 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
-      )})`,
+      content: `Learn from our [documentation](${docUrl(
+        'introduction.html',
+      )}).`,
       title: 'Browse Docs',
     },
     {
-      content: 'Ask questions about the documentation and project',
-      title: 'Join the community',
-    },
-    {
-      content: "Find out what's new with this project",
-      title: 'Stay up to date',
-    },
+      content: 
+        '<ui>' + 
+          '<li>[PrimeHub CE](https://github.com/InfuseAI/primehub)' +
+          '<li>[PrimeHub EE](https://gitlab.com/infuseai/primehub)' +
+        '</ui>',
+      title: 'Find us on GitHub',
+    }
   ];
 
   return (
@@ -41,9 +41,8 @@ function Help(props) {
       <Container className="mainContainer documentContainer postContainer">
         <div className="post">
           <header className="postHeader">
-            <h1>Need help?</h1>
+            <h1>Join the community</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
           <GridBlock contents={supportLinks} layout="threeColumn" />
         </div>
       </Container>

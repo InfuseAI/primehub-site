@@ -179,7 +179,7 @@ class Index extends React.Component {
         {[
           {
             //content: '', 
-            image: `${baseUrl}img/InfuseAI_icon_128.png`,
+            image: `${baseUrl}img/InfuseAI_128.png`,
             imageAlign: 'bottom',
             title: 'The Force Behind PrimeHub',
             imageLink: 'https://www.infuseai.io',
