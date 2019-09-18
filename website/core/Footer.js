@@ -37,10 +37,10 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('introduction.html#vision', this.props.language)}>
+            <a href={this.docUrl('introduction.html#vision')}>
               Vision & Mission
             </a>         
-            <a href={this.docUrl('setup_deploy/installation.html', this.props.language)}>
+            <a href={this.docUrl('setup_deploy/installation.html')}>
               Deployment & Setup
             </a> 
           </div>
@@ -51,6 +51,7 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
+            <a href="https://infuseai.io">About InfuseAI</a>
           </div>
         </section>
         
