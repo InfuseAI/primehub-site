@@ -29,7 +29,7 @@ function Versions(props) {
             <h1>{siteConfig.title} Versions</h1>
           </header>
           <p>New versions of this project are released every so often.</p>
-          <h3 id="latest">Current version (Stable)</h3>
+          <h3 id="latest">Current version</h3>
           <table className="versions">
             <tbody>
               <tr>
@@ -45,7 +45,9 @@ function Versions(props) {
                   </a>
                 </td>
                 <td>
-                  <a href="">Release Notes</a>
+                  <a href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''
+                    }changelog`}>Changelog</a>
                 </td>
               </tr>
             </tbody>
@@ -75,9 +77,9 @@ function Versions(props) {
               </tr>
             </tbody>
           </table>
-          <p>Other text describing this section.</p>
+          <p>This pre-release document applies to an unreleased version of content. It is subject to changes in the official release</p>
           <h3 id="archive">Past Versions</h3>
-          <p>Here you can find previous versions of the documentation.</p>
+          <p>Previous versions of the documentation are listed here.</p>
           <table className="versions">
             <tbody>
               {versions.map(
@@ -105,10 +107,6 @@ function Versions(props) {
               )}
             </tbody>
           </table>
-          <p>
-            You can find past versions of this project on{' '}
-            <a href={repoUrl}>GitHub</a>.
-          </p>
         </div>
       </Container>
     </div>

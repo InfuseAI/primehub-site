@@ -1,5 +1,5 @@
 ---
-id: version-0.0.1-changelog 
+id: version-0.0.1-changelog
 title: Changelog
 original_id: changelog
 ---
@@ -13,11 +13,11 @@ original_id: changelog
 
 ### Action Required
 
-- **[Downtime Required] Migrate to metachart.**. Please follow the instructions in the [migration document to v2.0](modules/upgrade/migrate-v2.0/migrate-v2.0.md)
+- **[Downtime Required] Migrate to metachart.**. Please follow the instructions in the [migration document to v2.0](modules/upgrade/migrate-v2)
 
 ### Deprecated
 
-- **Configuration in `${primehub}/etc`**. Configuration files should locate in `~/.primehub/config/$(kubectl config current-context)` instead of `${primehub}/etc`. The preferred path can also by retrieved by the command `${primehub}/bin/phenv --path`. For more information, please see [customization document](docs/design/customization.md)
+- **Configuration in `${primehub}/etc`**. Configuration files should locate in `~/.primehub/config/$(kubectl config current-context)` instead of `${primehub}/etc`. The preferred path can also by retrieved by the command `${primehub}/bin/phenv --path`. For more information, please see [customization document](concepts/designs/customization)
 
 ## v1.8.2
 
@@ -239,7 +239,7 @@ original_id: changelog
 
   1. Add `PRIMEHUB_FEATURE_USER_PORTAL=true`, `PRIMEHUB_DOMAIN=` and `PRIMEHUB_SCHEME=` to `.env`. 
   2. Add new [Valid Redirect URIs](https://www.keycloak.org/docs/6.0/server_admin/index.html#oidc-clients) to all affected keycloak clients. (e.g. `admin-ui`, `jupyterhub`, `maintenance-proxy`)
-  3. For more information, please see [docs/design/user-portal.md](docs/design/user-portal.md)
+  3. For more information, please see [User Portal](concepts/designs/user-portal)
 
 ## v1.6.0
 

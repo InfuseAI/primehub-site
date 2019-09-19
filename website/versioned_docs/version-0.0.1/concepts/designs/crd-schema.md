@@ -1,9 +1,10 @@
 ---
-id: crd-schema 
+id: version-0.0.1-crd-schema
 title: CRD Structural Schema
+original_id: crd-schema
 ---
 
-From Kubernetes v1.15, CustomeResrouces(CR) is able to adopt a schema of Open API V3 vadliation by specifiying it in a definition file. The schema is used to validate the JSON data during creation and updates so that it can prevent from invalid data, moreover, from malicous attacks.
+From Kubernetes v1.15, CustomeResrouces(CR) is able to adopt a schema of Open API V3 validation by specifying it in a definition file. The schema is used to validate the JSON data during creation and updates so that it can prevent from invalid data, moreover, from malicious attacks.
 
 While in `apiextensions.k8s.io/v1beta1`, the definition of a structural schema is **optional**, whereas in `apiextensions.k8s.io/v1` it is **mandatory**.
 
@@ -13,7 +14,7 @@ Please see [[KEP]20190425-structural-openapi](https://github.com/kubernetes/enha
 A schema is called **structural** if it obeys all of principles below:
 1. specifies a non-empty type (via `type` in OpenAPI) for the root, for each specified field of an object node (via `properties` or `additionalProperties` in OpenAPI) and for each item in an array node (via `items` in OpenAPI), with the exception of:
 
-- a node with `x-kubernetes-int-or-string: truei`
+- a node with `x-kubernetes-int-or-string: true`
 - a node with `x-kubernetes-preserve-unknown-fields: true`
 
 2. for each field in an object and each item in an array which is specified within any of `allOf`, `anyOf`, `oneOf` or `not`, the schema also specifies the field/item outside of those logical junctors.
@@ -81,7 +82,7 @@ anyOf:
   required: ["bar"]
 ```
 
-For more examples, please see [Specifying a structural schema](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema) and [Future of CRDs: Structual Schemas](https://kubernetes.io/blog/2019/06/20/crd-structural-schema/).
+For more examples, please see [Specifying a structural schema](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema) and [Future of CRDs: Structural Schemas](https://kubernetes.io/blog/2019/06/20/crd-structural-schema/).
 
 
 ## Validation Schema
@@ -121,7 +122,7 @@ uniqueItems|If this keyword has boolean value `false`, the instance validates su
 
 ## CRDs of PrimeHub with validation schema
 
-Current `Instance Type` data is like below,
+### Current `Instance Type` data is like below,
 ```
 apiVersion: primehub.io/v1alpha1
 kind: InstanceType
@@ -150,55 +151,186 @@ spec:
   names:
     kind: InstanceType
     plural: instancetypes
-    shortNames:
-    - it
-    # categories is a list of grouped resources the custom resource belongs to.
-    categories:
-    - all
   scope: Namespaced
-  preserveUnknownFields: false
+  preserveUnknownFields: true
   validation:
    # openAPIV3Schema is the schema for validating custom objects.
     openAPIV3Schema:
       type: object
       properties:
+        metadata:
+          type: object
+          properties:
+            name:
+              type: string
+          required:
+            - name
         spec:
           type: object
           properties:
             description:
-                type: string
+              type: string
             displayName:
-                type: string
-                pattern: '^(\d+|\*)(/\d+)?(\s+(\d+|\*)(/\d+)?){4}$'
-            limits:
-                type: object
-                properties:
-                    cpu:
-                        type: float
-                    memory:
-                        type: string
-                    nvidia_gpu:
-                        type: integer
-                required:
-                - cpu
-                - memory
-            requests:
-                type: object
-                properties:
-                    cpu:
-                        type: float
-                    memory:
-                        type: string
-            required:
-            - displayName
-            - limits
+              type: string
+            limits.cpu:
+              type: number
+            limits.memory:
+              type: string
+            limits.nvidia.com/gpu:
+              type: integer
+            requests.cpu:
+              type: number
+            request.memory:
+              type: string
+          required:
+            - limits.cpu
+            - limits.memory
+
 ```
-We define `validation.openAPIV3Schema` with schema object and `preserveUnknownFields: false` to enforce pruning unknow fields.
-Also, both of `displayName` and `limits` are mandatory, we define
+We define `validation.openAPIV3Schema` with schema object and `preserveUnknownFields: false` to enforce pruning unknown fields.
+Also, both of `displayName` and `limits` are mandatory, so we define
 ```
 required
 - displayName
 - limits
+```
+
+### Current `Dataset` data is like below,
+
+```
+apiVersion: primehub.io/v1alpha1
+kind: Dataset
+metadata:
+  annotations:
+  	dataset.primehub.io/homeSymlink: "false"
+    dataset.primehub.io/launchGroupOnly: "false"
+    dataset.primehub.io/mountRoot: /datasets
+  generation: 1
+  name: data-rw-test
+  selfLink: /apis/primehub.io/v1alpha1/namespaces/hub/datasets/data-rw-test
+spec:
+  description: data-rw-test
+  displayName: data-rw-test
+  type: pv
+  url: ""
+  variables: {}
+  volumeName: data-rw-test
+
+```
+```
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: datasets.primehub.io
+spec:
+  group: primehub.io
+  version: v1alpha1
+  names:
+    kind: Dataset
+    plural: datasets
+  scope: Namespaced
+  preserveUnknownFields: true
+  validation:
+   # openAPIV3Schema is the schema for validating custom objects.
+    openAPIV3Schema:
+      type: object
+      properties:
+        metadata:
+          type: object
+          properties:
+            name:
+              type: string
+            annotations:
+              type: object
+              properties:
+                dataset.primehub.io/homeSymlink:
+                  type: string
+                  pattern: '^(true|false|yes|no)$'
+                dataset.primehub.io/launchGroupOnly:
+                  type: string
+                  pattern: '^(true|false|yes|no)$'
+                dataset.primehub.io/mountRoot:
+                  type: string
+          required:
+            - name
+        spec:
+          type: object
+          properties:
+            description:
+              type: string
+            displayName:
+              type: string
+            gitsync:
+              type: object
+              properties:
+                secret:
+                  type: string
+            type:
+              type: string
+              pattern: '^(env|git|pv)$'
+            url:
+              type: string
+            variables:
+              type: object
+            volumeName:
+              type: string
+
+```
+
+### Current `image` data is like below,
+
+```
+apiVersion: primehub.io/v1alpha1
+kind: Image
+metadata:
+  generation: 1
+  name: name-of-image
+  selfLink: /apis/primehub.io/v1alpha1/namespaces/hub/images/name-of-image
+spec:
+  description: ""
+  displayName: name-of-image
+  pullSecret: pull-secret-xxx
+  url: registry.gitlab.com/infuseai/docker-stacks/scipy-notebook:073d6073
+
+```
+
+```
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: images.primehub.io
+spec:
+  group: primehub.io
+  version: v1alpha1
+  names:
+    kind: Image
+    plural: images
+  scope: Namespaced
+  preserveUnknownFields: true
+  validation:
+   # openAPIV3Schema is the schema for validating custom objects.
+    openAPIV3Schema:
+      type: object
+      properties:
+        metadata:
+          type: object
+          properties:
+            name:
+              type: string
+          required:
+            - name
+        spec:
+          type: object
+          properties:
+            description:
+              type: string
+            displayName:
+              type: string
+            pullSecret:
+              type: string
+            url:
+              type: string
+
 ```
 
 ## Pruning – don’t preserve unknown fields
@@ -258,6 +390,11 @@ spec:
     openAPIV3Schema:
       type: object
       properties:
+        metadata:
+          type: object
+          properties:
+            name:
+              type: string
         spec:
           type: object
           properties:
@@ -314,7 +451,7 @@ my-new-cron-object   * * * * *   1          7s
 Regarding usages of`Priority`, `Type` and `Format` of columns, please see [[More details]](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#additional-printer-columns)
 
 ## Categories
-This feature is beta and availabe from v1.10.
+This feature is beta and available from v1.10.
 We can categorize CRs into `all` or customized categories by `categories:` e.g.:
 ```
 apiVersion: apiextensions.k8s.io/v1beta1
@@ -347,6 +484,7 @@ Therefore, this CR object is included in result of `kubectl get all`.
 Reference|
 ---|
 [Specifying a structural schema](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema)|
-[Future of CRDs: Structual Schemas](https://kubernetes.io/blog/2019/06/20/crd-structural-schema/)|
+[Future of CRDs: Structural Schemas](https://kubernetes.io/blog/2019/06/20/crd-structural-schema/)|
 [[KEP]20190425-structural-openapi](https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/20190425-structural-openapi.md)|
 [Kubebuilder - SDK for building Kubernetes APIs using CRDs](https://github.com/kubernetes-sigs/kubebuilder)|
+[JSON Schema Validation](https://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1)|

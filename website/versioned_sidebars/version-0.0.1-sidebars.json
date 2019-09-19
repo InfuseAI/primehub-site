@@ -3,7 +3,6 @@
     "Introduction": [
       "version-0.0.1-introduction",
       "version-0.0.1-intro/features",
-      "version-0.0.1-intro/community",
       "version-0.0.1-intro/roadmap"
     ],
     "Concept": [
@@ -11,21 +10,22 @@
         "type": "subcategory",
         "label": "Design",
         "ids": [
-          "version-0.0.1-concepts/designs/architecture",
           "version-0.0.1-concepts/designs/jupyterhub-integration",
           "version-0.0.1-concepts/designs/crds",
+          "version-0.0.1-concepts/designs/crd-schema",
           "version-0.0.1-concepts/designs/customization",
+          "version-0.0.1-concepts/designs/graphql",
           "version-0.0.1-concepts/designs/data-model",
-          "version-0.0.1-concepts/designs/unified-domain"
+          "version-0.0.1-concepts/designs/user-portal",
+          "version-0.0.1-concepts/designs/feature-flag"
         ]
       }
     ],
     "Setup & Deployment": [
-      "version-0.0.1-setup_deploy/installation",
-      "version-0.0.1-setup_deploy/quickstart"
+      "version-0.0.1-setup_deploy/installation"
     ],
     "Configuration": [
-      "version-0.0.1-configuration/config1"
+      "version-0.0.1-configuration/"
     ],
     "Guides & Manuals": [
       {
@@ -50,7 +50,7 @@
       "version-0.0.1-tips/kibana-dashboard"
     ],
     "References": [
-      "version-0.0.1-references/ref1"
+      "version-0.0.1-references/"
     ]
   },
   "version-0.0.1-docs-other": {

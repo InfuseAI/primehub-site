@@ -10,9 +10,9 @@
         "type": "subcategory",
         "label": "Design",
         "ids": [
-          "concepts/designs/architecture",
           "concepts/designs/jupyterhub-integration",
           "concepts/designs/crds",
+          "concepts/designs/crd-schema",
           "concepts/designs/customization",
           "concepts/designs/graphql",
           "concepts/designs/data-model",

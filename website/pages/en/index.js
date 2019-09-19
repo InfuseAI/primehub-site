@@ -145,7 +145,7 @@ class Index extends React.Component {
             content:
               '<ui>' +
                 '<li>2FA user account protection</li>' +
-                '<li>Support Single Sign-On (SSO)</li>' +
+                '<li>Single Sign-On (SSO) Support</li>' +
                 '<li>Tools for internal auditing</li>' +
               '</ui>', 
             image: `${baseUrl}img/features/icon-security.png`,

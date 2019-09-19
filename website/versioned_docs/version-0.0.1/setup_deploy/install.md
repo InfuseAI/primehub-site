@@ -1,6 +1,6 @@
 ---
 id: version-0.0.1-installation
-title: Installation & Setup Guide
+title: Installation & Setup
 original_id: installation
 ---
 ## Prerequisites

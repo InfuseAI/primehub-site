@@ -1,6 +1,6 @@
 ---
 id: installation 
-title: Installation & Setup Guide
+title: Installation & Setup
 ---
 ## Prerequisites
 

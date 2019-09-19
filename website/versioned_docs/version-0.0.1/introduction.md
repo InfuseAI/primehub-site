@@ -1,6 +1,6 @@
 ---
 id: version-0.0.1-introduction
-title: Introduction
+title: Vision & Mission
 original_id: introduction
 ---
 

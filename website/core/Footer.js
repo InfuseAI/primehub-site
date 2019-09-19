@@ -37,12 +37,13 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('introduction.html#vision')}>
-              Vision & Mission
-            </a>         
+                     
             <a href={this.docUrl('setup_deploy/installation.html')}>
-              Deployment & Setup
+              Setup & Deployment 
             </a> 
+            <a href={this.docUrl('tips/kibana-dashboard.html')}>
+              Tips & More
+            </a>
           </div>
           <div>
             <h5>Community</h5>
