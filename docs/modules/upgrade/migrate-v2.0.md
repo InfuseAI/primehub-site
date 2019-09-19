@@ -5,7 +5,7 @@ title: Migration to v2.0
 
 From PrimeHub 2.0, there are some breaking changes
 
-1. All the PrimeHub chart is managed by a single metachart (a.k.a [umbrella chart](https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md#complex-charts-with-many-dependencies)). That is, `primehub-prerequisite`, `hub`, `primehub-console`, `admin-notebook` become a subchart of primehub. However, keycloak is still a standalone chart. The below is the comparision of the helm list result in 1.x and 2.x. 
+1. All the PrimeHub chart is managed by a single metachart (a.k.a [umbrella chart](https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md#complex-charts-with-many-dependencies)). That is, `primehub-prerequisite`, `hub`, `primehub-console`, `admin-notebook` become a subchart of primehub. However, keycloak is still a standalone chart. The below is the comparison of the helm list result in 1.x and 2.x. 
 
    v1.x
    

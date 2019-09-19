@@ -21,7 +21,7 @@ There are two kinds of configrations for dynamic webhook in the Admission Contro
 
 Both of them use the same structure to define a configuration, but they are invoked in a different api lifecycle before a kubernetes object persisted into the etcd. 
 
-You can find a introducion at [A Guide to Kubernetes Admission Controllers](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/)
+You can find a introduction at [A Guide to Kubernetes Admission Controllers](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/)
 
 For users, they should care about the `namespaceSelector` in a configuraion. We made an admission webhook only working with labeled namespaces.
 

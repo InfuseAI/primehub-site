@@ -10,7 +10,7 @@ Here are the recommended steps to shutdown a k8s cluster
 
 1. Shutdown all applications which using `rook-block` PVCs
 1. Shutdown ceph cluster
-1. Shutdwon kubernetes controlplane
+1. Shutdown kubernetes controlplane
 1. Reboot
 
 ## Shutdown Cluster
@@ -158,6 +158,6 @@ Run ceph command from rook-tools
 
 Find all the pods which mount rook storage.
 
-# Reference
+## Reference
 
 - https://ceph.com/planet/how-to-do-a-ceph-cluster-maintenance-shutdown/
