@@ -3,7 +3,7 @@ id: version-0.0.1-jupyterhub-integration
 title: Integration of PrimeHub and JupyterHub
 original_id: jupyterhub-integration
 ---
-This document describes the integration of PrimeHub and JupyterHub. The whole magic happens in `jupyterhub_profiles.py`, under the hood, it collectes data from Keycloak(roles-related) and CRDs (`Instanct Type`, `Image` and `Dataset`) from K8S in the prcedures and it prepares a spawner (with an rendered options page) for a user according to what data/logic are prepared. Then it launches a hub based on the user selection (`Group`, `Instance Type` and `Image`).
+This document describes the integration of PrimeHub and JupyterHub. The whole magic happens in `jupyterhub_profiles.py`, under the hood, it collects data from Keycloak(roles-related) and CRDs (`Instanct Type`, `Image` and `Dataset`) from K8S in the procedures and it prepares a spawner (with an rendered options page) for a user according to what data/logic are prepared. Then it launches a hub based on the user selection (`Group`, `Instance Type` and `Image`).
 
 #### The concept diagram
 ![](assets/jupyterhub_profiles.png)
@@ -59,7 +59,7 @@ Method|Description
 ------|---
 _start| To launch a hub while checking the sufficiency of resources, otherwise to stop launching immediately.
 apply_kubespawner_override| To apply/override values of KubeSpawner.
-check_event| To check messages of a event to see if resource is suffcient.
+check_event| To check messages of a event to see if resource is sufficient.
 get_request_resources| To get requests of resources.
 image_to_override| To override values of an image with a `url` and a `pull_secret` if any.
 instance_type_to_override| To apply/override values of an `instance type`, such as requests/limits of resources, `node_selector` and `tolerations`.
