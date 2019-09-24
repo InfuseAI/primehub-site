@@ -3,6 +3,10 @@ id: changelog
 title: Changelog
 ---
 
+## Upcoming
+
+- Support validation schema defined in the CRD (Image, InstanceType and Dataset) #ch237
+
 ## v2.0.0
 
 ### Breaking Changes
