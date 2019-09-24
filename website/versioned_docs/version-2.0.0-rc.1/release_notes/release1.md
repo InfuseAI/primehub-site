@@ -1,6 +1,7 @@
 ---
-id: latest 
+id: version-2.0.0-rc.1-latest
 title: Release v.1.0.0
+original_id: latest
 ---
 
 ## Note 

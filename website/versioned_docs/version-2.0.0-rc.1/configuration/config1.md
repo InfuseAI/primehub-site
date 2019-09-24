@@ -1,6 +1,7 @@
 ---
-id: config1
+id: version-2.0.0-rc.1-config1
 title: Config1
+original_id: config1
 ---
 
 ## Config1
