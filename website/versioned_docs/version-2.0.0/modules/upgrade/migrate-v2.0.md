@@ -1,6 +1,7 @@
 ---
-id: migrate-v2 
+id: version-2.0.0-migrate-v2
 title: Migration to v2.0
+original_id: migrate-v2
 ---
 
 

@@ -1,6 +1,7 @@
 ---
-id: changelog 
+id: version-2.0.0-changelog
 title: Changelog
+original_id: changelog
 ---
 
 ## Upcoming
