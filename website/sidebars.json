@@ -16,6 +16,10 @@
           "concepts/designs/customization",
           "concepts/designs/graphql",
           "concepts/designs/data-model",
+          "concepts/designs/dataset-upload",
+          "concepts/designs/meta-chart",
+          "concepts/designs/notebook-kernel-process",
+          "concepts/designs/persistence-storage",
           "concepts/designs/user-portal",
           "concepts/designs/feature-flag"
         ]
