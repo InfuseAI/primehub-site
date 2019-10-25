@@ -1,8 +1,7 @@
 ---
-id: cluster_shutdown 
-title: Cluster shutdown
+id: cluster_shutdown
+title: Cluster Shutdown
 ---
-## Introduction
 
 For some reasons, we need to shutdown the whole cluster. Here provides the `MAKEFILE` and scripts to shutdown and bring up the full kuberenetes cluster.
 
@@ -116,8 +115,8 @@ Examples:
   kubectl_stasis.sh -n hub status deploy
 
 Options:
-  -n --namepsaces   the namespace
-  -l --selector     the selectror
+  -n --namespaces   the namespace
+  -l --selector     the selector
   -h                print this help
 ```
 
@@ -136,8 +135,8 @@ Examples:
   kubectl_fdelete.sh -n default -l app=test -t 10
 
 Options:
-  -n --namepsaces   the namespace
-  -l --selector     the selectror
+  -n --namespaces   the namespace
+  -l --selector     the selector
   -t                the time to force delete
   -h                print this help
 ```
@@ -158,6 +157,6 @@ Run ceph command from rook-tools
 
 Find all the pods which mount rook storage.
 
-## Reference
+# Reference
 
 - https://ceph.com/planet/how-to-do-a-ceph-cluster-maintenance-shutdown/

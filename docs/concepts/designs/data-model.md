@@ -1,5 +1,5 @@
 ---
-id: primehub-data-model
+id: data-model
 title: PrimeHub Data Model
 ---
 
@@ -26,7 +26,7 @@ When a user is connected to existing groups via Admin UI, a user, in fact, is as
 
 - Attributes
     - `locale`
-    - `personalDiskQutoa`, when a user is created, there is a 1G volume allocated by default for the user.
+    - `personalDiskQuota`, when a user is created, there is a 1G volume allocated by default for the user.
 
     ![](assets/primehub-data-model-snapshot_1.png)
 

@@ -5,13 +5,14 @@ title: User Portal
 
 Provide a single portal for users to access all the PrimeHub services.
 
+
 ## Configuration
 
 Please add these variables to the `.env` file
 
-Release |App
+Release |App 
 --- | ----- 
-`PRIMEHUB_FEATURE_USER_PORTAL` | `true` to enable the feature flag to enable the user portal feature |
+`PRIMEHUB_FEATURE_USER_PORTAL` | `true` to enable the feature flag to enable the user portal feature | 
 `PRIMEHUB_SCHEME` | The scheme for user portal
 `PRIMEHUB_DOMAIN` | The domain for user portal
 `KC_SCHEME` | The scheme for keycloak
@@ -30,7 +31,7 @@ If user portal is enabled, all the services (except keycloak) use the single dom
    KC_DOMAIN=
    ```
 
-1. Add new [Valid Redirect URIs](https://www.keycloak.org/docs/6.0/server_admin/index.html#oidc-clients) to all affected keycloak clients. (e.g. `admin-ui`, `jupyterhub`, `maintenance-proxy`)
+1. Add new [Valid Redirect URIs](https://www.keycloak.org/docs/6.0/server_admin/index.html#oidc-clients) to all affected keycloak clients. (e.g. `admin-ui`, `jupyterhub`, `maintenance-proxy`, `grafana-proxy`)
 
 
 ## Domain Names
@@ -47,6 +48,7 @@ JupyterHub | `https://hub.${PH_DOMAIN}/hub`
 Admin Dashboard | `https://admin.${PH_DOMAIN}/cms`
 Maintenance Notebook | `https://admin.${PH_DOMAIN}/maintenance`
 Keycloak | `https://id.${PH_DOMAIN}/auth`
+Grafana | `https://grafana.${PH_DOMAIN}/`
 
 
 ### New Design
@@ -58,5 +60,9 @@ JupyterHub | `https://${PRIMEHUB_DOMAIN}/hub`
 Admin Dashboard | `https://${PRIMEHUB_DOMAIN}/admin`
 Maintenance Notebook | `https://${PRIMEHUB_DOMAIN}/admin/maintenance`
 Keycloak | `https://${KC_DOMAIN}/auth`
+Grafana | `https://${PRIMEHUB_DOMAIN}/grafana`
 
 
+# Release
+
+User portal is GA since v2.1.0

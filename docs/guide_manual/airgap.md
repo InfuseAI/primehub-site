@@ -2,6 +2,7 @@
 id: airgap
 title: Airgap
 ---
+
 ## Make Component Airgap-Ready
 
 - **images.txt**: For every modules, put the image `repository:tag` in a `images.txt` file in one of the following path

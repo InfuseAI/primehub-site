@@ -1,16 +1,18 @@
 ---
-id: crd-schema 
+id: crd-schema
 title: CRD Structural Schema
 ---
 
-From Kubernetes v1.15, CustomeResrouces(CR) is able to adopt a schema of Open API V3 validation by specifying it in a definition file. The schema is used to validate the JSON data during creation and updates so that it can prevent from invalid data, moreover, from malicious attacks.
+From Kubernetes v1.15, CustomResources(CR) is able to adopt a schema of Open API V3 validation by specifying it in a definition file. The schema is used to validate the JSON data during creation and updates so that it can prevent from invalid data, moreover, from malicious attacks.
 
 While in `apiextensions.k8s.io/v1beta1`, the definition of a structural schema is **optional**, whereas in `apiextensions.k8s.io/v1` it is **mandatory**.
 
 Please see [[KEP]20190425-structural-openapi](https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/20190425-structural-openapi.md) for more detail.
 
 ## Structural Schema
+
 A schema is called **structural** if it obeys all of principles below:
+
 1. specifies a non-empty type (via `type` in OpenAPI) for the root, for each specified field of an object node (via `properties` or `additionalProperties` in OpenAPI) and for each item in an array node (via `items` in OpenAPI), with the exception of:
 
 - a node with `x-kubernetes-int-or-string: true`
@@ -87,6 +89,7 @@ For more examples, please see [Specifying a structural schema](https://kubernete
 ## Validation Schema
 
 ### Keywords for Applying Subschemas With Boolean Logic
+
 Keyword|Description|
 -------|-----------|
 allOf|if it validates successfully against all schemas defined by this keyword's value.|
@@ -95,6 +98,7 @@ oneOf|f it validates successfully against exactly one schema defined by this key
 not|if it fails to validate successfully against the schema defined by this keyword.|
 
 ### Validation Keywords for Numeric Instances (number and integer)
+
 Keyword|Description|
 -------|-----------|
 multipleOf|if division by this keyword's value results in an integer.|
@@ -104,6 +108,7 @@ minimum|if the instance is greater than or exactly equal to "minimum".
 exclusiveMinimum|if it has a value strictly greater than (not equal to) "exclusiveMinimum".|
 
 ### Validation Keywords for Strings
+
 Keyword|Description|
 -------|-----------|
 maxLength|if its length is less than, or equal to, the value of this keyword.|
@@ -112,6 +117,7 @@ pattern|if the regular expression matches the instance successfully. Recall: reg
 
 
 ### Validation Keywords for Arrays
+
 Keyword|Description|
 -------|-----------|
 items|*If "items" is a schema*, validation succeeds if all elements in the array successfully validate against that schema. *If "items" is an array of schemas*, validation succeeds if each element of the instance validates against the schema at the same position, if any.|
@@ -122,6 +128,7 @@ uniqueItems|If this keyword has boolean value `false`, the instance validates su
 ## CRDs of PrimeHub with validation schema
 
 ### Current `Instance Type` data is like below,
+
 ```
 apiVersion: primehub.io/v1alpha1
 kind: InstanceType
@@ -138,6 +145,7 @@ spec:
   requests.cpu: 4
   requests.memory: 26G
 ```
+
 Taking this data as an example, the validation schema might look like:
 ```
 apiVersion: apiextensions.k8s.io/v1beta1
@@ -333,6 +341,7 @@ spec:
 ```
 
 ## Pruning – don’t preserve unknown fields
+
 In `apiextensions.k8s.io/v1` pruning will be the default, with ways to opt-out of it. Pruning in `apiextensions.k8s.io/v1beta1` is enabled via
 ```
 apiVersion: apiextensions/v1beta1
@@ -344,6 +353,7 @@ spec:
 Pruning can only be enabled if the global schema or the schemas of all versions are **structural**.
 
 If pruning is enabled, the pruning algorithm
+
 - assumes that the schema is complete, i.e. every field is mentioned and not-mentioned fields can be dropped
 - is run on
     - data received via an API request
@@ -450,6 +460,7 @@ my-new-cron-object   * * * * *   1          7s
 Regarding usages of`Priority`, `Type` and `Format` of columns, please see [[More details]](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#additional-printer-columns)
 
 ## Categories
+
 This feature is beta and available from v1.10.
 We can categorize CRs into `all` or customized categories by `categories:` e.g.:
 ```
@@ -480,6 +491,7 @@ Therefore, this CR object is included in result of `kubectl get all`.
 [[More details]](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#categories)
 
 ## Reference
+
 Reference|
 ---|
 [Specifying a structural schema](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema)|

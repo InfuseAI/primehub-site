@@ -1,10 +1,11 @@
 ---
-id: crds 
+id: crds
 title: CRDs
 ---
+
 In PrimeHub data model, it mentions when a/an instance type, image and dataset is created via Admin UI, under the hood, there are a CRD object created in Kubernetes and a Realm Role created in Keycloak. This document describes what CRDs are created for and the context of them. 
 
-CRD, CustomResourceDefinition, PrimeHub uses the custom resource mechanism to manage structured data (custom objects) stored in Kubernetes. There are three of them, `Instance Type`, `Image` and `Dataset`. 
+CRD, CustomResourceDefinition, PrimeHub uses the custom resource mechanism to manage structured data (custom objects) stored in Kubernetes. There are three of them, `Instance Type`, `Image` and `Dataset`.
 
 For more detail of CRD, please refer to [Extend the Kubernetest API with CustomResourceDefinitions](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/).
 

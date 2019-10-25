@@ -1,6 +1,6 @@
 ---
 id: feature-flag
-title: Feature Flag
+title: Feature Flags
 ---
 
 [Feature Flag](https://en.wikipedia.org/wiki/Feature_toggle) a.k.a. Feature Toggle is a technique in software development that attempts to provide an alternative to maintaining multiple source-code branches (known as feature branches), such that a feature can be tested even before it is completed and ready for release.
@@ -21,13 +21,19 @@ Alpha features are defined in in [bin/phenv](../../bin/phenv).
 Feature|Default|Stage|Since|
 -------|-------|-----|-----|
 `PRIMEHUB_FEATURE_USER_PORTAL`|false|alpha|1.7.0
+`PRIMEHUB_FEATURE_USER_PORTAL`|false|ga|2.1.0
 `PRIMEHUB_FEATURE_ENABLE_ADMISSION`|false|alpha|1.7.0
+`PRIMEHUB_FEATURE_DATASET_UPLOAD`|false|alpha|2.0.0
+`PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`|false|alpha|2.0.0
+`PRIMEHUB_FEATURE_USER_PORTAL`|true|ga|2.1.0
 
 - `PRIMEHUB_FEATURE_USER_PORTAL`: Enable [User Portal](user-portal.md) to have a unified domain with a landing page.
 - `PRIMEHUB_FEATURE_ENABLE_ADMISSION`: Enable [Admission](admission.md) relative features. [Admission Webhook](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/) is a mechanism provided by kubernetes to validate and mutate resources when they are created.
-
+- `PRIMEHUB_FEATURE_DATASET_UPLOAD`: Enable [Dataset Upload](dataset-upload.md) so that user can upload data to pv type dataset through a server.
+- `PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`: Enable experimental [jupyter kernel gateway](notebook-kernel-process.md), it runs notebook and kernel in the different container.
 
 ## Reference
+
 - [Feature gates in kubernetes](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/)
 
 

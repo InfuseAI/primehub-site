@@ -1,5 +1,5 @@
 ---
-id: primehub-integration
+id: jupyterhub-integration
 title: Integration with JupyterHub
 ---
 

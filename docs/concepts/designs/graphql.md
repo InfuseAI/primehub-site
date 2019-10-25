@@ -1,7 +1,8 @@
 ---
 id: graphql
-title: Spawner and GraphQL
+title: Spawner and GraphqQL
 ---
+
 
 For making API queries to existing data in Kubernetes and Keycloak more understandable, PrimeHub adopts [GraphQL](https://graphql.org) to achieve it and also, GraphQL makes evolve APIs easier over time.
 
@@ -81,5 +82,7 @@ query='query ($id: ID!) {
   }
 }'
 ```
+
 ## Reference
+
 For the detail of latest GraphQL APIs, please see [canner-admin-ui](https://gitlab.com/infuseai/canner-admin-ui/tree/master/packages/graphql-server/src/graphql) repo. The access permission is required.
