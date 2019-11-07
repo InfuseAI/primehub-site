@@ -2,6 +2,7 @@
 id: kibana-dashboard
 title: Kibana Import / Export
 ---
+
 ## How to use
 To export kibana dashboard settings from current cluster:
 

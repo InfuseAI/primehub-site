@@ -10,9 +10,9 @@ Provide a single portal for users to access all the PrimeHub services.
 
 Please add these variables to the `.env` file
 
-Release |App 
+Release | App 
 --- | ----- 
-`PRIMEHUB_FEATURE_USER_PORTAL` | `true` to enable the feature flag to enable the user portal feature | 
+`PRIMEHUB_FEATURE_USER_PORTAL` | `true` to enable the feature flag to enable the user portal feature. Since v2.1.0, the feature cannot be disabled even it is set to `false`
 `PRIMEHUB_SCHEME` | The scheme for user portal
 `PRIMEHUB_DOMAIN` | The domain for user portal
 `KC_SCHEME` | The scheme for keycloak
@@ -31,7 +31,7 @@ If user portal is enabled, all the services (except keycloak) use the single dom
    KC_DOMAIN=
    ```
 
-1. Add new [Valid Redirect URIs](https://www.keycloak.org/docs/6.0/server_admin/index.html#oidc-clients) to all affected keycloak clients. (e.g. `admin-ui`, `jupyterhub`, `maintenance-proxy`, `grafana-proxy`)
+1. Upgrade the `grafana-proxy` client's [redirect URIs](https://www.keycloak.org/docs/6.0/server_admin/index.html#oidc-clients)
 
 
 ## Domain Names

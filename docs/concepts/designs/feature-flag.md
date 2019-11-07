@@ -5,27 +5,40 @@ title: Feature Flags
 
 [Feature Flag](https://en.wikipedia.org/wiki/Feature_toggle) a.k.a. Feature Toggle is a technique in software development that attempts to provide an alternative to maintaining multiple source-code branches (known as feature branches), such that a feature can be tested even before it is completed and ready for release.
 
-In PrimeHub, we use environment variables to toggle features.
+In PrimeHub, we use environment variables to toggle Alpha, Beta features.
 
-## Using Alpha Features
+## Using Features
 
-In order to introduce users new features as early as possible. We can define features as *alpha* features. The alpha features are enabled by `PRIMEHUB_ENABLE_ALPHA=true` in `.env` or enabled individually.
+In order to introduce users new experimental features and to collect feedback from users early. We can define features as *Alpha* or *Beta* features according to PrimeHub versions. The Alpha features and Beta are enabled by `PRIMEHUB_ENABLE_ALPHA=true` and `PRIMEHUB_ENABLE_BETA=true` in `.env` respectively or enabled individually. Features are defined in in [bin/phenv](../../bin/phenv).
 
-By default only GA features are enabled, all of alpha features are disabled.
+### Alpha feature
 
-Alpha features are defined in in [bin/phenv](../../bin/phenv).
+- Disabled by default.
+- Buggy possibly, this feature may result in bugs/unstable system.
+- The feature may be dropped or changed without notice.
+- The feature may not be compatible with later release onward.
 
+### Beta feature
 
-## Features
+- Enabled by default.
+- The feature is tested and verified.
+- The detail of the feature might be changed in subsequent beta or stable releases so that the migrating actions may be required.
+
+### GA feature
+
+- A GA feature is well tested.
+- Enabled by default for general availability.
+
+## Features flags for Alpha, Beta, GA features
 
 Feature|Default|Stage|Since|
 -------|-------|-----|-----|
 `PRIMEHUB_FEATURE_USER_PORTAL`|false|alpha|1.7.0
-`PRIMEHUB_FEATURE_USER_PORTAL`|false|ga|2.1.0
+`PRIMEHUB_FEATURE_USER_PORTAL`|true|ga|2.1.0
 `PRIMEHUB_FEATURE_ENABLE_ADMISSION`|false|alpha|1.7.0
 `PRIMEHUB_FEATURE_DATASET_UPLOAD`|false|alpha|2.0.0
+`PRIMEHUB_FEATURE_DATASET_UPLOAD`|false|beta|2.1.0
 `PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`|false|alpha|2.0.0
-`PRIMEHUB_FEATURE_USER_PORTAL`|true|ga|2.1.0
 
 - `PRIMEHUB_FEATURE_USER_PORTAL`: Enable [User Portal](user-portal.md) to have a unified domain with a landing page.
 - `PRIMEHUB_FEATURE_ENABLE_ADMISSION`: Enable [Admission](admission.md) relative features. [Admission Webhook](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/) is a mechanism provided by kubernetes to validate and mutate resources when they are created.
@@ -35,7 +48,3 @@ Feature|Default|Stage|Since|
 ## Reference
 
 - [Feature gates in kubernetes](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/)
-
-
-
-
