@@ -1,0 +1,101 @@
+{
+  "version-2.1.0-docs": {
+    "Introduction": [
+      "version-2.1.0-introduction",
+      "version-2.1.0-intro/features",
+      "version-2.1.0-intro/roadmap"
+    ],
+    "Concept": [
+      {
+        "type": "subcategory",
+        "label": "Design",
+        "ids": [
+          "version-2.1.0-concepts/designs/jupyterhub-integration",
+          "version-2.1.0-concepts/designs/crds",
+          "version-2.1.0-concepts/designs/crd-schema",
+          "version-2.1.0-concepts/designs/customization",
+          "version-2.1.0-concepts/designs/graphql",
+          "version-2.1.0-concepts/designs/data-model",
+          "version-2.1.0-concepts/designs/dataset-upload",
+          "version-2.1.0-concepts/designs/meta-chart",
+          "version-2.1.0-concepts/designs/notebook-kernel-process",
+          "version-2.1.0-concepts/designs/persistence-storage",
+          "version-2.1.0-concepts/designs/user-portal",
+          "version-2.1.0-concepts/designs/feature-flag"
+        ]
+      }
+    ],
+    "Setup & Deployment": [
+      "version-2.1.0-setup_deploy/installation"
+    ],
+    "Configuration": [
+      "version-2.1.0-configuration/"
+    ],
+    "Guides & Manuals": [
+      {
+        "type": "subcategory",
+        "label": "PrimeHub Manual",
+        "ids": [
+          "version-2.1.0-guide_manual/primehub-manual",
+          "version-2.1.0-guide_manual/primehub-manual-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard Manual",
+        "ids": [
+          "version-2.1.0-guide_manual/admin-system",
+          "version-2.1.0-guide_manual/admin-user",
+          "version-2.1.0-guide_manual/admin-group",
+          "version-2.1.0-guide_manual/admin-instancetype",
+          "version-2.1.0-guide_manual/admin-image",
+          "version-2.1.0-guide_manual/admin-dataset",
+          "version-2.1.0-guide_manual/admin-secret",
+          "version-2.1.0-guide_manual/usecase-toleration",
+          "version-2.1.0-guide_manual/usecase-nodeselector"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard 手冊",
+        "ids": [
+          "version-2.1.0-guide_manual/admin-system-cht",
+          "version-2.1.0-guide_manual/admin-user-cht",
+          "version-2.1.0-guide_manual/admin-group-cht",
+          "version-2.1.0-guide_manual/admin-instancetype-cht",
+          "version-2.1.0-guide_manual/admin-image-cht",
+          "version-2.1.0-guide_manual/admin-dataset-cht",
+          "version-2.1.0-guide_manual/admin-secret-cht",
+          "version-2.1.0-guide_manual/usecase-toleration-cht",
+          "version-2.1.0-guide_manual/usecase-nodeselector-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Guide",
+        "ids": [
+          "version-2.1.0-guide_manual/cluster_shutdown",
+          "version-2.1.0-guide_manual/benchmark",
+          "version-2.1.0-guide_manual/airgap"
+        ]
+      }
+    ],
+    "Tips & More": [
+      "version-2.1.0-tips/kibana-dashboard"
+    ],
+    "References": [
+      "version-2.1.0-references/"
+    ]
+  },
+  "version-2.1.0-docs-other": {
+    "First Category": [
+      "version-2.1.0-doc4",
+      "version-2.1.0-doc5"
+    ]
+  },
+  "version-2.1.0-release_notes": {
+    "PrimeHub v1": [
+      "version-2.1.0-release_notes/latest"
+    ]
+  }
+}
