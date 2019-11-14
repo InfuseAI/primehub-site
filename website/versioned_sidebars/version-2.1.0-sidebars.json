@@ -36,8 +36,7 @@
         "type": "subcategory",
         "label": "PrimeHub Manual",
         "ids": [
-          "version-2.1.0-guide_manual/primehub-manual",
-          "version-2.1.0-guide_manual/primehub-manual-cht"
+          "version-2.1.0-guide_manual/primehub-manual"
         ]
       },
       {
@@ -57,21 +56,6 @@
       },
       {
         "type": "subcategory",
-        "label": "Admin Dashboard 手冊",
-        "ids": [
-          "version-2.1.0-guide_manual/admin-system-cht",
-          "version-2.1.0-guide_manual/admin-user-cht",
-          "version-2.1.0-guide_manual/admin-group-cht",
-          "version-2.1.0-guide_manual/admin-instancetype-cht",
-          "version-2.1.0-guide_manual/admin-image-cht",
-          "version-2.1.0-guide_manual/admin-dataset-cht",
-          "version-2.1.0-guide_manual/admin-secret-cht",
-          "version-2.1.0-guide_manual/usecase-toleration-cht",
-          "version-2.1.0-guide_manual/usecase-nodeselector-cht"
-        ]
-      },
-      {
-        "type": "subcategory",
         "label": "Guide",
         "ids": [
           "version-2.1.0-guide_manual/cluster_shutdown",
@@ -85,6 +69,24 @@
     ],
     "References": [
       "version-2.1.0-references/"
+    ],
+    "中文版文件": [
+      "version-2.1.0-guide_manual/primehub-manual-cht",
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "version-2.1.0-guide_manual/admin-system-cht",
+          "version-2.1.0-guide_manual/admin-user-cht",
+          "version-2.1.0-guide_manual/admin-group-cht",
+          "version-2.1.0-guide_manual/admin-instancetype-cht",
+          "version-2.1.0-guide_manual/admin-image-cht",
+          "version-2.1.0-guide_manual/admin-dataset-cht",
+          "version-2.1.0-guide_manual/admin-secret-cht",
+          "version-2.1.0-guide_manual/usecase-toleration-cht",
+          "version-2.1.0-guide_manual/usecase-nodeselector-cht"
+        ]
+      }
     ]
   },
   "version-2.1.0-docs-other": {

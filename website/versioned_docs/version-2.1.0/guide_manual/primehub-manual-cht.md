@@ -1,6 +1,6 @@
 ---
 id: version-2.1.0-primehub-manual-cht
-title: PrimeHub Console 手冊
+title: PrimeHub Console
 original_id: primehub-manual-cht
 ---
 
