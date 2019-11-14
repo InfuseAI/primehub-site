@@ -1,6 +1,6 @@
 ---
 id: primehub-manual-cht
-title: PrimeHub Console 
+title: PrimeHub Console 手冊
 ---
 
 ## 登入與登出 
