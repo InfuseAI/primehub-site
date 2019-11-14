@@ -34,12 +34,40 @@
     "Guides & Manuals": [
       {
         "type": "subcategory",
-        "label": "Manual",
+        "label": "PrimeHub Manual",
         "ids": [
           "guide_manual/primehub-manual",
-          "guide_manual/primehub-manual-cht",
-          "guide_manual/admin-manual",
-          "guide_manual/admin-manual-cht"
+          "guide_manual/primehub-manual-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard Manual",
+        "ids": [
+          "guide_manual/admin-system",
+          "guide_manual/admin-user",
+          "guide_manual/admin-group",
+          "guide_manual/admin-instancetype",
+          "guide_manual/admin-image",
+          "guide_manual/admin-dataset",
+          "guide_manual/admin-secret",
+          "guide_manual/usecase-toleration",
+          "guide_manual/usecase-nodeselector"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard 手冊",
+        "ids": [
+          "guide_manual/admin-system-cht",
+          "guide_manual/admin-user-cht",
+          "guide_manual/admin-group-cht",
+          "guide_manual/admin-instancetype-cht",
+          "guide_manual/admin-image-cht",
+          "guide_manual/admin-dataset-cht",
+          "guide_manual/admin-secret-cht",
+          "guide_manual/usecase-toleration-cht",
+          "guide_manual/usecase-nodeselector-cht"
         ]
       },
       {
