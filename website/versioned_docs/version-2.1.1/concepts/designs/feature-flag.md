@@ -1,6 +1,7 @@
 ---
-id: feature-flag
+id: version-2.1.1-feature-flag
 title: Feature Flags
+original_id: feature-flag
 ---
 
 [Feature Flag](https://en.wikipedia.org/wiki/Feature_toggle) a.k.a. Feature Toggle is a technique in software development that attempts to provide an alternative to maintaining multiple source-code branches (known as feature branches), such that a feature can be tested even before it is completed and ready for release.

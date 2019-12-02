@@ -1,6 +1,7 @@
 ---
-id: primehub-manual-cht
+id: version-2.1.1-primehub-manual-cht
 title: PrimeHub Console 手冊
+original_id: primehub-manual-cht
 ---
 
 ## 登入與登出 
