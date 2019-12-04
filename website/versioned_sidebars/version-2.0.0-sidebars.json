@@ -1,9 +1,7 @@
 {
-  "version-2.0.0-docs": {
-    "Introduction": [
-      "version-2.0.0-introduction",
-      "version-2.0.0-intro/features",
-      "version-2.0.0-intro/roadmap"
+  "version-2.0.0-For Developers": {
+    "For Developers": [
+      "version-2.0.0-dev-introduction"
     ],
     "Concept": [
       {
@@ -16,6 +14,10 @@
           "version-2.0.0-concepts/designs/customization",
           "version-2.0.0-concepts/designs/graphql",
           "version-2.0.0-concepts/designs/data-model",
+          "version-2.0.0-concepts/designs/dataset-upload",
+          "version-2.0.0-concepts/designs/meta-chart",
+          "version-2.0.0-concepts/designs/notebook-kernel-process",
+          "version-2.0.0-concepts/designs/persistence-storage",
           "version-2.0.0-concepts/designs/user-portal",
           "version-2.0.0-concepts/designs/feature-flag"
         ]
@@ -25,43 +27,53 @@
       "version-2.0.0-setup_deploy/installation"
     ],
     "Configuration": [
-      "version-2.0.0-configuration/"
+      "configuration/" 
     ],
-    "Guides & Manuals": [
-      {
-        "type": "subcategory",
-        "label": "Manual",
-        "ids": [
-          "version-2.0.0-guide_manual/admin_ui_man",
-          "version-2.0.0-guide_manual/primehub_man"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Guide",
-        "ids": [
-          "version-2.0.0-guide_manual/cluster_shutdown",
-          "version-2.0.0-guide_manual/benchmark",
-          "version-2.0.0-guide_manual/airgap"
-        ]
-      }
+    "Guides": [
+      "version-2.0.0-guide_manual/cluster_shutdown",
+      "version-2.0.0-guide_manual/benchmark",
+      "version-2.0.0-guide_manual/airgap"
     ],
     "Tips & More": [
       "version-2.0.0-tips/kibana-dashboard"
     ],
     "References": [
-      "version-2.0.0-references/"
+      "references/"
     ]
   },
-  "version-2.0.0-docs-other": {
-    "First Category": [
-      "version-2.0.0-doc4",
-      "version-2.0.0-doc5"
-    ]
+
+  "version-2.0.0-User Manual": {
+    "For Users" : ["version-2.0.0-user-manual"],
+    "Admin Dashboard": [
+      "version-2.0.0-guide_manual/admin_ui_man",
+      "version-2.0.0-guide_manual/admin-system",
+      "version-2.0.0-guide_manual/admin-user",
+      "version-2.0.0-guide_manual/admin-group",
+      "version-2.0.0-guide_manual/admin-instancetype",
+      "version-2.0.0-guide_manual/admin-image",
+      "version-2.0.0-guide_manual/admin-build-image",
+      "version-2.0.0-guide_manual/admin-dataset",
+      "version-2.0.0-guide_manual/admin-secret",
+      "version-2.0.0-guide_manual/usecase-toleration",
+      "version-2.0.0-guide_manual/usecase-nodeselector"
+    ],
+    "PrimeHub Console": [ "version-2.0.0-guide_manual/primehub_man"],
+    "Admin Dashboard zh-tw": [
+      "version-2.0.0-guide_manual/admin_ui_man_cht",
+      "version-2.0.0-guide_manual/admin-system-cht",
+      "version-2.0.0-guide_manual/admin-user-cht",
+      "version-2.0.0-guide_manual/admin-group-cht",
+      "version-2.0.0-guide_manual/admin-instancetype-cht",
+      "version-2.0.0-guide_manual/admin-image-cht",
+      "version-2.0.0-guide_manual/admin-build-image-cht",
+      "version-2.0.0-guide_manual/admin-dataset-cht",
+      "version-2.0.0-guide_manual/admin-secret-cht",
+      "version-2.0.0-guide_manual/usecase-toleration-cht",
+      "version-2.0.0-guide_manual/usecase-nodeselector-cht"
+    ],
+    "PrimeHub Console zh-tw": ["version-2.0.0-guide_manual/primehub_man_cht"]
   },
-  "version-2.0.0-release_notes": {
-    "PrimeHub v1": [
-      "version-2.0.0-release_notes/latest"
-    ]
+  "release_notes": {
+    "PrimeHub v1": ["release_notes/latest"]
   }
 }
