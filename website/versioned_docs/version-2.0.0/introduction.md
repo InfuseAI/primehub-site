@@ -1,7 +1,7 @@
 ---
 id: version-2.0.0-introduction
-title: Vision & Mission
-original_id: Documentation
+title: Documentation
+original_id: introduction
 ---
 
 ## For Users
