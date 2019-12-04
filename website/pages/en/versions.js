@@ -45,9 +45,7 @@ function Versions(props) {
                   </a>
                 </td>
                 <td>
-                  <a href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                      props.language ? props.language + '/' : ''
-                    }changelog`}>Changelog</a>
+                  <a href="https://gitlab.com/infuseai/primehub/blob/master/CHANGELOG.md">Changelog</a>
                 </td>
               </tr>
             </tbody>
