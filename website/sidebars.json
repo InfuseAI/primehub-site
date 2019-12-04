@@ -1,5 +1,5 @@
 {
-  "For Developers": {
+  "for-developers": {
     "For Developers": [
       "dev-introduction"
     ],
@@ -42,7 +42,7 @@
     ]
   },
 
-  "User Manual": {
+  "user-manual": {
     "For Users" : ["user-manual"],
     "Admin Dashboard": [
       "guide_manual/admin-system",
