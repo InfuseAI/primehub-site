@@ -59,7 +59,7 @@
     "PrimeHub Console": [
       "version-2.1.0-guide_manual/primehub-manual"
     ],
-    "Admin Dashboard zh-tw": [
+    "Admin Dashboard 使用手冊": [
       "version-2.1.0-guide_manual/admin-system-cht",
       "version-2.1.0-guide_manual/admin-user-cht",
       "version-2.1.0-guide_manual/admin-group-cht",
@@ -70,7 +70,7 @@
       "version-2.1.0-guide_manual/usecase-toleration-cht",
       "version-2.1.0-guide_manual/usecase-nodeselector-cht"
     ],
-    "PrimeHub Console zh-tw": [
+    "PrimeHub Console 使用手冊": [
       "version-2.1.0-guide_manual/primehub-manual-cht"
     ]
   },

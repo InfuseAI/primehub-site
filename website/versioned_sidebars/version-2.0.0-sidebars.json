@@ -58,7 +58,7 @@
       "version-2.0.0-guide_manual/usecase-nodeselector"
     ],
     "PrimeHub Console": [ "version-2.0.0-guide_manual/primehub_man"],
-    "Admin Dashboard zh-tw": [
+    "Admin Dashboard 使用手冊": [
       "version-2.0.0-guide_manual/admin_ui_man_cht",
       "version-2.0.0-guide_manual/admin-system-cht",
       "version-2.0.0-guide_manual/admin-user-cht",
@@ -71,7 +71,7 @@
       "version-2.0.0-guide_manual/usecase-toleration-cht",
       "version-2.0.0-guide_manual/usecase-nodeselector-cht"
     ],
-    "PrimeHub Console zh-tw": ["version-2.0.0-guide_manual/primehub_man_cht"]
+    "PrimeHub Console 使用手冊": ["version-2.0.0-guide_manual/primehub_man_cht"]
   },
   "release_notes": {
     "PrimeHub v1": ["release_notes/latest"]
