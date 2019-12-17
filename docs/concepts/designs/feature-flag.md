@@ -39,11 +39,13 @@ Feature|Default|Stage|Since|
 `PRIMEHUB_FEATURE_ENABLE_ADMISSION`|true|ga|2.2.0
 `PRIMEHUB_FEATURE_DATASET_UPLOAD`|false|alpha|2.0.0
 `PRIMEHUB_FEATURE_DATASET_UPLOAD`|false|beta|2.2.0
+`PRIMEHUB_FEATURE_CUSTOM_IMAGE`|false|alpha|2.2.0
 `PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`|false|alpha|2.0.0
 
 - `PRIMEHUB_FEATURE_USER_PORTAL`: Enable [User Portal](user-portal.md) to have a unified domain with a landing page.
 - `PRIMEHUB_FEATURE_ENABLE_ADMISSION`: Enable [Admission](admission.md) relative features. [Admission Webhook](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/) is a mechanism provided by kubernetes to validate and mutate resources when they are created. Been removed.
 - `PRIMEHUB_FEATURE_DATASET_UPLOAD`: Enable [Dataset Upload](dataset-upload.md) so that user can upload data to pv type dataset through a server.
+- `PRIMEHUB_FEATURE_CUSTOM_IMAGE`: Enable Custom Image so that admin can build images with custom packages.
 - `PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`: Enable experimental [jupyter kernel gateway](notebook-kernel-process.md), it runs notebook and kernel in the different container.
 
 ## Reference
