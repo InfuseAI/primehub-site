@@ -41,10 +41,24 @@
       "references/"
     ]
   },
-
-  "user-manual": {
-    "For Users" : ["user-manual"],
-    "Admin Dashboard": [
+  "getting-started-admin": {
+    "Administrator": ["getting-started-admin", "admin-dashboard"],
+    "Quickstart": [
+      "quickstart/login-portal-admin",
+      "quickstart/create-user",
+      "quickstart/create-group"
+    ]
+  },
+  "getting-started-user": {
+    "User": ["getting-started-user"],
+    "Quickstart": [
+      "quickstart/login-portal-user",
+      "quickstart/launch-project",
+      "quickstart/close-project"
+    ]
+  },
+  "admin-dashboard-toc": {
+    "Admin Dashboard":[
       "guide_manual/admin-system",
       "guide_manual/admin-user",
       "guide_manual/admin-group",
@@ -55,23 +69,6 @@
       "guide_manual/admin-secret",
       "guide_manual/usecase-toleration",
       "guide_manual/usecase-nodeselector"
-    ],
-    "PrimeHub Console": [ "guide_manual/primehub-manual"],
-    "Admin Dashboard 手冊": [
-      "guide_manual/admin-system-cht",
-      "guide_manual/admin-user-cht",
-      "guide_manual/admin-group-cht",
-      "guide_manual/admin-instancetype-cht",
-      "guide_manual/admin-image-cht",
-      "guide_manual/admin-build-image-cht",
-      "guide_manual/admin-dataset-cht",
-      "guide_manual/admin-secret-cht",
-      "guide_manual/usecase-toleration-cht",
-      "guide_manual/usecase-nodeselector-cht"
-    ],
-    "PrimeHub Console 手冊": ["guide_manual/primehub-manual-cht"]
-  },
-  "release_notes": {
-    "PrimeHub v1": ["release_notes/latest"]
+    ]
   }
 }

@@ -26,8 +26,8 @@ As *end users*,
 + **JupyterHub**
 It is redirected to the `JupyterHub` where users can launch projects.
 
-+ **Support**
-It is redirected to `Zendesk Support` where users can find useful guides and ask questions.
++ **User Guide**
+It is redirected to `Documentation` where users can find useful guides and ask questions.
 
 As *administrators*,
 
@@ -75,7 +75,7 @@ The `Control Panel` button is located under `File` on menu bar.
 
 ![](assets/Hub_control_panel.png)
 
-Select `Hub` on **menubar**, then select `Control Panel`.
+Select `File` on **menubar**, then select `Hub Control Panel`.
 
 ![](assets/navbar_stop_server.png)
 
