@@ -42,7 +42,17 @@
     ]
   },
   "getting-started-admin": {
-    "Administrator": ["getting-started-admin", "admin-dashboard"],
+    "Administrator": ["getting-started-admin"],
+    "Management":[
+      "guide_manual/admin-system",
+      "guide_manual/admin-user",
+      "guide_manual/admin-group",
+      "guide_manual/admin-instancetype",
+      "guide_manual/admin-image",
+      "guide_manual/admin-build-image",
+      "guide_manual/admin-dataset",
+      "guide_manual/admin-secret"
+    ],
     "Quickstart": [
       "quickstart/login-portal-admin",
       "quickstart/create-user",
@@ -59,18 +69,6 @@
       "quickstart/login-portal-user",
       "quickstart/launch-project",
       "quickstart/close-project"
-    ]
-  },
-  "admin-dashboard-toc": {
-    "Admin Dashboard":[
-      "guide_manual/admin-system",
-      "guide_manual/admin-user",
-      "guide_manual/admin-group",
-      "guide_manual/admin-instancetype",
-      "guide_manual/admin-image",
-      "guide_manual/admin-build-image",
-      "guide_manual/admin-dataset",
-      "guide_manual/admin-secret"
     ]
   },
   "zh-tw": {

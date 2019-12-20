@@ -1,6 +1,6 @@
 ---
 id: version-2.1.0-usecase-toleration
-title: [Use Case] Toleration
+title: Toleration
 original_id: usecase-toleration
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: version-2.1.0-usecase-nodeselector
-title: [Use Case] NodeSelector
+title: NodeSelector
 original_id: usecase-nodeselector
 ---
 

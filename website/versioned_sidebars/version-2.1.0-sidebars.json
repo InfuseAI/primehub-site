@@ -42,7 +42,19 @@
     ]
   },
   "version-2.1.0-getting-started-admin": {
-    "Administrator": ["version-2.1.0-getting-started-admin", "version-2.1.0-admin-dashboard"],
+    "Administrator": ["version-2.1.0-getting-started-admin"],
+    "Management":[
+      "version-2.1.0-guide_manual/admin-system",
+      "version-2.1.0-guide_manual/admin-user",
+      "version-2.1.0-guide_manual/admin-group",
+      "version-2.1.0-guide_manual/admin-instancetype",
+      "version-2.1.0-guide_manual/admin-image",
+      "version-2.1.0-guide_manual/admin-build-image",
+      "version-2.1.0-guide_manual/admin-dataset",
+      "version-2.1.0-guide_manual/admin-secret",
+      "version-2.1.0-guide_manual/usecase-toleration",
+      "version-2.1.0-guide_manual/usecase-nodeselector"
+    ],
     "Quickstart": [
       "version-2.1.0-quickstart/login-portal-admin",
       "version-2.1.0-quickstart/create-user",
@@ -55,20 +67,6 @@
       "version-2.1.0-quickstart/login-portal-user",
       "version-2.1.0-quickstart/launch-project",
       "version-2.1.0-quickstart/close-project"
-    ]
-  },
-  "version-2.1.0-admin-dashboard-toc": {
-    "Admin Dashboard":[
-      "version-2.1.0-guide_manual/admin-system",
-      "version-2.1.0-guide_manual/admin-user",
-      "version-2.1.0-guide_manual/admin-group",
-      "version-2.1.0-guide_manual/admin-instancetype",
-      "version-2.1.0-guide_manual/admin-image",
-      "version-2.1.0-guide_manual/admin-build-image",
-      "version-2.1.0-guide_manual/admin-dataset",
-      "version-2.1.0-guide_manual/admin-secret",
-      "version-2.1.0-guide_manual/usecase-toleration",
-      "version-2.1.0-guide_manual/usecase-nodeselector"
     ]
   }
 }

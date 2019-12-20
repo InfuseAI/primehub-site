@@ -1,6 +1,6 @@
 ---
 id: version-2.1.0-usecase-nodeselector-cht
-title: [使用案例] NodeSelector
+title: NodeSelector
 original_id: usecase-nodeselector-cht
 ---
 
