@@ -69,9 +69,10 @@ function Versions(props) {
                     Documentation
                   </a>
                 </td>
-                <td>
+                {/*<td>
+                  <a href="https://gitlab.com/infuseai/primehub">Source Code</a>
                   <a href={repoUrl}>Source Code</a>
-                </td>
+                </td>*/}
               </tr>
             </tbody>
           </table>
@@ -95,11 +96,11 @@ function Versions(props) {
                           Documentation
                         </a>
                       </td>
-                      <td>
+                      {/*<td>
                         <a href={`${repoUrl}/releases/tag/v${version}`}>
                           Release Notes
                         </a>
-                      </td>
+                      </td>*/}
                     </tr>
                   ),
               )}
