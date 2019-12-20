@@ -4,14 +4,11 @@ title: Documentation
 original_id: introduction
 ---
 
-## For Users
+## For Users & Administrators
 
-[Getting started](getting-started-user) for users.
+Regarding to the documentation of versions below v2.1, please check [**User Guide**](https://infuseai.zendesk.com/hc/en-us).
 
-## For Administrators
-
-[Getting started](getting-started-admin) for administrators.
 
 ## For Developers
 
-If you want to learn more about **PrimeHub**, you can start from [Design documents](dev-introduction), [Guides](guide_manual/cluster_shutdown) and [Tips](tips/kibana-dashboard)..
+If you want to learn more about **PrimeHub**, you can start from [Design documents](dev-introduction), [Guides](guide_manual/cluster_shutdown) and [Tips](tips/kibana-dashboard).

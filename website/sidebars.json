@@ -47,6 +47,10 @@
       "quickstart/login-portal-admin",
       "quickstart/create-user",
       "quickstart/create-group"
+    ],
+    "Use Case": [
+      "guide_manual/usecase-toleration",
+      "guide_manual/usecase-nodeselector"
     ]
   },
   "getting-started-user": {
@@ -66,9 +70,7 @@
       "guide_manual/admin-image",
       "guide_manual/admin-build-image",
       "guide_manual/admin-dataset",
-      "guide_manual/admin-secret",
-      "guide_manual/usecase-toleration",
-      "guide_manual/usecase-nodeselector"
+      "guide_manual/admin-secret"
     ]
   },
   "zh-tw": {

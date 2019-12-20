@@ -4,4 +4,4 @@ original_id: getting-started-user
 title: Getting Started
 ---
 
-+ Check our quickstart for accessing [**user portal**](quickstart/login-portal-user.md) and [**launching project**](quickstart/launch-project) on PrimeHub.
+Regarding the documentation of versions below v2.1, please check [**User Guide**](https://infuseai.zendesk.com/hc/en-us).

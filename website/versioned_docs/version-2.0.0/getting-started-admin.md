@@ -4,7 +4,4 @@ original_id: getting-started-admin
 title: Getting Started
 ---
 
-
-+ Check [Management](admin-dashboard) section to learn all features of each type management of PrimeHub.
-
-+ Check our [Quickstart](quickstart/login-portal-admin) section to hand on PrimeHub directly.
+Regarding the documentation of versions below v2.1, please check [**User Guide**](https://infuseai.zendesk.com/hc/en-us).

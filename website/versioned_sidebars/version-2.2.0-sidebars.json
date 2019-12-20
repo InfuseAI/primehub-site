@@ -50,6 +50,10 @@
       "version-2.2.0-quickstart/login-portal-admin",
       "version-2.2.0-quickstart/create-user",
       "version-2.2.0-quickstart/create-group"
+    ],
+    "Use Case": [
+      "version-2.2.0-guide_manual/usecase-toleration",
+      "version-2.2.0-guide_manual/usecase-nodeselector"
     ]
   },
   "version-2.2.0-getting-started-user": {
@@ -71,9 +75,7 @@
       "version-2.2.0-guide_manual/admin-image",
       "version-2.2.0-guide_manual/admin-build-image",
       "version-2.2.0-guide_manual/admin-dataset",
-      "version-2.2.0-guide_manual/admin-secret",
-      "version-2.2.0-guide_manual/usecase-toleration",
-      "version-2.2.0-guide_manual/usecase-nodeselector"
+      "version-2.2.0-guide_manual/admin-secret"
     ]
   },
   "version-2.2.0-zh-tw": {
