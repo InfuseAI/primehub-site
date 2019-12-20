@@ -1,6 +1,7 @@
 ---
-id: create-group
+id: version-2.2.0-create-group
 title: Create Group
+original_id: create-group
 ---
 
 This quickstart shows how to create a group.

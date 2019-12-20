@@ -44,6 +44,9 @@ class Footer extends React.Component {
             <a href={this.docUrl('tips/kibana-dashboard.html')}>
               Tips & More
             </a>
+            <a href={this.docUrl('index-zh.html')}>
+              繁中文件
+            </a>
           </div>
           <div>
             <h5>Community</h5>

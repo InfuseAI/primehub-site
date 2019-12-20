@@ -52,6 +52,7 @@ const siteConfig = {
     { doc: 'getting-started-admin', label: 'For Admin'},
     { doc: 'getting-started-user', label: 'For User'},
     { doc: 'dev-introduction', label: 'For Developers'},
+    { doc: 'index-zh', label: '繁中文件'},
     //{ blog: true, label: 'Blog'},
     //{ page: 'help', label: 'Community'},
     { search: true },
