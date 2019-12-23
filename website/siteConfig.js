@@ -72,6 +72,14 @@ const siteConfig = {
     secondaryColor: '#365ABD',
   },
 
+  algolia: {
+    apiKey: 'f482b898949e00de71a14ed19cc167ce',
+    indexName: 'infuseai_primehub',
+    algoliaOptions: {
+      hitsPerPage: 10
+    } // Optional, if provided by Algolia
+  },
+
   /* Custom fonts for website */
   /*
   fonts: {
