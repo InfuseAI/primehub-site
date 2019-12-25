@@ -58,6 +58,9 @@
       "quickstart/create-user",
       "quickstart/create-group"
     ],
+    "Maintenance": [
+      "quickstart/maintenance-resize-user-vol"
+    ],
     "Use Case": [
       "guide_manual/usecase-toleration",
       "guide_manual/usecase-nodeselector"
@@ -104,6 +107,13 @@
         "ids": [
           "zh-tw/guide_manual/usecase-toleration-cht",
           "zh-tw/guide_manual/usecase-nodeselector-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "維運",
+        "ids": [
+          "zh-tw/quickstart/maintenance-resize-user-vol"
         ]
       }
     ],
