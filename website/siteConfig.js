@@ -33,11 +33,11 @@ const users = [
 const siteConfig = {
   title: 'PrimeHub', // Title for your website.
   tagline: 'Effortless Infrastructure for Machine Learning',
-  url: 'https://InfuseAI.github.io', // Your website URL
-  baseUrl: '/primehub-site/', // Base URL for your project */
+  url: 'https://docs.primehub.io', // Your website URL
+  baseUrl: '/', // Base URL */
   // For github.io type URLs, you would set the url and baseUrl like:
-  //   url: 'https://facebook.github.io',
-  //   baseUrl: '/test-site/',
+  //   url: 'https://infuseai.github.io',
+  //   baseUrl: '/primehub-site/',
 
   // Used for publishing and more
   projectName: 'primehub-site',
@@ -45,6 +45,9 @@ const siteConfig = {
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
+
+  // The domain of PrimeHub-site
+  cname: "docs.primehub.io",
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
