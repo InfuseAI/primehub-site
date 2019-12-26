@@ -1,0 +1,142 @@
+{
+  "version-2.2.2-for-developers": {
+    "For Developers": [
+      "version-2.2.2-dev-introduction"
+    ],
+    "Concept": [
+      {
+        "type": "subcategory",
+        "label": "Design",
+        "ids": [
+          "version-2.2.2-concepts/designs/jupyterhub-integration",
+          "version-2.2.2-concepts/designs/crds",
+          "version-2.2.2-concepts/designs/crd-schema",
+          "version-2.2.2-concepts/designs/customization",
+          "version-2.2.2-concepts/designs/graphql",
+          "version-2.2.2-concepts/designs/data-model",
+          "version-2.2.2-concepts/designs/dataset-upload",
+          "version-2.2.2-concepts/designs/meta-chart",
+          "version-2.2.2-concepts/designs/notebook-kernel-process",
+          "version-2.2.2-concepts/designs/persistence-storage",
+          "version-2.2.2-concepts/designs/user-portal",
+          "version-2.2.2-concepts/designs/feature-flag",
+          "version-2.2.2-concepts/designs/custom-image",
+          "version-2.2.2-concepts/designs/admission",
+          "version-2.2.2-concepts/designs/build"
+        ]
+      }
+    ],
+    "Setup & Deployment": [
+      "version-2.2.2-setup_deploy/install"
+    ],
+    "Configuration": [
+      "version-2.2.2-cfg/configuration"
+    ],
+    "Guides": [
+      "version-2.2.2-guide_manual/cluster_shutdown",
+      "version-2.2.2-guide_manual/benchmark",
+      "version-2.2.2-guide_manual/airgap"
+    ],
+    "Tips & More": [
+      "version-2.2.2-tips/kibana-dashboard"
+    ],
+    "References": [
+      "version-2.2.2-references/"
+    ]
+  },
+  "version-2.2.2-getting-started-admin": {
+    "Administrator": [
+      "version-2.2.2-getting-started-admin"
+    ],
+    "Management": [
+      "version-2.2.2-guide_manual/admin-system",
+      "version-2.2.2-guide_manual/admin-user",
+      "version-2.2.2-guide_manual/admin-group",
+      "version-2.2.2-guide_manual/admin-instancetype",
+      "version-2.2.2-guide_manual/admin-image",
+      "version-2.2.2-guide_manual/admin-build-image",
+      "version-2.2.2-guide_manual/admin-dataset",
+      "version-2.2.2-guide_manual/admin-secret"
+    ],
+    "Quickstart": [
+      "version-2.2.2-quickstart/login-portal-admin",
+      "version-2.2.2-quickstart/create-user",
+      "version-2.2.2-quickstart/create-group"
+    ],
+    "Maintenance": [
+      "version-2.2.2-quickstart/maintenance-resize-user-vol"
+    ],
+    "Use Case": [
+      "version-2.2.2-guide_manual/usecase-toleration",
+      "version-2.2.2-guide_manual/usecase-nodeselector"
+    ]
+  },
+  "version-2.2.2-getting-started-user": {
+    "User": [
+      "version-2.2.2-getting-started-user"
+    ],
+    "Quickstart": [
+      "version-2.2.2-quickstart/login-portal-user",
+      "version-2.2.2-quickstart/launch-project",
+      "version-2.2.2-quickstart/close-project"
+    ]
+  },
+  "version-2.2.2-zh-tw": {
+    "繁中文件": [
+      "version-2.2.2-index-zh"
+    ],
+    "管理者": [
+      "version-2.2.2-zh-tw/getting-started-admin",
+      {
+        "type": "subcategory",
+        "label": "快速上手",
+        "ids": [
+          "version-2.2.2-zh-tw/quickstart/login-portal-admin",
+          "version-2.2.2-zh-tw/quickstart/create-user",
+          "version-2.2.2-zh-tw/quickstart/create-group"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "管理介面",
+        "ids": [
+          "version-2.2.2-zh-tw/guide_manual/admin-system-cht",
+          "version-2.2.2-zh-tw/guide_manual/admin-user-cht",
+          "version-2.2.2-zh-tw/guide_manual/admin-group-cht",
+          "version-2.2.2-zh-tw/guide_manual/admin-instancetype-cht",
+          "version-2.2.2-zh-tw/guide_manual/admin-image-cht",
+          "version-2.2.2-zh-tw/guide_manual/admin-build-image-cht",
+          "version-2.2.2-zh-tw/guide_manual/admin-dataset-cht",
+          "version-2.2.2-zh-tw/guide_manual/admin-secret-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "使用案例",
+        "ids": [
+          "version-2.2.2-zh-tw/guide_manual/usecase-toleration-cht",
+          "version-2.2.2-zh-tw/guide_manual/usecase-nodeselector-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "維運",
+        "ids": [
+          "version-2.2.2-zh-tw/quickstart/maintenance-resize-user-vol"
+        ]
+      }
+    ],
+    "使用者": [
+      "version-2.2.2-zh-tw/getting-started-user",
+      {
+        "type": "subcategory",
+        "label": "快速上手",
+        "ids": [
+          "version-2.2.2-zh-tw/quickstart/login-portal-user",
+          "version-2.2.2-zh-tw/quickstart/launch-project",
+          "version-2.2.2-zh-tw/quickstart/close-project"
+        ]
+      }
+    ]
+  }
+}
