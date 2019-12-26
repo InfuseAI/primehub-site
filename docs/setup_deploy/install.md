@@ -1,32 +1,65 @@
 ---
-id: installation 
-title: Installation & Setup
+id: install
+title: PrimeHub Installation & Setup Guide
 ---
+
 ## Prerequisites
 
-- A Kubernetes Cluster
-- Dynamic Volume Provisioner (e.g. ceph, cloud storage providers)
+1. A Kubernetes Cluster
+1. Helm is installed. Please follow the instruction [here](https://helm.sh/docs/using_helm/)
+1. Domain name for keycloak and primehub (e.g. id.example.com, primehub.example.com)
+1. [Dynamic Volume Provisioner](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) (e.g. ceph, cloud storage providers)
+1. [Cert-manager](https://github.com/jetstack/cert-manager) if https is required
+1. [NGINX Ingress Controller for Kubernetes ](https://github.com/kubernetes/ingress-nginx)
 
 ## Install PrimeHub
 
-```
-make primehub-install DOMAIN=$(YOUR_PRIMEGHUB_DOMAIN) KC_USER=$(YOUR_KEYCLOAK_ADMINISTRATOR_ID) KC_PASSWORD=$(YOUR_KEYCLOAK_ADMINISTRATOR_PASSWORD) SCHEME=(http|https) PRIMEHUB_CONSOLE_DOCKER_USERNAME=$(PROVIDED_PRIMEHUB_CONSOLE_DOCKER_USERNAME) PRIMEHUB_CONSOLE_DOCKER_PASSWORD=$(PROVIDED_GITLAB_DEPLOY_PASSWORD)
-```
+Please clone the primehub repository or untar the primehub release
 
-Once the task is completed, please wait for the PrimeHub related pods become ready, you may observe them by running
+1. Init the configuration.
 
-```
-watch make get-all-pods
-```
+   ```
+   export PRIMEHUB_SCHEME=https
+   export PRIMEHUB_DOMAIN=primehub.example.com
+   export PRIMEHUB_CONSOLE_DOCKER_USERNAME=<the primehub console repo user>
+   export PRIMEHUB_CONSOLE_DOCKER_PASSWORD=<the primehub console repo password>
+   export KC_USER=<user>
+   export KC_PASSWORD=<password>
+   export KC_SCHEME=https
+   export KC_DOMAIN=id.example.com
+   export PRIMEHUB_STORAGE_CLASS=<the storage class of RWO PVCs>
+
+   make init
+   ```
+   
+1. Configure PrimeHub for advanced features. Please reference the [configuration document](configuration.md)
+1. Install the keycloak
+
+   ```
+   make keycloak-install
+   ```
+   
+1. Install the primehub
+
+   ```
+   make primehub-install
+   ```
+
+Once complete, please check the `http(s)://primehub.example.com/`
 
 ## Upgrade Primehub
 
-1. Check Helm difference
+1. Diff and install keycloak
+
    ```
-   make component-diff-primehub
+   make release-diff-keycloak
+   make release-install-keycloak
    ```
-1. Upgrade
+
+1. Diff and install primehub
+
    ```
+   make release-diff-primehub
    make primehub-upgrade
    ```
 
@@ -63,10 +96,14 @@ watch make get-all-pods
 
 ### Kibana
 
+> Kibana is no longer supported.
+
 1. Create Kibana KeyCloak client:
+
    ```
    make create-kibana-keycloak-client KC_USER=$(YOUR_KEYCLOAK_ADMINISTRATOR_ID) KC_PASSWORD=$(YOUR_KEYCLOAK_ADMINISTRATOR_PASSWORD)
    ```
+
 1. Set environment `KIBANA_KEYCLOAK_PROXY_CLIENT_SECRET` in `.env` file, the variable value should be available from step 1.
 
 1. Check Helm difference:

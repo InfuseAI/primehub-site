@@ -19,15 +19,18 @@
           "concepts/designs/notebook-kernel-process",
           "concepts/designs/persistence-storage",
           "concepts/designs/user-portal",
-          "concepts/designs/feature-flag"
+          "concepts/designs/feature-flag",
+          "concepts/designs/custom-image",
+          "concepts/designs/admission",
+          "concepts/designs/build"
         ]
       }
     ],
     "Setup & Deployment": [
-      "setup_deploy/installation"
+      "setup_deploy/install"
     ],
     "Configuration": [
-      "configuration/" 
+      "cfg/configuration" 
     ],
     "Guides": [
       "guide_manual/cluster_shutdown",

@@ -1,9 +1,14 @@
-# Admission
+---
+id: admission
+title: Admission
+---
 
-After primehub 1.7, we start to use admission webhooks to handle kubernetes objects mutation and validation:
+After primehub 1.7 (alpha), we start to use admission webhooks to handle kubernetes objects mutation and validation:
 
-* hub group quota (1.7): a validation webhook to verify the usage of a hub user in a group
+* hub group quota (1.7): a mutation/validation webhook to verify the usage of a hub user in a group
 * airgap image replacer (1.8): a mutation webhook to replace container image url defined in a `pod`
+
+Currently, we use the hub group quota admission for resources validation. And airgap image replacer is not turn on by default (not label any namespaces).
 
 An admission webhook is grouped by:
 
@@ -21,15 +26,21 @@ There are two kinds of configrations for dynamic webhook in the Admission Contro
 
 Both of them use the same structure to define a configuration, but they are invoked in a different api lifecycle before a kubernetes object persisted into the etcd. 
 
-You can find a introduction at [A Guide to Kubernetes Admission Controllers](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/)
+You can find a introducion at [A Guide to Kubernetes Admission Controllers](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/)
 
 For users, they should care about the `namespaceSelector` in a configuraion. We made an admission webhook only working with labeled namespaces.
 
 
 ### hub group quota
 
-* kind: `ValidatingWebhookConfiguration`
+* kind: `MutatingWebhookConfiguration`
 * namespaceSelector: `primehub.io/resources-validation-webhook: "enabled"`
+
+In order to make sure pods have valid quota, users should aware when hub group quota admission is not working normally.
+
+Therefore, when a pod created from jupyterhub, it has a initContainer which has a wrong image name called `admission-is-not-found`. Hub group quota takes the responsibility to remove this initContainer. Otherwise, users will see the error messages due to not existed image and fail to spawn a jupyter server. (One thing to noted is that jupyterhub will be restarted if there are 5 consecutive spawn failures)
+
+For other pods which are not created from jupyterhub, they will just pass because the failurePolicy is set to `Ignore`.
 
 ### airgap image replacer
 
