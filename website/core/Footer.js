@@ -54,7 +54,7 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
+            {/*<a href={`${this.props.config.baseUrl}blog`}>Blog</a>*/}
             <a href="https://infuseai.io">About InfuseAI</a>
           </div>
         </section>

@@ -5,7 +5,7 @@ title: Enlarge User Volume
 
 This document introduces how to enlarge a user volume via built-in `User Volume Size` tool on Maintenance Notebook.
 
-*Caution: **User Volume** can be only enlarged, but shrunk, it cannot be rolled back once enlarged*.
+>***Caution**: User Volume can be **enlarged only**, but reduced, it cannot be rolled back once enlarged. This feature is introduced **PrimeHub v2.0 above***
 
 ### Steps
 

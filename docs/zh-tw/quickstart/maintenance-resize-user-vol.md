@@ -1,11 +1,12 @@
 ---
 id: maintenance-resize-user-vol
-title: 增加 User Volume
+title: 加大 User Volume
 ---
 
 這份文件介紹如何利用 Maintenance Notebook 來增加 User Volume Size。
 
-*請注意： 目前 **User Volume** 只能增加容量，不能減少；一旦加大，無法還原。*
+>請注意： 目前 **User Volume 只能增加容量**，不能減少；一旦加大，無法還原。
+>**PrimeHub v2.0**以上才有**`Resize User Volume`**功能
 
 ### 步驟
 
