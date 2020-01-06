@@ -35,10 +35,12 @@
     "Guides": [
       "guide_manual/cluster_shutdown",
       "guide_manual/benchmark",
-      "guide_manual/airgap"
+      "guide_manual/airgap",
+      "guide_manual/UPGRADE-K8s-from-1.10-and-1.10-to-1.12"
     ],
     "Tips & More": [
-      "tips/kibana-dashboard"
+      "tips/kibana-dashboard",
+      "tips/ADVANCED-rook-setup-metadata-on-vg"
     ],
     "References": [
       "references/"
