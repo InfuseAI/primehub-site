@@ -79,7 +79,7 @@ If dataset is type of `pv`, the dataset is backed by a pvc. The difference compa
 Under the hood, the storage class is defined in the helm value
 
 ```
-primehub-console:
+console:
   graphql:
     primehubGroupSC: standard
 ```

@@ -8,21 +8,22 @@
         "type": "subcategory",
         "label": "Design",
         "ids": [
-          "concepts/designs/jupyterhub-integration",
+          "concepts/designs/architecture",
+          "concepts/designs/admission",
+          "concepts/designs/build",
           "concepts/designs/crds",
           "concepts/designs/crd-schema",
           "concepts/designs/customization",
-          "concepts/designs/graphql",
           "concepts/designs/data-model",
           "concepts/designs/dataset-upload",
+          "concepts/designs/feature-flag",
+          "concepts/designs/graphql",
+          "concepts/designs/image-builder",
+          "concepts/designs/jupyterhub-integration",
           "concepts/designs/meta-chart",
           "concepts/designs/notebook-kernel-process",
           "concepts/designs/persistence-storage",
-          "concepts/designs/user-portal",
-          "concepts/designs/feature-flag",
-          "concepts/designs/custom-image",
-          "concepts/designs/admission",
-          "concepts/designs/build"
+          "concepts/designs/user-portal"
         ]
       }
     ],
@@ -77,6 +78,9 @@
       "quickstart/login-portal-user",
       "quickstart/launch-project",
       "quickstart/close-project"
+    ],
+    "Feature": [
+      "job-submission"
     ]
   },
   "zh-tw": {
@@ -131,6 +135,13 @@
           "zh-tw/quickstart/login-portal-user",
           "zh-tw/quickstart/launch-project",
           "zh-tw/quickstart/close-project"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "功能",
+        "ids":[
+          "zh-tw/job-submission-cht"
         ]
       }
     ]

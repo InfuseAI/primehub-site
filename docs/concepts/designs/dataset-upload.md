@@ -35,7 +35,7 @@ The environment variables should be added automatically.
 
 `PRIMEHUB_GROUP_SC` will be added to `graphql` container. This value is based on
 ```
-primehub-console:
+console:
   graphql:
     primehubGroupSC: {value}
 ```

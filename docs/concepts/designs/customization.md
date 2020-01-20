@@ -32,9 +32,9 @@ However, it is not convenient to issue this long command for each installation a
 
 ```
 charts:
-  - name: primehub-prerequisite
+  - name: primehub
     namespace: primehub
-    chart: ../../modules/charts/primehub-prerequisite
+    chart: ../../modules/charts/primehub
     version: ~0.1.0
     values:
       - values.yaml
@@ -43,7 +43,7 @@ charts:
 and the install command would change to
 
 ```
-helmfile -f primehub-prerequisite.yaml
+helmfile -f primehub.yaml
 ```
 
 In this way, we make the installation declarative and easy to run. All these helmfiles are located at `helm/helmfile.d`. 

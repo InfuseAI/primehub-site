@@ -18,7 +18,7 @@ Please clone the primehub repository or untar the primehub release
 
 1. Init the configuration.
 
-   ```
+   ```bash
    export PRIMEHUB_SCHEME=https
    export PRIMEHUB_DOMAIN=primehub.example.com
    export PRIMEHUB_CONSOLE_DOCKER_USERNAME=<the primehub console repo user>
@@ -31,17 +31,24 @@ Please clone the primehub repository or untar the primehub release
 
    make init
    ```
-   
+
 1. Configure PrimeHub for advanced features. Please reference the [configuration document](configuration.md)
+
+1. Install the metacontroller
+
+  ```bash
+  make metacontroller-install
+  ```
+
 1. Install the keycloak
 
-   ```
+   ```bash
    make keycloak-install
    ```
-   
+
 1. Install the primehub
 
-   ```
+   ```bash
    make primehub-install
    ```
 
@@ -51,14 +58,14 @@ Once complete, please check the `http(s)://primehub.example.com/`
 
 1. Diff and install keycloak
 
-   ```
+   ```bash
    make release-diff-keycloak
    make release-install-keycloak
    ```
 
 1. Diff and install primehub
 
-   ```
+   ```bash
    make release-diff-primehub
    make primehub-upgrade
    ```
@@ -69,7 +76,7 @@ Once complete, please check the `http(s)://primehub.example.com/`
 
 1. Create Grafana Keycloak client:
 
-   ```
+   ```bash
    make create-grafana-keycloak-client
    ```
 
@@ -81,16 +88,19 @@ Once complete, please check the `http(s)://primehub.example.com/`
 
 1. Check Helm difference:
 
-   ```
+   ```bash
    make component-diff-prometheus-operator
    ```
 
 1. Install applications:
-   ```
+
+   ```bash
    make component-install-prometheus-operator
    ```
+
 1. Check your Grafana ingress by running:
-   ```
+
+   ```bash
    kubectl get ingresses -n monitoring prometheus-operator-grafana
    ```
 
@@ -100,23 +110,27 @@ Once complete, please check the `http(s)://primehub.example.com/`
 
 1. Create Kibana KeyCloak client:
 
-   ```
+   ```bash
    make create-kibana-keycloak-client KC_USER=$(YOUR_KEYCLOAK_ADMINISTRATOR_ID) KC_PASSWORD=$(YOUR_KEYCLOAK_ADMINISTRATOR_PASSWORD)
    ```
 
 1. Set environment `KIBANA_KEYCLOAK_PROXY_CLIENT_SECRET` in `.env` file, the variable value should be available from step 1.
 
 1. Check Helm difference:
-   ```
+
+   ```bash
    make component-diff-efk
    ```
+
 1. Install components:
-   ```
+
+   ```bash
    make component-install-efk
    ```
+
 1. Check your Kibana ingress by running
 
-   ```
+   ```bash
    kubectl get ingresses -n logging kibana
    ```
 
@@ -126,17 +140,18 @@ Once complete, please check the `http(s)://primehub.example.com/`
 
 1. Get the releases in helm
 
-   ```
+   ```bash
    helm ls
    ```
 
 1. Check the different
 
-   ```
+   ```bash
    make release-diff-<release name>
    ```
 
 1. Upgrade
-   ```
+
+   ```bash
    make release-install-<release name>
    ```
