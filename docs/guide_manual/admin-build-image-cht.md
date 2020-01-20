@@ -1,6 +1,6 @@
 ---
 id: admin-build-image-cht
-title: Build Images
+title: Image Builder
 ---
 
 Build Images 提供了彈性，管理者可以藉由指定基礎 image 及要安裝工具及套件庫，為使用者提供客製化 image。

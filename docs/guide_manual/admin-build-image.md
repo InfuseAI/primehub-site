@@ -1,6 +1,6 @@
 ---
 id: admin-build-image
-title: Build Images
+title: Image Builder
 ---
 
 Administrators are able to create custom images with pre-installed tools and libraries which are required for users.

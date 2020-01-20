@@ -36,7 +36,7 @@ Once you have deployed the **public key** on the repo, please keep the public ke
 We can use a deploy token as a secret on PrimeHub for accessing a repo on GitLab.
 GitLab also has a nice guide instructing how to [Creating a Deploy Token](https://docs.gitlab.com/ee/user/project/deploy_tokens/#creating-a-deploy-token) of a specific repo. 
 
-Once you have applied the token, please keep the `Username` and `Token` safely since they are only displayed once and we need the pair later on PrimeHub.
+Once you have applied the token, please keep the pair of `Username` and `Token` safely since they are only displayed once and we need the pair later on PrimeHub.
 
 ### Add a pair of token as a secret on PrimeHub
 

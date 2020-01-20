@@ -1,6 +1,6 @@
 ---
 id: version-2.1.0-admin-build-image
-title: Build Images
+title: Image Builder
 original_id: admin-build-image
 ---
 
