@@ -72,7 +72,8 @@
       "quickstart/add-image"
     ],
     "Maintenance": [
-      "quickstart/maintenance-resize-user-vol"
+      "quickstart/maintenance-resize-user-vol",
+      "quickstart/maintenance-resize-group-vol"
     ],
     "Use Case": [
       "guide_manual/usecase-toleration",
@@ -133,7 +134,8 @@
         "type": "subcategory",
         "label": "維運",
         "ids": [
-          "zh-tw/quickstart/maintenance-resize-user-vol"
+          "zh-tw/quickstart/maintenance-resize-user-vol",
+          "zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
     ],

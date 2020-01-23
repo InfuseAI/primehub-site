@@ -11,9 +11,9 @@ original_id: maintenance-resize-user-vol
 
 ### 步驟
 
-1. 登入 `User Portal` 後，進入 Maintenance Notebook。
+1. 登入 `User Portal` 後，進入 `Maintenance Notebook`。
 
-2. 至`Resize User Volume`段落，執行第一個`cell`後，會顯示`User vol:`下來選單。
+2. 至`Resize User Volume`段落，執行第一個`cell`後，會顯示`User vol:`下拉選單。
 
     ![img](assets/dropdown_user_list.png)
 
@@ -26,3 +26,5 @@ original_id: maintenance-resize-user-vol
 5. 輸入期望的`size`後 (**必須大於 current size**)，按下`Update`更新。
 
 6. 一旦更新完成後，可以再次執行第二個`cell`做為驗證。
+
+**Tips: 可用快捷鍵 `Ctrl + Enter` 執行已選擇的 `cell`。**

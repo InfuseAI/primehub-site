@@ -25,3 +25,5 @@ This document introduces how to enlarge a user volume via built-in `User Volume 
 5. Input `size` which you want to change to (**must be larger than current size!**), then click `Update`.
 
 6. Once updated, re-run second cell to verify the modification。
+
+**Tips: `Ctrl + Enter` run selected cells.**

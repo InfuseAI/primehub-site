@@ -64,7 +64,8 @@
       "version-2.2.2-quickstart/create-group"
     ],
     "Maintenance": [
-      "version-2.2.2-quickstart/maintenance-resize-user-vol"
+      "version-2.2.2-quickstart/maintenance-resize-user-vol",
+      "version-2.2.2-quickstart/maintenance-resize-group-vol"
     ],
     "Use Case": [
       "version-2.2.2-guide_manual/usecase-toleration",
@@ -122,7 +123,8 @@
         "type": "subcategory",
         "label": "維運",
         "ids": [
-          "version-2.2.2-zh-tw/quickstart/maintenance-resize-user-vol"
+          "version-2.2.2-zh-tw/quickstart/maintenance-resize-user-vol",
+          "version-2.2.2-zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
     ],
