@@ -62,7 +62,14 @@
     "Quickstart": [
       "quickstart/login-portal-admin",
       "quickstart/create-user",
-      "quickstart/create-group"
+      "quickstart/create-group",
+      "quickstart/pull-secret",
+      "quickstart/build-image",
+      "quickstart/add-image",
+      "quickstart/secret-pull-image",
+      "quickstart/secret-gitsync",
+      "quickstart/build-image",
+      "quickstart/add-image"
     ],
     "Maintenance": [
       "quickstart/maintenance-resize-user-vol"
@@ -93,7 +100,11 @@
         "ids": [
           "zh-tw/quickstart/login-portal-admin",
           "zh-tw/quickstart/create-user",
-          "zh-tw/quickstart/create-group"
+          "zh-tw/quickstart/create-group",
+          "zh-tw/quickstart/secret-pull-image",
+          "zh-tw/quickstart/secret-gitsync",
+          "zh-tw/quickstart/build-image",
+          "zh-tw/quickstart/add-image"
         ] 
       },
       {
