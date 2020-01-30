@@ -1,12 +1,12 @@
 ---
 id: version-2.2.2-maintenance-resize-group-vol
-title: Enlarge Group Volume
+title: Increase Group Volume
 original_id: maintenance-resize-group-vol
 ---
 
-This document introduces how to enlarge a group volume via built-in `Group Volume Size` tool on `Maintenance Notebook`.
+This document introduces how to increase a group volume via built-in `Group Volume Size` tool on `Maintenance Notebook`.
 
->***Caution**: Group Volume can be **enlarged only**, but reduced, it cannot be rolled back once enlarged. This feature is introduced **PrimeHub v2.0 above***
+>***Caution**: Group Volume can be **increased only**, but reduced, it cannot be rolled back once increased. This feature is introduced **PrimeHub v2.0 above***
 
 ### Steps
 
@@ -22,7 +22,7 @@ This document introduces how to enlarge a group volume via built-in `Group Volum
 
     ![img](assets/enlarge_group_vol.png)
 
-5. Input `size` which you want to change to (**must be larger than current size!**), then click `Update`.
+5. Input `size` which you want to change to (**must be larger than current size**), then click `Update`.
 
 6. Once updated, re-run second cell to verify the modification。
 

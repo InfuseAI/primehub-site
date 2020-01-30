@@ -1,11 +1,11 @@
 ---
 id: maintenance-resize-user-vol
-title: Enlarge User Volume
+title: Increase User Volume
 ---
 
-This document introduces how to enlarge a user volume via built-in `User Volume Size` tool on Maintenance Notebook.
+This document introduces how to increase a user volume via built-in `User Volume Size` tool on Maintenance Notebook.
 
->***Caution**: User Volume can be **enlarged only**, but reduced, it cannot be rolled back once enlarged. This feature is introduced **PrimeHub v2.0 above***
+>***Caution**: User Volume can be **increased only**, but reduced, it cannot be rolled back once increased. This feature is introduced **PrimeHub v2.0 above***
 
 ### Steps
 
@@ -21,6 +21,6 @@ This document introduces how to enlarge a user volume via built-in `User Volume 
 
     ![img](assets/enlarge_user_vol.png)
 
-5. Input `size` which you want to change to (**must be larger than current size!**), then click `Update`.
+5. Input `size` which you want to change to (**must be larger than current size**), then click `Update`.
 
 6. Once updated, re-run second cell to verify the modification。
