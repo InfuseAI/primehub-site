@@ -17,7 +17,7 @@ This quickstart shows how to launch/stop a project.
 
 4. Click `Start`. Your Server environment would be instantiated.
 
-![](assets/spawner.png)
+![](assets/spawner_v24.png)
 
 ## Stop
 

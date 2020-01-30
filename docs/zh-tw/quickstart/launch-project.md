@@ -17,7 +17,7 @@ title: 啟始專案
 
 4. 點擊`Start` 進行環境初始化，完成後，自動導向 Jupyterhub 頁面。
 
-![](assets/spawner.png)
+![](assets/spawner_v24.png)
 
 ## 關閉
 
