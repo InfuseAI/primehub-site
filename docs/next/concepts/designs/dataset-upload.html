@@ -80,11 +80,10 @@
 <code>PRIMEHUB_FEATURE_DATASET_UPLOAD</code> will be added to <code>graphql</code> and <code>ui</code> containers when <code>PRIMEHUB_FEATURE_DATASET_UPLOAD</code> is <code>true</code> in your cluster's <code>.env</code> file.</p>
 <p><code>CMS_APP_PREFIX</code> will be added to <code>graphql</code> container.</p>
 <p><code>PRIMEHUB_GROUP_SC</code> will be added to <code>graphql</code> container. This value is based on</p>
-<pre><code class="hljs"><span class="hljs-symbol">console:</span>
-<span class="hljs-symbol">  graphql:</span>
-<span class="hljs-symbol">    primehubGroupSC:</span> {value}
+<pre><code class="hljs"><span class="hljs-symbol">groupvolume:</span>
+<span class="hljs-symbol">  storageClass:</span> {value}
 </code></pre>
-<p>And if you didn't specify primehubGroupSC's value in yaml, it will be set by <code>PRIMEHUB_STORAGE_CLASS</code> env.</p>
+<p>And if you didn't specify value in yaml, it will be set by <code>PRIMEHUB_STORAGE_CLASS</code> env.</p>
 <ul>
 <li>Check Issuer</li>
 </ul>
