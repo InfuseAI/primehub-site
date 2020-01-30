@@ -35,11 +35,10 @@ The environment variables should be added automatically.
 
 `PRIMEHUB_GROUP_SC` will be added to `graphql` container. This value is based on
 ```
-console:
-  graphql:
-    primehubGroupSC: {value}
+groupvolume:
+  storageClass: {value}
 ```
-And if you didn't specify primehubGroupSC's value in yaml, it will be set by `PRIMEHUB_STORAGE_CLASS` env.
+And if you didn't specify value in yaml, it will be set by `PRIMEHUB_STORAGE_CLASS` env.
 
 
 * Check Issuer

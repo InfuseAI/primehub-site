@@ -4,13 +4,13 @@ title: Image Builder
 original_id: admin-build-image-cht
 ---
 
-Build Images 提供了彈性，管理者可以藉由指定基礎 image 及要安裝工具及套件庫，為使用者提供客製化 image。
+`Image Builder` 提供了管理者可以藉由指定基礎 image 及要安裝工具及套件庫，為使用者提供客製化 image。
 
 ## 客製化 Image 列舉
 
 ![](assets/build_img_main.png)
 
-進到 Build Images，可以看到一個表單，其中列舉客製化 image spec，欄位分別有下列資訊：
+進到 `Image Builder`，可以看到一個表單，其中列舉客製化 image spec，欄位分別有下列資訊：
 
 + `Name` 客製化 image spec 名稱。
 

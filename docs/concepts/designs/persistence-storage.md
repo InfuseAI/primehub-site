@@ -29,19 +29,17 @@ A group volume (project volume) stores the data shared by a group. To enable the
 The storage class is defined in the helm value
 
 ```
-jupyterhub:
-  custom:
-    groupVolumeStorageClass: "<rwx-storage-class>"
+primehub:
+  sharedVolumeStorageClass: "<rwx-storage-class>"
 ```
 
 But in most cases, we use a NFS pvc provisioned by `primehub-groupvolume-nfs`. The configuration would look like this
 
 ```
-jupyterhub:
-  custom:
-    groupVolumeStorageClass: ""
-    groupVolumeAnnotations:
-      primehub-group-sc: standard
+primehub:
+  sharedVolumeStorageClass: ""
+groupvolume:
+  storageClass: standard
 ```
 
 It means
@@ -79,14 +77,13 @@ If dataset is type of `pv`, the dataset is backed by a pvc. The difference compa
 Under the hood, the storage class is defined in the helm value
 
 ```
-console:
-  graphql:
-    primehubGroupSC: standard
+groupvolume:
+  storageClass: standard
 ```
 
 It will create a NFS server backed by a RWO pvc which is similar to group volume.
 
-If you didn't specify primehubGroupSC's value ("standard" here) in yaml, it will be set by `PRIMEHUB_STORAGE_CLASS` env.
+If you didn't specify value ("standard" here) in yaml, it will be set by `PRIMEHUB_STORAGE_CLASS` env.
 
 Attribute| Description 
 ---------|-------------

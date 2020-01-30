@@ -1,6 +1,6 @@
 ---
 id: version-2.2.0-admin-build-image
-title: Build Images
+title: Image Builder
 original_id: admin-build-image
 ---
 
@@ -10,7 +10,7 @@ Administrators are able to create custom images with pre-installed tools and lib
 
 ![](assets/build_img_main.png)
 
-In Build Images section, there is a list of created custom image specs with several fields as below:
+In `Image Builderi` section, there is a list of created custom image specs with several fields as below:
 
 + `Name` The name of a custom image spec.
 
