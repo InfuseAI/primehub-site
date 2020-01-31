@@ -88,7 +88,14 @@
       "quickstart/close-project"
     ],
     "Feature": [
-      "job-submission"
+      "job-submission",
+      {
+        "type": "subcategory",
+        "label": "Jupyter Spawner",
+        "ids":[
+          "user-advanced-setting"
+        ]
+      }
     ]
   },
   "zh-tw": {
@@ -154,7 +161,8 @@
         "type": "subcategory",
         "label": "功能",
         "ids":[
-          "zh-tw/job-submission-cht"
+          "zh-tw/job-submission-cht",
+          "zh-tw/user-advanced-setting"
         ]
       }
     ]
