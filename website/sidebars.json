@@ -96,6 +96,18 @@
           "user-advanced-setting"
         ]
       }
+    ],
+    "Tutorial": [
+      {
+        "type": "subcategory",
+        "label": "Job Submission Alpha",
+        "ids": [
+          "job-submission-tutorial-p1",
+          "job-submission-tutorial-p2",
+          "job-submission-tutorial-p3",
+          "job-submission-tutorial-p4"
+        ]
+      }
     ]
   },
   "zh-tw": {
