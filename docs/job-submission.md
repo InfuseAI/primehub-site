@@ -58,7 +58,7 @@ There are several informative columns of the job list:
 
     |Directory|Description|
     |---------|-----------|
-    |`/workingdir`|A temporary working directory while jobs running. ***Note**: saving data here will be lost with jobs finished.*|
+    |`/workingdir`|A temporary working directory while jobs running. ***Note**: saving data here will be lost when jobs finished.*|
     |`/project/<group>`|Using this path to access a group volume, load files and save output persistently. ***Note:** a group volume is required, please consult administrators.*|
     |`/datasets/<dataset>`|Using this path to access a dataset volume, load datasets. ***Note:** a dataset volume is reqiured, please consult administrators.*|
 
