@@ -47,7 +47,7 @@ For typical machine learning algorithms, there are many hyperparameters to tune.
 
     *Please note: we are not splitting dataset into training, validation, testing sub-datasets. For convenience, we are only using this dataset to tune the hyperparameters.*
 
-2. Select the Job Submission tab again and select same group, instance type and image. But this time, type the following command: 
+2. Select the Job Submission tab again and select same group, instance type and image. But this time, type the following command; replace `<group name>`:
 
         cd /project/<group name>/
         

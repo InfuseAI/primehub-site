@@ -80,10 +80,12 @@ Select 'Create Job' in the top right corner on the Job Submission page
 1. To submit a job, please open Job Submission in a new tab and create a job by clicking top right button.
 2. Select your group, instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.
 3. In the right panel, name the job `training mnist` in Job Name input field, or another name that prefer. 
-4. Since our code is under group volume and will be mounted in `/project/<group name>`, type the following into the Command input field: 
+4. Since our code is under group volume and will be mounted in `/project/<group name>`, type the following into the Command input field; replace `<group name>`:
 
+    ```
     cd /project/<group name>/
     python -u train_mnist.py --dropout 0.2
+    ```
 
 ### Some notes for the Command input field:
 
