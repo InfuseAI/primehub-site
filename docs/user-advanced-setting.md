@@ -13,7 +13,7 @@ When a user's jupyter pod cannot be launched successfully, we can consider to en
 
 Launching jupyter, by default, without safe more, user's home folder is mounted under `/home/jovyan` which is shared with jupyter files. When `no left space` for jupyter writing its own files, jupyter is failed to launch.
 
-Under safe mode, it provides another persistent storage method to launch your notebook; the persistent volume is mounted under `/home/jovyan/user` rather than `/home/jovyan`.
+Under safe mode, it provides another persistent storage method to launch your notebook; the persistent volume is mounted under `/home/jovyan/user` rather than `/home/jovyan`, meanwhile, jupyter files are located under `/`, in other words, user's home folder and jupyter don't share the same space anymore.
 
 Hence, once the jupyter is launched under safe mode successfully, we can try to clean up files under `~/user` or to uninstall unnecessary pip packages to make more space. Then we can shutdown this jupyter and re-launch jupyter again **without safe mode enabled**.
 
