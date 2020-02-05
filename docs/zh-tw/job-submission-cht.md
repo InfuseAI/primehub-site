@@ -23,7 +23,7 @@ title: Job Submission (Alpha)
 
 |欄位|描述|
 |------|-----------|
-|`Status`|狀態， `Pending`, `Ready`, `Running`, `Failed`, `Succeeded` and `Cancelled`|
+|`Status`|狀態， `Pending`, `Preparing`, `Running`, `Failed`, `Succeeded` and `Cancelled`|
 |`Job name`|名稱|
 |`User`|所有者|
 |`Group`|所屬群組|
@@ -91,7 +91,7 @@ title: Job Submission (Alpha)
 
 |Field|Description|
 |-----|-----------|
-|`Status`|狀態，`Pending`,`Ready`, `Running`, `Failed`, `Succeeded` 及 `Cancelled`|
+|`Status`|狀態，`Pending`,`Preparing`, `Running`, `Failed`, `Succeeded` 及 `Cancelled`|
 |`Message`|執行回傳訊息|
 |`Job ID`|ID|
 |`Job name`|名稱|

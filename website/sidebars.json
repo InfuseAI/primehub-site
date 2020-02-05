@@ -177,6 +177,16 @@
           "zh-tw/user-advanced-setting"
         ]
       }
+    ],
+    "教學":[
+      {
+        "type": "subcategory",
+        "label": "Job Submission (Alpha)",
+        "ids":[
+          "zh-tw/job-submission-tutorial-p1",
+          "zh-tw/job-submission-tutorial-p2"
+        ]
+      }
     ]
   }
 }
