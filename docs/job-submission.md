@@ -11,7 +11,7 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 + A running job can run for **24 hours** and it will be failed if the job doesn't finish within 24 hours.
 
-+ An ended job record is saved for **7 days**. Once expired, The job still is listed without logs since the logs is wiped out.
++ Basically, An ended job record is saved for **7 days**. Once expired, The job still is listed without logs since the logs is wiped out. ***NOTE: According to the container runtime, the job container is possibly recycled within 7 days so that the logs doesn't exist anymore.***
 
 ## Jobs List
 
@@ -54,24 +54,35 @@ There are several informative columns of the job list:
 
 + `Job name`: The name of the job.
 
-+ `Command`: The sequential commands of the job context. There are few directories/paths the job can access if directories exits:
++ `Command`: The sequential commands of the job context. 
+  
+    **Directories/paths** the job can access if directories exits:
 
     |Directory|Description|
     |---------|-----------|
     |`/workingdir`|A temporary working directory while jobs running. ***Note**: saving data here will be lost when jobs finished.*|
     |`/project/<group>`|Using this path to access a group volume, load files and save output persistently. ***Note:** a group volume is required, please consult administrators.*|
-    |`/datasets/<dataset>`|Using this path to access a dataset volume, load datasets. ***Note:** a dataset volume is reqiured, please consult administrators.*|
+    |`/datasets/<dataset>`|Using this path to access a dataset volume, load datasets which connect to the group. ***Note:** a dataset volume is reqiured, please consult administrators.*|
 
-    + `python -u` we can use `-u` to force stdin, stdout and stderr to be totally unbuffered, so we can see logs in real time.
+    **Environmental variables**:
 
-    *Example 1*: There is a file, `train_mint.py`, stored in group volume, `research`, then we can execute the python file as a job like below. Since the python file is executed under `/project/research`, the data output by the job is saved under the path relatively.
+    |Env Variable|Description|
+    |------------|-----------|
+    |`$PRIMEHUB_USER`|Job's owner|
+    |`$PRIMEHUB_GROUP`|Job's group|
+
+    **Python command option**
+
+    `python -u` we can use `-u` to force stdin, stdout and stderr to be totally unbuffered, so we can see logs in real time.
+
+    **Example 1**: There is a file, `train_mint.py`, stored in group volume, `research`, then we can execute the python file as a job like below. Since the python file is executed under `/project/research`, the data output by the job is saved under the path relatively.
 
     ```bash
     cd /project/research/
     python -u train_minst.py
     ```
 
-    *Example 2*: If we execute the job like below, the output data will be saved under `/workingdir` which is a *temporary* directory while the job is running. In other words, data saved under `/workingdir` will be lost.
+    **Example 2**: If we execute the job like below, the output data will be saved under `/workingdir` which is a *temporary* directory while the job is running. In other words, data saved under `/workingdir` will be lost.
 
     ```bash
     python -u /project/research/train_minst.py

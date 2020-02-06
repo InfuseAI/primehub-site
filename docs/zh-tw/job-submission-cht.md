@@ -9,9 +9,10 @@ title: Job Submission (Alpha)
 
 ### Lifetime
 
-+ 一個`job`最長可以執行 **24** 個小時。一旦超過 24 小時後，會被中止宣告失敗。
++ `job`最長可以執行 **24** 個小時。一旦超過 24 小時後，會被中止宣告失敗。
 
-+ 一個結束的`job`記錄會被保留 **7** 天，超過 7 天後，`job`還是會在列舉中，但`Logs`資訊會被刪除。
++ 結束的`job`記錄基本上會被保留 **7** 天；超過 7 天後，`job`還是會在列舉中，但`Logs`資訊會被刪除。
+    ***請注意：由於 Job 容器有可能提早被其執行環境給回收，因此`Logs`有可能在 7 天內被刪除。***
 
 ## Jobs 列舉
 
@@ -54,24 +55,35 @@ title: Job Submission (Alpha)
 
 + `Job name`: 指定`job`名稱。
 
-+ `Command`: 指定`job`批次工作項目。其中，`job`可以存取工作目錄、專案目錄及資料集目錄。
++ `Command`: 指定`job`批次工作項目。
+
+    **Job 可存取工作目錄、專案目錄及資料集目錄**
 
     |目錄|描述|
     |---------|-----------|
     |`/workingdir`|`job`執行時的暫存工作目錄。***注意:** 如果輸出 data 於此，此 data 將會隨著`job`結束而消失，只能做為暫存之用。*|
     |`/project/<group>`|用此路徑，存取群組專案目錄，可以做為讀取及輸出常態性資料，即使`job`已經結束。***注意：** `group volume`必須要事先存在，請洽系統管理員。*|
-    |`/datasets/<dataset>`|用此路徑，存取資料集目錄。***注意：** `dataset volume`必須要事先存在，請洽系統管理員。*|
+    |`/datasets/<dataset>`|用此路徑，存取群組所屬的資料集目錄。***注意：** `dataset volume`必須要事先存在，請洽系統管理員。*|
+
+    **Job 可存取環境變數**:
+
+    |變數名稱|描述|
+    |------------|-----------|
+    |`$PRIMEHUB_USER`|Job 所有者|
+    |`$PRIMEHUB_GROUP`|Job 所屬群組|
+
+    **Python command option**
 
     + `python -u` 我們可以用 `-u` 強制輸出訊息不經由緩衝，如此可以在`Logs`看到即時訊息。
 
-    *Example 1*: 假設`train_mint.py`事先存在名叫`research`的`group volume`，我們可以進入`/project/research`下，執行該 python file 做為一個`job`。`job`執行期間輸出的 data 則會存在此路徑的相對位置。
+    **Example 1**: 假設`train_mint.py`事先存在名叫`research`的`group volume`，我們可以進入`/project/research`下，執行該 python file 做為一個`job`。`job`執行期間輸出的 data 則會存在此路徑的相對位置。
 
     ```bash
     cd /project/research/
     python -u train_minst.py
     ```
 
-    *Example 2*: 如果我們直接執行下列指令，沒有變更路徑，`job`的工作目錄位在`/workingdir`，`job`執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在`/workingdir`的 data 資料會隨著`job`結束而消失。
+    **Example 2**: 如果我們直接執行下列指令，沒有變更路徑，`job`的工作目錄位在`/workingdir`，`job`執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在`/workingdir`的 data 資料會隨著`job`結束而消失。
 
     ```bash
     python -u /project/research/train_minst.py
