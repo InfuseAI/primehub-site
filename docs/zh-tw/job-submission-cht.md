@@ -14,7 +14,7 @@ title: Job Submission (Alpha)
 + 結束的`job`記錄基本上會被保留 **7** 天；超過 7 天後，`job`還是會在列舉中，但`Logs`資訊會被刪除。
     ***請注意：由於 Job 容器有可能提早被其執行環境給回收，因此`Logs`有可能在 7 天內被刪除。***
 
-## Jobs 列舉
+## 列舉 Job
 
 此頁列舉已創建 Jobs 及其對應資訊。
 
@@ -24,7 +24,7 @@ title: Job Submission (Alpha)
 
 |欄位|描述|
 |------|-----------|
-|`Status`|狀態， `Pending`, `Preparing`, `Running`, `Failed`, `Succeeded` and `Cancelled`|
+|`Status`|狀態， `Pending`, `Preparing`, `Running`, `Failed`, `Succeeded` 及 `Cancelled`|
 |`Job name`|名稱|
 |`User`|所有者|
 |`Group`|所屬群組|
