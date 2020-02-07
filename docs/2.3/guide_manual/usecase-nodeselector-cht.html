@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>NodeSelector · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="提到服務維運，我們可能一年中有幾次需要進行系統維護。為了降低對現行服務的衝擊，我們會採取部分 nodes 離線，維持一定數量 nodes 繼續提供服務。一旦離線 nodes 維護作業完成，再度回歸服務，直到所有 nodes 作業完成。因此，我們可以先在所有 nodes 標記 `service=on`，"/><meta name="docsearch:version" content="2.3"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="NodeSelector · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="提到服務維運，我們可能一年中有幾次需要進行系統維護。為了降低對現行服務的衝擊，我們會採取部分 nodes 離線，維持一定數量 nodes 繼續提供服務。一旦離線 nodes 維護作業完成，再度回歸服務，直到所有 nodes 作業完成。因此，我們可以先在所有 nodes 標記 `service=on`，"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.3</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.3/getting-started-admin" target="_self">For Admin</a></li><li class=""><a href="/docs/2.3/getting-started-user" target="_self">For User</a></li><li class=""><a href="/docs/2.3/dev-introduction" target="_self">For Developers</a></li><li class=""><a href="/docs/2.3/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">NodeSelector</h1></header><article><div><span><p>提到服務維運，我們可能一年中有幾次需要進行系統維護。為了降低對現行服務的衝擊，我們會採取部分 nodes 離線，維持一定數量 nodes 繼續提供服務。一旦離線 nodes 維護作業完成，再度回歸服務，直到所有 nodes 作業完成。因此，我們可以先在所有 nodes 標記 <code>service=on</code>，</p>
+<pre><code class="hljs">kubectl label nodes node1 service=<span class="hljs-keyword">on</span>
+</code></pre>
+<p>且在 Admin Dashboard 上對每個專案 instance types 套上對應 nodeSelector，如此專案可以排入在所有 nodes。</p>
+<p><img src="/docs/assets/nodeSelector_add.png" alt=""></p>
+<p><img src="/docs/assets/nodeSelector_use_case_on.png" alt=""></p>
+<p>等系統維護時間到了，我們標記部分 nodes <code>service=off</code>，暫時不提供服務。</p>
+<pre><code class="hljs">kubectl <span class="hljs-keyword">label</span><span class="bash"> nodes node5 service=off</span>
+</code></pre>
+<p>之後生成的專案依照 nodeSelector 就不會排入在這些 nodes 上，因此我們可以對其進行系統維護作業。</p>
+<p><img src="/docs/assets/nodeSelector_use_case_off.png" alt=""></p>
+<p>一旦離線 nodes 作業完成，我們再標記回 <code>service=on</code> ，回歸提供服務。</p>
+<pre><code class="hljs">kubectl label nodes node5 service=<span class="hljs-keyword">on</span>
+</code></pre>
+<p>針對一部分的 nodes 持續重複同樣的流程，標記 <code>service=off/service=on</code>，直到所有 nodes 維護作業完成。藉以達到服務不中斷。</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/setup_deploy/installation.html">Setup &amp; Deployment</a><a href="/docs/tips/kibana-dashboard.html">Tips &amp; More</a><a href="/docs/index-zh.html">繁中文件</a></div><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
