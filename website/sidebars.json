@@ -20,6 +20,7 @@
           "concepts/designs/graphql",
           "concepts/designs/image-builder",
           "concepts/designs/jupyterhub-integration",
+          "concepts/designs/job-submission",
           "concepts/designs/meta-chart",
           "concepts/designs/notebook-kernel-process",
           "concepts/designs/persistence-storage",
@@ -88,7 +89,7 @@
       "quickstart/close-project"
     ],
     "Feature": [
-      "job-submission",
+      "job-submission-feature",
       {
         "type": "subcategory",
         "label": "Jupyter Spawner",

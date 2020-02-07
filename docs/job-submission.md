@@ -1,5 +1,5 @@
 ---
-id: job-submission
+id: job-submission-feature
 title: Job Submission (Alpha)
 ---
 
