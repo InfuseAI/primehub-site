@@ -39,11 +39,11 @@ Edit user information & set user usage items on this screen, including:
 
 + `Personal Disk Quota` Disk size for the user.
 
-## Connecting Users to Groups
+## Editing Groups
 
-![](assets/user_15.png)
+![](assets/edit_groups.png)
 
-Click `connect existed Groups` under the edit user's screen, and to select the group to which the user belongs from the existing groups list and link them.
+Click `edit groups` under the edit user's screen, and to select the group to which the user belongs from the existing groups list and link them.
 
 ## Send Email
 

@@ -11,7 +11,7 @@ Instance type management provides the capabilities of managing a cluster of the 
 
 Click `Add` to add an Instance Type, which will pop up the editing screen of Instance Types.
 
-![](assets/instancetypes_add.png)
+![](assets/admin_inst_v25.png)
 
 You need to fill in the fields of Basic Info in the above picture:
 
@@ -35,7 +35,7 @@ You need to fill in the fields of Basic Info in the above picture:
 
 For details, please see [Resource QoS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes).
 
-+ `Global` If it is turned on, this Instance Type can be chosen by everyone. You can grant permission to specific groups in the `connecting existed Groups`.
++ `Global` If it is turned on, this Instance Type can be chosen by everyone. You can grant permission to specific groups in the `edit groups`.
 
 Finally, click `Confirm` to complete the addition.
 
@@ -97,8 +97,8 @@ Click `Delete` in the Instance Types list, the confirmation dialog will pop up, 
 
 Click `Edit` to enter the edit page of the Instance Type.
 
-## Connecting existed Groups
+## Edit groups
 
-![](assets/instancetype_9.png)
+![](assets/edit_groups.png)
 
-If `Global` is disabled, please click `connect existed Groups` under the edit Instance Type screen to select the groups that have permission to use the Instance Type.
+If `Global` is disabled, please click `edit groups` under the edit Instance Type screen to select the groups that have permission to use the Instance Type.

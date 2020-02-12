@@ -43,7 +43,7 @@ title: User Management
 
 ![](assets/user_15.png)
 
-在編輯使用者的畫面下方點選 `connect existed Groups`，即可從現有的 groups 列表中點選該使用者所屬的 group，將它們連結在一起。
+在編輯使用者的畫面下方點選 `edit groups`，即可從現有的 groups 列表中點選該使用者所屬的 group，將它們連結在一起。
 
 ## Send Email
 

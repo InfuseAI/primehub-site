@@ -27,7 +27,7 @@ You need to fill in the fields in the above picture:
 
    ![](assets/images_pull_secret.png)
 
-+ `Global` If enable it, everyone can use this Image. If disable it, you need to link the group with permission to use in `connecting existed Groups`.
++ `Global` If enable it, everyone can use this Image. If disable it, you need to link the group with permission to use in `edit groups`.
 
 Finally, click `Confirm` to complete the addition.
 
@@ -57,6 +57,6 @@ Click `Edit` to enter the edit page of the Image.
 
 ![](assets/image_7.png)
 
-If `Global` is disabled, click `connect existed Groups` under the edit Image screen to select the Groups that have permission to use the Image.
+If `Global` is disabled, click `edit groups` under the edit Image screen to select the Groups that have permission to use the Image.
 
 ![](assets/image_8.png)

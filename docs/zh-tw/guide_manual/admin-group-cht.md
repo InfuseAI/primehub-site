@@ -57,8 +57,8 @@ title: Group Management
 
 點選 `Edit` 進該 Group 的編輯頁面。
 
-## Connecting Existed Users
+## Editing Users
 
-![](assets/group_8.png)
+![](assets/edit_users.png)
 
-在編輯 Group 的畫面下方點選 `connect existed Users`，即可從現有的 Users 列表中點選該 Group 的 user，將它們連結在一起。
+在編輯 Group 的畫面下方點選 `edit users`，即可從現有的 Users 列表中點選該 Group 的 user，將它們連結在一起。

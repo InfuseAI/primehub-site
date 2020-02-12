@@ -57,8 +57,8 @@ Click `Delete` in the group list, the confirmation dialog will pop up, and the g
 
 Click `Edit` to enter the edit page of the Group.
 
-## Connecting Existed Users
+## Editing Users
 
-![](assets/group_8.png)
+![](assets/edit_users.png)
 
-Click `connect existing users` under the edit Group screen to select the group's user from the existing Users list and link them.
+Click `edit users` under the edit Group screen to select the group's user from the existing Users list and link them.

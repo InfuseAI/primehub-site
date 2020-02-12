@@ -35,7 +35,7 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 細節請見 [Resource QoS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes).
 
-+ `Global`  開啟後，所有人皆可使用此 Instance Type；若關閉，則需在 `Connecting existed Groups` 連結有權限使用的 Group 。
++ `Global`  開啟後，所有人皆可使用此 Instance Type；若關閉，則需在 `edit groups` 連結有權限使用的 Group 。
 
 最後點選 `confirm` 完成新增。
 
@@ -97,8 +97,8 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 點選 `edit` 進該 Instance Type 的編輯頁面。
 
-## Connecting existed Groups
+## edit groups
 
 ![](assets/instancetype_9.png)
 
-若未開啟 `Global` 開放給所有使用者使用，在編輯 Instance Type 的畫面下方點選`connect existed Groups`，即可從現有的 Groups 列表中選取有權限使用該 Instance Type 的 Group，將它們連結在一起。
+若未開啟 `Global` 開放給所有使用者使用，在編輯 Instance Type 的畫面下方點選`edit groups`，即可從現有的 Groups 列表中選取有權限使用該 Instance Type 的 Group，將它們連結在一起。

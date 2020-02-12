@@ -11,7 +11,7 @@ Dataset management provides the capabilities of managing dataset resources such 
 
 Click `Add` to add a Dataset and it will pop up the edit screen of Datasets.
 
-![](assets/dataset_empty.png)
+![](assets/admin_dataset_v25.png)
 
 You need to fill in these fields:
 
@@ -25,11 +25,11 @@ You need to fill in these fields:
 
 + `Launch Group Only` If enabled, the dataset is only visible to users who select the specific groups.
 
-+ `Global` If enabled, everyone can use this dataset. If disabled, linking groups with permission by connecting existed Groups is required.
++ `Global` If enabled, everyone can use this dataset. If disabled, linking groups with permission by edit groups is required.
 
 + `Type` `git`, `env` and `pvc`.
 
-+ `connect existed Groups` Set accessible groups, when `Global` is disabled.
++ `edit groups` Set accessible groups, when `Global` is disabled.
 
 There are three `type`:
 
@@ -115,6 +115,6 @@ Click `Delete` in the Datasets list, the confirmation dialog will pop up, and th
 
 Click `Edit` to enter the edit page of the Dataset.
 
-![](assets/dataset_7.png)
+![](assets/edit_groups.png)
 
-If `Global` is disabled, please click `connect existed Groups` under the edit Dataset page to set accessible groups that have permission to use the Dataset.
+If `Global` is disabled, please click `edit groups` under the edit Dataset page to set accessible groups that have permission to use the Dataset.

@@ -43,7 +43,7 @@ Edit user information & set user usage items on this screen, including:
 
 ![](assets/user_15.png)
 
-Click `connect existed Groups` under the edit user's screen, and to select the group to which the user belongs from the existing groups list and link them.
+Click `edit groups` under the edit user's screen, and to select the group to which the user belongs from the existing groups list and link them.
 
 ## Send Email
 

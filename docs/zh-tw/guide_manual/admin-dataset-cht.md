@@ -11,7 +11,7 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 點選 `Add` 新增 Datasets，會跳出編輯該 Dataset 的畫面。
 
-![](assets/dataset_empty.png)
+![](assets/admin_dataset_v25.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -25,11 +25,11 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 + `Launch Group Only` 啟用時，該 dataset 只會被使用者指定的啟始 group 存取。
 
-+ `Global` 啟用時，所有使用者皆能讀取；關閉時，只有藉由 `connect existed Groups` 指定 groups 才能存取。
++ `Global` 啟用時，所有使用者皆能讀取；關閉時，只有藉由 `edit groups` 指定 groups 才能存取。
 
 + `Type` `git`, `env` 及 `pvc`.
 
-+ `connect existed Groups` 當 `Global` 關閉時，可設定 groups 存取權限。
++ `Edit groups` 當 `Global` 關閉時，可設定 groups 存取權限。
 
 ### `Type` 有以下三種類型
 
@@ -117,4 +117,4 @@ v2.0 之後，可以指定 `volume size` 。一旦確認後，會有一個固定
 
 ![](assets/dataset_7.png)
 
-如果 `Group` 啟用，則需在下方 `connect existed Groups` 設定可存取的 Groups。 點選 `connect existed Groups`，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。
+如果 `Group` 啟用，則需在下方 `edit groups` 設定可存取的 Groups。 點選 `edit groups`，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。

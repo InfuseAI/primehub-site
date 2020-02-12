@@ -26,7 +26,7 @@ title: 建立群組
 
 6. 如果需要限定整體群組可使用的運算資，請調整 `Group Quota`。
 
-7. 點擊`connect existing users` 加入使用者至群組。
+7. 點擊`edit users` 加入使用者至群組。
     ![qs-create-group2.png](assets/qs-create-group2.png)
 
 8. 點擊 Confirm.

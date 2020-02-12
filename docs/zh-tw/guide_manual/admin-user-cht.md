@@ -39,11 +39,11 @@ title: User Management
 
 + `Personal Disk Quota` 設定該使用者的磁盤大小。
 
-## Connecting Users to Groups
+## Edit Groups
 
-![](assets/user_15.png)
+![](assets/edit_groups.png)
 
-在編輯使用者的畫面下方點選 `connect existed Groups`，即可從現有的 groups 列表中點選該使用者所屬的 group，將它們連結在一起。
+在編輯使用者的畫面下方點選 `edit groups`，即可從現有的 groups 列表中點選該使用者所屬的 group，將它們連結在一起。
 
 ## Send Email
 

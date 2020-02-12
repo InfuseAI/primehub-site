@@ -24,7 +24,7 @@ A user can be assigned to multiple groups.
 
 6. Adjust `Group Quota` if resource allocation limit is required for this group.
 
-7. Click `connect existing users`, assign `Users` to this group.
+7. Click `edit users`, assign `Users` to this group.
     ![qs-create-group2.png](assets/qs-create-group2.png)
 
 8. Confirm.

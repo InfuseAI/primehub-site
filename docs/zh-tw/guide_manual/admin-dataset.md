@@ -25,11 +25,11 @@ You need to fill in these fields:
 
 + `Launch Group Only` If enabled, the dataset is only visible to users who select the specific groups.
 
-+ `Global` If enabled, everyone can use this dataset. If disabled, linking groups with permission by connecting existed Groups is required.
++ `Global` If enabled, everyone can use this dataset. If disabled, linking groups with permission by edit groups is required.
 
 + `Type` `git`, `env` and `pvc`.
 
-+ `connect existed Groups` Set accessible groups, when `Global` is disabled.
++ `edit groups` Set accessible groups, when `Global` is disabled.
 
 There are three `type`:
 
@@ -117,4 +117,4 @@ Click `Edit` to enter the edit page of the Dataset.
 
 ![](assets/dataset_7.png)
 
-If `Global` is disabled, please click `connect existed Groups` under the edit Dataset page to set accessible groups that have permission to use the Dataset.
+If `Global` is disabled, please click `edit groups` under the edit Dataset page to set accessible groups that have permission to use the Dataset.
