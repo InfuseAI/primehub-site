@@ -65,10 +65,10 @@
 <li><p><code>Display name</code> 顯示名稱。</p></li>
 <li><p><code>Description</code></p></li>
 <li><p><code>Mount Root</code> 此唯讀欄位會顯示 datasets 資料夾路徑。</p></li>
-<li><p><code>Launch Group Only</code> 啟用時，該 dataset 只會被使用者指定的啟始 group 存取。</p></li>
-<li><p><code>Global</code> 啟用時，所有使用者皆能讀取；關閉時，只有藉由 <code>edit groups</code> 指定 groups 才能存取。</p></li>
+<li><p><code>Global</code> 啟用時，所有群組皆能讀取，此時我們可以進一步設定有寫入權限的群組；關閉時，只有藉由 <code>Edit groups</code> 指定 groups 及權限 才能讀取或寫入。</p></li>
+<li><p><code>Launch Group Only</code> 只有當<code>Global</code>關閉時，我們可以設定<code>Launch Group Only</code>；啟用時，該 dataset 只會被指定 group 存取或寫入；因此，我們可以進一步指定唯讀群組或是寫入群組。</p></li>
 <li><p><code>Type</code> <code>git</code>, <code>env</code> 及 <code>pvc</code>.</p></li>
-<li><p><code>Edit groups</code> 當 <code>Global</code> 關閉時，可設定 groups 存取權限。</p></li>
+<li><p><code>Edit Groups</code> 當 <code>Global</code> 關閉時，可指定 groups 和存取權限。</p></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="type-有以下三種類型"></a><a href="#type-有以下三種類型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Type</code> 有以下三種類型</h3>
 <h4><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>git</h4>
