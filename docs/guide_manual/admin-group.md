@@ -17,11 +17,11 @@ You need to fill in the fields in the above picture:
 
 + `Display name`
 
-`Shared Volume`: Create shared volume with specific capacity.
+**`Shared Volume`**: Create shared volume with specific capacity.
 
 + `Shared Volume Capacity` Set the capacity of the shared volume.
 
-+ `Launch Group Only` if enabled, the shared volume is `only mounted` when users select the `same group` to launch a project on PrimeHub page.
++ `Launch Group Only` If enabled, the shared volume is `only mounted` when users select the `same group` to launch a project on PrimeHub page.
 
 ![](assets/group_user_quota.png)
 

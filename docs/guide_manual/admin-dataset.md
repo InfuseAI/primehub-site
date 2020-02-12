@@ -23,13 +23,13 @@ You need to fill in these fields:
 
 + `Mount Root` This field is not editable. It displays the path to datasets.
 
-+ `Launch Group Only` If enabled, the dataset is only visible to users who select the specific groups.
++ `Global` If enabled, everyone can read this dataset; furthermore, we can set `Writable` groups. If disabled, linking groups with `ReadOnly` or `Writable` permission by `edit groups` is required.
 
-+ `Global` If enabled, everyone can use this dataset. If disabled, linking groups with permission by edit groups is required.
++ `Launch Group Only` When `Global` is disabled, we can set `Launch Group Only` or not. If enabled, the dataset is only visible to specific groups; furthermore, we can set `ReadOnly` groups or `Writable` groups.
 
 + `Type` `git`, `env` and `pvc`.
 
-+ `edit groups` Set accessible groups, when `Global` is disabled.
++ `Edit Groups` Set accessible groups, when `Global` is disabled.
 
 There are three `type`:
 

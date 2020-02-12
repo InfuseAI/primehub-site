@@ -23,13 +23,13 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 + `Mount Root` 此唯讀欄位會顯示 datasets 資料夾路徑。
 
-+ `Launch Group Only` 啟用時，該 dataset 只會被使用者指定的啟始 group 存取。
++ `Global` 啟用時，所有群組皆能讀取，此時我們可以進一步設定有寫入權限的群組；關閉時，只有藉由 `Edit groups` 指定 groups 及權限 才能讀取或寫入。
 
-+ `Global` 啟用時，所有使用者皆能讀取；關閉時，只有藉由 `edit groups` 指定 groups 才能存取。
++ `Launch Group Only` 只有當`Global`關閉時，我們可以設定`Launch Group Only`；啟用時，該 dataset 只會被指定 group 存取或寫入；因此，我們可以進一步指定唯讀群組或是寫入群組。
 
 + `Type` `git`, `env` 及 `pvc`.
 
-+ `Edit groups` 當 `Global` 關閉時，可設定 groups 存取權限。
++ `Edit Groups` 當 `Global` 關閉時，可指定 groups 和存取權限。
 
 ### `Type` 有以下三種類型
 
