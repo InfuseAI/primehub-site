@@ -45,6 +45,18 @@ You need to fill in the fields in the above picture:
 
 Click `Confirm` to complete the addition.
 
+**Datasets**
+
+![](assets/admin_group_ds_v25.png)
+
+The list here shows connecting datasets which can be read or written. We also can edit these datasets through here.
+
+**Editing Users**
+
+![](assets/edit_users.png)
+
+Click `edit users` under the edit Group screen to select the group's user from the existing Users list and link them.
+
 ## Deleting Group
 
 ![](assets/group_14.png)
@@ -57,8 +69,4 @@ Click `Delete` in the group list, the confirmation dialog will pop up, and the g
 
 Click `Edit` to enter the edit page of the Group.
 
-## Editing Users
 
-![](assets/edit_users.png)
-
-Click `edit users` under the edit Group screen to select the group's user from the existing Users list and link them.

@@ -45,6 +45,18 @@ title: Group Management
 
 點選 `confirm` 完成新增。
 
+**Datasets**
+
+![](assets/admin_group_ds_v25.png)
+
+這裡會列出所有此群組可以讀取或寫入的 Datasets；我們甚至可以由此進入 Dataset 編輯。
+
+**Editing Users**
+
+![](assets/edit_users.png)
+
+在編輯 Group 的畫面下方點選 `edit users`，即可從現有的 Users 列表中點選該 Group 的 user，將它們連結在一起。
+
 ## Deleting Group
 
 ![](assets/group_14.png)
@@ -57,8 +69,4 @@ title: Group Management
 
 點選 `Edit` 進該 Group 的編輯頁面。
 
-## Editing Users
 
-![](assets/edit_users.png)
-
-在編輯 Group 的畫面下方點選 `edit users`，即可從現有的 Users 列表中點選該 Group 的 user，將它們連結在一起。
