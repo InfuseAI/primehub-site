@@ -58,7 +58,7 @@
 <h2><a class="anchor" aria-hidden="true" id="creating-new-datasets"></a><a href="#creating-new-datasets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating New Datasets</h2>
 <p><img src="/docs/assets/dataset_5.png" alt=""></p>
 <p>點選 <code>Add</code> 新增 Datasets，會跳出編輯該 Dataset 的畫面。</p>
-<p><img src="/docs/assets/dataset_empty.png" alt=""></p>
+<p><img src="/docs/assets/admin_dataset_v25.png" alt=""></p>
 <p>需填入以上畫面中的各個欄位：</p>
 <ul>
 <li><p><code>Name</code> 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）和底線（“_”）。</p></li>
@@ -66,9 +66,9 @@
 <li><p><code>Description</code></p></li>
 <li><p><code>Mount Root</code> 此唯讀欄位會顯示 datasets 資料夾路徑。</p></li>
 <li><p><code>Launch Group Only</code> 啟用時，該 dataset 只會被使用者指定的啟始 group 存取。</p></li>
-<li><p><code>Global</code> 啟用時，所有使用者皆能讀取；關閉時，只有藉由 <code>connect existed Groups</code> 指定 groups 才能存取。</p></li>
+<li><p><code>Global</code> 啟用時，所有使用者皆能讀取；關閉時，只有藉由 <code>edit groups</code> 指定 groups 才能存取。</p></li>
 <li><p><code>Type</code> <code>git</code>, <code>env</code> 及 <code>pvc</code>.</p></li>
-<li><p><code>connect existed Groups</code> 當 <code>Global</code> 關閉時，可設定 groups 存取權限。</p></li>
+<li><p><code>Edit groups</code> 當 <code>Global</code> 關閉時，可設定 groups 存取權限。</p></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="type-有以下三種類型"></a><a href="#type-有以下三種類型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Type</code> 有以下三種類型</h3>
 <h4><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>git</h4>
@@ -113,7 +113,7 @@
 <p><img src="/docs/assets/dataset_11.png" alt=""></p>
 <p>點選 <code>edit</code> 進入該 Dataset 的編輯頁面。</p>
 <p><img src="/docs/assets/dataset_7.png" alt=""></p>
-<p>如果 <code>Group</code> 啟用，則需在下方 <code>connect existed Groups</code> 設定可存取的 Groups。 點選 <code>connect existed Groups</code>，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。</p>
+<p>如果 <code>Group</code> 啟用，則需在下方 <code>edit groups</code> 設定可存取的 Groups。 點選 <code>edit groups</code>，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/admin-build-image-cht"><span class="arrow-prev">← </span><span>Image Builder</span></a><a class="docs-next button" href="/docs/next/zh-tw/guide_manual/admin-secret-cht"><span>Secret Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-datasets">Creating New Datasets</a><ul class="toc-headings"><li><a href="#type-有以下三種類型"><code>Type</code> 有以下三種類型</a></li></ul></li><li><a href="#upload-server">Upload Server</a></li><li><a href="#deleting-datasets">Deleting Datasets</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/setup_deploy/installation.html">Setup &amp; Deployment</a><a href="/docs/tips/kibana-dashboard.html">Tips &amp; More</a><a href="/docs/index-zh.html">繁中文件</a></div><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
