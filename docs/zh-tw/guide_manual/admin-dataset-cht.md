@@ -115,6 +115,6 @@ v2.0 之後，可以指定 `volume size` 。一旦確認後，會有一個固定
 
 點選 `edit` 進入該 Dataset 的編輯頁面。
 
-![](assets/dataset_7.png)
+![](assets/edit_groups.png)
 
 如果 `Group` 啟用，則需在下方 `edit groups` 設定可存取的 Groups。 點選 `edit groups`，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。
