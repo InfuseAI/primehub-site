@@ -24,7 +24,7 @@ There are several informative columns of the job list:
 
 |Column|Description|
 |------|-----------|
-|`Status`|The status of the job. `Pending`,`Ready`, `Running`, `Failed`, `Succeeded` and `Cancelled`.|
+|`Status`|The status of the job. `Pending`,`Preparing`, `Running`, `Failed`, `Succeeded`, `Cancelled` and `Unknown`.|
 |`Job name`|The name of the job.|
 |`User`|The owner who submits the job.|
 |`Group`|The group where the job runs.|
@@ -103,7 +103,7 @@ Here are the information of the job:
 
 |Field|Description|
 |-----|-----------|
-|`Status`|The status of the job. `Ready` `Running` `Failed` `Succeeded` `Cancelled`.|
+|`Status`|The status of the job. `Preparing`, `Running`, `Failed`, `Succeeded`, `Cancelled` and `Unknown`.|
 |`Message`|Messages returned from job running.|
 |`Job ID`|The unique id of the job.|
 |`Job name`|The name of the job.|
