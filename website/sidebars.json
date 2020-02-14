@@ -24,7 +24,8 @@
           "concepts/designs/meta-chart",
           "concepts/designs/notebook-kernel-process",
           "concepts/designs/persistence-storage",
-          "concepts/designs/user-portal"
+          "concepts/designs/user-portal",
+          "concepts/designs/repo2docker"
         ]
       }
     ],

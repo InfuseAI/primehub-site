@@ -24,7 +24,8 @@
           "version-2.4-concepts/designs/meta-chart",
           "version-2.4-concepts/designs/notebook-kernel-process",
           "version-2.4-concepts/designs/persistence-storage",
-          "version-2.4-concepts/designs/user-portal"
+          "version-2.4-concepts/designs/user-portal",
+          "version-2.4-concepts/designs/repo2docker"
         ]
       }
     ],

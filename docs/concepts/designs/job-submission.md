@@ -309,3 +309,19 @@ From the UI, the log is retrieved in the same way of `kubectl -n hub logs <podna
 
 
 If a job is canceled or timeout, the log cannot be retrieved because the underlying pod is deleted. This is the current limitation and we hope we can preserve the log in the future.
+
+**Q: What happens if my job runs on a lost node?**
+
+If a pod is running on a lost node (which shows `NotReady` status on the `kubectl get nodes`), the pod status will change to `Unknown` status in 5 minutes. At this moment, the job is still in the `Running` state. However, the job detail pages may show the following message and the log cannot show correctly.
+
+```
+Status:    Running
+Message:   Node <node-name> which was running pod <job-id> is unresponsive
+```
+
+It should be noted that the resources for this job are not released.
+
+What we can do is
+
+1. Just cancel the job, then the job resources will be released. And re-run the job if necessary.
+2. Ask operators to recover the lost node. Once the node is recovered, the pod can still run.
