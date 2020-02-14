@@ -3,9 +3,21 @@ id: admin-system
 title: System Management
 ---
 
+## PrimeHub License
+
+![](assets/license_key_v24.png)
+
+Information of the PrimeHub license:
+
++ `License Status`
+
++ `Expiration Date`
+
++ `Licensed To`
+
 ## System Settings
 
-![](assets/system_1.png)
+![](assets/system_1_v24.png)
 
 + `Name` your organization.
 
@@ -15,7 +27,7 @@ title: System Management
 
 + `Timezone` the system timezone.
 
-![](assets/system_6.png)
+![](assets/system_2_v24.png)
 
 ## Email Settings
 

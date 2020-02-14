@@ -3,9 +3,21 @@ id: admin-system-cht
 title: System Management
 ---
 
+## PrimeHub License
+
+![](assets/license_key_v24.png)
+
+Information of the PrimeHub license:
+
++ `License Status` 授權狀態
+
++ `Expiration Date` 授權期限
+
++ `Licensed To` 授權單位
+
 ## System Settings
 
-![](assets/system_1.png)
+![](assets/system_1_v24.png)
 
 + `Name` 編輯貴單位名稱。
 
@@ -15,7 +27,7 @@ title: System Management
 
 + `Timezone` 選擇貴單位所在地的時區。
 
-![](assets/system_6.png)
+![](assets/system_2_v24.png)
 
 ## Email Settings
 
