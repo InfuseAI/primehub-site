@@ -3,7 +3,7 @@ id: create-instance-type
 title: 新增/計劃 Instance Type
 ---
 
-這份文件說明如何新增 instance type 以及建議新手如何根據實際環境 (CPUs/MEM/GPUs) 著手開始規劃要哪些 instance types。
+這份文件說明如何新增 instance type 以及建議初次使用時如何根據實際環境 (CPUs/MEM/GPUs) 著手開始規劃要哪些 instance types。
 
 ## 規劃建議
 
@@ -13,7 +13,7 @@ PrimeHub cluster 本身會需要用到部分資源維持自身的運作，所以
 
 不同專案對運算資源有不同需求，我們可以依照需求大小來制定 instance type 選項 （如：small/medium/large)；使用者可以依據專案資源需求來選擇合適的 instance type 請求所需的資源。
 
-以實際環境的整體資源的比例做為考量，來規劃我們的 instance type 配置選項；新手的話，可以從此為規劃出發點，甚至我們可以為單一專案，新增一個專屬配置。
+以實際環境的整體資源的比例做為考量，來規劃我們的 instance type 配置選項；初次使用時，可以以此為規劃出發點
 
 **假設實際環境配置 *CPU 40 / MEM 512GB / GPU 4*:**
 
