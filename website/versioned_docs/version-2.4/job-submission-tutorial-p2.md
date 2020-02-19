@@ -91,7 +91,7 @@ Select 'Create Job' in the top right corner on the Job Submission page
 ### Some notes for the Command input field:
 
 - You need to `cd` into `group volume` first. Because we save model in a relative path.
-- `<group name>` is **case sensitive**.
+- `<group name>` is **case sensitive**;*Please follow the `group name` instead of `group volume directory` on jupyterhub.*
 - You may notice there is a `-u` in python command. In Job Submission, Python will buffer the log by default. Adding `-u` tells Python not to buffer the log so that we can see the log in real time.
 - `--dropout` is a parameter which we specified in our code.
 - Job Submission will execute command column as a shell script. Therefore, you can write multiple line just like you are writing a shell script.
