@@ -71,7 +71,8 @@
       "quickstart/secret-pull-image",
       "quickstart/secret-gitsync",
       "quickstart/build-image",
-      "quickstart/add-image"
+      "quickstart/add-image",
+      "quickstart/add-instance-type"
     ],
     "Maintenance": [
       "quickstart/maintenance-resize-user-vol",
@@ -126,7 +127,8 @@
           "zh-tw/quickstart/secret-pull-image",
           "zh-tw/quickstart/secret-gitsync",
           "zh-tw/quickstart/build-image",
-          "zh-tw/quickstart/add-image"
+          "zh-tw/quickstart/add-image",
+          "zh-tw/quickstart/add-instance-type"
         ] 
       },
       {
