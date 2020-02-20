@@ -105,6 +105,7 @@
         "type": "subcategory",
         "label": "Job Submission Alpha",
         "ids": [
+          "job-submission-tutorial-simple",
           "job-submission-tutorial-p1",
           "job-submission-tutorial-p2",
           "job-submission-tutorial-p3",
@@ -187,6 +188,7 @@
         "type": "subcategory",
         "label": "Job Submission (Alpha)",
         "ids":[
+          "zh-tw/job-submission-tutorial-simple",
           "zh-tw/job-submission-tutorial-p1",
           "zh-tw/job-submission-tutorial-p2"
         ]

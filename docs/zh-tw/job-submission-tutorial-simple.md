@@ -1,6 +1,5 @@
 ---
-id: version-2.4-job-submission-tutorial-simple
-original_id: job-submission-tutorial-simple
+id: job-submission-tutorial-simple
 title: 初階範例
 ---
 

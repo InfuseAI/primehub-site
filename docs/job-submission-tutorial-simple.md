@@ -1,6 +1,5 @@
 ---
-id: version-2.4-job-submission-tutorial-simple
-original_id: job-submission-tutorial-simple
+id: job-submission-tutorial-simple
 title: Simple Example
 ---
 
@@ -112,6 +111,7 @@ Once the job succeeded, we should see the similar log, and we can tell the job i
 
 
 Congratulations, we have submitted a code as a job and run it successfully and we learnt how to interact files in group volume from a command field of a job. 
+
 
 ## More About
 

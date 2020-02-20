@@ -152,3 +152,7 @@ original_id: job-submission-tutorial-p2
 + [[(Advanced) Use Job Submission to Tune Hyperparameters]](../job-submission-tutorial-p3)
   
 + [[(Advanced) Model Serving by Seldon]](../job-submission-tutorial-p4)
+
+## 更多關於 Job Submission
+
+[Job Submission (Alpha) 功能](job-submission-cht)
