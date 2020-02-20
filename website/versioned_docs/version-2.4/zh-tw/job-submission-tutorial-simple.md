@@ -103,8 +103,6 @@ for num in range(start, end + 1):
 
 ### Jobs 列舉及 refresh 按鈕
 
-![image](assets/jobsub-tt-p2-5.png)
-
 當 job 遞交後，起初會在`Pending`狀態；點擊右上方`Refresh`按鈕可以更新其狀態。
 
 ### Logs 頁籤

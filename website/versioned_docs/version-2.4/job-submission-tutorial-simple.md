@@ -102,7 +102,7 @@ We have created a python file for our coming job. We can shutdown the jupyterhub
 
 ### Jobs List and Refresh Button
 
-![image](assets/jobsub-tt-p2-5.png)
+Once a jub is submitted, the intial status is `Pending`. Clicking the `Refresh` button to update the status.
    
 ### Logs Tab
 
