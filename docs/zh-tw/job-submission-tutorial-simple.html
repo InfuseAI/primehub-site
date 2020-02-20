@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>初階範例 · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="透過`Job submission`功能，我們可以把需要長時間工作的 ML training 交付到背景執行，同時我們可以進行其它分析工作；讓專案進行更有效率。"/><meta name="docsearch:version" content="2.4"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="初階範例 · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="透過`Job submission`功能，我們可以把需要長時間工作的 ML training 交付到背景執行，同時我們可以進行其它分析工作；讓專案進行更有效率。"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.4</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/getting-started-admin" target="_self">For Admin</a></li><li class=""><a href="/docs/getting-started-user" target="_self">For User</a></li><li class=""><a href="/docs/dev-introduction" target="_self">For Developers</a></li><li class="siteNavGroupActive"><a href="/docs/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Job Submission (Alpha)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">繁中文件<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/index-zh">說明</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">管理者<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/zh-tw/getting-started-admin">管理入門指南</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">管理介面</h4><ul><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-system-cht">System Management</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-group-cht">Group Management</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-build-image-cht">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用案例</h4><ul><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/usecase-toleration-cht">[使用案例] Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/guide_manual/usecase-nodeselector-cht">[使用案例] NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">維運</h4><ul><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">使用者<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/zh-tw/getting-started-user">使用入門指南</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/quickstart/launch-project">啟始專案</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">功能</h4><ul><li class="navListItem"><a class="navItem" href="/docs/zh-tw/job-submission-cht">Job Submission (Alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/user-advanced-setting">Spawner 進階設定</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">教學<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Job Submission (Alpha)</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-tw/job-submission-tutorial-simple">初階範例</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/job-submission-tutorial-p1">(Part1) MNIST classifier 訓練範例程式</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-tw/job-submission-tutorial-p2">(Part2) MNIST classifier 訓練範例程式</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">初階範例</h1></header><article><div><span><p>透過<code>Job submission</code>功能，我們可以把需要長時間工作的 ML training 交付到背景執行，同時我們可以進行其它分析工作；讓專案進行更有效率。</p>
+<p>在接下來的基本教學，我們以簡單的 python 程式為例，示範如何運用<code>job submission</code>以及介紹此功能如何跟 PrimeHub 其它功能聯結互動。</p>
+<h2><a class="anchor" aria-hidden="true" id="先決條件"></a><a href="#先決條件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>先決條件</h2>
+<h3><a class="anchor" aria-hidden="true" id="group-volume"></a><a href="#group-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Volume</h3>
+<p>為了能充分使用 job submission 功能，我們必須要在所屬群組內開啟<code>group volume</code>。</p>
+<p><code>Job</code>執行時，很有可能需要讀取資料及保存輸出結果，但是<code>job</code>無法存取「使用者家目錄」以及<code>job</code>自身的工作目錄為暫存(<code>job</code>結束即消失)，所以最簡單的方法就是利用<code>group volume</code>來保存輸出結果；我們更可以將<code>job</code>本身要執行的程式存放於此。</p>
+<p>請先確保已有<code>group volume</code>，才能進行接下來的教學；如果沒有開啟，請洽管理者協助開啟。</p>
+<p><img src="/docs/assets/jobsub-tt-p1-1.png" alt="jobsub-tt-p1-1.png"></p>
+<h3><a class="anchor" aria-hidden="true" id="image-and-instance-type"></a><a href="#image-and-instance-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Image and Instance Type</h3>
+<p>此教學只需少量的運算資源即可(如：CPU: 0.5 / Memory: 1G / GPU: 0) 以及 jupyter/base-notebook image.</p>
+<p>請準備好所需的<code>image</code>及<code>instance type</code>；如果沒有此環境，請洽管理者協助設定。</p>
+<h3><a class="anchor" aria-hidden="true" id="group-quota-and-user-quota"></a><a href="#group-quota-and-user-quota" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Quota and User Quota</h3>
+<p>此教學所屬群組需運算資源為 1 virtual cpu 和 2GB RAM；請確保使用的群組有足夠的<code>group quota</code>及<code>user quota</code>以利進行教學；如果沒有此環境，請洽管理者協助設定。</p>
+<h2><a class="anchor" aria-hidden="true" id="教學步驟"></a><a href="#教學步驟" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>教學步驟</h2>
+<p>我們會將下列的程式交付給 Job 來執行；此簡單程式會用到 python 套件<code>camelcase</code>，用其函式工具將一句小寫的句子的每個單字，第一個字母大寫化成<code>This Method Capitalizes The First Letter Of Each Word.</code>，並每秒印出一句，共印出十次；因此我們需要安裝此套件。</p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> <span class="hljs-type">time</span>
+<span class="hljs-keyword">import</span> camelcase
+
+camel = camelcase.CamelCase()
+
+txt = "this method capitalizes the first letter of each word."
+
+
+start = <span class="hljs-number">1</span>
+end = <span class="hljs-number">10</span>
+
+print("Counting from 1 to 10:")
+<span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> range(<span class="hljs-keyword">start</span>, <span class="hljs-keyword">end</span> + <span class="hljs-number">1</span>): 
+    <span class="hljs-type">time</span>.sleep(<span class="hljs-number">1</span>)
+    print(<span class="hljs-string">'{}: {}'</span>.format(num, camel.hump(txt)))
+</code></pre>
+<ol>
+<li><p>登入<code>PrimeHub</code>後，點擊<code>JupyterHub</code>。</p></li>
+<li><p>選擇<code>group</code>、<code>instance type</code>及<code>image</code>啟始 jupyterhub。</p></li>
+<li><p>啟動後，從左方檔案工作區雙擊我們的 group volume 資料夾進入。</p>
+<p><img src="/docs/assets/jobsub-tt-p2-2.png" alt="image"></p></li>
+<li><p>從右方工作區的<code>Other</code>下，點擊<code>Text File</code>。</p></li>
+<li><p>按右鍵選擇<code>rename</code>將<code>untitled.txt</code>改名為<code>interval.py</code>.</p></li>
+<li><p>輸入要執行的程式碼並儲存。</p></li>
+</ol>
+<p>到此我們已經在 group volume 下，新增一個 python 程式檔；此時就算關閉 jupyterhub 對接下來的<code>Job Submission</code>也不會有影響。</p>
+<h3><a class="anchor" aria-hidden="true" id="submit-job"></a><a href="#submit-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Submit Job</h3>
+<ol>
+<li><p>回到<code>user portal</code>開啟 <code>Job Submission</code> 並點擊右上方的<code>Create Job</code>進入 Job 新增頁。</p>
+<p><img src="/docs/assets/jobsub-tt-p2-3.png" alt="image"></p></li>
+<li><p>從左方選擇<code>group</code>、<code>instance type</code>及<code>image</code>；確保跟我們先前用來起始<code>JupyterHub</code>的環境一致。</p></li>
+<li><p>在右方將 Job 命名為<code>counting</code>。</p></li>
+<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/project/&lt;group name&gt;</code>，在<code>Commnad</code>欄位輸入下方指令； 請置換 <code>&lt;group name&gt;</code> 為實際選擇 group 名稱。</p>
+<p><code>&lt;group name&gt;</code> 大小寫有差別；請依照選擇<code>group name</code>大小寫，而非在 jupyterhub 內看到的<code>group volume directory</code>的大小寫。</p>
+<p>程式中有用到<code>camelcase</code>套件，因此 Job 第一行執行安裝此套件。</p>
+<pre><code class="hljs">pip <span class="hljs-keyword">install</span> camelcase
+cd /<span class="hljs-keyword">project</span>/&lt;<span class="hljs-keyword">group</span> <span class="hljs-keyword">name</span>&gt;/
+python -u internal.py
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="command-範例說明"></a><a href="#command-範例說明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command 範例說明：</h3>
+<ul>
+<li>因為<code>internal.py</code>程式碼存在 group volume 相對路徑，所以我們需要先<code>cd /project/&lt;group name&gt;</code>。</li>
+<li><code>&lt;group name&gt;</code> 大小寫有差別；請依照選擇<code>group name</code>大小寫，<em>而非在 jupyterhub 內看到的<code>group volume directory</code>的大小寫</em>。</li>
+<li>python command 參數<code>-u</code> 強制 python 直接輸出 log 不要先 buffer；在 logs 頁籤可以更即時看到 log。</li>
+<li>Job Submission 會依序執行一行一行的指令，如同執行 script 般。</li>
+<li>滑鼠指標移到小圖示<code>?</code>上方，可以看到更多提示。</li>
+</ul></li>
+<li><p>送出 Job 回到 Jobs 列舉頁，點擊<code>Job name</code>為我們剛才新增的 Job，並觀察其<code>Status</code>欄位及 Log。</p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="jobs-列舉及-refresh-按鈕"></a><a href="#jobs-列舉及-refresh-按鈕" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jobs 列舉及 refresh 按鈕</h3>
+<p><img src="/docs/assets/jobsub-tt-p2-5.png" alt="image"></p>
+<p>當 job 遞交後，起初會在<code>Pending</code>狀態；點擊右上方<code>Refresh</code>按鈕可以更新其狀態。</p>
+<h3><a class="anchor" aria-hidden="true" id="logs-頁籤"></a><a href="#logs-頁籤" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs 頁籤</h3>
+<p>點擊<code>Logs</code>頁籤可以查看 job 即時執行記錄。此時 job 正在背景執行；我們可以離開此頁面去做其它事，不必開啟頁面等候；事後回來查看狀態及記錄。</p>
+<p>我們會在<code>Logs</code>看到類似的畫面；訊息中我們可以得知 Job 先安裝<code>camelcase</code>套件，然後執行<code>interval.py</code>印出十次大寫開頭的句子。</p>
+<p><img src="/docs/assets/jobsub-tt-simple-log.png" alt="image"></p>
+<p>到此，我們成功的將存放在 group volume 下的程式碼，交付 Job 來代為執行，並且學得如何從 Job 的 <code>command</code>欄與在 group volume 下的檔案互動。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/zh-tw/job-submission-tutorial-p1"><span>(Part1) MNIST classifier 訓練範例程式</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#先決條件">先決條件</a><ul class="toc-headings"><li><a href="#group-volume">Group Volume</a></li><li><a href="#image-and-instance-type">Image and Instance Type</a></li><li><a href="#group-quota-and-user-quota">Group Quota and User Quota</a></li></ul></li><li><a href="#教學步驟">教學步驟</a><ul class="toc-headings"><li><a href="#submit-job">Submit Job</a></li><li><a href="#command-範例說明">Command 範例說明：</a></li><li><a href="#jobs-列舉及-refresh-按鈕">Jobs 列舉及 refresh 按鈕</a></li><li><a href="#logs-頁籤">Logs 頁籤</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/setup_deploy/installation.html">Setup &amp; Deployment</a><a href="/docs/tips/kibana-dashboard.html">Tips &amp; More</a><a href="/docs/index-zh.html">繁中文件</a></div><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
