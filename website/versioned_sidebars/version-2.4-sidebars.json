@@ -109,11 +109,12 @@
         "type": "subcategory",
         "label": "Job Submission Alpha",
         "ids": [
+          "version-2.4-job-submission-tutorial-simple",
           "version-2.4-job-submission-tutorial-p1",
           "version-2.4-job-submission-tutorial-p2",
           "version-2.4-job-submission-tutorial-p3",
-          "version-2.4-job-submission-tutorial-p4",
-          "version-2.4-job-submission-tutorial-simple"
+          "version-2.4-job-submission-tutorial-p4"
+          
         ]
       }
     ]
@@ -194,6 +195,7 @@
         "type": "subcategory",
         "label": "Job Submission (Alpha)",
         "ids": [
+          "version-2.4-zh-tw/job-submission-tutorial-simple",
           "version-2.4-zh-tw/job-submission-tutorial-p1",
           "version-2.4-zh-tw/job-submission-tutorial-p2"
         ]

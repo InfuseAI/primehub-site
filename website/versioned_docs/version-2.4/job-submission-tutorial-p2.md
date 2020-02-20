@@ -1,6 +1,6 @@
 ---
 id: version-2.4-job-submission-tutorial-p2
-title: (Part2) Write Your Code in PrimeHub
+title: (Part2) MNIST classifier training
 original_id: job-submission-tutorial-p2
 ---
 

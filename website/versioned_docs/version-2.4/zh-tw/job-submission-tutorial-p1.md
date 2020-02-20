@@ -1,6 +1,6 @@
 ---
 id: version-2.4-job-submission-tutorial-p1
-title: (Part1) 介紹說明
+title: (Part1) MNIST classifier 訓練範例程式
 original_id: job-submission-tutorial-p1
 ---
 
@@ -28,4 +28,4 @@ original_id: job-submission-tutorial-p1
 
 ### Group Quota and User Quota
 
-此教學整體所需運算資源至少為 2 virtual cpu 和 4GB RAM；請確保有足夠的`group quota`及`user quota`以利進行教學；如果沒有此環境，請洽管理者協助設定。
+此教學整體所需運算資源至少為 2 virtual cpu 和 4GB RAM；請確保使用的群組有足夠的`group quota`及`user quota`以利進行教學；如果沒有此環境，請洽管理者協助設定。

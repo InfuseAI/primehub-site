@@ -1,6 +1,6 @@
 ---
 id: job-submission-tutorial-p1
-title: (Part1) Introduction
+title: (Part1) MNIST classifier training
 ---
 
 By leveraging Job Submission, users can train a machine learning job in the background while doing other analyses in JupyterLab at the same time.

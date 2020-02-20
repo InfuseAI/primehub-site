@@ -62,7 +62,7 @@ original_id: job-submission-tutorial-p2
 
 到此，我們已經把`job submission`前置準備都做好了。
 
-## Submit a Job
+## Submit   Job
 
 ![image](assets/jobsub-tt-p2-3.png)
 
