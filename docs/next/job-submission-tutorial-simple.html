@@ -102,7 +102,7 @@ print("Counting from 1 to 10:")
 <li><p>Select your group, instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.</p></li>
 <li><p>In the right panel, name the job <code>counting</code> in Job Name input field, or another name that prefer.</p></li>
 <li><p>Since our code is under group volume and will be mounted in <code>/project/&lt;group name&gt;</code>, type the following into the Command input field; replace <code>&lt;group name&gt;</code>.</p>
-<p><code>&lt;group name&gt;</code> is <strong>case sensitive</strong>; <em>Please follow the <code>group name</code> instead of <code>group volume directory</code> on jupyterhub.</em></p>
+<p><code>&lt;group name&gt;</code> is <strong>case sensitive</strong>;</p>
 <p>We use <code>camelcase</code> package in the code, it has to be installed first before code execution.</p>
 <pre><code class="hljs">pip <span class="hljs-keyword">install</span> camelcase
 cd /<span class="hljs-keyword">project</span>/&lt;<span class="hljs-keyword">group</span> <span class="hljs-keyword">name</span>&gt;/
@@ -111,7 +111,7 @@ python -u internal.py
 <h3><a class="anchor" aria-hidden="true" id="some-notes-for-the-command-input-field"></a><a href="#some-notes-for-the-command-input-field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Some notes for the Command input field:</h3>
 <ul>
 <li>You need to <code>cd</code> into <code>group name</code> first. Because we save model in a relative path.</li>
-<li><code>&lt;group name&gt;</code> is <strong>case sensitive</strong>; <em>Please follow the <code>group name</code> instead of <code>group volume directory</code> on jupyterhub.</em></li>
+<li><code>&lt;group name&gt;</code> is <strong>case sensitive</strong>;</li>
 <li>You may notice there is a <code>-u</code> in python command. In Job Submission, Python will buffer the log by default. Adding <code>-u</code> tells Python not to buffer the log so that we can see the log in real time.</li>
 <li>Job Submission will execute command column as a shell script. Therefore, you can write multiple line just like you are writing a shell script.</li>
 <li>If you hover your mouse over the question mark next to <code>Command</code>, you can see more hints.</li>
