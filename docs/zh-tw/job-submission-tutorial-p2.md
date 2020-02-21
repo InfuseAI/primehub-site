@@ -82,7 +82,7 @@ title: (Part2) MNIST classifier 訓練範例程式
 ### Command 範例說明：
 
 - 因為我們產出 `my_model` 在 group volume 相對路徑，所以我們需要先`cd /project/<group name>`。
-- `<group name>` 大小寫有差別；請依照`group name`大小寫，而非在 jupyterhub 內看到的`group volume directory`的大小寫。
+- `<group name>` 大小寫有差別；
 - python command 參數`-u` 強制 python 直接輸出 log 不要先 buffer；在 logs 頁籤可以更即時看到 log。
 - 參數`--dropout`是範例程式中，指定要接收的輸入參數。
 - Job Submission 會依序執行一行一行的指令，如同執行 script 般。

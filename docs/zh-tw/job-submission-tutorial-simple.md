@@ -80,7 +80,7 @@ for num in range(start, end + 1):
    
 4. 因為我們的範例程式存放在 group volume 且 group volume 會被掛載在`/project/<group name>`，在`Commnad`欄位輸入下方指令； 請置換 `<group name>` 為實際選擇 group 名稱。
     
-    `<group name>` 大小寫有差別；請依照選擇`group name`大小寫，而非在 jupyterhub 內看到的`group volume directory`的大小寫。
+    `<group name>` 大小寫有差別；
 
     程式中有用到`camelcase`套件，因此 Job 第一行執行安裝此套件。
 
@@ -93,7 +93,7 @@ for num in range(start, end + 1):
     ### Command 範例說明：
 
    - 因為`internal.py`程式碼存在 group volume 相對路徑，所以我們需要先`cd /project/<group name>`。
-   - `<group name>` 大小寫有差別；請依照選擇`group name`大小寫，*而非在 jupyterhub 內看到的`group volume directory`的大小寫*。
+   - `<group name>` 大小寫有差別；
    - python command 參數`-u` 強制 python 直接輸出 log 不要先 buffer；在 logs 頁籤可以更即時看到 log。
    - Job Submission 會依序執行一行一行的指令，如同執行 script 般。
    - 滑鼠指標移到小圖示`?`上方，可以看到更多提示。

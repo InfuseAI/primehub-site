@@ -79,7 +79,7 @@ We have created a python file for our coming job. We can shutdown the jupyterhub
    
 4. Since our code is under group volume and will be mounted in `/project/<group name>`, type the following into the Command input field; replace `<group name>`.
 
-    `<group name>` is **case sensitive**; *Please follow the `group name` instead of `group volume directory` on jupyterhub.*
+    `<group name>` is **case sensitive**;
 
     We use `camelcase` package in the code, it has to be installed first before code execution.
 
@@ -92,7 +92,7 @@ We have created a python file for our coming job. We can shutdown the jupyterhub
     ### Some notes for the Command input field:
 
    - You need to `cd` into `group name` first. Because we save model in a relative path.
-   - `<group name>` is **case sensitive**; *Please follow the `group name` instead of `group volume directory` on jupyterhub.*
+   - `<group name>` is **case sensitive**;
    - You may notice there is a `-u` in python command. In Job Submission, Python will buffer the log by default. Adding `-u` tells Python not to buffer the log so that we can see the log in real time.
    - Job Submission will execute command column as a shell script. Therefore, you can write multiple line just like you are writing a shell script.
    - If you hover your mouse over the question mark next to `Command`, you can see more hints.
