@@ -50,7 +50,10 @@
     ]
   },
   "getting-started-admin": {
-    "Administrator": ["getting-started-admin"],
+    "Administrator": [
+      "getting-started-admin",
+      "guide_manual/custom-image-guideline"
+    ],
     "Management":[
       "guide_manual/admin-system",
       "guide_manual/admin-user",
@@ -72,7 +75,8 @@
       "quickstart/secret-gitsync",
       "quickstart/build-image",
       "quickstart/add-image",
-      "quickstart/add-instance-type"
+      "quickstart/add-instance-type",
+      "quickstart/dockerhub-registry"
     ],
     "Maintenance": [
       "quickstart/maintenance-resize-user-vol",
@@ -129,7 +133,8 @@
           "zh-tw/quickstart/secret-gitsync",
           "zh-tw/quickstart/build-image",
           "zh-tw/quickstart/add-image",
-          "zh-tw/quickstart/add-instance-type"
+          "zh-tw/quickstart/add-instance-type",
+          "zh-tw/quickstart/dockerhub-registry"
         ] 
       },
       {
