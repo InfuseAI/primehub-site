@@ -122,6 +122,7 @@
     "繁中文件": ["index-zh"],
     "管理者": [
       "zh-tw/getting-started-admin",
+      "zh-tw/guide_manual/custom-image-guideline",
       {
         "type": "subcategory",
         "label": "快速上手",
