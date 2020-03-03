@@ -57,12 +57,11 @@ PrimeHub 的 `Image Builder` 功能讓管理者可以建立客製 image，image 
 
 ![](assets/dockerhub-image-builder.png)
 
-1. Image 建立發佈完成後，可以得知該 image 已發佈至指定的 **registry/namespace/repository** `docker.io/gabrielxinfuseai/test-build`。
+2. Image 建立發佈完成後，可以得知該 image 已發佈至指定的 **registry/namespace/repository** `docker.io/gabrielxinfuseai/test-build`。
 
     ![](assets/dockerhub-job-image-build.png)
 
-
-2. DockerHub 也可見到從 **Image Builder of PrimeHub** 發佈而來的資訊。
+3. DockerHub 也可見到從 **Image Builder of PrimeHub** 發佈而來的資訊。
 
 ![](assets/dockerhub-test-build.png)
 

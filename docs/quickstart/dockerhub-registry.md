@@ -56,12 +56,11 @@ When creating an image spec in `Image Builder`, fill existing `<repo name>` iden
 
     ![](assets/dockerhub-image-builder.png)
 
-1. Once the image is built and published successfully, the image url shows **registry/namespace/repository** `docker.io/gabrielxinfuseai/test-build`.
+2. Once the image is built and published successfully, the image url shows **registry/namespace/repository** `docker.io/gabrielxinfuseai/test-build`.
 
     ![](assets/dockerhub-job-image-build.png)
 
-
-2. From DockerHub, it shows the image is published from **Image Builder of PrimeHub**.
+3. From DockerHub, it shows the image is published from **Image Builder of PrimeHub**.
 
     ![](assets/dockerhub-test-build.png)
 
