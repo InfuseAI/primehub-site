@@ -80,3 +80,7 @@ FROM infuseai/docker-stacks/<image>
 
 1. [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 2. [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+## 由 repo2docker 建立 image
+
+進階的使用者如果想要試試 [[repo2docker]](https://repo2docker.readthedocs.io/en/latest/) 工具建立 image。請務必參考我們的技術文件 [[repo2docker image]](../../concepts/designs/repo2docker.md) 確定建立出來的 image 符合 PrimeHub 要求。

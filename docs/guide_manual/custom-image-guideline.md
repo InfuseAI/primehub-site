@@ -80,3 +80,8 @@ FROM infuseai/docker-stacks/<image>
 
 1. [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 2. [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+
+## Images Built by repo2docker 
+
+For tech savvy users who want to try [[repo2docker]](https://repo2docker.readthedocs.io/en/latest/) for building images. Please see our technical document [[repo2docker image]](../concepts/designs/repo2docker.md) to make sure it can be used by PrimeHub.
