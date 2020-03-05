@@ -1,7 +1,7 @@
 {
   "for-developers": {
     "Getting Started": [
-      "getting_started/introduction",
+      "dev-introduction",
       {
         "type": "subcategory",
         "label": "Setup Kuberentes",
