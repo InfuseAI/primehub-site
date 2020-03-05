@@ -5,6 +5,8 @@ title: Primehub Meta Chart
 
 Primehub meta chart is a helm chart to install Primehub.
 
+| PrimeHub meta chart is used by default since v2.0.0
+
 # Background
 
 In 1.x, to install PrimeHub, we need to install these charts.
@@ -66,9 +68,4 @@ In old bootstrap script, it create the keycloak clients, output the client secre
 In the new meta-chart, the bootstrap is run in the job and the client secrets are generated and put in the kuberentes secret. It makes the installation process much simpler.
 
 # Migration From 1.x
-Please follow the instructions in the [migration document](modules/upgrade/migrate-v2.0/migrate-v2.0.md)
-
-
-# Release
-
-The meta chart is released since v2.0.0
+Please follow the instructions in the migration document in `${PRIMEHUB}/modules/upgrade/migrate-v2.0/migrate-v2.0.md`

@@ -1,9 +1,7 @@
 ---
 id: data-model
-title: PrimeHub Data Model
+title: Data Model
 ---
-
-This document describes how PrimeHub stores data.
 
 PrimeHub does not have its own database. The data is stored in keycloak's object and kuberentes object. The following diagram is a brief view of the data.
 

@@ -1,52 +1,91 @@
 {
   "for-developers": {
-    "For Developers": [
-      "dev-introduction"
-    ],
-    "Concept": [
+    "Getting Started": [
+      "getting_started/introduction",
       {
         "type": "subcategory",
-        "label": "Design",
+        "label": "Setup Kuberentes",
         "ids": [
-          "concepts/designs/architecture",
-          "concepts/designs/admission",
-          "concepts/designs/build",
-          "concepts/designs/crds",
-          "concepts/designs/crd-schema",
-          "concepts/designs/customization",
-          "concepts/designs/data-model",
-          "concepts/designs/dataset-upload",
-          "concepts/designs/feature-flag",
-          "concepts/designs/graphql",
-          "concepts/designs/image-builder",
-          "concepts/designs/jupyterhub-integration",
-          "concepts/designs/job-submission",
-          "concepts/designs/meta-chart",
-          "concepts/designs/notebook-kernel-process",
-          "concepts/designs/persistence-storage",
-          "concepts/designs/user-portal",
-          "concepts/designs/repo2docker"
+          "getting_started/prerequisites",
+          "getting_started/kubernetes_on_gke"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Setup PrimeHub",
+        "ids": [
+          "getting_started/install_metacontroller",
+          "getting_started/install_keycloak",
+          "getting_started/install_primehub"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Install Helper",
+        "ids": [      
+          "getting_started/install_helper_intro",
+          "getting_started/install_helper_steps"
         ]
       }
     ],
-    "Setup & Deployment": [
-      "setup_deploy/install"
+    "Designs and Concepts": [
+      {
+        "type": "subcategory",
+        "label": "Concepts",
+        "ids": [      
+          "design/architecture",
+          "design/data-model",              
+          "design/crds",
+          "design/graphql",          
+          "design/persistence-storage"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Designs",
+        "ids": [      
+          "design/user-portal",
+          "design/meta-chart",
+          "design/admission",
+          "design/jupyterhub",
+          "design/notebook-kernel-process",
+          "design/dataset-upload",
+          "design/image-builder",
+          "design/job-submission"
+        ]
+      }      
     ],
-    "Configuration": [
-      "cfg/configuration" 
-    ],
-    "Guides": [
-      "guide_manual/cluster_shutdown",
-      "guide_manual/benchmark",
-      "guide_manual/airgap",
-      "guide_manual/UPGRADE-K8s-from-1.10-and-1.10-to-1.12"
-    ],
-    "Tips & More": [
-      "tips/kibana-dashboard",
-      "tips/ADVANCED-rook-setup-metadata-on-vg"
+    "Tasks": [
+      {
+        "type": "subcategory",
+        "label": "Build",
+        "ids": [      
+          "tasks/build",
+          "tasks/airgap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Jupyter Images",
+        "ids": [      
+          "tasks/repo2docker"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Operations",
+        "ids": [      
+          "tasks/cluster_shutdown",
+          "tasks/benchmark",      
+          "tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12",
+          "tasks/ADVANCED-rook-setup-metadata-on-vg"
+        ]
+      }    
     ],
     "References": [
-      "references/"
+      "references/primehub_chart",
+      "references/dotenv",
+      "references/feature-flag"
     ]
   },
   "getting-started-admin": {
