@@ -17,7 +17,7 @@ title: 客製 Image 指南
 
 ### JupyterHub 用
 
-PrimeHub 期待 *JupyterHub 用* image 具備 *JupyterHub 環境*，一旦起始後，會立即起動 Jupyter 環境；
+PrimeHub 期待 JupyterHub 用 image 具備 JupyterHub 環境，一旦起始後，會立即起動 Jupyter 環境；
 
 為了創建具備 JupyterHub 的 image，我們必須利用 JupyterHub 相容的 base image；幸運地是，我們可以從官方 registry 來源取得它們。
 
@@ -25,10 +25,11 @@ PrimeHub 期待 *JupyterHub 用* image 具備 *JupyterHub 環境*，一旦起始
 
 有兩個官方 registry 來源，我們可以取得 JupyterHub 相容的 base images；分別是 **Jupyter** 及 **InfuseAI**。
 
-|Source|Registry|Reference|
+|Provider|Registry|Reference|
 |------|--------|----|
 |Jupyter|`jupyter/docker-stacks`|https://github.com/jupyter/docker-stacks|
-|InfuseAI|`infuseai/docker-stacks`|非公開；須有**認證用 secret** 才能下載 ，請洽 **InfuseAI** 窗口。|
+|InfuseAI|`registry.gitlab.com/infuseai/docker-stacks/`|非公開；須有**認證用 secret** 才能下載 ，請洽 **InfuseAI** 窗口。|
+|InfuseAI|`infuseai/docker-stacks/`|https://hub.docker.com/r/infuseai/docker-stacks/tags|
 
 **InfuseAI 官方提供的 base image 有：**
 
@@ -44,7 +45,7 @@ PrimeHub 期待 *JupyterHub 用* image 具備 *JupyterHub 環境*，一旦起始
 
 ## Image Builder 創建 Image
 
-我們可以利用`Image Builder`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Image Builder`就會根據指定規格建立並發佈 image。請見 [[Image Builder]](admin-build-image-cht) 功能，以及 [快速上手[創建 image]](../quickstart/build-image)。
+我們可以利用`Image Builder`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Image Builder`就會根據指定規格建立並發佈 image。請見 [Image Builder](admin-build-image-cht) 功能，以及 快速上手[「創建 image」](../quickstart/build-image)。
 
 ### 利用 DockerHub Registry
 
@@ -83,4 +84,4 @@ FROM infuseai/docker-stacks/<image>
 
 ## 由 repo2docker 建立 image
 
-進階的使用者如果想要試試 [[repo2docker]](https://repo2docker.readthedocs.io/en/latest/) 工具建立 image。請務必參考我們的技術文件 [[repo2docker image]](../../concepts/designs/repo2docker.md) 確定建立出來的 image 符合 PrimeHub 要求。
+進階的使用者如果想要試試 [repo2docker](https://repo2docker.readthedocs.io/en/latest/) 工具建立 image。請務必參考我們的技術文件 [「repo2docker image」](../../concepts/designs/repo2docker.md) 確認建立出來的 image 符合 PrimeHub 要求。

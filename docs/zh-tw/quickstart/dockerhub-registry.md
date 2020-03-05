@@ -45,7 +45,7 @@ PrimeHub 的 `Image Builder` 功能讓管理者可以建立客製 image，image 
 
 ### 由 Image Builder 創建 Image
 
-此時於 Image Builder 建立 image spec 時，請將 `Name` 填入*完全一致*的 `<repo name>`，且該 repository 必須要事先存在於 DockerHub；輸入完其它欄位，建立 image 成功後，Image Builder 會自動發佈至我們配置的 DockerHub registry 中指定的 repository。
+此時於 Image Builder 建立 image spec 時，請將 `Name` 填入完全一致的 `<repo name>`，且該 repository 必須要事先存在於 DockerHub；輸入完其它欄位，建立 image 成功後，Image Builder 會自動發佈至我們配置的 DockerHub registry 中指定的 repository。
 
 1. 由 Image Builder 新增 Image Spec。
 
@@ -67,4 +67,4 @@ PrimeHub 的 `Image Builder` 功能讓管理者可以建立客製 image，image 
 
 ### 使用 Image
 
-我們可以將此 image(url) 透過 Image Management 加入至 PrimeHub，讓使用者可以選用；請見[[Image Management]](../guide_manual/admin-image) 以及[「增加 Image」](../quickstart/add-image.md)。
+我們可以將此 image(url) 透過 Image Management 加入至 PrimeHub，讓使用者可以選用；請見[「Image Management」](../guide_manual/admin-image) 以及[「增加 Image」](../quickstart/add-image.md)。

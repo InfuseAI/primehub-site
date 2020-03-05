@@ -17,7 +17,7 @@ It requires to have authorized permissions of accessing PrimeHub folder, `.env` 
 
 1. Sign in DockerHub.
     
-2. Go to `Account Settings`/`Security`/`Access Tokens` Generate new access token and save it. [REF: [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/)]
+2. Go to `Account Settings`/`Security`/`Access Tokens` Generate new access token and save it. (REF: [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/)).
 
 3. Create a repository and note down the `<namespace>` and `<repo name>`; we need them for `.env` variables.
 
@@ -50,9 +50,9 @@ When creating an image spec in `Image Builder`, fill existing `<repo name>` iden
 
     + `Name`: `test-build` is our `<repo-name>` on DockerHub.
   
-    + `Base Image`: `registry.gitlab.com/infuseai/docker-stacks/scipy-notebook` is one of base images provided by InfuseAI officially; Please see [[Custom Image Guideline]](../guide_manual/custom-image-guideline.md).
+    + `Base Image`: `registry.gitlab.com/infuseai/docker-stacks/scipy-notebook` is one of base images provided by InfuseAI officially; Please see [Custom Image Guideline](../guide_manual/custom-image-guideline.md).
 
-    + `Use Image PullSecret`: Since we use a base image from InfuseAI official registry which is not open to public, which means we have to choose the proper secret for accessing the registry; Please see [[Pull secret for GitLab]](../quickstart/secret-pull-image.md) and contact InfuseAI for the secret.
+    + `Use Image PullSecret`: Since we use a base image from InfuseAI official registry which is not open to public, which means we have to choose the proper secret for accessing the registry; Please see [Pull secret for GitLab](../quickstart/secret-pull-image.md) and contact InfuseAI for the secret.
 
     ![](assets/dockerhub-image-builder.png)
 
@@ -66,4 +66,4 @@ When creating an image spec in `Image Builder`, fill existing `<repo name>` iden
 
 ### Utilize Image
 
-We can let users utilize the image by adding the image with url on Image Management; Please see [[Image Management]](../guide_manual/admin-image) and quickstart [[Add Image]](add-image.md).
+We can let users utilize the image by adding the image with url on Image Management; Please see [Image Management](../guide_manual/admin-image) and quickstart [Add Image](add-image.md).

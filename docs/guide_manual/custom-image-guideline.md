@@ -17,7 +17,7 @@ Since requirements for running jobs are varied with tasks. As long as images are
 
 ### For JupyterHub
 
-Only images which are installed with *JupyterHub environment* are able to be used for launching JupyterHub in PrimeHub. PrimeHub expects installed JupyterHub inside the image; after starting the container, PrimeHub tries to launch Jupyter environment.
+Only images which are installed with JupyterHub environment are able to be used for launching JupyterHub in PrimeHub. PrimeHub expects installed JupyterHub inside the image; after starting the container, PrimeHub tries to launch Jupyter environment.
 
 For the sake of building images with JupyterHub, we must use base images which are JupyterHub-compatible; we can have them from official registries.
 
@@ -25,10 +25,11 @@ For the sake of building images with JupyterHub, we must use base images which a
 
 There are two official registries where we can have JupyterHub-compatible base images, one is from **Jupyter**, the other is from **InfuseAI**.
 
-|Source|Registry|Reference|
+|Provider|Registry|Reference|
 |------|--------|----|
 |Jupyter|`jupyter/docker-stacks`|https://github.com/jupyter/docker-stacks|
-|InfuseAI|`infuseai/docker-stacks`|*A **read_registry token** is required to access the registry, please contact **InfuseAI** to acquire the token.*|
+|InfuseAI|`registry.gitlab.com/infuseai/docker-stacks/`|A **read_registry token** is required to access the registry, please contact **InfuseAI** to acquire the token.|
+|InfuseAI|`infuseai/docker-stacks/`|https://hub.docker.com/r/infuseai/docker-stacks/tags|
 
 **Images provided by InfuseAI are:**
 
@@ -44,11 +45,11 @@ There are two official registries where we can have JupyterHub-compatible base i
 
 ## Build Images via Image Builder
 
-We can build images via `Image Builder` by specification of a base image with required packages, please goes to [[Image Builder]](admin-build-image) feature for details and try a [[build image]](../quickstart/build-image) quickstart.
+We can build images via `Image Builder` by specification of a base image with required packages, please goes to [Image Builder](admin-build-image) feature for details and try a [build image](../quickstart/build-image) quickstart.
 
 ### Use DockerHub Registry
 
-Once images are built via **Image Builder**, they will be pushed to a *specified repositories of a registry*. Here we have a document introducing [How to configure PrimeHub using a DockerHub registry for Image Builder](../quickstart/dockerhub-registry.md).
+Once images are built via **Image Builder**, they will be pushed to a specified repositories of a registry. Here we have a document introducing [How to configure PrimeHub using a DockerHub registry for Image Builder](../quickstart/dockerhub-registry.md).
 
 ## Build Images via Dockerfile
 
@@ -84,4 +85,4 @@ FROM infuseai/docker-stacks/<image>
 
 ## Images Built by repo2docker 
 
-For tech savvy users who want to try [[repo2docker]](https://repo2docker.readthedocs.io/en/latest/) for building images. Please see our technical document [[repo2docker image]](../concepts/designs/repo2docker.md) to make sure it can be used by PrimeHub.
+For tech savvy users who want to try [repo2docker](https://repo2docker.readthedocs.io/en/latest/) for building images. Please see our technical document [repo2docker image](../concepts/designs/repo2docker.md) to make sure it can be used by PrimeHub.
