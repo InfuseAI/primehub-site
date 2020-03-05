@@ -1,6 +1,6 @@
 ---
 id: build
-title: PrimeHub Installation Pakckage Builder
+title: Package Builder
 ---
 
 The package builder is in the `${PRIMEHUB_HOME}/installer/` folder
@@ -26,7 +26,7 @@ then the release will go to `release/`
 
 ## Release Docker Images
 
-The release tarball is used for airgapped. For more information, please reference the [airgap](../administration/airgap.md) docuemnt.
+The release tarball is used for airgapped. For more information, please reference the [airgap](airgap.md) docuemnt.
 
 ```
 make release-images

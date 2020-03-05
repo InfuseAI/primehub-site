@@ -1,6 +1,6 @@
 ---
 id: graphql
-title: Spawner and GraphqQL
+title: GraphqQL
 ---
 
 

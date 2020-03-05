@@ -1,16 +1,7 @@
 ---
-id: install
-title: PrimeHub Installation & Setup Guide
+id: install_helper
+title: Installation Helper
 ---
-
-## Prerequisites
-
-1. A Kubernetes Cluster
-1. Helm is installed. Please follow the instruction [here](https://helm.sh/docs/using_helm/)
-1. Domain name for keycloak and primehub (e.g. id.example.com, primehub.example.com)
-1. [Dynamic Volume Provisioner](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) (e.g. ceph, cloud storage providers)
-1. [Cert-manager](https://github.com/jetstack/cert-manager) if https is required
-1. [NGINX Ingress Controller for Kubernetes ](https://github.com/kubernetes/ingress-nginx)
 
 ## Install PrimeHub
 

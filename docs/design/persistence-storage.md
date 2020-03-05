@@ -1,6 +1,6 @@
 ---
 id: persistence-storage
-title: Persistence Storages of a Notebook
+title: Persistence Storages
 ---
 
 When spawning a user's notebook pod, spawner mounts various type of persistent volumes. They includes

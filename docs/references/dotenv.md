@@ -1,23 +1,9 @@
 ---
-id: configuration
-title: Configuration
+id: dotenv
+title: Install Helper Environment Variables
 ---
 
-The configuration file is located in folder `bin/phenv --path`
-
-The two main configuration files are 
-
-- `$(bin/phenv --path)/.env`
-- `$(bin/phenv --path)/helm_override/primehub.yaml`
-
-For the concept of customization, please reference [here](../design/customization.md)
-
-## Environment Variables
-
 Configuration in `$(bin/phenv --path)/.env`
-
-**The Environment Variables for PrimeHub**
-
 
 Environment | Description | Optional
 --- | --- | ---
