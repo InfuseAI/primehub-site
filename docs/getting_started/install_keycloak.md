@@ -3,7 +3,7 @@ id: install_keycloak
 title: Install Keycloak
 ---
 
-Here is the instructions to install keycloak in the cluster. We select *postgresql* as persistence solution.
+Here are the instructions to install keycloak in the cluster. We select *postgresql* as the persistence solution.
 
 ## Add the chart repository
 
@@ -76,7 +76,7 @@ helm upgrade \
    ```
 
 1. Open `http://<keycloak-hostname>/auth`
-1. Enter *Administrator Console* and login by the username and password.
+1. Enter *Administrator Console* and log in by the username and password.
 
 ## Reference
 

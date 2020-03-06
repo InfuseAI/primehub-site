@@ -7,15 +7,15 @@ This document describes the integration of PrimeHub and JupyterHub.
 
 ## Concept
 
-The whole magic happens in `jupyterhub_profiles.py`, which customize the [kubespawner](https://github.com/jupyterhub/kubespawner). Here is the brief spawner logic 
+The whole magic happens in `jupyterhub_profiles.py`, which customizes the [kubespawner](https://github.com/jupyterhub/kubespawner). Here is the brief spawner logic 
 
 
-1. A user login to keycloak and postback the user profile to jupyterhub. (by OIDC flow)
+1. A user logs in to keycloak and postback the user profile to jupyterhub. (by OIDC flow)
 1. Store the authentication data in the cookie.
-1. Use the authentication data to query graphql to get the groups, instance types, images, datasets of the loged in user
+1. Use the authentication data to query graphql to get the groups, instance types, images, datasets of the logged in user
 1. The spawner renders the options in the spawner page
 1. The user selects the options they would like to spawn and submits.
-1. By kubespawner mechanism, assemble the jupyter pod's spec and spawn this pod.
+1. By *kubespawner* mechanism, assemble the jupyter pod's spec and spawn this pod.
 
 ![](assets/jupyterhub_profiles.png)
 

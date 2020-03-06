@@ -7,7 +7,7 @@ Metacontroller is an add-on for Kubernetes that makes it easy to write and deplo
 
 ## Quick Instructions
 
-Basically, you can follow the instructions in [installation document](https://metacontroller.app/guide/install/) in offical site. Here is the summary of the installation steps
+You can follow the instructions in [installation document](https://metacontroller.app/guide/install/) in the offical site. Here is the summary of the installation steps
 
 ```
 kubectl create namespace metacontroller
@@ -15,7 +15,7 @@ kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontr
 kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/metacontroller/master/manifests/metacontroller.yaml
 ```
 
-## Verify the Installaion
+## Verify the Installation
 
 Type these commands
 ```

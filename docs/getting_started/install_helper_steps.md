@@ -73,7 +73,7 @@ Once complete, please check the `http(s)://primehub.example.com/`
 
 1. Set environment `GRAFANA_ADMIN` & `GRAFANA_PASSWORD` in `.env` file
 
-   > Never forget to assign there values, or it will be hard for you to login as `GRAFANA_ADMIN` since Grafana will pick a random password if we didn't assign it before.
+   > Never forget to assign their values, or it will be hard for you to log in as `GRAFANA_ADMIN` since Grafana will pick a random password if we didn't assign it before.
 
 1. Check Helm difference:
 

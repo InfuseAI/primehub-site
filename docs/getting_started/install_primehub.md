@@ -16,9 +16,9 @@ Prepare the value file `primehub-values.yaml` for helm installation.
 
 Key | Description
 ----|------------------------------------
-`PRIMEHUB_DOMAIN` | The domain name of keycloak. Can be the same as primehub's one.
+`PRIMEHUB_DOMAIN` | The domain name of keycloak. It can be the same as primehub's one.
 `PRIMEHUB_PASSWORD` | The password for primehub admin. (The default username of admin is `phadmin`)
-`KEYCLOAK_DOMAIN` | The hostname of keycloak. Can be the same as primehub's one.
+`KEYCLOAK_DOMAIN` | The hostname of keycloak. It can be the same as primehub's one.
 `KEYCLOAK_PASSWORD` | The master password of keycloak
 `STORAGE_CLASS` | The storage class for persistence storage
 `GRAPHQL_SECRET_KEY` | The graphql API secret key
@@ -87,9 +87,9 @@ EOF
      primehub modules/charts/primehub
    ```
 
-   > In the first time installation, it may take longer time to pull image. You can add `--timeout 1800` to change the default timeout duration.
+   > In the first time installation, it may take a longer time to pull images. You can add `--timeout 1800` to change the default timeout duration.
 
-2. Label the nodes which can be assignned for jupyterhub servers
+2. Label the nodes which can be assigned for jupyterhub servers
 
    ```
    kubectl label node component=singleuser-server --all
@@ -103,12 +103,12 @@ EOF
    kubectl -n hub rollout status deploy/primehub-console
    ```
 
-2. Open `http://${PRIMEHUB_DOMAIN}` and login by the admin username and password.
+2. Open `http://${PRIMEHUB_DOMAIN}` and log in by the admin username and password.
 3. Open [Jupyterhub] icon and spawn a jupyter instance.
 
 ## Troubleshooting
 
-1. If there are something run when installing, you can check the bootstrap job log to see what's going on
+1. If there is something run when installing, you can check the bootstrap job log to see what's going on
 
    ```
    kubectl -n hub logs jobs/primehub-bootstrap

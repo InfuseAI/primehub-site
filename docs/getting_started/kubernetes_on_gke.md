@@ -17,7 +17,7 @@ gcloud container clusters create <cluster-name> \
 --zone asia-east1-a
 ```
 
-This step will take few minutes, please wait for output like this:
+This step will take a few minutes, please wait for output like this:
 
 ```
 NAME              LOCATION      MASTER_VERSION  MASTER_IP        MACHINE_TYPE   NODE_VERSION   NUM_NODES  STATUS
@@ -128,7 +128,7 @@ default backend - 404
 
 ## Next
 
-The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `StorageClass` name to next steps. They would be used in the value files of `KeyCloak` and `PrimeHub`
+The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `StorageClass` name to the next steps. They would be used in the value files of `KeyCloak` and `PrimeHub`
 
 * `EXTERNAL-IP`: 35.221.223.87
     ```

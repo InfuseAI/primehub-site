@@ -9,9 +9,9 @@ Allow users to submit machine learning training jobs to the cluster
 # Features
 
 1. **Job Queue:** Job is processed by the order of a queue. And one group has one queue.
-1. **Image and InstanceType:** Just like jupyter noteobook, a user can select the preset images and instance types according to the current selected group
+1. **Image and InstanceType:** Just like jupyter notebook, a user can select the preset images and instance types according to the currently selected group
 1. **Shared Volume:** The job's running pod would mount the shared volume according to the selected group.
-2. **Cancellation:** Allow to cancel a pending or running pode 
+2. **Cancellation:** Allow to cancel a pending or running pod 
 3. **POD Time-To-Live:** Allow to clean up the pod after a job is finished for a period of time.
 
 # Configuration
@@ -82,7 +82,7 @@ status:
 
 There are 6 states for the `PhJob`
 
-- **Pending:** Job is pending in queue
+- **Pending:** Job is pending in the queue
 - **Preparing:** The job is dequeue and ready to be processed. The underlying pod is created and waiting for scheduled and initiated.
 - **Running:** Pod is running
 - **Failed:** Pod is failed. 
@@ -92,19 +92,19 @@ There are 6 states for the `PhJob`
 
 ## Scheduler
 
-Unlike kubernetes' job, `PhJob` is scheduled by the controller rather than scheduler. And only when the resource is ready is the pod created. Here is the basic principle for scheduling
+Unlike kubernetes' job, `PhJob` is scheduled by the controller rather than the scheduler. And only when the resource is ready is the pod created. Here is the basic principle for scheduling
 
 - **Group is a logical queue.** Jobs in the same group is scheduled in the FIFO (first in first out) manner
-- **Resource constraint:** Job is scheduled only when it doesn't hit the group quota and user quota. And  if a job has no enough resource in user quota, it will not block other jobs belong to other users.
+- **Resource constraint:** Job is scheduled only when it doesn't hit the group quota and user quota. And if a job has no enough resources in user quota, it will not block other jobs belong to other users.
 - **Resource Pool:** Both the jupyter server and job share the same resource pool.
 - **Pod creation:** pod is created as the job is scheduled.
 - **State change:** once a job is scheduled, the state is changed from `pending` to `preparing`
 
-Here are some examples for the scheduling behavior.
+Here are some examples of the scheduling behavior.
 
 **Example 1**
 
-There are three job submitted to the same group `phusers`. Assume that the group setting is
+There are three jobs submitted to the same group `phusers`. Assume that the group setting is
 
 - **User quota:** 4 gpu
 - **Group quota:** 4 gpu
@@ -126,11 +126,11 @@ B |4 | pan | Pending
 C |2 | lin | Pending
 
 
-The job B is blocked because no enough of gpu. The job C is blocked by job B because job is scheduled by FIFO.
+Job B is blocked because of no enough GPU. Job C is blocked by job B because the job is scheduled by FIFO.
 
 **Example 2**
 
-The same as example 1, there are three job submitted to the same group `phusers`. And the group setting is also
+The same as example 1, there are three jobs submitted to the same group `phusers`. And the group setting is also
 
 - **User quota:** 4 gpu
 - **Group quota:** 4 gpu
@@ -152,7 +152,7 @@ B |4 | bob | Pending
 C |2 | lin | Preparing
 
 
-The job B is block because no enough of gpu. The job C is scheduled because job B is blocked by user quota rather than group quota. If user quota is not enough, the job is not eligible to block other job belong to other users.
+Job B is blocked because of no enough GPU. Job C is scheduled because job B is blocked by user quota rather than group quota. If the user quota is not enough, the job is not eligible to block other jobs belong to other users.
 
 ### Requeue
 
@@ -160,7 +160,7 @@ After a job is scheduled, the underlying pod is created. However, according to t
 
 ## Running Pod
 
-Here describe what the underlying pod would look like. The pod is generated according to the selected group, image, and instance type. It determine what image to use, how many resource to request, and how many volumes should be mounted.
+Here describe what the underlying pod would look like. The pod is generated according to the selected group, image, and instance type. It determines what image to use, how many resources to request, and how many volumes should be mounted.
 
 ### Folder Structure
 
@@ -193,7 +193,7 @@ User Volume | N/A |
     └── group3 -> /project/group3
 ```
 
-The working directory is mounted as a `emptyDir` so that users can put temporary data under the folder.
+The working directory is mounted as an `emptyDir` so that users can put temporary data under the folder.
 
 ### Compare to Jupyter Pod
 
@@ -209,7 +209,7 @@ working directory | /home/jovyan (user volume) | /workingdir (emptyDir)
 start-notebook script | Yes | No
 
 ### Log
-The job log is not stored externally. Instead, the log is retrieve by the underlying pod. So to retrieve the log, just
+The job log is not stored externally. Instead, the log is retrieved by the underlying pod. So to retrieve the log, just
 
 ```
 kubectl -n hub log job-20200101-12345
@@ -227,7 +227,7 @@ Key | Value
 
 ### Timeout 
 
-To prevent the job from running too long time, there is a default timeout 1 day. The timeout can be configured by 
+To prevent the job from running a too long time, there is a default timeout 1 day. The timeout can be configured by 
 
 - Overwrite `PhJob` spec `.spec.activeDeadlineSeconds`
 - Overwrite the helm value `jobSubmission.defaultActiveDeadlineSeconds`
@@ -235,20 +235,20 @@ To prevent the job from running too long time, there is a default timeout 1 day.
 
 ## Cancellation
 
-A job can be cancelled in non-final state. To cancel a job, just set the PhJob `.spec.cancel` to `true`. If a job is cancelled, the underlying pod is deleted.
+A job can be canceled in the non-final state. To cancel a job, just set the PhJob `.spec.cancel` to `true`. If a job is canceled, the underlying pod is deleted.
 
 
 
 ## Pod TTL After Finished
 
-Pod is a heavy resource for these two reasons
+A pod is a heavy resource for these two reasons
 
 - Log 
 - Overlay storage 
 
 Even though the container is terminated, these two resources are not released until the pod is deleted.
 
-To make operator easier to reclaim the resources, we can configure the TTL of Pods. The default value is 7 days. This can also be configured by
+To make the operator easier to reclaim the resources, we can configure the TTL of Pods. The default value is 7 days. This can also be configured by
 
 - Overwrite PhJobs spec `.spec.ttlSecondsAfterFinished`
 - Overwrite the helm value `jobSubmission.defaultTTLSecondsAfterFinished`
@@ -262,11 +262,11 @@ The working directory is mounted to a [emptyDir](https://kubernetes.io/docs/conc
 
 ## Default Pod Scheduling
 
-It is desired to limit the job only run on specific node. We can configure the default `nodeSelector`, `affinity`, `tolerations` for created pod.
+It is desired to limit the job only run on a specific node. We can configure the default `nodeSelector`, `affinity`, `tolerations` for created pod.
 
 ## Performance Issues
 
-It is a known issue that there might be some performance issues when `phjob` has more than 10 thousand records. For example, job submission page or jupyter spawner page takes longer time to response. If you notice this situation, please try to delete old `phjob` records and see if it alleviates the situation.
+It is a known issue that there might be some performance issues when `phjob` has more than 10 thousand records. For example, the job submission page or jupyter spawner page takes a longer time to respond. If you notice this situation, please try to delete old `phjob` records and see if it alleviates the situation.
 
 
 # FAQ
@@ -277,7 +277,7 @@ Yes. If the job have not reached the user quota and group quota
 
 **Q: Why jobs are not run in the right order?**
 
-The lifecycle of a job is from `pending`, to `preparing`, then `running`. We only guarantee that jobs enter the `preparing` state in the order of the job creation time. After a job is preparing, we cannot guarantee that the job goes to the `running` state in the same order. For example, one job takes longer time to pull an image than another one does.
+The lifecycle of a job is from `pending`, to `preparing`, then `running`. We only guarantee that jobs enter the `preparing` state in the order of the job creation time. After a job is preparing, we cannot guarantee that the job goes to the `running` state in the same order. For example, one job takes a longer time to pull an image than another one does.
 
 **Q: Why are all my jobs stuck in the preparing state?**
 

@@ -25,7 +25,7 @@ Name | Value
 
 1. please reference this [official document for GCR](https://cloud.google.com/container-registry/docs/advanced-authentication) to get the username and password
 
-2. The username is always `_json_key`. The password is the keyfile json. Please make it an one-line json string so that we can put it in the environment variable. 
+2. The username is always `_json_key`. The password is the keyfile json. Please make it a one-line json string so that we can put it in the environment variable. 
 
     ```
     cat keyfile | jq -c .
@@ -45,7 +45,7 @@ Name | Value
 
 ![](assets/custom-image-flow-diagram.png)
 
-We use a CRD ImageSpec to get specific definetion of our image setup, [primehub-controller](https://github.com/InfuseAI/primehub-controller) will base on it to generate a CRD ImageSpecJob for image building job, ImageSpecJob likes a revision of ImageSpec. Then controller will convert package manifest to a Dockerfile and create a corresponding pod to build the Dockerfile through [buildah](https://github.com/containers/buildah). Once the status of building pod changes, it wil be updated back to `.status` in ImageSpecJob and ImageSpec. Once the building job succeeded, the built image will be pushed to container registry that we configured.
+We use a CRD ImageSpec to get specific definition of our image setup, [primehub-controller](https://github.com/InfuseAI/primehub-controller) will base on it to generate a CRD ImageSpecJob for an image building job, ImageSpecJob likes a revision of ImageSpec. Then the controller will convert package manifest to a Dockerfile and create a corresponding pod to build the Dockerfile through [buildah](https://github.com/containers/buildah). Once the status of building pod changes, it will be updated back to `.status` in ImageSpecJob and ImageSpec. Once the building job succeeded, the built image will be pushed to the container registry that we configured.
 
 ### Image Builder spec
 

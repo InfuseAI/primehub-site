@@ -12,7 +12,7 @@ The following diagram depicts what PrimeHub Spawner sends a query to GraphQL ser
 
 ![](assets/graphql.png)
 
-When a user intents to launch a JupyterHub via Spawner, Spawner has to learn what **server options** this user can have according to `images`, `instance types`, `datasets`, `groups`, `user` settings. For retrieving the relative data, Spawner sends a query to GraphQL server by `fetch_context` method, the server responds with a bunch of data in JSON. According to the response data, Spawner renders a html page to display for user selection.
+When a user intends to launch a JupyterHub via Spawner, Spawner has to learn what **server options** this user can have according to `images`, `instance types`, `datasets`, `groups`, `user` settings. For retrieving the relative data, Spawner sends a query to GraphQL server by `fetch_context` method, the server responds with a bunch of data in JSON. According to the response data, Spawner renders an HTML page to display for user selection.
 
 E.g. the context of the query:
 
@@ -85,4 +85,4 @@ query='query ($id: ID!) {
 
 ## Reference
 
-For the detail of latest GraphQL APIs, please see [canner-admin-ui](https://gitlab.com/infuseai/canner-admin-ui/tree/master/packages/graphql-server/src/graphql) repo. The access permission is required.
+For the detail of the latest GraphQL APIs, please see [canner-admin-ui](https://gitlab.com/infuseai/canner-admin-ui/tree/master/packages/graphql-server/src/graphql) repo. The access permission is required.

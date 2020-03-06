@@ -14,7 +14,7 @@ Environment | Description | Optional
 `KC_SCHEME`| Scheme for external keycloak | No
 `KC_PORT` |Port for external keycloak | Yes
 `KC_USER` | Keycloak admin username | No
-`KC_PASSWORD` | Keycloak admin passowrd | No
+`KC_PASSWORD` | Keycloak admin password | No
 `KC_DB_PASSWORD` | Keycloak DB password | Yes. default is `$KC_PASSWORD`
 `KC_REALM` | Keycloak realm to install primehub | Yes. default is `primehub`
 `PRIMEHUB_CONSOLE_DOCKER_USERNAME` | image pulling user for canner images. This is only used for development purpose | Yes
@@ -48,8 +48,8 @@ Environment | Description
 --- | --- 
 `PRIMEHUB_FEATURE_USER_PORTAL` | If the user portal is enabled. Deprecated because it is enabled by default and cannot set it to false.
 `PH_DOMAIN`| parent domain name for this installation. (e.g. `example.com`). Deprecated because user portal is enabled by default.
-`PH_SCHEME`| http or https. Deprecated because user portal is enabled by default.
-`PH_PORT`| port. Deprecated because user portal is enabled by default.
-`ADMIN_UI_CLIENT_SECRET` | The secret of keycloak client `admin-ui`. Deprecated because bootstrap script would get it from keycloak and put it to secret.
-`HUB_CLIENT_SECRET` | The secret of keycloak client `jupyterhub`. Deprecated because bootstrap script would get it from keycloak and put it to secret.
+`PH_SCHEME`| http or https. Deprecated because the user portal is enabled by default.
+`PH_PORT`| port. Deprecated because the user portal is enabled by default.
+`ADMIN_UI_CLIENT_SECRET` | The secret of keycloak client `admin-ui`. Deprecated because the bootstrap script would get it from keycloak and put it to secret.
+`HUB_CLIENT_SECRET` | The secret of keycloak client `jupyterhub`. Deprecated because the bootstrap script would get it from keycloak and put it to secret.
 

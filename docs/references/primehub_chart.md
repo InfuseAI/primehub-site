@@ -169,7 +169,7 @@ jupyterhub:
 
 ### Registry Password for Image Builder
 
-If the registry password contains multiple lines, for example, json keyfile from GCR (Google Container Registry). You can configure in this way.
+If the registry password contains multiple lines, for example, the json keyfile from GCR (Google Container Registry). You can configure in this way.
 
 ```
 customImage:

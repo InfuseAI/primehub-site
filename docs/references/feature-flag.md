@@ -9,12 +9,12 @@ In PrimeHub, we use environment variables to toggle Alpha, Beta features.
 
 ## Using Features
 
-In order to introduce users new experimental features and to collect feedback from users early. We can define features as *Alpha* or *Beta* features according to PrimeHub versions. The Alpha features and Beta are enabled by `PRIMEHUB_ENABLE_ALPHA=true` and `PRIMEHUB_ENABLE_BETA=true` in `.env` respectively or enabled individually. Features are defined in in [bin/phenv](../../bin/phenv).
+To introduce users with new experimental features and to collect feedback from users early. We can define features as *Alpha* or *Beta* features according to PrimeHub versions. The Alpha features and Beta are enabled by `PRIMEHUB_ENABLE_ALPHA=true` and `PRIMEHUB_ENABLE_BETA=true` in `.env` respectively or enabled individually. Features are defined in in [bin/phenv](../../bin/phenv).
 
 ### Alpha feature
 
 - Disabled by default.
-- Buggy possibly, this feature may result in bugs/unstable system.
+- Buggy possibly, this feature may result in bugs/unstable systems.
 - The feature may be dropped or changed without notice.
 - The feature may not be compatible with later release onward.
 
@@ -22,7 +22,7 @@ In order to introduce users new experimental features and to collect feedback fr
 
 - Enabled by default unless extra config required.
 - The feature is tested and verified.
-- The detail of the feature might be changed in subsequent beta or stable releases so that the migrating actions may be required.
+- The detail of the feature might be changed in the subsequent beta or stable releases so that the migrating actions may be required.
 
 ### GA feature
 

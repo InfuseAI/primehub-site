@@ -3,17 +3,17 @@ id: crds
 title: CRDs
 ---
 
-In PrimeHub data model, it mentions when a/an instance type, image and dataset is created via Admin UI, under the hood, there are a CRD object created in Kubernetes and a Realm Role created in Keycloak. This document describes what CRDs are created for and the context of them. 
+In PrimeHub data model, it mentions when a/an instance type, image, and dataset is created via Admin UI, under the hood, there are a CRD object created in Kubernetes and a Realm Role created in Keycloak. This document describes what CRDs are created for and the context of them. 
 
 CRD, CustomResourceDefinition, PrimeHub uses the custom resource mechanism to manage structured data (custom objects) stored in Kubernetes. There are three of them, `Instance Type`, `Image` and `Dataset`.
 
-For more detail of CRD, please refer to [Extend the Kubernetest API with CustomResourceDefinitions](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/).
+For more detail of CRD, please refer to [Extend the Kubernetes API with CustomResourceDefinitions](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/).
 
 ## Instance Type
 
 ### Basic
 
-An `Instance Type` object contains these following setting/configuration.
+An `Instance Type` object contains these following settings/configurations.
 
 You can use the following commands to view the stored data.
 
@@ -61,9 +61,9 @@ Spec:
 
 When a node is marked with a Taint, it cannot accept any pods which don't tolerate the taints. Tolerations are applied to pods so that pods are allowed to schedule onto nodes with matching taints. Please refers to [Taints and Tolerations](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) for more detail.
 
-On Admin UI, a toleration which specify a tolerable taint(key-value pair) with an effect to take.
+On Admin UI, toleration which specifies a tolerable taint(key-value pair) with an effect to take.
 
-We add a toleration to tolerate a specific taint with an effect to take, the data is stored as below.
+We add toleration to tolerate a specific taint with an effect to take, the data is stored as below.
 
     tolerations:
       - effect: NoSchedule
@@ -81,7 +81,7 @@ Tolerations settings:
 
 ### NodeSelector
 
-Pods can be constrained to only be able to/prefer to run on particular nodes which are labelled matching key-value pairs. We add a nodeSelector with `memory/low` via Admin UI, the data is stored as below.
+Pods can be constrained to only be able to/prefer to run on particular nodes that are labeled matching key-value pairs. We add a nodeSelector with `memory/low` via Admin UI, the data is stored as below.
 
     nodeSelector:
         memory: low
@@ -96,7 +96,7 @@ Node Selector settings:
 
 ### Basic
 
-An `Image`object contains these following setting/configuration.
+An `Image` object contains these following settings/configurations.
 
 You can use the following commands to view the stored data.
 
@@ -122,7 +122,7 @@ The structured data (including `Pull Secret` if any) of an `image` object displa
 
 Spec:
 
-- `displayName`: The display name of image on UI.
+- `displayName`: The display name of a image on UI.
 - `description`: Description.
 - `url`: The registry url where an image is located.
 - `pullSecret`: The name of a `Secret`, this is a Secret we add via Admin UI. If required, the secret is used to pull the image.

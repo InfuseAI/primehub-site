@@ -91,7 +91,7 @@ make component-install-<app>
 
 ## Template the Value
 
-Helm provides a great way to template the kubernetes resources. In the helm installation or upgrade, helm consolidates all the values to single value tree, and use it to generate the final resource yaml and apply them to cluster.
+Helm provides a great way to template the kubernetes resources. In the helm installation or upgrade, helm consolidates all the values to a single value tree, and uses it to generate the final resource yaml and apply them to cluster.
 
 However, helm [does not provide a way to template the value](https://github.com/helm/helm/issues/2492), this is why helmfile templating comes in. Helmfile provides a way to [template the value files by environment valuable](https://github.com/roboll/helmfile#templates).
 
@@ -106,7 +106,7 @@ The helper script `bin/phenv` would find if `${CONFIG_PATH}/.env` is in the fold
 
 ## Configuration Files
 
-In the previous section, we talk about the config folder. In addition to `.env` file, the folder also contain these files and folders.
+In the previous section, we talk about the config folder. In addition to `.env` file, the folder also contains these files and folders.
 
 File| Description
 --- | ---
