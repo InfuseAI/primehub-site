@@ -73,6 +73,13 @@
       },
       {
         "type": "subcategory",
+        "label": "Registry",
+        "ids": [
+          "tasks/dockerhub-registry"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Operations",
         "ids": [      
           "tasks/cluster_shutdown",

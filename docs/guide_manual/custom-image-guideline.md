@@ -49,7 +49,7 @@ We can build images via `Image Builder` by specification of a base image with re
 
 ### Use DockerHub Registry
 
-Once images are built via **Image Builder**, they will be pushed to a specified repositories of a registry. Here we have a document introducing [How to configure PrimeHub using a DockerHub registry for Image Builder](../quickstart/dockerhub-registry.md).
+Once images are built via **Image Builder**, they will be pushed to a specified repositories of a registry. Here we have a document introducing [How to configure PrimeHub using a DockerHub registry for Image Builder](../tasks/dockerhub-registry.md).
 
 ## Build Images via Dockerfile
 
