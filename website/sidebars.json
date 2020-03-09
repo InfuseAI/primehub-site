@@ -7,7 +7,8 @@
         "label": "Setup Kubernetes",
         "ids": [
           "getting_started/prerequisites",
-          "getting_started/kubernetes_on_gke"
+          "getting_started/kubernetes_on_gke",
+          "getting_started/kubernetes_with_microk8s"
         ]
       },
       {
