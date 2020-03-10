@@ -28,7 +28,7 @@ primehub-example  asia-east1-a  1.15.9-gke.12   104.155.214.113  n1-standard-2  
 Update kube-config:
 
 ```
-$ gcloud container clusters get-credentials primehub-example --zone asia-east1-a
+$ gcloud container clusters get-credentials <cluster-name> --zone asia-east1-a
 ```
 
 After update kube-config, try to get nodes:
