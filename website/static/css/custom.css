@@ -53,3 +53,7 @@ a.navItem {
 .darkBackground {
     background-color: #151515;
 }
+
+table th, table td {
+    border-color: #122844;
+}
