@@ -38,11 +38,11 @@ class Footer extends React.Component {
           <div>
             <h5>Docs</h5>
                      
-            <a href={this.docUrl('setup_deploy/installation.html')}>
-              Setup & Deployment 
+            <a href={this.docUrl('introduction.html')}>
+              Getting Started 
             </a> 
-            <a href={this.docUrl('tips/kibana-dashboard.html')}>
-              Tips & More
+            <a href={this.docUrl('dev-introduction.html')}>
+              Setup PrimeHub 
             </a>
             <a href={this.docUrl('index-zh.html')}>
               繁中文件
