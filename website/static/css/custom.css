@@ -14,3 +14,42 @@
 
 @media only screen and (min-width: 1500px) {
 }
+
+body {
+    color: #17273b;
+}
+code {
+    background-color: #dfeaf7;
+}
+
+code.hljs {
+    background-color: #dfeaf7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #122844;
+}
+
+h2.headerTitleWithLogo {
+    color: white;
+}
+
+h3.navGroupCategoryTitle.collapsible {
+    color: #365ABD !important;
+}
+
+h4.navGroupSubcategoryTitle {
+    color: #6982c8 !important;
+}
+
+a.navItem {
+    color: #17273b !important;
+}
+
+.navigationSlider .slidingNav ul li a {
+    color: white !important;
+}
+
+.darkBackground {
+    background-color: #151515;
+}
