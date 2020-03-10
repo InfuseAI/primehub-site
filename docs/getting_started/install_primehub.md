@@ -25,6 +25,8 @@ Key | Description
 `HUB_AUTH_STATE_CRYPTO_KEY` | The jupyterhub crypo key. Please reference the [z2jh document](https://zero-to-jupyterhub.readthedocs.io/en/latest/reference/reference.html#auth-state-cryptokey).
 `HUB_PROXY_SECRET_TOKEN` | The jupyterhub secret. Please reference the [z2jh document](https://zero-to-jupyterhub.readthedocs.io/en/latest/reference/reference.html#proxy-secrettoken).
 
+Modify the environment variables below and execute the commands to generate the value file.
+
 ```
 PRIMEHUB_DOMAIN=1.2.3.4.nip.io
 PRIMEHUB_PASSWORD=__my_password__
@@ -35,7 +37,7 @@ GRAPHQL_SECRET_KEY=$(openssl rand -hex 32)
 HUB_AUTH_STATE_CRYPTO_KEY=$(openssl rand -hex 32)
 HUB_PROXY_SECRET_TOKEN=$(openssl rand -hex 32)
 
-cat <<EOF > primehub-values.yml
+cat <<EOF > primehub-values.yaml
 primehub:
   scheme: http
   domain: ${PRIMEHUB_DOMAIN}
@@ -61,7 +63,6 @@ jupyterhub:
   auth:
     state:
       cryptoKey: ${GRAPHQL_SECRET_KEY}
-jupyterhub:
   hub:
     db:
       pvc:

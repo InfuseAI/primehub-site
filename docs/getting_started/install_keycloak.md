@@ -29,7 +29,7 @@ KEYCLOAK_PASSWORD=__my_password__
 KEYCLOAK_DB_PASSWORD=__my_password__
 STORAGE_CLASS=<storage_class>
 
-cat <<EOF > keycloak-values.yml
+cat <<EOF > keycloak-values.yaml
 keycloak:
   ingress:
     enabled: true
