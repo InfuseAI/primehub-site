@@ -57,3 +57,7 @@ a.navItem {
 table th, table td {
     border-color: #122844;
 }
+
+.nav-footer {
+    background-color: #122844;
+}
