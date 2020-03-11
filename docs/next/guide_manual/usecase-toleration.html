@@ -54,7 +54,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Toleration</h1></header><article><div><span><p>In a real circumstance, we may have multiple nodes with varied performance of GPUs. Let's say we have <code>Nvidia Tesla V100(high)</code>, <code>Tesla M60(Medium)</code> and <code>Tesla K80(Low)</code> and we know there is a project using the instance type (<em>cancer_prediction</em>) which requires GPU Tesla M60 and above. In this case, we can taint nodes which have GPU Tesla K80.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Toleration</h1></header><article><div><span><p>In a real circumstance, we may have multiple nodes with varied performance of GPUs. Let's say we have <code>Nvidia Tesla V100(high)</code>, <code>Tesla M60(Medium)</code> and <code>Tesla K80(Low)</code> and we know there is a project using the instance type (<em>cancer_prediction</em>) which requires GPU Tesla M60 and above. In this case, we can taint nodes which have GPU Tesla K80.</p>
 <pre><code class="hljs">kubectl taint nodes node1 <span class="hljs-attribute">gpu</span>=low:NoSchedule
 </code></pre>
 <p>Then a project spawned from <em>cancer_prediction</em> is only scheduled on nodes which have Tesla V100(High) or Tesla M60(Medium).</p>
