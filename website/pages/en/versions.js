@@ -45,7 +45,9 @@ function Versions(props) {
                   </a>
                 </td>
                 <td>
-                  <a href="https://gitlab.com/infuseai/primehub/blob/master/CHANGELOG.md">Changelog</a>
+                  {/*<a href="https://gitlab.com/infuseai/primehub/blob/master/CHANGELOG.md">Changelog</a>*/}
+                  <a href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''}changelog`}>Changelog</a>
                 </td>
               </tr>
             </tbody>
@@ -54,7 +56,7 @@ function Versions(props) {
             This is the version that is configured automatically when you first
             install this project.
           </p>
-          <h3 id="rc">Pre-release versions</h3>
+          <h3 id="rc">Release candidate versions</h3>
           <table className="versions">
             <tbody>
               <tr>
@@ -76,7 +78,7 @@ function Versions(props) {
               </tr>
             </tbody>
           </table>
-          <p>This pre-release document applies to an unreleased version of content. It is subject to changes in the official release</p>
+          <p>This release candidate of document applies to an unreleased version of content. It is subject to changes in the official release</p>
           <h3 id="archive">Past Versions</h3>
           <p>Previous versions of the documentation are listed here.</p>
           <table className="versions">
