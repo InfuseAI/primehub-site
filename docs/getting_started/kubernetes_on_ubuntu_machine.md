@@ -1,6 +1,6 @@
 ---
 id: kubernetes_on_ubuntu_machine
-title: Install Kubernetes on an Ubuntu machine
+title: Kubernetes on an Ubuntu Machine (Single Node)
 ---
 
 This guide helps you to create a Kubernetes with [microk8s](https://microk8s.io/) for PrimeHub. microk8s is only for the single-node use case.
