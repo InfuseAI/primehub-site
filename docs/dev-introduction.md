@@ -14,7 +14,7 @@ Before installing PrimeHub, we need to ensure that the correct prerequisites are
 PrimeHub can be installed in the following environments:
 
 - [Install Kubernetes on GKE](getting_started/kubernetes_on_gke.md)
-- Install Kubernetes on an Ubuntu machine
+- [Install Kubernetes on an Ubuntu Machine (single node)](getting_started/kubernetes_on_ubuntu_machine.md)
 
 ## Setup PrimeHub
 
