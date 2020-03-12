@@ -107,6 +107,16 @@ EOF
 2. Open `http://${PRIMEHUB_DOMAIN}` and log in by the admin username and password.
 3. Open [Jupyterhub] icon and spawn a jupyter instance.
 
+## Apply License Key
+
+1. Run this command to apply a license key; please contact InfuseAI for the license.
+
+    ```
+    kubectl -n hub apply -f path/to/license_key_yaml_file
+    ```
+
+You can check the license status from [System Management](../guide_manual/admin-system#primehub-license).
+
 ## Troubleshooting
 
 1. If there is something run when installing, you can check the bootstrap job log to see what's going on
