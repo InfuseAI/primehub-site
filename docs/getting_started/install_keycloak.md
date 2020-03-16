@@ -78,6 +78,19 @@ helm upgrade \
 1. Open `http://<keycloak-hostname>/auth`
 1. Enter *Administrator Console* and log in by the username and password.
 
+> If you see the `HTTPS required` error message. This means http is not allowed for external access by default. Please try these commands to disable it.
+>
+>   ```
+>   kubectl -n default exec -it keycloak-0 -- \
+>      keycloak/bin/kcadm.sh config credentials \
+>      --server http://localhost:8080/auth \
+>      --realm master \
+>      --user keycloak \
+>      --password=${KEYCLOAK_PASSWORD}
+>   kubectl -n default exec -it keycloak-0 -- \
+>      keycloak/bin/kcadm.sh update realms/master -s "sslRequired=none"
+>   ```
+
 ## Reference
 
 - Keycloak Documentation: https://www.keycloak.org/documentation.html
