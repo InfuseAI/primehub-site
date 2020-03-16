@@ -1,11 +1,11 @@
 ---
 id: job-submission-cht
-title: Job Submission (Alpha)
+title: Job Submission (Beta)
 ---
 
 ## Job
 
-我們有時會需要批次完成特定工作。特別是需要長時間運算的工作，使用者又無法一直監視著整個過程的時候，我們可以利用`Job Submission`創建一個`Job`把工作指令項目批次地加入，再將`Job`送出於背景執行，隨時地監視執行的過程及結果。
+我們有時會需要批次完成特定工作。特別是需要長時間運算的工作，使用者又無法一直監視著整個過程的時候，我們可以利用`Job Submission`創建一個`Job`把工作指令項目批次地加入，再將`Job`送出於背景執行，隨時地監視執行的過程及結果。如果我們想要的是週期性自動發動的`job`，我們可以利用 [**Job Scheduling**](job-scheduling-feature-cht) 來創建這類型 job 及設定其週期性。
 
 ### Lifetime
 
@@ -18,7 +18,7 @@ title: Job Submission (Alpha)
 
 此頁列舉已創建 Jobs 及其對應資訊。
 
-![](assets/jsub_main.png)
+![](assets/jsub_main_beta.png)
 
 列舉中的`Job`對應資訊欄位：
 
@@ -26,6 +26,7 @@ title: Job Submission (Alpha)
 |------|-----------|
 |`Status`|狀態， `Pending`, `Preparing`, `Running`, `Failed`, `Succeeded` 及 `Cancelled`|
 |`Job name`|名稱|
+|`Schedule`|如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稱；反之顯示`-`。|
 |`User`|所有者|
 |`Group`|所屬群組|
 |`Timing`|執行時間|
@@ -34,6 +35,10 @@ title: Job Submission (Alpha)
 + `Create Job`: 點擊按鈕，創建`job`。
 
 + `Refresh`: 點擊按鈕，刷新`job`列舉。
+
++ `Job name` link: 點擊名稱連結，進入 Job 詳細頁。
+
++ `Schedule` link: 點擊名稱連結，進入 Job Scheduler 詳細頁。
 
 ### 篩選
 
@@ -97,7 +102,7 @@ title: Job Submission (Alpha)
 
 ### Information
 
-![](assets/jsub_info.png)
+![](assets/jsub_info_beta.png)
 
 `Job`記載內容資訊如下：
 
@@ -107,6 +112,7 @@ title: Job Submission (Alpha)
 |`Message`|執行回傳訊息|
 |`Job ID`|ID|
 |`Job name`|名稱|
+|`Schedule`|如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稠；反之顯示`-`；點擊名稱連結，進入 Job Scheduler 詳細頁。|
 |`User`|所有者|
 |`Start Time`|開始時間|
 |`Finished Time`|結束時間|

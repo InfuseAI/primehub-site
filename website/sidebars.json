@@ -144,6 +144,7 @@
     ],
     "Feature": [
       "job-submission-feature",
+      "job-scheduling-feature",
       {
         "type": "subcategory",
         "label": "Jupyter Spawner",
@@ -155,7 +156,7 @@
     "Tutorial": [
       {
         "type": "subcategory",
-        "label": "Job Submission Alpha",
+        "label": "Job Submission Beta",
         "ids": [
           "job-submission-tutorial-simple",
           "job-submission-tutorial-p1",
@@ -233,6 +234,7 @@
         "label": "功能",
         "ids":[
           "zh-tw/job-submission-cht",
+          "zh-tw/job-scheduling-feature-cht",
           "zh-tw/user-advanced-setting"
         ]
       }
@@ -240,7 +242,7 @@
     "教學":[
       {
         "type": "subcategory",
-        "label": "Job Submission (Alpha)",
+        "label": "Job Submission (Beta)",
         "ids":[
           "zh-tw/job-submission-tutorial-simple",
           "zh-tw/job-submission-tutorial-p1",

@@ -1,11 +1,11 @@
 ---
 id: job-submission-feature
-title: Job Submission (Alpha)
+title: Job Submission (Beta)
 ---
 
 ## Job
 
-We sometimes have time-consuming tasks which have to be run sequentially, because tasks take considerable time to complete, users are not able to engage with the whole of the progress. In this case, we can use **Job Submission** to create a job of sequential multiple tasks and submit the job for execution at background, meanwhile we can monitor the progress from the log.
+We sometimes have time-consuming tasks which have to be run sequentially, because tasks take considerable time to complete, users are not able to engage with the whole of the progress. In this case, we can use **Job Submission** to create a job of sequential multiple tasks and submit the job for execution at background, meanwhile we can monitor the progress from the log. If we want to create routine jobs that we can achieve it by [**Job Scheduling**](job-scheduling-feature).
 
 ### Lifetime
 
@@ -17,7 +17,7 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 There is a list showing created jobs with relevant information.
 
-![](assets/jsub_main.png)
+![](assets/jsub_main_beta.png)
 
 There are several informative columns of the job list:
 
@@ -25,14 +25,19 @@ There are several informative columns of the job list:
 |------|-----------|
 |`Status`|The status of the job. `Pending`,`Preparing`, `Running`, `Failed`, `Succeeded`, `Cancelled` and `Unknown`.|
 |`Job name`|The name of the job.|
+|`Schedule`|The name of the job scheduler if the job is triggered by the scheduler, otherwise it shows `-`.|
 |`User`|The owner who submits the job.|
 |`Group`|The group where the job runs.|
 |`Timing`|The duration of the running job.|
 |`Action`|The action buttons, `Cancel` and `Rerun`.|
 
-+ `Create Job`: Click the button to create the job.
++ `Create Job` button: Click the button to create the job.
 
-+ `Refresh`: Click the button to refresh the list.
++ `Refresh` button: Click the button to refresh the list.
+
++ `Job name` link: Click the name to enter the job detail page.
+
++ `Schedule` link: Click the name to enter the scheduler detail page if any.
 
 ### Filter
 
@@ -96,7 +101,7 @@ Click the job name on the list to view the job information and logs.
 
 ### Information
 
-![](assets/jsub_info.png)
+![](assets/jsub_info_beta.png)
 
 Here are the information of the job:
 
@@ -106,6 +111,7 @@ Here are the information of the job:
 |`Message`|Messages returned from job running.|
 |`Job ID`|The unique id of the job.|
 |`Job name`|The name of the job.|
+|`Schedule`|The name of the job scheduler if the job is triggered by the scheduler; clicking the name to enter the scheduler detail page.|
 |`User`|The owner who submits the job.|
 |`Start Time`|The time the job starts at.|
 |`Finished Time`|The time the job finishes at.|
