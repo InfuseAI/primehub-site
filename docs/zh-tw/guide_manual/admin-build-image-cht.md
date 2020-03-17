@@ -50,6 +50,26 @@ Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具�
 
 一旦創建完成，該 image url 會列在表單欄位。
 
+---
+
+### Conda Package Match Specification
+
+這裡我們特別提及： Conda 支援指定套件的來源 `channel`，並可以進一步指定套件符合條件 [[參考]](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)。 語法如下：
+
+```txt
+(channel(/subdir):(namespace):)name(version(build))[key1=value1,key2=value2]
+```
+
+例： 我們想要安裝由`conda-forge` channel 提供的`numpy`套件，如同[原始頁面](https://anaconda.org/conda-forge/numpy)。
+
+我們可以指定`conda-forge::` channel 再配合其進階條件：
+
+```bash
+conda install conda-forge::numpy==1.17*
+```
+
+---
+
 ## 編輯客製化 Image Spec
 
 ![](assets/edit_button.png)

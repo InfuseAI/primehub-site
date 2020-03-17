@@ -41,6 +41,7 @@ Fill in the fields, some are required:
 
   + `Conda` A packages management supports multiple programming language. [[Reference]](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages)
 
+
 **Note**:
 *In case of multiple packages, please using the **line break** for each package instead of putting them in one line.*
 
@@ -49,6 +50,26 @@ Click `Confirm` to complete the addition.
 ![](assets/build_img_url.png)
 
 Once the image is built successfully, the url of the image will be listed.
+
+---
+
+### Conda Package Match Specification
+
+We want to mention specially that Conda supports to specify `channel` where the package is sourced from and [match specification](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications) of the package. The syntax is 
+
+```txt
+(channel(/subdir):(namespace):)name(version(build))[key1=value1,key2=value2]
+```
+
+For example, we want to install `numpy` package which is sourced from the channel,`conda-forge`, [here](https://anaconda.org/conda-forge/numpy).
+
+We can use `conda-forge::` to specify the channel:
+
+```bash
+conda install conda-forge::numpy==1.17*
+```
+
+---
 
 ## Edit Custom Image Spec
 
