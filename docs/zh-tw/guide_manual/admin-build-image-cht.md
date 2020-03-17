@@ -52,7 +52,7 @@ Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具�
 
 ---
 
-### Conda Package Match Specification
+### 指定 Conda 套件符合條件
 
 這裡我們特別提及： Conda 支援指定套件的來源 `channel`，並可以進一步指定套件符合條件 [[參考]](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)。 語法如下：
 
