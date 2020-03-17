@@ -42,6 +42,10 @@ h4.navGroupSubcategoryTitle {
     color: #6982c8 !important;
 }
 
+a {
+    color: #6a8cc2;
+}
+
 a.navItem {
     color: #17273b !important;
 }
@@ -61,3 +65,4 @@ table th, table td {
 .nav-footer {
     background-color: #122844;
 }
+
