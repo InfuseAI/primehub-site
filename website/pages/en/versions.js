@@ -28,7 +28,7 @@ function Versions(props) {
           <header className="postHeader">
             <h1>{siteConfig.title} Versions</h1>
           </header>
-          <p>New versions of this project are released every so often.</p>
+          <p>New versions of PrimeHub are released every 4 - 6 weeks.</p>
           <h3 id="latest">Current version</h3>
           <table className="versions">
             <tbody>
