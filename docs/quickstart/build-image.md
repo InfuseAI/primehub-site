@@ -35,4 +35,8 @@ This quickstart shows how to build a custom image by the feature of `Image Build
 
     ![](assets/qs-img-build.png)
 
-Alright, we have built our image successfully and gain the url of it. Next, go to [[quickstart] add image](add-image) to see how we add the image to be available for users on PrimeHub.
+Alright, we have built our image successfully and gain the url of it. Go to [[quickstart] add image](add-image) to see how we add the image to be available for users on PrimeHub.
+
+## Next
+
+When we add images or assign base images, pulling these images may require secrets to have the permission. Next, let's try to add these secrets on Secret Management.

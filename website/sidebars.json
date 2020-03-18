@@ -116,15 +116,23 @@
       "quickstart/login-portal-admin",
       "quickstart/create-user",
       "quickstart/create-group",
-      "quickstart/pull-secret",
-      "quickstart/build-image",
-      "quickstart/add-image",
-      "quickstart/secret-pull-image",
-      "quickstart/secret-gitsync",
-      "quickstart/build-image",
-      "quickstart/add-image",
       "quickstart/add-instance-type",
-      "quickstart/dockerhub-registry"
+      {
+        "type": "subcategory",
+        "label": "Image",
+        "ids": [
+          "quickstart/add-image",
+          "quickstart/build-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Secrets",
+        "ids":[
+          "quickstart/secret-pull-image",
+          "quickstart/secret-gitsync"
+        ]
+      }
     ],
     "Maintenance": [
       "quickstart/maintenance-resize-user-vol",

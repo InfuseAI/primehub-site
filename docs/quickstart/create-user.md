@@ -14,3 +14,7 @@ This quickstart shows how to create a user.
     ![img](assets/qs-create-user.png)
 
 4. Confirm.
+
+## Next
+
+Now we learn how to create users, please create other users for a same group/project. Next we will create a group for these users. *Without a group*, users can do nothing on PrimeHub. Let's make sure each user belonging certain groups.

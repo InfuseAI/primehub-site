@@ -39,3 +39,8 @@ It is redirected to a `maintenance notebook` where administrators can run severa
 
 ## Logout
 Please click `Logout` button at top-right. The page would be directed to the `Login` page.
+
+
+## Next
+
+Let's go to **Admin Dashboard** from User Portal and try to add users.

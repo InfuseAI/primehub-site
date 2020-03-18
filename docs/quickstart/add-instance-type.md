@@ -1,9 +1,11 @@
 ---
-id: create-instance-type
+id: add-instance-type
 title: Create/Plan Instance Type
 ---
 
-This quckstart shows how to crete an instance type and an advice of planning them according to a real circumstance (CPUs/MEM/GPUs).
+**Instance Type**, is a resources allocation setting. According to the it, PrimeHub will try to allocate these resources for launching an instance for a JupyterHub or a Job if vacant resources are sufficient.
+
+This quckstart shows how to crete an instance type and give an advice of planning them according to a real circumstance (CPUs/MEM/GPUs).
 
 ## Advice of Plan
 
@@ -33,7 +35,7 @@ If you are new to plan instance types, here is an advice.
 |Medium|16|256G|2|40-60|
 |Large|32|420G|4|80+|
 
-## Add Instance Type
+## Let's Add Instance Types
 
 According to our plan, let's create instance types for users, here we will create a GPU-equipped instance type of medium-scale.
 
@@ -47,10 +49,16 @@ According to our plan, let's create instance types for users, here we will creat
 
 5. Fill in `GPU Limit` with *2*.
 
-6. (Optional) `Overcommitting`, if required, enabled it and fill in `CPU Request` with *14* and `Memory Request` with *200GB*. [More detail [Overcommitting]](https://docs.primehub.io/docs/guide_manual/admin-instancetype#overcommitting-advanced-feature).
+6. (Optional) `Overcommitting`, if required, enabled it and fill in `CPU Request` with *14* and `Memory Request` with *200GB*. [More detail [Overcommitting]](../guide_manual/admin-instancetype#overcommitting-advanced-feature).
 
 7. Click `edit groups` and select groups which can have this instance type.
 
-8. Click `Confirm` to save it.
+8. (Optional) `Tolerations` if required: [[Reference]](../guide_manual/usecase-toleration)
+   
+9. (Optional) `NodeSelector` if required: [[Reference]](../guide_manual/usecase-nodeselector)
 
-We have created the instance type, *medium-with-gpu*, which requests medium-scale resources allocation for specified groups. Users who belong to these groups are able to select it for launching a jupyterhub.
+10. Click `Confirm` to save it.
+
+## Next
+
+We have created the instance type, *medium-with-gpu*, which requests medium-scale resources allocation and assigned it to groups. Users who belong to these groups are able to select it for launching instances. Next, let's add images as working environments for instances.

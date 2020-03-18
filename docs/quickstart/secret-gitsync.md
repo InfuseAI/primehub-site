@@ -1,6 +1,6 @@
 ---
 id: secret-gitsync
-title: Gitsync secret for GitHub
+title: Gitsync Secret for GitHub
 ---
 
 ## Add a secret for gitsync on GitHub

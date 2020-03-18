@@ -5,8 +5,13 @@ title: Create Group
 
 This quickstart shows how to create a group.
 
-A group is like a project group, there can be a shared volume for sharing project data within the group.
+PrimeHub is the group-centric design, things such as users, instance types, images and datasets have to be assigned to groups, otherwise, they cannot be utilized without assigning groups on PrimeHub. Hence, we have to make sure these things are assigned to groups.
+
+A group, we can think it as a project group, users of the group share the same resources, datasets and conduct different tasks in a same project; hence, a group can be equipped with a shared volume for sharing project data by settings. We also can limit the resources quota for each group and ,furthermore, for each user in a group.
+
 A user can be assigned to multiple groups.
+
+## Let's create a group
 
 1. Log in `User Portal` as an administrator and click `Admin Dashboard` to enter the dashboard.
 
@@ -28,3 +33,7 @@ A user can be assigned to multiple groups.
     ![qs-create-group2.png](assets/qs-create-group2.png)
 
 8. Confirm.
+
+## Next
+
+We learn how to create a group with settings such as shared volume, quota and assigning users. Since we have a group, we can go next to add instance types, images for our groups.

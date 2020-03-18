@@ -1,9 +1,11 @@
 ---
 id: secret-pull-image
-title: Pull secret for GitLab
+title: Pull Secret for GitLab
 ---
 
-## Add a secret for pulling an image on GitLab registry
+**Secret**, is a credential for proper permissions on repositories or registries.
+
+## Add a image pull-secret
 
 This quickstart describes how we have/add a secret dedicated to pull an image from GitLab on PrimeHub.
 
