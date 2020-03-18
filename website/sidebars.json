@@ -187,12 +187,11 @@
           "zh-tw/quickstart/login-portal-admin",
           "zh-tw/quickstart/create-user",
           "zh-tw/quickstart/create-group",
-          "zh-tw/quickstart/secret-pull-image",
-          "zh-tw/quickstart/secret-gitsync",
-          "zh-tw/quickstart/build-image",
-          "zh-tw/quickstart/add-image",
           "zh-tw/quickstart/add-instance-type",
-          "zh-tw/quickstart/dockerhub-registry"
+          "zh-tw/quickstart/add-image",
+          "zh-tw/quickstart/build-image",
+          "zh-tw/quickstart/secret-pull-image",
+          "zh-tw/quickstart/secret-gitsync"
         ] 
       },
       {
@@ -247,7 +246,7 @@
         ]
       }
     ],
-    "教學":[
+    "教學": [
       {
         "type": "subcategory",
         "label": "Job Submission (Beta)",
@@ -257,6 +256,9 @@
           "zh-tw/job-submission-tutorial-p2"
         ]
       }
+    ],
+    "其它": [
+      "zh-tw/quickstart/dockerhub-registry"
     ]
   }
 }
