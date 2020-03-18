@@ -1,6 +1,6 @@
 ---
-id: version-2.4-changelog 
-original_id: changelog
+id: version-2.4-release-note 
+original_id: release-note
 title: PrimeHub v2.4
 ---
 
