@@ -14,7 +14,7 @@ This guide helps you to create a Kubernetes with [microk8s](https://microk8s.io/
 * Networking: allow 80 port for HTTP
   
 
-### install microk8s
+### Install microk8s
 
 Install microk8s with `snap`
 
@@ -187,6 +187,34 @@ microk8s.enable gpu
 * Disable it by setting a wrong proxy
 
 Please read the [manual](https://snapcraft.io/docs/keeping-snaps-up-to-date)
+
+## Change Local Storage (optional)
+
+It was possible to keep persistent volumes (PV) to external devices, for example
+
+* a mounted external storage
+* different path in the same device
+
+For now, the `microk8s-hostpath` saves data at
+
+```
+/var/snap/microk8s/common/default-storage
+```
+
+It couldn't be changed and shouldn't be a symbolic link. If you want to save PV to a different location, the only way was using `bind mount`.
+
+
+Here is a `bind mount` example:
+
+```
+LABEL=cloudimg-rootfs	/	 ext4	defaults	0 0
+LABEL=UEFI	/boot/efi	vfat	defaults	0 0
+UUID=b6df830a-d881-4dc5-a8e4-aeea2d7ee6c0	/data	xfs	defaults	0 0
+/data	/var/snap/microk8s/common/default-storage	none	defaults,bind	0 0
+```
+
+* line 2 was an external storage mounted at /data
+* line 3 was binding `/data` to `/var/snap/microk8s/common/default-storage`
 
 
 ## Next
