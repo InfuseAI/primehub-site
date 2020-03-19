@@ -1,16 +1,12 @@
 ---
 id: version-2.4-release-note 
 original_id: release-note
-title: PrimeHub v2.4
+title: 2.4 Release Notes
 ---
-
-## What's New
 
 ### Image Builder (Beta)
 
 Image Builder is a new feature that administrators are able to build up a variety of images which are pre-installed/pre-configured various tools/libraries for data scientists. It helps accelerate project development.
-
-![changelog/phv24_1.png](assets/changelog/phv24_1.png)
 
 #### Documentation: [Image Builder](guide_manual/admin-build-image)
 
@@ -21,8 +17,6 @@ Image Builder is a new feature that administrators are able to build up a variet
 #### Please be awared: This is a alpha version that it is subject to changes in the stable release in the near future.
 
 Users are able to submit time-consuming jobs for running at the background.
-
-![changelog/phv24_5.png](assets/changelog/phv24_5.png)
 
 #### Documentation: [Job Submission](job-submission), [Tutorial](job-submission-tutorial-p1)
 
