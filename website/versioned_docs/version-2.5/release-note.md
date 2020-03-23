@@ -6,7 +6,13 @@ original_id: release-note
 
 ### PrimeHub-Ready Kubernetes
 
-We have simplified our overall PrimeHub installation process! Simply use the new `helm install` command. To equip you with what you need to get started, please view our documentation here: [PrimeHub Installation](dev-introduction)
+We have simplified our overall PrimeHub installation process! Simply use the new `helm install` command. To equip you with what you need to get started, please view our documentation here.
+
+**Documentation:**
+
+- [PrimeHub Installation](dev-introduction)
+
+---
 
 ### Job Scheduler (Alpha)
 
@@ -18,6 +24,8 @@ Our Job Scheduler feature now gives users an option to set a recurrence when cre
 - Setup `PRIMEHUB_FEATURE_JOB_SUBMISSION` flag to enable the Job Scheduler feature
 
 **Note: This is an alpha version that it is subject to changes in another release in the near future.**
+
+--
 
 ### Job Submission
 
