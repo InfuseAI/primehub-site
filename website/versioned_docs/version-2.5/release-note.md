@@ -25,7 +25,7 @@ Our Job Scheduler feature now gives users an option to set a recurrence when cre
 
 **Note: This is an alpha version that it is subject to changes in another release in the near future.**
 
---
+---
 
 ### Job Submission
 
