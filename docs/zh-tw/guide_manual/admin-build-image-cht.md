@@ -7,7 +7,7 @@ Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具�
 
 ## 客製化 Image 列舉
 
-![](assets/build_img_main.png)
+![](assets/build_img_main_v26.png)
 
 進到 `Image Builder`，可以看到一個表單，其中列舉客製化 image spec，欄位分別有下列資訊：
 
@@ -23,7 +23,7 @@ Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具�
 
 點擊 `+ Add` 進入 image spec 新增頁面。
 
-![](assets/build_img_create.png)
+![](assets/build_img_create_v26.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -37,9 +37,9 @@ Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具�
 
   + `APT` Debian, Ubuntu 及其它相關的 linux distribution 的套件管理。
 
-  + `Pip`  Python 套件管理。 [[參考]](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)
-
   + `Conda` 多樣程式語言套件管理。 [[參考]](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages)
+
+  + `Pip`  Python 套件管理。 [[參考]](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)
 
 **Note**:
 *如果需安裝複數個套件時，請輸入一行為一套件，換行後輸入下一個套件*
@@ -76,7 +76,7 @@ conda install conda-forge::numpy==1.17*
 
 點擊編輯按鈕，進入該客製化 image spec 編輯頁。
 
-![](assets/build_img_edit.png)
+![](assets/build_img_edit_v26.png)
 
 進入編輯頁後會顯示 `Info` 及 `Jobs` 兩個選單。
 `Info` 顯示跟新增頁面時一樣的欄位，除了 `Name` 欄位外，其餘皆可進行編輯。
@@ -89,7 +89,7 @@ conda install conda-forge::numpy==1.17*
 
 所有 **jobs**/**image urls** 都會列舉：
 
-![](assets/build_img_jobs.png)
+![](assets/build_img_jobs_v26.png)
 
 + `Updated At` 最近更新時間。
 
@@ -105,7 +105,7 @@ conda install conda-forge::numpy==1.17*
 
 點擊按鈕，查看每個工作的記錄及其創建依據的 spec。
 
-![](assets/build_img_job.png)
+![](assets/build_img_job_v26.png)
 
 當某個創建工作失敗，可以查看記錄查明失敗原因。
 
