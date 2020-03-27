@@ -1,9 +1,12 @@
 ---
 id: getting-started-admin
-title: Getting Started
+title: Administration
 ---
 
+PrimeHub administrators can access admin-only features for the managements on User Portal. Most of administration are performed by using Admin Dashboard and Maintenance Notebook.
 
-+ Check [Management](guide_manual/admin-system) section to learn all features of each type management of PrimeHub.
+This section includes
 
-+ Check our [Quickstart](quickstart/login-portal-admin) section to hand on PrimeHub directly.
++ [Manage PrimeHub by Admin Dashboard](guide_manual/admin-system) 
+
++ [Perform operations in Maintenance Notebook](maintenance) 

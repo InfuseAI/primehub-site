@@ -3,4 +3,12 @@ id: getting-started-user
 title: Getting Started
 ---
 
-+ Check our Quickstart for accessing [**user portal**](quickstart/login-portal-user.md) and [**launching project**](quickstart/launch-project) on PrimeHub.
+Data scientists are able to launch JupyterHub for research project. To do so, users can access JupyterHub on User Portal.
+
+This guide includes:
+
++ [Access User Portal.](quickstart/login-portal-user.md)
+
++ [Launch/Shutdown projects of JupyterHub on PrimeHub.](quickstart/launch-project)
+
++ [Advanced settings of JupyterHub Spawner](user-advanced-setting)

@@ -97,75 +97,11 @@
       "references/feature-flag"
     ]
   },
-  "getting-started-admin": {
-    "Administrator": [
-      "getting-started-admin",
-      "guide_manual/custom-image-guideline"
-    ],
-    "Management":[
-      "guide_manual/admin-system",
-      "guide_manual/admin-user",
-      "guide_manual/admin-group",
-      "guide_manual/admin-instancetype",
-      "guide_manual/admin-image",
-      "guide_manual/admin-build-image",
-      "guide_manual/admin-dataset",
-      "guide_manual/admin-secret"
-    ],
-    "Quickstart": [
-      "quickstart/login-portal-admin",
-      "quickstart/create-user",
-      "quickstart/create-group",
-      "quickstart/add-instance-type",
-      {
-        "type": "subcategory",
-        "label": "Image",
-        "ids": [
-          "quickstart/add-image",
-          "quickstart/build-image"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Secrets",
-        "ids":[
-          "quickstart/secret-pull-image",
-          "quickstart/secret-gitsync"
-        ]
-      }
-    ],
-    "Maintenance": [
-      "quickstart/maintenance-resize-user-vol",
-      "quickstart/maintenance-resize-group-vol"
-    ],
-    "Use Case": [
-      "guide_manual/usecase-toleration",
-      "guide_manual/usecase-nodeselector"
-    ]
-  },
-  "getting-started-user": {
-    "User": ["getting-started-user"],
-    "Quickstart": [
+  "documentation": {
+    "Project": [
+      "getting-started-user",
       "quickstart/login-portal-user",
       "quickstart/launch-project",
-      "quickstart/close-project"
-    ],
-    "Feature": [
-      {
-        "type": "subcategory",
-        "label": "Job",
-        "ids":[
-          "job-submission-feature",
-          "job-scheduling-feature"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Model",
-        "ids":[
-          "model-deployment-feature"
-        ]
-      },
       {
         "type": "subcategory",
         "label": "Jupyter Spawner",
@@ -174,7 +110,9 @@
         ]
       }
     ],
-    "Tutorial": [
+    "Job": [
+      "job-submission-feature",
+      "job-scheduling-feature",
       {
         "type": "subcategory",
         "label": "Job Submission Beta",
@@ -186,6 +124,60 @@
           "job-submission-tutorial-p4"
         ]
       }
+    ],
+    "Model": [
+      "model-deployment-feature"
+    ],
+    "Administration":[
+      "getting-started-admin",
+      "guide_manual/admin-system",
+      {
+        "type": "subcategory",
+        "label": "Manage users and groups",
+        "ids":[
+          "guide_manual/admin-user",
+          "guide_manual/admin-group"
+        ]
+      },
+      {
+        "type":"subcategory",
+        "label":"Manage Instance Type",
+        "ids":[
+          "guide_manual/admin-instancetype",
+          "guide_manual/usecase-toleration",
+          "guide_manual/usecase-nodeselector"       
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage and build images",
+        "ids":[
+          "guide_manual/admin-image",
+          "guide_manual/admin-build-image",
+          "guide_manual/custom-image-guideline"
+        ]
+      },
+      "guide_manual/admin-dataset",
+      "guide_manual/admin-secret",
+      {
+        "type":"subcategory",
+        "label":"Quick Start",
+        "ids":[
+          "quickstart/login-portal-admin",
+          "quickstart/create-user",
+          "quickstart/create-group",
+          "quickstart/add-instance-type",
+          "quickstart/add-image",
+          "quickstart/build-image",       
+          "quickstart/secret-pull-image",
+          "quickstart/secret-gitsync"
+        ]
+      }
+    ],
+    "Maintenance": [
+      "maintenance",
+      "quickstart/maintenance-resize-user-vol",
+      "quickstart/maintenance-resize-group-vol"
     ]
   },
   "zh-tw": {
