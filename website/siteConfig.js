@@ -52,9 +52,9 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     //{ doc: 'introduction', label: 'About'},
-    { doc: 'getting-started-admin', label: 'For Admin'},
-    { doc: 'getting-started-user', label: 'For User'},
-    { doc: 'dev-introduction', label: 'For Developers'},
+    { doc: 'getting-started-admin', label: 'Administrator'},
+    { doc: 'getting-started-user', label: 'Scientist'},
+    { doc: 'dev-introduction', label: 'Developer'},
     { doc: 'index-zh', label: '繁中文件'},
     //{ blog: true, label: 'Blog'},
     //{ page: 'help', label: 'Community'},
