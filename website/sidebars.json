@@ -151,8 +151,21 @@
       "quickstart/close-project"
     ],
     "Feature": [
-      "job-submission-feature",
-      "job-scheduling-feature",
+      {
+        "type": "subcategory",
+        "label": "Job",
+        "ids":[
+          "job-submission-feature",
+          "job-scheduling-feature"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Model",
+        "ids":[
+          "model-deployment-feature"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Jupyter Spawner",
@@ -238,10 +251,23 @@
       },
       {
         "type": "subcategory",
-        "label": "功能",
+        "label": "Job",
         "ids":[
           "zh-tw/job-submission-cht",
-          "zh-tw/job-scheduling-feature-cht",
+          "zh-tw/job-scheduling-feature-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Model",
+        "ids": [
+          "zh-tw/model-deployment-feature"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Jupyter",
+        "ids": [
           "zh-tw/user-advanced-setting"
         ]
       }
