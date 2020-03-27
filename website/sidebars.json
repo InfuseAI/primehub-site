@@ -115,7 +115,7 @@
       "job-scheduling-feature",
       {
         "type": "subcategory",
-        "label": "Job Submission Beta",
+        "label": "Tutorials",
         "ids": [
           "job-submission-tutorial-simple",
           "job-submission-tutorial-p1",
