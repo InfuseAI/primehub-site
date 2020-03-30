@@ -13,7 +13,7 @@ title: Documentations
 
 ## For Developers
 
-If you want to learn more about **PrimeHub**, you can start from [Design documents](dev-introduction), [Guides](guide_manual/cluster_shutdown) and [Tips](tips/kibana-dashboard).
+If you want to learn more about **PrimeHub**, you can start from [Getting Started](dev-introduction), [Design and Concepts](design/architecture).
 
 ## 繁中文件
 
