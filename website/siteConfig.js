@@ -84,6 +84,7 @@ const siteConfig = {
   },
 
   gaTrackingId: 'UA-123266454-3',
+  gaGtag: true,
 
   /* Custom fonts for website */
   /*
