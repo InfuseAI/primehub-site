@@ -95,6 +95,9 @@
       "references/primehub_chart",
       "references/dotenv",
       "references/feature-flag"
+    ],
+    "Trouble Shooting": [
+      "trouble-shoot-guide"
     ]
   },
   "documentation": {
