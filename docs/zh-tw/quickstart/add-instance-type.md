@@ -1,5 +1,5 @@
 ---
-id: create-instance-type
+id: add-instance-type
 title: 新增/計劃 Instance Type
 ---
 
