@@ -59,7 +59,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Introduction</h1></header><article><div><span><p>PrimeHub is managed by helm. The way to <a href="https://helm.sh/docs/using_helm/#customizing-the-chart-before-installing">customize helm installation</a> is to provide values in the installation command.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Introduction</h1></header><article><div><span><p>PrimeHub is managed by helm. The way to <a href="https://helm.sh/docs/using_helm/#customizing-the-chart-before-installing">customize helm installation</a> is to provide values in the installation command.</p>
 <p>Install helper provides default values to override. We use them to provide</p>
 <ul>
 <li>Common jupyterhub customization (e.g authenticator, spawner)</li>
@@ -87,7 +87,7 @@
       - primehub-values.yaml
 </code></pre>
 <p>and the install command would change to</p>
-<pre><code class="hljs">helmfile -f primehub<span class="hljs-selector-class">.yaml</span>
+<pre><code class="hljs"><span class="hljs-selector-tag">helmfile</span> <span class="hljs-selector-tag">-f</span> <span class="hljs-selector-tag">primehub</span><span class="hljs-selector-class">.yaml</span>
 </code></pre>
 <p>In this way, we make the installation declarative and easy to run. All these helmfiles are located at <code>helm/helmfile.d</code>.</p>
 <p>As more and more releases need to be installed, we also categorize these releases <a href="https://github.com/roboll/helmfile#labels-overview">by label</a>. There are two labels defined</p>
@@ -155,7 +155,7 @@ helmfile -f helm/helmfile.d -l <span class="hljs-attribute">app</span>=&lt;app&g
 <tr><td><code>cluster-bootstrap.yml</code></td><td>The rke configuration file (for bootstrapping) if any</td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting_started/install_primehub"><span class="arrow-prev">← </span><span class="function-name-prevnext">Install PrimeHub</span></a><a class="docs-next button" href="/docs/getting_started/install_helper_steps"><span>Install by Helper</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#make-helm-installation-easy">Make Helm Installation Easy</a></li><li><a href="#template-the-value">Template the Value</a></li><li><a href="#configuration-files">Configuration Files</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Getting Started</a><a href="/docs/dev-introduction.html">Setup PrimeHub</a><a href="/docs/index-zh.html">繁中文件</a></div><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting_started/install_primehub"><span class="arrow-prev">← </span><span class="function-name-prevnext">Install PrimeHub</span></a><a class="docs-next button" href="/docs/getting_started/install_helper_steps"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#make-helm-installation-easy">Make Helm Installation Easy</a></li><li><a href="#template-the-value">Template the Value</a></li><li><a href="#configuration-files">Configuration Files</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Getting Started</a><a href="/docs/dev-introduction.html">Setup PrimeHub</a><a href="/docs/index-zh.html">繁中文件</a></div><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
