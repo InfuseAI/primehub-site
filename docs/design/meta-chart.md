@@ -1,6 +1,6 @@
 ---
 id: meta-chart
-title: Primehub Meta Chart
+title: Meta Chart
 ---
 
 Primehub meta chart is a helm chart to install Primehub.

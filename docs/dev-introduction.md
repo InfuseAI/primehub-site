@@ -21,9 +21,6 @@ PrimeHub can be installed in the following environments:
 - **[Install Keycloak](getting_started/install_keycloak.md):** The service used to implement authentication and authorization.
 - **[Install Metacontroller](getting_started/install_metacontroller.md):**  Lightweight Kubernetes controller implementation.
 - **[Install PrimeHub](getting_started/install_primehub.md)**
+- **[Install helper](getting_started/install_helper.md)**: Advanced way to install PrimeHub
 
-## Install Helper
 
-*Install helper* is groups of YAML templates for helm installation. Please see the following document
-
-- [Install helper](getting_started/install_helper_intro.md)

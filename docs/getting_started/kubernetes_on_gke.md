@@ -44,6 +44,13 @@ gke-primehub-example-default-pool-51960bca-wr9l   Ready    <none>   98s   v1.15.
 
 ### Install helm
 
+Install helm 2.x binary. Please see the installation steps in [prerequisites](prerequisites.md). Make sure the helm binary version is `v2.x.x` (`v3.x.x` is not supported yet)
+
+```
+$ helm version --client
+Client: &version.Version{SemVer:"v2.16.3", GitCommit:"1ee0254c86d4ed6887327dabed7aa7da29d7eb0d", GitTreeState:"clean"}
+```
+
 Apply RBAC resources for helm
 
 ```

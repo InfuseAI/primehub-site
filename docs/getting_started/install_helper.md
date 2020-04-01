@@ -1,9 +1,17 @@
 ---
 id: install_helper
-title: Installation Helper
+title: Install Helper (Advanced)
 ---
 
-## Install PrimeHub
+Install Helper is an advanced way to install PrimeHub and relative components. It uses environment variables to share common settings for multiple helm charts. Such as,
+
+- Host name for ingress
+- Airgap relative settings
+- Keycloak settings
+- Storage class
+
+
+## How to Use
 
 Please clone the primehub repository or untar the primehub release
 
@@ -21,15 +29,18 @@ Please clone the primehub repository or untar the primehub release
    export PRIMEHUB_STORAGE_CLASS=<the storage class of RWO PVCs>
 
    make init
-   ```
+   ```   
+   then the configuration is generated to `~/.primehub/config/<cluster-name>` or `bin/phenv --path`
 
-1. Configure PrimeHub for advanced features. Please reference the [configuration document](configuration.md)
+1. Configure PrimeHub for advanced features. Please reference the [environment variables](../references/dotenv.md) and [primehub chart configuration](../references/primehub_chart.md).
+
+   > For more detail of the configuration structure, please see [install helper design](../design/install-helper-design.md)
 
 1. Install the metacontroller
 
-  ```bash
-  make metacontroller-install
-  ```
+   ```bash
+   make metacontroller-install
+   ```
 
 1. Install the keycloak
 
@@ -61,9 +72,7 @@ Once complete, please check the `http(s)://primehub.example.com/`
    make primehub-upgrade
    ```
 
-## Install additional components
-
-### Grafana
+## Install Grafana
 
 1. Create Grafana Keycloak client:
 
@@ -75,7 +84,7 @@ Once complete, please check the `http(s)://primehub.example.com/`
 
 1. Set environment `GRAFANA_ADMIN` & `GRAFANA_PASSWORD` in `.env` file
 
-   > Never forget to assign there values, or it will be hard for you to login as `GRAFANA_ADMIN` since Grafana will pick a random password if we didn't assign it before.
+   > Never forget to assign their values, or it will be hard for you to log in as `GRAFANA_ADMIN` since Grafana will pick a random password if we didn't assign it before.
 
 1. Check Helm difference:
 
@@ -94,38 +103,6 @@ Once complete, please check the `http(s)://primehub.example.com/`
    ```bash
    kubectl get ingresses -n monitoring prometheus-operator-grafana
    ```
-
-### Kibana
-
-> Kibana is no longer supported.
-
-1. Create Kibana KeyCloak client:
-
-   ```bash
-   make create-kibana-keycloak-client KC_USER=$(YOUR_KEYCLOAK_ADMINISTRATOR_ID) KC_PASSWORD=$(YOUR_KEYCLOAK_ADMINISTRATOR_PASSWORD)
-   ```
-
-1. Set environment `KIBANA_KEYCLOAK_PROXY_CLIENT_SECRET` in `.env` file, the variable value should be available from step 1.
-
-1. Check Helm difference:
-
-   ```bash
-   make component-diff-efk
-   ```
-
-1. Install components:
-
-   ```bash
-   make component-install-efk
-   ```
-
-1. Check your Kibana ingress by running
-
-   ```bash
-   kubectl get ingresses -n logging kibana
-   ```
-
-   You may login Kibana by using the same account of `admin-ui`, which is available at the output of _Install PrimeHub_ stage.
 
 ## Upgrade individual helm Release
 
@@ -146,3 +123,4 @@ Once complete, please check the `http(s)://primehub.example.com/`
    ```bash
    make release-install-<release name>
    ```
+

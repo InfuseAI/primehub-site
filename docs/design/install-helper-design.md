@@ -1,20 +1,11 @@
 ---
-id: install_helper_intro
-title: Introduction
+id: install-helper-design
+title: Install Helper
 ---
 
-PrimeHub is managed by helm. The way to [customize helm installation](https://helm.sh/docs/using_helm/#customizing-the-chart-before-installing) is to provide values in the installation command. 
+There are a lot of charts and components required to be installed and managed for PrimeHub. We need a way to manage common settings across all these components. And provide a way to template the helm value files by feature flags.
 
-Install helper provides default values to override. We use them to provide
-
-- Common jupyterhub customization (e.g authenticator, spawner)
-- Default behaviors
-- Ingress settings
-- Airgap relative settings
-
-These helm values reside at `helm/primehub/*`
-
-## Make Helm Installation Easy
+## Design
 
 In the common helm installation, it may look like the following command.
 
@@ -91,7 +82,7 @@ make component-install-<app>
 
 ## Template the Value
 
-Helm provides a great way to template the kubernetes resources. In the helm installation or upgrade, helm consolidates all the values to a single value tree, and uses it to generate the final resource yaml and apply them to cluster.
+Helm provides a great way to template the kubernetes resources. In the helm installation or upgrade, helm consolidates all the values to a single value tree and uses it to generate the final resource YAMLs and apply them to cluster.
 
 However, helm [does not provide a way to template the value](https://github.com/helm/helm/issues/2492), this is why helmfile templating comes in. Helmfile provides a way to [template the value files by environment valuable](https://github.com/roboll/helmfile#templates).
 

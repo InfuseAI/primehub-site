@@ -17,15 +17,8 @@
         "ids": [
           "getting_started/install_metacontroller",
           "getting_started/install_keycloak",
-          "getting_started/install_primehub"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Install Helper",
-        "ids": [      
-          "getting_started/install_helper_intro",
-          "getting_started/install_helper_steps"
+          "getting_started/install_primehub",
+          "getting_started/install_helper"
         ]
       }
     ],
@@ -44,16 +37,17 @@
       {
         "type": "subcategory",
         "label": "Designs",
-        "ids": [      
-          "design/user-portal",
-          "design/meta-chart",
+        "ids": [
           "design/admission",
           "design/jupyterhub",
           "design/notebook-kernel-process",
           "design/dataset-upload",
           "design/image-builder",
           "design/job-submission",
-          "design/job-scheduler"
+          "design/job-scheduler",
+          "design/install-helper-design",          
+          "design/user-portal",
+          "design/meta-chart"
         ]
       }      
     ],

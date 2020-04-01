@@ -16,7 +16,7 @@ Prepare the value file `primehub-values.yaml` for helm installation.
 
 Key | Description
 ----|------------------------------------
-`PRIMEHUB_DOMAIN` | The domain name of keycloak. It can be the same as primehub's one.
+`PRIMEHUB_DOMAIN` | The domain name of primehub. It can be the same as primehub's one.
 `PRIMEHUB_PASSWORD` | The password for primehub admin. (The default username of admin is `phadmin`)
 `KEYCLOAK_DOMAIN` | The hostname of keycloak. It can be the same as primehub's one.
 `KEYCLOAK_PASSWORD` | The master password of keycloak
@@ -77,7 +77,7 @@ EOF
 ```
 ## Install
 
-1. Run helm command to install keycloak
+1. Run helm command to install primehub
 
    ```
    helm upgrade \
@@ -105,17 +105,28 @@ EOF
    ```
 
 2. Open `http://${PRIMEHUB_DOMAIN}` and log in by the admin username and password.
-3. Open [Jupyterhub] icon and spawn a jupyter instance.
 
-## Apply License Key
+   ![](assets/install_primehub1.png)
 
-1. Run this command to apply a license key; please contact InfuseAI for the license.
+3. Open *Jupyterhub* icon
 
-    ```
-    kubectl -n hub apply -f path/to/license_key_yaml_file
-    ```
+   ![](assets/install_primehub2.png)
 
-You can check the license status from [System Management](../guide_manual/admin-system#primehub-license).
+4. Click the *Start notebook* button to launch a Jupyter instance
+
+   ![](assets/install_primehub3.png)
+
+## Apply License Key (Optional)
+
+For trial and enterprise users, please contact InfuseAI for the license.
+
+Run this command to apply a license key; 
+
+```
+kubectl -n hub apply -f path/to/license_key_yaml_file
+```
+
+You can check the license status from [System Management](../guide_manual/admin-system#primehub-license) in the admin dashboard.
 
 ## Troubleshooting
 

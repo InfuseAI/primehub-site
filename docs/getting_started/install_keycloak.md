@@ -76,6 +76,9 @@ helm upgrade \
    ```
 
 1. Open `http://<keycloak-hostname>/auth`
+
+   ![](assets/install_keycloak.png)
+
 1. Enter *Administrator Console* and log in by the username and password.
 
 > If you see the `HTTPS required` error message. This means http is not allowed for external access by default. Please try these commands to disable it.

@@ -11,6 +11,7 @@ This guide helps you to create a Kubernetes with [microk8s](https://microk8s.io/
 
 * Ubuntu 18.04 LTS
 * Kubernetes 1.15 version
+* IP address: 1.2.3.4
 * Networking: allow 80 port for HTTP
   
 
@@ -108,6 +109,13 @@ microk8s-doc   Ready    <none>   35m   v1.15.10
 
 ### Install helm
 
+Install helm 2.x binary. Please see the installation steps in [prerequisites](prerequisites.md). Make sure the helm binary version is `v2.x.x` (`v3.x.x` is not supported yet)
+
+```
+$ helm version --client
+Client: &version.Version{SemVer:"v2.16.1", GitCommit:"bbdfe5e7803a12bbdf97e94cd847859890cf4050", GitTreeState:"clean"}
+```
+
 Apply RBAC resources for helm
 
 ```
@@ -133,7 +141,7 @@ subjects:
 EOF
 ```
 
-Initialize helm:
+Initialize helm in the cluster:
 
 ```
 $ helm init --service-account tiller --wait
@@ -161,7 +169,7 @@ $ helm install stable/nginx-ingress --namespace ingress-nginx \
 Access nginx-ingress with the magic `.nip.io` domain, with your `EXTERNAL-IP`:
 
 ```
-$ curl http://104.155.238.100.nip.io
+$ curl http://1.2.3.4.nip.io
 ```
 
 The output will be `404` because nobody defines any `Ingress` resources:
@@ -221,7 +229,7 @@ UUID=b6df830a-d881-4dc5-a8e4-aeea2d7ee6c0	/data	xfs	defaults	0 0
 
 The cluster is ready to install PrimeHub. Please bring `EXTERNAL-IP` and `StorageClass` name to the next steps. They would be used in the value files of `KeyCloak` and `PrimeHub`
 
-* `EXTERNAL-IP`: 104.155.238.100
+* `EXTERNAL-IP`: 1.2.3.4
 
 * `StorageClass` name: microk8s-hostpath
     ```
