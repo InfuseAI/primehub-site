@@ -1,15 +1,15 @@
 ---
 id: job-scheduling-feature
-title: Job Scheduler (Alpha)
+title: Job Scheduler (Beta)
 ---
 
-PrimeHub has Job Submission feature that we can submit a one-time job immediately for running asynchronously; however, we sometimes want to submit certain jobs regularly according schedules. PrimeHub, hence, provides another feature, **Job Scheduler** that we can create Schedules which are responsible for submitting jobs regularly according to the recurrence setting for us.
+PrimeHub has Job Submission feature that we can submit a one-time job immediately for running asynchronously; however, we sometimes want to submit certain jobs regularly according schedules. PrimeHub, hence, provides another feature, **Job Schedule** that we can create Schedules which are responsible for submitting jobs regularly according to the recurrence setting for us.
 
-We can find Job Scheduler from user portal.
+We can find `Schedule` feature inside Job Submission from the portal.
 
 ## Schedules List
 
-![](assets/jscheduler_main_beta.png)
+![](assets/jscheduler_main_beta_v26.png)
 
 In the Schedule list, there are some information of each Schedule:
 
@@ -28,11 +28,15 @@ In the Schedule list, there are some information of each Schedule:
 
 ### Filter
 
-+ `Select all`: If checked off, it lists all of Schedules from groups where the user *belongs* to, in other words, Schedules from other groups are not listed.
+Using Group selection as a filter.
 
-+ `Filter by Group`: Groups which the user belongs are criteria. Checking off groups to filter out Schedules from other groups.
+![](assets/jsub_filter_beta_v26.png)
 
-+ `Filter by Submitted`: If `Submitted by Me` is checked off, it lists Schedules **ONLY** are created by the user.
++ **Default** (when Group selection is blank): it lists all of schedules submitted from groups where the user *belongs* to, in other words, schedules from other groups are not listed.
+
++ **Filter by Group**: Selects Groups and it lists schedules **ONLY** belonging to these groups.
+
++ **Filter by Submitted**: If `Submitted by Me` is checked off, it lists schedules **ONLY** submitted by the user.
 
 ## Create Schedule
 
@@ -74,4 +78,4 @@ Clicking the action button of `delete` to delete the Schedule.
 
 Schedules are responsible for submitting jobs according the recurrence setting. Once jobs are submitted by Schedules, they will be listed in **Job Submission** list. We can notice these jobs with `Schedule` info.
 
-![jsub_main_beta.png](assets/jsub_main_beta.png)
+![jsub_main_beta.png](assets/jsub_main_beta_v26.png)

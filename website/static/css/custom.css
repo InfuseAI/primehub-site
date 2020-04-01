@@ -66,6 +66,10 @@ table th, table td {
     background-color: #122844;
 }
 
+a:hover {
+    color: #a3d00e !important; 
+}
+
 .toc .toggleNav ul li.navListItemActive a, .toc .toggleNav ul li a:focus, .toc .toggleNav ul li a:hover {
     color: #a3d00e !important;
 }

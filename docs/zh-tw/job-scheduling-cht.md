@@ -1,6 +1,6 @@
 ---
 id: job-scheduling-feature-cht
-title: Job Scheduler (Alpha)
+title: Job Scheduler (Beta)
 ---
 
 PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到背景執行；有時候這類型的 Job 是需要根據排程時間而週期性執行的。因此 PrimeHub 提供另一個功能 Job Scheduler，透過此功能創建出 Schedule ，而其會根據 Recurrence 設定負責發動 Job 至背景執行。
@@ -28,11 +28,16 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 ### 篩選
 
-+ `Select all`: 勾選，列舉所有使用者所屬群組創建的 Schedule。非所屬群組的，則不在此列。
 
-+ `Filter by Group`: 勾選指定群組，只列舉指定所屬群組創建 Schedule。
+利用 Group 選取作為篩選。
 
-+ `Filter by Submitted`: 勾選`Submitted by Me`只列舉該使用者創建的 Schedule。
+![](assets/jsub_filter_beta_v26.png)
+
++ 預設 (Group 選取為空白)： 列舉所有使用者所屬群組創建的`schedule`。非所屬群組的，則不在此列。
+
++ 指定 Group： 指定群組，只列舉指定所屬群組創建`schedule`。
+
++ 該使用者創建： 勾選`Submitted by Me`只列舉該使用者創建的`schedule`。
 
 ## 創建 Schedule
 
@@ -74,4 +79,4 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 Schedules 會根據週期性設定來發動 Job；若 Job 是由 Schedule 發動的，我們可以從 **Job Submission** 列舉中得知，這些 Job 的`Schedule`欄位會有指向 Schedule 的連結。
 
-![jsub_main_beta.png](assets/jsub_main_beta.png)
+![jsub_main_beta.png](assets/jsub_main_beta_v26.png)

@@ -17,7 +17,7 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 There is a list showing created jobs with relevant information.
 
-![](assets/jsub_main_beta.png)
+![](assets/jsub_main_beta_v26.png)
 
 There are several informative columns of the job list:
 
@@ -41,11 +41,15 @@ There are several informative columns of the job list:
 
 ### Filter
 
-+ `Select all`: If checked off, it lists all of jobs submitted from groups where the user *belongs* to, in other words, jobs from other groups are not listed.
+Using Group selection as a filter.
 
-+ `Filter by Group`: Groups which the user belongs are criteria. Checking off groups to filter out jobs from other groups.
+![](assets/jsub_filter_beta_v26.png)
 
-+ `Filter by Submitted`: If `Submitted by Me` is checked off, it lists jobs **ONLY** are submitted by the user.
++ **Default** (when Group selection is blank): it lists all of jobs submitted from groups where the user *belongs* to, in other words, jobs from other groups are not listed.
+
++ **Filter by Group**: Selects Groups and it lists jobs **ONLY** belonging to these groups.
+
++ **Filter by Submitted**: If `Submitted by Me` is checked off, it lists jobs **ONLY** submitted by the user.
 
 ## Create Job
 
