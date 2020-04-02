@@ -63,10 +63,10 @@ class HomeSplash extends React.Component {
         <Logo img_src={`${baseUrl}img/PrimeHub_icon_512.png`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
-          {/*<PromoSection>
-            <Button href={docUrl('setup_deploy/quickstart.html')}>Quickstart</Button>
-            <Button href={docUrl('intro/mission.html')}>Introduction</Button>
-          </PromoSection>*/}
+          { /*<PromoSection>
+            <Button href={docUrl('dev-introduction.html')}>Get Started</Button>
+            <Button href={docUrl('getting-started-user.html')}>Documentation</Button>
+          </PromoSection> */}
         </div>
       </SplashContainer>
     );
@@ -74,9 +74,14 @@ class HomeSplash extends React.Component {
 }
 
 class Index extends React.Component {
+
   render() {
     const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
+    const {baseUrl, docsUrl} = siteConfig;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
+    const langPart = `${language ? `${language}/` : ''}`;
+    const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
+
 
     const Block = props => (
       <Container
@@ -175,7 +180,7 @@ class Index extends React.Component {
     );
 
     const InfuseAI = () => (
-      <Block id="try" align="center"> 
+      <Block id="try" align="center" background="light"> 
         {[
           {
             //content: '', 
@@ -237,7 +242,7 @@ class Index extends React.Component {
     );
 
     const Features = () => (
-      <Block layout="fourColumn" align="center">
+      <Block layout="fourColumn" align="center" background="dark" className="block-menu">
         {[
           {
             //content: 'The content of my first feature',
@@ -262,6 +267,71 @@ class Index extends React.Component {
             image: `${baseUrl}img/features/resources-management.png`,
             imageAlign: 'top',
             title: 'Resource<br>Management',
+          },
+        ]}
+      </Block>
+    );
+
+    const PromoSection = props => (
+      <div className="section promoSection">
+        <div className="promoRow">
+          <div className="pluginRowBlock">{props.children}</div>
+        </div>
+      </div>
+    );
+
+    const Button = props => (
+      <div className="pluginWrapper buttonWrapper">
+        <a className="button" href={props.href} target={props.target}>
+          {props.children}
+        </a>
+      </div>
+    );
+
+    const Category = () => (
+      <Block layout="fourColumn" align="center" background="dark" className="block-menu">
+        {[
+          {
+            //content: 'The content of my first feature',
+            image: `${baseUrl}img/features/settings-160.png`,
+            imageAlign: 'top',
+            title: `<a href=${docUrl('dev-introduction')}>Installation | Setup</a>`,
+            imageLink: `${docUrl('dev-introduction')}`,
+            content:
+              '<div class="grid-menu">' +
+                `<div class="menu-item"><a href=${docUrl('getting_started/kubernetes_on_gke')}>Kubernetes on GKE</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting_started/install_keycloak')}>Install Keycloak</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting_started/install_primehub')}>Install PrimeHub</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('references/feature-flag')}>Feature Flags</a></div>` +
+              '</div>', 
+          },
+          {
+            //content: 'The content of my second feature',
+            image: `${baseUrl}img/features/paper-plane-100.png`,
+            imageAlign: 'top',
+            title: `<a href=${docUrl('design/architecture')}>Designs | Concepts</a>`,
+            imageLink: `${docUrl('design/architecture')}`,
+            content:
+              '<div class="grid-menu">' +
+                `<div class="menu-item"><a href=${docUrl('design/architecture')}>Architecture</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('design/admission')}>Admission</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('design/meta-chart')}>Meta Chart</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('design/job-submission')}>Job Submission</a></div>` +
+              '</div>', 
+          },
+          {
+            //content: 'The content of my second feature',
+            image: `${baseUrl}img/features/book-shelf-100.png`,
+            imageAlign: 'top',
+            title: `<a href=${docUrl('getting-started-user')}>Documentation</a>`,
+            imageLink: `${docUrl('getting-started-user')}`,
+            content:
+              '<div class="grid-menu">' +
+                `<div class="menu-item"><a href=${docUrl('getting-started-admin')}>Administrator</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Scientist</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('quickstart/maintenance-resize-user-vol')}>Maintenance</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('index-zh')}>繁中文件</a></div>` +
+              '</div>', 
           },
         ]}
       </Block>
@@ -295,12 +365,7 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <ClusterComputingFeature />
-          <OneClickFeature />
-          <AccountManagementFeature />
-          <ResoureManagementFeature />
-          <InfuseAI />
+          <Category />
         </div>
       </div>
     );

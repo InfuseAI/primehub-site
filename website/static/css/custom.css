@@ -66,6 +66,10 @@ table th, table td {
     background-color: #122844;
 }
 
+.darkBackground a {
+    color: #ed4036;
+}
+
 a:hover {
     color: #a3d00e !important; 
 }
@@ -74,3 +78,42 @@ a:hover {
     color: #a3d00e !important;
 }
 
+
+div.grid-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+div.grid-menu > div.menu-item {
+    background-color: #2b2a2a;
+    border-bottom: 1px solid #3c3b3c;
+    font-size: 18px;
+}
+
+.blockElement.alignCenter.fourByGridBlock.imageAlignTop {
+    background-color: #122843;
+}
+
+.blockElement.alignCenter.fourByGridBlock.imageAlignTop  h2 {
+    margin: 16px auto !important;
+}
+
+.blockElement.alignCenter.fourByGridBlock.imageAlignTop  img {
+    margin: 10px auto 0 auto !important;
+}
+
+.menu-item a {
+    color: #fff;
+}
+
+.menu-item a:hover {
+    color: #95b4e6 !important; 
+}
+
+.container.paddingTop {
+    padding-top: 10%;
+}
+
+.container.paddingBottom {
+    padding-bottom: 25%;
+}
