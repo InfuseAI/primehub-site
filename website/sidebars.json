@@ -175,6 +175,9 @@
       "maintenance",
       "quickstart/maintenance-resize-user-vol",
       "quickstart/maintenance-resize-group-vol"
+    ],
+    "Guide": [
+      "guide_manual/experimental-vscode"
     ]
   },
   "zh-tw": {
@@ -263,6 +266,9 @@
           "zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
+    ],
+    "指南": [
+      "zh-tw/guide_manual/experimental-vscode"
     ],
     "其它配置": [
       "zh-tw/quickstart/dockerhub-registry"
