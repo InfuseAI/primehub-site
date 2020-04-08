@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>建置模型部署所需之映像檔 · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="此文件說明如何建置映像檔 (Docker Image) ，以利在 PrimeHub 模型部署中使用。"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="建置模型部署所需之映像檔 · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="此文件說明如何建置映像檔 (Docker Image) ，以利在 PrimeHub 模型部署中使用。"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/next/getting-started-admin" target="_self">Administrator</a></li><li class=""><a href="/docs/next/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/next/dev-introduction" target="_self">Developer</a></li><li class="siteNavGroupActive"><a href="/docs/next/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>教學 (Alpha)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">繁中文件<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/index-zh">說明</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">專案<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/launch-project">啟始專案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/user-advanced-setting">Spawner 進階設定</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-cht">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-scheduling-feature-cht">Job Scheduler (Beta)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Job Submission (Beta)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-simple">初階範例</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-p1">(Part1) MNIST classifier 訓練範例程式</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-p2">(Part2) MNIST classifier 訓練範例程式</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/model-deployment-feature">Model Deployment (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">教學 (Alpha)</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/zh-tw/model-deployment-tutorial-package-image">建置模型部署所需之映像檔</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub 管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-system-cht">System Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用者及群組管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-group-cht">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Instance Type 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/usecase-toleration-cht">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/usecase-nodeselector-cht">NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Image 創建及管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-build-image-cht">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/custom-image-guideline">客製 Image 指南</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">維運<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance Notebook</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">指南<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/experimental-vscode">VS Code 體驗</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">其它配置<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/dockerhub-registry">利用 DockerHub Registry</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">建置模型部署所需之映像檔</h1></header><article><div><span><p>此文件說明如何建置映像檔 (Docker Image) ，以利在 PrimeHub 模型部署中使用。</p>
+<p>PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Seldon 和其他相關的文件，我們皆列在最後一個部分。</p>
+<h2><a class="anchor" aria-hidden="true" id="軟體需求"></a><a href="#軟體需求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>軟體需求</h2>
+<p>請先安裝好以下軟體</p>
+<ul>
+<li>docker: <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></li>
+<li>Go: <a href="https://golang.org/dl/">https://golang.org/dl/</a></li>
+<li>s2i: <a href="https://github.com/openshift/source-to-image#installation">https://github.com/openshift/source-to-image#installation</a></li>
+</ul>
+<p>安裝完成後，下達以下指令確認一切正常：</p>
+<pre><code class="hljs">s2i usage seldonio/seldon-core-s2i-python3:0.18
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="撰寫模型部署程式與設定-python"></a><a href="#撰寫模型部署程式與設定-python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>撰寫模型部署程式與設定 (Python)</h2>
+<ul>
+<li><p>建議使用 Python 3.6</p></li>
+<li><p>產生 <code>requirements.txt</code> 檔，並在其中寫下所需套件</p>
+<pre><code class="hljs">  keras
+  tensorflow
+  numpy
+  ...
+</code></pre></li>
+<li><p>建立 <code>.s2i</code> 資料夾後建立 <code>.s2i/environment</code> 檔案，並在其中寫下以下內容</p>
+<pre><code class="hljs">  MODEL_NAME=MyModel
+  API_TYPE=REST
+  SERVICE_TYPE=MODEL
+  PERSISTENCE=0
+</code></pre></li>
+<li><p>建立 <code>MyModel.py</code> 檔，內容可以參考以下的格式內容</p>
+<pre><code class="hljs">  class MyModel(object):
+      &quot;&quot;&quot;
+      Model template. You can load your model parameters in __init__ from a location accessible at runtime
+      &quot;&quot;&quot;
+  
+      def __init__(self):
+          &quot;&quot;&quot;
+          Add any initialization parameters. These will be passed at runtime from the graph definition parameters defined in your seldondeployment kubernetes resource manifest.
+          &quot;&quot;&quot;
+          print(&quot;Initializing&quot;)
+  
+      def predict(self, X, features_names=None):
+          &quot;&quot;&quot;
+          Return a prediction.
+  
+          Parameters
+          ----------
+          X : array-like
+          feature_names : array of feature names (optional)
+          &quot;&quot;&quot;
+          print(&quot;Predict called - will run identity function&quot;)
+          return X
+</code></pre>
+<ul>
+<li>檔名和類別名稱 <code>MyModel</code> 需與在 <code>.s2i/environment</code> 下的 MODEL_NAME 一致</li>
+<li>你可以在 <code>__init__</code> 初始化或載入你的模型</li>
+<li><code>predict</code> 會接受 numpy-array <code>X</code> 及 <code>feature_names</code> (非必須)，並回傳預測結果 (至少需為二維陣列)</li>
+</ul>
+<p>更多如何撰寫 <code>MyModel.py</code> 的範例和細節，可以參考 <code>相關 Frameworks 的範例程式</code> 。</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="建置映像檔"></a><a href="#建置映像檔" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>建置映像檔</h2>
+<p>進入到包含 <code>requirements.txt</code> 、 <code>.s2i/environment</code> 、 <code>python file for model deployment</code> 、 <code>model file</code> 的資料夾。</p>
+<p>如果該資料夾有使用 <code>Git</code> ，需要將所有的改變 Commit 。</p>
+<p>我們使用 <code>seldonio/seldon-core-s2i-python3:0.18</code> 來安裝與建置模型部署映像檔 <code>my-model-image</code>：</p>
+<pre><code class="hljs">s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
+</code></pre>
+<p>(當為 Python 3 而非 Python 3.6 時使用 seldonio/seldon-core-s2i-python3)</p>
+<p>透過 <code>docker images</code> 檢查建置完成的映像檔，範例結果如下所示：</p>
+<pre><code class="hljs">REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
+my-model-image                     latest              4a0f28ee4f4c        3 minutes ago       1.66GB
+seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 weeks ago         794MB
+</code></pre>
+<p>在本機上運行映像檔：</p>
+<pre><code class="hljs">docker run -p 5000:5000 --rm my-model-image
+</code></pre>
+<p>透過 curl 進行測試：</p>
+<pre><code class="hljs">curl -X POST localhost:5000/api/v1.0/predictions \
+     -H 'Content-Type: application/json' \
+     -d '{ &quot;data&quot;: { &quot;ndarray&quot;: [[5.964,4.006,2.081,1.031]]}}'
+</code></pre>
+<p>其中 <code>ndarray</code> 的內容請根據你的應用給予不同的值。</p>
+<p>到此我們已經成功建置出可以給 PrimeHub 模型部署功能使用的映像檔。</p>
+<p>接下來請將其推送到 docker hub (或其他 docker registry) ，並參考 PrimeHub 的文件繼續將模型部署到 PrimeHub 上</p>
+<h2><a class="anchor" aria-hidden="true" id="optional-相關-frameworks-的範例程式"></a><a href="#optional-相關-frameworks-的範例程式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(Optional) 相關 Frameworks 的範例程式</h2>
+<p>參考以下的範例， PrimeHub 可以部署各種 Frameworks 的模型。</p>
+<h3><a class="anchor" aria-hidden="true" id="tensorflow-1"></a><a href="#tensorflow-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tensorflow 1</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  saver = tf.train.Saver()
+  saver.save(sess, &quot;model/deep_mnist_model&quot;)
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  import tensorflow as tf
+  import numpy as np
+  import os
+  
+  class DeepMnist(object):
+      def __init__(self):
+          self.loaded = False
+          
+      def load(self):
+          print(&quot;Loading model&quot;,os.getpid())
+          self.sess = tf.Session()
+          saver = tf.train.import_meta_graph(&quot;model/deep_mnist_model.meta&quot;)
+          saver.restore(self.sess,tf.train.latest_checkpoint(&quot;./model/&quot;))
+          graph = tf.get_default_graph()
+          self.x = graph.get_tensor_by_name(&quot;x:0&quot;)
+          self.y = graph.get_tensor_by_name(&quot;y:0&quot;)
+          self.loaded = True
+          print(&quot;Loaded model&quot;)
+          
+      def predict(self,X,feature_names):
+          if not self.loaded:
+              self.load()
+          predictions = self.sess.run(self.y,feed_dict={self.x:X})
+          return predictions.astype(np.float64)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="tensorflow-2"></a><a href="#tensorflow-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tensorflow 2</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  model.save(&quot;1&quot;)
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  import tensorflow as tf
+  
+  class MNISTModel:
+      def __init__(self):
+          self._model = tf.keras.models.load_model('1')
+  
+      def predict(self, X, feature_names=None, meta=None):
+          output = self._model.predict(X)
+          probability = output[0]
+          predicted_number = tf.math.argmax(probability)
+          return {&quot;predicted_number&quot;: predicted_number.numpy().tolist(), &quot;probability&quot;: probability.tolist()}
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="keras"></a><a href="#keras" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keras</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  model.save('keras-mnist.h5')
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  from keras.models import load_model
+  from PIL import Image
+  from io import BytesIO
+  import numpy as np
+  
+  class MyModel(object):
+      def __init__(self):
+          self.model = load_model('keras-mnist.h5')
+          self.model._make_predict_function()
+          
+      def predict(self,X,features_names):
+          imageStream = BytesIO(X)
+          image = Image.open(imageStream).resize((28, 28)).convert('L')
+          data = np.asarray(image)
+          data = np.expand_dims(data, axis=0)
+          data = np.expand_dims(data, axis=-1)
+          return self.model.predict(data)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="scikit-learn"></a><a href="#scikit-learn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scikit-learn</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  joblib.dump(p, filename_p)
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  from sklearn.externals import joblib
+  
+  class IrisClassifier(object):
+  
+      def __init__(self):
+          self.model = joblib.load('IrisClassifier.sav')
+  
+      def predict(self,X,features_names):
+          return self.model.predict_proba(X)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="pytorch"></a><a href="#pytorch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pytorch</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  torch.save(model.state_dict(), &quot;mnist_cnn.pt&quot;)
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  import torch
+  import torch.nn as nn
+  import torch.nn.functional as F
+  
+  class Net(nn.Module):
+      def __init__(self):
+          super(Net, self).__init__()
+          self.conv1 = nn.Conv2d(1, 32, 3, 1)
+          self.conv2 = nn.Conv2d(32, 64, 3, 1)
+          self.dropout1 = nn.Dropout2d(0.25)
+          self.dropout2 = nn.Dropout2d(0.5)
+          self.fc1 = nn.Linear(9216, 128)
+          self.fc2 = nn.Linear(128, 10)
+  
+      def forward(self, x):
+          x = self.conv1(x)
+          x = F.relu(x)
+          x = self.conv2(x)
+          x = F.relu(x)
+          x = F.max_pool2d(x, 2)
+          x = self.dropout1(x)
+          x = torch.flatten(x, 1)
+          x = self.fc1(x)
+          x = F.relu(x)
+          x = self.dropout2(x)
+          x = self.fc2(x)
+          output = F.softmax(x, dim=1)
+          return output
+  
+  class MNISTModel:
+      def __init__(self):
+          self._model = Net()
+          self._model.load_state_dict(torch.load(&quot;mnist_cnn.pt&quot;))
+          self._model.eval()
+  
+      def predict(self, x, names):
+          output = self._model(torch.from_numpy(x).float())
+          return {&quot;probability&quot;: output.tolist()}
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="xgboost"></a><a href="#xgboost" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>XGBoost</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  bst = xgb.train(...)
+  bst.save_model('xgboost.model')
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  import xgboost as xgb
+  
+  class MyModel(object):
+      def __init__(self):
+          self.bst = xgb.Booster({'nthread':4})
+          self.bst.load_model(&quot;xgboost.model&quot;) 
+          
+      def predict(self,X,features_names):
+          dtest = xgb.DMatrix(X)
+          return self.bst.predict(dtest)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="mxnet"></a><a href="#mxnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MXNet</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  model_prefix = 'mx-model'
+  checkpoint = mx.callback.do_checkpoint(model_prefix)
+  mod.fit(..., epoch_end_callback=checkpoint)
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  import mxnet as mx
+  from PIL import Image
+  import numpy as np
+  from io import BytesIO
+  
+  class MyModel(object):
+      def __init__(self):
+          model_prefix = 'mx-model'
+          epoch_num = 2
+          self.model = mx.mod.Module.load(model_prefix, epoch_num)
+          
+          data_shape = [(&quot;data&quot;, (1, 28, 28, 1))]
+          label_shape = [(&quot;softmax_label&quot;, (1,))]
+          self.model.bind(data_shape, label_shape)
+  
+      def predict(self,X,features_names):
+          imageStream = BytesIO(X)
+          image = Image.open(imageStream).resize((28, 28)).convert('L')
+  
+          data = np.asarray(image)
+          data = np.expand_dims(data, axis=0)
+          data = np.expand_dims(data, axis=-1)
+          return self.model.predict(data).asnumpy()
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="lightgbm"></a><a href="#lightgbm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LightGBM</h3>
+<ul>
+<li><p>Output model example code</p>
+<pre><code class="hljs">  gbm = lgb.train(...)
+  with open('model.pkl', 'wb') as fout:
+      pickle.dump(gbm, fout)
+</code></pre></li>
+<li><p>MyModel.py example code</p>
+<pre><code class="hljs">  import pickle
+  
+  class MyModel(object):
+      def __init__(self):
+          with open('model.pkl', 'rb') as fin:
+              self.pkl_bst = pickle.load(fin)
+  
+      def predict(self,X,features_names):
+          return self.pkl_bst.predict(X)
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<ul>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html">https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html</a></li>
+<li><a href="https://github.com/SeldonIO/seldon-core/tree/master/examples">https://github.com/SeldonIO/seldon-core/tree/master/examples</a></li>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html">https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html</a></li>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html">https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/model-deployment-feature"><span class="arrow-prev">← </span><span>Model Deployment (Alpha)</span></a><a class="docs-next button" href="/docs/next/zh-tw/guide_manual/admin-system-cht"><span>System Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#軟體需求">軟體需求</a></li><li><a href="#撰寫模型部署程式與設定-python">撰寫模型部署程式與設定 (Python)</a></li><li><a href="#建置映像檔">建置映像檔</a></li><li><a href="#optional-相關-frameworks-的範例程式">(Optional) 相關 Frameworks 的範例程式</a><ul class="toc-headings"><li><a href="#tensorflow-1">Tensorflow 1</a></li><li><a href="#tensorflow-2">Tensorflow 2</a></li><li><a href="#keras">Keras</a></li><li><a href="#scikit-learn">Scikit-learn</a></li><li><a href="#pytorch">Pytorch</a></li><li><a href="#xgboost">XGBoost</a></li><li><a href="#mxnet">MXNet</a></li><li><a href="#lightgbm">LightGBM</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Getting Started</a><a href="/docs/dev-introduction.html">Setup PrimeHub</a><a href="/docs/index-zh.html">繁中文件</a></div><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

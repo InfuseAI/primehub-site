@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Package a Docker Image for Model Deployment · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This doc shows how to package a model into a format-valid docker image for the PrimeHub model deployment feature."/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Package a Docker Image for Model Deployment · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="This doc shows how to package a model into a format-valid docker image for the PrimeHub model deployment feature."/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/next/getting-started-admin" target="_self">Administrator</a></li><li class="siteNavGroupActive"><a href="/docs/next/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/next/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/next/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Tutorials (Alpha)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Project<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/getting-started-user">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/launch-project">Launch Project</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Spawner</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/user-advanced-setting">Advanced Settings</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-feature">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-scheduling-feature">Job Scheduler (Beta)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/model-deployment-feature">Model Deployment (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials (Alpha)</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/model-deployment-tutorial-package-image">Package a Docker Image for Model Deployment</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Administration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/getting-started-admin">Administration</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-system">System Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage users and groups</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-group">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Instance Type</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/usecase-toleration">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/usecase-nodeselector">NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and build images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-image">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-build-image">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/custom-image-guideline">Custom Image Guideline</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-dataset">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-secret">Secret Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Quick Start</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/create-user">Create User</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/create-group">Create Group</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/add-instance-type">Create/Plan Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/add-image">Add Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/build-image">Build Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/secret-pull-image">Pull Secret for GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/secret-gitsync">Gitsync Secret for GitHub</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Maintenance<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/maintenance">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/maintenance-resize-user-vol">Increase User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/maintenance-resize-group-vol">Increase Group Volume</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/experimental-vscode">Experimental VS Code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Package a Docker Image for Model Deployment</h1></header><article><div><span><p>This doc shows how to package a model into a format-valid docker image for the PrimeHub model deployment feature.</p>
+<p>The PrimeHub model deployment feature is based on Seldon. This doc takes <a href="#reference">reference</a> from Seldon official documentations and other resources which are listed in the last part.</p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<ul>
+<li>Docker: <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></li>
+<li>Go: <a href="https://golang.org/dl/">https://golang.org/dl/</a></li>
+<li>S2I (Source-To-Image): <a href="https://github.com/openshift/source-to-image#installation">https://github.com/openshift/source-to-image#installation</a></li>
+</ul>
+<p>Check everything is ready to go by running:</p>
+<pre><code class="hljs">s2i usage seldonio/seldon-core-s2i-python3:0.18
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="prepare-the-model-and-code-python"></a><a href="#prepare-the-model-and-code-python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare the Model and Code (Python)</h2>
+<ul>
+<li><p>Please use Python 3.6 (Recommended)</p></li>
+<li><p>Create a <code>requirements.txt</code> file and write down all required packages</p>
+<pre><code class="hljs">  keras
+  tensorflow
+  numpy
+  ...
+</code></pre></li>
+<li><p>Create a <code>.s2i</code> folder and create a <code>.s2i/environment</code> file with the following content:</p>
+<pre><code class="hljs">  MODEL_NAME=MyModel
+  API_TYPE=REST
+  SERVICE_TYPE=MODEL
+  PERSISTENCE=0
+</code></pre></li>
+<li><p>Create a <code>MyModel.py</code> file with the following example template:</p>
+<pre><code class="hljs">  class MyModel(object):
+      &quot;&quot;&quot;
+      Model template. 
+      You can load your model parameters in __init__ from a location accessible at runtime.
+      &quot;&quot;&quot;
+  
+      def __init__(self):
+          &quot;&quot;&quot;
+          Add any initialization parameters. These will be passed at runtime from the graph definition parameters 
+          defined in your seldondeployment kubernetes resource manifest.
+          &quot;&quot;&quot;
+          print(&quot;Initializing&quot;)
+  
+      def predict(self, X, features_names=None):
+          &quot;&quot;&quot;
+          Return a prediction.
+  
+          Parameters
+          ----------
+          X : array-like
+          feature_names : array of feature names (optional)
+          &quot;&quot;&quot;
+          print(&quot;Predict called - will run identity function&quot;)
+          return X
+</code></pre>
+<ul>
+<li>File and class name <code>MyModel</code> should be the same as <strong>MODEL_NAME</strong> under <code>.s2i/environment</code></li>
+<li>Load or initiate your model under the <code>__init__</code> function</li>
+<li>The predict method takes a numpy-array <code>X</code> and list of string <code>feature_names</code> (optional), then returns an array of predictions (the return array should be at least 2-dimensional)</li>
+</ul>
+<p>More detailed information on how to write the Python file for model deployment in different frameworks, please refer to the section <a href="#optional-example-codes-for-different-frameworks">Example Codes for Different Frameworks</a>.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="build-the-image"></a><a href="#build-the-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build the Image</h2>
+<p>Make sure you are in the folder that includes <code>requirements.txt</code>, <code>.s2i/environment</code>, <code>python file for model deployment</code>, and <code>model file</code>...etc.</p>
+<p>If this folder is managed by <code>Git</code>, please commit all changes into the git.</p>
+<p>We will use <code>seldonio/seldon-core-s2i-python3:0.18</code> as a base image, installing environment and packaging our model file into the target, <code>my-model-image</code>. You can use the following command to package the docker image:</p>
+<p>(Using <code>seldonio/seldon-core-s2i-python3</code> instead if using Python 3 rather than Python 3.6)</p>
+<pre><code class="hljs">s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
+</code></pre>
+<p>Then check the image by <code>docker images</code>.</p>
+<pre><code class="hljs">REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
+my-model-image                     latest              4a0f28ee4f4c        3 minutes ago       1.66GB
+seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 weeks ago         794MB
+</code></pre>
+<p>Run and test the image locally by:</p>
+<pre><code class="hljs">docker run -p 5000:5000 --rm my-model-image
+</code></pre>
+<p>and curl:</p>
+<pre><code class="hljs">curl -X POST localhost:5000/api/v1.0/predictions \
+     -H 'Content-Type: application/json' \
+     -d '{ &quot;data&quot;: { &quot;ndarray&quot;: [[5.964,4.006,2.081,1.031]]}}'
+</code></pre>
+<p>Replace <code>ndarray</code> content in curl example according to your application.</p>
+<p>You have built the docker image for a PrimeHub model deployment successfully now.</p>
+<p>Next, push the image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.</p>
+<h2><a class="anchor" aria-hidden="true" id="optional-example-codes-for-different-frameworks"></a><a href="#optional-example-codes-for-different-frameworks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(Optional) Example Codes for Different Frameworks</h2>
+<p>Here are some Python snippets of how to export a model file then load it and run the prediction in another file. By following the Python wrapper format, PrimeHub supports various popular ML frameworks to serve models.</p>
+<h3><a class="anchor" aria-hidden="true" id="tensorflow-1"></a><a href="#tensorflow-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tensorflow 1</h3>
+<ul>
+<li><p>Output a model file <code>model/deep_mnist_model</code></p>
+<pre><code class="hljs">  saver = tf.train.Saver()
+  saver.save(sess, &quot;model/deep_mnist_model&quot;)
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  import tensorflow as tf
+  import numpy as np
+  import os
+  
+  class DeepMnist(object):
+      def __init__(self):
+          self.loaded = False
+          
+      def load(self):
+          print(&quot;Loading model&quot;,os.getpid())
+          self.sess = tf.Session()
+          saver = tf.train.import_meta_graph(&quot;model/deep_mnist_model.meta&quot;)
+          saver.restore(self.sess,tf.train.latest_checkpoint(&quot;./model/&quot;))
+          graph = tf.get_default_graph()
+          self.x = graph.get_tensor_by_name(&quot;x:0&quot;)
+          self.y = graph.get_tensor_by_name(&quot;y:0&quot;)
+          self.loaded = True
+          print(&quot;Loaded model&quot;)
+          
+      def predict(self,X,feature_names):
+          if not self.loaded:
+              self.load()
+          predictions = self.sess.run(self.y,feed_dict={self.x:X})
+          return predictions.astype(np.float64)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="tensorflow-2"></a><a href="#tensorflow-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tensorflow 2</h3>
+<ul>
+<li><p>Output a model file <code>1</code></p>
+<pre><code class="hljs">  model.save(&quot;1&quot;)
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  import tensorflow as tf
+  
+  class MNISTModel:
+      def __init__(self):
+          self._model = tf.keras.models.load_model('1')
+  
+      def predict(self, X, feature_names=None, meta=None):
+          output = self._model.predict(X)
+          probability = output[0]
+          predicted_number = tf.math.argmax(probability)
+          return {&quot;predicted_number&quot;: predicted_number.numpy().tolist(), &quot;probability&quot;: probability.tolist()}
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="keras"></a><a href="#keras" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keras</h3>
+<ul>
+<li><p>Output a model file <code>keras-mnist.h5</code></p>
+<pre><code class="hljs">  model.save('keras-mnist.h5')
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  from keras.models import load_model
+  from PIL import Image
+  from io import BytesIO
+  import numpy as np
+  
+  class MyModel(object):
+      def __init__(self):
+          self.model = load_model('keras-mnist.h5')
+          self.model._make_predict_function()
+          
+      def predict(self,X,features_names):
+          imageStream = BytesIO(X)
+          image = Image.open(imageStream).resize((28, 28)).convert('L')
+          data = np.asarray(image)
+          data = np.expand_dims(data, axis=0)
+          data = np.expand_dims(data, axis=-1)
+          return self.model.predict(data)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="scikit-learn"></a><a href="#scikit-learn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scikit-learn</h3>
+<ul>
+<li><p>Output a model file <code>IrisClassifier.sav</code></p>
+<pre><code class="hljs">  joblib.dump(p, &quot;IrisClassifier.sav&quot;)
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  from sklearn.externals import joblib
+  
+  class IrisClassifier(object):
+  
+      def __init__(self):
+          self.model = joblib.load('IrisClassifier.sav')
+  
+      def predict(self,X,features_names):
+          return self.model.predict_proba(X)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="pytorch"></a><a href="#pytorch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pytorch</h3>
+<ul>
+<li><p>Output a model file <code>mnist_cnn.pt</code></p>
+<pre><code class="hljs">  torch.save(model.state_dict(), &quot;mnist_cnn.pt&quot;)
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  import torch
+  import torch.nn as nn
+  import torch.nn.functional as F
+  
+  class Net(nn.Module):
+      def __init__(self):
+          super(Net, self).__init__()
+          self.conv1 = nn.Conv2d(1, 32, 3, 1)
+          self.conv2 = nn.Conv2d(32, 64, 3, 1)
+          self.dropout1 = nn.Dropout2d(0.25)
+          self.dropout2 = nn.Dropout2d(0.5)
+          self.fc1 = nn.Linear(9216, 128)
+          self.fc2 = nn.Linear(128, 10)
+  
+      def forward(self, x):
+          x = self.conv1(x)
+          x = F.relu(x)
+          x = self.conv2(x)
+          x = F.relu(x)
+          x = F.max_pool2d(x, 2)
+          x = self.dropout1(x)
+          x = torch.flatten(x, 1)
+          x = self.fc1(x)
+          x = F.relu(x)
+          x = self.dropout2(x)
+          x = self.fc2(x)
+          output = F.softmax(x, dim=1)
+          return output
+  
+  class MNISTModel:
+      def __init__(self):
+          self._model = Net()
+          self._model.load_state_dict(torch.load(&quot;mnist_cnn.pt&quot;))
+          self._model.eval()
+  
+      def predict(self, x, names):
+          output = self._model(torch.from_numpy(x).float())
+          return {&quot;probability&quot;: output.tolist()}
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="xgboost"></a><a href="#xgboost" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>XGBoost</h3>
+<ul>
+<li><p>Output a model file <code>xgboost.model</code></p>
+<pre><code class="hljs">  bst = xgb.train(...)
+  bst.save_model('xgboost.model')
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  import xgboost as xgb
+  
+  class MyModel(object):
+      def __init__(self):
+          self.bst = xgb.Booster({'nthread':4})
+          self.bst.load_model(&quot;xgboost.model&quot;) 
+          
+      def predict(self,X,features_names):
+          dtest = xgb.DMatrix(X)
+          return self.bst.predict(dtest)
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="mxnet"></a><a href="#mxnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MXNet</h3>
+<ul>
+<li><p>Output a model file <code>mx-model___</code></p>
+<pre><code class="hljs">  model_prefix = 'mx-model'
+  checkpoint = mx.callback.do_checkpoint(model_prefix)
+  mod.fit(..., epoch_end_callback=checkpoint)
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  import mxnet as mx
+  from PIL import Image
+  import numpy as np
+  from io import BytesIO
+  
+  class MyModel(object):
+      def __init__(self):
+          model_prefix = 'mx-model'
+          epoch_num = 2
+          self.model = mx.mod.Module.load(model_prefix, epoch_num)
+          
+          data_shape = [(&quot;data&quot;, (1, 28, 28, 1))]
+          label_shape = [(&quot;softmax_label&quot;, (1,))]
+          self.model.bind(data_shape, label_shape)
+  
+      def predict(self,X,features_names):
+          imageStream = BytesIO(X)
+          image = Image.open(imageStream).resize((28, 28)).convert('L')
+  
+          data = np.asarray(image)
+          data = np.expand_dims(data, axis=0)
+          data = np.expand_dims(data, axis=-1)
+          return self.model.predict(data).asnumpy()
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="lightgbm"></a><a href="#lightgbm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LightGBM</h3>
+<ul>
+<li><p>Output a model file <code>model.pkl</code></p>
+<pre><code class="hljs">  gbm = lgb.train(...)
+  with open('model.pkl', 'wb') as fout:
+      pickle.dump(gbm, fout)
+</code></pre></li>
+<li><p><code>MyModel.py</code>, load a model and run a prediction</p>
+<pre><code class="hljs">  import pickle
+  
+  class MyModel(object):
+      def __init__(self):
+          with open('model.pkl', 'rb') as fin:
+              self.pkl_bst = pickle.load(fin)
+  
+      def predict(self,X,features_names):
+          return self.pkl_bst.predict(X)
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<ul>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html">https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html</a></li>
+<li><a href="https://github.com/SeldonIO/seldon-core/tree/master/examples">https://github.com/SeldonIO/seldon-core/tree/master/examples</a></li>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html">https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html</a></li>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html">https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/model-deployment-feature"><span class="arrow-prev">← </span><span>Model Deployment (Alpha)</span></a><a class="docs-next button" href="/docs/next/getting-started-admin"><span>Administration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#prepare-the-model-and-code-python">Prepare the Model and Code (Python)</a></li><li><a href="#build-the-image">Build the Image</a></li><li><a href="#optional-example-codes-for-different-frameworks">(Optional) Example Codes for Different Frameworks</a><ul class="toc-headings"><li><a href="#tensorflow-1">Tensorflow 1</a></li><li><a href="#tensorflow-2">Tensorflow 2</a></li><li><a href="#keras">Keras</a></li><li><a href="#scikit-learn">Scikit-learn</a></li><li><a href="#pytorch">Pytorch</a></li><li><a href="#xgboost">XGBoost</a></li><li><a href="#mxnet">MXNet</a></li><li><a href="#lightgbm">LightGBM</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/introduction.html">Getting Started</a><a href="/docs/dev-introduction.html">Setup PrimeHub</a><a href="/docs/index-zh.html">繁中文件</a></div><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
