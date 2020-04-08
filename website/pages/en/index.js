@@ -316,7 +316,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('design/architecture')}>Architecture</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/admission')}>Admission</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/meta-chart')}>Meta Chart</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/job-submission')}>Job Submission</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('design/job-submission')}>Job Submission | Scheduler</a></div>` +
               '</div>', 
           },
           {
