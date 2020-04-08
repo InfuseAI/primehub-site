@@ -56,6 +56,7 @@ const siteConfig = {
     { doc: 'getting-started-user', label: 'Scientist'},
     { doc: 'dev-introduction', label: 'Developer'},
     { doc: 'index-zh', label: '繁中文件'},
+    { href: "https://medium.com/infuseai", label: 'Medium'},
     //{ blog: true, label: 'Blog'},
     //{ page: 'help', label: 'Community'},
     { search: true },

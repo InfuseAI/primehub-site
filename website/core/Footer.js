@@ -35,7 +35,7 @@ class Footer extends React.Component {
               />
             )}
           </a>
-          <div>
+          {/*<div>
             <h5>Docs</h5>
                      
             <a href={this.docUrl('introduction.html')}>
@@ -47,15 +47,17 @@ class Footer extends React.Component {
             <a href={this.docUrl('index-zh.html')}>
               繁中文件
             </a>
-          </div>
+          </div>*/}
           <div>
             <h5>Community</h5>
             <a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a>
+            <a href="https://github.com/infuseai">GitHub</a>
           </div>
           <div>
             <h5>More</h5>
             {/*<a href={`${this.props.config.baseUrl}blog`}>Blog</a>*/}
             <a href="https://infuseai.io">About InfuseAI</a>
+            <a href="https://medium.com/infuseai">InfuseAI x Medium</a>
           </div>
         </section>
         
