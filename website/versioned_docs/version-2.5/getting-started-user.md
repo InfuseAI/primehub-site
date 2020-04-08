@@ -1,5 +1,6 @@
 ---
-id: getting-started-user
+id: version-2.5-getting-started-user
+original_id: getting-started-user
 title: Getting Started
 ---
 
@@ -14,5 +15,3 @@ Guides are included:
 + [Advanced settings of JupyterHub Spawner](user-advanced-setting)
   
 + [Submit and schedule Jobs](job-submission-feature).
-
-+ [Deploy Models and serve models](model-deployment-feature).

@@ -1,5 +1,6 @@
 ---
-id: getting-started-admin
+id: version-2.5-getting-started-admin
+original_id: getting-started-admin
 title: Administration
 ---
 
@@ -21,4 +22,4 @@ Guides are included:
   + [GitLab Pull Secret](quickstart/secret-pull-image)
   + [GitHub gitsync secret](quickstart/secret-gitsync)
 
-+ [Perform operations via Maintenance Notebook](maintenance)
++ [Perform operations via Maintenance Notebook](quickstart/maintenance-resize-user-vol)
