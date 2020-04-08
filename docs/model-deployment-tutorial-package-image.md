@@ -3,15 +3,15 @@ id: model-deployment-tutorial-package-image
 title: Package a Docker Image for Model Deployment
 ---
 
-This doc shows how to package a docker image into the supported format for PrimeHub model deployment functions.
+This doc shows how to package a model into a format-valid docker image for the PrimeHub model deployment feature.
 
-PrimeHub model deployment functions are based on Seldon. This doc takes reference from Seldon official documentations and other resources which will be listed in the last part. 
+The PrimeHub model deployment feature is based on Seldon. This doc takes [reference](#reference) from Seldon official documentations and other resources which are listed in the last part.
 
 ## Prerequisites
 
-- docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+- Docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 - Go: [https://golang.org/dl/](https://golang.org/dl/)
-- s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
+- S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 Check everything is ready to go by running:
 
@@ -27,23 +27,25 @@ Check everything is ready to go by running:
         numpy
         ...
 
-- Create a `.s2i` folder and create a `.s2i/environment` file with the following content
+- Create a `.s2i` folder and create a `.s2i/environment` file with the following content:
 
         MODEL_NAME=MyModel
         API_TYPE=REST
         SERVICE_TYPE=MODEL
         PERSISTENCE=0
 
-- Create a `MyModel.py` file with the following example format
+- Create a `MyModel.py` file with the following example template:
 
         class MyModel(object):
             """
-            Model template. You can load your model parameters in __init__ from a location accessible at runtime
+            Model template. 
+            You can load your model parameters in __init__ from a location accessible at runtime.
             """
         
             def __init__(self):
                 """
-                Add any initialization parameters. These will be passed at runtime from the graph definition parameters defined in your seldondeployment kubernetes resource manifest.
+                Add any initialization parameters. These will be passed at runtime from the graph definition parameters 
+                defined in your seldondeployment kubernetes resource manifest.
                 """
                 print("Initializing")
         
@@ -59,23 +61,25 @@ Check everything is ready to go by running:
                 print("Predict called - will run identity function")
                 return X
 
-    - File and class name `MyModel` should be the same as MODEL_NAME under `.s2i/environment`
-    - Load or init your model under the `__init__` function
+    - File and class name `MyModel` should be the same as **MODEL_NAME** under `.s2i/environment`
+    - Load or initiate your model under the `__init__` function
     - The predict method takes a numpy-array `X` and list of string `feature_names` (optional), then returns an array of predictions (the return array should be at least 2-dimensional)
 
-    More detailed information on how to write the Python file for model deployment in different frameworks, please refer to the section `Example Codes for Different Frameworks`.
+    More detailed information on how to write the Python file for model deployment in different frameworks, please refer to the section [Example Codes for Different Frameworks](#optional-example-codes-for-different-frameworks).
 
 ## Build the Image
 
-Make sure you are in the folder that everything is here, including `requirements.txt`, `.s2i/environment`, `python file for model deployment`, and `model file`...etc.
+Make sure you are in the folder that includes `requirements.txt`, `.s2i/environment`, `python file for model deployment`, and `model file`...etc.
 
 If this folder is managed by `Git`, please commit all changes into the git.
 
-We will use `seldonio/seldon-core-s2i-python3:0.18` as base image, installing environment and packaging our model file to the target `my-model-image`. You can use the following command to package the docker image:
+We will use `seldonio/seldon-core-s2i-python3:0.18` as a base image, installing environment and packaging our model file into the target, `my-model-image`. You can use the following command to package the docker image:
+
+(Using `seldonio/seldon-core-s2i-python3` instead if using Python 3 rather than Python 3.6)
 
     s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
 
-(Change to seldonio/seldon-core-s2i-python3 if using Python 3 rather than Python 3.6)
+
 
 Then check the image by `docker images`.
 
@@ -93,24 +97,24 @@ and curl:
          -H 'Content-Type: application/json' \
          -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
 
-Replace ndarray content in curl example based on your application.
+Replace `ndarray` content in curl example according to your application.
 
-You are successfully build the docker image for PrimeHub model deployment functions now.
+You have built the docker image for a PrimeHub model deployment successfully now.
 
-Next, push your image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.
+Next, push the image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.
 
 ## (Optional) Example Codes for Different Frameworks
 
-Here are some Python examples of how to export a model file then load and predict in another file. By following the Python wrapper format, PrimeHub supports various popular ML frameworks to serve your model.
+Here are some Python snippets of how to export a model file then load it and run the prediction in another file. By following the Python wrapper format, PrimeHub supports various popular ML frameworks to serve models.
 
 ### Tensorflow 1
 
-- Output model example code
+- Output a model file `model/deep_mnist_model`
 
         saver = tf.train.Saver()
         saver.save(sess, "model/deep_mnist_model")
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         import tensorflow as tf
         import numpy as np
@@ -139,11 +143,11 @@ Here are some Python examples of how to export a model file then load and predic
 
 ### Tensorflow 2
 
-- Output model example code
+- Output a model file `1`
 
         model.save("1")
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         import tensorflow as tf
         
@@ -159,11 +163,11 @@ Here are some Python examples of how to export a model file then load and predic
 
 ### Keras
 
-- Output model example code
+- Output a model file `keras-mnist.h5`
 
         model.save('keras-mnist.h5')
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         from keras.models import load_model
         from PIL import Image
@@ -185,11 +189,11 @@ Here are some Python examples of how to export a model file then load and predic
 
 ### Scikit-learn
 
-- Output model example code
+- Output a model file `IrisClassifier.sav`
 
-        joblib.dump(p, filename_p)
+        joblib.dump(p, "IrisClassifier.sav")
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         from sklearn.externals import joblib
         
@@ -203,11 +207,11 @@ Here are some Python examples of how to export a model file then load and predic
 
 ### Pytorch
 
-- Output model example code
+- Output a model file `mnist_cnn.pt`
 
         torch.save(model.state_dict(), "mnist_cnn.pt")
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         import torch
         import torch.nn as nn
@@ -250,12 +254,12 @@ Here are some Python examples of how to export a model file then load and predic
 
 ### XGBoost
 
-- Output model example code
+- Output a model file `xgboost.model`
 
         bst = xgb.train(...)
         bst.save_model('xgboost.model')
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         import xgboost as xgb
         
@@ -270,13 +274,13 @@ Here are some Python examples of how to export a model file then load and predic
 
 ### MXNet
 
-- Output model example code
+- Output a model file `mx-model___`
 
         model_prefix = 'mx-model'
         checkpoint = mx.callback.do_checkpoint(model_prefix)
         mod.fit(..., epoch_end_callback=checkpoint)
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         import mxnet as mx
         from PIL import Image
@@ -304,13 +308,13 @@ Here are some Python examples of how to export a model file then load and predic
 
 ### LightGBM
 
-- Output model example code
+- Output a model file `model.pkl`
 
         gbm = lgb.train(...)
         with open('model.pkl', 'wb') as fout:
             pickle.dump(gbm, fout)
 
-- MyModel.py example code
+- `MyModel.py`, load a model and run a prediction
 
         import pickle
         
