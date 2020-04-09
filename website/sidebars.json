@@ -91,7 +91,16 @@
       "references/feature-flag"
     ],
     "Trouble Shooting": [
-      "trouble-shoot-guide"
+      "trouble-shoot-guide",
+      {
+        "type":"subcategory",
+        "label": "JupyterHub",
+        "ids": [
+          "trouble/jh-failed-spawn",
+          "trouble/jh-blank-page"
+        ]
+      },
+      "trouble/kubelet-restart"
     ]
   },
   "documentation": {
