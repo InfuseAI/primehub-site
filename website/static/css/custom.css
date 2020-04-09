@@ -55,7 +55,7 @@ a.navItem {
 }
 
 .darkBackground {
-    background-color: #151515;
+    background-color: #c7dbf4;
 }
 
 table th, table td {
@@ -91,7 +91,7 @@ div.grid-menu > div.menu-item {
 }
 
 .blockElement.alignCenter.fourByGridBlock.imageAlignTop {
-    background-color: #122843;
+    background-color: #1a3682;
 }
 
 .blockElement.alignCenter.fourByGridBlock.imageAlignTop  h2 {
@@ -116,4 +116,17 @@ div.grid-menu > div.menu-item {
 
 .container.paddingBottom {
     padding-bottom: 25%;
+}
+
+.nav-footer {
+    background-color: #1a3682;
+}
+
+.fixedHeaderContainer {
+    background-color: #1a3682;
+}
+
+.navigationSlider .slidingNav ul li > a:focus, .navigationSlider .slidingNav ul li > a:hover{
+    color: #1a3682 !important;
+    background-color: #c7dbf4;
 }
