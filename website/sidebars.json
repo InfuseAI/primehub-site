@@ -18,7 +18,8 @@
           "getting_started/install_metacontroller",
           "getting_started/install_keycloak",
           "getting_started/install_primehub",
-          "getting_started/install_helper"
+          "getting_started/install_helper",
+          "getting_started/install_seldon"
         ]
       }
     ],
