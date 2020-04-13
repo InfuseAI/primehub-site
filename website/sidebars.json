@@ -100,6 +100,14 @@
           "trouble/jh-blank-page"
         ]
       },
+      {
+        "type":"subcategory",
+        "label": "Prometheus",
+        "ids": [
+          "trouble/prometheus-fails-startup"
+        ]
+      },
+      "trouble/fluentd-fails-startup", 
       "trouble/kubelet-restart"
     ]
   },

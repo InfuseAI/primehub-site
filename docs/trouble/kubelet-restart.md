@@ -5,7 +5,8 @@ title: Restart Kubelet
 
 If this `Orphan pod xxxxxx found, but volume paths are still present on disk` is shown in logs, Kubelet may be required a restart.
 
-1. SSH into the node.
+1. Access into the node.
+
 2. Run `docker ps` and check the kublet status, meanwhile, there should no any running K8S relative containers.
 
 3. Stop kubelet; run `docker stop kubelet`.
