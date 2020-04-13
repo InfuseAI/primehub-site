@@ -109,7 +109,7 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 
     docker tag my-model-image test-repo/my-model-image
 
-推送至 docker hub:
+推送至 docker registry:
 
     docker push test-repo/my-model-image
 

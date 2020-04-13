@@ -109,7 +109,7 @@ Tag your docker image:
 
     docker tag my-model-image test-repo/my-model-image
 
-Then push to docker hub:
+Then push to docker registry:
 
     docker push test-repo/my-model-image
 
