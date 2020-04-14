@@ -39,7 +39,7 @@ The file system of the user volume may be corrupted. Try to repair it with prope
 
 Find out which node the rbd is located:
 
-```
+```bash
 kubectl get -n hub pod -o wide | grep jupyter-xxx
 kubectl describe pod -n hub jupyter-xxx
 ```
@@ -48,13 +48,13 @@ kubectl describe pod -n hub jupyter-xxx
 
 Repair the rbd:
 
-```
+```bash
 sudo umount /dev/rbd?
 sudo xfs_repair /dev/rbd?
 ```
 
 If xfs_repair shows error, try it with `-L` again:
-```
+```bash
 sudo xfs_repair -L /dev/rbd?
 ```
 
@@ -66,7 +66,9 @@ sudo xfs_repair -L /dev/rbd?
 
     Check the status of `rook-ceph-agent-xxx` of the problematic node:
 
-    `kubectl -n rook-system get pods -o wide`
+    ```bash
+    kubectl -n rook-system get pods -o wide
+    ```
 
     Restart the pod.
 

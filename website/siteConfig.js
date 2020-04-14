@@ -108,6 +108,7 @@ const siteConfig = {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: 'railscasts',
   },
+  usePrism: ['bash'],
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [

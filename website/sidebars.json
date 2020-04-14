@@ -102,12 +102,19 @@
       },
       {
         "type":"subcategory",
+        "label": "Keycloak",
+        "ids": [
+          "trouble/kc-brute-force-detection",
+          "trouble/kc-password-policy"
+        ]
+      },
+      {
+        "type":"subcategory",
         "label": "Prometheus",
         "ids": [
           "trouble/prometheus-fails-startup"
         ]
       },
-      "trouble/fluentd-fails-startup", 
       "trouble/kubelet-restart"
     ]
   },

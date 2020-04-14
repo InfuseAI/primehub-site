@@ -39,7 +39,7 @@ The manual resolution is to find these files and delete them.
 1. Learn the pod UID of `prometheus-prometheus-operator`:
 
     ```bash
-    $kubectl get pods –n monitor prometheus-prometheus-operator-prometheus-xxx –o jsonpath={.metadata.uid}
+    kubectl get pods –n monitor prometheus-prometheus-operator-prometheus-xxx –o jsonpath={.metadata.uid}
     ```
 
 2. Access into the node.

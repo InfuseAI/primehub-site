@@ -16,7 +16,7 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 - s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 安裝完成後，下達以下指令確認一切正常：
-```
+```bash
 s2i usage seldonio/seldon-core-s2i-python3:0.18
 ```
 
