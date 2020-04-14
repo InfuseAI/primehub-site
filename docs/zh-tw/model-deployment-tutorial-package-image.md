@@ -85,7 +85,9 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
     my-model-image                     latest              4a0f28ee4f4c        3 minutes ago       1.66GB
     seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 weeks ago         794MB
 
-在本機上運行映像檔：
+## 測試映像檔
+
+為了確保模型映像檔可於後續的模型部署中使用，你可先在本機上透過 Docker 運行 container:
 
     docker run -p 5000:5000 --rm my-model-image
 
@@ -99,7 +101,18 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 
 到此我們已經成功建置出可以給 PrimeHub 模型部署功能使用的映像檔。
 
+## 推送映像檔
+
 接下來請將其推送到 docker hub (或其他 docker registry) ，並參考 PrimeHub 的文件繼續將模型部署到 PrimeHub 上
+
+標記模型映像檔:
+
+    docker tag my-model-image test-repo/my-model-image
+
+推送至 docker registry:
+
+    docker push test-repo/my-model-image
+
 
 ## (Optional) 相關 Frameworks 的範例程式
 
@@ -330,3 +343,4 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 - [https://github.com/SeldonIO/seldon-core/tree/master/examples](https://github.com/SeldonIO/seldon-core/tree/master/examples)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html](https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html)
+- [https://docs.seldon.io/projects/seldon-core/en/latest/workflow/serving.html](https://docs.seldon.io/projects/seldon-core/en/latest/workflow/serving.html)

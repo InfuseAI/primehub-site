@@ -79,15 +79,15 @@ We will use `seldonio/seldon-core-s2i-python3:0.18` as a base image, installing 
 
     s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
 
-
-
 Then check the image by `docker images`.
 
     REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
     my-model-image                     latest              4a0f28ee4f4c        3 minutes ago       1.66GB
     seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 weeks ago         794MB
 
-Run and test the image locally by:
+## Test the Image
+
+In order to make sure your model image is well packaged, you can run your model as a Docker container locally:
 
     docker run -p 5000:5000 --rm my-model-image
 
@@ -101,7 +101,18 @@ Replace `ndarray` content in curl example according to your application.
 
 You have built the docker image for a PrimeHub model deployment successfully now.
 
+## Push the Image
+
 Next, push the image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.
+
+Tag your docker image:
+
+    docker tag my-model-image test-repo/my-model-image
+
+Then push to docker registry:
+
+    docker push test-repo/my-model-image
+
 
 ## (Optional) Example Codes for Different Frameworks
 
@@ -332,3 +343,4 @@ Here are some Python snippets of how to export a model file then load it and run
 - [https://github.com/SeldonIO/seldon-core/tree/master/examples](https://github.com/SeldonIO/seldon-core/tree/master/examples)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html](https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html)
+- [https://docs.seldon.io/projects/seldon-core/en/latest/workflow/serving.html](https://docs.seldon.io/projects/seldon-core/en/latest/workflow/serving.html)
