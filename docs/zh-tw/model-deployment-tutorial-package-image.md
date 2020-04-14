@@ -16,28 +16,31 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 - s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 安裝完成後，下達以下指令確認一切正常：
-
-    s2i usage seldonio/seldon-core-s2i-python3:0.18
+```
+s2i usage seldonio/seldon-core-s2i-python3:0.18
+```
 
 ## 撰寫模型部署程式與設定 (Python)
 
 - 建議使用 Python 3.6 
 - 產生 `requirements.txt` 檔，並在其中寫下所需套件
-
+    ```
         keras
         tensorflow
         numpy
         ...
+    ```
 
 - 建立 `.s2i` 資料夾後建立 `.s2i/environment` 檔案，並在其中寫下以下內容
-
+    ```script
         MODEL_NAME=MyModel
         API_TYPE=REST
         SERVICE_TYPE=MODEL
         PERSISTENCE=0
+    ```
 
 - 建立 `MyModel.py` 檔，內容可以參考以下的格式內容
-
+    ```python
         class MyModel(object):
             """
             Model template. You can load your model parameters in __init__ from a location accessible at runtime
@@ -60,6 +63,7 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
                 """
                 print("Predict called - will run identity function")
                 return X
+    ```
 
     - 檔名和類別名稱 `MyModel` 需與在 `.s2i/environment` 下的 MODEL_NAME 一致
     - 你可以在 `__init__` 初始化或載入你的模型
@@ -74,28 +78,31 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 如果該資料夾有使用 `Git` ，需要將所有的改變 Commit 。
 
 我們使用 `seldonio/seldon-core-s2i-python3:0.18` 來安裝與建置模型部署映像檔 `my-model-image`：
-
-    s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
+```
+s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
+```
 
 (當為 Python 3 而非 Python 3.6 時使用 seldonio/seldon-core-s2i-python3)
 
 透過 `docker images` 檢查建置完成的映像檔，範例結果如下所示：
-
+```bash
     REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
     my-model-image                     latest              4a0f28ee4f4c        3 minutes ago       1.66GB
     seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 weeks ago         794MB
-
+```
 ## 測試映像檔
 
 為了確保模型映像檔可於後續的模型部署中使用，你可先在本機上透過 Docker 運行 container:
-
-    docker run -p 5000:5000 --rm my-model-image
+```
+docker run -p 5000:5000 --rm my-model-image
+```
 
 透過 curl 進行測試：
-
+```bash
     curl -X POST localhost:5000/api/v1.0/predictions \
          -H 'Content-Type: application/json' \
          -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
+```
 
 其中 `ndarray` 的內容請根據你的應用給予不同的值。
 
@@ -103,15 +110,17 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 
 ## 推送映像檔
 
-接下來請將其推送到 docker hub (或其他 docker registry) ，並參考 PrimeHub 的文件繼續將模型部署到 PrimeHub 上
+接下來請將其推送到 docker hub (或其他 docker registry) ，並參考 [PrimeHub 的文件](../job-submission-tutorial-p4)繼續將模型部署到 PrimeHub 上
 
 標記模型映像檔:
-
-    docker tag my-model-image test-repo/my-model-image
+```
+docker tag my-model-image test-repo/my-model-image
+```
 
 推送至 docker registry:
-
-    docker push test-repo/my-model-image
+```
+docker push test-repo/my-model-image
+```
 
 
 ## (Optional) 相關 Frameworks 的範例程式
@@ -121,12 +130,13 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 ### Tensorflow 1
 
 - Output model example code
-
+    ```python
         saver = tf.train.Saver()
         saver.save(sess, "model/deep_mnist_model")
+    ```
 
 - MyModel.py example code
-
+    ```python
         import tensorflow as tf
         import numpy as np
         import os
@@ -151,15 +161,17 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
                     self.load()
                 predictions = self.sess.run(self.y,feed_dict={self.x:X})
                 return predictions.astype(np.float64)
+    ```
 
 ### Tensorflow 2
 
 - Output model example code
-
+    ```python
         model.save("1")
+    ```
 
 - MyModel.py example code
-
+    ```python
         import tensorflow as tf
         
         class MNISTModel:
@@ -171,15 +183,17 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
                 probability = output[0]
                 predicted_number = tf.math.argmax(probability)
                 return {"predicted_number": predicted_number.numpy().tolist(), "probability": probability.tolist()}
+    ```
 
 ### Keras
 
 - Output model example code
-
+    ```python
         model.save('keras-mnist.h5')
+    ```
 
 - MyModel.py example code
-
+    ```python
         from keras.models import load_model
         from PIL import Image
         from io import BytesIO
@@ -197,15 +211,17 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
                 data = np.expand_dims(data, axis=0)
                 data = np.expand_dims(data, axis=-1)
                 return self.model.predict(data)
+    ```
 
 ### Scikit-learn
 
 - Output model example code
-
+    ```python
         joblib.dump(p, filename_p)
+    ```
 
 - MyModel.py example code
-
+    ```python
         from sklearn.externals import joblib
         
         class IrisClassifier(object):
@@ -215,15 +231,17 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
         
             def predict(self,X,features_names):
                 return self.model.predict_proba(X)
+    ```
 
 ### Pytorch
 
 - Output model example code
-
+    ```python
         torch.save(model.state_dict(), "mnist_cnn.pt")
+    ```
 
 - MyModel.py example code
-
+    ```python
         import torch
         import torch.nn as nn
         import torch.nn.functional as F
@@ -262,16 +280,18 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
             def predict(self, x, names):
                 output = self._model(torch.from_numpy(x).float())
                 return {"probability": output.tolist()}
+    ```
 
 ### XGBoost
 
 - Output model example code
-
+    ```python
         bst = xgb.train(...)
         bst.save_model('xgboost.model')
+    ```
 
 - MyModel.py example code
-
+    ```python
         import xgboost as xgb
         
         class MyModel(object):
@@ -282,17 +302,19 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
             def predict(self,X,features_names):
                 dtest = xgb.DMatrix(X)
                 return self.bst.predict(dtest)
+    ```
 
 ### MXNet
 
 - Output model example code
-
+    ```python
         model_prefix = 'mx-model'
         checkpoint = mx.callback.do_checkpoint(model_prefix)
         mod.fit(..., epoch_end_callback=checkpoint)
+    ```
 
 - MyModel.py example code
-
+    ```python
         import mxnet as mx
         from PIL import Image
         import numpy as np
@@ -316,17 +338,19 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
                 data = np.expand_dims(data, axis=0)
                 data = np.expand_dims(data, axis=-1)
                 return self.model.predict(data).asnumpy()
+    ```
 
 ### LightGBM
 
 - Output model example code
-
+    ```python
         gbm = lgb.train(...)
         with open('model.pkl', 'wb') as fout:
             pickle.dump(gbm, fout)
+    ```
 
 - MyModel.py example code
-
+    ```python
         import pickle
         
         class MyModel(object):
@@ -336,6 +360,7 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
         
             def predict(self,X,features_names):
                 return self.pkl_bst.predict(X)
+    ```
 
 ## Reference
 

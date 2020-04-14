@@ -14,28 +14,31 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
 - S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 Check everything is ready to go by running:
-
-    s2i usage seldonio/seldon-core-s2i-python3:0.18
+```bash
+s2i usage seldonio/seldon-core-s2i-python3:0.18
+```
 
 ## Prepare the Model and Code (Python)
 
 - Please use Python 3.6 (Recommended)
 - Create a `requirements.txt` file and write down all required packages
-
+    ```txt
         keras
         tensorflow
         numpy
         ...
+    ```
 
 - Create a `.s2i` folder and create a `.s2i/environment` file with the following content:
-
+    ```script
         MODEL_NAME=MyModel
         API_TYPE=REST
         SERVICE_TYPE=MODEL
         PERSISTENCE=0
+    ```
 
 - Create a `MyModel.py` file with the following example template:
-
+    ```python
         class MyModel(object):
             """
             Model template. 
@@ -60,6 +63,7 @@ Check everything is ready to go by running:
                 """
                 print("Predict called - will run identity function")
                 return X
+    ```
 
     - File and class name `MyModel` should be the same as **MODEL_NAME** under `.s2i/environment`
     - Load or initiate your model under the `__init__` function
@@ -76,8 +80,9 @@ If this folder is managed by `Git`, please commit all changes into the git.
 We will use `seldonio/seldon-core-s2i-python3:0.18` as a base image, installing environment and packaging our model file into the target, `my-model-image`. You can use the following command to package the docker image:
 
 (Using `seldonio/seldon-core-s2i-python3` instead if using Python 3 rather than Python 3.6)
-
-    s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
+```bash
+ s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
+```
 
 Then check the image by `docker images`.
 
@@ -92,10 +97,11 @@ In order to make sure your model image is well packaged, you can run your model 
     docker run -p 5000:5000 --rm my-model-image
 
 and curl:
-
+```bash
     curl -X POST localhost:5000/api/v1.0/predictions \
          -H 'Content-Type: application/json' \
          -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
+```
 
 Replace `ndarray` content in curl example according to your application.
 
@@ -103,16 +109,17 @@ You have built the docker image for a PrimeHub model deployment successfully now
 
 ## Push the Image
 
-Next, push the image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.
+Next, push the image into the docker hub (or other docker registries) and check PrimeHub [tutorial](job-submission-tutorial-p4) to serve the model under PrimeHub.
 
 Tag your docker image:
-
-    docker tag my-model-image test-repo/my-model-image
+```
+docker tag my-model-image test-repo/my-model-image
+```
 
 Then push to docker registry:
-
-    docker push test-repo/my-model-image
-
+```
+docker push test-repo/my-model-image
+```
 
 ## (Optional) Example Codes for Different Frameworks
 
@@ -121,12 +128,13 @@ Here are some Python snippets of how to export a model file then load it and run
 ### Tensorflow 1
 
 - Output a model file `model/deep_mnist_model`
-
+    ```python
         saver = tf.train.Saver()
         saver.save(sess, "model/deep_mnist_model")
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         import tensorflow as tf
         import numpy as np
         import os
@@ -151,15 +159,17 @@ Here are some Python snippets of how to export a model file then load it and run
                     self.load()
                 predictions = self.sess.run(self.y,feed_dict={self.x:X})
                 return predictions.astype(np.float64)
+    ```
 
 ### Tensorflow 2
 
 - Output a model file `1`
-
+    ```python
         model.save("1")
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         import tensorflow as tf
         
         class MNISTModel:
@@ -171,15 +181,17 @@ Here are some Python snippets of how to export a model file then load it and run
                 probability = output[0]
                 predicted_number = tf.math.argmax(probability)
                 return {"predicted_number": predicted_number.numpy().tolist(), "probability": probability.tolist()}
+    ```
 
 ### Keras
 
 - Output a model file `keras-mnist.h5`
-
+    ```python
         model.save('keras-mnist.h5')
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         from keras.models import load_model
         from PIL import Image
         from io import BytesIO
@@ -197,15 +209,17 @@ Here are some Python snippets of how to export a model file then load it and run
                 data = np.expand_dims(data, axis=0)
                 data = np.expand_dims(data, axis=-1)
                 return self.model.predict(data)
+    ```
 
 ### Scikit-learn
 
 - Output a model file `IrisClassifier.sav`
-
+    ```python
         joblib.dump(p, "IrisClassifier.sav")
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         from sklearn.externals import joblib
         
         class IrisClassifier(object):
@@ -215,15 +229,17 @@ Here are some Python snippets of how to export a model file then load it and run
         
             def predict(self,X,features_names):
                 return self.model.predict_proba(X)
+    ```
 
 ### Pytorch
 
 - Output a model file `mnist_cnn.pt`
-
+    ```python
         torch.save(model.state_dict(), "mnist_cnn.pt")
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         import torch
         import torch.nn as nn
         import torch.nn.functional as F
@@ -262,16 +278,18 @@ Here are some Python snippets of how to export a model file then load it and run
             def predict(self, x, names):
                 output = self._model(torch.from_numpy(x).float())
                 return {"probability": output.tolist()}
+    ```
 
 ### XGBoost
 
 - Output a model file `xgboost.model`
-
+    ```python
         bst = xgb.train(...)
         bst.save_model('xgboost.model')
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         import xgboost as xgb
         
         class MyModel(object):
@@ -282,17 +300,19 @@ Here are some Python snippets of how to export a model file then load it and run
             def predict(self,X,features_names):
                 dtest = xgb.DMatrix(X)
                 return self.bst.predict(dtest)
+    ```
 
 ### MXNet
 
 - Output a model file `mx-model___`
-
+    ```python
         model_prefix = 'mx-model'
         checkpoint = mx.callback.do_checkpoint(model_prefix)
         mod.fit(..., epoch_end_callback=checkpoint)
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         import mxnet as mx
         from PIL import Image
         import numpy as np
@@ -316,17 +336,19 @@ Here are some Python snippets of how to export a model file then load it and run
                 data = np.expand_dims(data, axis=0)
                 data = np.expand_dims(data, axis=-1)
                 return self.model.predict(data).asnumpy()
+    ```
 
 ### LightGBM
 
 - Output a model file `model.pkl`
-
+    ```python
         gbm = lgb.train(...)
         with open('model.pkl', 'wb') as fout:
             pickle.dump(gbm, fout)
+    ```
 
 - `MyModel.py`, load a model and run a prediction
-
+    ```python
         import pickle
         
         class MyModel(object):
@@ -336,6 +358,7 @@ Here are some Python snippets of how to export a model file then load it and run
         
             def predict(self,X,features_names):
                 return self.pkl_bst.predict(X)
+    ```
 
 ## Reference
 
