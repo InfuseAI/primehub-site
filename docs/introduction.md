@@ -15,6 +15,8 @@ title: Documentations
 
 + [Deploy Models and serve models](model-deployment-feature).
 
++ [More](getting-started-user)
+
 ## For Administrators
 
 + [Manage PrimeHub system and check the license](guide_manual/admin-system)
@@ -33,12 +35,19 @@ title: Documentations
 
 + [Perform operations via Maintenance Notebook](maintenance)
 
++ [More](getting-started-admin)
+
 ## For Developers
 
 + [Installation | Setup](dev-introduction)
+
 + [Designs | Concepts](design/architecture)
+
 + [Tasks](tasks/build)
+
 + [Trouble-shooting](trouble-shoot-guide)
+
++ [More](dev-introduction)
 
 ---
 

@@ -29,7 +29,7 @@ Fill in the fields, some are required:
 
 + `Name` (required) A unique name, it's not able to be modified once created. *(Only lowercase letters, numbers, dash `-` and the bottom line `_` can be filled in.)*
 
-+ `Base image` (required) The url of the base image.
++ `Base image` (required) The url of the base image; we can use any valid image URLs or we can choose images which are added via Image Management from autocompletion.
 
 + `Use Image PullSecret` Checked off if a pull secret is required.
 
