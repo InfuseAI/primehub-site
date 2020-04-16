@@ -168,9 +168,9 @@ The primary volumes and locations are
 
 Type | Path  | Note
 --------|-------|----
-Working Directory | `/workingdir` | Is mounted as `emptyDir`
-Datasets | `/datasets/<dataset-name>` | symlink to `/workingdir/datasets`
-Group Volume | `/project/<dataset-name>` | symlink to `/workingdir/project`
+Working Directory | `/home/jovyan` | Is mounted as `emptyDir`
+Datasets | `/datasets/<dataset-name>` | symlink to `/home/jovyan/datasets`
+Group Volume | `/project/<project-name>` | symlink to `/home/jovyan`
 User Volume | N/A | 
 
 
@@ -183,14 +183,15 @@ User Volume | N/A |
 │   ├── group1
 │   ├── group2
 │   └── group3
-└── workingdir
-    ├── datasets -> /datasets
-    │   ├── ds1
-    │   ├── ds2
-    │   └── ds3
-    ├── group1 -> /project/group1
-    ├── group2 -> /project/group2
-    └── group3 -> /project/group3
+└── home
+    └── jovyan
+        ├── datasets -> /datasets
+        │   ├── ds1
+        │   ├── ds2
+        │   └── ds3
+        ├── group1 -> /project/group1
+        ├── group2 -> /project/group2
+        └── group3 -> /project/group3
 ```
 
 The working directory is mounted as an `emptyDir` so that users can put temporary data under the folder.
@@ -202,10 +203,10 @@ Feature | Jupyter | Job
 user volume | Yes | No
 group Volume | Yes | Yes
 pv dataset | Yes | Yes
-pv dataset (hostpath) | Yes | No
+pv dataset (hostpath) | Yes | Yes
 env dataset | Yes | Yes
 git dataset | Yes | Yes
-working directory | /home/jovyan (user volume) | /workingdir (emptyDir)
+working directory | /home/jovyan (user volume) | /home/jovyan (emptyDir)
 start-notebook script | Yes | No
 
 ### Log
