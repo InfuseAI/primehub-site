@@ -40,8 +40,38 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }introduction`}>
-                    Documentation
+                    }getting-started-admin`}>
+                    Administrator
+                  </a>
+                </td>
+                <td>
+                  {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/:id" */}
+                  <a
+                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''
+                    }getting-started-user`}>
+                    Scientist
+                  </a>
+                </td>
+                <td>
+                  {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/:id" */}
+                  <a
+                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''
+                    }dev-introduction`}>
+                    Developer
+                  </a>
+                </td>
+                <td>
+                  {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/:id" */}
+                  <a
+                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''
+                    }index-zh`}>
+                    繁中文件
                   </a>
                 </td>
                 <td>
@@ -67,8 +97,38 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }next/introduction`}>
-                    Documentation
+                    }next/getting-started-admin`}>
+                    Administrator
+                  </a>
+                </td>
+                <td>
+                  {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/next/:id" */}
+                  <a
+                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''
+                    }next/getting-started-user`}>
+                    Scientist
+                  </a>
+                </td>
+                <td>
+                  {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/next/:id" */}
+                  <a
+                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''
+                    }next/dev-introduction`}>
+                    Developer
+                  </a>
+                </td>
+                <td>
+                  {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/next/:id" */}
+                  <a
+                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                      props.language ? props.language + '/' : ''
+                    }next/index-zh`}>
+                    繁中文件
                   </a>
                 </td>
                 <td>
@@ -92,14 +152,45 @@ function Versions(props) {
                   version !== latestVersion && (
                     <tr>
                       <th>{version}</th>
+                      
                       <td>
                         {/* You are supposed to change this href where appropriate
                         Example: href="<baseUrl>/docs(/:language)/:version/:id" */}
                         <a
                           href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                             props.language ? props.language + '/' : ''
-                          }${version}/introduction`}>
-                          Documentation
+                          }${version}/getting-started-admin`}>
+                          Administrator
+                        </a>
+                      </td>
+                      <td>
+                        {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/:version/:id" */}
+                        <a
+                          href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                            props.language ? props.language + '/' : ''
+                          }${version}/getting-started-user`}>
+                          Scientist
+                        </a>
+                      </td>
+                      <td>
+                        {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/:version/:id" */}
+                        <a
+                          href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                            props.language ? props.language + '/' : ''
+                          }${version}/dev-introduction`}>
+                          Developer
+                        </a>
+                      </td>
+                      <td>
+                        {/* You are supposed to change this href where appropriate
+                        Example: href="<baseUrl>/docs(/:language)/:version/:id" */}
+                        <a
+                          href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
+                            props.language ? props.language + '/' : ''
+                          }${version}/index-zh`}>
+                          繁中文件
                         </a>
                       </td>
                       <td>

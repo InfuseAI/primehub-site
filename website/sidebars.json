@@ -89,33 +89,6 @@
       "references/primehub_chart",
       "references/dotenv",
       "references/feature-flag"
-    ],
-    "Trouble Shooting": [
-      "trouble-shoot-guide",
-      {
-        "type":"subcategory",
-        "label": "JupyterHub",
-        "ids": [
-          "trouble/jh-failed-spawn",
-          "trouble/jh-blank-page"
-        ]
-      },
-      {
-        "type":"subcategory",
-        "label": "Keycloak",
-        "ids": [
-          "trouble/kc-brute-force-detection",
-          "trouble/kc-password-policy"
-        ]
-      },
-      {
-        "type":"subcategory",
-        "label": "Prometheus",
-        "ids": [
-          "trouble/prometheus-fails-startup"
-        ]
-      },
-      "trouble/kubelet-restart"
     ]
   },
   "documentation": {
@@ -209,6 +182,33 @@
     ],
     "Guide": [
       "guide_manual/experimental-vscode"
+    ],
+    "Trouble Shooting": [
+      "trouble-shoot-guide",
+      {
+        "type":"subcategory",
+        "label": "JupyterHub",
+        "ids": [
+          "trouble/jh-failed-spawn",
+          "trouble/jh-blank-page"
+        ]
+      },
+      {
+        "type":"subcategory",
+        "label": "Keycloak",
+        "ids": [
+          "trouble/kc-brute-force-detection",
+          "trouble/kc-password-policy"
+        ]
+      },
+      {
+        "type":"subcategory",
+        "label": "Prometheus",
+        "ids": [
+          "trouble/prometheus-fails-startup"
+        ]
+      },
+      "trouble/kubelet-restart"
     ]
   },
   "zh-tw": {
