@@ -70,7 +70,7 @@ title: Job Submission (Beta)
 
     |目錄|描述|
     |---------|-----------|
-    |`/workingdir`|`job`執行時的暫存工作目錄。***注意:** 如果輸出 data 於此，此 data 將會隨著`job`結束而消失，只能做為暫存之用。*|
+    |`/home/jovyan`|`job`執行時的暫存工作目錄。***注意:** 如果輸出 data 於此，此 data 將會隨著`job`結束而消失，只能做為暫存之用。 不再是~~`/workingdir`~~*！|
     |`/project/<group>`|用此路徑，存取群組專案目錄，可以做為讀取及輸出常態性資料，即使`job`已經結束。***注意：** `group volume`必須要事先存在，請洽系統管理員。*|
     |`/datasets/<dataset>`|用此路徑，存取群組所屬的資料集目錄。***注意：** `dataset volume`必須要事先存在，請洽系統管理員。*|
 
@@ -92,7 +92,7 @@ title: Job Submission (Beta)
     python -u train_minst.py
     ```
 
-    **Example 2**: 如果我們直接執行下列指令，沒有變更路徑，`job`的工作目錄位在`/workingdir`，`job`執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在`/workingdir`的 data 資料會隨著`job`結束而消失。
+    **Example 2**: 如果我們直接執行下列指令，沒有變更路徑，`job`的工作目錄位在`/home/jovyan`，`job`執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在`/home/jovyan`的 data 資料會隨著`job`結束而消失。
 
     ```bash
     python -u /project/research/train_minst.py

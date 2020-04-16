@@ -86,7 +86,7 @@ function Versions(props) {
             This is the version that is configured automatically when you first
             install this project.
           </p>
-          <h3 id="rc">Release candidate versions</h3>
+          <h3 id="rc">Release candidate version</h3>
           <table className="versions">
             <tbody>
               <tr>

@@ -69,7 +69,7 @@ Using Group selection as a filter.
 
     |Directory|Description|
     |---------|-----------|
-    |`/workingdir`|A temporary working directory while jobs running. ***Note**: saving data here will be lost when jobs finished.*|
+    |`/home/jovyan`|A **temporary working directory** while jobs running. ***Note**: saving data here will be lost when jobs finished; NOT ~~`/workingdir`~~ anymore!*|
     |`/project/<group>`|Using this path to access a group volume, load files and save output persistently. ***Note:** a group volume is required, please consult administrators.*|
     |`/datasets/<dataset>`|Using this path to access a dataset volume, load datasets which connect to the group. ***Note:** a dataset volume is reqiured, please consult administrators.*|
 
@@ -91,7 +91,7 @@ Using Group selection as a filter.
     python -u train_minst.py
     ```
 
-    **Example 2**: If we execute the job like below, the output data will be saved under `/workingdir` which is a *temporary* directory while the job is running. In other words, data saved under `/workingdir` will be lost.
+    **Example 2**: If we execute the job like below, the output data will be saved under `/home/jovyan` which is a *temporary* directory while the job is running. In other words, data saved under `/home/jovyan` will be lost.
 
     ```bash
     python -u /project/research/train_minst.py
