@@ -17,6 +17,8 @@ You need to fill in the fields in the above picture:
 
 + `Display name`
 
+**`Model Deployment`**(*Alpha*): This alpha feature is hidden until the [feature flag](../references/feature-flag) is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+
 **`Shared Volume`**: Create shared volume with specific capacity.
 
 + `Shared Volume Capacity` Set the capacity of the shared volume.
