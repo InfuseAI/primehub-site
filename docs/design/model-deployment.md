@@ -54,13 +54,13 @@ Path | Description | Default Value
 
 [Seldon](https://www.seldon.io/) is a model deployment solution in the community. The reason why we select Seldon as the solution is because it provides a common way to package different framework's by different programming languages into a docker image.
 
-Seldon also provides an operator under `Seldon core` project to manage a `SeldonDeployment` resource and reconcile it to the underlying deployments and services. However, for simplicity, we decide not to use the `SeldonDeployment` resource. Instead, we define `PhDeployment` and the controller generate the underlying `Deployment` and `Service` directly.
+Seldon also provides an operator under `Seldon core` project to manage a `SeldonDeployment` resource and reconcile it to the underlying deployments and services. However, for simplicity, we decide not to use the `SeldonDeployment` resource. Instead, we define PhDeployment and the controller for generating/to generate the underlying Deployment and Service directly.
 
 ## Custom Resource
 
 A [custom resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) `PhDeployment` is defined for PrimeHub-defined model deployment. The deployment is very similar to the Kubernetes native deployment, the controller would spawn a deployment according to the `PhDeployment`'s spec. The difference is that the spec contains the PrimeHub-specific concept, like User, Group, and InstanceType.
 
-Here is an example of `PhSchedule`.
+Here is an example of `PhDeployment`.
 
 ```
 apiVersion: primehub.io/v1alpha1
@@ -101,7 +101,7 @@ status:
       spec: <PhDeploymentSpec>
 ```  
 
-The `PhSchedule` resource has the following children
+The `PhDeployment` resource has the following children
 
 - **Ingress:** The ingress resource to route the traffic to given model deployment
 - **Service:** The service resource of a given deployment
