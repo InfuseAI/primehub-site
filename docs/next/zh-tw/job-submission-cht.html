@@ -113,7 +113,7 @@
 <tr><th>目錄</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td><code>/workingdir</code></td><td><code>job</code>執行時的暫存工作目錄。<em><strong>注意:</strong> 如果輸出 data 於此，此 data 將會隨著<code>job</code>結束而消失，只能做為暫存之用。</em></td></tr>
+<tr><td><code>/home/jovyan</code></td><td><code>job</code>執行時的暫存工作目錄。<em><strong>注意:</strong> 如果輸出 data 於此，此 data 將會隨著<code>job</code>結束而消失，只能做為暫存之用。 不再是<del><code>/workingdir</code></del></em>！</td></tr>
 <tr><td><code>/project/&lt;group&gt;</code></td><td>用此路徑，存取群組專案目錄，可以做為讀取及輸出常態性資料，即使<code>job</code>已經結束。<em><strong>注意：</strong> <code>group volume</code>必須要事先存在，請洽系統管理員。</em></td></tr>
 <tr><td><code>/datasets/&lt;dataset&gt;</code></td><td>用此路徑，存取群組所屬的資料集目錄。<em><strong>注意：</strong> <code>dataset volume</code>必須要事先存在，請洽系統管理員。</em></td></tr>
 </tbody>
@@ -136,7 +136,7 @@
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> /project/research/
 python -u train_minst.py
 </code></pre>
-<p><strong>Example 2</strong>: 如果我們直接執行下列指令，沒有變更路徑，<code>job</code>的工作目錄位在<code>/workingdir</code>，<code>job</code>執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在<code>/workingdir</code>的 data 資料會隨著<code>job</code>結束而消失。</p>
+<p><strong>Example 2</strong>: 如果我們直接執行下列指令，沒有變更路徑，<code>job</code>的工作目錄位在<code>/home/jovyan</code>，<code>job</code>執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在<code>/home/jovyan</code>的 data 資料會隨著<code>job</code>結束而消失。</p>
 <pre><code class="hljs css language-bash">python -u /project/research/train_minst.py
 </code></pre></li>
 </ul>

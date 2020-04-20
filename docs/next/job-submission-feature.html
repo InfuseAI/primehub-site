@@ -112,7 +112,7 @@
 <tr><th>Directory</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td><code>/workingdir</code></td><td>A temporary working directory while jobs running. <em><strong>Note</strong>: saving data here will be lost when jobs finished.</em></td></tr>
+<tr><td><code>/home/jovyan</code></td><td>A <strong>temporary working directory</strong> while jobs running. <em><strong>Note</strong>: saving data here will be lost when jobs finished; NOT <del><code>/workingdir</code></del> anymore!</em></td></tr>
 <tr><td><code>/project/&lt;group&gt;</code></td><td>Using this path to access a group volume, load files and save output persistently. <em><strong>Note:</strong> a group volume is required, please consult administrators.</em></td></tr>
 <tr><td><code>/datasets/&lt;dataset&gt;</code></td><td>Using this path to access a dataset volume, load datasets which connect to the group. <em><strong>Note:</strong> a dataset volume is reqiured, please consult administrators.</em></td></tr>
 </tbody>
@@ -133,7 +133,7 @@
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> /project/research/
 python -u train_minst.py
 </code></pre>
-<p><strong>Example 2</strong>: If we execute the job like below, the output data will be saved under <code>/workingdir</code> which is a <em>temporary</em> directory while the job is running. In other words, data saved under <code>/workingdir</code> will be lost.</p>
+<p><strong>Example 2</strong>: If we execute the job like below, the output data will be saved under <code>/home/jovyan</code> which is a <em>temporary</em> directory while the job is running. In other words, data saved under <code>/home/jovyan</code> will be lost.</p>
 <pre><code class="hljs css language-bash">python -u /project/research/train_minst.py
 </code></pre></li>
 </ul>
