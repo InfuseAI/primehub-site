@@ -166,7 +166,6 @@ There are several reasons for the `Failed` phase. They include
 - Image invalid or cannot be pulled successfully
 - Group resource not enough
 - Cluster resource not enough
-- Deploying more than 5 minutes
 
 ## Resource Constraint
 
