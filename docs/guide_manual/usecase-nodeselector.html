@@ -59,7 +59,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">NodeSelector</h1></header><article><div><span><p>When it comes to DevOps, we may arrange downtime of nodes for regular maintenance several times a year, however, for the sake of impact reduction of our service, we keep some of nodes continue to be available for providing the service, and shutdown other nodes in shift. In this case, initially we label all of nodes with <code>service=on</code></p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">NodeSelector</h1></header><article><div><span><p>When it comes to DevOps, we may arrange downtime of nodes for regular maintenance several times a year, however, for the sake of impact reduction of our service, we keep some of nodes continue to be available for providing the service, and shutdown other nodes in shift. In this case, initially we label all of nodes with <code>service=on</code></p>
 <pre><code class="hljs">kubectl label nodes node1 service=<span class="hljs-keyword">on</span>
 </code></pre>
 <p>and apply a nodeSelector on every instance types when creation by NodeSelector on Admin UI so that they, initially, are able to to be scheduled on any nodes labelled with <code>service=on</code>.</p>

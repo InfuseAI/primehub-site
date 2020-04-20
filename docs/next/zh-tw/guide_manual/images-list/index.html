@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>InfuseAI 提供 Images · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="InfuseAI 提供/維護的 Images 如下：  "/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="InfuseAI 提供 Images · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="InfuseAI 提供/維護的 Images 如下：  "/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/next/getting-started-admin" target="_self">Administrator</a></li><li class=""><a href="/docs/next/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/next/dev-introduction" target="_self">Developer</a></li><li class="siteNavGroupActive"><a href="/docs/next/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Image 創建及管理</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">繁中文件<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/index-zh">說明</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">專案<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/launch-project">啟始專案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/user-advanced-setting">Spawner 進階設定</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-cht">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-scheduling-feature-cht">Job Scheduler (Beta)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Job Submission (Beta)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-simple">初階範例</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-p1">(Part1) MNIST classifier 訓練範例程式</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-p2">(Part2) MNIST classifier 訓練範例程式</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/model-deployment-feature">模型部署 (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">教學 (Alpha)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/model-deployment-tutorial-package-image">建置模型部署所需之映像檔</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub 管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-system-cht">System Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用者及群組管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-group-cht">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Instance Type 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/usecase-toleration-cht">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/usecase-nodeselector-cht">NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Image 創建及管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-build-image-cht">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/custom-image-guideline">客製 Image 指南</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/zh-tw/guide_manual/images-list">InfuseAI 提供 Images</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">維運<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance Notebook</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">指南<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/experimental-vscode">VS Code 體驗</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">其它配置<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/dockerhub-registry">利用 DockerHub Registry</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">InfuseAI 提供 Images</h1></header><article><div><span><p>InfuseAI 提供/維護的 Images 如下：</p>
+<h2><a class="anchor" aria-hidden="true" id="tensorflow"></a><a href="#tensorflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TensorFlow</h2>
+<table>
+<thead>
+<tr><th>Framework</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
+</thead>
+<tbody>
+<tr><td>TensorFlow 2.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-tf-v2-14fb17d1/images/sha256-d0abf82b4b86fc24dd6692104656973ffba6b6192cb751a133b6a5ec1082e7c3?context=explore">infuseai/docker-stacks:tensorflow-notebook-tf-v2-14fb17d1</a></td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 2.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-14fb17d1-gpu-cuda-10/images/sha256-eb150f2585db6a7641aaf928365ee3aa5f97427d174e04f23fd699e3a467486d?context=explore">infuseai/docker-stacks:tensorflow-notebook-14fb17d1-gpu-cuda-10</a></td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 2.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-tf-v2-py3.6-8dd7f89a/images/sha256-40ce093fa9581001a97c8b47aece9e50972a28784e882736ee308686c2733f2b?context=explore">infuseai/docker-stacks:tensorflow-notebook-tf-v2-py3.6-8dd7f89a</a></td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>TensorFlow 2.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-py3.6-8dd7f89a-gpu-cuda-10/images/sha256-54d75d4496471b7216b5efea2a19d5728174fd39d4148016c35ce27cfd5674b8?context=explore">infuseai/docker-stacks:tensorflow-notebook-py3.6-8dd7f89a-gpu-cuda-10</a></td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.6</td></tr>
+<tr><td>TensorFlow 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-14fb17d1/images/sha256-e751fce3a03055f8cdeaf5f327d88c618642fd548b63d421009735386599d71f?context=explore">infuseai/docker-stacks:tensorflow-notebook-14fb17d1</a></td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-14fb17d1-gpu/images/sha256-c65d4977602e878c897f3f6e244aba09451f37437ff4ca7df0e7551676bc0ea7?context=explore">infuseai/docker-stacks:tensorflow-notebook-14fb17d1-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-py3.6-8dd7f89a/images/sha256-9bd5dadc12685656b43333779a5c0bd1ecce1f99913a7477a86f04b382c1e56c?context=explore">infuseai/docker-stacks:tensorflow-notebook-py3.6-8dd7f89a</a></td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>TensorFlow 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-py3.6-8dd7f89a-gpu/images/sha256-dfd3942fc36bc0948ea3203f349e36343e42e503093eaa5fdcfc20c5efb3f191?context=explore">infuseai/docker-stacks:tensorflow-notebook-py3.6-8dd7f89a-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="pytorch"></a><a href="#pytorch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PyTorch</h2>
+<table>
+<thead>
+<tr><th>Framework</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
+</thead>
+<tbody>
+<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-14fb17d1/images/sha256-6b8127b7a9692faea7bbd85964c37752236748625d59e387d5ffd3d7b0e08970?context=explore">infuseai/docker-stacks:pytorch-notebook-14fb17d1</a></td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-14fb17d1-gpu/images/sha256-f61cf5ca8d0d5b8bb19a330ad2c6196d31fe0ecfb41b39a8b88259b6712e18d6?context=explore">infuseai/docker-stacks:pytorch-notebook-14fb17d1-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-py3.6-8dd7f89a/images/sha256-83668e13fd408eef969907a2d4b81cef9055450efb9f4621af0a53340371ef37?context=explore">infuseai/docker-stacks:pytorch-notebook-py3.6-8dd7f89a</a></td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-py3.6-8dd7f89a-gpu/images/sha256-961cf0a060b32d3cb93a2c02395b2455e630f90318a8f7222887ef9775d1360d?context=explore">infuseai/docker-stacks:pytorch-notebook-py3.6-8dd7f89a-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="base"></a><a href="#base" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Base</h2>
+<table>
+<thead>
+<tr><th>Name</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
+</thead>
+<tbody>
+<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-14fb17d1/images/sha256-b9983b544f9a611245fb764b2c1770e043a1b80941ace2430cc7fae9759db48d?context=explore">infuseai/docker-stacks:ai-notebook-14fb17d1</a></td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-14fb17d1-gpu-cuda-10/images/sha256-dda7d8e123866d9b61c321f223f8b99d8600cb7d56861c18b2d3a1fb77834c91?context=explore">infuseai/docker-stacks:ai-notebook-14fb17d1-gpu-cuda-10</a></td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-14fb17d1-gpu/images/sha256-0ed660ed5c75444b3da36aef9b72f1a778ad6ed5ee53d133ec58673e09b49975?context=explore">infuseai/docker-stacks:ai-notebook-14fb17d1-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-py3.6-8dd7f89a/images/sha256-275b635a4841a38d6fc62e4810b1c917374c37cdf2410f59ed16f5d844b2cd1b?context=explore">infuseai/docker-stacks:ai-notebook-py3.6-8dd7f89a</a></td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-py3.6-8dd7f89a-gpu-cuda-10/images/sha256-2cf372f3f19e52bef73e88e3f6724a5106e98434ccf1a9ee725a9b4ecf526603?context=explore">infuseai/docker-stacks:ai-notebook-py3.6-8dd7f89a-gpu-cuda-10</a></td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.6</td></tr>
+<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-py3.6-8dd7f89a-gpu/images/sha256-7d57e6b5d0627aceedc8771b7d3cb74f125dffd180bc169b2ce27b1f024c38bb?context=explore">infuseai/docker-stacks:ai-notebook-py3.6-8dd7f89a-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/custom-image-guideline"><span class="arrow-prev">← </span><span>客製 Image 指南</span></a><a class="docs-next button" href="/docs/next/zh-tw/guide_manual/admin-dataset-cht"><span>Dataset Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#tensorflow">TensorFlow</a></li><li><a href="#pytorch">PyTorch</a></li><li><a href="#base">Base</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
