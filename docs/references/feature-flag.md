@@ -43,13 +43,15 @@ Feature|Default|Stage|Since|
 `PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`|false|alpha|2.0.0
 `PRIMEHUB_FEATURE_JOB_SUBMISSION`|false|alpha|2.3.0
 `PRIMEHUB_FEATURE_CUSTOM_IMAGE`|false|beta|2.3.0
+`PRIMEHUB_FEATURE_MODEL_DEPLOYMENT`|false|alpha|2.7.0
 
 - `PRIMEHUB_FEATURE_USER_PORTAL`: Enable [User Portal](../design/user-portal.md) to have a unified domain with a landing page.
 - `PRIMEHUB_FEATURE_ENABLE_ADMISSION`: Enable [Admission](../design/admission.md) relative features. [Admission Webhook](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/) is a mechanism provided by kubernetes to validate and mutate resources when they are created. Been removed.
-- `PRIMEHUB_FEATURE_DATASET_UPLOAD`: Enable [Dataset Upload](../design/dataset-upload.md) so that user can upload data to pv type dataset through a server.
+- `PRIMEHUB_FEATURE_DATASET_UPLOAD`: Enable [Dataset Upload](../design/dataset-upload.md) so that users can upload data to pv type dataset through a server.
 - `PRIMEHUB_FEATURE_CUSTOM_IMAGE`: Enable [Image Builder](../design/image-builder.md) so that admin can build images with custom packages.
 - `PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`: Enable experimental [jupyter kernel gateway](../design/notebook-kernel-process.md), it runs notebook and kernel in the different container.
-- `PRIMEHUB_FEATURE_JOB_SUBMISSION`: Enable [Job Submission](../design/job-submission.md) so that user can submit jobs.
+- `PRIMEHUB_FEATURE_JOB_SUBMISSION`: Enable [Job Submission](../design/job-submission.md) so that users can submit jobs.
+- `PRIMEHUB_FEATURE_MODEL_DEPLOYMENT`: Enable [Model Deployment](../design/model-deployment.md) so that users can deploy a model as service.
 
 ## Reference
 

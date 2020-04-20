@@ -47,7 +47,8 @@
           "design/job-scheduler",
           "design/install-helper-design",          
           "design/user-portal",
-          "design/meta-chart"
+          "design/meta-chart",
+          "design/model-deployment"
         ]
       }      
     ],

@@ -153,6 +153,7 @@ Parameter | Description | Default
 `adminNotebook.tolerations` | Node taints to tolerate| `{}`
 `keycloakGateway.image.repository` | The keycloak gateway image repository| `infuseai/primehub-admin-notebook`
 `keycloakGateway.image.tag` | The keycloak gateway image tag | Please see [values.yaml](values.yaml)
+`modelDeployment.enabled` | Enable the model deployment | `false`
 
 ## Advanced Settings
 
