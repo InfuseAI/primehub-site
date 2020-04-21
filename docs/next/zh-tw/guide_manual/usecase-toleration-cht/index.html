@@ -59,7 +59,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Toleration</h1></header><article><div><span><p>在實際環境中，我們可能有數個配置不同 GPU 運算能力的 nodes。  舉例來說，我們有 nodes 分別配置 <strong>Nvidia Tesla V100(high)</strong>、<strong>Tesla M60(Medium)</strong> 及 <strong>Tesla K80(Low)</strong> 的環境，且有個專案 <em>cancer_prediction</em> (instance type) 需求 Tesla M60 至少以上的 GPU 運算能力，因此我們可以標記  taint 在配備 Tesla K80 node 上 gpu=low 。</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Toleration</h1></header><article><div><span><p>在實際環境中，我們可能有數個配置不同 GPU 運算能力的 nodes。  舉例來說，我們有 nodes 分別配置 <strong>Nvidia Tesla V100(high)</strong>、<strong>Tesla M60(Medium)</strong> 及 <strong>Tesla K80(Low)</strong> 的環境，且有個專案 <em>cancer_prediction</em> (instance type) 需求 Tesla M60 至少以上的 GPU 運算能力，因此我們可以標記  taint 在配備 Tesla K80 node 上 gpu=low 。</p>
 <pre><code class="hljs">kubectl taint nodes node1 <span class="hljs-attribute">gpu</span>=low:NoSchedule
 </code></pre>
 <p>之後，於 <em>cancer_prediction</em> 啟始的專案，只會被排入在配備 V100(High) 或 Tesla M60(Medium) 的 nodes 上運行，避開帶有標記 taint 的 node。</p>
