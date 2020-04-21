@@ -24,6 +24,8 @@ InfuseAI 提供/維護的 Images 如下：
 
 |Framework|Image|CPU / GPU|Python|
 |-        |-     |-      |-    |
+|PyTorch 1.4|[infuseai/docker-stacks:pytorch-notebook-ec1bda6f](https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-ec1bda6f/images/sha256-167d8c405cc899d73f6c1b8dbb0dbd035f19cae88a158dc70a6d2619ef7458ab?context=repo)|`CPU`|3.7|
+|PyTorch 1.4|[infuseai/docker-stacks:pytorch-notebook-ec1bda6f-gpu](https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-ec1bda6f-gpu/images/sha256-78622236dbf058047609599accef51fdb6b7bd4e8e0c119e65f4630818f7250c?context=explore)|`GPU`<br>`CUDA 9`|3.7|
 |PyTorch 1.1|[infuseai/docker-stacks:pytorch-notebook-14fb17d1](https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-14fb17d1/images/sha256-6b8127b7a9692faea7bbd85964c37752236748625d59e387d5ffd3d7b0e08970?context=explore)|`CPU`|3.7|
 |PyTorch 1.1|[infuseai/docker-stacks:pytorch-notebook-14fb17d1-gpu](https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-14fb17d1-gpu/images/sha256-f61cf5ca8d0d5b8bb19a330ad2c6196d31fe0ecfb41b39a8b88259b6712e18d6?context=explore)|`GPU`<br>`CUDA 9`|3.7|
 |PyTorch 1.1|[infuseai/docker-stacks:pytorch-notebook-py3.6-8dd7f89a](https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-py3.6-8dd7f89a/images/sha256-83668e13fd408eef969907a2d4b81cef9055450efb9f4621af0a53340371ef37?context=explore)|`CPU`|3.6|
