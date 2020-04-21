@@ -5,11 +5,11 @@ title: Group Management
 
 ## Creating New Group
 
-![](assets/group_12.png)
+![](assets/group_12_v26.png)
 
 點選 `Add` 新增 Group，會跳出該 Group 的編輯畫面。
 
-![](assets/group_shared_volume.png)
+![](assets/group_shared_volume_v26.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -24,8 +24,6 @@ title: Group Management
 + `Shared Volume Capacity` 設定共享空間配額，預設為 `1GB` 。
 
 + `Launch Group Only` 當開啟此選項時，只有當使用者在 PrimeHub 頁面選擇同一 Group 進行專案時，Shared Volume 才會被掛載。
-
-![](assets/group_user_quota.png)
 
 **User Quota** 設定 Group 中每個用戶的配額
 
@@ -61,14 +59,8 @@ title: Group Management
 
 ## Deleting Group
 
-![](assets/group_14.png)
-
-點選`Delete`，會跳出確認對話框， 點選 `OK` 後即可刪除該 Group 。
+點選 Actions 的`Delete`，會跳出確認對話框， 點選 `OK` 後即可刪除該 Group 。
 
 ## Editing Group
 
-![](assets/group_13.png)
-
-點選 `Edit` 進該 Group 的編輯頁面。
-
-
+點選 Actions 的`Edit` 進該 Group 的編輯頁面。

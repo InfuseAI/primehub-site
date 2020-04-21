@@ -5,11 +5,11 @@ title: Group Management
 
 ## Creating New Group
 
-![](assets/group_12.png)
+![](assets/group_12_v26.png)
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
-![](assets/group_shared_volume.png)
+![](assets/group_shared_volume_v26.png)
 
 You need to fill in the fields in the above picture:
 
@@ -17,15 +17,14 @@ You need to fill in the fields in the above picture:
 
 + `Display name`
 
-**`Model Deployment`**(*Alpha*): This alpha feature is hidden until the [feature flag](../references/feature-flag) is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+**Model Deployment**(*Alpha*): This alpha feature is hidden until the [feature flag](../references/feature-flag) is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
 
-**`Shared Volume`**: Create shared volume with specific capacity.
+**Shared Volume**: Create shared volume with specific capacity.
 
 + `Shared Volume Capacity` Set the capacity of the shared volume.
 
 + `Launch Group Only` If enabled, the shared volume is `only mounted` when users select the `same group` to launch a project on PrimeHub page.
 
-![](assets/group_user_quota.png)
 
 **User Quota**: Set quotas for each user in this group.
 
@@ -61,14 +60,10 @@ Click `edit users` under the edit Group screen to select the group's user from t
 
 ## Deleting Group
 
-![](assets/group_14.png)
-
-Click `Delete` in the group list, the confirmation dialog will pop up, and the group will be deleted when you click `OK`.
+Click `Delete` button of Actions in the group list, the confirmation dialog will pop up, and the group will be deleted when you click `OK`.
 
 ## Editing Group
 
-![](assets/group_13.png)
-
-Click `Edit` to enter the edit page of the Group.
+Click `Edit` button of Actions to enter the edit page of the Group.
 
 

@@ -3,9 +3,13 @@ id: model-deployment-feature
 title: Model Deployment (Alpha)
 ---
 
+>Please be noticed! This document is still **Working-in-Progress**!
+
 Model Deployment feature that users are allowed to manage model deployment endpoints within Group Management with CRUD operations. If the feature is enabled within a group, end-users of the group are allowed to deploy models obeying the restriction of the group quota. While a deployed model serves, administrators are able to monitor the status of model service such service health and resources usage information; moreover, end-users are able to check deployment history and log.
 
 ## Enable Model Deployment in Group Management
+
+First, we have to turn on **Model Deployment** in groups.
 
 ![](assets/mdeploy_enable.png)
 
@@ -17,14 +21,14 @@ This page indicates all of deployed services status.
 
 |Status   |Color|
 |---------|-----|
-|Deployed |Green |
-|Failed   |Red   |
-|Deploying|Yellow|
-|Stopped  |Grey  |
+|**Deployed** |Green |
+|**Failed**   |Red   |
+|**Deploying**|Yellow|
+|**Stopped**  |Grey  |
 
 ### Cell
 
-Each cell represents a deployment. Clicking `View` link on a cell to view the detail.
+Each cell represents a deployment. Clicking on a cell to view the detail; Clicking on `View` link of a cell to view the metadata.
 
 |Info        |Description|
 |------------|-----------|
@@ -46,7 +50,7 @@ Each cell represents a deployment. Clicking `View` link on a cell to view the de
 
 ### Environment Settings
 
-+ `Group`: Select a group where the the job belongs to.
++ `Group`: Select a group where the the job belongs to; if it shows *"No group is configured for you to launch a server. Please contact admin."*, contact administrators to enable this features for groups.
 
 + `InstanceTypes`: Select a instance type which allocates resources for the job.
 
@@ -112,7 +116,7 @@ In History tab, we can view historical deployments.
 | Info   | Description     |
 |---------------|----------|
 | Description   | User input description |
-| User          | Owner |
+| User          | Who triggered this deployment|
 | Timestamp     | Creation time|
 | Detail        | View the detail of the versioned deployment |
 
