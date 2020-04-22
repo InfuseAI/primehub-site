@@ -23,46 +23,46 @@ s2i usage seldonio/seldon-core-s2i-python3:0.18
 - Please use Python 3.6 (Recommended)
 - Create a `requirements.txt` file and write down all required packages
     ```txt
-        keras
-        tensorflow
-        numpy
-        ...
+    keras
+    tensorflow
+    numpy
+    ...
     ```
 
 - Create a `.s2i` folder and create a `.s2i/environment` file with the following content:
     ```script
-        MODEL_NAME=MyModel
-        API_TYPE=REST
-        SERVICE_TYPE=MODEL
-        PERSISTENCE=0
+    MODEL_NAME=MyModel
+    API_TYPE=REST
+    SERVICE_TYPE=MODEL
+    PERSISTENCE=0
     ```
 
 - Create a `MyModel.py` file with the following example template:
     ```python
-        class MyModel(object):
+    class MyModel(object):
+        """
+        Model template. 
+        You can load your model parameters in __init__ from a location accessible at runtime.
+        """
+    
+        def __init__(self):
             """
-            Model template. 
-            You can load your model parameters in __init__ from a location accessible at runtime.
+            Add any initialization parameters. These will be passed at runtime from the graph definition parameters 
+            defined in your seldondeployment kubernetes resource manifest.
             """
-        
-            def __init__(self):
-                """
-                Add any initialization parameters. These will be passed at runtime from the graph definition parameters 
-                defined in your seldondeployment kubernetes resource manifest.
-                """
-                print("Initializing")
-        
-            def predict(self, X, features_names=None):
-                """
-                Return a prediction.
-        
-                Parameters
-                ----------
-                X : array-like
-                feature_names : array of feature names (optional)
-                """
-                print("Predict called - will run identity function")
-                return X
+            print("Initializing")
+    
+        def predict(self, X, features_names=None):
+            """
+            Return a prediction.
+    
+            Parameters
+            ----------
+            X : array-like
+            feature_names : array of feature names (optional)
+            """
+            print("Predict called - will run identity function")
+            return X
     ```
 
     - File and class name `MyModel` should be the same as **MODEL_NAME** under `.s2i/environment`
@@ -109,7 +109,7 @@ You have built the docker image for a PrimeHub model deployment successfully now
 
 ## Push the Image
 
-Next, push the image into the docker hub (or other docker registries) and check PrimeHub [tutorial](job-submission-tutorial-p4) to serve the model under PrimeHub.
+Next, push the image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.
 
 Tag your docker image:
 ```

@@ -23,10 +23,10 @@ title: 模型部署 (Alpha)
 
 |Status   |Color|
 |---------|-----|
-|Deployed |Green |
-|Failed   |Red   |
-|Deploying|Yellow|
-|Stopped  |Grey  |
+|**Deployed** |Green |
+|**Failed**   |Red   |
+|**Deploying**|Yellow|
+|**Stopped**  |Grey  |
 
 ### Deployment
 
@@ -37,10 +37,10 @@ title: 模型部署 (Alpha)
 |Title       | 名稱|
 |Group       | 所屬群組|
 |Endpoint    | 佈建上線服務 URL|
-|Metadata    | 點擊 `View`連結進入詳細資訊頁面。|
+|Metadata    | 點擊 `View`連結查看 metadata。|
 |Last Updated| 最後更新時間|
 
-**小技巧**: 鼠標移到 endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。
+**小技巧**: 鼠標移到 Endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。
 
 + 點擊`Create Deployment` 按鈕，進入 Deployment 創建頁。
 
@@ -52,7 +52,7 @@ title: 模型部署 (Alpha)
 
 ### Environment Settings
 
-+ `Group`: 指定 Group，唯有 `Model Deployment`功能已開啟的所屬 Group 才能選擇。
++ `Group`: 指定 Group，唯有 `Model Deployment`功能已開啟的所屬 Group 才能選擇；若看到此訊息*"No group is configured for you to launch a server. Please contact admin."*，請洽管理員開啟功能。
 
 + `InstanceTypes`: 指定資源配置請求的 instance type。
   
@@ -64,7 +64,7 @@ title: 模型部署 (Alpha)
 
 + `Deployment ID`: 系統產生 ID。
 
-+ `Model Image`: 指定 Model 採用的 image。
++ `Model Image`: 指定採用的 Model Image。
 
 + `Image Pull Secret`: 如果必要，請指定下拉 Model Image 所需的 pull secret。
 
@@ -77,11 +77,9 @@ title: 模型部署 (Alpha)
 + `Name`: 鍵名。
 + `Value`: 數值。
 
-點擊`Deploy`鈕，進行佈建。
+點擊`Deploy`鈕，進行部署。
 
-在對話框上，點擊`Here`可進入 Deployment 詳細內容頁。
-
-![](assets/mdeploy_popup.png)
+佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。
 
 ## Deployment 詳細資訊
 
@@ -102,12 +100,11 @@ title: 模型部署 (Alpha)
 |Creation Time  |創建時間|
 |Last Updated   |最後更新時間|
 |Description    |使用者輸入描述 |
-|Run an Example |`Curl`驗證上線服務範例|
-
+|Run an Example |使用`Curl`查詢來驗證部署服務範例|
 
 ### Logs
 
-+ `Filters`: 指定副本。
++ `Filters`: 查看指定副本。
 
 ![](assets/mdeploy_log.png)
 
@@ -115,23 +112,33 @@ Logs 頁上顯示目前 Deployment 的記錄。
 
 ### History
 
-History 頁上顯示過去已創建的 Deployment 的記錄。
+History 頁上顯示過去已部署的 Deployment 的記錄。
 
 ![](assets/mdeploy_history.png)
 
+點擊`View`連結來查看查看各個部署詳細記錄。
+
+![](assets/mdeploy_history_view.png)
+
 | Info   | Description     |
 |---------------|----------|
+| User          | 當時啟動部署的使用者|
+| Stop          | *true* 或 *false*|
+| Model Image   | 使用 model image url|
+| Replicas      | 副本個數|
+| Group         | 當時啟動部署的群組|
+| Instance Type | 使用的 Instance Type 資源|
+| Timestamp     | 最後更新時間 |
 | Description   | 使用者輸入描述 |
-| User          | 所有者 |
-| Timestamp     | 創建時間 |
-| Detail        | 查看此版詳細歷史佈建資訊 |
-
+| Metadata      | Metadata 列舉|
 
 ---
 
 ## 更動
 
-在 Deployment 頁，點擊 `Update` 對此 Deployment 內容進行更動及佈建更新。其中有`Instance Type`、 `Replicas`、 `Model Image`、 `Image Pull Secret`、 `Description` 及 `Metadata`允許內容更新，其餘欄位佈建後則無法更動。
+在 Deployment 頁，點擊 `Update` 對此 Deployment 內容進行更動及部署更新。
+
+其中有`Instance Type`、 `Replicas`、 `Model Image`、 `Image Pull Secret`、 `Description` 及 `Metadata`允許內容更新，其餘欄位初次佈建後則無法更動。
 
 ![](assets/mdeploy_update.png)
 
@@ -139,13 +146,13 @@ History 頁上顯示過去已創建的 Deployment 的記錄。
 
 ## 刪除
 
-在 Deployment 頁，點擊 `Delete` 鈕，進行刪除。
+點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方`Delete` 鈕，進行刪除。
 
 ---
 
 ## 停止服務
 
-在 Deployment 頁，點擊 `Stop` 鈕，停止服務。
+點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方`Stop` 鈕，停止服務。
 
 ---
 

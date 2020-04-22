@@ -110,7 +110,7 @@ docker run -p 5000:5000 --rm my-model-image
 
 ## 推送映像檔
 
-接下來請將其推送到 docker hub (或其他 docker registry) ，並參考 [PrimeHub 的文件](../job-submission-tutorial-p4)繼續將模型部署到 PrimeHub 上
+接下來請將其推送到 docker hub (或其他 docker registry) ，並參考 PrimeHub 的文件繼續將模型部署到 PrimeHub 上
 
 標記模型映像檔:
 ```

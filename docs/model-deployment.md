@@ -35,7 +35,7 @@ Each cell represents a deployment. Clicking on a cell to view the detail; Clicki
 |Title       | Deployment name|
 |Group       | Deployment's owner group.|
 |Endpoint    | Where the model is deployed and serve.|
-|Metadata    | View the detail of model deployment.|
+|Metadata    | View the meta |
 |Last Updated| Last updated time.|
 
 **Tips**: Cursor hovering over endpoint links show entire links and clicking links make a copy to the clipboard.
@@ -77,7 +77,7 @@ We can add key-value pairs.
 
 Click `Deploy` button to start the deployment.
 
-Click `Here` on the pop-up to view the deployment detail page.
+One the deployment is triggered, there is a notification popping up, we can click on it to view the deployment detail.
 
 ## Deployment Detail
 
@@ -96,14 +96,13 @@ Click `Here` on the pop-up to view the deployment detail page.
 |Group          |The owner group.|
 |Instance Type  |The resources allocation which is requested for the deployment.|
 |Creation Time  |Timestamps|
-|Last Updated    |Timestamps|
+|Last Updated   |Timestamps|
 |Description    |The description which users input during the creation. |
-|Run an Example |Using `Curl` to query the service.|
-
+|Run an Example |Verifying the service by using `curl` querying the service.|
 
 ### Logs
 
-+ `Filters`: Select replica.
++ `Filters`: Select a replica.
 
 ![](assets/mdeploy_log.png)
 
@@ -111,14 +110,25 @@ In Logs tab, the logs of current deployment are displayed here.
 
 ### History
 
-In History tab, we can view historical deployments.
+In History tab, we can view the detail of historical deployments.
+
+![](assets/mdeploy_history.png)
+
+Clicking on the `View` link for the detail of each deployment.
+
+![](assets/mdeploy_history_view.png)
 
 | Info   | Description     |
 |---------------|----------|
-| Description   | User input description |
 | User          | Who triggered this deployment|
-| Timestamp     | Creation time|
-| Detail        | View the detail of the versioned deployment |
+| Stop          | *true* or *false*|
+| Model Image   | The model image url|
+| Replicas      | The amount of replicas|
+| Group         | The deployment's owner group|
+| Instance Type | The instance type is selected|
+| Timestamp     | Last updated time|
+| Description   | User input description |
+| Metadata      | Metadata mappings table|
 
 
 ---
@@ -126,7 +136,8 @@ In History tab, we can view historical deployments.
 ## Update
 
 On a deployment detail page, clicking `Update` button to enter the deployment editing.
-There are `Instance Type`, `Replicas`, `Model Image`, `Image Pull Secret`, `Description` and `Metadata` allowed to be modified once a deployment is created.
+
+There are `Instance Type`, `Replicas`, `Model Image`, `Image Pull Secret`, `Description` and `Metadata` allowed to be modified in a update once the initial deployment is created.
 
 ![](assets/mdeploy_update.png)
 
@@ -134,13 +145,17 @@ There are `Instance Type`, `Replicas`, `Model Image`, `Image Pull Secret`, `Desc
 
 ## Delete
 
-On a deployment detail page, clicking `Delete` button for the deployment deletion.
+Clicking on the cell of the deployment which we want to delete.
+
+On a deployment detail page, clicking `Delete` button at top-right for the deployment deletion.
 
 ---
 
 ## Stop
 
-On a deployment detail page, clicking `Stop` button to stop the current deployed service.
+Clicking on the cell of the deployment which we want to stop.
+
+On a deployment detail page, clicking `Stop` button at top-right to stop the current deployed service.
 
 ---
 
