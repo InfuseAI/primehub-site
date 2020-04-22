@@ -75,10 +75,10 @@
 <tr><th>Status</th><th>Color</th></tr>
 </thead>
 <tbody>
-<tr><td>Deployed</td><td>Green</td></tr>
-<tr><td>Failed</td><td>Red</td></tr>
-<tr><td>Deploying</td><td>Yellow</td></tr>
-<tr><td>Stopped</td><td>Grey</td></tr>
+<tr><td><strong>Deployed</strong></td><td>Green</td></tr>
+<tr><td><strong>Failed</strong></td><td>Red</td></tr>
+<tr><td><strong>Deploying</strong></td><td>Yellow</td></tr>
+<tr><td><strong>Stopped</strong></td><td>Grey</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="deployment"></a><a href="#deployment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment</h3>
@@ -91,11 +91,11 @@
 <tr><td>Title</td><td>名稱</td></tr>
 <tr><td>Group</td><td>所屬群組</td></tr>
 <tr><td>Endpoint</td><td>佈建上線服務 URL</td></tr>
-<tr><td>Metadata</td><td>點擊 <code>View</code>連結進入詳細資訊頁面。</td></tr>
+<tr><td>Metadata</td><td>點擊 <code>View</code>連結查看 metadata。</td></tr>
 <tr><td>Last Updated</td><td>最後更新時間</td></tr>
 </tbody>
 </table>
-<p><strong>小技巧</strong>: 鼠標移到 endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。</p>
+<p><strong>小技巧</strong>: 鼠標移到 Endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。</p>
 <ul>
 <li><p>點擊<code>Create Deployment</code> 按鈕，進入 Deployment 創建頁。</p></li>
 <li><p>點擊<code>Refresh</code>按鈕，取得更新 Deployment 狀態。</p></li>
@@ -104,7 +104,7 @@
 <p><img src="/docs/assets/mdeploy_create.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="environment-settings"></a><a href="#environment-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Settings</h3>
 <ul>
-<li><p><code>Group</code>: 指定 Group，唯有 <code>Model Deployment</code>功能已開啟的所屬 Group 才能選擇。</p></li>
+<li><p><code>Group</code>: 指定 Group，唯有 <code>Model Deployment</code>功能已開啟的所屬 Group 才能選擇；若看到此訊息<em>&quot;No group is configured for you to launch a server. Please contact admin.&quot;</em>，請洽管理員開啟功能。</p></li>
 <li><p><code>InstanceTypes</code>: 指定資源配置請求的 instance type。</p></li>
 <li><p><code>Replicas</code>: 指定上線副本的數量。</p></li>
 </ul>
@@ -112,7 +112,7 @@
 <ul>
 <li><p><code>Deployment Name</code>: 名稱。</p></li>
 <li><p><code>Deployment ID</code>: 系統產生 ID。</p></li>
-<li><p><code>Model Image</code>: 指定 Model 採用的 image。</p></li>
+<li><p><code>Model Image</code>: 指定採用的 Model Image。</p></li>
 <li><p><code>Image Pull Secret</code>: 如果必要，請指定下拉 Model Image 所需的 pull secret。</p></li>
 <li><p><code>Descriptions</code>: 使用者輸入描述。</p></li>
 </ul>
@@ -122,9 +122,8 @@
 <li><code>Name</code>: 鍵名。</li>
 <li><code>Value</code>: 數值。</li>
 </ul>
-<p>點擊<code>Deploy</code>鈕，進行佈建。</p>
-<p>在對話框上，點擊<code>Here</code>可進入 Deployment 詳細內容頁。</p>
-<p><img src="/docs/assets/mdeploy_popup.png" alt=""></p>
+<p>點擊<code>Deploy</code>鈕，進行部署。</p>
+<p>佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。</p>
 <h2><a class="anchor" aria-hidden="true" id="deployment-詳細資訊"></a><a href="#deployment-詳細資訊" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment 詳細資訊</h2>
 <p><img src="/docs/assets/mdeploy_detail.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
@@ -144,39 +143,47 @@
 <tr><td>Creation Time</td><td>創建時間</td></tr>
 <tr><td>Last Updated</td><td>最後更新時間</td></tr>
 <tr><td>Description</td><td>使用者輸入描述</td></tr>
-<tr><td>Run an Example</td><td><code>Curl</code>驗證上線服務範例</td></tr>
+<tr><td>Run an Example</td><td>使用<code>Curl</code>查詢來驗證部署服務範例</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
 <ul>
-<li><code>Filters</code>: 指定副本。</li>
+<li><code>Filters</code>: 查看指定副本。</li>
 </ul>
 <p><img src="/docs/assets/mdeploy_log.png" alt=""></p>
 <p>Logs 頁上顯示目前 Deployment 的記錄。</p>
 <h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
-<p>History 頁上顯示過去已創建的 Deployment 的記錄。</p>
+<p>History 頁上顯示過去已部署的 Deployment 的記錄。</p>
 <p><img src="/docs/assets/mdeploy_history.png" alt=""></p>
+<p>點擊<code>View</code>連結來查看查看各個部署詳細記錄。</p>
+<p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
 <table>
 <thead>
 <tr><th>Info</th><th>Description</th></tr>
 </thead>
 <tbody>
+<tr><td>User</td><td>當時啟動部署的使用者</td></tr>
+<tr><td>Stop</td><td><em>true</em> 或 <em>false</em></td></tr>
+<tr><td>Model Image</td><td>使用 model image url</td></tr>
+<tr><td>Replicas</td><td>副本個數</td></tr>
+<tr><td>Group</td><td>當時啟動部署的群組</td></tr>
+<tr><td>Instance Type</td><td>使用的 Instance Type 資源</td></tr>
+<tr><td>Timestamp</td><td>最後更新時間</td></tr>
 <tr><td>Description</td><td>使用者輸入描述</td></tr>
-<tr><td>User</td><td>所有者</td></tr>
-<tr><td>Timestamp</td><td>創建時間</td></tr>
-<tr><td>Detail</td><td>查看此版詳細歷史佈建資訊</td></tr>
+<tr><td>Metadata</td><td>Metadata 列舉</td></tr>
 </tbody>
 </table>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="更動"></a><a href="#更動" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>更動</h2>
-<p>在 Deployment 頁，點擊 <code>Update</code> 對此 Deployment 內容進行更動及佈建更新。其中有<code>Instance Type</code>、 <code>Replicas</code>、 <code>Model Image</code>、 <code>Image Pull Secret</code>、 <code>Description</code> 及 <code>Metadata</code>允許內容更新，其餘欄位佈建後則無法更動。</p>
+<p>在 Deployment 頁，點擊 <code>Update</code> 對此 Deployment 內容進行更動及部署更新。</p>
+<p>其中有<code>Instance Type</code>、 <code>Replicas</code>、 <code>Model Image</code>、 <code>Image Pull Secret</code>、 <code>Description</code> 及 <code>Metadata</code>允許內容更新，其餘欄位初次佈建後則無法更動。</p>
 <p><img src="/docs/assets/mdeploy_update.png" alt=""></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="刪除"></a><a href="#刪除" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>刪除</h2>
-<p>在 Deployment 頁，點擊 <code>Delete</code> 鈕，進行刪除。</p>
+<p>點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方<code>Delete</code> 鈕，進行刪除。</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="停止服務"></a><a href="#停止服務" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止服務</h2>
-<p>在 Deployment 頁，點擊 <code>Stop</code> 鈕，停止服務。</p>
+<p>點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方<code>Stop</code> 鈕，停止服務。</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="監測服務"></a><a href="#監測服務" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>監測服務</h2>
 <p>透過 Grafana，我們可以監測 <strong>deployment</strong>、 <strong>model</strong> 及 <strong>model version</strong> 等相關數值。</p>

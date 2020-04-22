@@ -90,7 +90,7 @@
 <tr><td>Title</td><td>Deployment name</td></tr>
 <tr><td>Group</td><td>Deployment's owner group.</td></tr>
 <tr><td>Endpoint</td><td>Where the model is deployed and serve.</td></tr>
-<tr><td>Metadata</td><td>View the detail of model deployment.</td></tr>
+<tr><td>Metadata</td><td>View the meta</td></tr>
 <tr><td>Last Updated</td><td>Last updated time.</td></tr>
 </tbody>
 </table>
@@ -122,7 +122,7 @@
 <li><code>Value</code>: The value.</li>
 </ul>
 <p>Click <code>Deploy</code> button to start the deployment.</p>
-<p>Click <code>Here</code> on the pop-up to view the deployment detail page.</p>
+<p>One the deployment is triggered, there is a notification popping up, we can click on it to view the deployment detail.</p>
 <h2><a class="anchor" aria-hidden="true" id="deployment-detail"></a><a href="#deployment-detail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Detail</h2>
 <p><img src="/docs/assets/mdeploy_detail.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
@@ -142,39 +142,49 @@
 <tr><td>Creation Time</td><td>Timestamps</td></tr>
 <tr><td>Last Updated</td><td>Timestamps</td></tr>
 <tr><td>Description</td><td>The description which users input during the creation.</td></tr>
-<tr><td>Run an Example</td><td>Using <code>Curl</code> to query the service.</td></tr>
+<tr><td>Run an Example</td><td>Verifying the service by using <code>curl</code> querying the service.</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
 <ul>
-<li><code>Filters</code>: Select replica.</li>
+<li><code>Filters</code>: Select a replica.</li>
 </ul>
 <p><img src="/docs/assets/mdeploy_log.png" alt=""></p>
 <p>In Logs tab, the logs of current deployment are displayed here.</p>
 <h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
-<p>In History tab, we can view historical deployments.</p>
+<p>In History tab, we can view the detail of historical deployments.</p>
+<p><img src="/docs/assets/mdeploy_history.png" alt=""></p>
+<p>Clicking on the <code>View</code> link for the detail of each deployment.</p>
+<p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
 <table>
 <thead>
 <tr><th>Info</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>Description</td><td>User input description</td></tr>
 <tr><td>User</td><td>Who triggered this deployment</td></tr>
-<tr><td>Timestamp</td><td>Creation time</td></tr>
-<tr><td>Detail</td><td>View the detail of the versioned deployment</td></tr>
+<tr><td>Stop</td><td><em>true</em> or <em>false</em></td></tr>
+<tr><td>Model Image</td><td>The model image url</td></tr>
+<tr><td>Replicas</td><td>The amount of replicas</td></tr>
+<tr><td>Group</td><td>The deployment's owner group</td></tr>
+<tr><td>Instance Type</td><td>The instance type is selected</td></tr>
+<tr><td>Timestamp</td><td>Last updated time</td></tr>
+<tr><td>Description</td><td>User input description</td></tr>
+<tr><td>Metadata</td><td>Metadata mappings table</td></tr>
 </tbody>
 </table>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="update"></a><a href="#update" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update</h2>
-<p>On a deployment detail page, clicking <code>Update</code> button to enter the deployment editing.
-There are <code>Instance Type</code>, <code>Replicas</code>, <code>Model Image</code>, <code>Image Pull Secret</code>, <code>Description</code> and <code>Metadata</code> allowed to be modified once a deployment is created.</p>
+<p>On a deployment detail page, clicking <code>Update</code> button to enter the deployment editing.</p>
+<p>There are <code>Instance Type</code>, <code>Replicas</code>, <code>Model Image</code>, <code>Image Pull Secret</code>, <code>Description</code> and <code>Metadata</code> allowed to be modified in a update once the initial deployment is created.</p>
 <p><img src="/docs/assets/mdeploy_update.png" alt=""></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="delete"></a><a href="#delete" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete</h2>
-<p>On a deployment detail page, clicking <code>Delete</code> button for the deployment deletion.</p>
+<p>Clicking on the cell of the deployment which we want to delete.</p>
+<p>On a deployment detail page, clicking <code>Delete</code> button at top-right for the deployment deletion.</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="stop"></a><a href="#stop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stop</h2>
-<p>On a deployment detail page, clicking <code>Stop</code> button to stop the current deployed service.</p>
+<p>Clicking on the cell of the deployment which we want to stop.</p>
+<p>On a deployment detail page, clicking <code>Stop</code> button at top-right to stop the current deployed service.</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="monitor"></a><a href="#monitor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monitor</h2>
 <p>Via Grafana, we are able to monitor metrics of <strong>deployment</strong>, <strong>model</strong> and <strong>model version</strong>.</p>
