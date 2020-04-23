@@ -121,8 +121,12 @@ div.grid-menu > div.menu-item {
 .fixedHeaderContainer {
     background-color: #1a3682;
 }
-
-.navigationSlider .slidingNav ul li.siteNavGroupActive>a, .navigationSlider .slidingNav ul li.siteNavItemActive>a, .navigationSlider .slidingNav ul li>a:focus, .navigationSlider .slidingNav ul li>a:hover {
+.navigationSlider .slidingNav ul li.siteNavGroupActive>a {
+    color: #fff !important;
+    background-color: #1a3682; 
+}
+/*.navigationSlider .slidingNav ul li.siteNavGroupActive>a,*/ .navigationSlider .slidingNav ul li.siteNavItemActive>a, .navigationSlider .slidingNav ul li>a:focus, .navigationSlider .slidingNav ul li>a:hover {
     color: #1a3682 !important;
     background-color: #c7dbf4;
 }
+
