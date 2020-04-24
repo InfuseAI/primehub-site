@@ -126,6 +126,7 @@
         "type": "subcategory",
         "label": "Tutorials (Alpha)",
         "ids": [
+          "model-deployment-quickstart-tutorial",
           "model-deployment-tutorial-package-image"
         ]
       }
@@ -248,6 +249,7 @@
         "type": "subcategory",
         "label": "教學 (Alpha)",
         "ids": [
+          "zh-tw/model-deployment-quickstart-tutorial",
           "zh-tw/model-deployment-tutorial-package-image"
         ]
       }
