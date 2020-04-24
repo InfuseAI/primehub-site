@@ -17,14 +17,19 @@ title: 模型部署之快速上手
 
 1. 進入 [User Portal](guide_manual/primehub-manual#user-portal) 並點選 `Model Deployment (Alpha)`。
 2. 我們將進入 [model deployment list page](model-deployment-feature#格列)， 現在點選 `Create Deployment` 按鈕。
-3. 在 `Environment Settings` 區塊，
+3. 在 `Environment Settings` ，
     - 選擇您欲將模型部署至哪一個 group
     - 選擇 instance type，此處我們所選的硬體配置為 `(CPU: 1 / Memory: 1 G / GPU: 0)`
     - 保留 `Replicas` 的預設值 (1)
     ![](assets/mdeploy_quickstart_env.png)
-4. 在 `Deployment Details` 區塊， 
+4. 在 `Deployment Details` ， 
     - 在 `Deployment name` 欄位中填入 `quickstart-mnist`
-    - 在 `Model Image` 欄位中填入 `infuseai/model-tensorflow2-mnist:v0.1.0`
+    - 在 `Model Image` 欄位中填入 `infuseai/model-tensorflow2-mnist:v0.1.0`；此為 InfuseAI 建立並存在 Docker Hub 的 Model Image；
+      
+      請參照 [建置模型部署所需之映像檔](model-deployment-tutorial-package-image) 包裝自建的映像檔。
+
+      請參照 [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/) 上載映像檔至 DockerHub。
+      
     - 保留 `Image Pull Secret`、 `Description`、 以及 `Metadata` 的預設值 (空白)
     ![](assets/mdeploy_quickstart_deploydetail.png)
 5. 按下 `Deploy` 按鈕， 將被重導至 model deployment list page。 稍待片刻並按下 `Refresh` 按鈕以確認模型是否部署完成。
@@ -72,7 +77,7 @@ title: 模型部署之快速上手
 
     遵循先前的教程步驟，並作以下修改：
 
-    - 在 `Deployment Details` 區塊, 並於 `Model Image` 欄位中填入 `infuseai/model-keras-mnist:v0.1.0`
+    - 在 `Deployment Details`, 並於 `Model Image` 欄位中填入 `infuseai/model-keras-mnist:v0.1.0`
     - 而此處的 Curl 範例：
         ```bash
         curl -F 'binData=@${YOUR_IMAGE_FILE}' ${YOUR_ENDPOINT_URL}
@@ -106,3 +111,4 @@ title: 模型部署之快速上手
         ```
 - 檢視完整的模型部署功能介紹，請參照 [模型部署 (Alpha)](model-deployment-feature)。
 - 檢視模型映像檔的建置教學，請參照 [建置模型部署所需之映像檔](model-deployment-tutorial-package-image)。
+- 請參照 [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/) 上載映像檔至 DockerHub。
