@@ -33,3 +33,15 @@ Following the guide to have a deploy token and keeping the pair of `Username` an
 6. Click `Confirm` to save the secret.
 
 Alright, we have added a pull secret for our private GitLab registry, then we are able to use it to pull images. Once we add an image description which is located on our private GitLab registry on PrimeHub, we have to select this secret as an `Image Pull Secret`.
+
+---
+
+## MISC.
+
+We, of course, can add secrets not only from GitLab, but also secrets from other sources, here are some references.
+
++ [Pull an Image from a Private Registry to Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+  
++ [Docker Secret](https://docs.docker.com/engine/swarm/secrets/)
+
++ [Authenticating with the GITHUB_TOKEN](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token)

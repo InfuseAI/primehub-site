@@ -28,3 +28,15 @@ PrimeHub 支援從 private Docker registry 下載 image。因為是 private，�
 6. 點擊 `Confirm` 儲存.
 
 之後我們可以指定此 `secret` 用來下載我們在 GitLab 上 private registry 的 image。
+
+---
+
+## 其它
+
+除了 GitLab，我們當然也可以加入來自其它服務的 secrets，以下為外部參考文件：
+
++ [Pull an Image from a Private Registry to Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+  
++ [Docker Secret](https://docs.docker.com/engine/swarm/secrets/)
+
++ [Authenticating with the GITHUB_TOKEN](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token)

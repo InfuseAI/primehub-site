@@ -162,7 +162,13 @@
         ]
       },
       "guide_manual/admin-dataset",
-      "guide_manual/admin-secret",
+      {
+        "type": "subcategory",
+        "label": "Manage and obtain secrets",
+        "ids": [
+          "guide_manual/admin-secret"
+        ]
+      },
       {
         "type":"subcategory",
         "label":"Quick Start",
@@ -284,7 +290,13 @@
         ]
       },
       "zh-tw/guide_manual/admin-dataset-cht",
-      "zh-tw/guide_manual/admin-secret-cht",
+      {
+        "type": "subcategory",
+        "label": "Secret 管理及取得",
+        "ids":[
+          "zh-tw/guide_manual/admin-secret-cht"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "快速上手",

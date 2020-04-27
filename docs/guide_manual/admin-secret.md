@@ -3,7 +3,7 @@ id: admin-secret
 title: Secret Management
 ---
 
-Secret management provides the capabilities of managing secrets which are used for pull images or datasets, such as create, delete, edit secrets.
+Secret management provides the capabilities of managing secrets which are used for pull images or datasets, such as create, delete, edit secrets. Before adding secrets, we have to gain those generated secrets from sources of services. Please see [gain and add secrets](#gain-and-add-secrets).
 
 ## Creating New Secrets
 
@@ -52,3 +52,11 @@ Click `Delete` in the Secrets list, the confirmation dialog will pop up, and the
 ![](assets/secret_edit.png)
 
 Click `Edit` to enter the edit page of the Secret.
+
+## Gain and add secrets
+
++ [Add pull secrets of private registry (GitLab)](../quickstart/secret-pull-image)
+
++ [Add gitsync secret of private repository (GitHub)](../quickstart/secret-gitsync)
+  
++ [Other secrets](../quickstart/secret-pull-image#misc)

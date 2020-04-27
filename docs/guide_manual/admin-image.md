@@ -33,7 +33,7 @@ Finally, click `Confirm` to complete the addition.
 
 ![](assets/image_type.png)
 
-From v2.0 above, we introduce an attribute, `Type`, which indicates what type of this image is. Because the attribute, images which type matches the selected `Instance Type` in hub launcher can be selected only.
+We have to specify `Type`, which indicates what type of this image is. Because the attribute, images which type matches the selected `Instance Type` in hub launcher can be selected only.
 
 + `Type`: `cpu`, `gpu` and `universal` Indicate what type of the image is.
 
