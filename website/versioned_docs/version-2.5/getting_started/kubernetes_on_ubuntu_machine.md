@@ -109,6 +109,13 @@ microk8s-doc   Ready    <none>   35m   v1.15.10
 
 ### Install helm
 
+Install helm 2.x binary. Please see the installation steps in [prerequisites](prerequisites.md). Make sure the helm binary version is `v2.x.x` (`v3.x.x` is not supported yet)
+
+```
+$ helm version --client
+Client: &version.Version{SemVer:"v2.16.1", GitCommit:"bbdfe5e7803a12bbdf97e94cd847859890cf4050", GitTreeState:"clean"}
+```
+
 Apply RBAC resources for helm
 
 ```
