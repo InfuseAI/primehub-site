@@ -187,29 +187,29 @@
 <p>On a deployment detail page, clicking <code>Stop</code> button at top-right to stop the current deployed service.</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="monitor"></a><a href="#monitor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monitor</h2>
-<p>Via Grafana, we are able to monitor metrics of <strong>deployment</strong>, <strong>model</strong> and <strong>model version</strong>.</p>
-<p><img src="/docs/assets/mdeploy_grafana.png" alt=""></p>
-<p>Metrics:</p>
-<ul>
-<li><p>global request rate (total)</p></li>
-<li><p>request rate (based on the above choice)</p></li>
-<li><p>request rate (different components in the graph)</p></li>
-<li><p>reward:</p>
-<ul>
-<li><p>The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function <em>n_success_failures</em> calculates the number of successes and failures given the batch of data samples and the reward.</p></li>
-<li><p>see: <a href="https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md">https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md</a></p></li>
-</ul></li>
-<li><p>latency</p></li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="deployment-service-health"></a><a href="#deployment-service-health" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment/Service Health</h3>
-<h3><a class="anchor" aria-hidden="true" id="resource-usage-metrics"></a><a href="#resource-usage-metrics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Usage Metrics</h3>
+<p>PrimeHub provides a monitoring dashboard based on <strong>Seldon Core Analytics</strong> on Grafana, we are able to monitor metrics of <strong>deployment</strong>/<strong>model</strong>/<strong>model version</strong>.</p>
 <ol>
-<li>rps</li>
-<li>qps</li>
-<li>gpu</li>
-<li>mem</li>
+<li><p>Accessing the Grafana from the user portal</p></li>
+<li><p>Selecting <code>PrimeHub / Model Deployments</code> dashboard, it lists deployment which are providing services.</p>
+<p><img src="/docs/assets/mdeploy_grafana_list.png" alt=""></p></li>
+<li><p>Selecting a deployment and monitoring metrics on the board.</p>
+<p><img src="/docs/assets/mdeploy_grafana_metrics.png" alt=""></p></li>
 </ol>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/job-submission-tutorial-p4"><span class="arrow-prev">← </span><span>(Advanced) Model Serving by Seldon</span></a><a class="docs-next button" href="/docs/next/model-deployment-quickstart-tutorial"><span>Quickstart Tutorial of Model Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#cell">Cell</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a><ul class="toc-headings"><li><a href="#deployment-service-health">Deployment/Service Health</a></li><li><a href="#resource-usage-metrics">Resource Usage Metrics</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>Default Metrics:</p>
+<ul>
+<li><p>QPS (Queries Per Second)</p></li>
+<li><p>Success rate</p></li>
+<li><p>4xx, error if any</p></li>
+<li><p>5xx, error is any</p></li>
+<li><p>Predict QPS</p></li>
+<li><p>Reward</p>
+<blockquote>
+<p>The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function <em>n_success_failures</em> calculates the number of successes and failures given the batch of data samples and the reward. -<a href="https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md">Reference</a>.</p>
+</blockquote></li>
+<li><p>Latency</p></li>
+</ul>
+<p>The board is based on <strong>Seldon Core Analytics</strong>, it can be advanced customized. Please see the <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> and <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/job-submission-tutorial-p4"><span class="arrow-prev">← </span><span>(Advanced) Model Serving by Seldon</span></a><a class="docs-next button" href="/docs/next/model-deployment-quickstart-tutorial"><span>Quickstart Tutorial of Model Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#cell">Cell</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
