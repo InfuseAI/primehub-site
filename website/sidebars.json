@@ -22,6 +22,9 @@
         ]
       }
     ],
+    "Advanced": [
+      "guide_manual/kubeflow-installation-guide"
+    ],
     "Designs and Concepts": [
       {
         "type": "subcategory",
