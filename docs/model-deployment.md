@@ -161,32 +161,36 @@ On a deployment detail page, clicking `Stop` button at top-right to stop the cur
 
 ## Monitor
 
-Via Grafana, we are able to monitor metrics of **deployment**, **model** and **model version**.
+PrimeHub provides a monitoring dashboard based on **Seldon Core Analytics** on Grafana, we are able to monitor metrics of **deployment**/**model**/**model version**.
 
-![](assets/mdeploy_grafana.png)
+1. Accessing the Grafana from the user portal
 
-Metrics:
+2. Selecting `PrimeHub / Model Deployments` dashboard, it lists deployment which are providing services.
 
-+ global request rate (total)
+    ![](assets/mdeploy_grafana_list.png)
 
-+ request rate (based on the above choice)
+3. Selecting a deployment and monitoring metrics on the board.
 
-+ request rate (different components in the graph)
-
-+ reward:
-
-    + The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function *n_success_failures* calculates the number of successes and failures given the batch of data samples and the reward.
-
-    + see: [https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md](https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md)
-
-+ latency
+    ![](assets/mdeploy_grafana_metrics.png)
 
 
-### Deployment/Service Health
 
-### Resource Usage Metrics
+Default Metrics:
 
-1. rps
-2. qps
-3. gpu
-4. mem
++ QPS (Queries Per Second)
+
++ Success rate
+
++ 4xx, error if any
+
++ 5xx, error is any
+
++ Predict QPS
+
++ Reward
+
+  >The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function *n_success_failures* calculates the number of successes and failures given the batch of data samples and the reward. -[Reference](https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md).
+
++ Latency
+
+The board is based on **Seldon Core Analytics**, it can be advanced customized. Please see the [document](https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html) and [code](https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics).

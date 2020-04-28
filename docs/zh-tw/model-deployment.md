@@ -134,7 +134,7 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 
 ---
 
-## 更動
+## 變更
 
 在 Deployment 頁，點擊 `Update` 對此 Deployment 內容進行更動及部署更新。
 
@@ -158,32 +158,36 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 
 ## 監測服務
 
-透過 Grafana，我們可以監測 **deployment**、 **model** 及 **model version** 等相關數值。
+PrimeHub 提供一個基於 **Seldon Core Analytics** 的 Grafana 監測板，我們可以根據 **deployment**/**model**/**model version** 來選擇監測目標。
 
-![](assets/mdeploy_grafana.png)
+1. 首先從 User Portal 進入 Grafana。
 
-監測值:
+2. 選擇 `PrimeHub / Model Deployments` 監測板, 此時會列舉出所有已佈署提供服務的模型。
 
-+ global request rate (total)
+    ![](assets/mdeploy_grafana_list.png)
 
-+ request rate (based on the above choice)
+3. 選擇要監測的佈署，即可監測模型的運作。
 
-+ request rate (different components in the graph)
-
-+ reward:
-
-    + The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function *n_success_failures* calculates the number of successes and failures given the batch of data samples and the reward.
-
-    + see: [https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md](https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md)
-
-+ latency
+    ![](assets/mdeploy_grafana_metrics.png)
 
 
-### Deployment/Service Health
 
-### Resource Usage Metrics
+預設監測指標:
 
-1. rps
-2. qps
-3. gpu
-4. mem
++ QPS (Queries Per Second)
+
++ Success rate
+
++ 4xx, error if any
+
++ 5xx, error is any
+
++ Predict QPS
+
++ Reward
+
+  >The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function *n_success_failures* calculates the number of successes and failures given the batch of data samples and the reward. -[Reference](https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md).
+
++ Latency
+
+此監測板基於 **Seldon Core Analytics**；更多詳細進階資訊可以參照 [document](https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html) 及 [code](https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics)。
