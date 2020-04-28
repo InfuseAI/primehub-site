@@ -127,7 +127,7 @@ The output will be `404`, because nobody defines any `Ingress` resources:
 default backend - 404
 ```
 
-## Next
+## Prepare EXTERNAL-IP & StorageClass
 
 The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `StorageClass` name to the next steps. They would be used in the value files of `KeyCloak` and `PrimeHub`
 
@@ -136,7 +136,7 @@ The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `Stora
     kubectl get svc -n ingress-nginx
     ```
 
-* `StorageClass` name: standard
+* `StorageClass` name: **standard**
     ```
     $ kubectl get storageclass
     NAME                 PROVISIONER            AGE

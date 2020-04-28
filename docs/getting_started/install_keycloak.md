@@ -21,7 +21,7 @@ Key | Description
 `KEYCLOAK_DOMAIN` | The domain of keycloak. Can be the same as primehub's one.
 `KEYCLOAK_PASSWORD` | The master password of keycloak
 `KEYCLOAK_DB_PASSWORD` | The db password of keycloak
-`STORAGE_CLASS` | The storage class for the postgresql database
+`STORAGE_CLASS` | The storage class for the postgresql database. [Check](kubernetes_on_gke#prepare-external-ip-storageclass)
 
 ```
 KEYCLOAK_DOMAIN=1.2.3.4.nip.io
