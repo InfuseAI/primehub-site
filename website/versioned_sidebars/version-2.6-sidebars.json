@@ -1,0 +1,312 @@
+{
+  "version-2.6-for-developers": {
+    "Getting Started": [
+      "version-2.6-dev-introduction",
+      {
+        "type": "subcategory",
+        "label": "Setup Kubernetes",
+        "ids": [
+          "version-2.6-getting_started/prerequisites",
+          "version-2.6-getting_started/kubernetes_on_gke",
+          "version-2.6-getting_started/kubernetes_on_ubuntu_machine"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Setup PrimeHub",
+        "ids": [
+          "version-2.6-getting_started/install_metacontroller",
+          "version-2.6-getting_started/install_keycloak",
+          "version-2.6-getting_started/install_primehub",
+          "version-2.6-getting_started/install_helper"
+        ]
+      }
+    ],
+    "Advanced": [
+      "version-2.6-guide_manual/kubeflow-installation-guide"
+    ],
+    "Designs and Concepts": [
+      {
+        "type": "subcategory",
+        "label": "Concepts",
+        "ids": [
+          "version-2.6-design/architecture",
+          "version-2.6-design/data-model",
+          "version-2.6-design/crds",
+          "version-2.6-design/graphql",
+          "version-2.6-design/persistence-storage"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Designs",
+        "ids": [
+          "version-2.6-design/admission",
+          "version-2.6-design/jupyterhub",
+          "version-2.6-design/notebook-kernel-process",
+          "version-2.6-design/dataset-upload",
+          "version-2.6-design/image-builder",
+          "version-2.6-design/job-submission",
+          "version-2.6-design/job-scheduler",
+          "version-2.6-design/install-helper-design",
+          "version-2.6-design/user-portal",
+          "version-2.6-design/meta-chart"
+        ]
+      }
+    ],
+    "Tasks": [
+      {
+        "type": "subcategory",
+        "label": "Build",
+        "ids": [
+          "version-2.6-tasks/build",
+          "version-2.6-tasks/airgap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Jupyter Images",
+        "ids": [
+          "version-2.6-tasks/repo2docker"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Registry",
+        "ids": [
+          "version-2.6-tasks/dockerhub-registry"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Operations",
+        "ids": [
+          "version-2.6-tasks/cluster_shutdown",
+          "version-2.6-tasks/benchmark",
+          "version-2.6-tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12",
+          "version-2.6-tasks/ADVANCED-rook-setup-metadata-on-vg"
+        ]
+      }
+    ],
+    "References": [
+      "version-2.6-references/primehub_chart",
+      "version-2.6-references/dotenv",
+      "version-2.6-references/feature-flag"
+    ]
+  },
+  "version-2.6-documentation": {
+    "Project": [
+      "version-2.6-getting-started-user",
+      "version-2.6-quickstart/login-portal-user",
+      "version-2.6-quickstart/launch-project",
+      {
+        "type": "subcategory",
+        "label": "Jupyter Spawner",
+        "ids": [
+          "version-2.6-user-advanced-setting"
+        ]
+      }
+    ],
+    "Job": [
+      "version-2.6-job-submission-feature",
+      "version-2.6-job-scheduling-feature",
+      {
+        "type": "subcategory",
+        "label": "Tutorials",
+        "ids": [
+          "version-2.6-job-submission-tutorial-simple",
+          "version-2.6-job-submission-tutorial-p1",
+          "version-2.6-job-submission-tutorial-p2",
+          "version-2.6-job-submission-tutorial-p3",
+          "version-2.6-job-submission-tutorial-p4"
+        ]
+      }
+    ],
+    "Administration": [
+      "version-2.6-getting-started-admin",
+      "version-2.6-guide_manual/admin-system",
+      {
+        "type": "subcategory",
+        "label": "Manage users and groups",
+        "ids": [
+          "version-2.6-guide_manual/admin-user",
+          "version-2.6-guide_manual/admin-group"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage Instance Type",
+        "ids": [
+          "version-2.6-guide_manual/admin-instancetype",
+          "version-2.6-guide_manual/usecase-toleration",
+          "version-2.6-guide_manual/usecase-nodeselector"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage and build images",
+        "ids": [
+          "version-2.6-guide_manual/admin-image",
+          "version-2.6-guide_manual/admin-build-image",
+          "version-2.6-guide_manual/custom-image-guideline",
+          "version-2.6-guide_manual/images-list"
+        ]
+      },
+      "version-2.6-guide_manual/admin-dataset",
+      {
+        "type": "subcategory",
+        "label": "Manage and obtain secrets",
+        "ids": [
+          "version-2.6-guide_manual/admin-secret"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Quick Start",
+        "ids": [
+          "version-2.6-quickstart/login-portal-admin",
+          "version-2.6-quickstart/create-user",
+          "version-2.6-quickstart/create-group",
+          "version-2.6-quickstart/add-instance-type",
+          "version-2.6-quickstart/add-image",
+          "version-2.6-quickstart/build-image",
+          "version-2.6-quickstart/secret-pull-image",
+          "version-2.6-quickstart/secret-gitsync"
+        ]
+      }
+    ],
+    "Maintenance": [
+      "version-2.6-maintenance",
+      "version-2.6-quickstart/maintenance-resize-user-vol",
+      "version-2.6-quickstart/maintenance-resize-group-vol"
+    ],
+    "Guide": [
+      "version-2.6-guide_manual/experimental-vscode"
+    ],
+    "Trouble Shooting": [
+      "version-2.6-trouble-shoot-guide",
+      {
+        "type": "subcategory",
+        "label": "JupyterHub",
+        "ids": [
+          "version-2.6-trouble/jh-failed-spawn",
+          "version-2.6-trouble/jh-blank-page"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Keycloak",
+        "ids": [
+          "version-2.6-trouble/kc-brute-force-detection",
+          "version-2.6-trouble/kc-password-policy"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Prometheus",
+        "ids": [
+          "version-2.6-trouble/prometheus-fails-startup"
+        ]
+      },
+      "version-2.6-trouble/kubelet-restart"
+    ]
+  },
+  "version-2.6-zh-tw": {
+    "繁中文件": [
+      "version-2.6-index-zh"
+    ],
+    "專案": [
+      "version-2.6-zh-tw/quickstart/login-portal-user",
+      "version-2.6-zh-tw/quickstart/launch-project",
+      "version-2.6-zh-tw/quickstart/close-project",
+      {
+        "type": "subcategory",
+        "label": "Jupyter",
+        "ids": [
+          "version-2.6-zh-tw/user-advanced-setting"
+        ]
+      }
+    ],
+    "Job": [
+      "version-2.6-zh-tw/job-submission-cht",
+      "version-2.6-zh-tw/job-scheduling-feature-cht",
+      {
+        "type": "subcategory",
+        "label": "Job Submission (Beta)",
+        "ids": [
+          "version-2.6-zh-tw/job-submission-tutorial-simple",
+          "version-2.6-zh-tw/job-submission-tutorial-p1",
+          "version-2.6-zh-tw/job-submission-tutorial-p2"
+        ]
+      }
+    ],
+    "PrimeHub 管理": [
+      "version-2.6-zh-tw/guide_manual/admin-system-cht",
+      {
+        "type": "subcategory",
+        "label": "使用者及群組管理",
+        "ids": [
+          "version-2.6-zh-tw/guide_manual/admin-user-cht",
+          "version-2.6-zh-tw/guide_manual/admin-group-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Instance Type 管理",
+        "ids": [
+          "version-2.6-zh-tw/guide_manual/admin-instancetype-cht",
+          "version-2.6-zh-tw/guide_manual/usecase-toleration-cht",
+          "version-2.6-zh-tw/guide_manual/usecase-nodeselector-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Image 創建及管理",
+        "ids": [
+          "version-2.6-zh-tw/guide_manual/admin-image-cht",
+          "version-2.6-zh-tw/guide_manual/admin-build-image-cht",
+          "version-2.6-zh-tw/guide_manual/custom-image-guideline",
+          "version-2.6-zh-tw/guide_manual/images-list"
+        ]
+      },
+      "version-2.6-zh-tw/guide_manual/admin-dataset-cht",
+      {
+        "type": "subcategory",
+        "label": "Secret 管理及取得",
+        "ids": [
+          "version-2.6-zh-tw/guide_manual/admin-secret-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "快速上手",
+        "ids": [
+          "version-2.6-zh-tw/quickstart/login-portal-admin",
+          "version-2.6-zh-tw/quickstart/create-user",
+          "version-2.6-zh-tw/quickstart/create-group",
+          "version-2.6-zh-tw/quickstart/add-instance-type",
+          "version-2.6-zh-tw/quickstart/add-image",
+          "version-2.6-zh-tw/quickstart/build-image",
+          "version-2.6-zh-tw/quickstart/secret-pull-image",
+          "version-2.6-zh-tw/quickstart/secret-gitsync"
+        ]
+      }
+    ],
+    "維運": [
+      {
+        "type": "subcategory",
+        "label": "Maintenance Notebook",
+        "ids": [
+          "version-2.6-zh-tw/quickstart/maintenance-resize-user-vol",
+          "version-2.6-zh-tw/quickstart/maintenance-resize-group-vol"
+        ]
+      }
+    ],
+    "指南": [
+      "version-2.6-zh-tw/guide_manual/experimental-vscode"
+    ],
+    "其它配置": [
+      "version-2.6-zh-tw/quickstart/dockerhub-registry"
+    ]
+  }
+}
