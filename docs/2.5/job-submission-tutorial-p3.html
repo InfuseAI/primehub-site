@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>(Advanced) Use Job Submission to Tune Hyperparameters · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="For typical machine learning algorithms, there are many hyperparameters to tune. Finding the right hyperparameters can be a very time consuming job. However, with Job Submission, you can let it run the job for you. All you have to do is simply check the results when the job is complete. "/><meta name="docsearch:version" content="2.5"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="(Advanced) Use Job Submission to Tune Hyperparameters · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="For typical machine learning algorithms, there are many hyperparameters to tune. Finding the right hyperparameters can be a very time consuming job. However, with Job Submission, you can let it run the job for you. All you have to do is simply check the results when the job is complete. "/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.5</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.5/getting-started-admin" target="_self">Administrator</a></li><li class="siteNavGroupActive"><a href="/docs/2.5/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/2.5/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/2.5/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Job Submission Beta</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/getting-started-user">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Quickstart<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/quickstart/launch-project">Launch Project</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Feature<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/job-submission-feature">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/job-scheduling-feature">Job Scheduler (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Spawner</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/user-advanced-setting">Advanced Settings</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorial<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Job Submission Beta</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/2.5/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">(Advanced) Use Job Submission to Tune Hyperparameters</h1></header><article><div><span><p>For typical machine learning algorithms, there are many hyperparameters to tune. Finding the right hyperparameters can be a very time consuming job. However, with Job Submission, you can let it run the job for you. All you have to do is simply check the results when the job is complete.</p>
+<ol>
+<li><p>Let's create another Python file <code>tune_dropout.py</code> in JupyterLab first:</p>
+<pre><code class="hljs"> import tensorflow as tf
+ import argparse
+ import numpy as np
+ 
+ parser = argparse.ArgumentParser(description='Process some integers.')
+ parser.add_argument('--dropout', type=float, default=0.2)
+ args = parser.parse_args()
+ 
+ mnist = tf.keras.datasets.mnist
+ 
+ (x_train, y_train),(x_test, y_test) = mnist.load_data()
+ x_train, x_test = x_train / 255.0, x_test / 255.0
+ 
+ model = tf.keras.models.Sequential([
+   tf.keras.layers.Flatten(input_shape=(28, 28)),
+   tf.keras.layers.Dense(512, activation=tf.nn.relu),
+   tf.keras.layers.Dropout(args.dropout),
+   tf.keras.layers.Dense(10, activation=tf.nn.softmax)
+ ])
+ 
+ model.compile(optimizer='adam',
+               loss='sparse_categorical_crossentropy',
+               metrics=['accuracy'])
+ 
+ model.fit(x_train, y_train, epochs=5)
+ model.evaluate(x_test, y_test)
+ 
+ prob = model.predict(x_test)
+ prediction = np.argmax(prob, 1)
+ equality = np.equal(prediction, y_test)
+ accuracy = np.mean(equality)
+ 
+ filename = 'dropout_{}.txt'.format(args.dropout)
+ with open(filename, 'w') as f:
+     print(accuracy, file=f)
+</code></pre>
+<p>The main difference from the last version is that we are now output testing dataset's accuracy into a text file.</p>
+<p><em>Please note: we are not splitting dataset into training, validation, testing sub-datasets. For convenience, we are only using this dataset to tune the hyperparameters.</em></p></li>
+<li><p>Select the Job Submission tab again and select same group, instance type and image. But this time, type the following command; replace <code>&lt;group name&gt;</code>:</p>
+<pre><code class="hljs"> cd /project/&lt;group name&gt;/
+ 
+ bestAcc=0
+ bestRate=0
+ for i in $(seq 1 9)
+ do
+   dropout=`awk &quot;BEGIN {print $i/10}&quot;`
+   echo &quot;dropout rate: &quot;$dropout
+   python -u tune_dropout.py --dropout $dropout
+   acc=`cat dropout_$dropout.txt`
+   echo $acc
+   better=`awk &quot;BEGIN { print ($acc &gt; $bestAcc) ? \&quot;YES\&quot; : \&quot;NO\&quot; }&quot;`
+   if [ &quot;$better&quot; = &quot;YES&quot; ]
+   then
+     bestAcc=$acc
+     bestRate=$dropout
+     echo &quot;Current best accuracy is: &quot;$bestAcc
+     echo &quot;Current best dropout rate is: &quot;$bestRate
+   fi
+ done
+ 
+ echo &quot;Best accuracy is: &quot;$bestAcc
+ echo &quot;Best dropout rate is: &quot;$bestRate
+</code></pre>
+<p>Here we write shell script loops through a 0.1 to 0.9 dropout rate. At the end of this command, the best accuracy and dropout rate is printed out.</p>
+<p>If you prefer, rather than writing in a shell script, you can create another Python file and wrap the original code as a function and write a <code>for loop</code> in Python. We can submit this new Python file as a job to find out best dropout rate.</p></li>
+<li><p>After your job has succeeded, you can view the best dropout rate for your model.</p>
+<p><img src="/docs/assets/jobsub-tt-p3-1.png" alt="image"></p>
+<p>Your results may not match this image above</p></li>
+</ol>
+<p>In the future, we will provide even better hyperparameters tuning functions. Stay tuned!</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/2.5/job-submission-tutorial-p2"><span class="arrow-prev">← </span><span>(Part2) MNIST classifier training</span></a><a class="docs-next button" href="/docs/2.5/job-submission-tutorial-p4"><span>(Advanced) Model Serving by Seldon</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

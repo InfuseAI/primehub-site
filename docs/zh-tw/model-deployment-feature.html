@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>模型部署 (Alpha) · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&gt;Please be noticed! This document is still **Working-in-Progress**!"/><meta name="docsearch:version" content="2.6"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="模型部署 (Alpha) · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&gt;Please be noticed! This document is still **Working-in-Progress**!"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.6</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/getting-started-admin" target="_self">Administrator</a></li><li class=""><a href="/docs/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">模型部署 (Alpha)</h1></header><article><div><span><blockquote>
+<p>Please be noticed! This document is still <strong>Working-in-Progress</strong>!</p>
+</blockquote>
+<p>透過 Model Deployment 功能，使用者可以對 Deployment 進行新增、刪除、更新及佈建等操作。當 Deployment 功能於 Group 設定中開啟時，該 Group 的成員就可以使用此功能。在資源分配上，佈建上線的 model service 須在同 Group quota 限制下，才能佈建成功。管理者可透過 Grafana 來監測該佈建上線服務的使用狀態及資源使用數據；使用者可以檢視佈建的歷史記錄。</p>
+<h2><a class="anchor" aria-hidden="true" id="開啟功能"></a><a href="#開啟功能" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>開啟功能</h2>
+<p>首先開啟指定 Group 的 <code>Model Deployment</code> 功能。</p>
+<p><img src="/docs/assets/mdeploy_enable.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="格列"></a><a href="#格列" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>格列</h2>
+<p>此頁格列所有已創建的 Deployment；</p>
+<p><img src="/docs/assets/mdeploy_grid.png" alt=""></p>
+<p>狀態分別由下列顏色來區別：</p>
+<table>
+<thead>
+<tr><th>Status</th><th>Color</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Deployed</strong></td><td>Green</td></tr>
+<tr><td><strong>Failed</strong></td><td>Red</td></tr>
+<tr><td><strong>Deploying</strong></td><td>Yellow</td></tr>
+<tr><td><strong>Stopped</strong></td><td>Grey</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="deployment"></a><a href="#deployment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment</h3>
+<p>每格代表 Deployment 及其下列資訊：</p>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Title</td><td>名稱</td></tr>
+<tr><td>Group</td><td>所屬群組</td></tr>
+<tr><td>Endpoint</td><td>佈建上線服務 URL</td></tr>
+<tr><td>Metadata</td><td>點擊 <code>View</code>連結查看 metadata。</td></tr>
+<tr><td>Last Updated</td><td>最後更新時間</td></tr>
+</tbody>
+</table>
+<p><strong>小技巧</strong>: 鼠標移到 Endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。</p>
+<ul>
+<li><p>點擊<code>Create Deployment</code> 按鈕，進入 Deployment 創建頁。</p></li>
+<li><p>點擊<code>Refresh</code>按鈕，取得更新 Deployment 狀態。</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="創建"></a><a href="#創建" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>創建</h2>
+<p><img src="/docs/assets/mdeploy_create.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="environment-settings"></a><a href="#environment-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Settings</h3>
+<ul>
+<li><p><code>Group</code>: 指定 Group，唯有 <code>Model Deployment</code>功能已開啟的所屬 Group 才能選擇；若看到此訊息<em>&quot;No group is configured for you to launch a server. Please contact admin.&quot;</em>，請洽管理員開啟功能。</p></li>
+<li><p><code>InstanceTypes</code>: 指定資源配置請求的 instance type。</p></li>
+<li><p><code>Replicas</code>: 指定上線副本的數量。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
+<ul>
+<li><p><code>Deployment Name</code>: 名稱。</p></li>
+<li><p><code>Deployment ID</code>: 系統產生 ID。</p></li>
+<li><p><code>Model Image</code>: 指定採用的 Model Image。</p></li>
+<li><p><code>Image Pull Secret</code>: 如果必要，請指定下拉 Model Image 所需的 pull secret。</p></li>
+<li><p><code>Descriptions</code>: 使用者輸入描述。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
+<p>可加入多個額外「鍵/值」組合：</p>
+<ul>
+<li><code>Name</code>: 鍵名。</li>
+<li><code>Value</code>: 數值。</li>
+</ul>
+<p>點擊<code>Deploy</code>鈕，進行部署。</p>
+<p>佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。</p>
+<h2><a class="anchor" aria-hidden="true" id="deployment-詳細資訊"></a><a href="#deployment-詳細資訊" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment 詳細資訊</h2>
+<p><img src="/docs/assets/mdeploy_detail.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
+<table>
+<thead>
+<tr><th>欄位</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>Status</td><td>狀態</td></tr>
+<tr><td>Message</td><td>相關訊息</td></tr>
+<tr><td>Endpoint</td><td>佈建上線服務 URL</td></tr>
+<tr><td>Model Image</td><td>指定的 Model Image</td></tr>
+<tr><td>Replicas</td><td>副本個數</td></tr>
+<tr><td>Deployment Name</td><td>Deployment 名稱</td></tr>
+<tr><td>Group</td><td>所屬群組</td></tr>
+<tr><td>Instance Type</td><td>佈建用資源配請求</td></tr>
+<tr><td>Creation Time</td><td>創建時間</td></tr>
+<tr><td>Last Updated</td><td>最後更新時間</td></tr>
+<tr><td>Description</td><td>使用者輸入描述</td></tr>
+<tr><td>Run an Example</td><td>使用<code>Curl</code>查詢來驗證部署服務範例</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
+<ul>
+<li><code>Filters</code>: 查看指定副本。</li>
+</ul>
+<p><img src="/docs/assets/mdeploy_log.png" alt=""></p>
+<p>Logs 頁上顯示目前 Deployment 的記錄。</p>
+<h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
+<p>History 頁上顯示過去已部署的 Deployment 的記錄。</p>
+<p><img src="/docs/assets/mdeploy_history.png" alt=""></p>
+<p>點擊<code>View</code>連結來查看查看各個部署詳細記錄。</p>
+<p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>User</td><td>當時啟動部署的使用者</td></tr>
+<tr><td>Stop</td><td><em>true</em> 或 <em>false</em></td></tr>
+<tr><td>Model Image</td><td>使用 model image url</td></tr>
+<tr><td>Replicas</td><td>副本個數</td></tr>
+<tr><td>Group</td><td>當時啟動部署的群組</td></tr>
+<tr><td>Instance Type</td><td>使用的 Instance Type 資源</td></tr>
+<tr><td>Timestamp</td><td>最後更新時間</td></tr>
+<tr><td>Description</td><td>使用者輸入描述</td></tr>
+<tr><td>Metadata</td><td>Metadata 列舉</td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="變更"></a><a href="#變更" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>變更</h2>
+<p>在 Deployment 頁，點擊 <code>Update</code> 對此 Deployment 內容進行更動及部署更新。</p>
+<p>其中有<code>Instance Type</code>、 <code>Replicas</code>、 <code>Model Image</code>、 <code>Image Pull Secret</code>、 <code>Description</code> 及 <code>Metadata</code>允許內容更新，其餘欄位初次佈建後則無法更動。</p>
+<p><img src="/docs/assets/mdeploy_update.png" alt=""></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="刪除"></a><a href="#刪除" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>刪除</h2>
+<p>點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方<code>Delete</code> 鈕，進行刪除。</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="停止服務"></a><a href="#停止服務" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止服務</h2>
+<p>點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方<code>Stop</code> 鈕，停止服務。</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="監測服務"></a><a href="#監測服務" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>監測服務</h2>
+<p>PrimeHub 提供一個基於 <strong>Seldon Core Analytics</strong> 的 Grafana 監測板，我們可以根據 <strong>deployment</strong>/<strong>model</strong>/<strong>model version</strong> 來選擇監測目標。</p>
+<ol>
+<li><p>首先從 User Portal 進入 Grafana。</p></li>
+<li><p>選擇 <code>PrimeHub / Model Deployments</code> 監測板, 此時會列舉出所有已佈署提供服務的模型。</p>
+<p><img src="/docs/assets/mdeploy_grafana_list.png" alt=""></p></li>
+<li><p>選擇要監測的佈署，即可監測模型的運作。</p>
+<p><img src="/docs/assets/mdeploy_grafana_metrics.png" alt=""></p></li>
+</ol>
+<p>預設監測指標:</p>
+<ul>
+<li><p>QPS (Queries Per Second)</p></li>
+<li><p>Success rate</p></li>
+<li><p>4xx, error if any</p></li>
+<li><p>5xx, error is any</p></li>
+<li><p>Predict QPS</p></li>
+<li><p>Reward</p>
+<blockquote>
+<p>The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function <em>n_success_failures</em> calculates the number of successes and failures given the batch of data samples and the reward. -<a href="https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md">Reference</a>.</p>
+</blockquote></li>
+<li><p>Latency</p></li>
+</ul>
+<p>此監測板基於 <strong>Seldon Core Analytics</strong>；更多詳細進階資訊可以參照 <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> 及 <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>。</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#開啟功能">開啟功能</a></li><li><a href="#格列">格列</a><ul class="toc-headings"><li><a href="#deployment">Deployment</a></li></ul></li><li><a href="#創建">創建</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#deployment-詳細資訊">Deployment 詳細資訊</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li></ul></li><li><a href="#變更">變更</a></li><li><a href="#刪除">刪除</a></li><li><a href="#停止服務">停止服務</a></li><li><a href="#監測服務">監測服務</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

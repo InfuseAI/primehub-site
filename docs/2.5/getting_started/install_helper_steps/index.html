@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Install by Helper · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Install PrimeHub"/><meta name="docsearch:version" content="2.5"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Install by Helper · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="## Install PrimeHub"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.5</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.5/getting-started-admin" target="_self">Administrator</a></li><li class=""><a href="/docs/2.5/getting-started-user" target="_self">Scientist</a></li><li class="siteNavGroupActive"><a href="/docs/2.5/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/2.5/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Install Helper</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/dev-introduction">Introduction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/getting_started/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/getting_started/kubernetes_on_gke">Kubernetes on GKE</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/getting_started/kubernetes_on_ubuntu_machine">Kubernetes on an Ubuntu Machine (Single Node)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/getting_started/install_metacontroller">Install Metacontroller</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/getting_started/install_keycloak">Install Keycloak</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/getting_started/install_primehub">Install PrimeHub</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Install Helper</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/getting_started/install_helper_intro">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/2.5/getting_started/install_helper_steps">Install by Helper</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Concepts</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/design/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/data-model">Data Model</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/crds">CRDs</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/graphql">GraphqQL</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/persistence-storage">Persistence Storages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Designs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/design/user-portal">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/meta-chart">Primehub Meta Chart</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/admission">Admission</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/jupyterhub">JupyterHub</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/notebook-kernel-process">Notebook with kernel process</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/dataset-upload">Dataset Upload</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/image-builder">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/design/job-scheduler">Job Scheduler</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tasks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Build</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/build">Package Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/airgap">Airgap</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/repo2docker">repo2docker image</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Registry</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/dockerhub-registry">Use DockerHub Registry</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Operations</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/cluster_shutdown">Cluster Shutdown</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/benchmark">Benchmark</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12">UPGRADE K8s from 1.10 and 1.10 to 1.12</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/tasks/ADVANCED-rook-setup-metadata-on-vg">Setup rook metadata on VG</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/references/primehub_chart">Chart Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/references/dotenv">Install Helper Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/references/feature-flag">Feature Flags</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Install by Helper</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="install-primehub"></a><a href="#install-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub</h2>
+<p>Please clone the primehub repository or untar the primehub release</p>
+<ol>
+<li><p>Init the configuration.</p>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">PRIMEHUB_SCHEME</span><span class="token operator">=</span>https
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PRIMEHUB_DOMAIN</span><span class="token operator">=</span>primehub.example.com
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PRIMEHUB_CONSOLE_DOCKER_USERNAME</span><span class="token operator">=</span><span class="token operator">&lt;</span>the primehub console repo user<span class="token operator">></span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PRIMEHUB_CONSOLE_DOCKER_PASSWORD</span><span class="token operator">=</span><span class="token operator">&lt;</span>the primehub console repo password<span class="token operator">></span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">KC_USER</span><span class="token operator">=</span><span class="token operator">&lt;</span>user<span class="token operator">></span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">KC_PASSWORD</span><span class="token operator">=</span><span class="token operator">&lt;</span>password<span class="token operator">></span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">KC_SCHEME</span><span class="token operator">=</span>https
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">KC_DOMAIN</span><span class="token operator">=</span>id.example.com
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PRIMEHUB_STORAGE_CLASS</span><span class="token operator">=</span><span class="token operator">&lt;</span>the storage class of RWO PVCs<span class="token operator">></span>
+
+<span class="token function">make</span> init
+</code></pre></li>
+<li><p>Configure PrimeHub for advanced features. Please reference the <a href="/docs/2.5/references/primehub_chart">primehub chart document</a></p></li>
+<li><p>Install the metacontroller</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> metacontroller-install
+</code></pre></li>
+<li><p>Install the keycloak</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> keycloak-install
+</code></pre></li>
+<li><p>Install the primehub</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> primehub-install
+</code></pre></li>
+</ol>
+<p>Once complete, please check the <code>http(s)://primehub.example.com/</code></p>
+<h2><a class="anchor" aria-hidden="true" id="upgrade-primehub"></a><a href="#upgrade-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upgrade Primehub</h2>
+<ol>
+<li><p>Diff and install keycloak</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> release-diff-keycloak
+<span class="token function">make</span> release-install-keycloak
+</code></pre></li>
+<li><p>Diff and install primehub</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> release-diff-primehub
+<span class="token function">make</span> primehub-upgrade
+</code></pre></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="install-grafana"></a><a href="#install-grafana" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install Grafana</h2>
+<ol>
+<li><p>Create Grafana Keycloak client:</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> create-grafana-keycloak-client
+</code></pre>
+<blockquote>
+<p>Don't forget to update <code>.env</code> about your <code>GRAFANA_KEYCLOAK_PROXY_CLIENT_SECRET</code>.</p>
+</blockquote></li>
+<li><p>Set environment <code>GRAFANA_ADMIN</code> &amp; <code>GRAFANA_PASSWORD</code> in <code>.env</code> file</p>
+<blockquote>
+<p>Never forget to assign their values, or it will be hard for you to log in as <code>GRAFANA_ADMIN</code> since Grafana will pick a random password if we didn't assign it before.</p>
+</blockquote></li>
+<li><p>Check Helm difference:</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> component-diff-prometheus-operator
+</code></pre></li>
+<li><p>Install applications:</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> component-install-prometheus-operator
+</code></pre></li>
+<li><p>Check your Grafana ingress by running:</p>
+<pre><code class="hljs css language-bash">kubectl get ingresses -n monitoring prometheus-operator-grafana
+</code></pre></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="upgrade-individual-helm-release"></a><a href="#upgrade-individual-helm-release" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upgrade individual helm Release</h2>
+<ol>
+<li><p>Get the releases in helm</p>
+<pre><code class="hljs css language-bash">helm <span class="token function">ls</span>
+</code></pre></li>
+<li><p>Check the different</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> release-diff-<span class="token operator">&lt;</span>release name<span class="token operator">></span>
+</code></pre></li>
+<li><p>Upgrade</p>
+<pre><code class="hljs css language-bash"><span class="token function">make</span> release-install-<span class="token operator">&lt;</span>release name<span class="token operator">></span>
+</code></pre></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="environment-reference"></a><a href="#environment-reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Reference</h2>
+<p>Please see the <a href="/docs/2.5/references/dotenv">install helper document</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/2.5/getting_started/install_helper_intro"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/2.5/design/architecture"><span>Architecture</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install-primehub">Install PrimeHub</a></li><li><a href="#upgrade-primehub">Upgrade Primehub</a></li><li><a href="#install-grafana">Install Grafana</a></li><li><a href="#upgrade-individual-helm-release">Upgrade individual helm Release</a></li><li><a href="#environment-reference">Environment Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dataset Management · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Dataset management 提供管理者 Dataset 資源管理能力，如：新增、刪除、編輯 datasets 來源及群組權限。"/><meta name="docsearch:version" content="2.5"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dataset Management · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="Dataset management 提供管理者 Dataset 資源管理能力，如：新增、刪除、編輯 datasets 來源及群組權限。"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.5</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.5/getting-started-admin" target="_self">Administrator</a></li><li class=""><a href="/docs/2.5/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/2.5/dev-introduction" target="_self">Developer</a></li><li class="siteNavGroupActive"><a href="/docs/2.5/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>管理介面</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">繁中文件<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/index-zh">說明</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">管理者<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/getting-started-admin">管理入門指南</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/custom-image-guideline">客製 Image 指南</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">管理介面</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-system-cht">System Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-group-cht">Group Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-build-image-cht">Image Builder</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用案例</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/usecase-toleration-cht">[使用案例] Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/guide_manual/usecase-nodeselector-cht">[使用案例] NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">維運</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">使用者<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/getting-started-user">使用入門指南</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/launch-project">啟始專案</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">功能</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/job-submission-cht">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/job-scheduling-feature-cht">Job Scheduler (Alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/user-advanced-setting">Spawner 進階設定</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">教學<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Job Submission (Beta)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/job-submission-tutorial-simple">初階範例</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/job-submission-tutorial-p1">(Part1) MNIST classifier 訓練範例程式</a></li><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/job-submission-tutorial-p2">(Part2) MNIST classifier 訓練範例程式</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">其它<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.5/zh-tw/quickstart/dockerhub-registry">利用 DockerHub Registry</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Dataset Management</h1></header><article><div><span><p>Dataset management 提供管理者 Dataset 資源管理能力，如：新增、刪除、編輯 datasets 來源及群組權限。</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-new-datasets"></a><a href="#creating-new-datasets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating New Datasets</h2>
+<p><img src="/docs/assets/dataset_5.png" alt=""></p>
+<p>點選 <code>Add</code> 新增 Datasets，會跳出編輯該 Dataset 的畫面。</p>
+<p><img src="/docs/assets/admin_dataset_v25.png" alt=""></p>
+<p>需填入以上畫面中的各個欄位：</p>
+<ul>
+<li><p><code>Name</code> 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）和底線（“_”）。</p></li>
+<li><p><code>Display name</code> 顯示名稱。</p></li>
+<li><p><code>Description</code></p></li>
+<li><p><code>Mount Root</code> 此唯讀欄位會顯示 datasets 資料夾路徑。</p></li>
+<li><p><code>Global</code> 啟用時，所有群組皆能讀取，此時我們可以進一步設定有寫入權限的群組；關閉時，只有藉由 <code>Edit groups</code> 指定 groups 及權限 才能讀取或寫入。</p></li>
+<li><p><code>Launch Group Only</code> 只有當<code>Global</code>關閉時，我們可以設定<code>Launch Group Only</code>；啟用時，該 dataset 只會被指定 group 存取或寫入；因此，我們可以進一步指定唯讀群組或是寫入群組。</p></li>
+<li><p><code>Type</code> <code>git</code>, <code>env</code> 及 <code>pvc</code>.</p></li>
+<li><p><code>Edit Groups</code> 當 <code>Global</code> 關閉時，可指定 groups 和存取權限。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="type-有以下三種類型"></a><a href="#type-有以下三種類型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Type</code> 有以下三種類型</h3>
+<h4><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>git</h4>
+<p><img src="/docs/assets/dataset_git.png" alt=""></p>
+<p>在 <code>Url</code>填入可存取該 Dataset 的連結位置。</p>
+<p><img src="/docs/assets/dataset_secret_list.png" alt=""></p>
+<p>若需要指定 <code>pull secret</code>，點選 <code>Change</code> 按鈕並指定 <code>secret</code>。</p>
+<h4><a class="anchor" aria-hidden="true" id="env"></a><a href="#env" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>env</h4>
+<p><img src="/docs/assets/dataset_env.png" alt=""></p>
+<p>若 Dataset 非檔案型式，僅為字串，則可選擇 <code>env</code> 後，在 <code>Variables</code> 填入該 variable 的 <code>key</code> 跟 <code>value</code> 。若不只一個 variable，可以點選 <code>+ Add field</code> 新增多筆。</p>
+<h4><a class="anchor" aria-hidden="true" id="pv"></a><a href="#pv" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pv</h4>
+<p><img src="/docs/assets/dataset_pv_v2.png" alt=""></p>
+<p>v2.0 之後，可以指定 <code>volume size</code> 。一旦確認後，會有一個固定大小的 volume 被創建出來，此後該 volume 就不能透過 Admin UI 來改變大小。</p>
+<p>最後點選 <code>confirm</code> 完成新增。</p>
+<h2><a class="anchor" aria-hidden="true" id="upload-server"></a><a href="#upload-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upload Server</h2>
+<p><code>Upload Server</code> 功能在 v2.0 之後可以被啟用。使用者可以透過 upload server 事先上傳檔案至 pv 型 dataset volume。</p>
+<p>選擇一個已被創建的 pv 型 dataset 進入其編輯頁，會顯現出 <code>Enable Upload Server</code> 開關和 <code>Regenerate Secret</code> 按鈕。</p>
+<p><img src="/docs/assets/dataset_pv_v2_upload_server.png" alt=""></p>
+<p>開啟 <code>Enable Upload Server</code> 並按下 <code>Confirm</code> 後，會跳出顯示進入 uploader 需要的帳號密碼。</p>
+<p><img src="/docs/assets/dataset_pv_v2_credential.png" alt=""></p>
+<p>因為該帳號密碼只會顯示一次，請在按下 <code>OK</code> 前，務必記住其內容。</p>
+<p><strong>Note: 如果帳密不慎遺失</strong></p>
+<p>回到該 dataset 的編輯頁，再次按下 <code>Regenerate Secret</code> ，就可以得到一組新的帳密。</p>
+<p>在 dataset 列表，可以看到該 dataset 列上的 upload server 欄位上有個 <code>Link</code>。</p>
+<p><img src="/docs/assets/dataset_pv_v2_upload_server_enable.png" alt=""></p>
+<p>點選該 Link 並輸入先前記住的帳密登入。</p>
+<p><img src="/docs/assets/dataset_pv_v2_upload_server_login2.png" alt=""></p>
+<p>登入後，可以看到檔案列表；點選左上方的 <code>Upload Data</code>。</p>
+<p><img src="/docs/assets/dataset_pv_v2_file_manager_upload.png" alt=""></p>
+<p>顯示檔案上傳對話框。</p>
+<p><img src="/docs/assets/dataset_pv_v2_upload_dialogue.png" alt=""></p>
+<p>拖拉要上傳的檔案進對話框，此時檔案尚未開始上傳。</p>
+<p><img src="/docs/assets/dataset_pv_v2_drag_file.png" alt=""></p>
+<p>按下 <code>Upload n files</code> 開始上傳。一旦完成，對話框的下方會顯示 <code>Complete</code>。</p>
+<p><img src="/docs/assets/dataset_pv_v2_upload_button.png" alt=""></p>
+<p>關掉上傳對話框，回到檔案列表，可見到已上傳檔案列在其中。</p>
+<p><img src="/docs/assets/dataset_pv_v2_file_uploaded.png" alt=""></p>
+<p>一旦 hub 啟動後，可以在 jupyter notebook 環境中，看到已上傳檔案在掛載 dataset volume 中。目前 upload server 並無提供檔案刪除功能，已上傳檔案只能透過 jupyter notebook 刪除。</p>
+<h2><a class="anchor" aria-hidden="true" id="deleting-datasets"></a><a href="#deleting-datasets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting Datasets</h2>
+<p><img src="/docs/assets/dataset_9.png" alt=""></p>
+<p>點選 <code>Delete</code>，會跳出確認對話框，確認是否刪除該 Dataset。.</p>
+<p><img src="/docs/assets/dataset_11.png" alt=""></p>
+<p>點選 <code>edit</code> 進入該 Dataset 的編輯頁面。</p>
+<p><img src="/docs/assets/edit_groups.png" alt=""></p>
+<p>如果 <code>Group</code> 啟用，則需在下方 <code>edit groups</code> 設定可存取的 Groups。 點選 <code>edit groups</code>，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/2.5/zh-tw/guide_manual/admin-build-image-cht"><span class="arrow-prev">← </span><span>Image Builder</span></a><a class="docs-next button" href="/docs/2.5/zh-tw/guide_manual/admin-secret-cht"><span>Secret Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-datasets">Creating New Datasets</a><ul class="toc-headings"><li><a href="#type-有以下三種類型"><code>Type</code> 有以下三種類型</a></li></ul></li><li><a href="#upload-server">Upload Server</a></li><li><a href="#deleting-datasets">Deleting Datasets</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
