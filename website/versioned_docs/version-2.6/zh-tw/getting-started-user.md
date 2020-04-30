@@ -11,4 +11,3 @@ original_id: getting-started-user
 
 + [Job Submission/Scheduler 使用及教學 (Beta)](job-submission-cht)
 
-+ [Model Deployment 使用 (Alpha)](model-deployment-feature)

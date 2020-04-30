@@ -188,9 +188,23 @@
       }
     ],
     "Maintenance": [
-      "maintenance",
-      "quickstart/maintenance-resize-user-vol",
-      "quickstart/maintenance-resize-group-vol"
+      {
+        "type": "subcategory",
+        "label": "Maintenance Notebook",
+        "ids": [
+          "maintenance",
+          "quickstart/maintenance-resize-user-vol",
+          "quickstart/maintenance-resize-group-vol"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Tips",
+        "ids": [
+          "trouble/howto-check-user-vol",
+          "trouble/howto-check-group-vol"
+        ]
+      }
     ],
     "Guide": [
       "guide_manual/experimental-vscode"

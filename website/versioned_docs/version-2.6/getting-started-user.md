@@ -15,5 +15,3 @@ Guides are included:
 + [Advanced settings of JupyterHub Spawner](user-advanced-setting)
   
 + [Submit and schedule Jobs](job-submission-feature).
-
-+ [Deploy Models and serve models](model-deployment-feature).
