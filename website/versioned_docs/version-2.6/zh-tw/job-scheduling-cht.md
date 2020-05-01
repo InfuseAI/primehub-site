@@ -10,7 +10,7 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 ## 列舉 Schedules
 
-![](assets/jscheduler_main_beta.png)
+![](assets/jscheduler_main_beta_v26.png)
 
 在列舉中，每個 Schedule 帶有下列資訊：
 
@@ -42,7 +42,7 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 ## 創建 Schedule
 
-![](assets/jscheduler_create_beta.png)
+![](assets/jscheduler_create_beta_v26.png)
 
 創建 Schedule 跟創建 Job 幾乎一樣，我們需先設定`Group`, `InstanceTypes`, `Images`, `Command`；差別在於我們可以設定其發動 Job 的週期性`Recurrence Options`。
 
