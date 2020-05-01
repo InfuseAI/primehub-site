@@ -17,7 +17,7 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 There is a list showing created jobs with relevant information.
 
-![](assets/jsub_main_beta_v26.png)
+![](assets/jsub_main_beta_v27.png)
 
 There are several informative columns of the job list:
 
@@ -29,7 +29,7 @@ There are several informative columns of the job list:
 |`User`|The owner who submits the job.|
 |`Group`|The group where the job runs.|
 |`Timing`|The duration of the running job.|
-|`Action`|The action buttons, `Cancel` and `Rerun`.|
+|`Action`|The action buttons; we can `Rerun` a finished job, `Cancel` a running job, or `Clone` a job with same settings.|
 
 + `Create Job` button: Click the button to create the job.
 
@@ -43,7 +43,7 @@ There are several informative columns of the job list:
 
 Using Group selection as a filter.
 
-![](assets/jsub_filter_beta_v26.png)
+![](assets/jsub_filter_beta_v27.png)
 
 + **Default** (when Group selection is blank): it lists all of jobs submitted from groups where the user *belongs* to, in other words, jobs from other groups are not listed.
 

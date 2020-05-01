@@ -18,7 +18,7 @@ title: Job Submission (Beta)
 
 此頁列舉已創建 Jobs 及其對應資訊。
 
-![](assets/jsub_main_beta_v26.png)
+![](assets/jsub_main_beta_v27.png)
 
 列舉中的`Job`對應資訊欄位：
 
@@ -30,7 +30,7 @@ title: Job Submission (Beta)
 |`User`|所有者|
 |`Group`|所屬群組|
 |`Timing`|執行時間|
-|`Action`|`Cancel`或`Rerun`|
+|`Action`|我們可以`Rerun`已結束的工作；`Cancel`正在執行的工作；`Clone`複製同樣設定的工作來建立新的。|
 
 + `Create Job`: 點擊按鈕，創建`job`。
 
@@ -44,7 +44,7 @@ title: Job Submission (Beta)
 
 利用 Group 選取作為篩選。
 
-![](assets/jsub_filter_beta_v26.png)
+![](assets/jsub_filter_beta_v27.png)
 
 + 預設 (Group 選取為空白)： 列舉所有使用者所屬群組創建的`job`。非所屬群組的，則不在此列。
 
