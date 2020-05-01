@@ -30,7 +30,7 @@ title: Job Submission (Beta)
 |`User`|所有者|
 |`Group`|所屬群組|
 |`Timing`|執行時間|
-|`Action`|我們可以`Rerun`已結束的工作；`Cancel`正在執行的工作；`Clone`複製同樣設定的工作來建立新的。|
+|`Action`|我們可以<ul><li>`Rerun`已結束的工作</li><li>`Cancel`正在執行的工作</li><li>`Clone`複製同樣設定的工作來建立新的</li></ul>|
 
 + `Create Job`: 點擊按鈕，創建`job`。
 

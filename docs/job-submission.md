@@ -29,7 +29,7 @@ There are several informative columns of the job list:
 |`User`|The owner who submits the job.|
 |`Group`|The group where the job runs.|
 |`Timing`|The duration of the running job.|
-|`Action`|The action buttons; we can `Rerun` a finished job, `Cancel` a running job, or `Clone` a job with same settings.|
+|`Action`|The action buttons; we can <ul><li>`Rerun` a finished job</li><li>`Cancel` a running job</li><li>`Clone` a job with same settings</li></ul>|
 
 + `Create Job` button: Click the button to create the job.
 
