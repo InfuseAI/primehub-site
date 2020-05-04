@@ -8,6 +8,7 @@
         "ids": [
           "getting_started/prerequisites",
           "getting_started/kubernetes_on_gke",
+          "getting_started/kubernetes_on_eks",
           "getting_started/kubernetes_on_ubuntu_machine"
         ]
       },
