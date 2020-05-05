@@ -36,6 +36,8 @@ brew install weaveworks/tap/eksctl
 eksctl version
 ```
 
+Prepare your domain name and manage it by Route53 (Detail information, please check [here](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-in-use.html))
+
 ## Create EKS Kubernetes Cluster
 
 Create EKS cluster by `eksctl`
@@ -144,4 +146,22 @@ NAME                               TYPE           CLUSTER-IP       EXTERNAL-IP  
 nginx-ingress-controller           LoadBalancer   10.100.253.162   a3ee868bc0f194ac19c04948497bc8ca-a179fb405d10a39f.elb.ap-northeast-1.amazonaws.com   80:31938/TCP,443:30853/TCP   21d
 nginx-ingress-controller-metrics   ClusterIP      10.100.146.39    <none>                                                                               9913/TCP                     21d
 nginx-ingress-default-backend      ClusterIP      10.100.49.194    <none>                                                                               80/TCP                       21d
+```
+
+Go to AWS web console Route53 page and add a `A` record for your domain with alias name.
+
+![Setup domain name by route53](assets/kubernetes_on_eks_route53.png)
+
+### Quick Verification
+
+Access nginx-ingress with your own domain:
+
+```bash
+curl http://<your-own-domain>
+```
+
+The output will be `404`, because nobody defines any `Ingress` resources:
+
+```
+default backend - 404
 ```
