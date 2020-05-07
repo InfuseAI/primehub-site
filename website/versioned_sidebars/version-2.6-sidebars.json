@@ -8,6 +8,7 @@
         "ids": [
           "version-2.6-getting_started/prerequisites",
           "version-2.6-getting_started/kubernetes_on_gke",
+          "version-2.6-getting_started/kubernetes_on_eks",
           "version-2.6-getting_started/kubernetes_on_ubuntu_machine"
         ]
       },
