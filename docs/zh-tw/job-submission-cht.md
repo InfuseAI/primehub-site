@@ -106,7 +106,7 @@ title: Job Submission (Beta)
 
 ### Information
 
-![](assets/jsub_info_beta.png)
+![](assets/jsub_info_beta_v27.png)
 
 `Job`記載內容資訊如下：
 
@@ -128,6 +128,12 @@ title: Job Submission (Beta)
 
 ### 工作記錄
 
-![](assets/jsub_log.png)
+![](assets/jsub_log_v27.png)
 
 記錄批次工作執行從開始到結束，可以由此查看執行過程。一旦執行失敗，可以由此除錯。
+
+有時我們只想看最後的輸出結果，可以點擊`Scroll to Bottom`跳過攏長記錄直接到記錄尾端。
+
+#### 注意
+
+預設此頁只顯示**最新的 2000 行**資訊；可以點擊`Download`下載完整的記錄。

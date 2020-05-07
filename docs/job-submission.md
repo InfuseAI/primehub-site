@@ -105,7 +105,7 @@ Click the job name on the list to view the job information and logs.
 
 ### Information
 
-![](assets/jsub_info_beta.png)
+![](assets/jsub_info_beta_v27.png)
 
 Here are the information of the job:
 
@@ -127,6 +127,12 @@ Here are the information of the job:
 
 ### Logs
 
-![](assets/jsub_log.png)
+![](assets/jsub_log_v27.png)
 
-It logs whole of job running progress. This is where we can check the progress and shoot troubles if failed.
+It logs whole of job running progress. This is where we can check the progress and shoot troubles if the job failed.
+
+In terms of logs are too lengthy, clicking `Scroll to Bottom` button skips to the last output from bottom of the logs.
+
+#### Notice
+
+By default, it displays only **latest 2000 lines**, clicking `Download` button to download the whole logs.

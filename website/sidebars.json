@@ -110,17 +110,23 @@
       }
     ],
     "Job": [
-      "job-submission-feature",
-      "job-scheduling-feature",
       {
         "type": "subcategory",
-        "label": "Tutorials",
+        "label": "Submission",
         "ids": [
+          "job-submission-feature",
           "job-submission-tutorial-simple",
           "job-submission-tutorial-p1",
           "job-submission-tutorial-p2",
           "job-submission-tutorial-p3",
           "job-submission-tutorial-p4"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Schedule",
+        "ids": [
+          "job-scheduling-feature"
         ]
       }
     ],
@@ -255,15 +261,21 @@
         }
     ],
     "Job":[
-          "zh-tw/job-submission-cht",
-          "zh-tw/job-scheduling-feature-cht",
           {
             "type": "subcategory",
-            "label": "Job Submission (Beta)",
+            "label": "Submission",
             "ids":[
+              "zh-tw/job-submission-cht",
               "zh-tw/job-submission-tutorial-simple",
               "zh-tw/job-submission-tutorial-p1",
               "zh-tw/job-submission-tutorial-p2"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Schedule",
+            "ids":[
+              "zh-tw/job-scheduling-feature-cht"
             ]
           }
     ],
