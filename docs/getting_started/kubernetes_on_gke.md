@@ -135,7 +135,7 @@ default backend - 404
 
 ## Prepare EXTERNAL-IP & StorageClass
 
-The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `StorageClass` name to the next steps. They would be used in the value files of `KeyCloak` and `PrimeHub`
+The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `StorageClass` name to the PrimeHub Installation. They are mandatory in the value files of `KeyCloak` and `PrimeHub`.
 
 * `EXTERNAL-IP`: 35.221.223.87
     ```
@@ -149,4 +149,6 @@ The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `Stora
     standard (default)   kubernetes.io/gce-pd   17m
     ```
 
+## Next - Setup PrimeHub
 
+Go to [Setup PrimeHub](install_metacontroller) section.

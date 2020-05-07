@@ -178,7 +178,9 @@ The output will be `404` because nobody defines any `Ingress` resources:
 default backend - 404
 ```
 
-## Configure GPU (optional)
+## Configurations
+
+### Configure GPU (optional)
 
 * download and install Nvidia GPU drivers from official website
 * enable GPU feature
@@ -187,7 +189,7 @@ default backend - 404
 microk8s.enable gpu
 ```
 
-## Configure snap (optional)
+### Configure snap (optional)
 
 [snap](https://snapcraft.io/) will update packages automatically. If you plan to use it in a production-ready environment, you could
 
@@ -196,7 +198,7 @@ microk8s.enable gpu
 
 Please read the [manual](https://snapcraft.io/docs/keeping-snaps-up-to-date)
 
-## Change Local Storage (optional)
+### Change Local Storage (optional)
 
 It was possible to keep persistent volumes (PV) to external devices, for example
 
@@ -225,7 +227,7 @@ UUID=b6df830a-d881-4dc5-a8e4-aeea2d7ee6c0	/data	xfs	defaults	0 0
 * line 3 was binding `/data` to `/var/snap/microk8s/common/default-storage`
 
 
-## Next
+## Prepare EXTERNAL-IP & StorageClass
 
 The cluster is ready to install PrimeHub. Please bring `EXTERNAL-IP` and `StorageClass` name to the next steps. They would be used in the value files of `KeyCloak` and `PrimeHub`
 
@@ -238,4 +240,6 @@ The cluster is ready to install PrimeHub. Please bring `EXTERNAL-IP` and `Storag
     microk8s-hostpath (default)   microk8s.io/hostpath   56m
     ```
 
+## Next - Setup PrimeHub
 
+Go to [Setup PrimeHub](install_metacontroller) section.
