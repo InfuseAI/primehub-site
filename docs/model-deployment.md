@@ -17,7 +17,7 @@ First, we have to turn on **Model Deployment** in groups.
 
 This page indicates all of deployed services status.
 
-![](assets/mdeploy_grid.png)
+![](assets/mdeploy_grid_v27.png)
 
 |Status   |Color|
 |---------|-----|
@@ -28,17 +28,21 @@ This page indicates all of deployed services status.
 
 ### Cell
 
-Each cell represents a deployment. Clicking on a cell to view the detail; Clicking on `View` link of a cell to view the metadata.
+Each cell represents a deployment. Clicking on a cell to view the detail.
+
+#### *Tips*
+
++ *Hovering the cursor over Metadata `View` of a cell, it lists the metadata view.*
+
++ *Hovering the cursor over Endpoint `Link` shows the entire link and clicking the link makes a copy to the clipboard.*
 
 |Info        |Description|
 |------------|-----------|
 |Title       | Deployment name|
 |Group       | Deployment's owner group.|
 |Endpoint    | Where the model is deployed and serve.|
-|Metadata    | View the meta |
+|Metadata    | Hovering over `View` to display the metadata info |
 |Last Updated| Last updated time.|
-
-**Tips**: Cursor hovering over endpoint links show entire links and clicking links make a copy to the clipboard.
 
 + `Create Deployment` button: Clicking for a deployment creation.
 
@@ -46,7 +50,7 @@ Each cell represents a deployment. Clicking on a cell to view the detail; Clicki
   
 ## Create
 
-![](assets/mdeploy_create.png)
+![](assets/mdeploy_create_v27.png)
 
 ### Environment Settings
 
@@ -81,7 +85,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 ## Deployment Detail
 
-![](assets/mdeploy_detail.png)
+![](assets/mdeploy_detail_v27.png)
 
 ### Information
 
@@ -104,9 +108,15 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 + `Filters`: Select a replica.
 
-![](assets/mdeploy_log.png)
+![](assets/mdeploy_log_v27.png)
 
 In Logs tab, the logs of current deployment are displayed here.
+
+Clicking `Scroll to Bottom` button skips to the bottom of logs.
+
+#### Notice
+
+It displays only logs of **latest 2000 lines**; clicking the `Download` button to download the whole log file.
 
 ### History
 
@@ -130,7 +140,6 @@ Clicking on the `View` link for the detail of each deployment.
 | Description   | User input description |
 | Metadata      | Metadata mappings table|
 
-
 ---
 
 ## Update
@@ -139,7 +148,7 @@ On a deployment detail page, clicking `Update` button to enter the deployment ed
 
 There are `Instance Type`, `Replicas`, `Model Image`, `Image Pull Secret`, `Description` and `Metadata` allowed to be modified in a update once the initial deployment is created.
 
-![](assets/mdeploy_update.png)
+![](assets/mdeploy_update_v27.png)
 
 ---
 

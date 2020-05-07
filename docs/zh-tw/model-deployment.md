@@ -13,11 +13,11 @@ title: 模型部署 (Alpha)
 
 ![](assets/mdeploy_enable.png)
 
-## 格列
+## 主頁
 
-此頁格列所有已創建的 Deployment；
+此頁格列一覽所有已創建的部署；
 
-![](assets/mdeploy_grid.png)
+![](assets/mdeploy_grid_v27.png)
 
 狀態分別由下列顏色來區別：
 
@@ -28,27 +28,32 @@ title: 模型部署 (Alpha)
 |**Deploying**|Yellow|
 |**Stopped**  |Grey  |
 
-### Deployment
+### 部署
 
-每格代表 Deployment 及其下列資訊：
+各部署列出下列簡短資訊；點擊各部署可查看詳細資訊。
 
 |Info        |Description|
 |------------|-----------|
 |Title       | 名稱|
 |Group       | 所屬群組|
 |Endpoint    | 佈建上線服務 URL|
-|Metadata    | 點擊 `View`連結查看 metadata。|
+|Metadata    | 鼠標移到`View`，顯示 Metadata 資訊|
 |Last Updated| 最後更新時間|
 
-**小技巧**: 鼠標移到 Endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。
 
 + 點擊`Create Deployment` 按鈕，進入 Deployment 創建頁。
 
-+ 點擊`Refresh`按鈕，取得更新 Deployment 狀態。
++ 點擊`Refresh`按鈕，更新部署狀態。
+
+#### *小技巧*
+
+  + *鼠標移到 Endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。*
+  
+  + *鼠標移到 Metadata 連結上，顯示 Metadata 資訊。*
   
 ## 創建
 
-![](assets/mdeploy_create.png)
+![](assets/mdeploy_create_v27.png)
 
 ### Environment Settings
 
@@ -81,9 +86,9 @@ title: 模型部署 (Alpha)
 
 佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。
 
-## Deployment 詳細資訊
+## 部署詳細資訊
 
-![](assets/mdeploy_detail.png)
+![](assets/mdeploy_detail_v27.png)
 
 ### Information
 
@@ -94,7 +99,7 @@ title: 模型部署 (Alpha)
 |Endpoint       |佈建上線服務 URL|
 |Model Image    |指定的 Model Image|
 |Replicas       |副本個數|
-|Deployment Name|Deployment 名稱|
+|Deployment Name|部署 名稱|
 |Group          |所屬群組|
 |Instance Type  |佈建用資源配請求|
 |Creation Time  |創建時間|
@@ -106,9 +111,15 @@ title: 模型部署 (Alpha)
 
 + `Filters`: 查看指定副本。
 
-![](assets/mdeploy_log.png)
+![](assets/mdeploy_log_v27.png)
 
-Logs 頁上顯示目前 Deployment 的記錄。
+Logs 頁上顯示目前 部署 的記錄。
+
+點擊`Scroll to Bottom`可直接跳至記錄最尾端。
+
+#### 注意
+
+預設只顯示最新的 2000 行記錄；點擊`Download`可下載完整記錄檔。
 
 ### History
 
@@ -136,23 +147,23 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 
 ## 變更
 
-在 Deployment 頁，點擊 `Update` 對此 Deployment 內容進行更動及部署更新。
+在 Deployment 頁，點擊 `Update` 對此部署內容進行更動及部署更新。
 
 其中有`Instance Type`、 `Replicas`、 `Model Image`、 `Image Pull Secret`、 `Description` 及 `Metadata`允許內容更新，其餘欄位初次佈建後則無法更動。
 
-![](assets/mdeploy_update.png)
+![](assets/mdeploy_update_v27.png)
 
 ---
 
 ## 刪除
 
-點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方`Delete` 鈕，進行刪除。
+點擊各個 Deployment 框，在部署詳細頁，點擊右上方`Delete` 鈕，進行刪除。
 
 ---
 
 ## 停止服務
 
-點擊各個 Deployment 框，在 Deployment 詳細頁，點擊右上方`Stop` 鈕，停止服務。
+點擊各個 Deployment 框，在部署詳細頁，點擊右上方`Stop` 鈕，停止服務。
 
 ---
 
@@ -169,7 +180,6 @@ PrimeHub 提供一個基於 **Seldon Core Analytics** 的 Grafana 監測板，�
 3. 選擇要監測的佈署，即可監測模型的運作。
 
     ![](assets/mdeploy_grafana_metrics.png)
-
 
 
 預設監測指標:
