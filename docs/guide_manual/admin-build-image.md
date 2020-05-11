@@ -112,3 +112,13 @@ It is helpful that when we want to know what made image build fail and what spec
 ![](assets/build_img_del.png)
 
 Click the button, the confirmation dialog will pop up, and the custom image spec will be deleted once you click `OK`.
+
+## Registry Configuration
+
+To use Image Builder, we have to configure PrimeHub with a registry where built images are pushed to.
+
+In terms of enterprise customers, PrimeHub, by default, is already configured with a registry and image builder is ready to use.
+
+Otherwise, we should see the warning, `image registry not found`. Please see [Use DockerHub Registry](../tasks/dockerhub-registry) for the configuration.
+
+![](assets/build_img_warning.png)

@@ -114,3 +114,13 @@ conda install conda-forge::numpy==1.17*
 ![](assets/build_img_del.png)
 
 點選 `Delete`，會跳出確認對話框，確認是否刪除該 Image spec。
+
+## 配置 Registry
+
+為了能夠使用 Image Builder，我們需要為創建出來的 Image 設定上載用的 Registry。
+
+對於企業用戶，PrimeHub 在安裝時已經根據需求設定完成，Image Builder 立即可以使用。
+
+其它用戶，若看到此警告訊息`image registry not found`，表示 Registry 尚未設定；請參照 [利用 DockerHub Registry](../quickstart/dockerhub-registry) 進行設定。
+
+![](assets/build_img_warning.png)
