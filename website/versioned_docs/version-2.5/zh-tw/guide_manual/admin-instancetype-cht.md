@@ -8,11 +8,11 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 ## Creating New Instance Types
 
-![](assets/instancetype_3.png)
+![](assets/instancetype_3_v26.png)
 
 點選 `Add` 新增 Instance Type，會跳出編輯該 Instance Type 的畫面。
 
-![](assets/admin_inst_v25.png)
+![](assets/admin_inst_v26.png)
 
 需填入以上畫面中 `Basic Info` 的各個欄位：
 
@@ -46,11 +46,11 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 關於 `kubectl taint` 用法及更多細節請參照 [Tolerations concept](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/).
 
-![](assets/instance_type_toleration0.png)
+![](assets/instance_type_toleration0_v26.png)
 
 在 `Toleration` 頁籤中，您可以點選 `Add` 新增 `Toleration` 。
 
-![](assets/instance_type_toleration1.png)
+![](assets/instance_type_toleration1_v26.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -78,7 +78,7 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 關於 kubectl label 用法及更多細節請參照[ Assigning Pods to Nodes 概念](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/)
 
-![](assets/instance_type_nodeselector.png)
+![](assets/instance_type_nodeselector_v26.png)
 
 在 `NodeSelector` 頁籤中，您可以點選 `+ Add field` 新增 `NodeSelector` 。
 
@@ -88,13 +88,13 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 ## Deleting Instance Types
 
-![](assets/instancetype_5.png)
+![](assets/actions.png)
 
 點選 `Delete`，會跳出確認對話框，確認是否刪除該 Instance Type。
 
 ## Editing Instance Types
 
-![](assets/instancetype_4.png)
+![](assets/actions.png)
 
 點選 `edit` 進該 Instance Type 的編輯頁面。
 

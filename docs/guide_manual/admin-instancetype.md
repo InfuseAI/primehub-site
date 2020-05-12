@@ -7,11 +7,11 @@ Instance type management provides the capabilities of managing a cluster of the 
 
 ## Creating New Instance Types
 
-![](assets/instancetype_3.png)
+![](assets/instancetype_3_v26.png)
 
 Click `Add` to add an Instance Type, which will pop up the editing screen of Instance Types.
 
-![](assets/admin_inst_v25.png)
+![](assets/admin_inst_v26.png)
 
 You need to fill in the fields of Basic Info in the above picture:
 
@@ -45,11 +45,11 @@ When a node has a `taint` for certain reasons, an instance won't be scheduled to
 
 For more detail and usage of `kubectl taint`, please refer to Taints and [Tolerations concept](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/).
 
-![](assets/instance_type_toleration0.png)
+![](assets/instance_type_toleration0_v26.png)
 
 In `Toleration` tab, you can add a Toleration by clicking on `Add` button.
 
-![](assets/instance_type_toleration1.png)
+![](assets/instance_type_toleration1_v26.png)
 
 Filling in the fields in popup to create a toleration.
 
@@ -75,7 +75,7 @@ You can constrain an instance to only be able to run on specific nodes which hav
 
 For more detail, please refer to Assigning Pods to Nodes for usage `kubectl label`.
 
-![](assets/instance_type_nodeselector.png)
+![](assets/instance_type_nodeselector_v26.png)
 
 In `NodeSelector` tab, you can add a NodeSelector by clicking on `+ Add field` button.
 
@@ -87,13 +87,13 @@ For a use case, please see [NodeSelector Use Case](usecase-nodeselector).
 
 ## Deleting Instance Types
 
-![](assets/instancetype_5.png)
+![](assets/actions.png)
 
 Click `Delete` in the Instance Types list, the confirmation dialog will pop up, and the Instance Type will be deleted when you click `OK`.
 
 ## Editing Instance Types
 
-![](assets/instancetype_4.png)
+![](assets/actions.png)
 
 Click `Edit` to enter the edit page of the Instance Type.
 
