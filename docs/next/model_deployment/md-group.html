@@ -62,18 +62,13 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Group Management</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="creating-new-group"></a><a href="#creating-new-group" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating New Group</h2>
 <p><img src="/docs/assets/group_12_v26.png" alt=""></p>
 <p>Click <code>Add</code> to add a group, which will pop up the editing screen of Groups.</p>
-<p><img src="/docs/assets/group_shared_volume_v26.png" alt=""></p>
+<p><img src="/docs/assets/md_group_shared_volume_v26.png" alt=""></p>
 <p>You need to fill in the fields in the above picture:</p>
 <ul>
 <li><p><code>Name</code> (required): Only lowercase letters, numbers, dash <code>-</code> and the bottom line <code>_</code> can be filled in.</p></li>
 <li><p><code>Display name</code></p></li>
 </ul>
 <p><strong>Model Deployment</strong>(<em>Alpha</em>): This alpha feature is hidden until the <a href="../references/feature-flag">feature flag</a> is set <code>True</code>; Groups with enabled model deployment are able to deploy/serve models via <a href="../model-deployment-feature">Model Deployment</a>.</p>
-<p><strong>Shared Volume</strong>: Create shared volume with specific capacity.</p>
-<ul>
-<li><p><code>Shared Volume Capacity</code> Set the capacity of the shared volume.</p></li>
-<li><p><code>Launch Group Only</code> If enabled, the shared volume is <code>only mounted</code> when users select the <code>same group</code> to launch a project on PrimeHub page.</p></li>
-</ul>
 <p><strong>User Quota</strong>: Set quotas for each user in this group.</p>
 <ul>
 <li><p><code>CPU Quota</code> When the user chooses the group, how many CPU can be used by the user. The default is <code>0.5</code>.</p></li>
@@ -88,9 +83,6 @@
 <li><p><code>Memory Quota</code> When the user chooses the group, how many Memory can be shared by all users in the the group. Default is <code>unlimited</code>.</p></li>
 </ul>
 <p>Click <code>Confirm</code> to complete the addition.</p>
-<p><strong>Datasets</strong></p>
-<p><img src="/docs/assets/admin_group_ds_v25.png" alt=""></p>
-<p>The list here shows connecting datasets which can be read or written. We also can edit these datasets through here.</p>
 <p><strong>Editing Users</strong></p>
 <p><img src="/docs/assets/edit_users.png" alt=""></p>
 <p>Click <code>edit users</code> under the edit Group screen to select the group's user from the existing Users list and link them.</p>
