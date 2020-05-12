@@ -28,9 +28,9 @@ Information of the PrimeHub license:
 
 + `Timezone` 選擇貴單位所在地的時區。
 
-![](assets/system_2_v24.png)
-
 ## Email Settings
+
+![](assets/system_2_v26.png)
 
 另外也需要設定從此平台發出的 Email 設定，包括：
 

@@ -28,9 +28,10 @@ Information of the PrimeHub license:
 
 + `Timezone` the system timezone.
 
-![](assets/system_2_v24.png)
 
 ## Email Settings
+
+![](assets/system_2_v26.png)
 
 + `Smtp Host` Sends the Sever host location of the email.
 
