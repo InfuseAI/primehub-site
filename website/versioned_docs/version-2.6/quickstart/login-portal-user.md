@@ -19,8 +19,6 @@ The shortcuts on the portal are various in the real circumstance. Basically, the
 
 + **Job Submission (Beta)** where users can submit/schedule multiple jobs for time-consuming tasks. See [Job Submission](../job-submission-feature), [Job Scheduler](../job-scheduling-feature).
 
-+ **Model Deployment (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature).
-
 + **User Guide** It is redirected to `Documentation` where users can find useful guides, tutorials and documents of PrimeHub.
 
 ## Logout
