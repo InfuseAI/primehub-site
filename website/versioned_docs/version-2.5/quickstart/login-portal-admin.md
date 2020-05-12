@@ -20,6 +20,9 @@ The shortcuts on the portal are various in the real circumstance. Basically, the
 + **JupyterHub**
 It is redirected to the `JupyterHub` where users can launch projects.
 
++ **Job Submission**
+    It is redirected to the Job Submission feature where users are able to submit time-consuming jobs for running at the background.
+
 + **User Guide**
 It is redirected to `Documentation` where users can find useful guides.
 
@@ -33,9 +36,12 @@ It is redirected to `Admin Dashboard` where administrators can manage `PrimeHub`
 [Reference](admin-dashboard.md)
 
 + **Maintenance Notebook**
-It is redirected to a `maintenance notebook` where administrators can run several built-in useful operations via Jupyter Notebook.
+It is redirected to the `maintenance notebook` where administrators can run several built-in useful operations via Jupyter Notebook.
 
-![](assets/user_portal_admin.png)
++ **Grafana**
+It is redirected to the Grafana where we can monitor metrics of services.
+
+![](assets/user_portal_admin_v25.png)
 
 
 ## Logout
