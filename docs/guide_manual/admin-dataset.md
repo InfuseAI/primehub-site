@@ -5,13 +5,13 @@ title: Dataset Management
 
 Dataset management provides the capabilities of managing dataset resources such as create, delete, edit datasets and of permission-control so that datasets can be accessed only by specific groups accordingly.
 
-## Creating New Datasets
+## Creating New Dataset
 
-![](assets/dataset_5.png)
+![](assets/dataset_5_v26.png)
 
 Click `Add` to add a Dataset and it will pop up the edit screen of Datasets.
 
-![](assets/admin_dataset_v25.png)
+![](assets/admin_dataset_v26.png)
 
 You need to fill in these fields:
 
@@ -60,9 +60,9 @@ Click `Confirm` to complete the addition.
 
 ## Upload Server
 
-There is a new feature, `Upload Server`, introduced in type `pv` dataset from v2.0 above. A user can upload files to a type `pv` dataset volume via the upload server.
+`Upload Server` feature is introduced in type `pv` dataset that allows users to upload files to the type `pv` dataset volume via the upload server.
 
-When editing a created type pv dataset, `Enable Upload Server` toggle and `Regenerate Secret` button appear.
+When *editing* a created type pv dataset, `Enable Upload Server` toggle and `Regenerate Secret` button appear.
 
 ![](assets/dataset_pv_v2_upload_server.png)
 
@@ -105,13 +105,15 @@ Close the uploader and back to the file list, uploaded files are listed.
 
 You can find these uploaded files in the dataset volume which is mounted on the hub in your jupyter notebook. Currently these files can be removed only via notebook.
 
-## Deleting Datasets
+## Deleting Dataset
 
-![](assets/dataset_9.png)
+![](assets/actions.png)
 
 Click `Delete` in the Datasets list, the confirmation dialog will pop up, and the Dataset will be deleted when you click `OK`.
 
-![](assets/dataset_11.png)
+## Editing Deataset
+
+![](assets/actions.png)
 
 Click `Edit` to enter the edit page of the Dataset.
 

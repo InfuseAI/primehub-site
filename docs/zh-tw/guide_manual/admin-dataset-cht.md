@@ -7,11 +7,11 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 ## Creating New Datasets
 
-![](assets/dataset_5.png)
+![](assets/dataset_5_v26.png)
 
 點選 `Add` 新增 Datasets，會跳出編輯該 Dataset 的畫面。
 
-![](assets/admin_dataset_v25.png)
+![](assets/admin_dataset_v26.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -107,11 +107,13 @@ v2.0 之後，可以指定 `volume size` 。一旦確認後，會有一個固定
 
 ## Deleting Datasets
 
-![](assets/dataset_9.png)
+![](assets/actions.png)
 
-點選 `Delete`，會跳出確認對話框，確認是否刪除該 Dataset。.
+點選 `Delete`，會跳出確認對話框，確認是否刪除該 Dataset。
 
-![](assets/dataset_11.png)
+## Editing Datasets
+
+![](assets/actions.png)
 
 點選 `edit` 進入該 Dataset 的編輯頁面。
 
