@@ -61,9 +61,9 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Image Management</h1></header><article><div><span><p>Image management 提供管理者 Image 的管理能力，如：新增、刪除、編輯及群組權限。</p>
 <h2><a class="anchor" aria-hidden="true" id="creating-new-image"></a><a href="#creating-new-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating New Image</h2>
-<p><img src="/docs/assets/image_3.png" alt=""></p>
+<p><img src="/docs/assets/image_3_v26.png" alt=""></p>
 <p>點選 <code>Add</code> 新增 Image，會跳出該 Image 的編輯畫面。</p>
-<p><img src="/docs/assets/admin_img_v25.png" alt=""></p>
+<p><img src="/docs/assets/admin_img_v26.png" alt=""></p>
 <p>需填入以上畫面中的各個欄位：</p>
 <ul>
 <li><p><code>Name</code> 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）和底線（“_”）。</p></li>
@@ -71,7 +71,7 @@
 <li><p><code>Description</code></p></li>
 <li><p><code>Container image url</code> 填入該 Image 的 連結位置。</p></li>
 <li><p><code>Use Image Pull Secret</code> 勾選是否需要指定 pull-secret ，並從選單指定該 secret。</p>
-<p><img src="/docs/assets/images_pull_secret.png" alt=""></p></li>
+<p><img src="/docs/assets/images_pull_secret_v26.png" alt=""></p></li>
 <li><p><code>Global</code> 開啟後，所有人皆可使用此 Image；若關閉，則需在 <code>edit groups</code> 連結有權限使用的 Group 。</p></li>
 </ul>
 <p>最後點選 <code>confirm</code> 完成新增。</p>
@@ -83,15 +83,15 @@
 <li><p><code>Specific container image url for GPU</code> 當 Type 為 <code>universal</code> 時，可以勾選為 <code>GPU</code> 指定不同的 image。未勾選時，預設為跟 <code>Container image url</code> 一樣。</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="deleting-image"></a><a href="#deleting-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting Image</h2>
-<p><img src="/docs/assets/image_5.png" alt=""></p>
+<p><img src="/docs/assets/actions.png" alt=""></p>
 <p>點選 <code>Delete</code>，會跳出確認對話框，確認是否刪除該 Image 。</p>
 <h2><a class="anchor" aria-hidden="true" id="editing-image"></a><a href="#editing-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing Image</h2>
-<p><img src="/docs/assets/image_4.png" alt=""></p>
+<p><img src="/docs/assets/actions.png" alt=""></p>
 <p>點選 <code>edit</code> 進入該 Image 的編輯頁面。</p>
 <h2><a class="anchor" aria-hidden="true" id="editing-groups"></a><a href="#editing-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing Groups</h2>
 <p><img src="/docs/assets/edit_groups.png" alt=""></p>
 <p>若未開啟 <code>Global</code> 開放給所有使用者使用該 Image，在編輯 Image 的畫面下方點選<code>edit groups</code>，即可從現有的 Groups 列表中選取有權限使用該 Image 的 Group，將它們連結在一起。</p>
-<p><img src="/docs/assets/image_8.png" alt=""></p>
+<p><img src="/docs/assets/image_8_v26.png" alt=""></p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-tw/guide_manual/usecase-nodeselector-cht"><span class="arrow-prev">← </span><span class="function-name-prevnext">NodeSelector</span></a><a class="docs-next button" href="/docs/zh-tw/guide_manual/admin-build-image-cht"><span>Image Builder</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-image">Creating New Image</a></li><li><a href="#deleting-image">Deleting Image</a></li><li><a href="#editing-image">Editing Image</a></li><li><a href="#editing-groups">Editing Groups</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
