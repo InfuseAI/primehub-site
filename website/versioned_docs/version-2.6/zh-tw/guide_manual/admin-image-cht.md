@@ -8,11 +8,11 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 ## Creating New Image
 
-![](assets/image_3.png)
+![](assets/image_3_v26.png)
 
 點選 `Add` 新增 Image，會跳出該 Image 的編輯畫面。
 
-![](assets/admin_img_v25.png)
+![](assets/admin_img_v26.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -26,7 +26,7 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 + `Use Image Pull Secret` 勾選是否需要指定 pull-secret ，並從選單指定該 secret。
 
-   ![](assets/images_pull_secret.png)
+   ![](assets/images_pull_secret_v26.png)
 
 + `Global` 開啟後，所有人皆可使用此 Image；若關閉，則需在 `edit groups` 連結有權限使用的 Group 。
 
@@ -44,13 +44,13 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 ## Deleting Image
 
-![](assets/image_5.png)
+![](assets/actions.png)
 
 點選 `Delete`，會跳出確認對話框，確認是否刪除該 Image 。
 
 ## Editing Image
 
-![](assets/image_4.png)
+![](assets/actions.png)
 
 點選 `edit` 進入該 Image 的編輯頁面。
 
@@ -60,4 +60,4 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 若未開啟 `Global` 開放給所有使用者使用該 Image，在編輯 Image 的畫面下方點選`edit groups`，即可從現有的 Groups 列表中選取有權限使用該 Image 的 Group，將它們連結在一起。
 
-![](assets/image_8.png)
+![](assets/image_8_v26.png)
