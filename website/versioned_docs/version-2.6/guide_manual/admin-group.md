@@ -14,7 +14,7 @@ Click `Add` to add a group, which will pop up the editing screen of Groups.
 
 You need to fill in the fields in the above picture:
 
-+ `Name` (required): Only lowercase letters, numbers, dash `-` and the bottom line `_` can be filled in.
++ `Name` (required): Only lowercase letters, numbers, hyphen `-` and a dot `_` can be filled in.
 
 + `Display name`
 

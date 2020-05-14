@@ -15,7 +15,7 @@ Click `Add` to add a Secret and it will pop up the edit screen of Secret.
 
 You need to fill in these fields:
 
-+ `Name` (required): Only lowercase letters, numbers, dash - and the bottom line _ can be filled in.
++ `Name` (required): Only lowercase letters, numbers, hyphen `-` and a dot `.` can be filled in.
 
 + `Display Name`
 
