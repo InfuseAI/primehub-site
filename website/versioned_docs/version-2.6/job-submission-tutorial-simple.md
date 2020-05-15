@@ -1,5 +1,6 @@
 ---
-id: job-submission-tutorial-simple
+id: version-2.6-job-submission-tutorial-simple
+original_id: job-submission-tutorial-simple
 title: Simple Example
 ---
 

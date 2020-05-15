@@ -1,5 +1,6 @@
 ---
-id: job-submission-tutorial-p2
+id: version-2.6-job-submission-tutorial-p2
+original_id: job-submission-tutorial-p2
 title: (Part2) MNIST classifier training
 ---
 
