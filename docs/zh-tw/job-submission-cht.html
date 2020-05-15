@@ -106,19 +106,24 @@
 <li><p><code>InstanceTypes</code>: 選擇<code>job</code>所需<code>instance type</code>資源佈屬。</p></li>
 <li><p><code>Images</code>: 選擇<code>job</code>的執行環境。</p></li>
 <li><p><code>Job name</code>: 指定<code>job</code>名稱。</p></li>
-<li><p><code>Command</code>: 指定<code>job</code>批次工作項目。</p>
-<p><strong>Job 可存取工作目錄、專案目錄及資料集目錄</strong></p>
+<li><p><code>Command</code>: 指定<code>job</code>批次工作項目。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="job-可存取工作目錄-專案目錄及資料集目錄"></a><a href="#job-可存取工作目錄-專案目錄及資料集目錄" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 可存取工作目錄、專案目錄及資料集目錄</h3>
+<blockquote>
+<p>注意：Job 的預設路徑是在 <code>/homve/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHubPod 裡！
+所以 JupyterHub <code>/home/jovyan</code>下的其它檔案並 <strong>不存在</strong> 此時的 Job Pod 的<code>/homejovyan</code>。Job 這裡只會有掛載的<code>&lt;group volume&gt;</code>及<code>&lt;dataset&gt;</code>。</p>
+</blockquote>
 <table>
 <thead>
 <tr><th>目錄</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td><code>/home/jovyan</code></td><td><code>job</code>執行時的暫存工作目錄。<em><strong>注意:</strong> 如果輸出 data 於此，此 data 將會隨著<code>job</code>結束而消失，只能做為暫存之用。 不再是<del><code>/workingdir</code></del></em>！</td></tr>
-<tr><td><code>/project/&lt;group&gt;</code></td><td>用此路徑，存取群組專案目錄，可以做為讀取及輸出常態性資料，即使<code>job</code>已經結束。<em><strong>注意：</strong> <code>group volume</code>必須要事先存在，請洽系統管理員。</em></td></tr>
-<tr><td><code>/datasets/&lt;dataset&gt;</code></td><td>用此路徑，存取群組所屬的資料集目錄。<em><strong>注意：</strong> <code>dataset volume</code>必須要事先存在，請洽系統管理員。</em></td></tr>
+<tr><td><code>/home/jovyan</code></td><td><code>job</code>執行時的暫存工作目錄。<em><strong>注意:</strong> 如果輸出 data 於此，此 data 將會著<code>job</code>結束而消失，只能做為暫存之用。 不再是<del><code>/workingdir</code></del></em>！</td></tr>
+<tr><td><code>/home/jovyan/&lt;group&gt; -&gt; /project/&lt;group&gt;/</code></td><td>用此路徑(或 Symbolic link)，存取群組目錄，可以做為讀取及輸出常態性資料，即使<code>job</code>已經結束。<em><strong>注意：</strong> <code>group volume</code>必須要事存在，請洽系統管理員。</em></td></tr>
+<tr><td><code>/home/jovyan/datasets/&lt;dataset&gt; -&gt; /datasets/&lt;dataset&gt;</code></td><td>用此路徑(或 Symbolic link)，存取群組資料集。<em><strong>注意：</strong> <code>dataset volume</code>必須要事先存在，請洽系統管理員。</em></td></tr>
 </tbody>
 </table>
-<p><strong>Job 可存取環境變數</strong>:</p>
+<h3><a class="anchor" aria-hidden="true" id="job-可存取環境變數"></a><a href="#job-可存取環境變數" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 可存取環境變數</h3>
 <table>
 <thead>
 <tr><th>變數名稱</th><th>描述</th></tr>
@@ -130,16 +135,15 @@
 </table>
 <p><strong>Python command option</strong></p>
 <ul>
-<li><code>python -u</code> 我們可以用 <code>-u</code> 強制輸出訊息不經由緩衝，如此可以在<code>Logs</code>看到即時訊息。</li>
+<li><code>python -u</code> 我們可以用 <code>-u</code> 強制輸出訊息不經由緩衝，如此可以在<code>Logs</code>看到即時訊息。
+<strong>Example 1</strong>: 假設<code>train_mint.py</code>事先存在名叫<code>research</code>的<code>group volume</code>，我們可以進<code>/project/research</code>下，執行該 python file 做為一個<code>job</code>。<code>job</code>執行期間輸出的 data 則存在此路徑的相對位置。</li>
 </ul>
-<p><strong>Example 1</strong>: 假設<code>train_mint.py</code>事先存在名叫<code>research</code>的<code>group volume</code>，我們可以進入<code>/project/research</code>下，執行該 python file 做為一個<code>job</code>。<code>job</code>執行期間輸出的 data 則會存在此路徑的相對位置。</p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> /project/research/
 python -u train_minst.py
 </code></pre>
-<p><strong>Example 2</strong>: 如果我們直接執行下列指令，沒有變更路徑，<code>job</code>的工作目錄位在<code>/home/jovyan</code>，<code>job</code>執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在<code>/home/jovyan</code>的 data 資料會隨著<code>job</code>結束而消失。</p>
+<p><strong>Example 2</strong>: 如果我們直接執行下列指令，沒有變更路徑，<code>job</code>的工作目錄位在<code>/home/jovyan</code> job 執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在<code>/home/jovyan</code>的 data 資料會隨著<code>job</code>結束而消失。</p>
 <pre><code class="hljs css language-bash">python -u /project/research/train_minst.py
-</code></pre></li>
-</ul>
+</code></pre>
 <p><code>Submit</code>: 點擊按鈕，送出工作執行。</p>
 <h2><a class="anchor" aria-hidden="true" id="查看-job"></a><a href="#查看-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看 Job</h2>
 <p>在列舉上點擊想要查看的<code>job</code>名稱，查看內容資訊及執行記錄。</p>
@@ -169,7 +173,7 @@ python -u train_minst.py
 <h3><a class="anchor" aria-hidden="true" id="工作記錄"></a><a href="#工作記錄" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>工作記錄</h3>
 <p><img src="/docs/assets/jsub_log.png" alt=""></p>
 <p>記錄批次工作執行從開始到結束，可以由此查看執行過程。一旦執行失敗，可以由此除錯。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/zh-tw/job-scheduling-feature-cht"><span>Job Scheduler (Beta)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#job">Job</a><ul class="toc-headings"><li><a href="#lifetime">Lifetime</a></li></ul></li><li><a href="#列舉-job">列舉 Job</a><ul class="toc-headings"><li><a href="#篩選">篩選</a></li></ul></li><li><a href="#創建-job">創建 Job</a></li><li><a href="#查看-job">查看 Job</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#工作記錄">工作記錄</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/zh-tw/job-scheduling-feature-cht"><span>Job Scheduler (Beta)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#job">Job</a><ul class="toc-headings"><li><a href="#lifetime">Lifetime</a></li></ul></li><li><a href="#列舉-job">列舉 Job</a><ul class="toc-headings"><li><a href="#篩選">篩選</a></li></ul></li><li><a href="#創建-job">創建 Job</a><ul class="toc-headings"><li><a href="#job-可存取工作目錄-專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></li><li><a href="#job-可存取環境變數">Job 可存取環境變數</a></li></ul></li><li><a href="#查看-job">查看 Job</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#工作記錄">工作記錄</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

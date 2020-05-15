@@ -120,14 +120,15 @@ model.save(os<span class="hljs-selector-class">.path</span><span class="hljs-sel
 <li><p>點擊右上方的<code>Create Job</code>按鈕。</p></li>
 <li><p>從左方選擇<code>group</code>、<code>instance type</code> 及 <code>image</code>；確保跟我們用來起始<code>JupyterHub</code>的環境一致。</p></li>
 <li><p>在右方將 job 命名為<code>training mnist</code>。</p></li>
-<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/project/&lt;group name&gt;</code>，在<code>Commnad</code>欄位輸入下方指令； 請置換 <code>&lt;group name&gt;</code> 為實際名稱：</p>
+<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/home/jovyan/&lt;group name&gt; -&gt; /project/&lt;group name&gt;</code>，在<code>Commnad</code>欄位輸入下方指令； 請置換 <code>&lt;group name&gt;</code> 為實際名稱 ：</p>
 <pre><code class="hljs"><span class="hljs-keyword">cd</span> <span class="hljs-string">/project/</span>&lt;group name&gt;/
 python -u train_mnist.py <span class="hljs-params">--dropout</span> 0.2
-</code></pre></li>
+</code></pre>
+<p>參考：<a href="job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="command-範例說明"></a><a href="#command-範例說明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command 範例說明：</h3>
 <ul>
-<li>因為我們產出 <code>my_model</code> 在 group volume 相對路徑，所以我們需要先<code>cd /project/&lt;group name&gt;</code>。</li>
+<li>因為我們產出 <code>my_model</code> 在 group volume 相對路徑，所以我們需要先<code>cd /project/&lt;group name&gt;</code> or <code>cd &lt;group name&gt;/</code>。</li>
 <li><code>&lt;group name&gt;</code> 大小寫有差別；</li>
 <li>python command 參數<code>-u</code> 強制 python 直接輸出 log 不要先 buffer；在 logs 頁籤可以更即時看到 log。</li>
 <li>參數<code>--dropout</code>是範例程式中，指定要接收的輸入參數。</li>

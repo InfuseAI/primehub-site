@@ -124,7 +124,7 @@ model.save(os<span class="hljs-selector-class">.path</span><span class="hljs-sel
 <li><p>To submit a job, please open Job Submission in a new tab and create a job by clicking top right button.</p></li>
 <li><p>Select your group, instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.</p></li>
 <li><p>In the right panel, name the job <code>training mnist</code> in Job Name input field, or another name that prefer.</p></li>
-<li><p>Since our code is under group volume and will be mounted in <code>/project/&lt;group name&gt;</code>, type the following into the Command input field; replace <code>&lt;group name&gt;</code>:</p>
+<li><p>Since our code is under group volume and will be mounted in <code>/home/jovyan/&lt;group name&gt; -&gt; /project/&lt;group name&gt;</code>, type the following into the Command input field; replace <code>&lt;group name&gt;</code>:</p>
 <pre><code class="hljs"><span class="hljs-keyword">cd</span> <span class="hljs-string">/project/</span>&lt;group name&gt;/
 python -u train_mnist.py <span class="hljs-params">--dropout</span> 0.2
 </code></pre></li>

@@ -106,22 +106,31 @@ print("Counting from 1 to 10:")
 <p><img src="/docs/assets/jobsub-tt-p2-3.png" alt="image"></p></li>
 <li><p>從左方選擇<code>group</code>、<code>instance type</code>及<code>image</code>；確保跟我們先前用來起始<code>JupyterHub</code>的環境一致。</p></li>
 <li><p>在右方將 Job 命名為<code>counting</code>。</p></li>
-<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/project/&lt;group name&gt;</code>，在<code>Commnad</code>欄位輸入下方指令； 請置換 <code>&lt;group name&gt;</code> 為實際選擇 group 名稱。</p>
+<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/home/jovyan/&lt;group name&gt; -&gt; /project/&lt;group name&gt;</code>，而且 Job 的預設路徑是在 <code>/homve/jovyan</code>；在<code>Commnad</code>欄位輸入下方指令一， 請置換 <code>&lt;group name&gt;</code> 為實際選擇 group 名稱。<a href="job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></p>
 <p><code>&lt;group name&gt;</code> 大小寫有差別；</p>
 <p>程式中有用到<code>camelcase</code>套件，因此 Job 第一行執行安裝此套件。</p>
-<pre><code class="hljs">pip <span class="hljs-keyword">install</span> camelcase
-cd /<span class="hljs-keyword">project</span>/&lt;<span class="hljs-keyword">group</span> <span class="hljs-keyword">name</span>&gt;/
-python -u internal.py
+<blockquote>
+<p>注意：Job 的預設路徑是在 <code>/homve/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
+所以 JupyterHub <code>/home/jovyan</code>下的其它檔案並 <strong>不存在</strong> 此時 Job Pod 的<code>/home/jovyan</code>。Job 這裡只會有掛載的<code>&lt;group volume&gt;</code>及<code>&lt;dataset&gt;</code>。</p>
+</blockquote></li>
+</ol>
+<pre><code class="hljs">```
+pip install camelcase
+cd &lt;group name&gt;/
+python -u interval.py
+```
+
+### Command 範例說明：
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="command-範例說明"></a><a href="#command-範例說明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command 範例說明：</h3>
 <ul>
-<li>因為<code>internal.py</code>程式碼存在 group volume 相對路徑，所以我們需要先<code>cd /project/&lt;group name&gt;</code>。</li>
+<li>因為<code>interval.py</code>程式碼存在 group volume 相對路徑，所以我們需要先<code>cd &lt;group name&gt;</code>。</li>
 <li><code>&lt;group name&gt;</code> 大小寫有差別；</li>
 <li>python command 參數<code>-u</code> 強制 python 直接輸出 log 不要先 buffer；在 logs 頁籤可以更即時看到 log。</li>
 <li>Job Submission 會依序執行一行一行的指令，如同執行 script 般。</li>
 <li>滑鼠指標移到小圖示<code>?</code>上方，可以看到更多提示。</li>
-</ul></li>
-<li><p>送出 Job 回到 Jobs 列舉頁，點擊<code>Job name</code>為我們剛才新增的 Job，並觀察其<code>Status</code>欄位及 Log。</p></li>
+</ul>
+<ol start="5">
+<li>送出 Job 回到 Jobs 列舉頁，點擊<code>Job name</code>為我們剛才新增的 Job，並觀察其<code>Status</code>欄位及 Log。</li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="jobs-列舉及-refresh-按鈕"></a><a href="#jobs-列舉及-refresh-按鈕" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jobs 列舉及 refresh 按鈕</h3>
 <p>當 job 遞交後，起初會在<code>Pending</code>狀態；點擊右上方<code>Refresh</code>按鈕可以更新其狀態。</p>
@@ -132,7 +141,7 @@ python -u internal.py
 <p>到此，我們成功的將存放在 group volume 下的程式碼，交付 Job 來代為執行，並且學得如何從 Job 的 <code>command</code>欄與在 group volume 下的檔案互動。</p>
 <h2><a class="anchor" aria-hidden="true" id="更多關於-job-submission"></a><a href="#更多關於-job-submission" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>更多關於 Job Submission</h2>
 <p><a href="job-submission-cht">Job Submission (Beta) 功能</a></p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-submission-cht"><span class="arrow-prev">← </span><span>Job Submission (Beta)</span></a><a class="docs-next button" href="/docs/next/zh-tw/job-submission-tutorial-p1"><span>(Part1) MNIST classifier 訓練範例程式</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#先決條件">先決條件</a><ul class="toc-headings"><li><a href="#group-volume">Group Volume</a></li><li><a href="#image-and-instance-type">Image and Instance Type</a></li><li><a href="#group-quota-and-user-quota">Group Quota and User Quota</a></li></ul></li><li><a href="#教學步驟">教學步驟</a><ul class="toc-headings"><li><a href="#submit-job">Submit Job</a></li><li><a href="#command-範例說明">Command 範例說明：</a></li><li><a href="#jobs-列舉及-refresh-按鈕">Jobs 列舉及 refresh 按鈕</a></li><li><a href="#logs-頁籤">Logs 頁籤</a></li></ul></li><li><a href="#更多關於-job-submission">更多關於 Job Submission</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-submission-cht"><span class="arrow-prev">← </span><span>Job Submission (Beta)</span></a><a class="docs-next button" href="/docs/next/zh-tw/job-submission-tutorial-p1"><span>(Part1) MNIST classifier 訓練範例程式</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#先決條件">先決條件</a><ul class="toc-headings"><li><a href="#group-volume">Group Volume</a></li><li><a href="#image-and-instance-type">Image and Instance Type</a></li><li><a href="#group-quota-and-user-quota">Group Quota and User Quota</a></li></ul></li><li><a href="#教學步驟">教學步驟</a><ul class="toc-headings"><li><a href="#submit-job">Submit Job</a></li><li><a href="#jobs-列舉及-refresh-按鈕">Jobs 列舉及 refresh 按鈕</a></li><li><a href="#logs-頁籤">Logs 頁籤</a></li></ul></li><li><a href="#更多關於-job-submission">更多關於 Job Submission</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
