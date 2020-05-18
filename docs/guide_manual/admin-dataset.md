@@ -65,6 +65,8 @@ Click `Confirm` to complete the addition.
 
 ### hostPath
 
+![](assets/dataset_hostpath.png)
+
 In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod.
 
 + `HostPath` Fill in the path to a directory. The setting remains editable after the creation.
@@ -74,6 +76,8 @@ In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesy
 ---
 
 ### nfs
+
+![](assets/dataset_nfs.png)
 
 An nfs volume allows an existing NFS(Network File System) share to be mounted into the pod. The data of an nfs volume is preserved even if the volume is unmounted.
 NFS can be mounted by multiple groups simultaneously.

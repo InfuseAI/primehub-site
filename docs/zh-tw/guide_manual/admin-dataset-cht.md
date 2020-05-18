@@ -66,6 +66,8 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 ### hostPath
 
+![](assets/dataset_hostpath.png)
+
 hostPath 可以掛載 Node 檔案系統中指定的目錄夾至 Pod，做為存取資料之用。此設定之後可做編輯更動。
 
 >因為安全性考量，此選項預設為關閉；若需要協助開啟，請洽 InfuseAI。
@@ -75,6 +77,8 @@ hostPath 可以掛載 Node 檔案系統中指定的目錄夾至 Pod，做為存�
 ---
 
 ### nfs
+
+![](assets/dataset_nfs.png)
 
 NFS volume 允許掛載 NFS(Network File System) 系統中分享的檔案及目錄至 Pod。存放在 NFS volume 的資料，即使卸下掛載後，資料依舊存在。NFS volume 同時也允許掛載至多個群組。
 
