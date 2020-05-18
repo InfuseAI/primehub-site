@@ -69,7 +69,7 @@ In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesy
 
 + `HostPath` Fill in the path to a directory. The setting remains editable after the creation.
 
->By default, for the sake of security, this option is disabled by default. Please contact InfuseAI to enable it.
+>By default, for the sake of security, this option is disabled. Please contact InfuseAI to enable it.
 
 ---
 
