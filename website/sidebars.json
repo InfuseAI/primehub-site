@@ -172,7 +172,14 @@
           "guide_manual/images-list"
         ]
       },
-      "guide_manual/admin-dataset",
+      {
+        "type": "subcategory",
+        "label": "Manage Datasets and Uploader",
+        "ids": [
+          "guide_manual/admin-dataset",
+          "guide_manual/admin-uploader"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Manage and obtain secrets",
@@ -321,7 +328,14 @@
           "zh-tw/guide_manual/images-list"
         ]
       },
-      "zh-tw/guide_manual/admin-dataset-cht",
+      {
+        "type":"subcategory",
+        "label": "Dataset 管理及上傳",
+        "ids":[
+          "zh-tw/guide_manual/admin-dataset-cht",
+          "zh-tw/guide_manual/admin-uploader-cht"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Secret 管理及取得",
