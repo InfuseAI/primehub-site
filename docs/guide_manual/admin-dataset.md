@@ -57,7 +57,21 @@ If dataset is an environment variable, not a file, you can use `env` type. Pleas
 
 ![](assets/dataset_pv_v2.png)
 
-You can specify the `volume size`, once it is confirmed, there is a fixed-size volume created and the volume size is not able to be changed via Admin Dashboard.
+>Working In Progress
+
++ `Provisioning`: `Auto`, `Manual`.
+
+#### Auto
+
+![](assets/dataset_pv_auto.png)
+
+Specifying the `volume size`, once it is confirmed, there is a fixed-size volume created and the volume size is not able to be changed by editing the dataset.
+
+#### Manual
+
+![](assets/dataset_pv_manual.png)
+
+Setting provisioning `Manual` allows administrators configure this dataset with an existing storage, especially which type is listed in PrimeHub. `Please follow this-document for the configuration.`
 
 Click `Confirm` to complete the addition.
 
