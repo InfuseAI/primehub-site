@@ -107,7 +107,7 @@ Click the job name on the list to view the job information and logs.
 
 ### Information
 
-![](assets/jsub_info_beta.png)
+![](assets/jsub_info_beta_v27.png)
 
 Here are the information of the job:
 
@@ -129,6 +129,13 @@ Here are the information of the job:
 
 ### Logs
 
-![](assets/jsub_log.png)
+>Logs viewer lists latest 2000 lines only of logs.
 
-It logs whole of job running progress. This is where we can check the progress and shoot troubles if failed.
+![](assets/jsub_log_v27.png)
+
+When a job comes to success or failure, it logs the whole of job running progress. This is where we can check the progress, result or even shoot troubles if failed.
+
+The log viewer here only list the latest 2000 lines of logs. Clicking `Scroll to Bottom` to check the last logs at the bottom or clicking `Download` to download a complete log file.
+
+However, when a job comes to cancellation or timeout, **there is no log left** since the pod has been deleted.
+
