@@ -69,11 +69,10 @@
       "version-2.4-quickstart/create-group",
       "version-2.4-quickstart/pull-secret",
       "version-2.4-quickstart/build-image",
+      "version-2.4-quickstart/add-infuseai-image",
       "version-2.4-quickstart/add-image",
       "version-2.4-quickstart/secret-pull-image",
       "version-2.4-quickstart/secret-gitsync",
-      "version-2.4-quickstart/build-image",
-      "version-2.4-quickstart/add-image",
       "version-2.4-quickstart/add-instance-type"
     ],
     "Maintenance": [
@@ -135,6 +134,7 @@
           "version-2.4-zh-tw/quickstart/secret-pull-image",
           "version-2.4-zh-tw/quickstart/secret-gitsync",
           "version-2.4-zh-tw/quickstart/build-image",
+          "version-2.4-zh-tw/quickstart/add-infuseai-image",
           "version-2.4-zh-tw/quickstart/add-image",
           "version-2.4-zh-tw/quickstart/add-instance-type"
         ]
