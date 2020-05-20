@@ -57,3 +57,7 @@ Click `Edit` to enter the edit page of the Image.
 If `Global` is disabled, click `edit groups` under the edit Image screen to select the Groups that have permission to use the Image.
 
 ![](assets/image_8_v26.png)
+
+## Reference
+
++ [Add InfuseAI Images](../quickstart/add-infuseai-image)
