@@ -65,13 +65,13 @@ If dataset is an environment variable, not a file, you can use `env` type. Pleas
 
 ![](assets/dataset_pv_auto.png)
 
-Specifying the `volume size`, once it is confirmed, there is a fixed-size volume created and the volume size is not able to be changed by editing the dataset.
+Specifying the `volume size`, once it is confirmed, there is a fixed-size volume created and the volume size is not changeable by editing the dataset.
 
 #### Manual
 
 ![](assets/dataset_pv_manual.png)
 
-Setting provisioning `Manual` allows administrators configure this dataset with an existing storage, especially which type is listed in PrimeHub. `Please follow this-document for the configuration.`
+Setting provisioning `Manual` allows administrators configure this dataset manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub. `Please follow this-document for the configuration.`
 
 Click `Confirm` to complete the addition.
 
@@ -81,11 +81,9 @@ Click `Confirm` to complete the addition.
 
 ![](assets/dataset_hostpath.png)
 
-In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod.
+In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod. If there is no such directory on the hosting node, it shows a blank directory when accessing the read-only directory or even shows warning when accessing the read-write directory.
 
 + `HostPath` Fill in the path to a directory. The setting remains editable after the creation.
-
->By default, for the sake of security, this option is disabled. Please contact InfuseAI to enable it.
 
 ---
 
