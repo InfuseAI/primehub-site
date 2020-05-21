@@ -109,7 +109,7 @@ title: 模型部署 (Alpha)
 
 ### Logs
 
-+ `Filters`: 查看指定副本。
++ `Replicas`: 查看指定副本。
 
 ![](assets/mdeploy_log_v27.png)
 
@@ -134,7 +134,7 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 | Info   | Description     |
 |---------------|----------|
 | User          | 當時啟動部署的使用者|
-| Stop          | *true* 或 *false*|
+| Deployment Stopped | *true* 或 *false*|
 | Model Image   | 使用 model image url|
 | Replicas      | 副本個數|
 | Group         | 當時啟動部署的群組|

@@ -106,7 +106,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 ### Logs
 
-+ `Filters`: Select a replica.
++ `Replicas`: Select a replica.
 
 ![](assets/mdeploy_log_v27.png)
 
@@ -131,7 +131,7 @@ Clicking on the `View` link for the detail of each deployment.
 | Info   | Description     |
 |---------------|----------|
 | User          | Who triggered this deployment|
-| Stop          | *true* or *false*|
+| Deployment Stopped | *true* or *false*|
 | Model Image   | The model image url|
 | Replicas      | The amount of replicas|
 | Group         | The deployment's owner group|
