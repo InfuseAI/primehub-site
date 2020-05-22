@@ -3,6 +3,10 @@ id: build-image
 title: 創建客製 Image
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 這份文件說明如何利用新功能 `Image Builder` 來創建客製 image。
 
 這裡我們以 [Jupyter base-notebook](https://github.com/jupyter/docker-stacks/tree/master/base-notebook) image 為基礎，在其上安裝 Fast.ai 提供的  **fastai v1 library for PyTorch** 後，產生新的 image。  

@@ -3,6 +3,10 @@ id: job-submission-tutorial-p1
 title: (Part1) MNIST classifier 訓練範例程式
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 透過`Job submission`功能，我們可以把需要長時間工作的 ML training 交付到背景執行，同時我們可以進行其它分析工作；讓專案進行更有效率。
 
 在接下來的基本教學，我們以 MNIST 為例，示範如何運用`job submission`以及介紹此功能如何跟 PrimeHub 其它功能聯結互動。

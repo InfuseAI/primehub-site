@@ -3,6 +3,10 @@ id: admin-build-image-cht
 title: Image Builder
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具及套件庫，為使用者提供客製化 image。
 
 ## 客製化 Image 列舉

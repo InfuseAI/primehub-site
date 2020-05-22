@@ -3,6 +3,10 @@ id: experimental-vscode
 title: VS Code 體驗
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 InfuseAI 提供一個內建 [code-server](https://github.com/cdr/code-server) 的 image，讓使用者可以體驗在 JupyterHub 中使用 VS Code。
 
 InfuseAI 提供的 Image URL 為 `infuseai/docker-stacks:vscode-with-tf2-47543bcb-20200311-a`。

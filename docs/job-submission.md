@@ -3,6 +3,10 @@ id: job-submission-feature
 title: Job Submission (Beta)
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 ## Job
 
 We sometimes have time-consuming tasks which have to be run sequentially, because tasks take considerable time to complete, users are not able to engage with the whole of the progress. In this case, we can use **Job Submission** to create a job of sequential multiple tasks and submit the job for execution at background, meanwhile we can monitor the progress from the log. If we want to create routine jobs that we can achieve it by [**Job Scheduler**](job-scheduling-feature).

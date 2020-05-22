@@ -3,6 +3,10 @@ id: maintenance-resize-group-vol
 title: Increase Group Volume
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 This document introduces how to increase a group volume via built-in `Group Volume Size` tool on `Maintenance Notebook`.
 
 >***Caution**: Group Volume can be **increased only**, but reduced, it cannot be rolled back once increased. This feature is introduced **PrimeHub v2.0 above***

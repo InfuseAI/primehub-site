@@ -33,27 +33,7 @@ You need to fill in these fields:
 
 There are several `type`:
 
-### git
-
-![](assets/dataset_git.png)
-
-Fill the URL of git repo (can be https or git). You can use `#branch` to specify the branch or tag name.
-
-![](assets/dataset_secret_list.png)
-
-Click `Change` to select a secret from the list `if a pull-secret is required`.
-
----
-
-### env
-
-![](assets/dataset_env.png)
-
-If dataset is an environment variable, not a file, you can use `env` type. Please fill the `key` and `value` in the `Variables`. If there are more than one variable, you can click `+ Add field` to add more field.
-
----
-
-### pv
+### persistent volume
 
 ![](assets/dataset_pv_v2.png)
 
@@ -77,16 +57,6 @@ Click `Confirm` to complete the addition.
 
 ---
 
-### hostPath
-
-![](assets/dataset_hostpath.png)
-
-In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod. If there is no such directory on the hosting node, it shows a blank directory when accessing the read-only directory or even shows warning when accessing the read-write directory.
-
-+ `HostPath` Fill in the path to a directory. The setting remains editable after the creation.
-
----
-
 ### nfs
 
 ![](assets/dataset_nfs.png)
@@ -96,7 +66,7 @@ NFS can be mounted by multiple groups simultaneously.
 
 NFS settings remain editable after the creation.
 
->Caution: You must have an existing NFS server running with the share exported before you can use it.
+>You must have an existing NFS server running with the share exported before you can use it.
 
 + `NFS Server` Fill in the URL of the server.
 
@@ -104,9 +74,41 @@ NFS settings remain editable after the creation.
 
 ---
 
+### hostPath
+
+![](assets/dataset_hostpath.png)
+
+In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod.
+
+>The hostpath/to/directory must exist on nodes and corresponding permissions must be granted, otherwise unexpected behaviors which are varied with circumstances occur.
+
++ `HostPath` Fill in the path to a directory. The setting remains editable after the creation.
+
+---
+
+### git
+
+![](assets/dataset_git.png)
+
+Fill the URL of git repo (can be https or git). You can use `#branch` to specify the branch or tag name.
+
+![](assets/dataset_secret_list.png)
+
+Click `Change` to select a secret from the list `if a pull-secret is required`.
+
+---
+
 ![](assets/edit_groups.png)
 
 If `Global` is disabled, please click `edit groups` under the edit Dataset page to set accessible groups that have permission to use the Dataset.
+
+---
+
+### env
+
+![](assets/dataset_env.png)
+
+If dataset is an environment variable, not a file, you can use `env` type. Please fill the `key` and `value` in the `Variables`. If there are more than one variable, you can click `+ Add field` to add more field.
 
 ## Deleting Dataset
 

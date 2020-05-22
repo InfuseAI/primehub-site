@@ -3,6 +3,10 @@ id: job-submission-tutorial-p1
 title: (Part1) MNIST classifier training
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 By leveraging Job Submission, users can train a machine learning job in the background while doing other analyses in JupyterLab at the same time.
 
 In this tutorial, we will go through a MNIST example, introduce and teach you how to use Job Submission functions, and also explain how Job Submission functions interact with other functions in PrimeHub.
