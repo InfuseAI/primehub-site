@@ -76,17 +76,7 @@
 <li><p><code>Edit Groups</code> Set accessible groups, when <code>Global</code> is disabled.</p></li>
 </ul>
 <p>There are several <code>type</code>:</p>
-<h3><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>git</h3>
-<p><img src="/docs/assets/dataset_git.png" alt=""></p>
-<p>Fill the URL of git repo (can be https or git). You can use <code>#branch</code> to specify the branch or tag name.</p>
-<p><img src="/docs/assets/dataset_secret_list.png" alt=""></p>
-<p>Click <code>Change</code> to select a secret from the list <code>if a pull-secret is required</code>.</p>
-<hr>
-<h3><a class="anchor" aria-hidden="true" id="env"></a><a href="#env" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>env</h3>
-<p><img src="/docs/assets/dataset_env.png" alt=""></p>
-<p>If dataset is an environment variable, not a file, you can use <code>env</code> type. Please fill the <code>key</code> and <code>value</code> in the <code>Variables</code>. If there are more than one variable, you can click <code>+ Add field</code> to add more field.</p>
-<hr>
-<h3><a class="anchor" aria-hidden="true" id="pv"></a><a href="#pv" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pv</h3>
+<h3><a class="anchor" aria-hidden="true" id="persistent-volume"></a><a href="#persistent-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>persistent volume</h3>
 <p><img src="/docs/assets/dataset_pv_v2.png" alt=""></p>
 <blockquote>
 <p>Working In Progress</p>
@@ -102,28 +92,41 @@
 <p>Setting provisioning <code>Manual</code> allows administrators configure this dataset manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub. <code>Please follow this-document for the configuration.</code></p>
 <p>Click <code>Confirm</code> to complete the addition.</p>
 <hr>
-<h3><a class="anchor" aria-hidden="true" id="hostpath"></a><a href="#hostpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>hostPath</h3>
-<p><img src="/docs/assets/dataset_hostpath.png" alt=""></p>
-<p>In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod. If there is no such directory on the hosting node, it shows a blank directory when accessing the read-only directory or even shows warning when accessing the read-write directory.</p>
-<ul>
-<li><code>HostPath</code> Fill in the path to a directory. The setting remains editable after the creation.</li>
-</ul>
-<hr>
 <h3><a class="anchor" aria-hidden="true" id="nfs"></a><a href="#nfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nfs</h3>
 <p><img src="/docs/assets/dataset_nfs.png" alt=""></p>
 <p>An nfs volume allows an existing NFS(Network File System) share to be mounted into the pod. The data of an nfs volume is preserved even if the volume is unmounted.
 NFS can be mounted by multiple groups simultaneously.</p>
 <p>NFS settings remain editable after the creation.</p>
 <blockquote>
-<p>Caution: You must have an existing NFS server running with the share exported before you can use it.</p>
+<p>You must have an existing NFS server running with the share exported before you can use it.</p>
 </blockquote>
 <ul>
 <li><p><code>NFS Server</code> Fill in the URL of the server.</p></li>
 <li><p><code>NFS Path</code> Fill in the path to the share.</p></li>
 </ul>
 <hr>
+<h3><a class="anchor" aria-hidden="true" id="hostpath"></a><a href="#hostpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>hostPath</h3>
+<p><img src="/docs/assets/dataset_hostpath.png" alt=""></p>
+<p>In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod.</p>
+<blockquote>
+<p>The hostpath/to/directory must exist on nodes and corresponding permissions must be granted, otherwise unexpected behaviors which are varied with circumstances occur.</p>
+</blockquote>
+<ul>
+<li><code>HostPath</code> Fill in the path to a directory. The setting remains editable after the creation.</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>git</h3>
+<p><img src="/docs/assets/dataset_git.png" alt=""></p>
+<p>Fill the URL of git repo (can be https or git). You can use <code>#branch</code> to specify the branch or tag name.</p>
+<p><img src="/docs/assets/dataset_secret_list.png" alt=""></p>
+<p>Click <code>Change</code> to select a secret from the list <code>if a pull-secret is required</code>.</p>
+<hr>
 <p><img src="/docs/assets/edit_groups.png" alt=""></p>
 <p>If <code>Global</code> is disabled, please click <code>edit groups</code> under the edit Dataset page to set accessible groups that have permission to use the Dataset.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="env"></a><a href="#env" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>env</h3>
+<p><img src="/docs/assets/dataset_env.png" alt=""></p>
+<p>If dataset is an environment variable, not a file, you can use <code>env</code> type. Please fill the <code>key</code> and <code>value</code> in the <code>Variables</code>. If there are more than one variable, you can click <code>+ Add field</code> to add more field.</p>
 <h2><a class="anchor" aria-hidden="true" id="deleting-dataset"></a><a href="#deleting-dataset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting Dataset</h2>
 <p><img src="/docs/assets/actions.png" alt=""></p>
 <p>Click <code>Delete</code> in the Datasets list, the confirmation dialog will pop up, and the Dataset will be deleted when you click <code>OK</code>.</p>
@@ -131,7 +134,7 @@ NFS can be mounted by multiple groups simultaneously.</p>
 <p><img src="/docs/assets/actions.png" alt=""></p>
 <p>Click <code>Edit</code> to enter the edit page of the Dataset.</p>
 <p>In terms of type <code>pv</code> dataset, we can turn on <code>Upload Server</code> feature on the dataset editing page. See <a href="admin-uploader">Upload Server</a>.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/guide_manual/images-list"><span class="arrow-prev">← </span><span>Available Images List</span></a><a class="docs-next button" href="/docs/next/guide_manual/admin-uploader"><span>Upload Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-dataset">Creating New Dataset</a><ul class="toc-headings"><li><a href="#git">git</a></li><li><a href="#env">env</a></li><li><a href="#pv">pv</a></li><li><a href="#hostpath">hostPath</a></li><li><a href="#nfs">nfs</a></li></ul></li><li><a href="#deleting-dataset">Deleting Dataset</a></li><li><a href="#editing-deataset">Editing Deataset</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/guide_manual/images-list"><span class="arrow-prev">← </span><span>Available Images List</span></a><a class="docs-next button" href="/docs/next/guide_manual/admin-uploader"><span>Upload Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-dataset">Creating New Dataset</a><ul class="toc-headings"><li><a href="#persistent-volume">persistent volume</a></li><li><a href="#nfs">nfs</a></li><li><a href="#hostpath">hostPath</a></li><li><a href="#git">git</a></li><li><a href="#env">env</a></li></ul></li><li><a href="#deleting-dataset">Deleting Dataset</a></li><li><a href="#editing-deataset">Editing Deataset</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
