@@ -4,6 +4,10 @@ title: 模型部署之快速上手
 original_id: model-deployment-quickstart-tutorial
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 在本教程中，我們將展示如何透過 PrimeHub 的模型部署功能以部署打包好的模型映像檔。
 
 透過預先建置的模型映像檔、以及提供少許的部署資訊，我們即可快速部署一 MNIST 模型以進行實時的預測服務。

@@ -4,6 +4,10 @@ title: Job Submission (Beta)
 original_id: job-submission-cht
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 ## Job
 
 我們有時會需要批次完成特定工作。特別是需要長時間運算的工作，使用者又無法一直監視著整個過程的時候，我們可以利用`Job Submission`創建一個`Job`把工作指令項目批次地加入，再將`Job`送出於背景執行，隨時地監視執行的過程及結果。如果我們想要的是週期性自動發動的`job`，我們可以利用 [**Job Scheduler**](job-scheduling-feature-cht) 來創建這類型 job 及設定其週期性。

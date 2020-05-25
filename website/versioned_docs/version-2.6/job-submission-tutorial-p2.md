@@ -4,6 +4,10 @@ original_id: job-submission-tutorial-p2
 title: (Part2) MNIST classifier training
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 ![image](assets/jobsub-tt-p2-1.png)
 
 Select the JupyterHub icon upon logging in.
