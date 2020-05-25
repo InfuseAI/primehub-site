@@ -76,6 +76,44 @@
 <li><p><code>Edit Groups</code> 當 <code>Global</code> 關閉時，可指定 groups 和存取權限。</p></li>
 </ul>
 <p><code>Type</code> 有以下幾種類型：</p>
+<h3><a class="anchor" aria-hidden="true" id="persistent-volume"></a><a href="#persistent-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>persistent volume</h3>
+<p><img src="/docs/assets/dataset_pv_v2.png" alt=""></p>
+<blockquote>
+<p>Working In Progress</p>
+</blockquote>
+<ul>
+<li><code>Provisioning</code>: <code>Auto</code>, <code>Manual</code>.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="auto"></a><a href="#auto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auto</h4>
+<p><img src="/docs/assets/dataset_pv_auto.png" alt=""></p>
+<p>指定 <code>volume size</code> 。一旦確認後，會有一個固定大小的 volume 被創建出來；此後該 volume 就不能透過編輯來改變大小。</p>
+<h4><a class="anchor" aria-hidden="true" id="manual"></a><a href="#manual" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual</h4>
+<p><img src="/docs/assets/dataset_pv_manual.png" alt=""></p>
+<p>設定<code>Manual</code>的時機為，管理者需要自行手動綁定已存在的儲存空間，其型別並非 PrimeHub 已內建的型別。 <code>請參考文件如何綁定其它型別儲存空間</code>。</p>
+<p>最後點選 <code>confirm</code> 完成新增。</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="nfs"></a><a href="#nfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nfs</h3>
+<p><img src="/docs/assets/dataset_nfs.png" alt=""></p>
+<p>NFS volume 允許掛載 NFS(Network File System) 系統中分享的檔案及目錄至 Pod。存放在 NFS volume 的資料，即使卸下掛載後，資料依舊存在。NFS volume 同時也允許掛載至多個群組。</p>
+<p>新增之後可做編輯更動。</p>
+<blockquote>
+<p>必須先有可以存取的 NFS Server 及分享出來可以存取的檔案/目錄及對應權限。</p>
+</blockquote>
+<ul>
+<li><p><code>NFS Server</code> 輸入 NFS Server URL。</p></li>
+<li><p><code>NFS Path</code> 輪入 NFS 檔案/目錄。</p></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="hostpath"></a><a href="#hostpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>hostPath</h3>
+<p><img src="/docs/assets/dataset_hostpath.png" alt=""></p>
+<p>hostPath 可以掛載 Node 檔案系統中指定的檔案/目錄夾至 Pod，做為存取資料之用。新增之後可編輯更動。</p>
+<blockquote>
+<p>hostPath 指向的檔案/目錄必須已存在於 Node 且具有相對應的讀寫權限；若不存在，則會有不可預期的行為，其行為根據實際環境而有異。</p>
+</blockquote>
+<ul>
+<li><code>HostPath</code> 輸入 Node 檔案系統中目錄夾路徑。</li>
+</ul>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>git</h3>
 <p><img src="/docs/assets/dataset_git.png" alt=""></p>
 <p>在 <code>Url</code>填入可存取該 Dataset 的連結位置。</p>
@@ -86,33 +124,6 @@
 <p><img src="/docs/assets/dataset_env.png" alt=""></p>
 <p>若 Dataset 非檔案型式，僅為字串，則可選擇 <code>env</code> 後，在 <code>Variables</code> 填入該 variable 的 <code>key</code> 跟 <code>value</code> 。若不只一個 variable，可以點選 <code>+ Add field</code> 新增多筆。</p>
 <hr>
-<h3><a class="anchor" aria-hidden="true" id="pv"></a><a href="#pv" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pv</h3>
-<p><img src="/docs/assets/dataset_pv_v2.png" alt=""></p>
-<p>指定 <code>volume size</code> 。一旦確認後，會有一個固定大小的 volume 被創建出來；此後該 volume 就不能透過編輯來改變大小。</p>
-<p>最後點選 <code>confirm</code> 完成新增。</p>
-<hr>
-<h3><a class="anchor" aria-hidden="true" id="hostpath"></a><a href="#hostpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>hostPath</h3>
-<p><img src="/docs/assets/dataset_hostpath.png" alt=""></p>
-<p>hostPath 可以掛載 Node 檔案系統中指定的目錄夾至 Pod，做為存取資料之用。此設定之後可做編輯更動。</p>
-<blockquote>
-<p>因為安全性考量，此選項預設為關閉；若需要協助開啟，請洽 InfuseAI。</p>
-</blockquote>
-<ul>
-<li><code>HostPath</code> 輸入 Node 檔案系統中目錄夾路徑。</li>
-</ul>
-<hr>
-<h3><a class="anchor" aria-hidden="true" id="nfs"></a><a href="#nfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nfs</h3>
-<p><img src="/docs/assets/dataset_nfs.png" alt=""></p>
-<p>NFS volume 允許掛載 NFS(Network File System) 系統中分享的檔案及目錄至 Pod。存放在 NFS volume 的資料，即使卸下掛載後，資料依舊存在。NFS volume 同時也允許掛載至多個群組。</p>
-<p>設定之後可做編輯更動。</p>
-<blockquote>
-<p>設定此 dataset 前，必須先有可以存取的 NFS Server 及可以存取的檔案/目錄。</p>
-</blockquote>
-<ul>
-<li><p><code>NFS Server</code> 輸入 NFS Server URL。</p></li>
-<li><p><code>NFS Path</code> 輪入 NFS 檔案/目錄。</p></li>
-</ul>
-<hr>
 <p><img src="/docs/assets/edit_groups.png" alt=""></p>
 <p>如果 <code>Group</code> 啟用，則需在下方 <code>edit groups</code> 設定可存取的 Groups。 點選 <code>edit groups</code>，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。</p>
 <h2><a class="anchor" aria-hidden="true" id="刪除-datasets"></a><a href="#刪除-datasets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>刪除 Datasets</h2>
@@ -122,7 +133,7 @@
 <p><img src="/docs/assets/actions.png" alt=""></p>
 <p>點選 <code>edit</code> 進入該 Dataset 的編輯頁面。</p>
 <p>當編輯的資料集型別為<code>pv</code>時，我們可以開啟 <a href="admin-uploader-cht">Upload Server</a> 功能來協助資料上傳。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/images-list"><span class="arrow-prev">← </span><span class="function-name-prevnext">InfuseAI 提供 Images</span></a><a class="docs-next button" href="/docs/next/zh-tw/guide_manual/admin-uploader-cht"><span>Upload Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#創建-datasets">創建 Datasets</a><ul class="toc-headings"><li><a href="#git">git</a></li><li><a href="#env">env</a></li><li><a href="#pv">pv</a></li><li><a href="#hostpath">hostPath</a></li><li><a href="#nfs">nfs</a></li></ul></li><li><a href="#刪除-datasets">刪除 Datasets</a></li><li><a href="#編輯-datasets">編輯 Datasets</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/images-list"><span class="arrow-prev">← </span><span class="function-name-prevnext">InfuseAI 提供 Images</span></a><a class="docs-next button" href="/docs/next/zh-tw/guide_manual/admin-uploader-cht"><span>Upload Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#創建-datasets">創建 Datasets</a><ul class="toc-headings"><li><a href="#persistent-volume">persistent volume</a></li><li><a href="#nfs">nfs</a></li><li><a href="#hostpath">hostPath</a></li><li><a href="#git">git</a></li><li><a href="#env">env</a></li></ul></li><li><a href="#刪除-datasets">刪除 Datasets</a></li><li><a href="#編輯-datasets">編輯 Datasets</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
