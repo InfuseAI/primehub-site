@@ -62,8 +62,18 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Maintenance Notebook</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Available in Enterprise tier only</span>
 </div>
-<p>PrimeHub provides Maintenance Notebook including some frequently-used operations. Administrators are able to perform those operations quickly without typing a bunch of commands.</p>
-<p>Administrators can access Maintenance Notebook from admin section on User Portal.</p>
+<p>PrimeHub provides Maintenance Notebook which is a Jupyter notebook including some frequently-used operations such as delete-user-volume, resize-user-volume, etc. Administrators are able to perform those operations quickly without typing a bunch of commands/scripts.</p>
+<p>Administrators can access Maintenance Notebook from admin section on User Portal. From there, all we need to do is running cells to execute corresponding operations.</p>
+<p>It includes below operations:</p>
+<ul>
+<li><p>Delete User Volume</p></li>
+<li><p>Delete Group Volume</p></li>
+<li><p>Cleanup orphan PVC</p></li>
+<li><p>Cleanup released orphan PV</p></li>
+<li><p>Create pv-type dataset</p></li>
+<li><p><a href="quickstart/maintenance-resize-group-vol">Resize Group Volume</a></p></li>
+<li><p><a href="quickstart/maintenance-resize-user-vol">Resize User Volume</a></p></li>
+</ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/quickstart/secret-gitsync"><span class="arrow-prev">← </span><span class="function-name-prevnext">Gitsync Secret for GitHub</span></a><a class="docs-next button" href="/docs/next/quickstart/maintenance-resize-user-vol"><span>Increase User Volume</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
