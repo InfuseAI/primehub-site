@@ -23,6 +23,3 @@ original_id: index-zh
 + [操作登入及啟始專案](zh-tw/quickstart/login-portal-user)
 
 + [Job Submission/Scheduler 使用及教學 (Beta)](zh-tw/job-submission-cht)
-
-+ [Model Deployment 使用 (Alpha)](zh-tw/model-deployment-feature)
-
