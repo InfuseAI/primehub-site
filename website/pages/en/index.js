@@ -303,8 +303,8 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('next/getting_started/install_metacontroller')}>Setup PrimeHub</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('references/feature-flag')}>Feature Flags</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('references/primehub_chart')}>Chart Configuration</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/tasks/benchmark')}>Benchmark</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/guide_manual/kubeflow-installation-guide')}>Kubeflow Integration</a></div>` +
+                `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub/blob/master/INSTALL.md">PrimeHub CE Installation</a></div>` +
               '</div>', 
           },
           {
@@ -335,7 +335,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Scientist</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('maintenance')}>Maintenance</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/guide_manual/images-list')}>Available Images</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Features Comparison</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Community | Enterprise</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('index-zh')}>繁中文件</a></div>` +
               '</div>', 
           },

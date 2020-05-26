@@ -6,8 +6,9 @@ title: Features Comparison
 
 There are two tiers of **PrimeHub**, **Community** and <span class="ee-only">Enterprise</span>.
 
-Here we list the features comparison between tiers for the reference.
+Please check our [Community Edition](https://github.com/InfuseAI/primehub) repo on Github to learn more.
 
+Here we list the features comparison between tiers for the reference.
 
 | Features | Category  | Community | <span class="ee-only">Enterprise</span> |
 |----------|-----------|-----------|------------|

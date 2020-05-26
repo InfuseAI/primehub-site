@@ -364,14 +364,15 @@
     "維運": [
       {
         "type": "subcategory",
-        "label": "Maintenance Notebook",
+        "label": "工具",
         "ids": [
+          "zh-tw/maintenance-cht",
           "zh-tw/quickstart/maintenance-resize-user-vol",
           "zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
     ],
-    "指南": [
+    "參考": [
       "zh-tw/guide_manual/experimental-vscode"
     ],
     "其它配置": [
