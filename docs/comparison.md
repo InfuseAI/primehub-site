@@ -4,6 +4,11 @@ title: Features Comparison
 ---
 
 
+There are two tiers of **PrimeHub**, **Community** and <span class="ee-only">Enterprise</span>.
+
+Here we list the features comparison between tiers for the reference.
+
+
 | Features | Category  | Community | <span class="ee-only">Enterprise</span> |
 |----------|-----------|-----------|------------|
 | [System management](guide_manual/admin-system)  | Admin Dashboard | ✅️ | ✅️ |

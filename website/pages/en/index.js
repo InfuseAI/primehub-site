@@ -301,8 +301,9 @@ class Index extends React.Component {
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('next/getting_started/prerequisites')}>Setup Kubernetes</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/getting_started/install_metacontroller')}>Setup PrimeHub</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/tasks/benchmark')}>Benchmark</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('references/feature-flag')}>Feature Flags</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('references/primehub_chart')}>Chart Configuration</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('next/tasks/benchmark')}>Benchmark</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/guide_manual/kubeflow-installation-guide')}>Kubeflow Integration</a></div>` +
               '</div>', 
           },
@@ -317,6 +318,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('design/architecture')}>Architecture</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/admission')}>Admission</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/meta-chart')}>Meta Chart</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('design/image-builder')}>Image Builder</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/job-submission')}>Job Submission</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/job-scheduler')}>Job Scheduler</a></div>` +
               '</div>', 
@@ -331,8 +333,9 @@ class Index extends React.Component {
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('getting-started-admin')}>Administrator</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Scientist</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('quickstart/maintenance-resize-user-vol')}>Maintenance</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('maintenance')}>Maintenance</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/guide_manual/images-list')}>Available Images</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Features Comparison</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('index-zh')}>繁中文件</a></div>` +
               '</div>', 
           },
