@@ -23,12 +23,8 @@ This page indicates all of deployed services status.
 
 ![](assets/mdeploy_grid_v27.png)
 
-|Status   |Color|
-|---------|-----|
-|**Deployed** |Green |
-|**Failed**   |Red   |
-|**Deploying**|Yellow|
-|**Stopped**  |Grey  |
+|**Status** |<span style="background-color: green">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: yellow">Deploying</span>|<span style="background-color: gray">Stopped</span>|
+|---------|--------|------|---------|-------|
 
 ### Cell
 

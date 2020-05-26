@@ -25,12 +25,8 @@ title: 模型部署 (Alpha)
 
 狀態分別由下列顏色來區別：
 
-|Status   |Color|
-|---------|-----|
-|**Deployed** |Green |
-|**Failed**   |Red   |
-|**Deploying**|Yellow|
-|**Stopped**  |Grey  |
+|**狀態** |<span style="background-color: green">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: yellow">Deploying</span>|<span style="background-color: gray">Stopped</span>|
+|---------|--------|------|---------|-------|
 
 ### 部署
 
