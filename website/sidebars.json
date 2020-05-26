@@ -93,7 +93,8 @@
     "References": [
       "references/primehub_chart",
       "references/dotenv",
-      "references/feature-flag"
+      "references/feature-flag",
+      "comparison"
     ]
   },
   "documentation": {
