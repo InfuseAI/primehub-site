@@ -4,6 +4,10 @@ title: Quickstart Tutorial of Model Deployment
 original_id: model-deployment-quickstart-tutorial
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 In this tutorial, we will show how to deploy a packaged image by the PrimeHub model deployment feature. 
 
 By using the pre-built image and providing simple deployment information, we can quickly deploy an MNIST model for real-time serving.

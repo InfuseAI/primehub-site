@@ -4,6 +4,10 @@ title: Image Builder
 original_id: admin-build-image
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 Administrators are able to create custom images with pre-installed tools and libraries which are required for users.
 
 ## Custom Image List
@@ -12,7 +16,7 @@ Administrators are able to create custom images with pre-installed tools and lib
 
 In `Image Builder` section, there is a list of created custom image specs with several fields as below:
 
-+ `Name` The name of a custom image spec.
++ `Name` The name of a custom image spec; 
 
 + `Status` The status of the latest custom built image.
 
@@ -28,7 +32,7 @@ Click `+ Add` button to enter the creation page.
 
 Fill in the fields, some are required:
 
-+ `Name` (required) A unique name, it's not able to be modified once created. *(Only lowercase letters, numbers, dash `-` and the bottom line `_` can be filled in.)*
++ `Name` (required) A unique name, it's not able to be modified once created. *(Only lowercase letters, numbers, hyphen `-` and a dot `.` can be filled in.)*
 
 + `Base image` (required) The url of the base image; we can use any valid image URLs or we can choose images which are added via Image Management from autocompletion.
 

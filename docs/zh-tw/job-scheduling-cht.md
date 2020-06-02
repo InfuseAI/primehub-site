@@ -3,6 +3,10 @@ id: job-scheduling-feature-cht
 title: Job Scheduler (Beta)
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到背景執行；有時候這類型的 Job 是需要根據排程時間而週期性執行的。因此 PrimeHub 提供另一個功能 Job Scheduler，透過此功能創建出 Schedule ，而其會根據 Recurrence 設定負責發動 Job 至背景執行。
 
 我們可以從 User Portal 上進入 **Job Scheduler** 功能。

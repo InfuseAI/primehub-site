@@ -16,7 +16,7 @@ Click `Add` to add an Instance Type, which will pop up the editing screen of Ins
 
 You need to fill in the fields of Basic Info in the above picture:
 
-+ `Name` Only lowercase letters, numbers, dash `-` and the bottom line `_` can be filled in.
++ `Name` Only lowercase letters, numbers, hyphen `-` and a dot `.` can be filled in.
 
 + `Display name` The display name of this Instance Type, and will be seen by users.
 

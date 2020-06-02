@@ -3,6 +3,10 @@ id: maintenance-resize-group-vol
 title: 加大 Group Volume
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 這份文件介紹如何利用 `Maintenance Notebook` 中的 `Resize Group Volume` 來加大 Group Volume Size。
 
 >請注意： 目前 **Group Volume 只能增加容量**，不能減少；一旦加大，無法還原。

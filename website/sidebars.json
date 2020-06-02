@@ -93,7 +93,8 @@
     "References": [
       "references/primehub_chart",
       "references/dotenv",
-      "references/feature-flag"
+      "references/feature-flag",
+      "comparison"
     ]
   },
   "documentation": {
@@ -172,7 +173,14 @@
           "guide_manual/images-list"
         ]
       },
-      "guide_manual/admin-dataset",
+      {
+        "type": "subcategory",
+        "label": "Manage Datasets and Uploader",
+        "ids": [
+          "guide_manual/admin-dataset",
+          "guide_manual/admin-uploader"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Manage and obtain secrets",
@@ -188,6 +196,7 @@
           "quickstart/create-user",
           "quickstart/create-group",
           "quickstart/add-instance-type",
+          "quickstart/add-infuseai-image",
           "quickstart/add-image",
           "quickstart/build-image",       
           "quickstart/secret-pull-image",
@@ -321,7 +330,14 @@
           "zh-tw/guide_manual/images-list"
         ]
       },
-      "zh-tw/guide_manual/admin-dataset-cht",
+      {
+        "type":"subcategory",
+        "label": "Dataset 管理及上傳",
+        "ids":[
+          "zh-tw/guide_manual/admin-dataset-cht",
+          "zh-tw/guide_manual/admin-uploader-cht"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Secret 管理及取得",
@@ -337,6 +353,7 @@
           "zh-tw/quickstart/create-user",
           "zh-tw/quickstart/create-group",
           "zh-tw/quickstart/add-instance-type",
+          "zh-tw/quickstart/add-infuseai-image",
           "zh-tw/quickstart/add-image",
           "zh-tw/quickstart/build-image",
           "zh-tw/quickstart/secret-pull-image",
@@ -347,14 +364,15 @@
     "維運": [
       {
         "type": "subcategory",
-        "label": "Maintenance Notebook",
+        "label": "工具",
         "ids": [
+          "zh-tw/maintenance-cht",
           "zh-tw/quickstart/maintenance-resize-user-vol",
           "zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
     ],
-    "指南": [
+    "參考": [
       "zh-tw/guide_manual/experimental-vscode"
     ],
     "其它配置": [

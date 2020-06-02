@@ -3,6 +3,10 @@ id: model-deployment-feature
 title: Model Deployment (Alpha)
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 >Please be noticed! This document is still **Working-in-Progress**!
 
 Model Deployment feature that users are allowed to manage model deployment endpoints within Group Management with CRUD operations. If the feature is enabled within a group, end-users of the group are allowed to deploy models obeying the restriction of the group quota. While a deployed model serves, administrators are able to monitor the status of model service such service health and resources usage information; moreover, end-users are able to check deployment history and log.
@@ -19,12 +23,8 @@ This page indicates all of deployed services status.
 
 ![](assets/mdeploy_grid_v27.png)
 
-|Status   |Color|
-|---------|-----|
-|**Deployed** |Green |
-|**Failed**   |Red   |
-|**Deploying**|Yellow|
-|**Stopped**  |Grey  |
+|**Status** |<span style="background-color: green">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: yellow">Deploying</span>|<span style="background-color: gray">Stopped</span>|
+|---------|--------|------|---------|-------|
 
 ### Cell
 
@@ -106,7 +106,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 ### Logs
 
-+ `Filters`: Select a replica.
++ `Replicas`: Select a replica.
 
 ![](assets/mdeploy_log_v27.png)
 
@@ -131,7 +131,7 @@ Clicking on the `View` link for the detail of each deployment.
 | Info   | Description     |
 |---------------|----------|
 | User          | Who triggered this deployment|
-| Stop          | *true* or *false*|
+| Deployment Stopped | *true* or *false*|
 | Model Image   | The model image url|
 | Replicas      | The amount of replicas|
 | Group         | The deployment's owner group|

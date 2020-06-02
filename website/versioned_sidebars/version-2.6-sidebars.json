@@ -169,6 +169,7 @@
           "version-2.6-quickstart/create-user",
           "version-2.6-quickstart/create-group",
           "version-2.6-quickstart/add-instance-type",
+          "version-2.6-quickstart/add-infuseai-image",
           "version-2.6-quickstart/add-image",
           "version-2.6-quickstart/build-image",
           "version-2.6-quickstart/secret-pull-image",
@@ -286,6 +287,7 @@
           "version-2.6-zh-tw/quickstart/create-user",
           "version-2.6-zh-tw/quickstart/create-group",
           "version-2.6-zh-tw/quickstart/add-instance-type",
+          "version-2.6-zh-tw/quickstart/add-infuseai-image",
           "version-2.6-zh-tw/quickstart/add-image",
           "version-2.6-zh-tw/quickstart/build-image",
           "version-2.6-zh-tw/quickstart/secret-pull-image",
@@ -296,14 +298,15 @@
     "維運": [
       {
         "type": "subcategory",
-        "label": "Maintenance Notebook",
+        "label": "工具",
         "ids": [
+          "version-2.6-zh-tw/maintenance-cht",
           "version-2.6-zh-tw/quickstart/maintenance-resize-user-vol",
           "version-2.6-zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
     ],
-    "指南": [
+    "參考": [
       "version-2.6-zh-tw/guide_manual/experimental-vscode"
     ],
     "其它配置": [

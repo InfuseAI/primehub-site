@@ -3,6 +3,10 @@ id: job-submission-tutorial-p2
 title: (Part2) MNIST classifier 訓練範例程式
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 ![image](assets/jobsub-tt-p2-1.png)
 
 1. 登入後，進入 `JupyterHub`。
@@ -72,16 +76,16 @@ title: (Part2) MNIST classifier 訓練範例程式
 1. 點擊右上方的`Create Job`按鈕。
 2. 從左方選擇`group`、`instance type` 及 `image`；確保跟我們用來起始`JupyterHub`的環境一致。
 3. 在右方將 job 命名為`training mnist`。
-4. 因為我們的範例程式存放在 group volume 且 group volume 會被掛載在`/project/<group name>`，在`Commnad`欄位輸入下方指令； 請置換 `<group name>` 為實際名稱：
+4. 因為我們的範例程式存放在 group volume 且 group volume 會被掛載在`/home/jovyan/<group name> -> /project/<group name>`，在`Commnad`欄位輸入下方指令； 請置換 `<group name>` 為實際名稱 ：
 
     ```
     cd /project/<group name>/
     python -u train_mnist.py --dropout 0.2
     ```
-
+    參考：[Job 可存取工作目錄、專案目錄及資料集目錄](job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄)
 ### Command 範例說明：
 
-- 因為我們產出 `my_model` 在 group volume 相對路徑，所以我們需要先`cd /project/<group name>`。
+- 因為我們產出 `my_model` 在 group volume 相對路徑，所以我們需要先`cd /project/<group name>` or `cd <group name>/`。
 - `<group name>` 大小寫有差別；
 - python command 參數`-u` 強制 python 直接輸出 log 不要先 buffer；在 logs 頁籤可以更即時看到 log。
 - 參數`--dropout`是範例程式中，指定要接收的輸入參數。

@@ -16,7 +16,7 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 需填入以上畫面中 `Basic Info` 的各個欄位：
 
-+ `Name` 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）和底線（“_”）。
++ `Name` 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）。
 
 + `Display name` 顯示名稱。
 

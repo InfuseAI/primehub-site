@@ -3,6 +3,10 @@ id: maintenance-resize-user-vol
 title: Increase User Volume
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 This document introduces how to increase a user volume via built-in `User Volume Size` tool on Maintenance Notebook.
 
 >***Caution**: User Volume can be **increased only**, but reduced, it cannot be rolled back once increased. This feature is introduced **PrimeHub v2.0 above***

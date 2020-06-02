@@ -16,7 +16,7 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 需填入以上畫面中的各個欄位：
 
-+ `Name` 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）和底線（“_”）。
++ `Name` 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）。
 
 + `Display name`
 
@@ -61,3 +61,7 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 若未開啟 `Global` 開放給所有使用者使用該 Image，在編輯 Image 的畫面下方點選`edit groups`，即可從現有的 Groups 列表中選取有權限使用該 Image 的 Group，將它們連結在一起。
 
 ![](assets/image_8_v26.png)
+
+## 參考
+
++ [Add InfuseAI Images](../quickstart/add-infuseai-image)

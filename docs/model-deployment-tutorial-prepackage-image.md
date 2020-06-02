@@ -3,6 +3,10 @@ id: model-deployment-tutorial-prepackage-image
 title: Prepackage a Base Image and Use It
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 This doc shows how to build a base image and use it. Using the base image has some benefits:
 
 1. If the way you load and use models is the same, these models can share the same base image

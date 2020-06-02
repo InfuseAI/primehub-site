@@ -4,6 +4,10 @@ title: Job Submission (Beta)
 original_id: job-submission-cht
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 ## Job
 
 我們有時會需要批次完成特定工作。特別是需要長時間運算的工作，使用者又無法一直監視著整個過程的時候，我們可以利用`Job Submission`創建一個`Job`把工作指令項目批次地加入，再將`Job`送出於背景執行，隨時地監視執行的過程及結果。如果我們想要的是週期性自動發動的`job`，我們可以利用 [**Job Scheduler**](job-scheduling-feature-cht) 來創建這類型 job 及設定其週期性。
@@ -67,37 +71,39 @@ original_id: job-submission-cht
 
 + `Command`: 指定`job`批次工作項目。
 
-    **Job 可存取工作目錄、專案目錄及資料集目錄**
+### Job 可存取工作目錄、專案目錄及資料集目錄
 
-    |目錄|描述|
-    |---------|-----------|
-    |`/home/jovyan`|`job`執行時的暫存工作目錄。***注意:** 如果輸出 data 於此，此 data 將會隨著`job`結束而消失，只能做為暫存之用。 不再是~~`/workingdir`~~*！|
-    |`/project/<group>`|用此路徑，存取群組專案目錄，可以做為讀取及輸出常態性資料，即使`job`已經結束。***注意：** `group volume`必須要事先存在，請洽系統管理員。*|
-    |`/datasets/<dataset>`|用此路徑，存取群組所屬的資料集目錄。***注意：** `dataset volume`必須要事先存在，請洽系統管理員。*|
+ >注意：Job 的預設路徑是在 `/homve/jovyan`，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
+ 所以 JupyterHub `/home/jovyan`下的其它檔案並 **不存在** 此時的 Job Pod 的`/homejovyan`。Job 這裡只會有掛載的`<group volume>`及`<dataset>`。
 
-    **Job 可存取環境變數**:
+ |目錄|描述|
+ |---------|-----------|
+ |`/home/jovyan`|`job`執行時的暫存工作目錄。***注意:** 如果輸出 data 於此，此 data 將會著`job`結束而消失，只能做為暫存之用。 不再是~~`/workingdir`~~*！|
+ |`/home/jovyan/<group> -> /project/<group>/`|用此路徑(或 Symbolic link)，存取群組目錄，可以做為讀取及輸出常態性資料，即使`job`已經結束。***注意：** `group volume`必須要事存在，請洽系統管理員。*|
+ |`/home/jovyan/datasets/<dataset> -> /datasets/<dataset>`|用此路徑(或 Symbolic link)，存取群組資料集。***注意：** `dataset volume`必須要事先存在，請洽系統管理員。*|
 
-    |變數名稱|描述|
-    |------------|-----------|
-    |`$PRIMEHUB_USER`|Job 所有者|
-    |`$PRIMEHUB_GROUP`|Job 所屬群組|
+### Job 可存取環境變數
 
-    **Python command option**
+|變數名稱|描述|
+|------------|-----------|
+|`$PRIMEHUB_USER`|Job 所有者|
+|`$PRIMEHUB_GROUP`|Job 所屬群組|
 
-    + `python -u` 我們可以用 `-u` 強制輸出訊息不經由緩衝，如此可以在`Logs`看到即時訊息。
+**Python command option**
 
-    **Example 1**: 假設`train_mint.py`事先存在名叫`research`的`group volume`，我們可以進入`/project/research`下，執行該 python file 做為一個`job`。`job`執行期間輸出的 data 則會存在此路徑的相對位置。
++ `python -u` 我們可以用 `-u` 強制輸出訊息不經由緩衝，如此可以在`Logs`看到即時訊息。
+**Example 1**: 假設`train_mint.py`事先存在名叫`research`的`group volume`，我們可以進`/project/research`下，執行該 python file 做為一個`job`。`job`執行期間輸出的 data 則存在此路徑的相對位置。
 
-    ```bash
-    cd /project/research/
-    python -u train_minst.py
-    ```
+```bash
+cd /project/research/
+python -u train_minst.py
+```
 
-    **Example 2**: 如果我們直接執行下列指令，沒有變更路徑，`job`的工作目錄位在`/home/jovyan`，`job`執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在`/home/jovyan`的 data 資料會隨著`job`結束而消失。
+**Example 2**: 如果我們直接執行下列指令，沒有變更路徑，`job`的工作目錄位在`/home/jovyan` job 執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在`/home/jovyan`的 data 資料會隨著`job`結束而消失。
 
-    ```bash
-    python -u /project/research/train_minst.py
-    ```
+```bash
+python -u /project/research/train_minst.py
+```
 
 `Submit`: 點擊按鈕，送出工作執行。
 

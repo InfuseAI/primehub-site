@@ -3,6 +3,10 @@ id: model-deployment-feature
 title: 模型部署 (Alpha)
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 >Please be noticed! This document is still **Working-in-Progress**!
 
 透過 Model Deployment 功能，使用者可以對 Deployment 進行新增、刪除、更新及佈建等操作。當 Deployment 功能於 Group 設定中開啟時，該 Group 的成員就可以使用此功能。在資源分配上，佈建上線的 model service 須在同 Group quota 限制下，才能佈建成功。管理者可透過 Grafana 來監測該佈建上線服務的使用狀態及資源使用數據；使用者可以檢視佈建的歷史記錄。
@@ -21,12 +25,8 @@ title: 模型部署 (Alpha)
 
 狀態分別由下列顏色來區別：
 
-|Status   |Color|
-|---------|-----|
-|**Deployed** |Green |
-|**Failed**   |Red   |
-|**Deploying**|Yellow|
-|**Stopped**  |Grey  |
+|**狀態** |<span style="background-color: green">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: yellow">Deploying</span>|<span style="background-color: gray">Stopped</span>|
+|---------|--------|------|---------|-------|
 
 ### 部署
 
@@ -109,7 +109,7 @@ title: 模型部署 (Alpha)
 
 ### Logs
 
-+ `Filters`: 查看指定副本。
++ `Replicas`: 查看指定副本。
 
 ![](assets/mdeploy_log_v27.png)
 
@@ -134,7 +134,7 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 | Info   | Description     |
 |---------------|----------|
 | User          | 當時啟動部署的使用者|
-| Stop          | *true* 或 *false*|
+| Deployment Stopped | *true* 或 *false*|
 | Model Image   | 使用 model image url|
 | Replicas      | 副本個數|
 | Group         | 當時啟動部署的群組|

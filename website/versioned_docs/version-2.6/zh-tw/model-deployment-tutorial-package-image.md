@@ -4,6 +4,10 @@ title: 建置模型部署所需之映像檔
 original_id: model-deployment-tutorial-package-image
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 此文件說明如何建置映像檔 (Docker Image) ，以利在 PrimeHub 模型部署中使用。
 
 PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Seldon 和其他相關的文件，我們皆列在最後一個部分。

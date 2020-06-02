@@ -3,6 +3,10 @@ id: job-submission-tutorial-p3
 title: (Advanced) Use Job Submission to Tune Hyperparameters
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 For typical machine learning algorithms, there are many hyperparameters to tune. Finding the right hyperparameters can be a very time consuming job. However, with Job Submission, you can let it run the job for you. All you have to do is simply check the results when the job is complete. 
 
 1. Let's create another Python file `tune_dropout.py` in JupyterLab first:

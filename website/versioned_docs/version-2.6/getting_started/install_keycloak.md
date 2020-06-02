@@ -65,6 +65,7 @@ helm upgrade \
   --reset-values \
   --namespace default  \
   --values keycloak-values.yaml \
+  --version 7.2.1 \
   keycloak stable/keycloak
 ```
 

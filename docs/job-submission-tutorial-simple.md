@@ -3,6 +3,10 @@ id: job-submission-tutorial-simple
 title: Simple Example
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 By leveraging Job Submission, users can run jobs (such as a time-consuming ML training) in the background while doing other analyses in JupyterLab at the same time.
 
 In this tutorial, we are going to demonstrate the usage of a job submission with a simple example.
@@ -77,21 +81,21 @@ We have created a python file for our coming job. We can shutdown the jupyterhub
 
 3. In the right panel, name the job `counting` in Job Name input field, or another name that prefer.
    
-4. Since our code is under group volume and will be mounted in `/project/<group name>`, type the following into the Command input field; replace `<group name>`.
+4. Since our code is under group volume and will be mounted in `/home/jovyan/<group name> -> /project/<group name>`, type the following into the Command input field; replace `<group name>`. 
 
-    `<group name>` is **case sensitive**;
+    `<group name>` is **case sensitive**; [REF] [Directories/Paths](job-submission-feature#directories-paths-the-job-can-access-if-directories-exits).
 
     We use `camelcase` package in the code, it has to be installed first before code execution.
 
     ```
     pip install camelcase
     cd /project/<group name>/
-    python -u internal.py
+    python -u interval.py
     ```
 
-    ### Some notes for the Command input field:
+### Some notes for the Command input field:
 
-   - You need to `cd` into `group name` first. Because we save model in a relative path.
+   - You need to `cd` into `<group name>` first. Because we save model in a relative path.
    - `<group name>` is **case sensitive**;
    - You may notice there is a `-u` in python command. In Job Submission, Python will buffer the log by default. Adding `-u` tells Python not to buffer the log so that we can see the log in real time.
    - Job Submission will execute command column as a shell script. Therefore, you can write multiple line just like you are writing a shell script.
@@ -105,7 +109,7 @@ Once a jub is submitted, the intial status is `Pending`. Clicking the `Refresh` 
    
 ### Logs Tab
 
-Once the job succeeded, we should see the similar log, and we can tell the job installed python package `camelcase` first, then entering the group volume and run `internal.py`.
+Once the job succeeded, we should see the similar log, and we can tell the job installed python package `camelcase` first, then entering the group volume and run `interval.py`.
    
    ![image](assets/jobsub-tt-simple-log.png)
 

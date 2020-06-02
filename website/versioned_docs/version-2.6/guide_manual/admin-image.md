@@ -17,7 +17,7 @@ Click `Add` to add an Image and it will pop up the edit screen of Images.
 
 You need to fill in the fields in the above picture:
 
-+ `Name` (required): Only lowercase letters, numbers, dash `-` and the bottom line `_` can be filled in.
++ `Name` (required): Only lowercase letters, numbers, hyphen `-` and a dot `.` can be filled in.
 
 + `Display name`
 
@@ -57,3 +57,7 @@ Click `Edit` to enter the edit page of the Image.
 If `Global` is disabled, click `edit groups` under the edit Image screen to select the Groups that have permission to use the Image.
 
 ![](assets/image_8_v26.png)
+
+## Reference
+
++ [Add InfuseAI Images](../quickstart/add-infuseai-image)

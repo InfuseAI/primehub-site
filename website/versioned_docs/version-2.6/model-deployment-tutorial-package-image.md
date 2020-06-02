@@ -4,6 +4,10 @@ title: Package a Docker Image for Model Deployment
 original_id: model-deployment-tutorial-package-image
 ---
 
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
 This doc shows how to package a model into a format-valid docker image for the PrimeHub model deployment feature.
 
 The PrimeHub model deployment feature is based on Seldon. This doc takes [reference](#reference) from Seldon official documentations and other resources which are listed in the last part.
