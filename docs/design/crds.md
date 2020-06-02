@@ -161,7 +161,7 @@ The structured data (including `launchGroupOnly` if true) of a type pv `dataset`
       variables: {}
       volumeName: data-rw-test
 
-Currently, there are types `pv`, `git` and `env` of datasets. All of types has following data fields in common, also, each type has its own data fields.  In following sections, they are described respectively.
+Currently, there are types `pv`, `git`, `nfs`, `hostPath` and `env` of datasets. All of types has following data fields in common, also, each type has its own data fields.  In following sections, they are described respectively.
 
 Annotations:
 
@@ -173,42 +173,44 @@ Spec:
 
 - `displayName`: The display name on UI.
 - `description`: The description.
-- `type`: `pv`, `git` and `env`.
+- `type`: `pv`, `git`, `nfs`, `hostPath` and `env`.
 
 ---
 
 ### Type pv
 
-PV, `persistent volume`, dataset has a data field,`volumeName`. The container mount point of the dataset is varied with the combination of `volumeName`, and both annotations of `mountRoot` and `homeSymlink`.
+PV, `persistent volume`, dataset has a data field,`volumeName`. The container mount point of the dataset is varied with the combination of `volumeName`, and both annotations of `mountRoot` and `homeSymlink`. PV is auto provisioning by default. There is an option so that the administrators can set the underlying settings manually.
 
-### Pv without hostpath
+### Pv with auto provisioning
 
     annotations:
-        dataset.primehub.io/mountRoot: /datasets
-    
+      dataset.primehub.io/mountRoot: /datasets
+
     spec:
-    		volumeName: test
+      volumeName: test
 
 Container Mount Point `/datasets/test`
 
-### Pv with hostpath
+### Pv with manual provisioning
 
     annotations:
-        dataset.primehub.io/mountRoot: /datasets
+      dataset.primehub.io/mountRoot: /datasets
     
     spec:
-    		volumeName: hostpath:/home/datasets/test
+      volumeName: test
+      pv:
+        provisioning: manual
 
 Container Mount Point `/datasets/test`
 
 ### Pv with homeSymlink
 
     annotations:
-        dataset.primehub.io/mountRoot: /datasets
-        dataset.primehub.io/homeSymlink: "true"
+      dataset.primehub.io/mountRoot: /datasets
+      dataset.primehub.io/homeSymlink: "true"
     
     spec:
-    		volumeName: hostpath:/home/datasets/test
+      volumeName: test
 
 Container Mount Point `/datasets/test`
 
@@ -217,21 +219,21 @@ Symlinks `ln -s /dataset/test ~/test`
 ### Pv with mountRoot
 
     annotations:
-        dataset.primehub.io/mountRoot: /foo/bar
+      dataset.primehub.io/mountRoot: /foo/bar
     
     spec:
-    		volumeName: hostpath:/home/datasets/test
+      volumeName: test
 
 Container Mount Point `/foo/bar/test`
 
 ### Pv with mountRoot and homeSymlink specified
 
     annotations:
-        dataset.primehub.io/mountRoot: /foo/bar
-        dataset.primehub.io/homeSymlink: "true"
+      dataset.primehub.io/mountRoot: /foo/bar
+      dataset.primehub.io/homeSymlink: "true"
     
     spec:
-    		 volumeName: hostpath:/home/datasets/test
+      volumeName: test
 
 Container Mount Point `/foo/bar/test`
 
@@ -326,6 +328,41 @@ Symlinks
 
 - `ln -s /gitsync/myrepo/myrepo /foo/bar/myrepo`.
 - `ln -s /foo/bar/myrepo ~/myrepo`.
+
+---
+
+### Type nfs
+
+Nfs dataset has additional data fields `server` and `path` which set the nfs ip/domain and the nfs path. The mount point logic is the same as pv dataset.
+
+### Nfs dataset example
+
+    annotations:
+      dataset.primehub.io/mountRoot: /datasets
+      dataset.primehub.io/homeSymlink: "true"
+    
+    spec:
+      volumeName: test
+      nfs:
+        server: 192.168.0.10
+        path: /
+
+---
+
+### Type hostPath
+
+HostPath dataset has an additional data field `path` which set the path in host. The mount point logic is the same as pv dataset.
+
+### HostPath dataset example
+
+    annotations:
+      dataset.primehub.io/mountRoot: /datasets
+      dataset.primehub.io/homeSymlink: "true"
+    
+    spec:
+      volumeName: test
+      hostPath:
+        path: /tmp
 
 ---
 

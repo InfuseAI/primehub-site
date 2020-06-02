@@ -62,9 +62,9 @@ symbolic link | `~/<group-name> -> /project/<group-name>`
 Currently, there are these types of the dataset would be mounted as persistence volume
 
 - pv
-- pv (hostpath)
 - git
-
+- nfs
+- hostPath
 
 ### PV
 
@@ -93,19 +93,6 @@ symbolic link | `~/datasets/<dataset-name> -> /dataset/<dataset-name>`
 
 > The `dataset-name` is the `metadata.name` in the CRD and the `volume-name` is `spec.volumeName` in the CRD.
 
-
-### PV (hostpath)
-
-A special hack of `pv` is set the `volumeName` with prefix `hostpath:`. In this way, the dataset is not backed by a pvc, instead, the volume is a hostpath volume
-
-Attribute| Description | 
----------|-------------|
-hostpath | path after the `hostpath:`
-volume mount | `/dataset/<dataset-name>`
-symbolic link | `~/datasets/<dataset-name> -> /dataset/<dataset-name>`
-
-> The `hostpath` is not allowed to edit in the admin dashboard in the future. 
-
 ### Git
 
 If the dataset is a type of `git`, the dataset is backed by a hostpath and periodically pulls the data from a repository. Under the hood, we use [gitsync](https://github.com/kubernetes/git-sync) daemonset to sync the data to hostpath
@@ -115,6 +102,26 @@ Attribute| Description
 hostpath | `/home/dataset`|
 volume mount | `/gitsync/<dataset-name>`|
 symbolic link | `~/datasets/<dataset-name> -> /dataset/<dataset-name>/<dataset-name>`
+
+### Nfs
+
+In this way, the dataset is not backed by a pvc, instead, the volume is a nfs volume
+
+Attribute| Description | 
+---------|-------------|
+nfs | server and path settings
+volume mount | `/dataset/<dataset-name>`
+symbolic link | `~/datasets/<dataset-name> -> /dataset/<dataset-name>`
+
+### HostPath
+
+In this way, the dataset is not backed by a pvc, instead, the volume is a hostpath volume
+
+Attribute| Description | 
+---------|-------------|
+hostpath | path setting
+volume mount | `/dataset/<dataset-name>`
+symbolic link | `~/datasets/<dataset-name> -> /dataset/<dataset-name>`
 
 ### Dataset annotations
 
