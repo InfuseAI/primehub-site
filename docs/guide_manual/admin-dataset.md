@@ -51,9 +51,9 @@ Specifying the `volume size`, once it is confirmed, there is a fixed-size volume
 
 ![](assets/dataset_pv_manual.png)
 
-Setting provisioning `Manual` allows administrators configure the persistent volume dataset manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub. Please refer to the [kubernetes official documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) for the configuration.
+Setting provisioning `Manual` allows administrators configure the persistent volume dataset manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub Dataset. Please refer to the [Kubernetes official documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) for the configuration.
 
-The only rule you need to follow is that the `PersistentVolumeClaim` name must be `dataset-{Name you set in UI}`.
+The only rule you need to follow is that the `PersistentVolumeClaim` name must be `dataset-{"Name" field set via UI}`.
 
 Click `Confirm` to complete the addition.
 

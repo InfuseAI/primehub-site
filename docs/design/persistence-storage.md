@@ -11,7 +11,7 @@ When spawning a user's notebook pod, spawner mounts various types of persistent 
 
 ## User volume
 
-User volume stores users' own data. When a user spawns jupyter server for the first time, the user's PVC is created. 
+User volume stores users' own data. When a user spawns Jupyter server for the first time, the user's PVC is created. 
 
 The capacity is determined in the order 
 

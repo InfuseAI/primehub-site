@@ -53,13 +53,13 @@ Spec:
 - `description` Description
 - `limits.cpu` CPU Limit
 - `limits.memory` Memory Limit
-- `limits.nvidia.com/gpu` GPU Limt
+- `limits.nvidia.com/gpu` GPU Limit
 - `requests.cpu` CPU Request
 - `requests.memory` Memory Request
 
 ### Toleration
 
-When a node is marked with a Taint, it cannot accept any pods which don't tolerate the taints. Tolerations are applied to pods so that pods are allowed to schedule onto nodes with matching taints. Please refers to [Taints and Tolerations](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) for more detail.
+When a node is marked with a Taint, it cannot accept any pods which don't tolerate the taints. Toleration are applied to pods so that pods are allowed to schedule onto nodes with matching taints. Please refers to [Taints and Toleration](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) for more detail.
 
 On Admin UI, toleration which specifies a tolerable taint(key-value pair) with an effect to take.
 
@@ -72,7 +72,7 @@ We add toleration to tolerate a specific taint with an effect to take, the data 
         value: cpu1core
     	- ...
 
-Tolerations settings:
+Toleration settings:
 
 - `effect`: `NoSchedule`, `NoExecute`, `PreferNoSchedule` and `None`.
 - `key`: The key of a taint.
