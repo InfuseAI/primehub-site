@@ -124,4 +124,4 @@ Click `Delete` in the Datasets list, the confirmation dialog will pop up, and th
 
 Click `Edit` to enter the edit page of the Dataset.
 
-In terms of type `pv` dataset, we can turn on `Upload Server` feature on the dataset editing page. See [Upload Server](admin-uploader).
+In terms of type `pv`, `nfs` and `hostpath` dataset, we can turn on `Upload Server` feature on the dataset editing page. See [Upload Server](admin-uploader).

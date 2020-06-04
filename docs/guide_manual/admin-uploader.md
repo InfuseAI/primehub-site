@@ -3,9 +3,9 @@ id: admin-uploader
 title: Upload Server
 ---
 
-In terms of type `pv` dataset, we can use `Upload Server` feature that allows users to upload files to a dataset volume.
+In terms of type `pv`, `nfs` and `hostpath` dataset, we can use `Upload Server` feature that allows users to upload files to a dataset volume.
 
-**Editing** a created type pv dataset, we should see `Enable Upload Server` toggle and `Regenerate Secret` button.
+**Editing** a created type `pv`, `nfs` and `hostpath` dataset, we should see `Enable Upload Server` toggle and `Regenerate Secret` button.
 
 ![](assets/dataset_pv_v2_upload_server.png)
 

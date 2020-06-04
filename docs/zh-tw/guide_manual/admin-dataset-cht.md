@@ -124,4 +124,4 @@ hostPath 可以掛載 Node 檔案系統中指定的檔案/目錄夾至 Pod，做
 
 點選 `edit` 進入該 Dataset 的編輯頁面。
 
-當編輯的資料集型別為`pv`時，我們可以開啟 [Upload Server](admin-uploader-cht) 功能來協助資料上傳。
+當編輯的資料集型別為`pv`、`nfs`、`hostpath`時，我們可以開啟 [Upload Server](admin-uploader-cht) 功能來協助資料上傳。

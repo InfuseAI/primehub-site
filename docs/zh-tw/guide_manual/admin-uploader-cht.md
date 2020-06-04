@@ -3,9 +3,9 @@ id: admin-uploader-cht
 title: Upload Server
 ---
 
-`Upload Server` 功能允許使用者以透過 upload server 事先上傳檔案至 pv 型 dataset volume。
+`Upload Server` 功能允許使用者以透過 upload server 事先上傳檔案至 `pv`型、 `nfs`型、 `hostpath`型 dataset volume。
 
-編輯一個已被創建的 pv 型 dataset，編輯頁會顯現出 `Enable Upload Server` 開關和 `Regenerate Secret` 按鈕。
+編輯一個已被創建的 `pv`型、 `nfs`型、 `hostpath`型 dataset，編輯頁會顯現出 `Enable Upload Server` 開關和 `Regenerate Secret` 按鈕。
 
 ![](assets/dataset_pv_v2_upload_server.png)
 
