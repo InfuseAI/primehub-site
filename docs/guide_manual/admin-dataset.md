@@ -35,10 +35,6 @@ There are several `type`:
 
 ### persistent volume
 
-![](assets/dataset_pv_v2.png)
-
->Working In Progress
-
 + `Provisioning`: `Auto`, `Manual`.
 
 #### Auto

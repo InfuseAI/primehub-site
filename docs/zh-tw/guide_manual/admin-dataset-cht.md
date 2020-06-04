@@ -36,10 +36,6 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 ### persistent volume
 
-![](assets/dataset_pv_v2.png)
-
->Working In Progress
-
 + `Provisioning`: `Auto`, `Manual`.
 
 #### Auto
@@ -52,7 +48,7 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 ![](assets/dataset_pv_manual.png)
 
-當管理者需要自行手動設定 persistent volume 時，請選擇 `Manual` 。具體來說，當管理者想綁定的儲存空間，其型別並非 PrimeHub 已內建的型別，便需要手動設定。 請參考 [kubernetes 的官方文件](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)來設定。
+當管理者需要自行手動設定 persistent volume 時，請選擇 `Manual` 。具體來說，當管理者想綁定的儲存空間，其型別並非 PrimeHub 已內建的型別，便需要手動設定。 請參考 [Kubernetes 的官方文件](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)來設定。
 
 唯一有所規範的是，手動設定的 `PersistentVolumeClaim` ，名稱必須為 `dataset-{透過 UI 設定的 "Name" 欄位}` 。
 
