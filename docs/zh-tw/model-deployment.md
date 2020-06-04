@@ -63,6 +63,10 @@ title: 模型部署 (Alpha)
   
 + `Replicas`: 指定上線副本的數量。
 
+### Endpoint
+
++ `Private Access`: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示`Clients`頁籤，可由此產生存取 Token。
+
 ### Deployment Details
 
 + `Deployment Name`: 名稱。
@@ -97,6 +101,7 @@ title: 模型部署 (Alpha)
 |Status         |狀態|
 |Message        |相關訊息|
 |Endpoint       |佈建上線服務 URL|
+|Access Type    |Public 或 Private|
 |Model Image    |指定的 Model Image|
 |Replicas       |副本個數|
 |Deployment Name|部署 名稱|
@@ -105,7 +110,7 @@ title: 模型部署 (Alpha)
 |Creation Time  |創建時間|
 |Last Updated   |最後更新時間|
 |Description    |使用者輸入描述 |
-|Run an Example |使用`Curl`查詢來驗證部署服務範例|
+|Run an Example |使用`Curl`查詢來驗證部署服務範例；`Private`或`Public`存取代入參數有異|
 
 ### Logs
 
@@ -142,6 +147,18 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 | Timestamp     | 最後更新時間 |
 | Description   | 使用者輸入描述 |
 | Metadata      | Metadata 列舉|
+
+### Clients
+
+只有當`Private Access`開啟時，才會顯示此頁籤。
+
+![](assets/mdeploy_token_v27.png)
+
+填入`Client Name`及點擊 `Add client`產生該帳號的對應`Client Token`。
+
+必須代入此 Token 才能存取私人 endpoint；我們可以將之代入 curl 命令參數`-u <client-name>:<client-token>`。
+
+>Client Token 產生後，在介面上只會短暫地顯示一次，請記錄下來；若遺失，請刪除再重新產生。
 
 ---
 

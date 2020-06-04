@@ -60,6 +60,10 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 
 + `Replicas`: How many replicas for the service.
 
+### Endpoint
+
++ `Private Access`: The toggle of private access of the endpoint; if enabled, there is `Clients` tab appearing in detail page. 
+
 ### Deployment Details
 
 + `Deployment Name`: The name of the deployment.
@@ -94,6 +98,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 |Status         |The status of the deployment.|
 |Message        |The message related to the deployment if any.|
 |Endpoint       |Where the model is deployed and serve.|
+|Access Type    | Public or Private |
 |Model Image    |The image which the model is based on.|
 |Replicas       |The replicas of the deployment.|
 |Deployment Name|The name of the deployment.|
@@ -102,7 +107,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 |Creation Time  |Timestamps|
 |Last Updated   |Timestamps|
 |Description    |The description which users input during the creation. |
-|Run an Example |Verifying the service by using `curl` querying the service.|
+|Run an Example |Verifying the service by using `curl` querying the service; it is varied with `Public` or `Private` access.|
 
 ### Logs
 
@@ -114,9 +119,7 @@ In Logs tab, the logs of current deployment are displayed here.
 
 Clicking `Scroll to Bottom` button skips to the bottom of logs.
 
-#### Notice
-
-It displays only logs of **latest 2000 lines**; clicking the `Download` button to download the whole log file.
+>It displays only logs of **latest 2000 lines**; clicking the `Download` button to download the whole log file.
 
 ### History
 
@@ -139,6 +142,18 @@ Clicking on the `View` link for the detail of each deployment.
 | Timestamp     | Last updated time|
 | Description   | User input description |
 | Metadata      | Metadata mappings table|
+
+### Clients
+
+This tab appears if `Private Access` of the endpoint is enabled.
+
+![](assets/mdeploy_token_v27.png)
+
+Filling in `Client Name` and clicking `Add client` to generate a `Client Token`.
+
+The token is mandatory for accessing a private endpoint, we can bring it as `-u <client-name>:<client-token>` in a curl command.
+
+>Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.
 
 ---
 
