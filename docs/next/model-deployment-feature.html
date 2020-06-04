@@ -110,6 +110,10 @@
 <li><p><code>InstanceTypes</code>: Select a instance type which allocates resources for the job.</p></li>
 <li><p><code>Replicas</code>: How many replicas for the service.</p></li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="endpoint"></a><a href="#endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoint</h3>
+<ul>
+<li><code>Private Access</code>: The toggle of private access of the endpoint; if enabled, there is <code>Clients</code> tab appearing in detail page.</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
 <ul>
 <li><p><code>Deployment Name</code>: The name of the deployment.</p></li>
@@ -137,6 +141,7 @@
 <tr><td>Status</td><td>The status of the deployment.</td></tr>
 <tr><td>Message</td><td>The message related to the deployment if any.</td></tr>
 <tr><td>Endpoint</td><td>Where the model is deployed and serve.</td></tr>
+<tr><td>Access Type</td><td>Public or Private</td></tr>
 <tr><td>Model Image</td><td>The image which the model is based on.</td></tr>
 <tr><td>Replicas</td><td>The replicas of the deployment.</td></tr>
 <tr><td>Deployment Name</td><td>The name of the deployment.</td></tr>
@@ -145,7 +150,7 @@
 <tr><td>Creation Time</td><td>Timestamps</td></tr>
 <tr><td>Last Updated</td><td>Timestamps</td></tr>
 <tr><td>Description</td><td>The description which users input during the creation.</td></tr>
-<tr><td>Run an Example</td><td>Verifying the service by using <code>curl</code> querying the service.</td></tr>
+<tr><td>Run an Example</td><td>Verifying the service by using <code>curl</code> querying the service; it is varied with <code>Public</code> or <code>Private</code> access.</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
@@ -155,8 +160,9 @@
 <p><img src="/docs/assets/mdeploy_log_v27.png" alt=""></p>
 <p>In Logs tab, the logs of current deployment are displayed here.</p>
 <p>Clicking <code>Scroll to Bottom</code> button skips to the bottom of logs.</p>
-<h4><a class="anchor" aria-hidden="true" id="notice"></a><a href="#notice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Notice</h4>
+<blockquote>
 <p>It displays only logs of <strong>latest 2000 lines</strong>; clicking the <code>Download</code> button to download the whole log file.</p>
+</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
 <p>In History tab, we can view the detail of historical deployments.</p>
 <p><img src="/docs/assets/mdeploy_history.png" alt=""></p>
@@ -178,6 +184,14 @@
 <tr><td>Metadata</td><td>Metadata mappings table</td></tr>
 </tbody>
 </table>
+<h3><a class="anchor" aria-hidden="true" id="clients"></a><a href="#clients" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clients</h3>
+<p>This tab appears if <code>Private Access</code> of the endpoint is enabled.</p>
+<p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
+<p>Filling in <code>Client Name</code> and clicking <code>Add client</code> to generate a <code>Client Token</code>.</p>
+<p>The token is mandatory for accessing a private endpoint, we can bring it as <code>-u &lt;client-name&gt;:&lt;client-token&gt;</code> in a curl command.</p>
+<blockquote>
+<p>Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.</p>
+</blockquote>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="update"></a><a href="#update" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update</h2>
 <p>On a deployment detail page, clicking <code>Update</code> button to enter the deployment editing.</p>
@@ -215,7 +229,7 @@
 <li><p>Latency</p></li>
 </ul>
 <p>The board is based on <strong>Seldon Core Analytics</strong>, it can be advanced customized. Please see the <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> and <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/job-scheduling-feature"><span class="arrow-prev">← </span><span>Job Scheduler (Beta)</span></a><a class="docs-next button" href="/docs/next/model-deployment-quickstart-tutorial"><span>Quickstart Tutorial of Model Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#cell">Cell</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">InfuseAI x GitHub</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/job-scheduling-feature"><span class="arrow-prev">← </span><span>Job Scheduler (Beta)</span></a><a class="docs-next button" href="/docs/next/model-deployment-quickstart-tutorial"><span>Quickstart Tutorial of Model Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#cell">Cell</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">InfuseAI x GitHub</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

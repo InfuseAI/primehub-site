@@ -111,6 +111,10 @@
 <li><p><code>InstanceTypes</code>: 指定資源配置請求的 instance type。</p></li>
 <li><p><code>Replicas</code>: 指定上線副本的數量。</p></li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="endpoint"></a><a href="#endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoint</h3>
+<ul>
+<li><code>Private Access</code>: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示<code>Clients</code>頁籤，可由此產生存取 Token。</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
 <ul>
 <li><p><code>Deployment Name</code>: 名稱。</p></li>
@@ -138,6 +142,7 @@
 <tr><td>Status</td><td>狀態</td></tr>
 <tr><td>Message</td><td>相關訊息</td></tr>
 <tr><td>Endpoint</td><td>佈建上線服務 URL</td></tr>
+<tr><td>Access Type</td><td>Public 或 Private</td></tr>
 <tr><td>Model Image</td><td>指定的 Model Image</td></tr>
 <tr><td>Replicas</td><td>副本個數</td></tr>
 <tr><td>Deployment Name</td><td>部署 名稱</td></tr>
@@ -146,7 +151,7 @@
 <tr><td>Creation Time</td><td>創建時間</td></tr>
 <tr><td>Last Updated</td><td>最後更新時間</td></tr>
 <tr><td>Description</td><td>使用者輸入描述</td></tr>
-<tr><td>Run an Example</td><td>使用<code>Curl</code>查詢來驗證部署服務範例</td></tr>
+<tr><td>Run an Example</td><td>使用<code>Curl</code>查詢來驗證部署服務範例；<code>Private</code>或<code>Public</code>存取代入參數有異</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
@@ -179,6 +184,14 @@
 <tr><td>Metadata</td><td>Metadata 列舉</td></tr>
 </tbody>
 </table>
+<h3><a class="anchor" aria-hidden="true" id="clients"></a><a href="#clients" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clients</h3>
+<p>只有當<code>Private Access</code>開啟時，才會顯示此頁籤。</p>
+<p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
+<p>填入<code>Client Name</code>及點擊 <code>Add client</code>產生該帳號的對應<code>Client Token</code>。</p>
+<p>必須代入此 Token 才能存取私人 endpoint；我們可以將之代入 curl 命令參數<code>-u &lt;client-name&gt;:&lt;client-token&gt;</code>。</p>
+<blockquote>
+<p>Client Token 產生後，在介面上只會短暫地顯示一次，請記錄下來；若遺失，請刪除再重新產生。</p>
+</blockquote>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="變更"></a><a href="#變更" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>變更</h2>
 <p>在 Deployment 頁，點擊 <code>Update</code> 對此部署內容進行更動及部署更新。</p>
@@ -214,7 +227,7 @@
 <li><p>Latency</p></li>
 </ul>
 <p>此監測板基於 <strong>Seldon Core Analytics</strong>；更多詳細進階資訊可以參照 <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> 及 <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-scheduling-feature-cht"><span class="arrow-prev">← </span><span>Job Scheduler (Beta)</span></a><a class="docs-next button" href="/docs/next/zh-tw/model-deployment-quickstart-tutorial"><span>模型部署之快速上手</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#開啟功能">開啟功能</a></li><li><a href="#主頁">主頁</a><ul class="toc-headings"><li><a href="#部署">部署</a></li></ul></li><li><a href="#創建">創建</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#部署詳細資訊">部署詳細資訊</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li></ul></li><li><a href="#變更">變更</a></li><li><a href="#刪除">刪除</a></li><li><a href="#停止服務">停止服務</a></li><li><a href="#監測服務">監測服務</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">InfuseAI x GitHub</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-scheduling-feature-cht"><span class="arrow-prev">← </span><span>Job Scheduler (Beta)</span></a><a class="docs-next button" href="/docs/next/zh-tw/model-deployment-quickstart-tutorial"><span>模型部署之快速上手</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#開啟功能">開啟功能</a></li><li><a href="#主頁">主頁</a><ul class="toc-headings"><li><a href="#部署">部署</a></li></ul></li><li><a href="#創建">創建</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#部署詳細資訊">部署詳細資訊</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#變更">變更</a></li><li><a href="#刪除">刪除</a></li><li><a href="#停止服務">停止服務</a></li><li><a href="#監測服務">監測服務</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">InfuseAI x GitHub</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
