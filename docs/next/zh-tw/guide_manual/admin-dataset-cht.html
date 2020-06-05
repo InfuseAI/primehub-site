@@ -94,7 +94,8 @@
 <p>NFS volume 允許掛載 NFS(Network File System) 系統中分享的檔案及目錄至 Pod。存放在 NFS volume 的資料，即使卸下掛載後，資料依舊存在。NFS volume 同時也允許掛載至多個群組。</p>
 <p>新增之後可做編輯更動。</p>
 <blockquote>
-<p>必須先有可以存取的 NFS Server 及分享出來可以存取的檔案/目錄及對應權限。</p>
+<p>必須先有可以存取的 NFS Server 及分享出來可以存取的檔案/目錄及對應權限；若存取失敗，則會有不可預期的行為，其行為根據實際環境而有異。。
+請見 <a href="../../trouble/dataset-failure">trouble-shooting</a>。</p>
 </blockquote>
 <ul>
 <li><p><code>NFS Server</code> 輸入 NFS Server URL。</p></li>
@@ -105,7 +106,8 @@
 <p><img src="/docs/assets/dataset_hostpath.png" alt=""></p>
 <p>hostPath 可以掛載 Node 檔案系統中指定的檔案/目錄夾至 Pod，做為存取資料之用。新增之後可編輯更動。</p>
 <blockquote>
-<p>hostPath 指向的檔案/目錄必須已存在於 Node 且具有相對應的讀寫權限；若不存在，則會有不可預期的行為，其行為根據實際環境而有異。</p>
+<p>hostPath 指向的檔案/目錄必須已存在於 Node 且具有相對應的讀寫權限；若存取失敗，則會有不可預期的行為，其行為根據實際環境而有異。
+請見 <a href="../../trouble/dataset-failure">trouble-shooting</a>。</p>
 </blockquote>
 <ul>
 <li><code>HostPath</code> 輸入 Node 檔案系統中目錄夾路徑。</li>
