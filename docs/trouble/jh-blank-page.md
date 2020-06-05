@@ -1,6 +1,7 @@
 ---
 id: jh-blank-page
 title: After spawned, JupyterHub shows a blank page
+sidebar_label: A blank JupyterHub
 ---
 
 If you see a blank page after JupyterHub spawned, 

@@ -240,7 +240,8 @@
         "label": "JupyterHub",
         "ids": [
           "trouble/jh-failed-spawn",
-          "trouble/jh-blank-page"
+          "trouble/jh-blank-page",
+          "trouble/dataset-failure"
         ]
       },
       {

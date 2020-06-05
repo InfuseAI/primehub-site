@@ -1,6 +1,7 @@
 ---
 id: kc-brute-force-detection
 title: Lock down accounts after several login failures
+sidebar_label: Brute force attack password
 ---
 
 If you are looking for a measurement that locking down accounts after several PrimeHub login failure to avoid **brute force attacks**, we can utilize the `Brute Force Detection` feature of Keycloak to achieve it.

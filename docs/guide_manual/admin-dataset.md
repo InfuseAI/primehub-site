@@ -64,7 +64,8 @@ NFS can be mounted by multiple groups simultaneously.
 
 NFS settings remain editable after the creation.
 
->You must have an existing NFS server running with the share exported before you can use it.
+>You must have an existing NFS server running with the share exported before you can use it, otherwise unexpected behaviors which are varied with circumstances occur.
+>Please see [trouble-shooting](../trouble/dataset-failure).
 
 + `NFS Server` Fill in the URL of the server.
 
@@ -79,6 +80,7 @@ NFS settings remain editable after the creation.
 In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod.
 
 >The hostpath/to/directory must exist on nodes and corresponding permissions must be granted, otherwise unexpected behaviors which are varied with circumstances occur.
+>Please see [trouble-shooting](../trouble/dataset-failure).
 
 + `HostPath` Fill in the path to a directory. The setting remains editable after the creation.
 
