@@ -91,7 +91,7 @@ eksctl version
 <pre><code class="hljs css language-bash"><span class="token comment"># Prepare customized data</span>
 <span class="token assign-left variable">EKS_CLUSTER_NAME</span><span class="token operator">=</span>__my_cluster_name__
 <span class="token assign-left variable">EKS_REGION</span><span class="token operator">=</span>ap-northeast-1
-<span class="token assign-left variable">EKS_ZONE</span><span class="token operator">=</span><span class="token variable">${EKS_REGION}</span>-c
+<span class="token assign-left variable">EKS_ZONE</span><span class="token operator">=</span><span class="token variable">${EKS_REGION}</span>-a
 
 <span class="token comment"># Running eksctl to create EKS cluster</span>
 eksctl create cluster -f - <span class="token operator">&lt;&lt;</span><span class="token string">EOF
