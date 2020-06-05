@@ -8,7 +8,7 @@ Here are the instructions to install keycloak in the cluster. We select *postgre
 ## Add the chart repository
 
 ```
-helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo add codecentric https://codecentric.github.io/helm-charts
 helm repo update
 ```
 
@@ -65,7 +65,7 @@ helm upgrade \
   --namespace default  \
   --values keycloak-values.yaml \
   --version 7.2.1 \
-  keycloak stable/keycloak
+  keycloak codecentric/keycloak
 ```
 
 ## Verify the Installation
