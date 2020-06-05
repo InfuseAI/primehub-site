@@ -88,6 +88,13 @@
           "tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12",
           "tasks/ADVANCED-rook-setup-metadata-on-vg"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "API",
+        "ids":[
+          "tasks/api-token"
+        ]
       }    
     ],
     "References": [
@@ -223,7 +230,7 @@
         ]
       }
     ],
-    "Guide": [
+    "Experiment": [
       "guide_manual/experimental-vscode"
     ],
     "Trouble Shooting": [
