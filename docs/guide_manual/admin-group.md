@@ -3,13 +3,17 @@ id: admin-group
 title: Group Management
 ---
 
-## Creating New Group
+## Groups List
 
-![](assets/group_12_v26.png)
+It lists all of groups in pages, clicking a header of a column for ascending/descending sorting.
+
+![](assets/group_12_v27.png)
+
+## Creating New Group
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
-![](assets/group_shared_volume_v26.png)
+![](assets/group_shared_volume_v27.png)
 
 You need to fill in the fields in the above picture:
 
@@ -17,16 +21,21 @@ You need to fill in the fields in the above picture:
 
 + `Display name`
 
-**Model Deployment**(*Alpha*): This alpha feature is hidden until the [feature flag](../references/feature-flag) is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+### Model Deployment
 
-**Shared Volume**: Create shared volume with specific capacity.
+This alpha feature is hidden until the [feature flag](../references/feature-flag) is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+
+### Shared Volume
+
+Create shared volume with specific capacity.
 
 + `Shared Volume Capacity` Set the capacity of the shared volume.
 
 + `Launch Group Only` If enabled, the shared volume is `only mounted` when users select the `same group` to launch a project on PrimeHub page.
 
+### User Quota
 
-**User Quota**: Set quotas for each user in this group.
+Set quotas for each user in this group.
 
 + `CPU Quota` When the user chooses the group, how many CPU can be used by the user. The default is `0.5`.
 
@@ -36,7 +45,9 @@ You need to fill in the fields in the above picture:
 
 + `Disk Quota` When the user chooses the group, how many Disk can be used by the user. The default is `20GB` .
 
-**Group Quota**: Set quota for the whole group.
+### Group Quota
+
+Set quota for the whole group.
 
 + `CPU Quota` When the user chooses the group, how many CPU can be shared by all users in the group. The default is `unlimited`.
 
@@ -46,18 +57,23 @@ You need to fill in the fields in the above picture:
 
 Click `Confirm` to complete the addition.
 
-**Datasets**
+### Datasets
 
 ![](assets/admin_group_ds_v25.png)
 
-The list here shows connecting datasets which can be read or written. We also can edit these datasets through here.
+The list shows connecting datasets which can be read or written. We also can edit these datasets through here.
 
-**Editing Users**
+### Images
+
+![](assets/admin_group_img_v27.png)
+
+The list shows connecting images which are able to be used by this group.
+
+### Users
 
 ![](assets/edit_users.png)
 
-Click `edit users` under the edit Group screen to select the group's user from the existing Users list and link them.
-
+The list shows all of users of this group. Click `edit users` to add/remove users into/from groups.
 ## Deleting Group
 
 Click `Delete` button of Actions in the group list, the confirmation dialog will pop up, and the group will be deleted when you click `OK`.
@@ -65,5 +81,3 @@ Click `Delete` button of Actions in the group list, the confirmation dialog will
 ## Editing Group
 
 Click `Edit` button of Actions to enter the edit page of the Group.
-
-
