@@ -69,7 +69,8 @@
         "type": "subcategory",
         "label": "Jupyter Images",
         "ids": [      
-          "tasks/repo2docker"
+          "tasks/repo2docker",
+          "tasks/non-standard-image"
         ]
       },
       {
