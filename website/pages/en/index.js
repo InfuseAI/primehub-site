@@ -60,7 +60,7 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/PrimeHub_icon_512.png`} />
+        {/*<Logo img_src={`${baseUrl}img/PrimeHub_icon_512.png`} />*/}
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           { /*<PromoSection>
@@ -292,10 +292,10 @@ class Index extends React.Component {
       <Block layout="fourColumn" align="center" background="dark" className="block-menu">
         {[
           {
-            //content: 'The content of my first feature',
-            image: `${baseUrl}img/features/settings-160.png`,
+            //image: `${baseUrl}img/features/settings-160.png`,
+            image: `${baseUrl}img/settings-01.png`,
             imageAlign: 'top',
-            title: `<a href=${docUrl('dev-introduction')}>Installation | Setup</a>`,
+            title: `<a href=${docUrl('dev-introduction')}>Installation</a>`,
             imageLink: `${docUrl('dev-introduction')}`,
             content:
               '<div class="grid-menu">' +
@@ -309,9 +309,10 @@ class Index extends React.Component {
           },
           {
             //content: 'The content of my second feature',
-            image: `${baseUrl}img/features/paper-plane-100.png`,
+            //image: `${baseUrl}img/features/paper-plane-100.png`,
+            image: `${baseUrl}img/server-01.png`,
             imageAlign: 'top',
-            title: `<a href=${docUrl('design/architecture')}>Designs | Concepts</a>`,
+            title: `<a href=${docUrl('design/architecture')}>Design</a>`,
             imageLink: `${docUrl('design/architecture')}`,
             content:
               '<div class="grid-menu">' +
@@ -324,8 +325,8 @@ class Index extends React.Component {
               '</div>', 
           },
           {
-            //content: 'The content of my second feature',
-            image: `${baseUrl}img/features/book-shelf-100.png`,
+            //image: `${baseUrl}img/features/book-shelf-100.png`,
+            image: `${baseUrl}img/files-01.png`,
             imageAlign: 'top',
             title: `<a href=${docUrl('getting-started-user')}>Documentation</a>`,
             imageLink: `${docUrl('getting-started-user')}`,

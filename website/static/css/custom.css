@@ -55,7 +55,8 @@ a.navItem {
 }
 
 .darkBackground {
-    background-color: #c7dbf4;
+    /*background-color: #c7dbf4;*/
+    background-color: #ffffff;
 }
 
 table th, table td {
@@ -63,7 +64,8 @@ table th, table td {
 }
 
 .darkBackground a {
-    color: #c7dbf4;
+    /*color: #c7dbf4;*/
+    color: #1a3682;
 }
 
 a:hover {
@@ -81,14 +83,16 @@ div.grid-menu {
 }
 
 div.grid-menu > div.menu-item {
-    background-color: #2b2a2a;
+/*    background-color: #2b2a2a;
     border-bottom: 1px solid #3c3b3c;
+*/
     font-size: 18px;
+    padding-bottom: 5px;
 }
 
-.blockElement.alignCenter.fourByGridBlock.imageAlignTop {
+/*.blockElement.alignCenter.fourByGridBlock.imageAlignTop {
     background-color: #1a3682;
-}
+}*/
 
 .blockElement.alignCenter.fourByGridBlock.imageAlignTop  h2 {
     margin: 16px auto !important;
@@ -99,20 +103,25 @@ div.grid-menu > div.menu-item {
 }
 
 .menu-item a {
-    color: #fff;
+    /*color: #fff;*/
+    color: #1a3682; 
 }
 
 .menu-item a:hover {
     color: #95b4e6 !important; 
 }
 
-/*.container.paddingTop {
-    padding-top: 10%;
+.mainContainer {
+    padding-top: 0px;
+}
+
+.container.paddingTop {
+    padding-top: 0px;
 }
 
 .container.paddingBottom {
-    padding-bottom: 25%;
-}*/
+    padding-bottom: 0rem;
+}
 
 .nav-footer {
     background-color: #1a3682;
