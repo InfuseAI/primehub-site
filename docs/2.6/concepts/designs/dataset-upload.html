@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dataset Upload · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Provide a upload server to upload data to `pv` type dataset."/><meta name="docsearch:version" content="2.6"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dataset Upload · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="Provide a upload server to upload data to `pv` type dataset."/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.6</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.6/getting-started-admin" target="_self">Administrator</a></li><li class=""><a href="/docs/2.6/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/2.6/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/2.6/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Dataset Upload</h1></header><article><div><span><p>Provide a upload server to upload data to <code>pv</code> type dataset.</p>
+<h2><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h2>
+<h3><a class="anchor" aria-hidden="true" id="prerequisite"></a><a href="#prerequisite" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisite</h3>
+<p>Required <code>PRIMEHUB_FEATURE_USER_PORTAL</code> true. And <code>PRIMEHUB_DOMAIN</code> be set.</p>
+<h3><a class="anchor" aria-hidden="true" id="settings"></a><a href="#settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Settings</h3>
+<p>Please add these variables to the <code>.env</code> file</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>PRIMEHUB_FEATURE_DATASET_UPLOAD</code></td><td><code>true</code></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h3>
+<p><code>make release-install-primehub</code></p>
+<h3><a class="anchor" aria-hidden="true" id="migration"></a><a href="#migration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Migration</h3>
+<p>Set <code>PRIMEHUB_STORAGE_CLASS</code> env to correct storage class.</p>
+<h3><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h3>
+<ul>
+<li>Check Primehub Console Container's Environment Variables</li>
+</ul>
+<p>The environment variables should be added automatically.
+<code>PRIMEHUB_FEATURE_DATASET_UPLOAD</code> will be added to <code>graphql</code> and <code>ui</code> containers when <code>PRIMEHUB_FEATURE_DATASET_UPLOAD</code> is <code>true</code> in your cluster's <code>.env</code> file.</p>
+<p><code>CMS_APP_PREFIX</code> will be added to <code>graphql</code> container.</p>
+<p><code>PRIMEHUB_GROUP_SC</code> will be added to <code>graphql</code> container. This value is based on</p>
+<pre><code class="hljs"><span class="hljs-symbol">groupvolume:</span>
+<span class="hljs-symbol">  storageClass:</span> {value}
+</code></pre>
+<p>And if you didn't specify value in yaml, it will be set by <code>PRIMEHUB_STORAGE_CLASS</code> env.</p>
+<ul>
+<li>Check Issuer</li>
+</ul>
+<p>If you are using <code>letsencrypt-prod-dns</code> issuer, your dataset upload ingress annotations should contain:</p>
+<pre><code class="hljs">certmanager<span class="hljs-selector-class">.k8s</span><span class="hljs-selector-class">.io</span>/acme-challenge-type: <span class="hljs-string">"dns01"</span>
+certmanager<span class="hljs-selector-class">.k8s</span><span class="hljs-selector-class">.io</span>/acme-dns01-provider: <span class="hljs-string">"clouddns"</span>
+certmanager<span class="hljs-selector-class">.k8s</span><span class="hljs-selector-class">.io</span>/cluster-issuer: <span class="hljs-string">"letsencrypt-prod-dns"</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="design"></a><a href="#design" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Design</h2>
+<p>We use tus protocol to do the resumable file uploads. Backend is <a href="https://github.com/tus/tusd">tusd</a>. Frontend package is <a href="https://uppy.io/">uppy</a>. In order to let user view/edit uploaded files, also have a flask server to view/edit uploaded files. The package to view files is <a href="https://pythonhosted.org/Flask-AutoIndex/">Flask-AutoIndex</a>. Therefore, dataset upload deployment contains two containers and both have a mounted <code>pv</code> dataset.</p>
+<p>Metacontroller is used to automatically create desired resources based on our settings.</p>
+<p>Application code is under modules/primehub-dataset-upload. K8s and metacontroller related code is under modules/charts/primehub.</p>
+<h3><a class="anchor" aria-hidden="true" id="start-stop-dataset-upload-server"></a><a href="#start-stop-dataset-upload-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start/Stop Dataset Upload Server</h3>
+<p>When dataset has an annotation <code>dataset.primehub.io/uploadServer: &quot;true&quot;</code>, it will start a dataset upload server.</p>
+<p>Otherwise, it is stopped.</p>
+<p>Currently, dataset upload url is <code>https://&lt;primehub domain&gt;/admin/dataset/&lt;namespace&gt;/&lt;dataset name&gt;/browse/</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="enable-http-auth-to-dataset-upload-server"></a><a href="#enable-http-auth-to-dataset-upload-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enable Http Auth to Dataset Upload Server</h3>
+<p>First, need to have a secret which is created by <code>htpasswd</code>. EX:</p>
+<pre><code class="hljs">htpasswd -c auth &lt;name&gt;
+kubectl -n hub create<span class="hljs-built_in"> secret </span>generic dataset-upload-&lt;name&gt; <span class="hljs-attribute">--from-file</span>=auth
+</code></pre>
+<p>Then add an annotation <code>dataset.primehub.io/uploadServerAuthSecretName: dataset-upload-&lt;name&gt;</code> to enable http auth.</p>
+<p>Username is <code>&lt;name&gt;</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="current-post-finish-hook-in-tus-server-tusd"></a><a href="#current-post-finish-hook-in-tus-server-tusd" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current Post-Finish Hook in Tus Server (Tusd)</h3>
+<ul>
+<li>Make a dir if we need</li>
+<li>Move .bin to their real file name</li>
+<li>Remove .info which generated by tusd</li>
+<li>If it is a zip file, unzip it</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="other-notes"></a><a href="#other-notes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other Notes</h2>
+<ul>
+<li>Cli resumable ability now only handle bad network situations. It dose not handle the situation that user cancel a upload job. (web &amp; cli can't resume interchangeably) (<a href="https://github.com/tus/tus-js-client/issues/62">https://github.com/tus/tus-js-client/issues/62</a>)</li>
+<li>Mechanism to clean up temporary state files.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="cli"></a><a href="#cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cli</h3>
+<ul>
+<li>Download from <a href="https://github.com/avvertix/tus-client-cli/releases/tag/v0.3.0">https://github.com/avvertix/tus-client-cli/releases/tag/v0.3.0</a></li>
+<li>./tus-client-macos upload <code>&lt;filepath&gt;</code> <code>https://&lt;primehub domain&gt;/admin/dataset/&lt;name&gt;/upload/files/</code></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configuration">Configuration</a><ul class="toc-headings"><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#settings">Settings</a></li><li><a href="#install">Install</a></li><li><a href="#migration">Migration</a></li><li><a href="#troubleshooting">Troubleshooting</a></li></ul></li><li><a href="#design">Design</a><ul class="toc-headings"><li><a href="#start-stop-dataset-upload-server">Start/Stop Dataset Upload Server</a></li><li><a href="#enable-http-auth-to-dataset-upload-server">Enable Http Auth to Dataset Upload Server</a></li><li><a href="#current-post-finish-hook-in-tus-server-tusd">Current Post-Finish Hook in Tus Server (Tusd)</a></li></ul></li><li><a href="#other-notes">Other Notes</a><ul class="toc-headings"><li><a href="#cli">Cli</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">InfuseAI x GitHub</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Prepackage a Base Image and Use It · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta name="docsearch:version" content="2.7"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Prepackage a Base Image and Use It · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.7</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started-admin" target="_self">Administrator</a></li><li class="siteNavGroupActive"><a href="/docs/getting-started-user" target="_self">Scientist</a></li><li class=""><a href="/docs/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Tutorials (Alpha)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Project<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started-user">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/launch-project">Launch Project</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Spawner</h4><ul><li class="navListItem"><a class="navItem" href="/docs/user-advanced-setting">Advanced Settings</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Submission</h4><ul><li class="navListItem"><a class="navItem" href="/docs/job-submission-feature">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Schedule</h4><ul><li class="navListItem"><a class="navItem" href="/docs/job-scheduling-feature">Job Scheduler (Beta)</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/model-deployment-feature">Model Deployment (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials (Alpha)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/model-deployment-quickstart-tutorial">Quickstart Tutorial of Model Deployment</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-tutorial-package-image">Package a Docker Image for Model Deployment</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/model-deployment-tutorial-prepackage-image">Prepackage a Base Image and Use It</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Administration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started-admin">Administration</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-system">System Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage users and groups</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-group">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Instance Type</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/usecase-toleration">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/usecase-nodeselector">NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and build images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-image">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-build-image">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/custom-image-guideline">Custom Image Guideline</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/images-list">Available Images List</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Datasets and Uploader</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-dataset">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-uploader">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and obtain secrets</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-secret">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Quick Start</h4><ul><li class="navListItem"><a class="navItem" href="/docs/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/create-user">Create User</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/create-group">Create Group</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/add-instance-type">Create/Plan Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/add-infuseai-image">Add InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/add-image">Add Image</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/build-image">Build Image</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/secret-pull-image">Pull Secret for GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/secret-gitsync">Gitsync secret for GitHub</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Maintenance<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance Notebook</h4><ul><li class="navListItem"><a class="navItem" href="/docs/maintenance">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/maintenance-resize-user-vol">Increase User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/maintenance-resize-group-vol">Increase Group Volume</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tips</h4><ul><li class="navListItem"><a class="navItem" href="/docs/trouble/howto-check-user-vol">HOWTO - Check User Volume Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/howto-check-group-vol">HOWTO - Check Group Volume Usage</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Experiment<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/guide_manual/experimental-vscode">Experimental VS Code</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/trouble-shoot-guide">Trouble-shooting Guide</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JupyterHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/trouble/jh-failed-spawn">Why JupyterHub fails to spawn?</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/jh-blank-page">After spawned, JupyterHub shows a blank page</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/dataset-failure">Jupyter spawning fails due to mounting datasets</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Keycloak</h4><ul><li class="navListItem"><a class="navItem" href="/docs/trouble/kc-brute-force-detection">Lock down accounts after several login failures</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/kc-password-policy">Password Policy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Prometheus</h4><ul><li class="navListItem"><a class="navItem" href="/docs/trouble/prometheus-fails-startup">Prometheus fails to start up</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/trouble/kubelet-restart">Restart Kubelet</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Prepackage a Base Image and Use It</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+<p>This doc shows how to build a base image and use it. Using the base image has some benefits:</p>
+<ol>
+<li>If the way you load and use models is the same, these models can share the same base image</li>
+<li>If you just want to update the model file, a base image can speed up the building process</li>
+</ol>
+<p>The idea is that you write a general model serving code and assume the model file is placed under a certain path. And build it as the base image by <code>s2i</code>.</p>
+<p>When a model file is ready, use <code>docker</code> to copy the model file into the correct path and build the model deployment image.</p>
+<p>In the following section, this doc uses Tensorflow 2 as a simple showcase. The code is under <a href="https://github.com/InfuseAI/model-deployment-examples/tree/master/tensorflow2_prepackage">Github</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<ul>
+<li>Docker: <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></li>
+<li>Go: <a href="https://golang.org/dl/">https://golang.org/dl/</a></li>
+<li>S2I (Source-To-Image): <a href="https://github.com/openshift/source-to-image#installation">https://github.com/openshift/source-to-image#installation</a></li>
+</ul>
+<p>Check everything is ready to go by running:</p>
+<pre><code class="hljs css language-bash">s2i usage seldonio/seldon-core-s2i-python3:0.18
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="build-the-base-image-python"></a><a href="#build-the-base-image-python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build the Base Image (Python)</h2>
+<ul>
+<li><p>Please use Python 3.6 (Recommended)</p></li>
+<li><p>Write a general model serving code <code>Model.py</code></p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Model</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self._model = tf.keras.models.load_model(<span class="hljs-string">'model'</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(self, X, feature_names=None, meta=None)</span>:</span>
+        output = self._model.predict(X)
+        <span class="hljs-keyword">return</span> output
+</code></pre></li>
+<li><p>Create a <code>requirements.txt</code> file and write down all required packages</p>
+<pre><code class="hljs css language-txt">tensorflow==<span class="hljs-number">2.1</span><span class="hljs-number">.0</span>
+</code></pre></li>
+<li><p>Create a <code>.s2i</code> folder and create a <code>.s2i/environment</code> file with the following content:</p>
+<pre><code class="hljs css language-script"><span class="hljs-attr">MODEL_NAME</span>=Model
+<span class="hljs-attr">API_TYPE</span>=REST
+<span class="hljs-attr">SERVICE_TYPE</span>=MODEL
+<span class="hljs-attr">PERSISTENCE</span>=<span class="hljs-number">0</span>
+</code></pre></li>
+</ul>
+<p>Build the base image by:</p>
+<pre><code class="hljs css language-bash"> s2i build <span class="token builtin class-name">.</span> seldonio/seldon-core-s2i-python3:0.18 tensorflow2-prepackage
+</code></pre>
+<p>(Using <code>seldonio/seldon-core-s2i-python3</code> instead if using Python 3 rather than Python 3.6)</p>
+<h2><a class="anchor" aria-hidden="true" id="use-the-base-image-to-build-the-model-deployment-image"></a><a href="#use-the-base-image-to-build-the-model-deployment-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use the Base Image to Build the Model Deployment Image</h2>
+<p>Based on our previous base image, whenever you have a model outputted by:</p>
+<pre><code class="hljs css language-python">model.save(export_path)
+</code></pre>
+<p>You can use this base image to build your model deployment image.</p>
+<p>First, create a <code>Dockerfile</code>:</p>
+<pre><code class="hljs css language-txt"><span class="hljs-keyword">FROM</span> tensorflow2-prepackage
+<span class="hljs-keyword">COPY</span><span class="bash"> export_path model </span>
+</code></pre>
+<p>(Please replace the <code>export_path</code> to your path)</p>
+<p>This means you copy your model files into the path that you pre-defined in the base image code.</p>
+<p>Then, you can build the model deployment image by:</p>
+<pre><code class="hljs css language-bash">docker build -t tensorflow2-prepackage-model <span class="token builtin class-name">.</span>
+</code></pre>
+<p>In order to verify the image, you can run it:</p>
+<pre><code class="hljs css language-bash">docker run -p <span class="token number">5000</span>:5000 --rm tensorflow2-prepackage-model
+</code></pre>
+<p>And send a post request by the following format:</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
+    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    -d <span class="token string">'{ "data": {"ndarray": [your data format] } }'</span>
+</code></pre>
+<p>Now you can use this image in the PrimeHub model deployment function.</p>
+<h2><a class="anchor" aria-hidden="true" id="share-your-base-image"></a><a href="#share-your-base-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Share Your Base Image</h2>
+<p>Share your base image by pushing it to a docker registry.</p>
+<p>Therefore, others don't need to write the model serving code again. They can share the same base image and build a model deployment image by <code>docker</code>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/model-deployment-tutorial-package-image"><span class="arrow-prev">← </span><span>Package a Docker Image for Model Deployment</span></a><a class="docs-next button" href="/docs/getting-started-admin"><span>Administration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#build-the-base-image-python">Build the Base Image (Python)</a></li><li><a href="#use-the-base-image-to-build-the-model-deployment-image">Use the Base Image to Build the Model Deployment Image</a></li><li><a href="#share-your-base-image">Share Your Base Image</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">InfuseAI x GitHub</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
