@@ -77,7 +77,7 @@ function Versions(props) {
                 <td>
                   {/*<a href="https://gitlab.com/infuseai/primehub/blob/master/CHANGELOG.md">Changelog</a>*/}
                   <a href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                      props.language ? props.language + '/' : ''}release-note`}>Release Notes</a>
+                      props.language ? props.language + '/' : ''}release-note`}>Release Note</a>
                 </td>
               </tr>
             </tbody>
@@ -136,7 +136,7 @@ function Versions(props) {
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
                     }next/release-note`}>
-                    Release Notes
+                    Release Note
                   </a>
                 </td>
               </tr>
@@ -198,7 +198,7 @@ function Versions(props) {
                           href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                             props.language ? props.language + '/' : ''
                           }${version}/release-note`}>
-                          Release Notes
+                          Release Note
                         </a>
                       </td>
                     </tr>
