@@ -14,6 +14,7 @@ Allow users to deploy a model as a service.
 1. **Deployment history:** Track the deployment history.
 1. **Resource constraint:** The usage of resources for model deployment is constrained by group resource quota.
 1. **Ingress:** Create the ingress resource to redirect external requests to internal model service.
+1. **Endpoint Type:** Supports public or private endpoints. For private endpoint, multiple users(clients) is supported.
 
 ## User Journey
 
@@ -79,6 +80,12 @@ spec:
     This is my first deployment.
     This is my first deployment.
     This is my first deployment.
+  endpoint:
+    accessType: private
+    - name: foo
+      token: $apr1$sZ55Hcwn$NSHL3Y.HiBBTLQCIIEbUm.
+    - name: bar
+      token: $apr1$bJ3Ar/uT$BM2iFc6RObu7ZdYffToIQ.
   predictors:
     - name: predictor1
       replicas: 2
@@ -106,6 +113,7 @@ The `PhDeployment` resource has the following children
 - **Ingress:** The ingress resource to route the traffic to given model deployment
 - **Service:** The service resource of a given deployment
 - **Deployment:** The deployment of the user's image.
+- **Secret:** The secret for `HTTP basic authentication` of a given private endpoint access type deployment
 
 ## Model Image
 
@@ -149,6 +157,18 @@ https://<primehub-domain>/deployment/<deployment-name>/api/v1.0/predictions
 And the input and output of the prediction endpoint are *tensor* or *ndarray*.
 
 You can also send an unstructured data (e.g. image file), please find more examples in our [model deployment examples](https://github.com/InfuseAI/model-deployment-examples)
+
+## Endpoint Type
+
+We provide two endpoint types: `public` and `private`. If a deployment is set to `public`, anyone who can connect to the domain(URL) has the privilege to use the model through the API endpoint.
+
+If a deployment is set to `private`, user must provide the correct `HTTP basic authentication` information when sending the request to the API endpoint. Otherwise, the deployment will return the `401 Unauthorized` error. The `HTTP basic authentication` user name and password(token) can be configured under the UI. We also support multiple user names/passwords configurations.
+
+The underlying technical process when setting the `HTTP basic authentication` under the UI is:
+1. Data scientist adds a user client in UI
+2. GraphQL generates a random password(token) in `md5` format and it will only show one time in UI
+3. GraphQL also update `phdeployment` crd endpoint information in the spec
+4. Primehub-controller update the `phdeployment` `ingress` and `secret` settings for `HTTP basic authentication` configurations
 
 ## Deployment Phases
 
