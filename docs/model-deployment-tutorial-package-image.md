@@ -1,6 +1,6 @@
 ---
 id: model-deployment-tutorial-package-image
-title: Package a Docker Image for Model Deployment
+title: Package a Docker Image for Model Deployment (Python)
 ---
 
 <div class="ee-only tooltip">Enterprise
