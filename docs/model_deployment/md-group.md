@@ -9,7 +9,7 @@ title: Group Management
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
-![](assets/md_group_shared_volume_v26.png)
+![](assets/md_group_shared_volume_v27.png)
 
 You need to fill in the fields in the above picture:
 
@@ -17,19 +17,9 @@ You need to fill in the fields in the above picture:
 
 + `Display name`
 
-**Model Deployment**(*Alpha*): This alpha feature is hidden until the [feature flag](../references/feature-flag) is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+### Group Quota
 
-**User Quota**: Set quotas for each user in this group.
-
-+ `CPU Quota` When the user chooses the group, how many CPU can be used by the user. The default is `0.5`.
-
-+ `GPU Quota` When the user chooses the group, how many GPU can be used by the user. The default is `0`. Default is `0` that means users can't use GPU.
-
-+ `Memory Quota` When the user chooses the group, how many Memory can be used by the user. The default is `unlimited`.
-
-+ `Disk Quota` When the user chooses the group, how many Disk can be used by the user. The default is `20GB` .
-
-**Group Quota**: Set quota for the whole group.
+Set quota for the whole group.
 
 + `CPU Quota` When the user chooses the group, how many CPU can be shared by all users in the group. The default is `unlimited`.
 
@@ -39,7 +29,7 @@ You need to fill in the fields in the above picture:
 
 Click `Confirm` to complete the addition.
 
-**Editing Users**
+### Users
 
 ![](assets/edit_users.png)
 

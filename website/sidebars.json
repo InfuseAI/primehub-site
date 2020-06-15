@@ -390,12 +390,26 @@
   },
   "primehub-deploy": {
     "PrimeHub Deploy": [
-      "model_deployment/md-portal",
-      "model_deployment/md-system",
-      "model_deployment/md-user",
-      "model_deployment/md-group",
-      "model_deployment/md-instancetype",
-      "model_deployment/md-image"
+          "model_deployment/md-index",
+          "model_deployment/md-portal",
+      {
+        "type": "subcategory",
+        "label": "Mode Deployment",
+        "ids": [
+          "model_deployment/md-deployment"
+        ]
+      },
+      {
+        "type":"subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "model_deployment/md-system",
+          "model_deployment/md-user",
+          "model_deployment/md-group",
+          "model_deployment/md-instancetype",
+          "model_deployment/md-secret"
+        ]
+      }
     ]
   }
 }

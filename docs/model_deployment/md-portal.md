@@ -36,7 +36,3 @@ It is redirected to the Grafana where we can monitor the metrics of served deplo
 ## Logout
 Please click `Logout` button at top-right. The page would be directed to the `Login` page.
 
-
-## Next
-
-Let's go to **Admin Dashboard** from User Portal and try to add users.
