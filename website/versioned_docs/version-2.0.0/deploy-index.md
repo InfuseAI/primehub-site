@@ -5,7 +5,7 @@ title: PrimeHub Deploy Documentation
 sidebar_label: Introduction
 ---
 
-**PrimeHub Deploy** is a standalone feature, **Model Deployment**, from **PrimeHub Enterprise**. It remains the original Model Deployment feature intact from PrimeHub Enterprise and the simplified **Admin Dashboard** dedicated to PrimeHub Deploy.
+**PrimeHub Deploy** is a standalone Model Deployment-only version of **PrimeHub Enterprise**. In addition to the PrimeHub Enterprise version of the Model Deployment feature, PrimeHub Deploy also features an Admin Dashboard that allows administrators to manage resources and access-control.
 
 ## User Portal
 
