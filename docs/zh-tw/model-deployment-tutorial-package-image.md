@@ -16,7 +16,6 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 請先安裝好以下軟體
 
 - docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- Go: [https://golang.org/dl/](https://golang.org/dl/)
 - s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 安裝完成後，下達以下指令確認一切正常：

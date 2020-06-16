@@ -14,7 +14,6 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
 ## Prerequisites
 
 - Docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- Go: [https://golang.org/dl/](https://golang.org/dl/)
 - S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 Check everything is ready to go by running:
@@ -62,6 +61,7 @@ s2i usage seldonio/seldon-core-s2i-r:0.1
     - Provide a function `initialise_seldon` to return an S3 class
     - Define a generic `predict` function for `mnist` class, this will be called with a newdata field with the data.frame to be predicted
     - `model.Rds` is a trained model file, it will be used while packaging the image.
+    - You can also check the `keras` [example](https://github.com/InfuseAI/model-deployment-examples/tree/master/r_keras_mnist)
 
 ## Build the Image
 

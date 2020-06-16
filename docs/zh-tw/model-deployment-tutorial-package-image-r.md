@@ -16,7 +16,6 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 請先安裝好以下軟體
 
 - docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- Go: [https://golang.org/dl/](https://golang.org/dl/)
 - s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 安裝完成後，下達以下指令確認一切正常：
@@ -64,6 +63,7 @@ s2i usage seldonio/seldon-core-s2i-r:0.1
     - 提供 `initialise_seldon` 函式回傳一個 S3 類別
     - 建立一個 `predict` 泛型(generic) 函式，接受 `mnist` 類別的呼叫，當用戶端呼叫 `predict` 時，會以 newdata 參數傳入呼叫此函式
     - `model.Rds` 是事先訓練好的模式，它必需在打包映像檔時打包進去 
+    - 另外可以參考 `keras` 的[範例](https://github.com/InfuseAI/model-deployment-examples/tree/master/r_keras_mnist)
 
 ## 建置映像檔
 
