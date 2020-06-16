@@ -108,7 +108,8 @@ div.grid-menu > div.menu-item {
 }
 
 .menu-item a:hover {
-    color: #95b4e6 !important; 
+    color: #c7dbf4 !important; 
+    background-color: #1a3682;
 }
 
 .mainContainer {

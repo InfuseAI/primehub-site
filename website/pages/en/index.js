@@ -328,8 +328,8 @@ class Index extends React.Component {
             //image: `${baseUrl}img/features/book-shelf-100.png`,
             image: `${baseUrl}img/files-01.png`,
             imageAlign: 'top',
-            title: `<a href=${docUrl('getting-started-user')}>Documentation</a>`,
-            imageLink: `${docUrl('getting-started-user')}`,
+            title: `<a href=${docUrl('introduction')}>Documentation</a>`,
+            imageLink: `${docUrl('introduction')}`,
             content:
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('getting-started-admin')}>Administrator</a></div>` +
