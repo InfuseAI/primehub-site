@@ -52,8 +52,10 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     //{ doc: 'documentation', label: 'Documentation'},
-    { doc: 'getting-started-admin', label: 'Administrator'},
-    { doc: 'getting-started-user', label: 'Scientist'},
+    //{ doc: 'getting-started-admin', label: 'Administrator'},
+    //{ doc: 'getting-started-user', label: 'Scientist'},
+    { doc: 'introduction', label: 'PrimeHub'},
+    { doc: 'deploy-index', label: 'PrimeHub Deploy'},
     { doc: 'dev-introduction', label: 'Developer'},
     { doc: 'index-zh', label: '繁中文件'},
     { href: "https://medium.com/infuseai", label: 'Medium'},

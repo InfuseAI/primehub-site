@@ -106,6 +106,9 @@
     ]
   },
   "documentation": {
+    "Introduction": [
+      "introduction"
+    ],
     "Project": [
       "getting-started-user",
       "quickstart/login-portal-user",
@@ -390,8 +393,7 @@
   },
   "primehub-deploy": {
     "PrimeHub Deploy": [
-          "model_deployment/md-index",
-          "model_deployment/md-portal",
+          "deploy-index",
       {
         "type": "subcategory",
         "label": "Mode Deployment",

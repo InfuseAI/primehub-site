@@ -337,6 +337,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('maintenance')}>Maintenance</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/guide_manual/images-list')}>Available Images</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/comparison')}>Community | Enterprise</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('deploy-index')}>PrimeHub Deploy</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('index-zh')}>繁中文件</a></div>` +
               '</div>', 
           },

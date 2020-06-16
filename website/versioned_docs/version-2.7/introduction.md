@@ -1,5 +1,6 @@
 ---
-id: introduction
+id: version-2.7-introduction
+original_id: introduction
 title: PrimeHub Documentation
 ---
 

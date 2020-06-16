@@ -106,6 +106,9 @@
     ]
   },
   "version-2.7-documentation": {
+    "Introduction": [
+      "version-2.7-introduction"
+    ],
     "Project": [
       "version-2.7-getting-started-user",
       "version-2.7-quickstart/login-portal-user",
@@ -386,6 +389,29 @@
     ],
     "其它配置": [
       "version-2.7-zh-tw/quickstart/dockerhub-registry"
+    ]
+  },
+  "version-2.7-primehub-deploy": {
+    "PrimeHub Deploy": [
+          "version-2.7-deploy-index",
+      {
+        "type": "subcategory",
+        "label": "Mode Deployment",
+        "ids": [
+          "version-2.7-model_deployment/md-deployment"
+        ]
+      },
+      {
+        "type":"subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "version-2.7-model_deployment/md-system",
+          "version-2.7-model_deployment/md-user",
+          "version-2.7-model_deployment/md-group",
+          "version-2.7-model_deployment/md-instancetype",
+          "version-2.7-model_deployment/md-secret"
+        ]
+      }
     ]
   }
 }
