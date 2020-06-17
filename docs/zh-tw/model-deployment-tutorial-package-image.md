@@ -1,6 +1,6 @@
 ---
 id: model-deployment-tutorial-package-image
-title: 建置模型部署所需之映像檔
+title: 建置模型部署所需之映像檔 (Python)
 ---
 
 <div class="ee-only tooltip">Enterprise
@@ -16,7 +16,6 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 請先安裝好以下軟體
 
 - docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- Go: [https://golang.org/dl/](https://golang.org/dl/)
 - s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 安裝完成後，下達以下指令確認一切正常：
@@ -24,49 +23,49 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 s2i usage seldonio/seldon-core-s2i-python3:0.18
 ```
 
-## 撰寫模型部署程式與設定 (Python)
+## 撰寫模型部署程式與設定
 
 - 建議使用 Python 3.6 
 - 產生 `requirements.txt` 檔，並在其中寫下所需套件
     ```
-        keras
-        tensorflow
-        numpy
-        ...
+    keras
+    tensorflow
+    numpy
+    ...
     ```
 
 - 建立 `.s2i` 資料夾後建立 `.s2i/environment` 檔案，並在其中寫下以下內容
     ```script
-        MODEL_NAME=MyModel
-        API_TYPE=REST
-        SERVICE_TYPE=MODEL
-        PERSISTENCE=0
+    MODEL_NAME=MyModel
+    API_TYPE=REST
+    SERVICE_TYPE=MODEL
+    PERSISTENCE=0
     ```
 
 - 建立 `MyModel.py` 檔，內容可以參考以下的格式內容
     ```python
-        class MyModel(object):
+    class MyModel(object):
+        """
+        Model template. You can load your model parameters in __init__ from a location accessible at runtime
+        """
+    
+        def __init__(self):
             """
-            Model template. You can load your model parameters in __init__ from a location accessible at runtime
+            Add any initialization parameters. These will be passed at runtime from the graph definition parameters defined in your seldondeployment kubernetes resource manifest.
             """
-        
-            def __init__(self):
-                """
-                Add any initialization parameters. These will be passed at runtime from the graph definition parameters defined in your seldondeployment kubernetes resource manifest.
-                """
-                print("Initializing")
-        
-            def predict(self, X, features_names=None):
-                """
-                Return a prediction.
-        
-                Parameters
-                ----------
-                X : array-like
-                feature_names : array of feature names (optional)
-                """
-                print("Predict called - will run identity function")
-                return X
+            print("Initializing")
+    
+        def predict(self, X, features_names=None):
+            """
+            Return a prediction.
+    
+            Parameters
+            ----------
+            X : array-like
+            feature_names : array of feature names (optional)
+            """
+            print("Predict called - will run identity function")
+            return X
     ```
 
     - 檔名和類別名稱 `MyModel` 需與在 `.s2i/environment` 下的 MODEL_NAME 一致
