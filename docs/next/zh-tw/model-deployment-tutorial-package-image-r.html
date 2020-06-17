@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>建置模型部署所需之映像檔 (R) · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="建置模型部署所需之映像檔 (R) · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/next/introduction" target="_self">PrimeHub</a></li><li class=""><a href="/docs/next/deploy-index" target="_self">PrimeHub Deploy</a></li><li class=""><a href="/docs/next/dev-introduction" target="_self">Developer</a></li><li class="siteNavGroupActive"><a href="/docs/next/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://medium.com/infuseai" target="_self">Medium</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>教學 (Alpha)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">繁中文件<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/index-zh">說明</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">專案<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/launch-project">啟始專案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/user-advanced-setting">Spawner 進階設定</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Submission</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-cht">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-simple">初階範例</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-p1">(Part1) MNIST classifier 訓練範例程式</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-submission-tutorial-p2">(Part2) MNIST classifier 訓練範例程式</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Schedule</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/job-scheduling-feature-cht">Job Scheduler (Beta)</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/model-deployment-feature">模型部署 (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">教學 (Alpha)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/model-deployment-quickstart-tutorial">模型部署之快速上手</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/model-deployment-tutorial-package-image">建置模型部署所需之映像檔 (Python)</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/zh-tw/model-deployment-tutorial-package-image-r">建置模型部署所需之映像檔 (R)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/model-deployment-tutorial-prepackage-image">透過預建置 Base Image 加速流程</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub 管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-system-cht">System Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用者及群組管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-group-cht">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Instance Type 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/usecase-toleration-cht">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/usecase-nodeselector-cht">NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Image 創建及管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-build-image-cht">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/custom-image-guideline">客製 Image 指南</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/images-list">InfuseAI 提供 Images</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Dataset 管理及上傳</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-uploader-cht">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Secret 管理及取得</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/add-infuseai-image">新增 InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">維運<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">工具</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/maintenance-cht">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">參考<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/guide_manual/experimental-vscode">VS Code 體驗</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">其它配置<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/zh-tw/quickstart/dockerhub-registry">利用 DockerHub Registry</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">建置模型部署所需之映像檔 (R)</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+<p>此文件說明如何建置映像檔 (Docker Image) ，以利在 PrimeHub 模型部署中使用。</p>
+<p>PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Seldon 和其他相關的文件，我們皆列在最後一個部分。</p>
+<h2><a class="anchor" aria-hidden="true" id="軟體需求"></a><a href="#軟體需求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>軟體需求</h2>
+<p>請先安裝好以下軟體</p>
+<ul>
+<li>docker: <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></li>
+<li>s2i: <a href="https://github.com/openshift/source-to-image#installation">https://github.com/openshift/source-to-image#installation</a></li>
+</ul>
+<p>安裝完成後，下達以下指令確認一切正常：</p>
+<pre><code class="hljs css language-bash">s2i usage seldonio/seldon-core-s2i-r:0.1
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="撰寫模型部署程式與設定"></a><a href="#撰寫模型部署程式與設定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>撰寫模型部署程式與設定</h2>
+<ul>
+<li><p>產生 <code>install.R</code> 檔，並在其中寫下所需套件 (如果沒有，留白即可)</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">install</span><span class="hljs-selector-class">.packages</span>(<span class="hljs-string">'pls'</span>)
+</code></pre></li>
+<li><p>建立 <code>.s2i</code> 資料夾後建立 <code>.s2i/environment</code> 檔案，並在其中寫下以下內容</p>
+<pre><code class="hljs css language-script"><span class="hljs-attr">MODEL_NAME</span>=mnist.R
+<span class="hljs-attr">API_TYPE</span>=REST
+<span class="hljs-attr">SERVICE_TYPE</span>=MODEL
+<span class="hljs-attr">PERSISTENCE</span>=<span class="hljs-number">0</span>
+</code></pre></li>
+<li><p>建立 <code>mnist.R</code> 檔，內容可以參考以下的格式內容</p>
+<pre><code class="hljs css language-R"><span class="hljs-keyword">library</span>(methods)
+
+predict.mnist &lt;- <span class="hljs-keyword">function</span>(mnist,newdata=list()) {
+    cn &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">784</span>
+    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> seq_along(cn)){cn[i] &lt;- paste(<span class="hljs-string">"X"</span>,cn[i],sep = <span class="hljs-string">""</span>)}
+    colnames(newdata) &lt;- cn
+    predict(mnist$model, newdata = newdata, type=<span class="hljs-string">'prob'</span>)
+}
+
+new_mnist &lt;- <span class="hljs-keyword">function</span>(filename) {
+    model &lt;- readRDS(filename)
+    structure(list(model=model), class = <span class="hljs-string">"mnist"</span>)
+}
+
+initialise_seldon &lt;- <span class="hljs-keyword">function</span>(params) {
+    new_mnist(<span class="hljs-string">"model.Rds"</span>)
+}
+</code></pre>
+<ul>
+<li>檔名名稱 <code>mnist.R</code> 需與在 <code>.s2i/environment</code> 下的 MODEL_NAME 一致</li>
+<li>提供 <code>initialise_seldon</code> 函式回傳一個 S3 類別</li>
+<li>建立一個 <code>predict</code> 泛型(generic) 函式，接受 <code>mnist</code> 類別的呼叫，當用戶端呼叫 <code>predict</code> 時，會以 newdata 參數傳入呼叫此函式</li>
+<li><code>model.Rds</code> 是事先訓練好的模式，它必需在打包映像檔時打包進去</li>
+<li>另外可以參考 <code>keras</code> 的<a href="https://github.com/InfuseAI/model-deployment-examples/tree/master/r_keras_mnist">範例</a></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="建置映像檔"></a><a href="#建置映像檔" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>建置映像檔</h2>
+<p>建立映像檔的工作資料夾需包含：<code>install.R</code> 、 <code>.s2i/environment</code> 、 <code>R scripts</code> 以及 <code>model file</code>。</p>
+<p>如果該資料夾有使用 <code>Git</code>，需要將所有的改變 Commit 。</p>
+<p>我們使用 <code>seldonio/seldon-core-s2i-r:0.1</code> 來安裝與建置模型部署映像檔 <code>my-model-image</code>：</p>
+<pre><code class="hljs"><span class="hljs-symbol">s2i</span> <span class="hljs-keyword">build </span>. <span class="hljs-keyword">seldonio/seldon-core-s2i-r:0.1 </span>my-model-image
+</code></pre>
+<p>透過 <code>docker images</code> 檢查建置完成的映像檔，範例結果如下所示：</p>
+<pre><code class="hljs">$ docker images | grep my-model-image
+my-model-image                      latest              04b42f702072        24 seconds ago      1.1GB
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="測試映像檔"></a><a href="#測試映像檔" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>測試映像檔</h2>
+<p>為了確保模型映像檔可於後續的模型部署中使用，你可先在本機上透過 Docker 運行 container:</p>
+<pre><code class="hljs">docker run -p <span class="hljs-number">5000</span>:<span class="hljs-number">5000</span> --rm my-model-image
+</code></pre>
+<p>透過 curl 進行測試：</p>
+<pre><code class="hljs">curl -X POST localhost:5000/predict \
+-H 'Content-Type: application/json' \
+-d 'json={&quot;data&quot;:{&quot;ndarray&quot;:[[0.44,0.162,0.367,0.011,0.231,0.973,0.675,0.597,0.896,0.936,0.997,0.149,0.836,0.17,0.832,0.365,0.902,0.914,0.645,0.678,0.166,0.933,0.386,0.89,0.854,0.617,0.001,0.454,0.602,0.33,0.857,0.134,0.695,0.335,0.519,0.236,0.389,0.665,0.921,0.266,0.936,0.587,0.295,0.7,0.803,0.452,0.902,0.636,0.063,0.358,0.048,0.289,0.821,0.956,0.605,0.511,0.392,0.522,0.289,0.953,0.488,0.371,0.455,0.552,0.789,0.259,0.064,0.06,0.398,0.11,0.675,0.161,0.698,0.618,0.929,0.782,0.042,0.076,0.579,0.985,0.526,0.078,0.384,0.273,0.387,0.374,0.595,0.673,0.421,0.823,0.733,0.734,0.157,0.37,0.394,0.722,0.011,0.042,0.408,0.0,0.76,0.353,0.497,0.215,0.194,0.795,0.3,0.397,0.094,0.818,0.872,0.976,0.959,0.546,0.537,0.478,0.532,0.829,0.074,0.547,0.774,0.782,0.783,0.029,0.89,0.573,0.379,0.712,0.361,0.616,0.42,0.589,0.622,0.167,0.054,0.552,0.804,0.277,0.238,0.661,0.237,0.773,0.282,0.887,0.605,0.921,0.254,0.723,0.589,0.577,0.519,0.91,0.388,0.757,0.546,0.149,0.55,0.818,0.392,0.205,0.422,0.004,0.542,0.847,0.358,0.103,0.566,0.053,0.812,0.481,0.98,0.921,0.995,0.33,0.276,0.221,0.59,0.982,0.088,0.569,0.488,0.315,0.957,0.169,0.093,0.148,0.219,0.486,0.79,0.005,0.833,0.139,0.765,0.545,0.062,0.863,0.027,0.954,0.419,0.315,0.436,0.896,0.838,0.14,0.389,0.474,0.066,0.459,0.737,0.311,0.965,0.57,0.522,0.8,0.442,0.149,0.918,0.305,0.793,0.576,0.058,0.491,0.693,0.029,0.413,0.15,0.365,0.318,0.536,0.083,0.902,0.072,0.3,0.844,0.263,0.815,0.017,0.313,0.293,0.547,0.934,0.913,0.05,0.171,0.889,0.915,0.716,0.636,0.534,0.984,0.309,0.42,0.471,0.701,0.685,0.057,0.519,0.995,0.002,0.748,0.858,0.149,0.1,0.009,0.989,0.856,0.293,0.856,0.183,0.326,0.933,0.671,0.025,0.836,0.492,0.705,0.99,0.684,0.104,0.375,0.736,0.23,0.697,0.8,0.68,0.905,0.4,0.855,0.128,0.592,0.302,0.796,0.977,0.427,0.063,0.533,0.738,0.206,0.477,0.921,0.316,0.719,0.806,0.517,0.131,0.407,0.92,0.142,0.299,0.304,0.077,0.633,0.822,0.537,0.622,0.424,0.542,0.142,0.972,0.939,0.806,0.511,0.731,0.519,0.873,0.682,0.478,0.008,0.977,0.365,0.124,0.755,0.562,0.228,0.515,0.247,0.262,0.178,0.293,0.376,0.584,0.257,0.092,0.46,0.459,0.614,0.369,0.71,0.041,0.212,0.805,0.349,0.845,0.333,0.834,0.661,0.397,0.796,0.223,0.653,0.379,0.781,0.721,0.345,0.233,0.855,0.876,0.466,0.369,0.948,0.115,0.434,0.18,0.169,0.354,0.378,0.798,0.596,0.28,0.492,0.507,0.451,0.967,0.308,0.624,0.344,0.946,0.278,0.197,0.198,0.27,0.334,0.394,0.016,0.957,0.492,0.908,0.236,0.748,0.824,0.273,0.829,0.055,0.44,0.586,0.999,0.022,0.062,0.441,0.799,0.122,0.209,0.666,0.715,0.966,0.138,0.209,0.29,0.752,0.341,0.055,0.54,0.952,0.337,0.003,0.542,0.961,0.308,0.301,0.741,0.713,0.553,0.957,0.11,0.84,0.122,0.2,0.009,0.397,0.684,0.982,0.963,0.7,0.747,0.223,0.683,0.673,0.994,0.41,0.665,0.475,0.025,0.125,0.879,0.806,0.22,0.563,0.998,0.787,0.313,0.008,0.096,0.716,0.57,0.535,0.05,0.826,0.213,0.567,0.276,0.612,0.202,0.485,0.165,0.777,0.473,0.093,0.999,0.977,0.306,0.896,0.517,0.145,0.786,0.344,0.643,0.214,0.866,0.988,0.188,0.691,0.173,0.592,0.984,0.584,0.221,0.525,0.475,0.185,0.846,0.572,0.68,0.987,0.653,0.828,0.781,0.504,0.309,0.321,0.147,0.45,0.331,0.753,0.457,0.966,0.954,0.872,0.84,0.787,0.056,0.65,0.867,0.946,0.852,0.136,0.93,0.168,0.293,0.145,0.108,0.552,0.472,0.841,0.186,0.005,0.685,0.917,0.813,0.781,0.796,0.871,0.446,0.976,0.874,0.016,0.718,0.344,0.092,0.831,0.992,0.976,0.666,0.786,0.727,0.296,0.319,0.067,0.408,0.593,0.368,0.411,0.122,0.127,0.495,0.647,0.528,0.519,0.798,0.354,0.144,0.38,0.571,0.034,0.912,0.386,0.16,0.236,0.821,0.979,0.07,0.732,0.088,0.119,0.199,0.407,0.687,0.903,0.71,0.276,0.579,0.073,0.748,0.07,0.598,0.721,0.06,0.964,0.805,0.483,0.75,0.702,0.609,0.124,0.873,0.64,0.364,0.114,0.345,0.922,0.941,0.753,0.79,0.878,0.014,0.279,0.482,0.784,0.461,0.77,0.581,0.256,0.287,0.04,0.202,0.82,0.021,0.227,0.304,0.281,0.632,0.412,0.788,0.836,0.767,0.232,0.964,0.798,0.278,0.508,0.18,0.311,0.553,0.521,0.866,0.448,0.523,0.867,0.549,0.938,0.988,0.406,0.896,0.16,0.876,0.055,0.816,0.805,0.117,0.253,0.233,0.906,0.512,0.768,0.438,0.891,0.452,0.211,0.664,0.272,0.358,0.929,0.696,0.339,0.823,0.191,0.583,0.033,0.273,0.718,0.714,0.023,0.198,0.842,0.669,0.417,0.798,0.358,0.793,0.726,0.133,0.689,0.911,0.698,0.753,0.972,0.828,0.599,0.668,0.115,0.83,0.766,0.043,0.754,0.827,0.165,0.695,0.177,0.973,0.429,0.365,0.779,0.735,0.28,0.6,0.679,0.101,0.179,0.997,0.267,0.403,0.943,0.818,0.302,0.984,0.973,0.607,0.783,0.213,0.261,0.034,0.614,0.567,0.514,0.238,0.722,0.353,0.024,0.421,0.304,0.231,0.229,0.478,0.699,0.551,0.837,0.401,0.559,0.69,0.116,0.21,0.811,0.537,0.154,0.206,0.518,0.334,0.739,0.976,0.408,0.655,0.653,0.014,0.917,0.704,0.233,0.92,0.467,0.687,0.247,0.502,0.377,0.078,0.883,0.08,0.297,0.855,0.057,0.012,0.079,0.645,0.072,0.591,0.272,0.902]]}}'
+</code></pre>
+<p>其中 <code>ndarray</code> 的內容請根據你的應用給予不同的值，此我們已經成功建置出可以給 PrimeHub 模型部署功能使用的映像檔。</p>
+<h2><a class="anchor" aria-hidden="true" id="推送映像檔"></a><a href="#推送映像檔" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>推送映像檔</h2>
+<p>接下來請將其推送到 docker hub (或其他 docker registry) ，並參考 PrimeHub 的文件繼續將模型部署到 PrimeHub 上</p>
+<p>標記模型映像檔:</p>
+<pre><code class="hljs">docker <span class="hljs-keyword">tag</span> <span class="hljs-title">my-model-image</span> test-repo/my-model-image
+</code></pre>
+<p>推送至 docker registry:</p>
+<pre><code class="hljs">docker <span class="hljs-built_in">push</span> test-repo/my-model-<span class="hljs-built_in">image</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<ul>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/v1.1.0/R/README.html">https://docs.seldon.io/projects/seldon-core/en/v1.1.0/R/README.html</a></li>
+<li><a href="https://github.com/SeldonIO/seldon-core/tree/master/incubating/wrappers/s2i/R/test/model-template-app">https://github.com/SeldonIO/seldon-core/tree/master/incubating/wrappers/s2i/R/test/model-template-app</a></li>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html">https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html</a></li>
+<li><a href="https://docs.seldon.io/projects/seldon-core/en/latest/workflow/serving.html">https://docs.seldon.io/projects/seldon-core/en/latest/workflow/serving.html</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/model-deployment-tutorial-package-image"><span class="arrow-prev">← </span><span>建置模型部署所需之映像檔 (Python)</span></a><a class="docs-next button" href="/docs/next/zh-tw/model-deployment-tutorial-prepackage-image"><span>透過預建置 Base Image 加速流程</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#軟體需求">軟體需求</a></li><li><a href="#撰寫模型部署程式與設定">撰寫模型部署程式與設定</a></li><li><a href="#建置映像檔">建置映像檔</a></li><li><a href="#測試映像檔">測試映像檔</a></li><li><a href="#推送映像檔">推送映像檔</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5>Community</h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">InfuseAI x GitHub</a><a href="https://medium.com/infuseai">InfuseAI x Medium</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
