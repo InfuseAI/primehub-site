@@ -3,7 +3,7 @@ id: prerequisites
 title: Prerequisites
 ---
 
-Before installing PrimeHub, we need to provide a PrimeHub-ready Kubernetes, which should contain
+Before installing PrimeHub, we need to provide a PrimeHub-ready Kubernetes, which should contain following essentials.
 
 ## Kubernetes Cluster (1.15+)
 
