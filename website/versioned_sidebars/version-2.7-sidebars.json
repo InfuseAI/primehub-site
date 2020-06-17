@@ -150,6 +150,7 @@
         "ids": [
           "version-2.7-model-deployment-quickstart-tutorial",
           "version-2.7-model-deployment-tutorial-package-image",
+          "version-2.7-model-deployment-tutorial-package-image-r",
           "version-2.7-model-deployment-tutorial-prepackage-image"
         ]
       }
@@ -309,6 +310,7 @@
         "ids": [
           "version-2.7-zh-tw/model-deployment-quickstart-tutorial",
           "version-2.7-zh-tw/model-deployment-tutorial-package-image",
+          "version-2.7-zh-tw/model-deployment-tutorial-package-image-r",
           "version-2.7-zh-tw/model-deployment-tutorial-prepackage-image"
         ]
       }

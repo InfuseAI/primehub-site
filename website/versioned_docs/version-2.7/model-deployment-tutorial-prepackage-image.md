@@ -1,7 +1,7 @@
 ---
 id: version-2.7-model-deployment-tutorial-prepackage-image
-title: Prepackage a Base Image and Use It
 original_id: model-deployment-tutorial-prepackage-image
+title: Prepackage a Base Image and Use It
 ---
 
 <div class="ee-only tooltip">Enterprise
@@ -22,7 +22,6 @@ In the following section, this doc uses Tensorflow 2 as a simple showcase. The c
 ## Prerequisites
 
 - Docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- Go: [https://golang.org/dl/](https://golang.org/dl/)
 - S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 Check everything is ready to go by running:

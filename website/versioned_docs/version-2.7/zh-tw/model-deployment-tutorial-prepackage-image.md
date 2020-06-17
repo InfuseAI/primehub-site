@@ -1,7 +1,7 @@
 ---
 id: version-2.7-model-deployment-tutorial-prepackage-image
-title: 透過預建置 Base Image 加速流程
 original_id: model-deployment-tutorial-prepackage-image
+title: 透過預建置 Base Image 加速流程
 ---
 
 <div class="ee-only tooltip">Enterprise
@@ -24,7 +24,6 @@ original_id: model-deployment-tutorial-prepackage-image
 請先安裝好以下軟體
 
 - docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- Go: [https://golang.org/dl/](https://golang.org/dl/)
 - s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
 
 安裝完成後，下達以下指令確認一切正常：
