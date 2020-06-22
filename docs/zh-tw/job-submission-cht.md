@@ -108,11 +108,11 @@ python -u /project/research/train_minst.py
 
 ## 查看 Job
 
-在列舉上點擊想要查看的`job`名稱，查看內容資訊及執行記錄。
+在列舉上點擊想要查看的`job`名稱，查看內容資訊及執行記錄；可以`Rerun`或`Clone`此 Job。
 
 ### Information
 
-![](assets/jsub_info_beta_v27.png)
+![](assets/jsub_info_beta_v28.png)
 
 `Job`記載內容資訊如下：
 

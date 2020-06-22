@@ -21,7 +21,7 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 There is a list showing created jobs with relevant information.
 
-![](assets/jsub_main_beta_v26.png)
+![](assets/jsub_main_beta_v27.png)
 
 There are several informative columns of the job list:
 
@@ -33,7 +33,7 @@ There are several informative columns of the job list:
 |`User`|The owner who submits the job.|
 |`Group`|The group where the job runs.|
 |`Timing`|The duration of the running job.|
-|`Action`|The action buttons, `Cancel` and `Rerun`.|
+|`Action`|The action buttons, `Cancel`, `Rerun`, `Clone`.|
 
 + `Create Job` button: Click the button to create the job.
 
@@ -107,11 +107,11 @@ python -u /project/research/train_minst.py
 
 ## View Job
 
-Click the job name on the list to view the job information and logs.
+Click the job name on the list to view the job information and logs. The job can also be `Rerun` or `Clone` into a new job.
 
 ### Information
 
-![](assets/jsub_info_beta_v27.png)
+![](assets/jsub_info_beta_v28.png)
 
 Here are the information of the job:
 
