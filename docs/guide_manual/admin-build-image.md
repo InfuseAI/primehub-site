@@ -11,7 +11,7 @@ Administrators are able to create custom images with pre-installed tools and lib
 
 ## Custom Image List
 
-![](assets/build_img_main_v26.png)
+![](assets/build_img_main_v28.png)
 
 In `Image Builder` section, there is a list of created custom image specs with several fields as below:
 
@@ -21,7 +21,7 @@ In `Image Builder` section, there is a list of created custom image specs with s
 
 + `Image` The url of the latest built image once it is built successfully.
 
-+ `Actions` - `Edit` and `Delete`.
++ `Actions` - `View`, `Edit`, `Delete`.
 
 ## Create Custom Image Spec
 
@@ -87,7 +87,7 @@ On edit page, there are two tabs, `Info` and `Jobs`.
 
 Once any modification is confirmed, a job of image build will be triggered and it will be listed in the tab `Jobs`.
 
-### Jobs
+## View Jobs of Building Image
 
 A job is an image build job. Once a creation of a custom image spec is confirmed, the first job of image build is triggered automatically. Afterwards, any confirmed modifications of spec will trigger other image build jobs. Each job logs the spec and the progress.
 
@@ -101,7 +101,7 @@ These **jobs**/**image urls** are listed here.
 
 + `Status` The status of the custom image creation job.
 
-+ `Actions` - View the spend and logs of an custom image build.
++ `Actions` - View the specification and logs of an custom image build.
 
 ![](assets/build_img_job_view.png)
 
