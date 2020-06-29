@@ -24,7 +24,8 @@
       }
     ],
     "Advanced": [
-      "guide_manual/kubeflow-installation-guide"
+      "guide_manual/kubeflow-installation-guide",
+      "guide_manual/csi-rclone-installation-guide"
     ],
     "Designs and Concepts": [
       {
