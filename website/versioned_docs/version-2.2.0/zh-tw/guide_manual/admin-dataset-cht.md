@@ -28,7 +28,7 @@ Dataset management 提供管理者 Dataset 資源管理能力，如：新增、�
 
 + `Global` 啟用時，所有使用者皆能讀取；關閉時，只有藉由 `connect existed Groups` 指定 groups 才能存取。
 
-+ `Type` `git`, `env` 及 `pvc`.
++ `Type` `git`, `env` 及 `pv`.
 
 + `connect existed Groups` 當 `Global` 關閉時，可設定 groups 存取權限。
 

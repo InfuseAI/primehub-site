@@ -28,7 +28,7 @@ You need to fill in these fields:
 
 + `Global` If enabled, everyone can use this dataset. If disabled, linking groups with permission by connecting existed Groups is required.
 
-+ `Type` `git`, `env` and `pvc`.
++ `Type` `git`, `env` and `pv`.
 
 + `connect existed Groups` Set accessible groups, when `Global` is disabled.
 
