@@ -156,6 +156,8 @@ Parameter | Description | Default
 `keycloakGateway.image.repository` | The keycloak gateway image repository| `infuseai/primehub-admin-notebook`
 `keycloakGateway.image.tag` | The keycloak gateway image tag | Please see [values.yaml](values.yaml)
 `modelDeployment.enabled` | Enable the model deployment | `false`
+`minio.accessKey` | Default access key (5 to 20 characters) | `AKIAIOSFODNN7EXAMPLE`
+`minio.secretKey` | Default secret key (8 to 40 characters) | `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
 `minio.ingress.enabled` | Enable the minio ingress | `false`
 `minio.s3gateway.enabled` | Use MinIO as a s3 gateway | `false`
 `minio.s3gateway.replicas` | Number of s3 gateway instances to run in parallel | `4`
