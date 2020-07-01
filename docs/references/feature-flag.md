@@ -44,6 +44,7 @@ Feature|Default|Stage|Since|
 `PRIMEHUB_FEATURE_JOB_SUBMISSION`|false|alpha|2.3.0
 `PRIMEHUB_FEATURE_CUSTOM_IMAGE`|false|beta|2.3.0
 `PRIMEHUB_FEATURE_MODEL_DEPLOYMENT`|false|alpha|2.7.0
+`PRIMEHUB_FEATURE_STORE`|false|alpha|2.8.0
 
 - `PRIMEHUB_FEATURE_USER_PORTAL`: Enable [User Portal](../design/user-portal.md) to have a unified domain with a landing page.
 - `PRIMEHUB_FEATURE_ENABLE_ADMISSION`: Enable [Admission](../design/admission.md) relative features. [Admission Webhook](https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/) is a mechanism provided by kubernetes to validate and mutate resources when they are created. Been removed.
