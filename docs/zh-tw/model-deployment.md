@@ -165,7 +165,9 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 
 >Client Token 產生後，在介面上只會短暫地顯示一次，請記錄下來；若遺失，請刪除再重新產生。
 
-如果你希望在模型預測時，知道 `Client Name` 是誰，你可以在預測函數中使用以下技巧取得資訊，
+#### *小技巧*
+
+如果希望在模型預測時，知道「誰`Client Name`」發送請求；可以在預測函式中，從請求的 header `X-Forwarded-User`取得資訊，如下：
 
 ```python
 from flask import request as req
