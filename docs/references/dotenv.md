@@ -26,6 +26,7 @@ Environment | Description | Optional
 `PRIMEHUB_AIRGAPPED` | If the cluster is in airgap environment | Yes. default is `false`
 `PRIMEHUB_FEATURE_DATASET_UPLOAD` | If the dataset upload feature is enabled | Yes. default is `false`
 `PRIMEHUB_FEATURE_JOB_SUBMISSION` | If the job submission feature is enabled | Yes. default is `false`
+`PRIMEHUB_FEATURE_STORE` | If the store feature is enabled | Yes. default is `false`
 
 **The Environment Variables for Grafana**
 

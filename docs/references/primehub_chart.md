@@ -20,6 +20,8 @@ Parameter | Description | Default
 `primehub.keycloak.clientId` | The keycloak client id for primehub | `admin-ui`
 `primehub.keycloak.rolePrefix` | The prefix of roles for the resource-group binding | `""`
 `primehub.sharedVolumeStorageClass` | The storage class for shared volume. If the value is empty string `""`, it means to use `groupvolume` to provision shared volume | `""` 
+`primehub.store.bucket` | The bucket name would be mounted by store. | `"primehub"` 
+`primehub.store.enabled` | Enable PrimeHub Store | `false` 
 `ingress.annotations` | Annotations for ingress| `{}` 
 `ingress.hosts` | a list of ingress hosts | `[]`
 `ingress.tls` | 	a list of ingress tls items | `[]`
@@ -154,6 +156,18 @@ Parameter | Description | Default
 `keycloakGateway.image.repository` | The keycloak gateway image repository| `infuseai/primehub-admin-notebook`
 `keycloakGateway.image.tag` | The keycloak gateway image tag | Please see [values.yaml](values.yaml)
 `modelDeployment.enabled` | Enable the model deployment | `false`
+`minio.accessKey` | Default access key (5 to 20 characters) | `AKIAIOSFODNN7EXAMPLE`
+`minio.secretKey` | Default secret key (8 to 40 characters) | `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
+`minio.ingress.enabled` | Enable the minio ingress | `false`
+`minio.s3gateway.enabled` | Use MinIO as a s3 gateway | `false`
+`minio.s3gateway.replicas` | Number of s3 gateway instances to run in parallel | `4`
+`minio.s3gateway.accessKey` | Access key of S3 compatible service | `""`
+`minio.s3gateway.secretKey` | Secret key of S3 compatible service | `""`
+`minio.gcsgateway.enabled` | Use MinIO as a Google Cloud Storage gateway | `false`
+`minio.gcsgateway.replicas` | Number of gcs gateway instances to run in parallel | `4`
+`minio.gcsgateway.projectId` | Google cloud project id | `4`
+`minio.gcsgateway.gcsKeyJson` | credential json file of service account key | `""`
+
 
 ## Advanced Settings
 
