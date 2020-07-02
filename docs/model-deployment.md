@@ -161,6 +161,17 @@ The token is mandatory for accessing a private endpoint, we can bring it as `-u 
 
 >Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.
 
+To get the client name information when processing the request in your custom predict function, here is what you can do,
+
+```python
+from flask import request as req
+
+...
+req.headers.get('X-Forwarded-User') # you can get the client name from the header
+...
+
+```
+
 ---
 
 ## Update
