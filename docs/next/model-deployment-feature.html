@@ -71,10 +71,10 @@
 <p><img src="/docs/assets/mdeploy_enable.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="list"></a><a href="#list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>List</h2>
 <p>This page indicates all of deployed services status.</p>
-<p><img src="/docs/assets/mdeploy_grid_v27.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_grid_v28.png" alt=""></p>
 <table>
 <thead>
-<tr><th><strong>Status</strong></th><th><span style="background-color: green">Deployed</span></th><th><span style="background-color: red">Failed</span></th><th><span style="background-color: yellow">Deploying</span></th><th><span style="background-color: gray">Stopped</span></th></tr>
+<tr><th><strong>Status</strong></th><th><span style="background-color: #33ea33">Deployed</span></th><th><span style="background-color: red">Failed</span></th><th><span style="background-color: #fba500">Deploying</span></th><th><span style="background-color: #aaaaaa">Stopped</span></th></tr>
 </thead>
 <tbody>
 </tbody>
@@ -99,8 +99,11 @@
 </tbody>
 </table>
 <ul>
+<li><p><code>Search deploy name</code>: Search deployments by a keyword.</p></li>
 <li><p><code>Create Deployment</code> button: Clicking for a deployment creation.</p></li>
 <li><p><code>Refresh</code> button: Clicking to retrieve the latest statuses of deployments.</p></li>
+<li><p><code>Group</code> filter: List deployments of selected groups only; multiple selection.</p></li>
+<li><p><code>Deployed By Me</code>: Check; list deployments deployed by &quot;me&quot;.</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="create"></a><a href="#create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create</h2>
 <p><img src="/docs/assets/mdeploy_create_v27.png" alt=""></p>
@@ -192,6 +195,16 @@
 <blockquote>
 <p>Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.</p>
 </blockquote>
+<h4><a class="anchor" aria-hidden="true" id="tips-1"></a><a href="#tips-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips:</h4>
+<p>In the predict function of a deployed model, we may want to collect the information of clients who send requests to.
+We could learn the info from the header of requests, <code>X-Forwarded-User</code> like the example below.</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> request <span class="hljs-keyword">as</span> req
+
+...
+req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class="hljs-comment"># you can get the client name from the header</span>
+...
+
+</code></pre>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="update"></a><a href="#update" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update</h2>
 <p>On a deployment detail page, clicking <code>Update</code> button to enter the deployment editing.</p>
@@ -209,7 +222,7 @@
 <h2><a class="anchor" aria-hidden="true" id="monitor"></a><a href="#monitor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monitor</h2>
 <p>PrimeHub provides a monitoring dashboard based on <strong>Seldon Core Analytics</strong> on Grafana, we are able to monitor metrics of <strong>deployment</strong>/<strong>model</strong>/<strong>model version</strong>.</p>
 <ol>
-<li><p>Accessing the Grafana from the user portal</p></li>
+<li><p>Accessing the Grafana from User Portal.</p></li>
 <li><p>Selecting <code>PrimeHub / Model Deployments</code> dashboard, it lists deployment which are providing services.</p>
 <p><img src="/docs/assets/mdeploy_grafana_list.png" alt=""></p></li>
 <li><p>Selecting a deployment and monitoring metrics on the board.</p>
