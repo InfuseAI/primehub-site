@@ -21,9 +21,9 @@ First, we have to turn on **Model Deployment** in groups.
 
 This page indicates all of deployed services status.
 
-![](assets/mdeploy_grid_v27.png)
+![](assets/mdeploy_grid_v28.png)
 
-|**Status** |<span style="background-color: green">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: yellow">Deploying</span>|<span style="background-color: gray">Stopped</span>|
+|**Status** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
 |---------|--------|------|---------|-------|
 
 ### Cell
@@ -44,10 +44,16 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 |Metadata    | Hovering over `View` to display the metadata info |
 |Last Updated| Last updated time.|
 
++ `Search deploy name`: Search deployments by a keyword.
+
 + `Create Deployment` button: Clicking for a deployment creation.
 
 + `Refresh` button: Clicking to retrieve the latest statuses of deployments.
   
++ `Group` filter: List deployments of selected groups only; multiple selection.
+
++ `Deployed By Me`: Check; list deployments deployed by "me".
+
 ## Create
 
 ![](assets/mdeploy_create_v27.png)
@@ -187,7 +193,7 @@ On a deployment detail page, clicking `Stop` button at top-right to stop the cur
 
 PrimeHub provides a monitoring dashboard based on **Seldon Core Analytics** on Grafana, we are able to monitor metrics of **deployment**/**model**/**model version**.
 
-1. Accessing the Grafana from the user portal
+1. Accessing the Grafana from User Portal.
 
 2. Selecting `PrimeHub / Model Deployments` dashboard, it lists deployment which are providing services.
 

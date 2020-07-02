@@ -21,11 +21,11 @@ title: 模型部署 (Alpha)
 
 此頁格列一覽所有已創建的部署；
 
-![](assets/mdeploy_grid_v27.png)
+![](assets/mdeploy_grid_v28.png)
 
 狀態分別由下列顏色來區別：
 
-|**狀態** |<span style="background-color: green">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: yellow">Deploying</span>|<span style="background-color: gray">Stopped</span>|
+|**狀態** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
 |---------|--------|------|---------|-------|
 
 ### 部署
@@ -40,10 +40,15 @@ title: 模型部署 (Alpha)
 |Metadata    | 鼠標移到`View`，顯示 Metadata 資訊|
 |Last Updated| 最後更新時間|
 
++ 輸入`Search deploy name`: 依關鍵字搜尋部署。
 
 + 點擊`Create Deployment` 按鈕，進入 Deployment 創建頁。
 
 + 點擊`Refresh`按鈕，更新部署狀態。
+
++ 篩選`Group`: 僅列出選定群組發佈的部署；可複選。
+
++ 勾選`Deployed By Me`: 僅列出由自己發佈的部署。
 
 #### *小技巧*
 
