@@ -79,6 +79,8 @@
 <tr><td><code>primehub.keycloak.clientId</code></td><td>The keycloak client id for primehub</td><td><code>admin-ui</code></td></tr>
 <tr><td><code>primehub.keycloak.rolePrefix</code></td><td>The prefix of roles for the resource-group binding</td><td><code>&quot;&quot;</code></td></tr>
 <tr><td><code>primehub.sharedVolumeStorageClass</code></td><td>The storage class for shared volume. If the value is empty string <code>&quot;&quot;</code>, it means to use <code>groupvolume</code> to provision shared volume</td><td><code>&quot;&quot;</code></td></tr>
+<tr><td><code>primehub.store.bucket</code></td><td>The bucket name would be mounted by store.</td><td><code>&quot;primehub&quot;</code></td></tr>
+<tr><td><code>primehub.store.enabled</code></td><td>Enable PrimeHub Store</td><td><code>false</code></td></tr>
 <tr><td><code>ingress.annotations</code></td><td>Annotations for ingress</td><td><code>{}</code></td></tr>
 <tr><td><code>ingress.hosts</code></td><td>a list of ingress hosts</td><td><code>[]</code></td></tr>
 <tr><td><code>ingress.tls</code></td><td>a list of ingress tls items</td><td><code>[]</code></td></tr>
@@ -213,6 +215,17 @@
 <tr><td><code>keycloakGateway.image.repository</code></td><td>The keycloak gateway image repository</td><td><code>infuseai/primehub-admin-notebook</code></td></tr>
 <tr><td><code>keycloakGateway.image.tag</code></td><td>The keycloak gateway image tag</td><td>Please see <a href="values.yaml">values.yaml</a></td></tr>
 <tr><td><code>modelDeployment.enabled</code></td><td>Enable the model deployment</td><td><code>false</code></td></tr>
+<tr><td><code>minio.accessKey</code></td><td>Default access key (5 to 20 characters)</td><td><code>AKIAIOSFODNN7EXAMPLE</code></td></tr>
+<tr><td><code>minio.secretKey</code></td><td>Default secret key (8 to 40 characters)</td><td><code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code></td></tr>
+<tr><td><code>minio.ingress.enabled</code></td><td>Enable the minio ingress</td><td><code>false</code></td></tr>
+<tr><td><code>minio.s3gateway.enabled</code></td><td>Use MinIO as a s3 gateway</td><td><code>false</code></td></tr>
+<tr><td><code>minio.s3gateway.replicas</code></td><td>Number of s3 gateway instances to run in parallel</td><td><code>4</code></td></tr>
+<tr><td><code>minio.s3gateway.accessKey</code></td><td>Access key of S3 compatible service</td><td><code>&quot;&quot;</code></td></tr>
+<tr><td><code>minio.s3gateway.secretKey</code></td><td>Secret key of S3 compatible service</td><td><code>&quot;&quot;</code></td></tr>
+<tr><td><code>minio.gcsgateway.enabled</code></td><td>Use MinIO as a Google Cloud Storage gateway</td><td><code>false</code></td></tr>
+<tr><td><code>minio.gcsgateway.replicas</code></td><td>Number of gcs gateway instances to run in parallel</td><td><code>4</code></td></tr>
+<tr><td><code>minio.gcsgateway.projectId</code></td><td>Google cloud project id</td><td><code>4</code></td></tr>
+<tr><td><code>minio.gcsgateway.gcsKeyJson</code></td><td>credential json file of service account key</td><td><code>&quot;&quot;</code></td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="advanced-settings"></a><a href="#advanced-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Settings</h2>
