@@ -104,6 +104,8 @@ hostPath 可以掛載 Node 檔案系統中指定的檔案/目錄夾至 Pod，做
 
 若 Dataset 非檔案型式，僅為字串，則可選擇 `env` 後，在 `Variables` 填入該 variable 的 `key` 跟 `value` 。若不只一個 variable，可以點選 `+ Add field` 新增多筆。
 
+>環境變數的全名將是 `<dataset_name>_<variable_name>`。
+
 ---
 
 ![](assets/edit_groups.png)

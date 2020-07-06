@@ -111,6 +111,8 @@ If `Global` is disabled, please click `edit groups` under the edit Dataset page 
 
 If dataset is an environment variable, not a file, you can use `env` type. Please fill the `key` and `value` in the `Variables`. If there are more than one variable, you can click `+ Add field` to add more field.
 
+>The full name of env variables will be `<dataset_name>_<variable_name>`.
+
 ## Deleting Dataset
 
 ![](assets/actions.png)

@@ -51,6 +51,8 @@ Click `Change` to select a secret from the list `if a pull-secret is required`.
 
 If dataset is an environment variable, not a file, you can use `env` type. Please fill the `key` and `value` in the `Variables`. If there are more than one variable, you can click `+ Add field` to add more field.
 
+>The full name of env variables will be `<dataset_name>_<variable_name>`.
+
 ### pv
 
 ![](assets/dataset_pv_v2.png)
