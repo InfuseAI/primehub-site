@@ -136,7 +136,7 @@ python -u /project/research/train_minst.py
 
 >預設此頁只顯示**最新的 2000 行**資訊
 
-![](assets/jsub_log_v27.png)
+![](assets/jsub_log_v28.png)
 
 當工作執行「成功」或「失敗」，我們可以由此查看整個執行過程、結果、甚至除錯。
 

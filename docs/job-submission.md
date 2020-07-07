@@ -135,7 +135,7 @@ Here are the information of the job:
 
 >Logs viewer lists latest 2000 lines only of logs.
 
-![](assets/jsub_log_v27.png)
+![](assets/jsub_log_v28.png)
 
 When a job comes to success or failure, it logs the whole of job running progress. This is where we can check the progress, result or even shoot troubles if failed.
 
