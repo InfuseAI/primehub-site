@@ -134,7 +134,7 @@ python -u /project/research/train_minst.py
 
 ### 工作記錄
 
->預設此頁只顯示**最新的 2000 行**資訊
+>預設此頁只顯示**最新的 2000 行**資訊；按下`Download`下載完整記錄。
 
 ![](assets/jsub_log_v28.png)
 

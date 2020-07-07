@@ -133,7 +133,7 @@ Here are the information of the job:
 
 ### Logs
 
->Logs viewer lists latest 2000 lines only of logs.
+>Logs viewer lists latest 2000 lines only of logs; press `Download` for the complete log file.
 
 ![](assets/jsub_log_v28.png)
 

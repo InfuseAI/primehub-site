@@ -112,6 +112,8 @@ Click the button, we can check the log of each job of image build with its spec.
 
 It is helpful that when we want to know what made image build fail and what spec the image build is based on.
 
+>Logs viewer lists latest 2000 lines only of logs; press `Download` for the complete log file.
+
 ## Delete Custom Image Spec
 
 ![](assets/build_img_del.png)

@@ -114,6 +114,8 @@ conda install conda-forge::numpy==1.17*
 
 當某個創建工作失敗，可以查看記錄查明失敗原因。
 
+>預設此頁只顯示**最新的 2000 行**資訊；按下`Download`下載完整記錄。
+
 ## 刪除 Image Spec
 
 ![](assets/build_img_del.png)

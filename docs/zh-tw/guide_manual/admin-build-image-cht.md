@@ -109,9 +109,11 @@ conda install conda-forge::numpy==1.17*
 
 點擊按鈕，查看每個工作的記錄及其創建依據的 spec。
 
-![](assets/build_img_job_v26.png)
+![](assets/build_img_job_v28.png)
 
 當某個創建工作失敗，可以查看記錄查明失敗原因。
+
+>預設此頁只顯示**最新的 2000 行**資訊；按下`Download`下載完整記錄。
 
 ## 刪除 Image Spec
 
