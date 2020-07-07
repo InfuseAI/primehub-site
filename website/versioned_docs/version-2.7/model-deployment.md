@@ -118,9 +118,11 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 In Logs tab, the logs of current deployment are displayed here.
 
+>Timestamp reflects Universal Time Coordinated (**UTC**).
+
 Clicking `Scroll to Bottom` button skips to the bottom of logs.
 
->It displays only logs of **latest 2000 lines**; clicking the `Download` button to download the whole log file.
+>It displays only logs of **latest 2000 lines**; clicking the `Download` button to download the whole log file..
 
 ### History
 

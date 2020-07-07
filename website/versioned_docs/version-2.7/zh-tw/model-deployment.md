@@ -121,11 +121,11 @@ original_id: model-deployment-feature
 
 Logs 頁上顯示目前 部署 的記錄。
 
+>Timestamp 以 Universal Time Coordinated (UTC) 為基準。
+
 點擊`Scroll to Bottom`可直接跳至記錄最尾端。
 
-#### 注意
-
-預設只顯示最新的 2000 行記錄；點擊`Download`可下載完整記錄檔。
+>預設只顯示最新的 2000 行記錄；點擊`Download`可下載完整記錄檔。
 
 ### History
 

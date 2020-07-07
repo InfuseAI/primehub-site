@@ -119,9 +119,11 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 + `Replicas`: Select a replica.
 
-![](assets/mdeploy_log_v27.png)
+![](assets/mdeploy_log_v28.png)
 
 In Logs tab, the logs of current deployment are displayed here.
+
+>Timestamp reflects Universal Time Coordinated (**UTC**).
 
 Clicking `Scroll to Bottom` button skips to the bottom of logs.
 
