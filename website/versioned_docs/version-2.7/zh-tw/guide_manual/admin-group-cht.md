@@ -42,7 +42,7 @@ original_id: admin-group-cht
 
 + `Memory Quota` 當使用者選擇此 Group 時，能夠使用的記憶體配額。預設值為沒有限制。
 
-+ `Disk Quota` 當使用者選擇此 Group 時，能夠使用的磁碟配額。預設值為 `20GB`。
++ `User Volume Capacity` 當使用者選擇此 Group 時，能夠使用的磁碟配額。預設值為 `20GB`。。
 
 ### Group Quota 
 

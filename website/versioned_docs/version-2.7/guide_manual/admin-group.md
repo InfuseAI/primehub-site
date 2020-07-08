@@ -44,7 +44,7 @@ Set quotas for each user in this group.
 
 + `Memory Quota` When the user chooses the group, how many Memory can be used by the user. The default is `unlimited`.
 
-+ `Disk Quota` When the user chooses the group, how many Disk can be used by the user. The default is `20GB` .
++ `User Volume Capacity` When the user chooses the group,  the capacity can be used by the user. The default is `20GB` .
 
 ### Group Quota
 
