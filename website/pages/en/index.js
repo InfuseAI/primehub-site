@@ -342,7 +342,7 @@ class Index extends React.Component {
           },
           {
             //image: `${baseUrl}img/features/book-shelf-100.png`,
-            image: `${baseUrl}img/files-01.png`,
+            image: `${baseUrl}img/community-07.png`,
             imageAlign: 'top',
             title: `<a> Community</a>`,
             content:
