@@ -58,7 +58,6 @@ const siteConfig = {
     { doc: 'deploy-index', label: 'PrimeHub Deploy'},
     { doc: 'dev-introduction', label: 'Developer'},
     { doc: 'index-zh', label: '繁中文件'},
-    { href: "https://medium.com/infuseai", label: 'Medium'},
     //{ blog: true, label: 'Blog'},
     //{ page: 'help', label: 'Community'},
     { search: true },

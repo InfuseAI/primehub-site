@@ -49,16 +49,18 @@ class Footer extends React.Component {
             </a>
           </div>*/}
           <div>
-            <h5>Community</h5>
+            <h5></h5>
             <a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a>
-            <a href="https://github.com/infuseai">InfuseAI x GitHub</a>
-            <a href="https://medium.com/infuseai">InfuseAI x Medium</a>
+            <a href="https://github.com/infuseai">GitHub</a>
+            <a href="https://medium.com/infuseai">Medium</a>
+            <a href="https://www.facebook.com/InfuseAI">Facebook</a>
           </div>
           <div>
             <h5>More</h5>
             {/*<a href={`${this.props.config.baseUrl}blog`}>Blog</a>*/}
             <a href="https://infuseai.io">About InfuseAI</a>
             <a href={this.docUrl('next/comparison')}>Community | Enterprise</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a>
           </div>
         </section>
         

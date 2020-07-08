@@ -336,9 +336,22 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Scientist</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('maintenance')}>Maintenance</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/guide_manual/images-list')}>Available Images</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Community | Enterprise</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('deploy-index')}>PrimeHub Deploy</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('index-zh')}>繁中文件</a></div>` +
+              '</div>', 
+          },
+          {
+            //image: `${baseUrl}img/features/book-shelf-100.png`,
+            image: `${baseUrl}img/files-01.png`,
+            imageAlign: 'top',
+            title: `<a> Community</a>`,
+            content:
+              '<div class="grid-menu">' +
+                `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub">PrimeHub CE Repository</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Community | Enterprise</a></div>` +
+                `<div class="menu-item"><a href="https://github.com/InfuseAI">GitHub</a></div>` +
+                `<div class="menu-item"><a href="https://medium.com/infuseai">Medium</a></div>` +
+                `<div class="menu-item"><a href="https://www.katacoda.com/infuseai">Katacoda</a></div>` +
               '</div>', 
           },
         ]}
