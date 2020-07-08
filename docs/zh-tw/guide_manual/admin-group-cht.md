@@ -41,7 +41,7 @@ title: Group Management
 
 + `Memory Quota` 當使用者選擇此 Group 時，能夠使用的記憶體配額。預設值為沒有限制。
 
-+ `User Volume Capacity` 當使用者選擇此 Group 時，能夠使用的磁碟配額。預設值為 `20GB`。
++ `User Volume Capacity` 當使用者選擇此 Group 時，能夠使用的磁碟配額。預設值為 `20GB`;只有*設定之後新建立的 volume* 才會套用此值，如果 user volume 已經存在，則不會有任何變更。
 
 ### Group Quota 
 

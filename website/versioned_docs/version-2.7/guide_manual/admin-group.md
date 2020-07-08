@@ -38,13 +38,13 @@ Create shared volume with specific capacity.
 
 Set quotas for each user in this group.
 
-+ `CPU Quota` When the user chooses the group, how many CPU can be used by the user. The default is `0.5`.
++ `CPU Quota` How many CPU can be used by the user within this group. The default is `0.5`.
 
-+ `GPU Quota` When the user chooses the group, how many GPU can be used by the user. The default is `0`. Default is `0` that means users can't use GPU.
++ `GPU Quota` How many GPU can be used by the user within this group. The default is `0`. Default is `0` that means users can't use GPU.
 
-+ `Memory Quota` When the user chooses the group, how many Memory can be used by the user. The default is `unlimited`.
++ `Memory Quota` How many Memory can be used by the user within this group. The default is `unlimited`.
 
-+ `User Volume Capacity` When the user chooses the group,  the capacity can be used by the user. The default is `20GB` .
++ `User Volume Capacity` The capacity will be allocated for the user within this group. The default is `20GB`; It only works for *newly created volume*, i.e., the user volume capacity won't be changed if the volume exists already.
 
 ### Group Quota
 

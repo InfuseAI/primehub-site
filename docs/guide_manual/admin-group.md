@@ -37,13 +37,13 @@ Create shared volume with specific capacity.
 
 Set quotas for each user in this group.
 
-+ `CPU Quota` When the user chooses the group, how many CPU can be used by the user. The default is `0.5`.
++ `CPU Quota` How many CPU can be used by the user within this group. The default is `0.5`.
 
-+ `GPU Quota` When the user chooses the group, how many GPU can be used by the user. The default is `0`. Default is `0` that means users can't use GPU.
++ `GPU Quota` How many GPU can be used by the user within this group. The default is `0`. Default is `0` that means users can't use GPU.
 
-+ `Memory Quota` When the user chooses the group, how many Memory can be used by the user. The default is `unlimited`.
++ `Memory Quota` How many Memory can be used by the user within this group. The default is `unlimited`.
 
-+ `User Volume Capacity` When the user chooses the group,  the capacity can be used by the user. The default is `20GB` .
++ `User Volume Capacity` The capacity will be allocated for the user within this group. The default is `20GB`; It only works for *newly created volume*, i.e., the user volume capacity won't be changed if the volume exists already.
 
 ### Group Quota
 
@@ -74,6 +74,7 @@ The list shows connecting images which are able to be used by this group.
 ![](assets/edit_users.png)
 
 The list shows all of users of this group. Click `edit users` to add/remove users into/from groups.
+
 ## Deleting Group
 
 Click `Delete` button of Actions in the group list, the confirmation dialog will pop up, and the group will be deleted when you click `OK`.
