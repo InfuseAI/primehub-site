@@ -5,7 +5,7 @@ title: Group Management
 
 ## Creating New Group
 
-![](assets/group_12_v26.png)
+![](assets/md_group_list_v28.png)
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
