@@ -51,7 +51,7 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
   
 ## Create
 
-![](assets/mdeploy_create_v27.png)
+![](assets/mdeploy_create_v28.png)
 
 ### Environment Settings
 

@@ -54,7 +54,7 @@ original_id: model-deployment-feature
   
 ## 創建
 
-![](assets/mdeploy_create_v27.png)
+![](assets/mdeploy_create_v28.png)
 
 ### Environment Settings
 

@@ -58,7 +58,7 @@ title: 模型部署 (Alpha)
   
 ## 創建
 
-![](assets/mdeploy_create_v27.png)
+![](assets/mdeploy_create_v28.png)
 
 ### Environment Settings
 
