@@ -13,42 +13,40 @@ Install Helper is an advanced way to install PrimeHub and relative components. I
 
 ## How to Use
 
-Please clone the primehub repository or untar the primehub release
+Please untar the primehub release
 
 1. Init the configuration.
 
    ```bash
    export PRIMEHUB_SCHEME=https
    export PRIMEHUB_DOMAIN=primehub.example.com
-   export PRIMEHUB_CONSOLE_DOCKER_USERNAME=<the primehub console repo user>
-   export PRIMEHUB_CONSOLE_DOCKER_PASSWORD=<the primehub console repo password>
    export KC_USER=<user>
    export KC_PASSWORD=<password>
    export KC_SCHEME=https
-   export KC_DOMAIN=id.example.com
+   export KC_DOMAIN=primehub.example.com
    export PRIMEHUB_STORAGE_CLASS=<the storage class of RWO PVCs>
 
    make init
    ```   
    then the configuration is generated to `~/.primehub/config/<cluster-name>` or `bin/phenv --path`
 
-1. Configure PrimeHub for advanced features. Please reference the [environment variables](../references/dotenv.md) and [primehub chart configuration](../references/primehub_chart.md).
+2. Configure PrimeHub for advanced features. Please reference the [environment variables](../references/dotenv.md) and [primehub chart configuration](../references/primehub_chart.md).
 
    > For more detail of the configuration structure, please see [install helper design](../design/install-helper-design.md)
 
-1. Install the metacontroller
+3. Install the metacontroller
 
    ```bash
    make metacontroller-install
    ```
 
-1. Install the keycloak
+4. Install the keycloak
 
    ```bash
    make keycloak-install
    ```
 
-1. Install the primehub
+5. Install the primehub
 
    ```bash
    make primehub-install

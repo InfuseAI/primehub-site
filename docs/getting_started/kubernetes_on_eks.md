@@ -55,9 +55,10 @@ Create EKS cluster by `eksctl` command with a proper `__my_cluster_name__`.
 EKS_CLUSTER_NAME=__my_cluster_name__
 EKS_REGION=ap-northeast-1
 EKS_ZONE=${EKS_REGION}-a
+K8S_VERSION=1.16
 
 # Running eksctl to create EKS cluster
-eksctl create cluster -f - <<EOF
+cat <<EOF >> eks-config.yaml
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
@@ -65,23 +66,75 @@ metadata:
     # this is the name of the cluster
     name: ${EKS_CLUSTER_NAME}
     region: ${EKS_REGION}
-    version: "1.15"
+    version: "${K8S_VERSION}"
+    tags:
+      # You can customize your own tags
+      Name: ${EKS_CLUSTER_NAME}
 
 vpc:
     nat:
         gateway: Disable
 
 nodeGroups:
-- name: default-node-group
-    instanceType: m5.large
-    desiredCapacity: 2
+  - name: scaled-cpu-pool
+    instanceType: m5.xlarge
+    desiredCapacity: 0
+    minSize: 0
+    maxSize: 2
     labels:
-    component: singleuser-server
+      component: singleuser-server
+      hub.jupyter.org/node-purpose: user
+    taints:
+      hub.jupyter.org/dedicated: "user:NoSchedule"
     iam:
-    withAddonPolicies:
+      withAddonPolicies:
+        autoScaler: true
         externalDNS: true
     availabilityZones: ["${EKS_ZONE}"]
+    tags:
+      Name: "${EKS_CLUSTER_NAME}-scaled-cpu-pool"
+      cluster: "${EKS_CLUSTER_NAME}"
+      k8s.io/cluster-autoscaler/node-template/label/component: singleuser-server
+      k8s.io/cluster-autoscaler/node-template/taint/hub.jupyter.org/dedicated: "user:NoSchedule"
+  # [Optional] For GPU node
+  # - name: scaled-gpu-pool
+  #   instanceType: g4dn.xlarge
+  #   desiredCapacity: 0
+  #   minSize: 0
+  #   maxSize: 2
+  #   labels:
+  #     component: singleuser-server
+  #     hub.jupyter.org/node-purpose: user
+  #   taints:
+  #     hub.jupyter.org/dedicated: "user:NoSchedule"
+  #   iam:
+  #     withAddonPolicies:
+  #       autoScaler: true
+  #       externalDNS: true
+  #   availabilityZones: ["${EKS_ZONE}"]
+  #   tags:
+  #     Name: "${EKS_CLUSTER_NAME}-scaled-gpu-pool"
+  #     cluster: "${EKS_CLUSTER_NAME}"
+  #     k8s.io/cluster-autoscaler/node-template/label/component: singleuser-server
+  #     k8s.io/cluster-autoscaler/node-template/taint/hub.jupyter.org/dedicated: "user:NoSchedule"
+
+managedNodeGroups:
+  - name: default-node-group
+    instanceType: t3.medium
+    minSize: 2
+    desiredCapacity: 2
+    maxSize: 3
+    labels:
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+        externalDNS: true
+    availabilityZones: ["${EKS_ZONE}"]
+    tags:
+      Name: "${EKS_CLUSTER_NAME}-default-node-group"
+      cluster: "${EKS_CLUSTER_NAME}"
 EOF
+eksctl create cluster -f eks-config.yaml
 ```
 
 Wait until EKS cluster is created, then check the cluster.
@@ -161,7 +214,7 @@ Go to AWS web console Route53 page and add a Type `A` record for your domain wit
 
 ![Setup domain name by route53](assets/kubernetes_on_eks_route53.png)
 
-### Quick Verification
+### Verify By Your Domain
 
 Query nginx-ingress with your own domain:
 
@@ -171,10 +224,105 @@ curl http://<your-own-domain>
 
 The output will be `404`, because nobody defines any `Ingress` resources:
 
-```
+```text
 default backend - 404
+```
+
+## Enable Cluster Autoscaler
+
+AWS EKS will use `cluster-autoscaler` to handle auto scaling. For detail information, please reference the following URL. (https://docs.aws.amazon.com/eks/latest/userguide/cluster-autoscaler.html)
+
+### Deploy the Cluster Autoscaler
+
+To deploy the customized Cluster Autoscaler with the following commands.
+
+```bash
+EKS_CLUSTER_NAME=__my_cluster_name__
+curl https://docs.primehub.io/docs/assets/cluster-autoscaler-autodiscover.yaml.tmpl | sed -e "s/{EKS_CLUSTER_NAME}/$EKS_CLUSTER_NAME/" | kubectl apply -f -
+```
+
+### View your Cluster Autoscaler logs
+
+After you have deployed the Cluster Autoscaler, you can view the logs and verify that it is monitoring your cluster load.
+
+View your Cluster Autoscaler logs with the following command.
+
+```bash
+kubectl -n kube-system logs -f deployment.apps/cluster-autoscaler
+```
+
+## [Optional] Cert Mananger
+
+If you want to enable Https on your cluster, you can use cert manager to request free certificate from Let's Encrypt.
+
+### Deploy Cert Manager
+
+```bash
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+helm install \
+  --name cert-manager \
+  --namespace cert-manager \
+  --version v0.15.0 \
+  jetstack/cert-manager \
+  --set installCRDs=true \
+  --set ingressShim.defaultIssuerName=letsencrypt-prod \
+  --set ingressShim.defaultIssuerKind=ClusterIssuer
+kubectl -n cert-manager rollout status Deployment/cert-manager-webhook
+```
+
+### Apply Cluster Issuer
+
+```bash
+kubectl apply -f - << EOF
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    email: phadmin@<Your-Domain>
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      # Secret resource used to store the account's private key.
+      name: letsencrypt
+    # Add a single challenge solver, HTTP01 using nginx
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+EOF
 ```
 
 ## Next - Setup PrimeHub
 
-Now a kubernetes-ready EKS is ready for PrimeHub installation. Next, go to [Setup PrimeHub](install_metacontroller) section.
+### Prepare PrimeHub Config for auto scaling
+
+Please put `primehub.yaml` under the following path `~/.primehub/config/<cluster-name>/helm_override/primehub.yaml`
+
+``` bash
+EKS_CLUSTER_NAME=__my_cluster_name__
+mkdir -p ~/.primehub/config/${EKS_CLUSTER_NAME}/helm_override/
+touch ~/.primehub/config/${EKS_CLUSTER_NAME}/helm_override/primehub.yaml
+```
+
+### primehub.yaml
+
+```yaml
+---
+jupyterhub:
+  scheduling:
+    userScheduler:
+      enabled: true
+      image:
+        tag: v1.16.8
+    podPriority:
+      enabled: true
+    userPlaceholder:
+      enabled: false
+    userPods:
+      nodeAffinity:
+        matchNodePurpose: require
+```
+
+Now a kubernetes-ready EKS is ready for PrimeHub installation. Next, go to [Setup PrimeHub](install_helper) section.
