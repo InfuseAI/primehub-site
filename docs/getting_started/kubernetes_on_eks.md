@@ -325,4 +325,23 @@ jupyterhub:
         matchNodePurpose: require
 ```
 
-Now a kubernetes-ready EKS is ready for PrimeHub installation. Next, go to [Setup PrimeHub](install_helper) section.
+### Install PrimeHub
+
+Now a kubernetes-ready EKS is ready for PrimeHub installation. Next, go to [Setup PrimeHub](install_helper) section
+
+### After PrimeHub Installed
+
+Please apply the following command to fix rbac issue of `primehub-user-scheduler`
+
+```bash
+cat << EOF > primehub-user-scheduler-complementary.patch.yaml
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolume
+  - persistentvolumeclaims
+  verbs:
+  - update
+EOF
+kubectl apply -f <(cat <(kubectl get clusterrole primehub-user-scheduler-complementary -o yaml) primehub-user-scheduler-complementary.patch.yaml)
+```
