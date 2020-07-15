@@ -3,45 +3,47 @@ id: kubernetes_on_ubuntu_machine
 title: Kubernetes on an Ubuntu Machine (Single Node)
 ---
 
-This guide helps you to create a Kubernetes with [microk8s](https://microk8s.io/) for PrimeHub. microk8s is only for the single-node use case.
+This document will guide you to create a Kubernetes with [MicroK8s](https://microk8s.io/) for PrimeHub. MicroK8s is only for the *single-node* case.
 
 ## Provision a cluster
 
-[microk8s](https://microk8s.io/) could run on multi-platform, we demonstrate it in the following spec:
+[MicroK8s](https://microk8s.io/) supports multi-platform, we demonstrate it in the following spec:
 
 * Ubuntu 18.04 LTS
 * Kubernetes 1.17 version
 * IP address: 1.2.3.4
-* Networking: allow 80 port for HTTP
+* Networking: allow port 80 for HTTP
 
-### Install microk8s
+### Install MicroK8s
 
-There is a install script to create a single node kubernetes cluster by [microk8s](https://microk8s.io/).
+We provide a install script which makes the installation much easier to create a [MicroK8s-single-node](https://microk8s.io/) Kubernetes.
+
+Download the script
 
 ```bash
 curl -O https://storage.googleapis.com/primehub-release/bin/primehub-install
 chmod +x primehub-install
 ```
 
-Please exeute the `create singlenode` command:
+Run the `create singlenode` command:
 
 ```bash
 ./primehub-install create singlenode --k8s-version 1.17
 ```
 
-You will see the message at first time, because it adds the user to `microk8s` group and needs to relogin:
+After the first execution, you will see the message. Because it adds the user to `microk8s` group and needs to relogin:
 
 ```
 [Require Action] Please relogin this session and run create singlenode again
 ```
 
-After relogin, execute it again to finish the singlenode provision:
+After relogin, run the same command again to finish the single-node provision:
 
 ```bash
 ./primehub-install create singlenode --k8s-version 1.17
 ```
 
- During the installing process, you might get help from this document, if the installation went into trouble or needed to modify the default settings.
+>During the installation, you might run into troubles or need to modify the default settings, please check the [TroubleShooting](#troubleshooting) section.
 
 ### Quick Verification
 
@@ -51,7 +53,7 @@ Access nginx-ingress with the magic `.nip.io` domain, with your `EXTERNAL-IP`:
 $ curl http://1.2.3.4.nip.io
 ```
 
-The output will be `404` because nobody defines any `Ingress` resources:
+The output will be `404` because no `Ingress` resources are defined yet:
 
 ```
 default backend - 404
@@ -61,8 +63,8 @@ default backend - 404
 
 ### Configure GPU (optional)
 
-* download and install Nvidia GPU drivers from official website
-* enable GPU feature
+* Download and install Nvidia GPU drivers from official website
+* Enable GPU feature
 
 ```
 microk8s.enable gpu
@@ -75,8 +77,7 @@ microk8s.enable gpu
 * Set the update process run on a special time window, or delay it before a date
 * Disable it by setting a wrong proxy
 
-Please read the [manual](https://snapcraft.io/docs/keeping-snaps-up-to-date)
-
+Please see the [manual](https://snapcraft.io/docs/keeping-snaps-up-to-date) from snapcraft.
 
 ## Prepare EXTERNAL-IP & StorageClass
 
@@ -91,12 +92,19 @@ The cluster is ready to install PrimeHub. Please bring `EXTERNAL-IP` and `Storag
     microk8s-hostpath (default)   microk8s.io/hostpath   56m
     ```
 
-## Singlenode Troubleshooting
+## Next - Setup PrimeHub
 
+Now a MicroK8s-single-node Kubernetes is ready for PrimeHub installation. Next, go to [Setup PrimeHub](install_metacontroller) section.
+
+---
+
+## Troubleshooting
+
+You may run into troubles during the installation, we list some of them, hopefully, you find resolutions here.
 
 ### Using valid hostname and domain
 
-- validate the hostname of the node with the following regular expression.
+- Validate the hostname of the node with the following regular expression.
 
     ```bash
     [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
@@ -193,17 +201,19 @@ Please fix the hostname, domain name and reinstall microk8s. You could destroy i
 $ ./primehub-install destroy singlenode
 ```
 
+---
+
 ### Duplicated image registry settings causing containerd dead
 
-The install script supports `--insecure-registry` to create a node with extra docker registry settings. 
+The install script supports `--insecure-registry` to create a node with extra docker registry settings.
 
-We might execute installation command multiple times. If you did it more than twice, it would have set up duplicated registry in the containerd's configuration file.
+It is possible that we execute installation command multiple times, in this case , it would have set up duplicated registries in the containerd's configuration file.
 
 ```bash
 ./primehub-install create singlenode --insecure-registry foo-bar:5000 --k8s-version 1.17
 ```
 
-#### Symptoms
+#### Symptom
 
 You couldn't run a new pod, it was pending after scheduled to a node without any reason:
 
@@ -283,7 +293,7 @@ Building the report tarball
 
 #### Resolution
 
-check `containerd-template.toml` if there was any duplicated registry settings:
+check `containerd-template.toml` if there is any duplicated registry settings:
 
 ```bash
 ubuntu@foo-bar:~$ cat /var/snap/microk8s/current/args/containerd-template.toml  | grep -A10  plugins.cri.registry
@@ -308,7 +318,7 @@ ubuntu@foo-bar:~$ cat /var/snap/microk8s/current/args/containerd-template.toml  
   [plugins.scheduler]
 ```
 
-Remove duplicated settings and restart microk8s, the pod could be starting:
+Remove duplicated settings and restart MicroK8s, the pod could be started:
 
 ```bash
 ubuntu@foo-bar:~$ kubectl get pod
@@ -316,7 +326,9 @@ NAME                      READY   STATUS              RESTARTS   AGE
 foobar-6bfcbb6974-c2gt7   0/1     ContainerCreating   0          10m
 ```
 
-### Esure CNI IP Range not overlay with your egress network
+---
+
+### Ensure CNI IP Range not overlaid with your Egress network
 
 MicroK8s uses `iptables` as `kube-proxy` implementation, the overlay IP ranges might cause unexpected behavior with networking. For example, a client in a pod might not access same IP range external endpoint (banned by iptables).
 
@@ -348,11 +360,11 @@ ubuntu@foo-bar:~$ ip addr show
        valid_lft forever preferred_lft forever
 ```
 
-Microk8s uses `flannel` as the default CNI, it would create two interface `flannel.1` and `cni0`. In the example `eth0` IP range(`172.31.0.0`)  not overlay with CNI's IP range (`10.1.0.0`).
+Microk8s uses `flannel` as the default CNI, it would create two interface `flannel.1` and `cni0`. In the example `eth0` IP range(`172.31.0.0`)  is not overlaid with CNI's IP range (`10.1.0.0`).
 
 #### Resolution
 
-If the IP Range overlay with each other, please fix it by update CNI's IP range configuration `/var/snap/microk8s/current/args/flannel-network-mgr-config`:
+If the IP Range is overlaid with each other, please fix it by update CNI's IP range configuration `/var/snap/microk8s/current/args/flannel-network-mgr-config`:
 
 ```json
 {"Network": "10.1.0.0/16", "Backend": {"Type": "vxlan"}}
@@ -384,11 +396,13 @@ kube-system      tiller-deploy-969865475-h6gtb                    1/1     Runnin
 metacontroller   metacontroller-0                                 1/1     Running            2          31m   10.3.49.112     foo-bar   <none>           <none>
 ```
 
+---
+
 ### DNS configuration might reset to the default values when enable/disable microk8s addons
 
 If you update the `coredns` ConfigMap, please keep a backup to restore it after every microk8s addons enabling or disabling.
 
-#### Symptoms
+#### Symptom
 
 Applications are not able to resolve some domain names, they are registered in your internal DNS.
 
@@ -441,17 +455,14 @@ forward . 8.8.8.8
 
 Enable some addons either:
 
-- microk8s.enable istio
-- microk8s.enable gpu
+- `microk8s.enable istio`
+- `microk8s.enable gpu`
 
-The coredns ConfigMap will be reset to the default values.
+>The coredns ConfigMap will be **reset** to the default values.
 
 #### Resolution
 
-There was not a good way to handle it. Please backup your settings and apply it after every addons enabling or disable.
+There is no a good way to tackle it. 
 
+>Please remember to backup your settings and apply it *after every addons enabling or disable*.
 
-
-## Next - Setup PrimeHub
-
-Go to [Setup PrimeHub](install_metacontroller) section.
