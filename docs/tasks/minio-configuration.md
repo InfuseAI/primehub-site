@@ -31,7 +31,7 @@ minio:
 
 Refer to [minio gateway for s3](https://docs.min.io/docs/minio-gateway-for-s3.html) prerequisites are:
 
-* Choose a existing bucket or [create a bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) from Amazon S3 console
+* Choose an existing bucket or [create a bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) from Amazon S3 console
 * Create an IAM user and get `accessKey` and `secretKey`
 * Attach the user with AWS S3 permissions policies
 
