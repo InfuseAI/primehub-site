@@ -28,6 +28,20 @@ Environment | Description | Optional
 `PRIMEHUB_FEATURE_JOB_SUBMISSION` | If the job submission feature is enabled | Yes. default is `false`
 `PRIMEHUB_FEATURE_STORE` | If the store feature is enabled | Yes. default is `false`
 
+**The Environment Variables for Minio**
+
+Environment | Description | Optional
+--- | --- | ---
+`MINIO_S3GATEWAY_ACCESS_KEY`| AWS S3 access key for minio gateway | Yes
+`MINIO_S3GATEWAY_SECRET_KEY`| AWS S3 secret key for minio gateway | Yes 
+`MINIO_GCSGATEWAY_PROJECT_ID` | The project id of the Google Cloud Storage | Yes
+`MINIO_GCSGATEWAY_GCS_KEY_JSON`| The key file of the service account | Yes
+
+* The s3 gateway would enable if both `MINIO_S3GATEWAY_ACCESS_KEY` and `MINIO_S3GATEWAY_SECRET_KEY` were set.
+* The gcs gateway would enable if both `MINIO_GCSGATEWAY_PROJECT_ID` and `MINIO_GCSGATEWAY_GCS_KEY_JSON` were set.
+* If both s3 and gcs were enabled, s3 would be enabled.
+
+
 **The Environment Variables for Grafana**
 
 Environment | Description | Optional
