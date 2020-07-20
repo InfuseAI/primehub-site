@@ -23,11 +23,11 @@ title: Group Management
 
 設定 Group 的總配額
 
-+ `CPU Quota` 當使用者選擇此 Group 時，使用者可以共享多少 CPU。預設值為沒有限制。
++ `CPU Quota` 群組 CPU 總配額。預設值為沒有限制。
 
-+ `GPU Quota` 當使用者選擇此 Group 時，使用者可以共享多少 GPU。預設值為沒有限制。
++ `GPU Quota` 群組 GPU 總配額。預設值為沒有限制。
 
-+ `Memory Quota` 當使用者選擇此 Group 時，使用者可以共享多少 GPU。預設值為沒有限制。
++ `Memory Quota` 群組 Memory 總配額。預設值為沒有限制。
 
 點選 `confirm` 完成新增。
 
