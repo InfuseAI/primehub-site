@@ -7,7 +7,7 @@ title: System Management
 
 ![](assets/license_key_v24.png)
 
-Information of the PrimeHub license:
+Information of the PrimeHub Deploy license:
 
 + `License Status`
 

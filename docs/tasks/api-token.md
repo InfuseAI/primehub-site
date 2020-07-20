@@ -4,7 +4,7 @@ title: Generate an PrimeHub API Token
 sidebar_label: Generate API Token
 ---
 
-PrimeHub provides API to allow third party program to accesRegarding querying API, a valid token is mandatory.
+PrimeHub provides API to allow third party program to access. Regarding querying API, a valid token is mandatory.
 Here are steps generating a valid token.
 
 ## Steps

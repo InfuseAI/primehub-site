@@ -416,5 +416,27 @@
         ]
       }
     ]
+  },
+  "primehub-deploy-cht": {
+    "PrimeHub 模型部署": [
+      {
+        "type": "subcategory",
+        "label": "Mode Deployment",
+        "ids": [
+          "model_deployment/md-deployment-cht"
+        ]
+      },
+      {
+        "type":"subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "model_deployment/md-system-cht",
+          "model_deployment/md-user-cht",
+          "model_deployment/md-group-cht",
+          "model_deployment/md-instancetype-cht",
+          "model_deployment/md-secret-cht"
+        ]
+      }
+    ]
   }
 }
