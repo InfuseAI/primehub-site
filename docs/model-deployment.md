@@ -161,6 +161,14 @@ Filling in `Client Name` and clicking `Add client` to generate a `Client Token`.
 
 The token is mandatory for accessing a private endpoint, we can bring it as `-u <client-name>:<client-token>` in a curl command.
 
+```bash
+curl -X POST \
+    -u <client-name>:<client-token> \
+    -d '{"data":{"names":["a","b"],"tensor":{"shape":[2,2],"values":[0,0,1,1]}}}' \
+    -H "Content-Type: application/json" \
+    https://<primehub>/deployment/<model>/api/<version>/predictions
+```
+
 >Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.
 
 #### Tips:

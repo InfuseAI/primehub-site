@@ -26,7 +26,7 @@ original_id: model-deployment-feature
 
 狀態分別由下列顏色來區別：
 
-|**狀態** |<span style="background-color: green">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: yellow">Deploying</span>|<span style="background-color: gray">Stopped</span>|
+|**狀態** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
 |---------|--------|------|---------|-------|
 
 ### 部署
@@ -157,7 +157,15 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 
 填入`Client Name`及點擊 `Add client`產生該帳號的對應`Client Token`。
 
-必須代入此 Token 才能存取私人 endpoint；我們可以將之代入 curl 命令參數`-u <client-name>:<client-token>`。
+必須帶入此 Token 才能存取私人 endpoint；我們可以將其帶入 curl 命令參數`-u <client-name>:<client-token>`。
+
+```bash
+curl -X POST \
+    -u <client-name>:<client-token> \
+    -d '{"data":{"names":["a","b"],"tensor":{"shape":[2,2],"values":[0,0,1,1]}}}' \
+    -H "Content-Type: application/json" \
+    https://<primehub>/deployment/<model>/api/<version>/predictions
+```
 
 >Client Token 產生後，在介面上只會短暫地顯示一次，請記錄下來；若遺失，請刪除再重新產生。
 
