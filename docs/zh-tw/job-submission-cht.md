@@ -15,16 +15,16 @@ title: Job Submission (Beta)
 
 + `job`最長可以執行 **24** 個小時。一旦超過 24 小時後，會被中止宣告失敗。
 
-+ 結束的`job`記錄基本上會被保留 **7** 天；超過 7 天後，`job`還是會在列舉中，但`Logs`資訊會被刪除。
++ 結束的`job`記錄基本上會被保留 **7** 天；超過 7 天後，`job`還是會在列表中，但`Logs`資訊會被刪除。
     ***請注意：由於 Job 容器有可能提早被其執行環境給回收，因此`Logs`有可能在 7 天內被刪除。***
 
-## 列舉 Job
+## Job 列表
 
-此頁列舉已創建 Jobs 及其對應資訊。
+此頁列出已創建 Jobs 及其對應資訊。
 
 ![](assets/jsub_main_beta_v27.png)
 
-列舉中的`Job`對應資訊欄位：
+列表中的`Job`對應資訊欄位：
 
 |欄位|描述|
 |------|-----------|
@@ -38,7 +38,7 @@ title: Job Submission (Beta)
 
 + `Create Job`: 點擊按鈕，創建`job`。
 
-+ `Refresh`: 點擊按鈕，刷新`job`列舉。
++ `Refresh`: 點擊按鈕，刷新`job`列表。
 
 + `Job name` link: 點擊名稱連結，進入 Job 詳細頁。
 
@@ -50,11 +50,11 @@ title: Job Submission (Beta)
 
 ![](assets/jsub_filter_beta_v27.png)
 
-+ 預設 (Group 選取為空白)： 列舉所有使用者所屬群組創建的`job`。非所屬群組的，則不在此列。
++ 預設 (Group 選取為空白)： 列出所有使用者所屬群組創建的`job`。非所屬群組的，則不在此列。
 
-+ 指定 Group： 指定群組，只列舉指定所屬群組創建`job`。
++ 指定 Group： 指定群組，只列出指定所屬群組創建`job`。
 
-+ 該使用者創建： 勾選`Submitted by Me`只列舉該使用者創建的`job`。
++ 該使用者創建： 勾選`Submitted by Me`只列出該使用者創建的`job`。
 
 ## 創建 Job
 
@@ -108,7 +108,7 @@ python -u /project/research/train_minst.py
 
 ## 查看 Job
 
-在列舉上點擊想要查看的`job`名稱，查看內容資訊及執行記錄；可以`Rerun`或`Clone`此 Job。
+在列表上點擊想要查看的`job`名稱，查看內容資訊及執行記錄；可以`Rerun`或`Clone`此 Job。
 
 ### Information
 
