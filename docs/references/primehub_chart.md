@@ -4,6 +4,10 @@ title: Chart Configuration
 ---
 
 ## Configuration
+
+Please see the default value in [values.yaml](https://github.com/InfuseAI/primehub/blob/master/chart/values.yaml)
+
+
 Parameter | Description | Default
 --- | --- | ---
 `primehub.scheme` | The url scheme for primehub |  `http`
@@ -19,10 +23,8 @@ Parameter | Description | Default
 `primehub.keycloak.realm` | The keycloak realm for primehub | `primehub`
 `primehub.keycloak.clientId` | The keycloak client id for primehub | `admin-ui`
 `primehub.keycloak.rolePrefix` | The prefix of roles for the resource-group binding | `""`
-`primehub.sharedVolumeStorageClass` | The storage class for shared volume. If the value is empty string `""`, it means to use `groupvolume` to provision shared volume | `""` 
-`primehub.store.bucket` | The bucket name would be mounted by store. | `"primehub"` 
-`primehub.store.enabled` | Enable PrimeHub Store | `false` 
-`ingress.annotations` | Annotations for ingress| `{}` 
+`primehub.sharedVolumeStorageClass` | The storage class for shared volume. If the value is empty string `""`, it means to use `groupvolume` to provision shared volume | `""`
+`ingress.annotations` | Annotations for ingress| `{}`
 `ingress.hosts` | a list of ingress hosts | `[]`
 `ingress.tls` | 	a list of ingress tls items | `[]`
 `console.locale` | The language of console | `en`
@@ -53,7 +55,7 @@ Parameter | Description | Default
 `watcher.replicas` | The number of watcher replicas | `1`
 `watcher.image.credentials.*` | The credential for watcher image | `null`
 `watcher.image.repository` | The watcher image repository | `infuseai/canner-watcher`
-`watcher.image.tag` | The watcher image tag | Please see [values.yaml](values.yaml) 
+`watcher.image.tag` | The watcher image tag | Please see [values.yaml](values.yaml)
 `watcher.image.pullPolicy` | The watcher image pull policy | `IfNotPresent`
 `watcher.resources` | Pod resource requests and limits | Please see [values.yaml](values.yaml)
 `watcher.nodeSelector` | Node labels for pod assignment | `{}`
@@ -102,7 +104,7 @@ Parameter | Description | Default
 `gitsync.nodeSelector` | Node labels for pod assignment | `{}`
 `gitsync.tolerations` | Node taints to tolerate| `{}`
 `gitsync.affinity` | Pod affinitiy | `[]`
-`gitsync.daemonset.delayInit` | Enable random init delay for gitsync container. It prevent from pulling data at the same time. | `false` 
+`gitsync.daemonset.delayInit` | Enable random init delay for gitsync container. It prevent from pulling data at the same time. | `false`
 `gitsync.daemonset.image.repository` | The [gitsync](https://github.com/kubernetes/git-sync) image repository | `k8s.gcr.io/git-sync`
 `gitsync.daemonset.image.tag` | The gitsync image tag | Please see [values.yaml](values.yaml)
 `gitsync.daemonset.image.pullPolicy` | The gitsync image tag pull policy | `IfNotPresent`
@@ -156,8 +158,19 @@ Parameter | Description | Default
 `keycloakGateway.image.repository` | The keycloak gateway image repository| `infuseai/primehub-admin-notebook`
 `keycloakGateway.image.tag` | The keycloak gateway image tag | Please see [values.yaml](values.yaml)
 `modelDeployment.enabled` | Enable the model deployment | `false`
-`minio.ingress.enabled` | Enable the minio ingress | `false`
-`minio.s3gateway.enabled` | Use MinIO as a s3 gateway | `false`
+`store.enabled` | If the PrimeHub store is enabled. If enabled, the MinIO and csi-rclone would be installed as well. | `false`
+`store.accessKey` | The access key for the PrimeHub store | `AKIAIOSFODNN7EXAMPLE`
+`store.secretKey` | The secret key for the PrimeHub store | `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
+`store.bucket` | The bucket name the PrimeHub store use | `primehub`
+`store.logPersistence.enabled` | If the log persistence feature is enabled. If enabled, the fluentd would be installed as well. | `true` if the PrimeHub store is enabled.
+`store.phfs.enabled` | If the PHFS feature is enabled.  | `true` if the PrimeHub store is enabled.
+`minio.ingress.enabled` | Enable the MinIO UI at `/minio` | `false`
+`minio.ingress.maxBodySize` | The max body size for uploading | `8192m`
+`minio.persistence.enabled` | If MinIO PVC for MinIO standalone mode is enabled | `true` if no gateway is enabled.
+`minio.persistence.storageClass` | The storage class of PVC | null
+`minio.persistence.accessMode` | The access mode of PVC | `ReadWriteOnce`
+`minio.persistence.size` | The PVC size | `10Gi`
+`minio.s3gateway.enabled` | Use MinIO as a S3 gateway | `false`
 `minio.s3gateway.replicas` | Number of s3 gateway instances to run in parallel | `1`
 `minio.s3gateway.accessKey` | Access key of S3 compatible service | `""`
 `minio.s3gateway.secretKey` | Secret key of S3 compatible service | `""`
@@ -165,6 +178,13 @@ Parameter | Description | Default
 `minio.gcsgateway.replicas` | Number of gcs gateway instances to run in parallel | `1`
 `minio.gcsgateway.projectId` | Google cloud project id | `""`
 `minio.gcsgateway.gcsKeyJson` | credential json file of service account key | `""`
+`fluentd.flushAtShutdown` | Flush when flunetd is shutdown. Please see `flush_interval` setting in [flunetd buffer document](https://docs.fluentd.org/configuration/buffer-section) | `false`
+`fluentd.flushInterval` | The flush interval. Please see `flush_interval` in [flunetd buffer document](https://docs.fluentd.org/configuration/buffer-section) |  `3600s`
+`fluentd.chunkLimitSize` | The max size of each chunks. Please see `chunk_limit_size` setting in [flunetd buffer document](https://docs.fluentd.org/configuration/buffer-section) | "256m"
+`fluentd.storeAs` | The log format stored in the store. We supports `txt` or `gzip`. Please see `store_as` setting in [flunetd s3 plugin document](https://docs.fluentd.org/output/s3) | `txt`
+`rclone.kubeletPath` | The csi kubelet registration path. Please see [node-driver-registrar document](https://github.com/kubernetes-csi/node-driver-registrar) <br> For microk8s, please set this path to `/var/snap/microk8s/common/var/lib/kubelet` | `/var/lib/kubelet`
+  # use /var/snap/microk8s/common/var/lib/kubelet with microk8s
+  kubeletPath:
 
 
 ## Advanced Settings
