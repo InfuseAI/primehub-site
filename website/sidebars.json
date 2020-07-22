@@ -23,19 +23,15 @@
         ]
       }
     ],
-    "Advanced": [
-      "guide_manual/kubeflow-installation-guide",
-      "guide_manual/csi-rclone-installation-guide"
-    ],
     "Designs and Concepts": [
       {
         "type": "subcategory",
         "label": "Concepts",
-        "ids": [      
+        "ids": [
           "design/architecture",
-          "design/data-model",              
+          "design/data-model",
           "design/crds",
-          "design/graphql",          
+          "design/graphql",
           "design/persistence-storage"
         ]
       },
@@ -50,18 +46,21 @@
           "design/image-builder",
           "design/job-submission",
           "design/job-scheduler",
-          "design/install-helper-design",          
+          "design/install-helper-design",
           "design/user-portal",
           "design/meta-chart",
-          "design/model-deployment"
+          "design/model-deployment",
+          "design/primehub-store",
+          "design/log-persistence",
+          "design/phfs"
         ]
-      }      
+      }
     ],
     "Tasks": [
       {
         "type": "subcategory",
         "label": "Build",
-        "ids": [      
+        "ids": [
           "tasks/build",
           "tasks/airgap"
         ]
@@ -69,7 +68,7 @@
       {
         "type": "subcategory",
         "label": "Jupyter Images",
-        "ids": [      
+        "ids": [
           "tasks/repo2docker",
           "tasks/non-standard-image"
         ]
@@ -84,9 +83,9 @@
       {
         "type": "subcategory",
         "label": "Operations",
-        "ids": [      
+        "ids": [
           "tasks/cluster_shutdown",
-          "tasks/benchmark",      
+          "tasks/benchmark",
           "tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12",
           "tasks/ADVANCED-rook-setup-metadata-on-vg"
         ]
@@ -94,7 +93,7 @@
       {
         "type": "subcategory",
         "label": "PrimeHub Chart",
-        "ids": [      
+        "ids": [
           "tasks/minio_configurations"
         ]
       },
@@ -104,7 +103,7 @@
         "ids":[
           "tasks/api-token"
         ]
-      }    
+      }
     ],
     "References": [
       "references/primehub_chart",
@@ -180,7 +179,7 @@
         "ids":[
           "guide_manual/admin-instancetype",
           "guide_manual/usecase-toleration",
-          "guide_manual/usecase-nodeselector"       
+          "guide_manual/usecase-nodeselector"
         ]
       },
       {
@@ -218,7 +217,7 @@
           "quickstart/add-instance-type",
           "quickstart/add-infuseai-image",
           "quickstart/add-image",
-          "quickstart/build-image",       
+          "quickstart/build-image",
           "quickstart/secret-pull-image",
           "quickstart/secret-gitsync"
         ]
@@ -380,7 +379,7 @@
           "zh-tw/quickstart/build-image",
           "zh-tw/quickstart/secret-pull-image",
           "zh-tw/quickstart/secret-gitsync"
-        ] 
+        ]
       }
     ],
     "維運": [
