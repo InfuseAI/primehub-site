@@ -28,12 +28,14 @@ Environment | Description | Optional
 `PRIMEHUB_FEATURE_JOB_SUBMISSION` | If the job submission feature is enabled | Yes. default is `false`
 `PRIMEHUB_FEATURE_STORE` | If the store feature is enabled | Yes. default is `false`
 
-**The Environment Variables for Minio**
+**The Environment Variables for MinIO**
 
 Environment | Description | Optional
 --- | --- | ---
-`MINIO_S3GATEWAY_ACCESS_KEY`| AWS S3 access key for minio gateway | Yes
-`MINIO_S3GATEWAY_SECRET_KEY`| AWS S3 secret key for minio gateway | Yes 
+`PRIMEHUB_STORE_ACCESS_KEY` | The access key of MinIO | No
+`PRIMEHUB_STORE_SECRET_KEY` | The secret key of MinIO | No
+`MINIO_S3GATEWAY_ACCESS_KEY`| AWS S3 access key for MinIO gateway | Yes
+`MINIO_S3GATEWAY_SECRET_KEY`| AWS S3 secret key for MinIO gateway | Yes
 `MINIO_GCSGATEWAY_PROJECT_ID` | The project id of the Google Cloud Storage | Yes
 `MINIO_GCSGATEWAY_GCS_KEY_JSON`| The key file of the service account | Yes
 
@@ -60,7 +62,7 @@ Environment | Description | Optional
 **Deprecated**
 
 Environment | Description
---- | --- 
+--- | ---
 `PRIMEHUB_FEATURE_USER_PORTAL` | If the user portal is enabled. Deprecated because it is enabled by default and cannot set it to false.
 `PH_DOMAIN`| parent domain name for this installation. (e.g. `example.com`). Deprecated because user portal is enabled by default.
 `PH_SCHEME`| http or https. Deprecated because the user portal is enabled by default.

@@ -35,7 +35,7 @@ In contrast, the PHFS is a single PVC and can be accessed by s3 rest API as well
  Descritpion   | PHFS | Group Volume
 ----|--- | -----
 PVC count | Shared PVC among groups | One PVC per group
-PVC type | csi-rclone on Minio | any RWX PVC
+PVC type | csi-rclone on MinIO | any RWX PVC
 REST API (Internal) | S3-Compatible API | N/A
 Mount point | `/phfs` | `/project/<group-name>`
 

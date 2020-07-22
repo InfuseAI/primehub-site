@@ -25,7 +25,7 @@ cat modules/csi-rclone/csi-nodeplugin-rclone.yaml | sed "s#/var/lib/kubelet#/var
 We already have a csi-rclone now, but it doesn't how and where to connect the default storage. It needs a `rclone-secret` secret. There are two `secret` examples for different use cases, please replace `${VARIABLES}` to fit the real case.
 
 
-### Connect to Minio
+### Connect to MinIO
 
 ```yaml
 apiVersion: v1
@@ -43,7 +43,7 @@ stringData:
   s3-secret-access-key: "${S3_SECRET_ACCESS_KEY}"
 ```
 
-**Minio variables explained**
+**MinIO variables explained**
 
 - remotePath
     - it could be a `BUCKET` name or a `BUCKET` with prefix. e.g. `BUCKET/prefix`
@@ -68,7 +68,7 @@ stringData:
 ```
 
 - remotePath
-    - basically same with `Minio`, however, you have to create the `BUCKET` before it could be used.
+    - basically same with `MinIO`, however, you have to create the `BUCKET` before it could be used.
 - s3-region
     - For a regular `AWS S3`, we needn't customize endpoint, please use `s3-region` to setup where is the bucket.
 

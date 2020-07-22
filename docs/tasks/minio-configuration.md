@@ -1,13 +1,13 @@
 ---
 id: minio_configurations
-title: Minio Configurations
+title: MinIO Configurations
 ---
 
 
 We build the object store feature with [minio](https://docs.min.io/). By default, minio installed as the standard mode, it would provision a PV to keep data. The administrator could customize it:
 
 * configure standalone mode
-* launch minio as [AWS S3](https://aws.amazon.com/s3/) gateway  
+* launch minio as [AWS S3](https://aws.amazon.com/s3/) gateway
 * launch minio as [Google Cloud Storage](https://cloud.google.com/storage) gateway
 
 All minio configurations at the top level `minio:`
@@ -71,7 +71,7 @@ minio:
 
 ## Access the minio UI
 
-You could export the minio web UI to the public domain `http://${PRIMEHUB_DOMAIN}/minio` 
+You could export the minio web UI to the public domain `http://${PRIMEHUB_DOMAIN}/minio`
 
 ```yaml
 minio:

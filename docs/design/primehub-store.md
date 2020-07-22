@@ -3,7 +3,7 @@ id: primehub-store
 title: PrimeHub Store
 ---
 
-PrimeHub store is the central storage of PrimeHub and its backend is object storage. We use Minio as the object storage solution. It supports launching as a standalone object store server or a gateway to connect the most popular cloud object storage solutions (e.g. AWS s3, google cloud GCS, azure blob...)
+PrimeHub store is the central storage of PrimeHub and its backend is object storage. We use MinIO as the object storage solution. It supports launching as a standalone object store server or a gateway to connect the most popular cloud object storage solutions (e.g. AWS s3, google cloud GCS, azure blob...)
 
 Unlike user volume, group volume, and dataset, which are designed for storing user's data, PrimeHub store is designed for storing both system and user data.
 
@@ -36,25 +36,25 @@ Path | Description | Default Value
 `minio.*` | The minio configuration | Please see the [chart configuration](../references/primehub_chart)
 `rclone.*` | The rclone configuration | Please see the [chart configuration](../references/primehub_chart)
 
-To configure Minio (e.g. different persistence backend), please see the [Minio configuration](../tasks/minio_configurations)
+To configure MinIO (e.g. different persistence backend), please see the [MinIO configuration](../tasks/minio_configurations)
 
 # Design
 
 ![](assets/primehub-store.png)
 
-## Minio
+## MinIO
 
-[Minio](https://min.io/) is the key component of the Primehub Store. We support three persistence backend
+[MinIO](https://min.io/) is the key component of the Primehub Store. We support three persistence backend
 
-1. Minio Standalone
-1. Minio Gateway for S3
-1. Minio Gateway for GCS
+1. MinIO Standalone
+1. MinIO Gateway for S3
+1. MinIO Gateway for GCS
 
-Minio hides the different implementation for different persistence backend and provides a consistent way for other PrimeHub components to access the PrimeHub store.
+MinIO hides the different implementation for different persistence backend and provides a consistent way for other PrimeHub components to access the PrimeHub store.
 
 ## GraphQL and PrimeHub services
 
-GraphQL and other PrimeHub services use Minio s3-compatible REST API to access the PrimeHub store.
+GraphQL and other PrimeHub services use MinIO s3-compatible REST API to access the PrimeHub store.
 
 ## Csi-rclone
 
