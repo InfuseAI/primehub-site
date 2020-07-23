@@ -74,7 +74,7 @@
 <p><img src="/docs/assets/mdeploy_grid_v27.png" alt=""></p>
 <table>
 <thead>
-<tr><th><strong>Status</strong></th><th><span style="background-color: green">Deployed</span></th><th><span style="background-color: red">Failed</span></th><th><span style="background-color: yellow">Deploying</span></th><th><span style="background-color: gray">Stopped</span></th></tr>
+<tr><th><strong>Status</strong></th><th><span style="background-color: #33ea33">Deployed</span></th><th><span style="background-color: red">Failed</span></th><th><span style="background-color: #fba500">Deploying</span></th><th><span style="background-color: #aaaaaa">Stopped</span></th></tr>
 </thead>
 <tbody>
 </tbody>
@@ -192,6 +192,12 @@
 <p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
 <p>Filling in <code>Client Name</code> and clicking <code>Add client</code> to generate a <code>Client Token</code>.</p>
 <p>The token is mandatory for accessing a private endpoint, we can bring it as <code>-u &lt;client-name&gt;:&lt;client-token&gt;</code> in a curl command.</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST <span class="token punctuation">\</span>
+    -u <span class="token operator">&lt;</span>client-name<span class="token operator">></span>:<span class="token operator">&lt;</span>client-token<span class="token operator">></span> <span class="token punctuation">\</span>
+    -d <span class="token string">'{"data":{"names":["a","b"],"tensor":{"shape":[2,2],"values":[0,0,1,1]}}}'</span> <span class="token punctuation">\</span>
+    -H <span class="token string">"Content-Type: application/json"</span> <span class="token punctuation">\</span>
+    https://<span class="token operator">&lt;</span>primehub<span class="token operator">></span>/deployment/<span class="token operator">&lt;</span>model<span class="token operator">></span>/api/<span class="token operator">&lt;</span>version<span class="token operator">></span>/predictions
+</code></pre>
 <blockquote>
 <p>Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.</p>
 </blockquote>

@@ -67,13 +67,13 @@
 <h3><a class="anchor" aria-hidden="true" id="lifetime"></a><a href="#lifetime" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lifetime</h3>
 <ul>
 <li><p><code>job</code>最長可以執行 <strong>24</strong> 個小時。一旦超過 24 小時後，會被中止宣告失敗。</p></li>
-<li><p>結束的<code>job</code>記錄基本上會被保留 <strong>7</strong> 天；超過 7 天後，<code>job</code>還是會在列舉中，但<code>Logs</code>資訊會被刪除。
+<li><p>結束的<code>job</code>記錄基本上會被保留 <strong>7</strong> 天；超過 7 天後，<code>job</code>還是會在列表中，但<code>Logs</code>資訊會被刪除。
 <strong><em>請注意：由於 Job 容器有可能提早被其執行環境給回收，因此<code>Logs</code>有可能在 7 天內被刪除。</em></strong></p></li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="列舉-job"></a><a href="#列舉-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>列舉 Job</h2>
-<p>此頁列舉已創建 Jobs 及其對應資訊。</p>
+<h2><a class="anchor" aria-hidden="true" id="job-列表"></a><a href="#job-列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 列表</h2>
+<p>此頁列出已創建 Jobs 及其對應資訊。</p>
 <p><img src="/docs/assets/jsub_main_beta_v27.png" alt=""></p>
-<p>列舉中的<code>Job</code>對應資訊欄位：</p>
+<p>列表中的<code>Job</code>對應資訊欄位：</p>
 <table>
 <thead>
 <tr><th>欄位</th><th>描述</th></tr>
@@ -90,7 +90,7 @@
 </table>
 <ul>
 <li><p><code>Create Job</code>: 點擊按鈕，創建<code>job</code>。</p></li>
-<li><p><code>Refresh</code>: 點擊按鈕，刷新<code>job</code>列舉。</p></li>
+<li><p><code>Refresh</code>: 點擊按鈕，刷新<code>job</code>列表。</p></li>
 <li><p><code>Job name</code> link: 點擊名稱連結，進入 Job 詳細頁。</p></li>
 <li><p><code>Schedule</code> link: 點擊名稱連結，進入 Job Scheduler 詳細頁。</p></li>
 </ul>
@@ -98,9 +98,9 @@
 <p>利用 Group 選取作為篩選。</p>
 <p><img src="/docs/assets/jsub_filter_beta_v27.png" alt=""></p>
 <ul>
-<li><p>預設 (Group 選取為空白)： 列舉所有使用者所屬群組創建的<code>job</code>。非所屬群組的，則不在此列。</p></li>
-<li><p>指定 Group： 指定群組，只列舉指定所屬群組創建<code>job</code>。</p></li>
-<li><p>該使用者創建： 勾選<code>Submitted by Me</code>只列舉該使用者創建的<code>job</code>。</p></li>
+<li><p>預設 (Group 選取為空白)： 列出所有使用者所屬群組創建的<code>job</code>。非所屬群組的，則不在此列。</p></li>
+<li><p>指定 Group： 指定群組，只列出指定所屬群組創建<code>job</code>。</p></li>
+<li><p>該使用者創建： 勾選<code>Submitted by Me</code>只列出該使用者創建的<code>job</code>。</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="創建-job"></a><a href="#創建-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>創建 Job</h2>
 <p><img src="/docs/assets/jsub_create.png" alt=""></p>
@@ -114,7 +114,7 @@
 <h3><a class="anchor" aria-hidden="true" id="job-可存取工作目錄、專案目錄及資料集目錄"></a><a href="#job-可存取工作目錄、專案目錄及資料集目錄" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 可存取工作目錄、專案目錄及資料集目錄</h3>
 <blockquote>
 <p>注意：Job 的預設路徑是在 <code>/homve/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
-所以 JupyterHub <code>/home/jovyan</code>下的其它檔案並 <strong>不存在</strong> 此時的 Job Pod 的<code>/homejovyan</code>。Job 這裡只會有掛載的<code>&lt;group volume&gt;</code>及<code>&lt;dataset&gt;</code>。</p>
+所以 JupyterHub <code>/home/jovyan</code>下的其它檔案並 <strong>不存在</strong> 此時的 Job Pod 的<code>/home/jovyan</code>。Job 這裡只會有掛載的<code>&lt;group volume&gt;</code>及<code>&lt;dataset&gt;</code>。</p>
 </blockquote>
 <table>
 <thead>
@@ -149,7 +149,7 @@ python -u train_minst.py
 </code></pre>
 <p><code>Submit</code>: 點擊按鈕，送出工作執行。</p>
 <h2><a class="anchor" aria-hidden="true" id="查看-job"></a><a href="#查看-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看 Job</h2>
-<p>在列舉上點擊想要查看的<code>job</code>名稱，查看內容資訊及執行記錄；可以<code>Rerun</code>或<code>Clone</code>此 Job。</p>
+<p>在列表上點擊想要查看的<code>job</code>名稱，查看內容資訊及執行記錄；可以<code>Rerun</code>或<code>Clone</code>此 Job。</p>
 <h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
 <p><img src="/docs/assets/jsub_info_beta_v28.png" alt=""></p>
 <p><code>Job</code>記載內容資訊如下：</p>
@@ -182,7 +182,7 @@ python -u train_minst.py
 <p>當工作是被「取消」或「中止」，無法由此查到任何記錄！因為此時的 Pod 已被刪除回收。</p>
 <p>有時，我們只想看最後的輸出結果，可以點擊<code>Scroll to Bottom</code>跳過攏長記錄直接到記錄尾端。</p>
 <p>另外，由於介面上只顯示最後的 2000 行記錄，我們可以點擊<code>Download</code>下載完整的記錄檔來檢查。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/next/zh-tw/job-submission-tutorial-simple"><span>初階範例</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#job">Job</a><ul class="toc-headings"><li><a href="#lifetime">Lifetime</a></li></ul></li><li><a href="#列舉-job">列舉 Job</a><ul class="toc-headings"><li><a href="#篩選">篩選</a></li></ul></li><li><a href="#創建-job">創建 Job</a><ul class="toc-headings"><li><a href="#job-可存取工作目錄、專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></li><li><a href="#job-可存取環境變數">Job 可存取環境變數</a></li></ul></li><li><a href="#查看-job">查看 Job</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#工作記錄">工作記錄</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/next/zh-tw/job-submission-tutorial-simple"><span>初階範例</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#job">Job</a><ul class="toc-headings"><li><a href="#lifetime">Lifetime</a></li></ul></li><li><a href="#job-列表">Job 列表</a><ul class="toc-headings"><li><a href="#篩選">篩選</a></li></ul></li><li><a href="#創建-job">創建 Job</a><ul class="toc-headings"><li><a href="#job-可存取工作目錄、專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></li><li><a href="#job-可存取環境變數">Job 可存取環境變數</a></li></ul></li><li><a href="#查看-job">查看 Job</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#工作記錄">工作記錄</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
