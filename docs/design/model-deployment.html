@@ -59,7 +59,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Model Deployment (Alpha)</h1></header><article><div><span><p>Allow users to deploy a model as a service.</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Model Deployment (Alpha)</h1></header><article><div><span><p>Allow users to deploy a model as a service.</p>
 <h2><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h2>
 <ol>
 <li><strong>Multiple ML framework support:</strong> Supports Tensorflow 1, Tensorflow 2, Keras, Pytorch, XGBoost, MXNet, Scikit-learn, LightGBM</li>
@@ -116,42 +116,42 @@
 <h2><a class="anchor" aria-hidden="true" id="custom-resource"></a><a href="#custom-resource" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom Resource</h2>
 <p>A <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">custom resource</a> <code>PhDeployment</code> is defined for PrimeHub-defined model deployment. The deployment is very similar to the Kubernetes native deployment, the controller would spawn a deployment according to the <code>PhDeployment</code>'s spec. The difference is that the spec contains the PrimeHub-specific concept, like User, Group, and InstanceType.</p>
 <p>Here is an example of <code>PhDeployment</code>.</p>
-<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">primehub.io/v1alpha1</span>
-<span class="hljs-attr">kind:</span> <span class="hljs-string">PhDeployment</span>
-<span class="hljs-attr">metadata:</span>
-  <span class="hljs-attr">name:</span> <span class="hljs-string">spam-classifier-abcxy</span>
-  <span class="hljs-attr">namespace:</span> <span class="hljs-string">hub</span>
-<span class="hljs-attr">spec:</span>
-  <span class="hljs-attr">displayName:</span> <span class="hljs-string">"spam classifier"</span>
-  <span class="hljs-attr">userId:</span> <span class="hljs-string">"4d203a08-896a-4aa8-86e2-882f4d4aadec"</span>
-  <span class="hljs-attr">userName:</span> <span class="hljs-string">"phadmin"</span>
-  <span class="hljs-attr">groupId:</span> <span class="hljs-string">"ca6b032e-b8be-44d2-9646-092622d6ba15"</span>
-  <span class="hljs-attr">groupName:</span> <span class="hljs-string">"phusers"</span>  
-  <span class="hljs-attr">stop:</span> <span class="hljs-literal">false</span>
-  <span class="hljs-attr">description:</span> <span class="hljs-string">|
+<pre><code class="hljs"><span class="hljs-symbol">apiVersion:</span> primehub.io/v1alpha1
+<span class="hljs-symbol">kind:</span> PhDeployment
+<span class="hljs-symbol">metadata:</span>
+<span class="hljs-symbol">  name:</span> spam-classifier-abcxy
+<span class="hljs-symbol">  namespace:</span> hub
+<span class="hljs-symbol">spec:</span>
+<span class="hljs-symbol">  displayName:</span> <span class="hljs-string">"spam classifier"</span>
+<span class="hljs-symbol">  userId:</span> <span class="hljs-string">"4d203a08-896a-4aa8-86e2-882f4d4aadec"</span>
+<span class="hljs-symbol">  userName:</span> <span class="hljs-string">"phadmin"</span>
+<span class="hljs-symbol">  groupId:</span> <span class="hljs-string">"ca6b032e-b8be-44d2-9646-092622d6ba15"</span>
+<span class="hljs-symbol">  groupName:</span> <span class="hljs-string">"phusers"</span>  
+<span class="hljs-symbol">  stop:</span> false
+<span class="hljs-symbol">  description:</span> |
     This is my first deployment.
     This is my first deployment.
     This is my first deployment.
-</span>  <span class="hljs-attr">predictors:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">predictor1</span>
-      <span class="hljs-attr">replicas:</span> <span class="hljs-number">2</span>
-      <span class="hljs-attr">modelImage:</span> <span class="hljs-string">sandhya1594/spam-classifier:1.0.0.1</span>
-      <span class="hljs-attr">instanceType:</span> <span class="hljs-string">cpu-only</span>
-      <span class="hljs-attr">metadata:</span>
-        <span class="hljs-attr">LEARNING_RATE:</span> <span class="hljs-string">"0.02"</span>
-        <span class="hljs-attr">MINI_BATCH:</span> <span class="hljs-string">"20"</span>
-        <span class="hljs-attr">ACCURACY:</span> <span class="hljs-string">"0.98"</span>
-<span class="hljs-attr">status:</span>
-  <span class="hljs-attr">phase:</span> <span class="hljs-string">deploying</span>
-  <span class="hljs-attr">message:</span> <span class="hljs-string">"Deploying"</span>
-  <span class="hljs-attr">replicas:</span> <span class="hljs-number">2</span>
-  <span class="hljs-attr">availableReplicas:</span> <span class="hljs-number">2</span>
-  <span class="hljs-attr">endpoint:</span> <span class="hljs-string">https://primehub.local/deployment/user-defined-postfix/predict</span>
-  <span class="hljs-attr">history:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">time:</span> <span class="hljs-number">2020</span><span class="hljs-number">-03</span><span class="hljs-string">-23T02:03:15Z</span>
-      <span class="hljs-attr">spec:</span> <span class="hljs-string">&lt;PhDeploymentSpec&gt;</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">time:</span> <span class="hljs-number">2020</span><span class="hljs-number">-03</span><span class="hljs-string">-22T23:45:23Z</span>
-      <span class="hljs-attr">spec:</span> <span class="hljs-string">&lt;PhDeploymentSpec&gt;</span>
+<span class="hljs-symbol">  predictors:</span>
+    - name: predictor1
+<span class="hljs-symbol">      replicas:</span> <span class="hljs-number">2</span>
+<span class="hljs-symbol">      modelImage:</span> sandhya1594/spam-classifier:<span class="hljs-number">1.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>
+<span class="hljs-symbol">      instanceType:</span> cpu-only
+<span class="hljs-symbol">      metadata:</span>
+<span class="hljs-symbol">        LEARNING_RATE:</span> <span class="hljs-string">"0.02"</span>
+<span class="hljs-symbol">        MINI_BATCH:</span> <span class="hljs-string">"20"</span>
+<span class="hljs-symbol">        ACCURACY:</span> <span class="hljs-string">"0.98"</span>
+<span class="hljs-symbol">status:</span>
+<span class="hljs-symbol">  phase:</span> deploying
+<span class="hljs-symbol">  message:</span> <span class="hljs-string">"Deploying"</span>
+<span class="hljs-symbol">  replicas:</span> <span class="hljs-number">2</span>
+<span class="hljs-symbol">  availableReplicas:</span> <span class="hljs-number">2</span>
+<span class="hljs-symbol">  endpoint:</span> https:<span class="hljs-comment">//primehub.local/deployment/user-defined-postfix/predict</span>
+<span class="hljs-symbol">  history:</span>
+    - time: <span class="hljs-number">2020</span><span class="hljs-number">-03</span><span class="hljs-number">-23</span>T02:<span class="hljs-number">03</span>:<span class="hljs-number">15</span>Z
+<span class="hljs-symbol">      spec:</span> <span class="hljs-params">&lt;PhDeploymentSpec&gt;</span>
+    - time: <span class="hljs-number">2020</span><span class="hljs-number">-03</span><span class="hljs-number">-22</span>T23:<span class="hljs-number">45</span>:<span class="hljs-number">23</span>Z
+<span class="hljs-symbol">      spec:</span> <span class="hljs-params">&lt;PhDeploymentSpec&gt;</span>
 </code></pre>
 <p>The <code>PhDeployment</code> resource has the following children</p>
 <ul>
