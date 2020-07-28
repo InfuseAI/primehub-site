@@ -125,6 +125,7 @@
 <li><p><code>Model Image</code>: 指定採用的 Model Image。</p></li>
 <li><p><code>Image Pull Secret</code>: 如果必要，請指定下拉 Model Image 所需的 pull secret。</p></li>
 <li><p><code>Descriptions</code>: 使用者輸入描述。</p></li>
+<li><p><code>Update Message</code>: 使用者針對每次更新附上說明。</p></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
 <p>可加入多個額外「鍵/值」組合：</p>
@@ -172,7 +173,7 @@
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
 <p>History 頁上顯示過去已部署的 Deployment 的記錄。</p>
-<p><img src="/docs/assets/mdeploy_history.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_history_v28.png" alt=""></p>
 <p>點擊<code>View</code>連結來查看查看各個部署詳細記錄。</p>
 <p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
 <table>
@@ -217,8 +218,8 @@ req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="變更"></a><a href="#變更" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>變更</h2>
 <p>在 Deployment 頁，點擊 <code>Update</code> 對此部署內容進行更動及部署更新。</p>
-<p>其中有<code>Instance Type</code>、 <code>Replicas</code>、 <code>Model Image</code>、 <code>Image Pull Secret</code>、 <code>Description</code> 及 <code>Metadata</code>允許內容更新，其餘欄位初次佈建後則無法更動。</p>
-<p><img src="/docs/assets/mdeploy_update_v27.png" alt=""></p>
+<p>其中有<code>Group</code>、 <code>Deployment name</code>、 <code>Deployment ID</code> 無法更動，其餘欄位皆可更新。</p>
+<p><img src="/docs/assets/mdeploy_update_v28.png" alt=""></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="刪除"></a><a href="#刪除" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>刪除</h2>
 <p>點擊各個 Deployment 框，在部署詳細頁，點擊右上方<code>Delete</code> 鈕，進行刪除。</p>

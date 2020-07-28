@@ -124,6 +124,7 @@
 <li><p><code>Model Image</code>: The image which the model is based on.</p></li>
 <li><p><code>Image Pull Secret</code>: a pull secret for the model image if required.</p></li>
 <li><p><code>Descriptions</code>: User input description.</p></li>
+<li><p><code>Update Message</code>: Leave a message here for each update.</p></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
 <p>We can add key-value pairs.</p>
@@ -170,8 +171,8 @@
 <p>It displays only logs of <strong>latest 2000 lines</strong>; clicking the <code>Download</code> button to download the whole log file.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
-<p>In History tab, we can view the detail of historical deployments.</p>
-<p><img src="/docs/assets/mdeploy_history.png" alt=""></p>
+<p>In History tab, we can view the detail of historical deployments with each update message.</p>
+<p><img src="/docs/assets/mdeploy_history_v28.png" alt=""></p>
 <p>Clicking on the <code>View</code> link for the detail of each deployment.</p>
 <p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
 <table>
@@ -218,7 +219,7 @@ req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class
 <h2><a class="anchor" aria-hidden="true" id="update"></a><a href="#update" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update</h2>
 <p>On a deployment detail page, clicking <code>Update</code> button to enter the deployment editing.</p>
 <p>There are <code>Instance Type</code>, <code>Replicas</code>, <code>Model Image</code>, <code>Image Pull Secret</code>, <code>Description</code> and <code>Metadata</code> allowed to be modified in a update once the initial deployment is created.</p>
-<p><img src="/docs/assets/mdeploy_update_v27.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_update_v28.png" alt=""></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="delete"></a><a href="#delete" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete</h2>
 <p>Clicking on the cell of the deployment which we want to delete.</p>
