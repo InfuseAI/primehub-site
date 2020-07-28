@@ -84,6 +84,8 @@ title: 模型部署 (Alpha)
 
 + `Descriptions`: 使用者輸入描述。
 
++ `Update Message`: 使用者針對每次更新附上說明。
+
 ### Metadata
 
 可加入多個額外「鍵/值」組合：
@@ -135,7 +137,7 @@ Logs 頁上顯示目前 部署 的記錄。
 
 History 頁上顯示過去已部署的 Deployment 的記錄。
 
-![](assets/mdeploy_history.png)
+![](assets/mdeploy_history_v28.png)
 
 點擊`View`連結來查看查看各個部署詳細記錄。
 
@@ -192,9 +194,9 @@ req.headers.get('X-Forwarded-User') # you can get the client name from the heade
 
 在 Deployment 頁，點擊 `Update` 對此部署內容進行更動及部署更新。
 
-其中有`Instance Type`、 `Replicas`、 `Model Image`、 `Image Pull Secret`、 `Description` 及 `Metadata`允許內容更新，其餘欄位初次佈建後則無法更動。
+其中有`Group`、 `Deployment name`、 `Deployment ID` 無法更動，其餘欄位皆可更新。
 
-![](assets/mdeploy_update_v27.png)
+![](assets/mdeploy_update_v28.png)
 
 ---
 

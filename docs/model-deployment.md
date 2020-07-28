@@ -82,6 +82,8 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 
 + `Descriptions`: User input description.
 
++ `Update Message`: Leave a message here for each update.
+
 ### Metadata
 
 We can add key-value pairs.
@@ -131,9 +133,9 @@ Clicking `Scroll to Bottom` button skips to the bottom of logs.
 
 ### History
 
-In History tab, we can view the detail of historical deployments.
+In History tab, we can view the detail of historical deployments with each update message.
 
-![](assets/mdeploy_history.png)
+![](assets/mdeploy_history_v28.png)
 
 Clicking on the `View` link for the detail of each deployment.
 
@@ -193,7 +195,7 @@ On a deployment detail page, clicking `Update` button to enter the deployment ed
 
 There are `Instance Type`, `Replicas`, `Model Image`, `Image Pull Secret`, `Description` and `Metadata` allowed to be modified in a update once the initial deployment is created.
 
-![](assets/mdeploy_update_v27.png)
+![](assets/mdeploy_update_v28.png)
 
 ---
 
