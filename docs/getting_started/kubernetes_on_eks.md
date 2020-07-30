@@ -238,7 +238,7 @@ To deploy the customized Cluster Autoscaler with the following commands.
 
 ```bash
 EKS_CLUSTER_NAME=__my_cluster_name__
-curl https://docs.primehub.io/docs/assets/cluster-autoscaler-autodiscover.yaml.tmpl | sed -e "s/{EKS_CLUSTER_NAME}/$EKS_CLUSTER_NAME/" | kubectl apply -f -
+curl https://raw.githubusercontent.com/InfuseAI/primehub-site/master/docs/assets/cluster-autoscaler-autodiscover.yaml.tmpl | sed -e "s/{EKS_CLUSTER_NAME}/$EKS_CLUSTER_NAME/" | kubectl apply -f -
 ```
 
 ### View your Cluster Autoscaler logs
