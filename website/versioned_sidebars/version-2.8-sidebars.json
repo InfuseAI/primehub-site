@@ -1,0 +1,448 @@
+{
+  "version-2.8-for-developers": {
+    "Getting Started": [
+      "version-2.8-dev-introduction",
+      {
+        "type": "subcategory",
+        "label": "Setup Kubernetes",
+        "ids": [
+          "version-2.8-getting_started/prerequisites",
+          "version-2.8-getting_started/kubernetes_on_gke",
+          "version-2.8-getting_started/kubernetes_on_eks",
+          "version-2.8-getting_started/kubernetes_on_ubuntu_machine"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Setup PrimeHub",
+        "ids": [
+          "version-2.8-getting_started/install_metacontroller",
+          "version-2.8-getting_started/install_keycloak",
+          "version-2.8-getting_started/install_primehub",
+          "version-2.8-getting_started/install_helper"
+        ]
+      }
+    ],
+    "Designs and Concepts": [
+      {
+        "type": "subcategory",
+        "label": "Concepts",
+        "ids": [
+          "version-2.8-design/architecture",
+          "version-2.8-design/data-model",
+          "version-2.8-design/crds",
+          "version-2.8-design/graphql",
+          "version-2.8-design/persistence-storage"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Designs",
+        "ids": [
+          "version-2.8-design/admission",
+          "version-2.8-design/jupyterhub",
+          "version-2.8-design/notebook-kernel-process",
+          "version-2.8-design/dataset-upload",
+          "version-2.8-design/image-builder",
+          "version-2.8-design/job-submission",
+          "version-2.8-design/job-scheduler",
+          "version-2.8-design/install-helper-design",
+          "version-2.8-design/user-portal",
+          "version-2.8-design/meta-chart",
+          "version-2.8-design/model-deployment",
+          "version-2.8-design/primehub-store",
+          "version-2.8-design/log-persistence",
+          "version-2.8-design/phfs"
+        ]
+      }
+    ],
+    "Tasks": [
+      {
+        "type": "subcategory",
+        "label": "Build",
+        "ids": [
+          "version-2.8-tasks/build",
+          "version-2.8-tasks/airgap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Jupyter Images",
+        "ids": [
+          "version-2.8-tasks/repo2docker",
+          "version-2.8-tasks/non-standard-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Registry",
+        "ids": [
+          "version-2.8-tasks/dockerhub-registry"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Operations",
+        "ids": [
+          "version-2.8-tasks/cluster_shutdown",
+          "version-2.8-tasks/benchmark",
+          "version-2.8-tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12",
+          "version-2.8-tasks/ADVANCED-rook-setup-metadata-on-vg"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "PrimeHub Chart",
+        "ids": [
+          "version-2.8-tasks/minio_configurations"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "API",
+        "ids": [
+          "version-2.8-tasks/api-token"
+        ]
+      }
+    ],
+    "References": [
+      "version-2.8-references/primehub_chart",
+      "version-2.8-references/dotenv",
+      "version-2.8-references/feature-flag",
+      "version-2.8-comparison"
+    ]
+  },
+  "version-2.8-documentation": {
+    "Introduction": [
+      "version-2.8-introduction"
+    ],
+    "Project": [
+      "version-2.8-getting-started-user",
+      "version-2.8-quickstart/login-portal-user",
+      "version-2.8-quickstart/launch-project",
+      {
+        "type": "subcategory",
+        "label": "Jupyter Spawner",
+        "ids": [
+          "version-2.8-user-advanced-setting"
+        ]
+      }
+    ],
+    "Job": [
+      {
+        "type": "subcategory",
+        "label": "Submission",
+        "ids": [
+          "version-2.8-job-submission-feature",
+          "version-2.8-job-submission-tutorial-simple",
+          "version-2.8-job-submission-tutorial-p1",
+          "version-2.8-job-submission-tutorial-p2",
+          "version-2.8-job-submission-tutorial-p3",
+          "version-2.8-job-submission-tutorial-p4"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Schedule",
+        "ids": [
+          "version-2.8-job-scheduling-feature"
+        ]
+      }
+    ],
+    "Model": [
+      "version-2.8-model-deployment-feature",
+      {
+        "type": "subcategory",
+        "label": "Tutorials (Alpha)",
+        "ids": [
+          "version-2.8-model-deployment-quickstart-tutorial",
+          "version-2.8-model-deployment-tutorial-package-image",
+          "version-2.8-model-deployment-tutorial-package-image-r",
+          "version-2.8-model-deployment-tutorial-prepackage-image"
+        ]
+      }
+    ],
+    "Administration": [
+      "version-2.8-getting-started-admin",
+      "version-2.8-guide_manual/admin-system",
+      {
+        "type": "subcategory",
+        "label": "Manage users and groups",
+        "ids": [
+          "version-2.8-guide_manual/admin-user",
+          "version-2.8-guide_manual/admin-group"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage Instance Type",
+        "ids": [
+          "version-2.8-guide_manual/admin-instancetype",
+          "version-2.8-guide_manual/usecase-toleration",
+          "version-2.8-guide_manual/usecase-nodeselector"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage and build images",
+        "ids": [
+          "version-2.8-guide_manual/admin-image",
+          "version-2.8-guide_manual/admin-build-image",
+          "version-2.8-guide_manual/custom-image-guideline",
+          "version-2.8-guide_manual/images-list"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage Datasets and Uploader",
+        "ids": [
+          "version-2.8-guide_manual/admin-dataset",
+          "version-2.8-guide_manual/admin-uploader"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage and obtain secrets",
+        "ids": [
+          "version-2.8-guide_manual/admin-secret"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Quick Start",
+        "ids": [
+          "version-2.8-quickstart/login-portal-admin",
+          "version-2.8-quickstart/create-user",
+          "version-2.8-quickstart/create-group",
+          "version-2.8-quickstart/add-instance-type",
+          "version-2.8-quickstart/add-infuseai-image",
+          "version-2.8-quickstart/add-image",
+          "version-2.8-quickstart/build-image",
+          "version-2.8-quickstart/secret-pull-image",
+          "version-2.8-quickstart/secret-gitsync"
+        ]
+      }
+    ],
+    "Maintenance": [
+      {
+        "type": "subcategory",
+        "label": "Maintenance Notebook",
+        "ids": [
+          "version-2.8-maintenance",
+          "version-2.8-quickstart/maintenance-resize-user-vol",
+          "version-2.8-quickstart/maintenance-resize-group-vol"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Tips",
+        "ids": [
+          "version-2.8-trouble/howto-check-user-vol",
+          "version-2.8-trouble/howto-check-group-vol"
+        ]
+      }
+    ],
+    "Experiment": [
+      "version-2.8-guide_manual/experimental-vscode"
+    ],
+    "Trouble Shooting": [
+      "version-2.8-trouble-shoot-guide",
+      {
+        "type": "subcategory",
+        "label": "JupyterHub",
+        "ids": [
+          "version-2.8-trouble/jh-failed-spawn",
+          "version-2.8-trouble/jh-blank-page",
+          "version-2.8-trouble/dataset-failure"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Keycloak",
+        "ids": [
+          "version-2.8-trouble/kc-brute-force-detection",
+          "version-2.8-trouble/kc-password-policy"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Prometheus",
+        "ids": [
+          "version-2.8-trouble/prometheus-fails-startup"
+        ]
+      },
+      "version-2.8-trouble/kubelet-restart"
+    ]
+  },
+  "version-2.8-zh-tw": {
+    "繁中文件": [
+      "version-2.8-index-zh"
+    ],
+    "專案": [
+      "version-2.8-zh-tw/quickstart/login-portal-user",
+      "version-2.8-zh-tw/quickstart/launch-project",
+      "version-2.8-zh-tw/quickstart/close-project",
+      {
+        "type": "subcategory",
+        "label": "Jupyter",
+        "ids": [
+          "version-2.8-zh-tw/user-advanced-setting"
+        ]
+      }
+    ],
+    "Job": [
+      {
+        "type": "subcategory",
+        "label": "Submission",
+        "ids": [
+          "version-2.8-zh-tw/job-submission-cht",
+          "version-2.8-zh-tw/job-submission-tutorial-simple",
+          "version-2.8-zh-tw/job-submission-tutorial-p1",
+          "version-2.8-zh-tw/job-submission-tutorial-p2"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Schedule",
+        "ids": [
+          "version-2.8-zh-tw/job-scheduling-feature-cht"
+        ]
+      }
+    ],
+    "Model": [
+      "version-2.8-zh-tw/model-deployment-feature",
+      {
+        "type": "subcategory",
+        "label": "教學 (Alpha)",
+        "ids": [
+          "version-2.8-zh-tw/model-deployment-quickstart-tutorial",
+          "version-2.8-zh-tw/model-deployment-tutorial-package-image",
+          "version-2.8-zh-tw/model-deployment-tutorial-package-image-r",
+          "version-2.8-zh-tw/model-deployment-tutorial-prepackage-image"
+        ]
+      }
+    ],
+    "PrimeHub 管理": [
+      "version-2.8-zh-tw/guide_manual/admin-system-cht",
+      {
+        "type": "subcategory",
+        "label": "使用者及群組管理",
+        "ids": [
+          "version-2.8-zh-tw/guide_manual/admin-user-cht",
+          "version-2.8-zh-tw/guide_manual/admin-group-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Instance Type 管理",
+        "ids": [
+          "version-2.8-zh-tw/guide_manual/admin-instancetype-cht",
+          "version-2.8-zh-tw/guide_manual/usecase-toleration-cht",
+          "version-2.8-zh-tw/guide_manual/usecase-nodeselector-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Image 創建及管理",
+        "ids": [
+          "version-2.8-zh-tw/guide_manual/admin-image-cht",
+          "version-2.8-zh-tw/guide_manual/admin-build-image-cht",
+          "version-2.8-zh-tw/guide_manual/custom-image-guideline",
+          "version-2.8-zh-tw/guide_manual/images-list"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Dataset 管理及上傳",
+        "ids": [
+          "version-2.8-zh-tw/guide_manual/admin-dataset-cht",
+          "version-2.8-zh-tw/guide_manual/admin-uploader-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Secret 管理及取得",
+        "ids": [
+          "version-2.8-zh-tw/guide_manual/admin-secret-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "快速上手",
+        "ids": [
+          "version-2.8-zh-tw/quickstart/login-portal-admin",
+          "version-2.8-zh-tw/quickstart/create-user",
+          "version-2.8-zh-tw/quickstart/create-group",
+          "version-2.8-zh-tw/quickstart/add-instance-type",
+          "version-2.8-zh-tw/quickstart/add-infuseai-image",
+          "version-2.8-zh-tw/quickstart/add-image",
+          "version-2.8-zh-tw/quickstart/build-image",
+          "version-2.8-zh-tw/quickstart/secret-pull-image",
+          "version-2.8-zh-tw/quickstart/secret-gitsync"
+        ]
+      }
+    ],
+    "維運": [
+      {
+        "type": "subcategory",
+        "label": "工具",
+        "ids": [
+          "version-2.8-zh-tw/maintenance-cht",
+          "version-2.8-zh-tw/quickstart/maintenance-resize-user-vol",
+          "version-2.8-zh-tw/quickstart/maintenance-resize-group-vol"
+        ]
+      }
+    ],
+    "參考": [
+      "version-2.8-zh-tw/guide_manual/experimental-vscode"
+    ],
+    "其它配置": [
+      "version-2.8-zh-tw/quickstart/dockerhub-registry"
+    ]
+  },
+  "version-2.8-primehub-deploy": {
+    "PrimeHub Deploy": [
+      "version-2.8-deploy-index",
+      {
+        "type": "subcategory",
+        "label": "Mode Deployment",
+        "ids": [
+          "version-2.8-model_deployment/md-deployment"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "version-2.8-model_deployment/md-system",
+          "version-2.8-model_deployment/md-user",
+          "version-2.8-model_deployment/md-group",
+          "version-2.8-model_deployment/md-instancetype",
+          "version-2.8-model_deployment/md-secret"
+        ]
+      }
+    ]
+  },
+  "version-2.8-primehub-deploy-cht": {
+    "PrimeHub 模型部署": [
+      {
+        "type": "subcategory",
+        "label": "Mode Deployment",
+        "ids": [
+          "version-2.8-model_deployment/md-deployment-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "version-2.8-model_deployment/md-system-cht",
+          "version-2.8-model_deployment/md-user-cht",
+          "version-2.8-model_deployment/md-group-cht",
+          "version-2.8-model_deployment/md-instancetype-cht",
+          "version-2.8-model_deployment/md-secret-cht"
+        ]
+      }
+    ]
+  }
+}

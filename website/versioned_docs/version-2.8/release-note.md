@@ -1,6 +1,7 @@
 ---
-id: release-note
+id: version-2.8-release-note
 title: 2.8 Release Note
+original_id: release-note
 ---
 
 ## 🌟 What's New
