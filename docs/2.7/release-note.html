@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>2.7 Release Note · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 🌟 What&#x27;s New"/><meta name="docsearch:version" content="2.7"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="2.7 Release Note · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="## 🌟 What&#x27;s New"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.7</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.7/introduction" target="_self">PrimeHub</a></li><li class=""><a href="/docs/2.7/deploy-index" target="_self">PrimeHub Deploy</a></li><li class=""><a href="/docs/2.7/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/2.7/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">2.7 Release Note</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="whats-new"></a><a href="#whats-new" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🌟 What's New</h2>
+<ul>
+<li><a href="guide_manual/admin-build-image">Image Builder</a>: General Availability.</li>
+<li><a href="model-deployment-feature">Model Deployment (Alpha)</a>: Model deployment feature enabling users to deploy and manage machine learning models.</li>
+<li><strong>PrimeHub Deploy (Alpha)</strong>:  PrimeHub Deploy is a model deployment feature which is standalone from PrimeHub Enterprise.  Now it is able to be installed on its own without PrimeHub Enterprise; Setup <code>PRIMEHUB_MODE=deploy</code> flag.</li>
+<li><strong>JupyterHub</strong>: <a href="tasks/non-standard-image">Support non-standard images</a> (which are not originated from jupyter/base-notebook compatible.)</li>
+<li><strong>API Auth</strong>: User can now <a href="tasks/api-token">generate an API token</a> on the <strong>API Token</strong> page to query the GraphQL API.</li>
+<li><a href="guide_manual/admin-dataset#nfs">Dataset Management</a> now supports <strong>nfs</strong> and <strong>hostpath</strong> dataset types</li>
+<li><strong>Job Submission</strong> now supports <strong>nfs</strong> and <strong>hostpath</strong> dataset types</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="improvements"></a><a href="#improvements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚀 Improvements</h2>
+<ul>
+<li>PrimeHub Grafana dashboard refactoring</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="bug-fixes"></a><a href="#bug-fixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🧰 Bug fixes</h2>
+<ul>
+<li>Fixed the issue where the job list was out of sync</li>
+<li>Fixed a degression of Jupyter Spawner.</li>
+<li>Fixed a bug that didn't allow users to spawn the latest jupyter/base-notebook on version master@f6331bae</li>
+<li>Fixed a bug where Jupyterhub showed &quot;-&quot; in GPU field when the user limit is 0</li>
+<li>Fixed a bug that caused  Jupyter spawner page to show 'No group is configured for you to launch a server' when specifying a floating point in RAM of an instanceType</li>
+<li>Fixed a bug that caused the hub to redirect in a loop after switching user via PrimeHub-console</li>
+<li>Fixed a bug that failed to pull image from private repo</li>
+<li>Fixed a bug that we did not allow access to pvc volume across zones in AWS EKS cluster</li>
+<li>Fixed a bug that caused dataset upload to be broken in http environment</li>
+</ul>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="primehub-ce-v27-community-edition"></a><a href="#primehub-ce-v27-community-edition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📣 PrimeHub CE v2.7 (Community Edition)</h2>
+<p>InfuseAI will release PrimeHub CE along with PrimeHub Enterprise since v2.7.</p>
+<ul>
+<li>Release: <a href="https://github.com/InfuseAI/primehub/releases">https://github.com/InfuseAI/primehub/releases</a></li>
+<li>Repo: <a href="https://github.com/InfuseAI/primehub">https://github.com/InfuseAI/primehub</a></li>
+</ul>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="in-the-community"></a><a href="#in-the-community" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🎪 In the Community</h2>
+<p>Eric demonstrates how to conduct ML projects on PrimeHub and what PrimeHub can help to ease the efforts during project; here are two use-case.</p>
+<h3><a class="anchor" aria-hidden="true" id="在-primehub-中使用-yolov4-定時偵測景點擁擠度"></a><a href="#在-primehub-中使用-yolov4-定時偵測景點擁擠度" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>在 PrimeHub 中使用 YOLOv4 定時偵測景點擁擠度</h3>
+<ul>
+<li><p><a href="https://medium.com/infuseai/%E5%9C%A8-primehub-%E4%B8%AD%E4%BD%BF%E7%94%A8-yolov4-%E5%AE%9A%E6%99%82%E5%81%B5%E6%B8%AC%E6%99%AF%E9%BB%9E%E6%93%81%E6%93%A0%E5%BA%A6-14cef9f583a9?source=friends_link&amp;sk=0b48e59f5f7d110cd3e62cabf6fce278">Episode 1</a></p></li>
+<li><p><a href="https://medium.com/infuseai/%E5%9C%A8-primehub-%E4%B8%AD%E4%BD%BF%E7%94%A8-yolov4-%E5%AE%9A%E6%99%82%E5%81%B5%E6%B8%AC%E6%99%AF%E9%BB%9E%E6%93%81%E6%93%A0%E5%BA%A6-2-4-1b6f5150fbd?source=friends_link&amp;sk=35280c4fb62ffba272ffb7cdfc4bc994">Episode 2</a></p></li>
+</ul>
+<ul>
+<li><a href="https://medium.com/infuseai/%E5%9C%A8-primehub-%E4%B8%AD%E4%BD%BF%E7%94%A8-yolov4-%E5%AE%9A%E6%99%82%E5%81%B5%E6%B8%AC%E6%99%AF%E9%BB%9E%E6%93%81%E6%93%A0%E5%BA%A6-3-4-c94a82e2cb9a?source=friends_link&amp;sk=66e453f7fb42be62251aeace3c94317c">Episode 3</a></li>
+</ul>
+<ul>
+<li><a href="https://medium.com/infuseai/%E5%9C%A8-primehub-%E4%B8%AD%E4%BD%BF%E7%94%A8-yolov4-%E5%AE%9A%E6%99%82%E5%81%B5%E6%B8%AC%E6%99%AF%E9%BB%9E%E6%93%81%E6%93%A0%E5%BA%A6-4-4-5cb3f27a1676?source=friends_link&amp;sk=f6a2fecef8e4720a56f945db30049c44">Episode 4</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="使用-primehub-訓練-yolov4-模型-實現定時定點的口罩配戴比例偵測"></a><a href="#使用-primehub-訓練-yolov4-模型-實現定時定點的口罩配戴比例偵測" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 PrimeHub 訓練 YOLOv4 模型 — 實現定時定點的口罩配戴比例偵測</h3>
+<ul>
+<li><a href="https://medium.com/infuseai/%E4%BD%BF%E7%94%A8-primehub-%E8%A8%93%E7%B7%B4-yolov4-%E6%A8%A1%E5%9E%8B-%E5%AF%A6%E7%8F%BE%E5%AE%9A%E6%99%82%E5%AE%9A%E9%BB%9E%E7%9A%84%E5%8F%A3%E7%BD%A9%E9%85%8D%E6%88%B4%E6%AF%94%E4%BE%8B%E5%81%B5%E6%B8%AC-9e361f837e49?source=friends_link&amp;sk=94b9cf85a27ded2689001c739e3f4bce">Episode 1</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#whats-new">🌟 What's New</a></li><li><a href="#improvements">🚀 Improvements</a></li><li><a href="#bug-fixes">🧰 Bug fixes</a></li><li><a href="#primehub-ce-v27-community-edition">📣 PrimeHub CE v2.7 (Community Edition)</a></li><li><a href="#in-the-community">🎪 In the Community</a><ul class="toc-headings"><li><a href="#在-primehub-中使用-yolov4-定時偵測景點擁擠度">在 PrimeHub 中使用 YOLOv4 定時偵測景點擁擠度</a></li><li><a href="#使用-primehub-訓練-yolov4-模型-實現定時定點的口罩配戴比例偵測">使用 PrimeHub 訓練 YOLOv4 模型 — 實現定時定點的口罩配戴比例偵測</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

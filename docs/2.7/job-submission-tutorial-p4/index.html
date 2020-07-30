@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>(Advanced) Model Serving by Seldon · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta name="docsearch:version" content="2.7"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="(Advanced) Model Serving by Seldon · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.7</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/2.7/introduction" target="_self">PrimeHub</a></li><li class=""><a href="/docs/2.7/deploy-index" target="_self">PrimeHub Deploy</a></li><li class=""><a href="/docs/2.7/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/2.7/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Submission</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.7/introduction">PrimeHub Documentation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Project<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.7/getting-started-user">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/launch-project">Launch Project</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Spawner</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/user-advanced-setting">Advanced Settings</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Submission</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/job-submission-feature">Job Submission (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/2.7/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Schedule</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/job-scheduling-feature">Job Scheduler (Beta)</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.7/model-deployment-feature">Model Deployment (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials (Alpha)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/model-deployment-quickstart-tutorial">Quickstart Tutorial of Model Deployment</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/model-deployment-tutorial-package-image">Package a Docker Image for Model Deployment (Python)</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/model-deployment-tutorial-package-image-r">Package a Docker Image for Model Deployment (R)</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/model-deployment-tutorial-prepackage-image">Prepackage a Base Image and Use It</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Administration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.7/getting-started-admin">Administration</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-system">System Management</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage users and groups</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-group">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Instance Type</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/usecase-toleration">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/usecase-nodeselector">NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and build images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-image">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-build-image">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/custom-image-guideline">Custom Image Guideline</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/images-list">Available Images List</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Datasets and Uploader</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-dataset">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-uploader">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and obtain secrets</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/admin-secret">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Quick Start</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/login-portal-admin">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/create-user">Create User</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/create-group">Create Group</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/add-instance-type">Create/Plan Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/add-infuseai-image">Add InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/add-image">Add Image</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/build-image">Build Image</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/secret-pull-image">Pull Secret for GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/secret-gitsync">Gitsync secret for GitHub</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Maintenance<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance Notebook</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/maintenance">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/maintenance-resize-user-vol">Increase User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/quickstart/maintenance-resize-group-vol">Increase Group Volume</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tips</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/howto-check-user-vol">HOWTO - Check User Volume Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/howto-check-group-vol">HOWTO - Check Group Volume Usage</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Experiment<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.7/guide_manual/experimental-vscode">Experimental VS Code</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble-shoot-guide">Trouble-shooting Guide</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JupyterHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/jh-failed-spawn">Why JupyterHub fails to spawn?</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/jh-blank-page">After spawned, JupyterHub shows a blank page</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/dataset-failure">Jupyter spawning fails due to mounting datasets</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Keycloak</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/kc-brute-force-detection">Lock down accounts after several login failures</a></li><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/kc-password-policy">Password Policy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Prometheus</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/prometheus-fails-startup">Prometheus fails to start up</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/2.7/trouble/kubelet-restart">Restart Kubelet</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">(Advanced) Model Serving by Seldon</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+<p>In this section, we want to post our MNIST classifier online, thus allowing everyone to try our model via a URL.</p>
+<p>To do this, you must have:</p>
+<ul>
+<li>Full control of your Kubernetes cluster</li>
+<li>Full control of your PrimeHub account</li>
+<li>A Google Cloud account</li>
+</ul>
+<ol>
+<li><p>Install Seldon (<a href="https://docs.seldon.io/projects/seldon-core/en/latest/">https://docs.seldon.io/projects/seldon-core/en/latest/</a>).</p>
+<pre><code class="hljs"> helm install seldon-core-operator --name seldon-core --repo https://storage.googleapis.com/seldon-charts --set usageMetrics.enabled=true --namespace seldon-system --version 0.5.1
+</code></pre></li>
+<li><p>Create a new python file <code>train_mnist_serving.py</code> in JupyterLab.</p>
+<pre><code class="hljs"> import tensorflow as tf
+ import argparse
+ import os
+ import shutil
+ 
+ parser = argparse.ArgumentParser(description='Process some integers.')
+ parser.add_argument('--dropout', type=float, default=0.2)
+ args = parser.parse_args()
+ 
+ mnist = tf.keras.datasets.mnist
+ 
+ (x_train, y_train),(x_test, y_test) = mnist.load_data()
+ x_train, x_test = x_train / 255.0, x_test / 255.0
+ 
+ model = tf.keras.models.Sequential([
+   tf.keras.layers.Flatten(input_shape=(28, 28)),
+   tf.keras.layers.Dense(512, activation=tf.nn.relu),
+   tf.keras.layers.Dropout(args.dropout),
+   tf.keras.layers.Dense(10, activation=tf.nn.softmax)
+ ])
+ 
+ model.compile(optimizer='adam',
+               loss='sparse_categorical_crossentropy',
+               metrics=['accuracy'])
+ 
+ model.fit(x_train, y_train, epochs=5)
+ model.evaluate(x_test, y_test)
+ 
+ export_path = &quot;1&quot;
+ if os.path.isdir(export_path):
+     print('Cleaning up\n')
+     shutil.rmtree(export_path)
+ 
+ tf.saved_model.simple_save(
+     tf.keras.backend.get_session(),
+     export_path,
+     inputs={'input_image': model.input},
+     outputs={t.name:t for t in model.outputs})
+</code></pre></li>
+<li><p>Run this file in job submission with command.</p>
+<pre><code class="hljs"> cd /project/&lt;group name&gt;/
+ python -u train_mnist_serving.py
+</code></pre></li>
+<li><p>Upload the outputted <code>1</code> folder into your Google Bucket in <code>&lt;your_bucket_name&gt;/mnist</code></p></li>
+<li><p>Create a service account and a JSON key.</p></li>
+<li><p>Download the key in Google Cloud.</p></li>
+<li><p>Create a secret in your cluster. <code>&lt;LOCALFILE&gt;</code> is the key file you just downloaded.</p>
+<pre><code class="hljs"> kubectl create secret generic user-gcp-sa --from-file=gcloud-application-credentials.json=&lt;LOCALFILE&gt;
+</code></pre></li>
+<li><p>Create a service account in your cluster.</p>
+<pre><code class="hljs"> apiVersion: v1
+ kind: ServiceAccount
+ metadata:
+   name: user-gcp-sa
+ secrets:
+   - name: user-gcp-sa
+</code></pre></li>
+<li><p>Create a Seldon deployment in your cluster with your bucket. Replace <code>gs://&lt;your_bucket_name&gt;/mnist</code>.</p>
+<pre><code class="hljs"> apiVersion: machinelearning.seldon.io/v1alpha2
+ kind: SeldonDeployment
+ metadata:
+   name: tfserving
+ spec:
+   name: mnist
+   predictors:
+   - graph:
+       children: []
+       implementation: TENSORFLOW_SERVER
+       modelUri: gs://&lt;your_bucket_name&gt;/mnist
+       serviceAccountName: user-gcp-sa
+       name: mnist-model
+       parameters:
+         - name: signature_name
+           type: STRING
+           value: serving_default
+         - name: model_name
+           type: STRING
+           value: mnist-model
+     name: default
+     replicas: 1
+</code></pre></li>
+<li><p>Create an ingress rule with your service. Find out your newly created service name starting with <code>mnist-xxx</code> by <code>kubectl get svc</code>. Replae <code>&lt;check_svc_name_which_created_by_seldondeployment&gt;</code> and <code>*.&lt;your_host&gt;'</code>.</p>
+<pre><code class="hljs">apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mnist-classifier
+  annotations:
+    certmanager.k8s.io/acme-challenge-type: dns01
+    certmanager.k8s.io/acme-dns01-provider: clouddns
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod-dns
+    kubernetes.io/ingress.allow-http: &quot;true&quot;
+    kubernetes.io/ingress.class: &quot;nginx&quot;
+    kubernetes.io/tls-acme: &quot;true&quot;
+  namespace: default
+spec:
+  rules:
+  - host: mnist.&lt;your_host&gt;
+    http:
+      paths:
+      - backend:
+          serviceName: &lt;check_svc_name_which_created_by_seldondeployment&gt;
+          servicePort: 9000
+        path: /
+  tls:
+  - hosts:
+    - '*.&lt;your_host&gt;'
+    secretName: dns01-tls
+</code></pre></li>
+<li><p>Make a prediction through curl. Replace <code>https://mnist.&lt;your_host&gt;/predict</code>.</p>
+<pre><code class="hljs">curl -X POST https://mnist.&lt;your_host&gt;/predict -d '{&quot;data&quot;:{&quot;tensor&quot;:{&quot;shape&quot;:[1,784],&quot;values&quot;:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.32941176470588235, 0.7254901960784313, 0.6235294117647059, 0.592156862745098, 0.23529411764705882, 0.1411764705882353, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8705882352941177, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9450980392156862, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.6666666666666666, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2627450980392157, 0.4470588235294118, 0.2823529411764706, 0.4470588235294118, 0.6392156862745098, 0.8901960784313725, 0.996078431372549, 0.8823529411764706, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9803921568627451, 0.8980392156862745, 0.996078431372549, 0.996078431372549, 0.5490196078431373, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06666666666666667, 0.25882352941176473, 0.054901960784313725, 0.2627450980392157, 0.2627450980392157, 0.2627450980392157, 0.23137254901960785, 0.08235294117647059, 0.9254901960784314, 0.996078431372549, 0.41568627450980394, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3254901960784314, 0.9921568627450981, 0.8196078431372549, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.08627450980392157, 0.9137254901960784, 1.0, 0.3254901960784314, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5058823529411764, 0.996078431372549, 0.9333333333333333, 0.17254901960784313, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23137254901960785, 0.9764705882352941, 0.996078431372549, 0.24313725490196078, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.7333333333333333, 0.0196078431372549, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03529411764705882, 0.803921568627451, 0.9725490196078431, 0.22745098039215686, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.49411764705882355, 0.996078431372549, 0.7137254901960784, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.29411764705882354, 0.984313725490196, 0.9411764705882353, 0.2235294117647059, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.07450980392156863, 0.8666666666666667, 0.996078431372549, 0.6509803921568628, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.011764705882352941, 0.796078431372549, 0.996078431372549, 0.8588235294117647, 0.13725490196078433, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.14901960784313725, 0.996078431372549, 0.996078431372549, 0.30196078431372547, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.12156862745098039, 0.8784313725490196, 0.996078431372549, 0.45098039215686275, 0.00392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23921568627450981, 0.9490196078431372, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.996078431372549, 0.8588235294117647, 0.1568627450980392, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.8117647058823529, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}}}' -H &quot;Content-Type: application/json&quot;
+</code></pre>
+<p>The data is normalized vector of this image:</p>
+<p><img src="/docs/assets/jobsub-tt-p4-1.png" alt="image.png"></p></li>
+<li><p>You will get output like this</p>
+<p><img src="/docs/assets/jobsub-tt-p4-2.png" alt="image"></p>
+<p>The values field has a total of ten values (separated by commas). The first value represents the probability that the image is a '0', the second value represents the probability that the image is a '1', and so on. Thus, the eighth value represents the highest probability that this picture is '7', which is in line with our expectations (since the image is surely a '7'!). Our model makes a correct prediction!</p></li>
+</ol>
+<p>In the future, we will provide even better model serving functions. Stay tuned!</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/2.7/job-submission-tutorial-p3"><span class="arrow-prev">← </span><span>(Advanced) Use Job Submission to Tune Hyperparameters</span></a><a class="docs-next button" href="/docs/2.7/job-scheduling-feature"><span>Job Scheduler (Beta)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
