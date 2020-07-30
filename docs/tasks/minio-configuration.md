@@ -48,6 +48,20 @@ minio:
     secretKey: "[put-your-secret-access-key-here]"
 ```
 
+Minio also supports to use s3 gateway to connect to [Ceph RGW](https://docs.ceph.com/docs/master/radosgw/). Here is the example for connecting to Ceph RGW by [Rook](https://rook.io/docs/rook/master/ceph-object.html).
+
+```yaml
+store:
+  bucket: "primehub"
+
+minio:
+  s3gateway:
+    enabled: true
+    serviceEndpoint: "http://rook-ceph-rgw-object-store.rook"
+    accessKey: "[put-your-access-key-id-here]"
+    secretKey: "[put-your-secret-access-key-here]"
+```
+
 ## Google Cloud Storage Gateway
 
 Refer to [minio gateway for gcs](https://docs.min.io/docs/minio-gateway-for-gcs.html) prerequisites are:
