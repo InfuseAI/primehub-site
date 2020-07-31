@@ -5,6 +5,12 @@ title: Introduction
 
 PrimeHub is a cloud-native Machine Learning platform based on Kubernetes.
 
+### Katacoda
+
+Before getting hands dirty in real circumstances, we provide a [PrimeHub CE installation scenario on Katacoda](https://www.katacoda.com/infuseai), it helps understand the installation progress and requirements.
+
+---
+
 ## Setup Kubernetes
 
 Before installing PrimeHub, we need to ensure that the correct prerequisites are available.
