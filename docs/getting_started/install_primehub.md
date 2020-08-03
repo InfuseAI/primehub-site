@@ -83,12 +83,13 @@ EOF
    helm upgrade \
      --install \
      --reset-values \
+     --create-namespace \
      --namespace hub  \
      --values primehub-values.yaml \
      primehub modules/charts/primehub
    ```
 
-   > In the first time installation, it may take a longer time to pull images. You can add `--timeout 1800` to change the default timeout duration.
+   > In the first time installation, it may take a longer time to pull images. You can add `--timeout 10m` to change the default timeout duration.
 
 2. Label the nodes which can be assigned for jupyterhub servers
 

@@ -47,12 +47,12 @@ PrimeHub is based on Kuberentes. The Kubernetes version 1.15+ is recommended.
 
 PrimeHub is packaged and installed by [helm](https://helm.sh/docs/using_helm/)
 
-  > Currently, we recommend installing helm 2.x. For helm 3.x, we have not tested against this version.
+  > From PrimeHub v2.8, we recommend helm v3.2.4+.
 
   Installation steps:
 
-  1. Go to the [helm release page (v2.16.1)](https://github.com/helm/helm/releases/tag/v2.16.1)
-  2. Download the package for your OS
+  1. Go to the [helm release page (v3.2.4)](https://github.com/helm/helm/releases/tag/v3.2.4)
+  2. Download the package according to your OS
   3. Unpack the package and put the `helm` binary in you `$PATH`
 
 

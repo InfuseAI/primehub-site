@@ -159,44 +159,20 @@ ip-192-168-2-53.ap-northeast-1.compute.internal     Ready    <none>   21s   v1.1
 ip-192-168-74-187.ap-northeast-1.compute.internal   Ready    <none>   21s   v1.15.10-eks-bac369
 ```
 
-## Install helm
+### Install helm
 
-Install helm 2.x binary. Please see the installation steps in [prerequisites](prerequisites.md). Make sure the helm binary version is `v2.x.x` (`v3.x.x` is *not supported* yet)
+Install helm 3.2.x+ binary. Please see the installation steps in [prerequisites](prerequisites.md). (From PrimeHub v2.8, we use `Helm 3` for the installation.)
 
-```bash
-helm version --client
-Client: &version.Version{SemVer:"v2.16.3", GitCommit:"1ee0254c86d4ed6887327dabed7aa7da29d7eb0d", GitTreeState:"clean"}
 ```
-
-Apply RBAC resources for helm
-
-```bash
-kubectl apply -f - << EOF
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: tiller
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: tiller
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: tiller
-    namespace: kube-system
-EOF
+$ helm version
+version.BuildInfo{Version:"v3.2.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
 ```
 
 ## Nginx Ingress
 
+
 ```bash
-helm install stable/nginx-ingress --namespace ingress-nginx --name nginx-ingress --set rbac.create=true
+helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
 ```
 
 Find the `EXTERNAL-IP`
@@ -258,13 +234,12 @@ If you want to enable Https on your cluster, you can use cert manager to request
 ### Deploy Cert Manager
 
 ```bash
-helm repo add jetstack https://charts.jetstack.io
-helm repo update
 helm install \
-  --name cert-manager \
+  cert-manager \
+  jetstack/cert-manager \
+  --create-namespace \
   --namespace cert-manager \
   --version v0.15.0 \
-  jetstack/cert-manager \
   --set installCRDs=true \
   --set ingressShim.defaultIssuerName=letsencrypt-prod \
   --set ingressShim.defaultIssuerKind=ClusterIssuer
