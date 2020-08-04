@@ -170,6 +170,10 @@ version.BuildInfo{Version:"v3.2.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05
 
 ## Nginx Ingress
 
+```bash
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo update
+```
 
 ```bash
 helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
