@@ -59,7 +59,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">(Part2) MNIST classifier training</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">(Part2) MNIST classifier training</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Available in Enterprise tier only</span>
 </div>
 <p><img src="/docs/assets/jobsub-tt-p2-1.png" alt="image"></p>
@@ -78,25 +78,25 @@
 <li><p>Click <code>Text File</code> in the right hand side under the 'Other' section.</p></li>
 <li><p>Right click on the new <code>untitled.txt</code> and rename it into <code>train_mnist.py</code></p></li>
 <li><p>Write code in the right hand side.</p>
-<pre><code class="hljs">import tensorflow as tf
+<pre><code class="hljs">import tensorflow <span class="hljs-keyword">as</span> <span class="hljs-keyword">tf</span>
 import argparse
 import shutil
 import os
 
 parser = argparse.ArgumentParser(description=<span class="hljs-string">'Process some integers.'</span>)
-parser.add_argument(<span class="hljs-string">'--dropout'</span>, type=<span class="hljs-attribute">float</span>, default=<span class="hljs-number">0.2</span>)
-args = parser.parse_args()
+parser.add_argument(<span class="hljs-string">'--dropout'</span>, <span class="hljs-built_in">type</span>=float, default=<span class="hljs-number">0.2</span>)
+<span class="hljs-keyword">args</span> = parser.parse_args()
 
-mnist = tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.datasets</span><span class="hljs-selector-class">.mnist</span>
+mnist = <span class="hljs-keyword">tf</span>.keras.datasets.mnist
 
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / <span class="hljs-number">255.0</span>, x_test / <span class="hljs-number">255.0</span>
 
-model = tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.models</span><span class="hljs-selector-class">.Sequential</span>([
-    tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.layers</span><span class="hljs-selector-class">.Flatten</span>(input_shape=(<span class="hljs-number">28</span>, <span class="hljs-number">28</span>)),
-    tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.layers</span><span class="hljs-selector-class">.Dense</span>(<span class="hljs-number">512</span>, activation=tf<span class="hljs-selector-class">.nn</span><span class="hljs-selector-class">.relu</span>),
-    tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.layers</span><span class="hljs-selector-class">.Dropout</span>(args.dropout),
-    tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.layers</span><span class="hljs-selector-class">.Dense</span>(<span class="hljs-number">10</span>, activation=tf<span class="hljs-selector-class">.nn</span><span class="hljs-selector-class">.softmax</span>)
+model = <span class="hljs-keyword">tf</span>.keras.models.Sequential([
+    <span class="hljs-keyword">tf</span>.keras.layers.Flatten(input_shape=(<span class="hljs-number">28</span>, <span class="hljs-number">28</span>)),
+    <span class="hljs-keyword">tf</span>.keras.layers.Dense(<span class="hljs-number">512</span>, activation=<span class="hljs-keyword">tf</span>.<span class="hljs-keyword">nn</span>.relu),
+    <span class="hljs-keyword">tf</span>.keras.layers.Dropout(<span class="hljs-keyword">args</span>.dropout),
+    <span class="hljs-keyword">tf</span>.keras.layers.Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-keyword">tf</span>.<span class="hljs-keyword">nn</span>.softmax)
 ])
 
 model.compile(optimizer=<span class="hljs-string">'adam'</span>,
@@ -106,13 +106,13 @@ model.compile(optimizer=<span class="hljs-string">'adam'</span>,
 model.fit(x_train, y_train, epochs=<span class="hljs-number">5</span>)
 model.evaluate(x_test, y_test)
 
-export_path = <span class="hljs-string">"params_dropout-{}"</span>.format(args.dropout)
-<span class="hljs-keyword">if</span> os<span class="hljs-selector-class">.path</span><span class="hljs-selector-class">.isdir</span>(export_path):
-    print(<span class="hljs-string">'Cleaning up\n'</span>)
+export_path = <span class="hljs-string">"params_dropout-{}"</span>.format(<span class="hljs-keyword">args</span>.dropout)
+<span class="hljs-keyword">if</span> os.path.isdir(export_path):
+    <span class="hljs-keyword">print</span>(<span class="hljs-string">'Cleaning up\n'</span>)
     shutil.rmtree(export_path)
-os.mkdir(export_path)
+os.<span class="hljs-built_in">mkdir</span>(export_path)
 
-model.save(os<span class="hljs-selector-class">.path</span><span class="hljs-selector-class">.join</span>(export_path, <span class="hljs-string">'my_model'</span>))
+model.save(os.path.<span class="hljs-keyword">join</span>(export_path, <span class="hljs-string">'my_model'</span>))
 </code></pre></li>
 </ol>
 <p>This is the example code of training a MNIST classifier.</p>
@@ -167,7 +167,7 @@ python -u train_mnist.py <span class="hljs-params">--dropout</span> 0.2
     (x_train, y_train),(x_test, y_test) = mnist.load_data()
     x_train, x_test = x_train / <span class="hljs-number">255.0</span>, x_test / <span class="hljs-number">255.0</span>
     
-    model = tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.models</span><span class="hljs-selector-class">.load_model</span>(<span class="hljs-string">'params_dropout-0.2/my_model'</span>)
+    model = tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.models</span>.load_model(<span class="hljs-string">'params_dropout-0.2/my_model'</span>)
     model.evaluate(x_test, y_test)
 </code></pre></li>
 <li><p>Press <code>shift + enter</code> to execute your code.</p>
