@@ -22,3 +22,13 @@ Guides are included:
   + [GitHub gitsync secret](quickstart/secret-gitsync)
 
 + [Perform operations via Maintenance Notebook](maintenance)
+
+---
+
++ Top-right icon, `Admin Portal`
++ Sidebar
+  + Users, Instance Types, Images, Image Builder, Datasets, Secrets, System belonged to Admin Dashboard
+  + Usage Reports
+  + Jupyterhub Admin
+  + Maintenance
+  + Grafana
