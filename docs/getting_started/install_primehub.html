@@ -134,12 +134,13 @@
 <pre><code class="hljs">helm<span class="hljs-built_in"> upgrade </span>\
   --install \
   --reset-values \
+  --create-namespace \
   --namespace hub  \
   --values primehub-values.yaml \
   primehub modules/charts/primehub
 </code></pre>
 <blockquote>
-<p>In the first time installation, it may take a longer time to pull images. You can add <code>--timeout 1800</code> to change the default timeout duration.</p>
+<p>In the first time installation, it may take a longer time to pull images. You can add <code>--timeout 10m</code> to change the default timeout duration.</p>
 </blockquote></li>
 <li><p>Label the nodes which can be assigned for jupyterhub servers</p>
 <pre><code class="hljs">kubectl label <span class="hljs-keyword">node</span> <span class="hljs-title">component</span>=singleuser-server --all
