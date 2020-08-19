@@ -162,6 +162,12 @@
         ]
       }
     ],
+    "SSH Server": [
+      "guide_manual/ssh-cp-pub-key",
+      "guide_manual/ssh-config",
+      "guide_manual/ssh-vscode",
+      "guide_manual/ssh-keygen"
+    ],
     "Administration":[
       "getting-started-admin",
       "guide_manual/admin-system",
