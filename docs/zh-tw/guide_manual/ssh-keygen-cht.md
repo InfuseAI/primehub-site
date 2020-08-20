@@ -1,18 +1,18 @@
 ---
 id: ssh-keygen-cht
-title: Generating a new SSH Key Pair
-sidebar_label: SSH Key Generation
+title: 生成 SSH 金鑰
+sidebar_label: SSH 金鑰生成
 ---
 
 ## Steps
 
-1. At your local, run the command with `<your_username>`.
+1. 在本地端執行帶入 `<your_username>`.
 
     ```bash
     ssh-keygen -t rsa -b 4096 -C <your_username>
     ```
 
-2. You will be prompted to change the file/the location and passphrase if required. Just press "enter" for default without a required passphrase. By default, the new key files are generated at `$HOME/.ssh/id_rsa` (private key) and `$HOME/.ssh/id_rsa.pub` (public key).
+2. 將會被提示更改檔案名稱/路徑，以及是否需要 passphrase；建議直接按下 `Enter`採用預設設定及不需 passphrase。生成金鑰檔會置於 `$HOME/.ssh/id_rsa` (私鑰) and `$HOME/.ssh/id_rsa.pub` (公鑰)。
 
 ## Reference
 + [ssh-keygen](https://www.ssh.com/ssh/keygen/)
