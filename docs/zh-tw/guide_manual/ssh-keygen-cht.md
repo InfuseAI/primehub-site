@@ -1,5 +1,5 @@
 ---
-id: ssh-keygen
+id: ssh-keygen-cht
 title: Generating a new SSH Key Pair
 sidebar_label: SSH Key Generation
 ---
