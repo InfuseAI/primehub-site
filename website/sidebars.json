@@ -247,9 +247,6 @@
         ]
       }
     ],
-    "Experiment": [
-      "guide_manual/experimental-vscode"
-    ],
     "Trouble Shooting": [
       "trouble-shoot-guide",
       {
@@ -402,9 +399,6 @@
           "zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
-    ],
-    "參考": [
-      "zh-tw/guide_manual/experimental-vscode"
     ],
     "其它配置": [
       "zh-tw/quickstart/dockerhub-registry"
