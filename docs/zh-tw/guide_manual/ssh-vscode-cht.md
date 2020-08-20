@@ -1,7 +1,7 @@
 ---
 id: ssh-vscode-cht
-title: VSCode SSH JupyterHub Remotely
-sidebar_label: VSCode Remote-SSH JupyterHub
+title: VSCode 透過 SSH 遠端存取 JupyterHub
+sidebar_label: VSCode 遠端存取 JupyterHub
 ---
 
 >此指南需要 SSH Server 相關設定已經完成並啟動的 JupyterHub； 尚未設定的話，請先參考 [SSH Server feature](ssh-config-cht)。
