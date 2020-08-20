@@ -162,6 +162,11 @@
         ]
       }
     ],
+    "SSH Server": [
+      "guide_manual/ssh-config",
+      "guide_manual/ssh-vscode",
+      "guide_manual/ssh-keygen"
+    ],
     "Administration":[
       "getting-started-admin",
       "guide_manual/admin-system",
@@ -321,6 +326,11 @@
           "zh-tw/model-deployment-tutorial-prepackage-image"
         ]
       }
+    ],
+    "SSH Server": [
+      "zh-tw/guide_manual/ssh-config-cht",
+      "zh-tw/guide_manual/ssh-vscode-cht",
+      "zh-tw/guide_manual/ssh-keygen-cht"
     ],
     "PrimeHub 管理": [
       "zh-tw/guide_manual/admin-system-cht",
