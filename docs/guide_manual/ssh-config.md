@@ -53,3 +53,7 @@ After JupyterHub is launched,
 ## Practical Usecase - VSCode
 
 If you are familiar with **VSCode**, check our guide, [VSCode + Remote-SSH](ssh-vscode).
+
+## Troubleshooting
+
+If **permission denied** or **connection refused** occurs, please check our advices for [troubleshooting](../trouble/ssh-server-permission-denied).

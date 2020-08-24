@@ -1,6 +1,7 @@
 ---
 id: dockerhub-registry
 title: Use DockerHub Registry 
+sidebar_label: Image Builder
 ---
 
 ## Use DockerHub Registry For Image Builder
