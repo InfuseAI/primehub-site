@@ -273,6 +273,14 @@
           "trouble/prometheus-fails-startup"
         ]
       },
+      {
+        "type":"subcategory",
+        "label": "SSH Server",
+        "ids": [
+          "trouble/ssh-server-permission-denied",
+          "trouble/ssh-server-connection-refused"
+        ]
+      },
       "trouble/kubelet-restart"
     ]
   },
