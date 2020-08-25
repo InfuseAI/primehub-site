@@ -7,8 +7,6 @@ title: (Part2) MNIST classifier training
   <span class="tooltiptext">Available in Enterprise tier only</span>
 </div>
 
-![image](assets/jobsub-tt-p2-1.png)
-
 Select the JupyterHub icon upon logging in.
 
 1. After you login to PrimeHub, please open `JupyterHub` in a new tab first.
@@ -73,16 +71,12 @@ Congratulations! You have prepared everything you need to submit a job.
 
 ## Submit a Job
 
-![image](assets/jobsub-tt-p2-3.png)
+Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-Select the Job Submission icon in a new tab to begin submitting a job
-
-![image](assets/jobsub-tt-p2-4.png)
-
-Select 'Create Job' in the top right corner on the Job Submission page
+Select the Job Submission icon and click `Create Job`.
 
 1. To submit a job, please open Job Submission in a new tab and create a job by clicking top right button.
-2. Select your group, instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.
+2. Select your instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.
 3. In the right panel, name the job `training mnist` in Job Name input field, or another name that prefer. 
 4. Since our code is under group volume and will be mounted in `/home/jovyan/<group name> -> /project/<group name>`, type the following into the Command input field; replace `<group name>`:
 

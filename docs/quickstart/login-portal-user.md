@@ -12,15 +12,24 @@ This quickstart shows how to login/logout `User Portal`.
 Select a `language` you prefer. Click Login with your own username and password.
 
 ## Portal
-The shortcuts on the portal are various in the real circumstance. Basically, there are two:
 
-+ **JupyterHub** It is redirected to the `JupyterHub` where users can launch projects.
+![](assets/v3-landing-user.png)
 
-+ **Job Submission (Beta)** where users can submit/schedule multiple jobs for time-consuming tasks. See [Job Submission](../job-submission-feature), [Job Scheduler](../job-scheduling-feature).
+On Portal, the left side is **side menu**, the right side is the **context of the group**. At the top of the right side, there is a **group-context-switch** dropdown. Users can switch the context among group you join easily.
 
-+ **Model Deployment (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature).
+First of all, users have to specify a group from groups you join by using the dropdown. The following context will be within the group.
 
-+ **User Guide** It is redirected to `Documentation` where users can find useful guides, tutorials and documents of PrimeHub.
+At side menu, there are 
+
++ **Home** where users can find `User Guide` link which connects to this `PrimeHub Documentation` site.
+
++ **JupyterHub**  where users can launch a JupyterHub for projects.See [Launch Project](../quickstart/launch-project).
+
++ **Jobs (Beta)** where users can submit jobs for time-consuming tasks. See [Job Submission](../job-submission-feature).
+
++ **Schedule (Beta)** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature).
+
++ **Models (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature).
 
 ## Logout
 

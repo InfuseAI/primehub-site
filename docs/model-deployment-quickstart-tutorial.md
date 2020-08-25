@@ -20,15 +20,14 @@ Remember to enable model deployment in your group, contact your admin if it is n
 
 ## Tutorial Steps
 
-1. Go to [User Portal](guide_manual/primehub-manual#user-portal) and select `Model Deployment (Alpha)`.
-2. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
-3. In the `Environment Settings`, 
-    - choose the group that you want to deploy model in this group
+1. Go to [User Portal](guide_manual/primehub-manual#user-portal) and select `Models`.
+2. Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
+3. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
+4. In the `Environment Settings`, 
     - choose the instance type, here we use the one with configuration `(CPU: 1 / Memory: 1 G / GPU: 0)`
     - leave `Replicas` as default (1)
-    ![](assets/mdeploy_quickstart_env.png)
 
-4. In the `Deployment Details`, 
+5. In the `Deployment Details`, 
     - fill in the `Deployment name` field with `quickstart-mnist`
     - Fill in the `Model Image` field with `infuseai/model-tensorflow2-mnist:v0.1.0`; This image is a pre-built image hosted on Docker Hub by InfuseAI.
       
@@ -39,14 +38,14 @@ Remember to enable model deployment in your group, contact your admin if it is n
     - Leave `Image Pull Secret`, `Description`, and `Metadata` as default (empty)
     ![](assets/mdeploy_quickstart_deploydetail.png)
 
-5. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
+6. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
     ![](assets/mdeploy_quickstart_deploying.png)
     ![](assets/mdeploy_quickstart_deployed.png)
 
     When the deployment is deployed successfully, we can click on cell to check its detail.
     ![](assets/mdeploy_quickstart_detailpage.png)
 
-6. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
+7. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
     ```bash
     curl -X POST ${YOUR_ENDPOINT_URL} \
         -H 'Content-Type: application/json' \
@@ -80,8 +79,8 @@ Remember to enable model deployment in your group, contact your admin if it is n
           }
         }
         ```
-7. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
-8. (Advanced) We went through a simple MNIST example by sending tensor data to the deployed model. Next, we can also try out [this example](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) by sending an exact image file to the deployed model.
+8. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
+9. (Advanced) We went through a simple MNIST example by sending tensor data to the deployed model. Next, we can also try out [this example](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) by sending an exact image file to the deployed model.
 
     Follow previous tutorial steps but with following difference,
 

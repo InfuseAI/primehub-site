@@ -17,11 +17,16 @@ First, we have to turn on **Model Deployment** in groups.
 
 ![](assets/mdeploy_enable.png)
 
+If the current group's `Model Deployment` is not enabled, it shows a message
+>Feature not available - Model Deployment is not enabled for this group. Please contact your administrator to enable it.
+
+Please turn on it or switch to a group which `Model Deployment` is enabled.
+
 ## List
 
 This page indicates all of deployed services status.
 
-![](assets/mdeploy_grid_v28.png)
+![](assets/mdeploy_grid_v3.png)
 
 |**Status** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
 |---------|--------|------|---------|-------|
@@ -49,18 +54,16 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 + `Create Deployment` button: Clicking for a deployment creation.
 
 + `Refresh` button: Clicking to retrieve the latest statuses of deployments.
-  
-+ `Group` filter: List deployments of selected groups only; multiple selection.
 
 + `Deployed By Me`: Check; list deployments deployed by "me".
 
 ## Create
 
-![](assets/mdeploy_create_v28.png)
+Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
+
+![](assets/mdeploy_create_v3.png)
 
 ### Environment Settings
-
-+ `Group`: Select a group where the the job belongs to; if it shows *"No group is configured for you to launch a server. Please contact admin."*, contact administrators to enable this features for groups.
 
 + `InstanceTypes`: Select a instance type which allocates resources for the job.
 
@@ -195,7 +198,7 @@ On a deployment detail page, clicking `Update` button to enter the deployment ed
 
 There are `Instance Type`, `Replicas`, `Model Image`, `Image Pull Secret`, `Description` and `Metadata` allowed to be modified in a update once the initial deployment is created.
 
-![](assets/mdeploy_update_v28.png)
+![](assets/mdeploy_update_v3.png)
 
 ---
 

@@ -73,11 +73,11 @@ We have created a python file for our coming job. We can shutdown the jupyterhub
 
 ### Submit a Job
 
-1. Open `Job Submission` from portal and and create a job by clicking top right button.
+Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-    ![image](assets/jobsub-tt-p2-3.png)
+1. Open `Job Submission` from portal and and create a job.
 
-2. Select your group, instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.
+2. Select your instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.
 
 3. In the right panel, name the job `counting` in Job Name input field, or another name that prefer.
    

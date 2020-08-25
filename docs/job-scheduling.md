@@ -13,7 +13,7 @@ We can access `Schedule` feature inside **Job Submission** from the portal.
 
 ## Schedules List
 
-![](assets/jscheduler_main_beta_v26.png)
+![](assets/jscheduler_main_beta_v3.png)
 
 In the Schedule list, there are some information of each Schedule:
 
@@ -30,25 +30,15 @@ In the Schedule list, there are some information of each Schedule:
 
 + `Refresh` button: Click the button to refresh the list.
 
-### Filter
-
-Using Group selection as a filter.
-
-![](assets/jsub_filter_beta_v26.png)
-
-+ **Default** (when Group selection is blank): it lists all of schedules submitted from groups where the user *belongs* to, in other words, schedules from other groups are not listed.
-
-+ **Filter by Group**: Selects Groups and it lists schedules **ONLY** belonging to these groups.
-
-+ **Filter by Submitted**: If `Submitted by Me` is checked off, it lists schedules **ONLY** submitted by the user.
++ `Submitted by Me` if checked off, it lists jobs **ONLY** submitted by the user.
 
 ## Create Schedule
 
-![](assets/jscheduler_create_beta_v26.png)
+Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-Creating a Schedule is almost as same as creating a job, in addition to the settings of `Group`, `InstanceTypes`, `Images`, `Command`, we can set extra `Recurrence Options` setting.
+![](assets/jscheduler_create_beta_v3.png)
 
-+ `Group`: Select a group where the the job belongs to.
+Creating a Schedule is almost as same as creating a job, in addition to the settings of `InstanceTypes`, `Images`, `Command`, we can set extra `Recurrence Options` setting.
 
 + `InstanceTypes`: Select a instance type which allocates resources for the job.
 
@@ -82,4 +72,4 @@ Clicking the action button of `delete` to delete the Schedule.
 
 Schedules are responsible for submitting jobs according the recurrence setting. Once jobs are submitted by Schedules, they will be listed in **Job Submission** list. We can notice these jobs with `Schedule` info.
 
-![jsub_main_beta.png](assets/jsub_main_beta_v26.png)
+![jsub_main_beta.png](assets/jsub_main_beta_v3.png)

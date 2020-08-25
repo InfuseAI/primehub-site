@@ -5,8 +5,6 @@ title: Advanced Settings
 
 At bottom of Jupyter Spawner, there are `advanced settings` which we can consider to enable for special purposes.
 
-![img](assets/advancedSetting_v24.png)
-
 ## Safe Mode
 
 When a user's jupyter pod cannot be launched successfully, we can consider to enable this setting and try it again for ***troubleshooting***. If the jupyter pod can be launched **with safe mode enabled** this time, which implies that user's home folder is full so that jupyter is not able to write its own files successfully.
@@ -22,3 +20,7 @@ Hence, once the jupyter is launched under safe mode successfully, we can try to 
 >Jupyter Kernel Gateway is a web server that provides headless access to Jupyter kernels. Your application communicates with the kernels remotely, through REST calls and Websockets rather than ZeroMQ messages.
 
 If **Jupyter Kernel Gateway** is required, enable this setting. Go to [[Jupyter Kernel Gateway]](https://jupyter-kernel-gateway.readthedocs.io/en/latest/index.html) to learn the detail.
+
+## SSH Server
+
+Enable it to allow the access to the JupyterHub via SSH remotely. Please see [SSH Server Feature](guide_manual/ssh-config) for the detail.

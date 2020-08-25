@@ -1,32 +1,33 @@
 ---
 id: launch-project
-title: Launch Project
+title: Launch JupyterHub
+sidebar_label: Launch JupyterHub 
 ---
 
 This quickstart shows how to launch/stop a project.
 
 ## Launch
 
-1. Log in `User Portal` with a user account and click `JupyterHub` to enter the spawner.
+![](assets/spawner_v3.png)
 
-2. Select an `Instance Type` for the resource allocation to this project .
+1. Log in `User Portal` with a user account, select `JupyterHub` and click `Start My Server` to enter the spawner page.
 
-3. Select an `Image` which the project is based on.
+2. Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
+
+3. Select an `Instance Type` for the resource allocation to this project. It lists instance types only within the context of the group.
+
+4. Select an `Image` which the project is based on. It lists images only within the context of the group.
 
    Accordingly, images are selectable only if `Types` of which match the selected `Instance Type` that guarantees hub is spawned with the proper image.
 
-4. Click `Start`. Your Server environment would be instantiated.
+5. Enabled [Advanced Settings](../user-advanced-setting) if required. Click `Start Notebook`. Your Server environment would be instantiated. Once the JupyterHub is spawned, it will pop up a new tab.
+   
+>At very first time, browser will block the pop-up from PrimeHub by default, please allow the pop-up from PrimeHub. Click `My Server` to open JupyterHub in a new tab once the pop-up is allowed.
 
-![](assets/spawner_v24.png)
+![](assets/v3-jupyter-popup-block.png)
+
 
 ## Stop
 
-1. In `JupyterHub`, the `Control Panel` button is located under `File` on menu bar.
+Click `Stop My Server`. It takes a short while to stop it.
 
-2. Select `File` on **menubar**, then select `Hub Control Panel`.
-
-![](assets/Hub_control_panel.png)
-
-3. Click `Stop My Server`.
-
-![](assets/navbar_stop_server.png)

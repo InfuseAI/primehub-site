@@ -19,9 +19,9 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 ## Jobs List
 
-There is a list showing created jobs with relevant information.
+There is a list showing created jobs within the current group with relevant information; switch the group by the `Group:` dropdown at the top of the right side.
 
-![](assets/jsub_main_beta_v27.png)
+![](assets/jsub_main_beta_v3.png)
 
 There are several informative columns of the job list:
 
@@ -43,23 +43,13 @@ There are several informative columns of the job list:
 
 + `Schedule` link: Click the name to enter the scheduler detail page if any.
 
-### Filter
-
-Using Group selection as a filter.
-
-![](assets/jsub_filter_beta_v26.png)
-
-+ **Default** (when Group selection is blank): it lists all of jobs submitted from groups where the user *belongs* to, in other words, jobs from other groups are not listed.
-
-+ **Filter by Group**: Selects Groups and it lists jobs **ONLY** belonging to these groups.
-
-+ **Filter by Submitted**: If `Submitted by Me` is checked off, it lists jobs **ONLY** submitted by the user.
++ `Submitted by Me` if checked off, it lists jobs **ONLY** submitted by the user.
 
 ## Create Job
 
-![](assets/jsub_create.png)
+Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-+ `Group`: Select a group where the the job belongs to.
+![](assets/jsub_create_v3.png)
 
 + `InstanceTypes`: Select a instance type which allocates resources for the job.
 
@@ -75,7 +65,7 @@ Using Group selection as a filter.
 
 |Directory|Description|
 |---------|-----------|
-|`/home/jovyan`|A **temporary working directory** while jobs running. ***Note**: saving data here will be lost when jobs finished; NOT ~~`/workingdir`~~ anymore!*|
+|`/home/jovyan`|A **temporary working directory** while jobs running. ***Note**: saving data here will be lost when jobs finished.*|
 |`/home/jovyan/<group> -> /project/<group>`|Using this path (or Symbolic link) to access a group volume, load files and save output persistently. ***Note:** a group volume is required, please consult administrators.*|
 |`/home/jovyan/datasets/<dataset> -> /datasets/<dataset>`|Using this path (or Symbolic link) to access a dataset volume, load datasets which connect to the group. ***Note:** a existing dataset volume is required, please consult administrators.*|
 
