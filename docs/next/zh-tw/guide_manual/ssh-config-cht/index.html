@@ -62,10 +62,13 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">SSH Server 功能</h1></header><article><div><span><p><strong>PrimeHub v3.0+</strong> 提供新功能 SSH Server，允許使用者透過 SSH 方式來存取遠端已啟動的 JupyterHub。實際的應用情境是使用者可以使用熟悉且較強大的開發工具(如：<strong>VSCode + Remote-SSH</strong>)來進行遠端開發；提供使用者更多開發工具的選擇。</p>
 <h2><a class="anchor" aria-hidden="true" id="啟用-ssh-server"></a><a href="#啟用-ssh-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>啟用 SSH Server</h2>
 <blockquote>
+<p>為了能讓使用者開啟 SSH Server 功能前， 管理者須先設定 PrimeHub 的 SSH Server 配置。 請洽管理者及參考設定文件 <a href="../../getting_started/configure-ssh-server">Configure SSH Server</a>。</p>
+</blockquote>
+<blockquote>
 <p>在我們啟用此功能前，請先確保您有可使用的<strong>公私金鑰</strong>，若您尚未有金鑰請參考 <a href="ssh-keygen-cht">SSH 金鑰產生</a>在本地端產生一組可用金鑰。</p>
 </blockquote>
 <ol>
-<li><p>從側選單進行<code>JupyterHub</code>，展開<code>Show advanced settings</code>並勾選<code>Enable SSH Server</code>。</p>
+<li><p>從側選單進入<code>JupyterHub</code>，展開<code>Show advanced settings</code>並勾選<code>Enable SSH Server</code>。</p>
 <p><img src="/docs/assets/ssh-enable.png" alt=""></p></li>
 <li><p>將滑鼠移至設定代碼上，點擊複製圖示將代碼複製於剪貼簿，稍候需要用到此代碼。</p></li>
 <li><p>點擊<code>Start Notebook</code>啟動 JupyterHub。</p></li>
@@ -94,7 +97,7 @@
 <p>一旦初次設定成功後，日後只需要<strong>步驟1</strong>，即可透過 SSH 連線 JupyterHub。</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="實際應用---vscode"></a><a href="#實際應用---vscode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>實際應用 - VSCode</h2>
-<p>請見指南 <a href="ssh-vscode">VSCode + Remote-SSH</a>。</p>
+<p>請見指南 <a href="ssh-vscode-cht">VSCode + Remote-SSH</a>。</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/model-deployment-tutorial-prepackage-image"><span class="arrow-prev">← </span><span>透過預建置 Base Image 加速流程</span></a><a class="docs-next button" href="/docs/next/zh-tw/guide_manual/ssh-vscode-cht"><span class="function-name-prevnext">VSCode 遠端存取 JupyterHub</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#啟用-ssh-server">啟用 SSH Server</a></li><li><a href="#複製公鑰至-jupyterhub">複製公鑰至 JupyterHub</a></li><li><a href="#實際應用---vscode">實際應用 - VSCode</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/InfuseAI/primehub">PrimeHub CE</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
