@@ -31,6 +31,10 @@ At side menu, there are
 
 + **Models (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature).
 
+>If users don't belong to any group, the page shows `No group available`, please contact administrators.
+
+![](assets/v3-landing-user-no-group.png)
+
 ## Logout
 
 Please click `Logout` button at top-right. The page would be directed to the `Login` page.
