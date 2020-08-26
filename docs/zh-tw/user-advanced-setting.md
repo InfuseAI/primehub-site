@@ -5,7 +5,6 @@ title: Spawner 進階設定
 
 在 Jupyter Spawner 頁面下方，有個`advanced settings`其中包含些進階選項，我們可以考慮在某些特殊狀況下起始 jupyter 時，啟用這些選項。
 
-![img](assets/advancedSetting_v24.png)
 
 ## Safe Mode
 
@@ -22,3 +21,7 @@ title: Spawner 進階設定
 >Jupyter Kernel Gateway is a web server that provides headless access to Jupyter kernels. Your application communicates with the kernels remotely, through REST calls and Websockets rather than ZeroMQ messages.
 
 如果我們需要啟用 **Jupyter Kernel Gateway** 功能，可以啟用該選項；想要了解更多關於，請參考 [[Jupyter Kernel Gateway]](https://jupyter-kernel-gateway.readthedocs.io/en/latest/index.html)。
+
+## SSH Server
+
+開啟後，使用者可以透過 SSH 來遠端連線啟動的 JupyterHub。請見 [SSH Server Feature](guide_manual/ssh-config-cht)。

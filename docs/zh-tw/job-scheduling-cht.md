@@ -9,11 +9,11 @@ title: Job Scheduler (Beta)
 
 PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到背景執行；有時候這類型的 Job 是需要根據排程時間而週期性執行的。因此 PrimeHub 提供另一個功能 Job Scheduler，透過此功能創建出 Schedule ，而其會根據 Recurrence 設定負責發動 Job 至背景執行。
 
-我們可以從 User Portal 上進入 **Job Scheduler** 功能。
+我們可以從 User Portal 上進入 **Schedule** 功能。
 
 ## 列舉 Schedules
 
-![](assets/jscheduler_main_beta_v26.png)
+![](assets/jscheduler_main_beta_v3.png)
 
 在列舉中，每個 Schedule 帶有下列資訊：
 
@@ -30,26 +30,15 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 + `Refresh`: 點擊按鈕，刷新列舉。
 
-### 篩選
-
-
-利用 Group 選取作為篩選。
-
-![](assets/jsub_filter_beta_v26.png)
-
-+ 預設 (Group 選取為空白)： 列舉所有使用者所屬群組創建的`schedule`。非所屬群組的，則不在此列。
-
-+ 指定 Group： 指定群組，只列舉指定所屬群組創建`schedule`。
-
-+ 該使用者創建： 勾選`Submitted by Me`只列舉該使用者創建的`schedule`。
++ `Submitted by Me`: 勾選，只列舉該使用者創建的`schedule`。
 
 ## 創建 Schedule
 
-![](assets/jscheduler_create_beta_v26.png)
+請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-創建 Schedule 跟創建 Job 幾乎一樣，我們需先設定`Group`, `InstanceTypes`, `Images`, `Command`；差別在於我們可以設定其發動 Job 的週期性`Recurrence Options`。
+![](assets/jscheduler_create_beta_v3.png)
 
-+ `Group`: 選擇 Schedule 發動 Job 所屬群組。
+創建 Schedule 跟創建 Job 幾乎一樣，我們需先設定 `InstanceTypes`, `Images`, `Command`；差別在於我們可以設定其發動 Job 的週期性`Recurrence Options`。
 
 + `InstanceTypes`: 選擇 Schedule 發動 Job 所需`instance type`資源佈屬。
 
@@ -83,4 +72,4 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 Schedules 會根據週期性設定來發動 Job；若 Job 是由 Schedule 發動的，我們可以從 **Job Submission** 列舉中得知，這些 Job 的`Schedule`欄位會有指向 Schedule 的連結。
 
-![jsub_main_beta.png](assets/jsub_main_beta_v26.png)
+![jsub_main_beta.png](assets/jsub_main_beta_v3.png)

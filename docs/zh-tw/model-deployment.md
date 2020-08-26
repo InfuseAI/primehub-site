@@ -17,11 +17,16 @@ title: 模型部署 (Alpha)
 
 ![](assets/mdeploy_enable.png)
 
+如果先決的專案群組並沒有開啟`Model Deployment`，將會看到此訊息
+>Feature not available - Model Deployment is not enabled for this group. Please contact your administrator to enable it.
+
+請將洽管理員為此專案群組開啟 `Model Deployment` 或切換至其它已開啟功能的專案群組。
+
 ## 主頁
 
 此頁格列一覽所有已創建的部署；
 
-![](assets/mdeploy_grid_v28.png)
+![](assets/mdeploy_grid_v3.png)
 
 狀態分別由下列顏色來區別：
 
@@ -58,11 +63,11 @@ title: 模型部署 (Alpha)
   
 ## 創建
 
-![](assets/mdeploy_create_v28.png)
+請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
+
+![](assets/mdeploy_create_v3.png)
 
 ### Environment Settings
-
-+ `Group`: 指定 Group，唯有 `Model Deployment`功能已開啟的所屬 Group 才能選擇；若看到此訊息*"No group is configured for you to launch a server. Please contact admin."*，請洽管理員開啟功能。
 
 + `InstanceTypes`: 指定資源配置請求的 instance type。
   
@@ -196,7 +201,7 @@ req.headers.get('X-Forwarded-User') # you can get the client name from the heade
 
 其中有`Group`、 `Deployment name`、 `Deployment ID` 無法更動，其餘欄位皆可更新。
 
-![](assets/mdeploy_update_v28.png)
+![](assets/mdeploy_update_v3.png)
 
 ---
 

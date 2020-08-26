@@ -11,7 +11,7 @@ This quickstart shows how to login/logout `User Portal`.
 
 Select a `language` you prefer. Click Login with your own username and password.
 
-## Portal
+## User Portal
 
 ![](assets/v3-landing-user.png)
 

@@ -20,7 +20,7 @@ First, we have to turn on **Model Deployment** in groups.
 If the current group's `Model Deployment` is not enabled, it shows a message
 >Feature not available - Model Deployment is not enabled for this group. Please contact your administrator to enable it.
 
-Please turn on it or switch to a group which `Model Deployment` is enabled.
+Please contact Admin to turn on it or switch to a group which `Model Deployment` is enabled.
 
 ## List
 
@@ -196,7 +196,7 @@ req.headers.get('X-Forwarded-User') # you can get the client name from the heade
 
 On a deployment detail page, clicking `Update` button to enter the deployment editing.
 
-There are `Instance Type`, `Replicas`, `Model Image`, `Image Pull Secret`, `Description` and `Metadata` allowed to be modified in a update once the initial deployment is created.
+`Group`、 `Deployment name`、 `Deployment ID` are not allowed to be modified in a update once the initial deployment is created.
 
 ![](assets/mdeploy_update_v3.png)
 

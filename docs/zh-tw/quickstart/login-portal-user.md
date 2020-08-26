@@ -11,28 +11,21 @@ title: User Portal
 
 首先選擇 `language`及用「使用者」帳號密碼登入。
 
-## Portal
+## User Portal
 
-Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有：
+![](assets/v3-landing-user.png)
 
-+ **JupyterHub**
+Portal 頁面上左側為使用者功能選單、右側為「專案群組先決」下的內容、最右上方則為切換專案群組的下拉選單 `Group:`。
 
-    點擊後導向`JupyterHub`啟始前置頁面。使用者可以由此進行啟始專案。詳情參考 [啟始專案](launch-project)。
++ **Home** 使用者可以由此參考 PrimeHub 相關文件。
 
-+ **Job Submission (Beta)**
++ **JupyterHub**  使用者可以由此進行啟始專案。請參考 [啟始專案](launch-project)。
 
-    使用者可以由此遞交或排程需要花費時間的任務。詳情參考 [Job Submission](../job-submission-cht) 及 [Job Scheduler](../job-scheduling-feature-cht)。
++ **Jobs (Beta)** 使用者可以由此遞交需要費時的任務。請參考 [Job Submission](../job-submission-cht)。`Enterprise`
 
-+ **Model Deployment (Alpha)**
++ **Schedule (Beta)** 使用者可以由此排程需要費時的任務。請參考 [Job Scheduler](../job-scheduling-feature-cht)。`Enterprise`
 
-    使用者可以由此佈建 Model 並以 Model 為中心提供服務。詳情參考 [Model Deployment](../model-deployment-feature)。
-
-
-+ **User Guide**
-
-    點擊後導向`Documentation`。使用者可以由此參考 PrimeHub 相關文件。
-
-
++ **Models (Alpha)** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Model Deployment](../model-deployment-feature)。`Enterprise`
 
 ## 登出
 

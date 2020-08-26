@@ -22,7 +22,7 @@ title: Job Submission (Beta)
 
 此頁列出已創建 Jobs 及其對應資訊。
 
-![](assets/jsub_main_beta_v27.png)
+![](assets/jsub_main_beta_v3.png)
 
 列表中的`Job`對應資訊欄位：
 
@@ -44,23 +44,13 @@ title: Job Submission (Beta)
 
 + `Schedule` link: 點擊名稱連結，進入 Job Scheduler 詳細頁。
 
-### 篩選
-
-利用 Group 選取作為篩選。
-
-![](assets/jsub_filter_beta_v27.png)
-
-+ 預設 (Group 選取為空白)： 列出所有使用者所屬群組創建的`job`。非所屬群組的，則不在此列。
-
-+ 指定 Group： 指定群組，只列出指定所屬群組創建`job`。
-
-+ 該使用者創建： 勾選`Submitted by Me`只列出該使用者創建的`job`。
++ `Submitted by Me`勾選，只列出該使用者創建的`job`。
 
 ## 創建 Job
 
-![](assets/jsub_create.png)
+請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-+ `Group`: 選擇`job`所屬群組。
+![](assets/jsub_create_v3.png)
 
 + `InstanceTypes`: 選擇`job`所需`instance type`資源佈屬。
 

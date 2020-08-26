@@ -74,11 +74,11 @@ for num in range(start, end + 1):
 
 ### Submit Job
 
-1. 回到`user portal`開啟 `Job Submission` 並點擊右上方的`Create Job`進入 Job 新增頁。
-   
-   ![image](assets/jobsub-tt-p2-3.png)
+請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-2. 從左方選擇`group`、`instance type`及`image`；確保跟我們先前用來起始`JupyterHub`的環境一致。
+1. 回到`User Portal`開啟 `Jobs` 並點擊右上方的`Create Job`進入 Job 新增頁。
+
+2. 從左方選擇 `instance type`及`image`；確保跟我們先前用來起始`JupyterHub`的環境一致。
 
 3. 在右方將 Job 命名為`counting`。
    

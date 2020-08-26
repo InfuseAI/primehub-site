@@ -73,7 +73,7 @@ Congratulations! You have prepared everything you need to submit a job.
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-Select the Job Submission icon and click `Create Job`.
+Select the `Jobs` icon and click `Create Job`.
 
 1. To submit a job, please open Job Submission in a new tab and create a job by clicking top right button.
 2. Select your instance type and image on the left panel; ensure that these are the identical to the ones you are using in JupyterLab.

@@ -1,9 +1,9 @@
 ---
 id: login-portal-admin
-title: User Portal
+title: Admin Portal
 ---
 
-這份文件說明介紹管理者層級的`User Portal`。
+這份文件說明介紹管理者層級的 `Admin Portal`。
 
 ## 登入
 
@@ -11,35 +11,49 @@ title: User Portal
 
 首先選擇 `language`及用「管理者」帳號密碼登入。
 
-## Portal
+## 入口
+
+當以管理者帳號登入後，起先會進入到 **User Portal**，點擊右上角的圖示並選擇 `Admin Portal` 來切換至管理功能頁。
+
+![](assets/v3-admin-entry.png)
+
+## Admin Portal
 
 Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有：
 
-### 使用者用
+基本上介面如同原 PrimeHub v2.x 的 **Admin Dashboard**，但追加整合  `JupyterHub Admin` 功能、 `Maintenance` 功能及 `Grafana`連結至 Admin Portal。
 
-+ **JupyterHub**
+![](assets/v3-admin-portal.png)
 
-    點擊後導向 `JupyterHub`啟始前置頁面。使用者可以由此進行啟始專案。
+### 功能選單
 
-+ **User Guide**
++ `Groups` 管理群組。 請見 [群組管理](../guide_manual/admin-group-cht)。
 
-    點擊後導向`Documentation`。使用者可以由此參考 PrimeHub 相關文件。
++ `Users` 管理使用者。 請見 [使用者管理](../guide_manual/admin-user-cht)。
 
-### 管理者專用
++ `Instance Types` 管理 instance types. 請見 [Instance Type 管理](../guide_manual/admin-instancetype-cht)。
 
-+ **JupyterHub Admin**
++ `Images` 管理映像檔。 請見 [Image Management](../guide_manul/../guide_manual/admin-image-cht)。
 
-點擊後導向`JupyterHub Admin`頁。管理者可以由此查看已啟始 hub 清單，並進行管理。
++ `Image Builder` 客製映像檔工具。請見 [Image Builder](../guide_manual/admin-build-image-cht)。 `Enterprise`
 
-+ **Admin Dashboard**
++ `Datasets` 管理資料集。 請見 [Dataset 管理](../guide_manual/admin-dataset-cht)。
 
-    點擊後導向`Admin Dashboard`頁。管理者可以進行`PrimeHub`設定及管理。[參照](admin-dashboard.md)
++ `Secrets` 管理 secrets。 請見 [Secret 管理](../guide_manual/admin-secret-cht)。
 
-+ **Maintenance Notebook**
++ `JupyterHub Admin` 管理使用者的 JupytertHub。
 
-    點擊後導向`maintenance notebook`頁。 管理者可以由此  Jupyter Notebook 執行內建常用維運指令。  .
++ `Usage Report` 閱覽使用量月報告。 請見 [Usage Report](../guide_manual/admin-report-cht)。 `Enterprise`
 
-![](assets/user_portal_admin.png)
++ `System Settings` 設定系統參數。 請見 [System Settings](../guide_manual/admin-system-cht)。
+
++ `Maintenance` 常用維運指令集。 請見 [Maintenance](../maintenance-cht)。 `Enterprise`
+
++ `Grafana` 檢視 **Grafana** 上的監控儀表板。
+
+## 切換 Portal
+
+點擊左上方的 *PrimeHub logo* 切換回 User Portal。
 
 ## 登出
 

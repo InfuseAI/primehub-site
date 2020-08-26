@@ -346,7 +346,6 @@
       "zh-tw/guide_manual/ssh-keygen-cht"
     ],
     "PrimeHub 管理": [
-      "zh-tw/guide_manual/admin-system-cht",
       {
         "type":"subcategory",
         "label":"使用者及群組管理",
@@ -387,6 +386,14 @@
         "label": "Secret 管理及取得",
         "ids":[
           "zh-tw/guide_manual/admin-secret-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "系統",
+        "ids": [
+          "zh-tw/guide_manual/admin-system-cht",
+          "zh-tw/guide_manual/admin-report-cht"
         ]
       },
       {

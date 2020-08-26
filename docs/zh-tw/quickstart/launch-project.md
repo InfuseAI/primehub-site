@@ -7,26 +7,23 @@ title: 啟始專案
 
 ## 起始
 
-1. 用使用者帳號登入 `User Portal` 後，並點擊 `JupyterHub` 進入 spawner。
+![](assets/spawner_v3.png)
 
-2. 指定 `Instance Type` 為此專案配置所需的運算資源。
+1. 用使用者帳號登入 `User Portal` 後，並選擇 `JupyterHub` 及點擊 `Start My Server 進入 spawner 頁。
+2. 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-3. 指定專案採用 `Image` 環境。
+3. 指定 `Instance Type` 為此專案配置所需的運算資源。
+
+4. 指定專案採用 `Image` 環境。
 
    只有 Image 的 `Types`符合指定`Instance Type`才能被選擇，如此確保起始環境符合需求。 
 
-4. 點擊`Start` 進行環境初始化，完成後，自動導向 Jupyterhub 頁面。
+5. 點擊`Start Notebook` 進行環境初始化；完成後，瀏灠器會以新頁面自動開啟 Jupyterhub。
 
-![](assets/spawner_v24.png)
+>第一次操作的使用者，瀏灠器預設地阻擋此新分頁，請設定瀏灠器一律允許由 PrimeHub 開啟的新分頁，再來按下 `My Server` 開啟 JupyterHub 新分頁。
+
+![](assets/v3-jupyter-popup-block.png)
 
 ## 關閉
 
-1. 在`JupyterHub`頁面, 在功能列上選擇 `File` > `Control Panel`。 
-
- ![](assets/Hub_control_panel.png)
-
-2. 點擊 `Stop My Server`.
-
-![](assets/navbar_stop_server.png)
-
-3. 原先啟始的 jupyterhub 分頁，即可手動關閉。
+點擊 `Stop My Server`，稍待後會關閉。

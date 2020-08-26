@@ -14,19 +14,20 @@ title: 模型部署之快速上手
 ## 先決條件
 
 ### 開啟模型部署功能
+
 首先開啟指定 Group 的 Model Deployment 功能。如果尚未啟用，請與您的管理員聯繫。
 ![](assets/mdeploy_enable.png)
 
 ## 教程步驟
 
-1. 進入 [User Portal](guide_manual/primehub-manual#user-portal) 並點選 `Model Deployment (Alpha)`。
-2. 我們將進入 [model deployment list page](model-deployment-feature#格列)， 現在點選 `Create Deployment` 按鈕。
-3. 在 `Environment Settings` ，
-    - 選擇您欲將模型部署至哪一個 group
+1. 進入 [User Portal](guide_manual/primehub-manual#user-portal) 並點選 `Models (Alpha)`。
+2. 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
+3. 我們將進入 [model deployment list page](model-deployment-feature#格列)， 現在點選 `Create Deployment` 按鈕。
+4. 在 `Environment Settings` ，
     - 選擇 instance type，此處我們所選的硬體配置為 `(CPU: 1 / Memory: 1 G / GPU: 0)`
     - 保留 `Replicas` 的預設值 (1)
-    ![](assets/mdeploy_quickstart_env.png)
-4. 在 `Deployment Details` ， 
+
+5. 在 `Deployment Details` ， 
     - 在 `Deployment name` 欄位中填入 `quickstart-mnist`
     - 在 `Model Image` 欄位中填入 `infuseai/model-tensorflow2-mnist:v0.1.0`；此為 InfuseAI 建立並存在 Docker Hub 的 Model Image；
       
@@ -36,13 +37,13 @@ title: 模型部署之快速上手
       
     - 保留 `Image Pull Secret`、 `Description`、 以及 `Metadata` 的預設值 (空白)
     ![](assets/mdeploy_quickstart_deploydetail.png)
-5. 按下 `Deploy` 按鈕， 將被重導至 model deployment list page。 稍待片刻並按下 `Refresh` 按鈕以確認模型是否部署完成。
+6. 按下 `Deploy` 按鈕， 將被重導至 model deployment list page。 稍待片刻並按下 `Refresh` 按鈕以確認模型是否部署完成。
     ![](assets/mdeploy_quickstart_deploying.png)
     ![](assets/mdeploy_quickstart_deployed.png)
 
     當模型部署成功後，我們可點選 cell 進入此模型的資訊頁面。
     ![](assets/mdeploy_quickstart_detailpage.png)
-6. 在資訊頁面中，我們可檢視許多詳細的資訊，現在就來測試剛才部署的模型吧！複製 `endpoint URL` 並取代下方區塊中的 `${YOUR_ENDPOINT_URL}`。
+7. 在資訊頁面中，我們可檢視許多詳細的資訊，現在就來測試剛才部署的模型吧！複製 `endpoint URL` 並取代下方區塊中的 `${YOUR_ENDPOINT_URL}`。
     ```bash
     curl -X POST ${YOUR_ENDPOINT_URL} \
         -H 'Content-Type: application/json' \
@@ -76,8 +77,8 @@ title: 模型部署之快速上手
           }
         }
         ```
-7. 恭喜！您已將模型映像檔部署為 endpoint service ，其將無時無刻地接收請求，並提供預測服務。
-8. (進階) 目前，我們已部署 MNIST 模型並接收張量作為 request data。接下來，您可嘗試 [範例](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) 以部署另一個模型，並接收實際的圖像檔案作為 request data。
+8. 恭喜！您已將模型映像檔部署為 endpoint service ，其將無時無刻地接收請求，並提供預測服務。
+9. (進階) 目前，我們已部署 MNIST 模型並接收張量作為 request data。接下來，您可嘗試 [範例](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) 以部署另一個模型，並接收實際的圖像檔案作為 request data。
 
     遵循先前的教程步驟，並作以下修改：
 

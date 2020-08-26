@@ -67,4 +67,4 @@ PrimeHub 的 `Image Builder` 功能讓管理者可以建立客製 image，image 
 
 ### 使用 Image
 
-我們可以將此 image(url) 透過 Image Management 加入至 PrimeHub，讓使用者可以選用；請見[「Image Management」](../guide_manual/admin-image) 以及[「增加 Image」](../quickstart/add-image.md)。
+我們可以將此 image(url) 透過 Image Management 加入至 PrimeHub，讓使用者可以選用；請見[「Image Management」](../guide_manual/admin-image-cht) 以及[「增加 Image」](../quickstart/add-image.md)。
