@@ -7,6 +7,8 @@ title: SSH Server Feature
 
 ## Enable SSH Server
 
+> To activate SSH Server, administrators have to configure SSH Server of PrimeHub. Please contact administrators and see [Configure SSH Server](../getting_started/configure-ssh-server).
+
 > Before using this feature, you are required to have a **public/private key pair**, please go to [SSH key generation](ssh-keygen) to generate your own pair at local.
 
 1. Enter `JupyterHub` from side-menu, before staring a notebook, expand `Show advanced settings` and check `Enable SSH Server`. 

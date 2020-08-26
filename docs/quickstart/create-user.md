@@ -11,7 +11,7 @@ This quickstart shows how to create a user.
 
 3. Input required information and enable `activation email` if required.
 
-    ![img](assets/qs-create-user.png)
+    ![img](assets/qs-create-user_v3.png)
 
 4. Confirm.
 

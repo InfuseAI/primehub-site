@@ -1,6 +1,6 @@
 ---
 id: login-portal-admin
-title: User Portal
+title: Admin Portal
 ---
 
 This quickstart shows how to access `User Portal`.
@@ -11,36 +11,48 @@ This quickstart shows how to access `User Portal`.
 
 Select a `language` you prefer. Click Login with your own username and password.
 
-## Portal
-The shortcuts on the portal are various in the real circumstance. Basically, there are two:
+## Entrance
 
-### User Section
+When login as an administrator, initially, you are directed to **User Portal**, click the icon at top-right and select `Admin Portal` for the switch.
 
-+ **JupyterHub**
-It is redirected to the `JupyterHub` where users can launch projects.
+![](assets/v3-admin-entry.png)
 
-+ **User Guide**
-It is redirected to `Documentation` where users can find useful guides.
+## Admin Portal
 
-### Admin Section
+Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `JupyterHub Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
 
-+ **JupyterHub Admin**
-It is redirected to the admin console of hubs where administrators can manage hubs of users.
+![](assets/v3-admin-portal.png)
 
-+ **Admin Dashboard**
-It is redirected to `Admin Dashboard` where administrators can manage `PrimeHub` system.
-[Reference](admin-dashboard.md)
+### Side Menu
 
-+ **Maintenance Notebook**
-It is redirected to a `maintenance notebook` where administrators can run several built-in useful operations via Jupyter Notebook.
++ `Groups` where Admin can manage groups. See [Group Management](../guide_manual/admin-group).
 
-![](assets/user_portal_admin.png)
++ `Users` where Admin can manage users. See [User Management](../guide_manual/admin-user).
 
++ `Instance Types` where Admin can manage instance types. See [Instance Type Management](../guide_manual/admin-instancetype).
+
++ `Images` where Admin can manage images. See [Image Management](../guide_manul/../guide_manual/admin-image).
+
++ `Image Builder` where Admin can build custom images. See [Image Builder](../guide_manual/admin-build-image). `Enterprise`
+
++ `Datasets` where Admin can manage datasets. See [Dataset Management](../guide_manual/admin-dataset).
+
++ `Secrets` where Admin can manage secrets. See [Secret Management](../guide_manual/admin-secret).
+
++ `JupyterHub Admin` where Admin can manage JupytertHubs of users.
+
++ `Usage Report` where Admin can review monthly reports of usage. See [Usage Report](../guide_manual/admin-report). `Enterprise`
+
++ `System Settings` where Admin can configure system-wise settings. See [System Settings](../guide_manual/admin-system).
+
++ `Maintenance` where Admin can run several built-in useful operations. See [Maintenance](../maintenance). `Enterprise`
+
++ `Grafana` where Admin can view dashboards on **Grafana**.
+
+## Switch Portal
+
+Click *PrimeHub logo* at top-left for switching back to User Portal.
 
 ## Logout
-Please click `Logout` button at top-right. The page would be directed to the `Login` page.
 
-
-## Next
-
-Let's go to **Admin Dashboard** from User Portal and try to add users.
+Click `Logout` button at top-right. The page would be directed to the `Login` page.

@@ -7,9 +7,11 @@ title: SSH Server 功能
 
 ## 啟用 SSH Server
 
+>為了能讓使用者開啟 SSH Server 功能前， 管理者須先設定 PrimeHub 的 SSH Server 配置。 請洽管理者及參考設定文件 [Configure SSH Server](../../getting_started/configure-ssh-server)。
+
 > 在我們啟用此功能前，請先確保您有可使用的**公私金鑰**，若您尚未有金鑰請參考 [SSH 金鑰產生](ssh-keygen-cht)在本地端產生一組可用金鑰。
 
-1. 從側選單進行`JupyterHub`，展開`Show advanced settings`並勾選`Enable SSH Server`。
+1. 從側選單進入`JupyterHub`，展開`Show advanced settings`並勾選`Enable SSH Server`。
 
     ![](assets/ssh-enable.png)
 
@@ -52,4 +54,4 @@ JupyterHub 啟動後，
 
 ## 實際應用 - VSCode
 
-請見指南 [VSCode + Remote-SSH](ssh-vscode)。
+請見指南 [VSCode + Remote-SSH](ssh-vscode-cht)。

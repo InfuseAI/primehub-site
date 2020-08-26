@@ -1,6 +1,6 @@
 ---
 id: admin-system
-title: System Management
+title: System Settings
 ---
 
 ## PrimeHub License

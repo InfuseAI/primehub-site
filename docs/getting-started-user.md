@@ -9,13 +9,13 @@ From **PrimeHub v3.0**, there are huge changes on UI for enhancing group-context
 
 ## Changes
 
-+ Users have their own group-context portal which display information within the context of the user-specified group.
++ Users have their own group-context portal which presents information within the context of the user-specified group.
 
 + Users can switch context among groups they join easily to have different context from other groups in portal.
 
-+ Because group-context, jobs feature, schedule feature and models feature, these features list items *only within the context of group*. Furthermore, user-operations are also affected by the context of the group such as submitting jobs, creating job schedule and deploying models.
++ Because group-context design, `Jobs` feature, `Schedule` feature and `Models` feature, these features list/operate items *only within the context of the current group*. Furthermore, user-operations are also affected by the context of the group such as submitting jobs, creating job schedule and deploying models.
 
-+ Because group-context, JupyterHub will be launched within the specified group without choosing a group from the spawner page.
++ Because group-context design, JupyterHub will be launched within the specified group without choosing a group from the spawner page.
 
 ## Guides
 
