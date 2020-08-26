@@ -8,11 +8,11 @@ title: 說明
 
 ## PrimeHub 管理者
 
-**PrimeHub v3.0** 將管理者功能從原先 **User Portal** 獨立出置於管理者專有 `Admin Portal`。 如果您本是 PrimeHub v2.x 管理者，請先參考重大改進。
+**PrimeHub v3.0** 將管理者功能從原先 **User Portal** 獨立於管理者專有 `Admin Portal`。 如果您本是 PrimeHub v2.x 管理者，請先參考重大改進。
 
 ### 重大改進
 
-+ `Admin Portal`。請見 [Admin Portal 入口](zh-tw/quickstart/login-portal-admin)。
++ `Admin Portal`。
 
 + `JupyterHub Admin` 功能、 `Maintenance` 功能及 `Grafana`連結整合進 Admin Portal。
 
@@ -22,9 +22,9 @@ title: 說明
 
 針對 PrimeHub 管理者，可以參考：
 
-+ [透過 Admin Portal 管理 PrimeHub](zh-tw/guide_manual/admin-system-cht)
++ [透過 Admin Portal 管理 PrimeHub](zh-tw/quickstart/login-portal-admin#功能選單)
 
-+ [快速上手操作](zh-tw/quickstart/login-portal-admin)
++ [快速上手操作](zh-tw/quickstart/create-user)
 
 ---
 
