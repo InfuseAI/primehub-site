@@ -15,7 +15,7 @@ Select a `language` you prefer. Click Login with your own username and password.
 
 ![](assets/v3-landing-user.png)
 
-On Portal, the left side is **side menu**, the right side is the **context of the group**. At the top of the right side, there is a **group-context-switch** dropdown. Users can switch the context among group you join easily.
+On Portal, the left side is **side menu**, the right side is the **context of the current working group**. At the top of the right side, there is a `Group:` dropdown for working groups switch. Users can switch the working group among joining groups easily.
 
 First of all, users have to specify a group from groups you join by using the dropdown. The following context will be within the group.
 

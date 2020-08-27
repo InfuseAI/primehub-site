@@ -441,6 +441,7 @@
         "type":"subcategory",
         "label": "Admin Dashboard",
         "ids": [
+          "model_deployment/md-admin-portal",
           "model_deployment/md-system",
           "model_deployment/md-user",
           "model_deployment/md-group",

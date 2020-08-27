@@ -5,17 +5,17 @@ title: Getting Started
 
 
 
-From **PrimeHub v3.0**, there are huge changes on UI for enhancing group-context experience which suits teams/projects much more , please check these changes if you come from PrimeHub v2.x or just skip to guides if you are newcomers.
+From **PrimeHub v3.0**, there are huge changes on UI for introducing group-context experience that users have to pre-specify a current working project-group from joining groups, the context/the operations are limited within the working group; PrimeHub becomes more team-centric intuitively. Please check these changes if you come from PrimeHub v2.x or just skip to guides if you are newcomers.
 
 ## Changes
 
-+ Users have their own group-context portal which presents information within the context of the user-specified group.
++ Users have their own group-context portal which presents information within the context of the user-specified working group.
 
-+ Users can switch context among groups they join easily to have different context from other groups in portal.
++ Users can switch the working group among joining groups easily to have the different context of group on portal.
 
-+ Because group-context design, `Jobs` feature, `Schedule` feature and `Models` feature, these features list/operate items *only within the context of the current group*. Furthermore, user-operations are also affected by the context of the group such as submitting jobs, creating job schedule and deploying models.
++ Because group-context design, `Jobs` feature, `Schedule` feature and `Models` feature, these features present/operate items *only within the current working group*. Furthermore, user-operations, such as submitting jobs, creating job schedule and deploying models, are also performed against the current working group.
 
-+ Because group-context design, JupyterHub will be launched within the specified group without choosing a group from the spawner page.
++ Because group-context design, JupyterHub will be launched within the current working group without choosing a group from the spawner page.
 
 ## Guides
 

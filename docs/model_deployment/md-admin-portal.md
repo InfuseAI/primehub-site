@@ -1,5 +1,5 @@
 ---
-id: login-portal-admin
+id: md-admin-portal
 title: Admin Portal
 ---
 
@@ -21,7 +21,7 @@ When login as an administrator, initially, you are directed to **User Portal**, 
 
 Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `JupyterHub Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
 
-![](assets/v3-admin-portal.png)
+![](assets/md_admin_portal.png)
 
 ### Side Menu
 
@@ -31,23 +31,11 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `Instance Types` where Admin can manage instance types. See [Instance Type Management](../guide_manual/admin-instancetype).
 
-+ `Images` where Admin can manage images. See [Image Management](../guide_manul/../guide_manual/admin-image).
-
-+ `Image Builder` where Admin can build custom images. See [Image Builder](../guide_manual/admin-build-image). `Enterprise`
-
-+ `Datasets` where Admin can manage datasets. See [Dataset Management](../guide_manual/admin-dataset).
-
 + `Secrets` where Admin can manage secrets. See [Secret Management](../guide_manual/admin-secret).
-
-+ `JupyterHub Admin` where Admin can manage JupytertHubs of users.
-
-+ `Usage Report` where Admin can review monthly reports of usage. See [Usage Report](../guide_manual/admin-report). `Enterprise`
 
 + `System Settings` where Admin can configure system-wise settings. See [System Settings](../guide_manual/admin-system).
 
-+ `Maintenance` where Admin can run several built-in useful operations. See [Maintenance](../maintenance). `Enterprise`
-
-+ `Grafana` where Admin can view dashboards on **Grafana**.
++ `Grafana` where Admin can an monitor the metrics of serving deployments.
 
 ## Switch Portal
 
