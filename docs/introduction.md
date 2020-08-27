@@ -5,19 +5,23 @@ title: PrimeHub Documentation
 
 ## For Scientists
 
-+ [Access User Portal.](quickstart/login-portal-user.md)
++ [Access User Portal](quickstart/login-portal-user.md)
 
-+ [Launch/Shutdown projects of JupyterHub on PrimeHub.](quickstart/launch-project)
++ [Launch/Shutdown projects of JupyterHub on PrimeHub](quickstart/launch-project)
 
 + [Advanced settings of JupyterHub Spawner](user-advanced-setting)
   
-+ [Submit and schedule Jobs](job-submission-feature).
++ [Submit and schedule Jobs](job-submission-feature)
 
-+ [Deploy Models and serve models](model-deployment-feature).
++ [Deploy Models and serve models](model-deployment-feature)
+
++ [Access JupyterHub remotely via SSH](guide_manual/ssh-config)
 
 + [More](getting-started-user)
 
 ## For Administrators
+
++ [Access Admin Portal](quickstart/login-portal-admin)
 
 + [Manage PrimeHub system and check the license](guide_manual/admin-system)
 

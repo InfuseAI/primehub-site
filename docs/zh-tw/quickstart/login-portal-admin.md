@@ -47,9 +47,9 @@ Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有�
 
 + `System Settings` 設定系統參數。 請見 [System Settings](../guide_manual/admin-system-cht)。
 
-+ `Maintenance` 常用維運指令集。 請見 [Maintenance](../maintenance-cht)。 `Enterprise`
++ `Maintenance` 開新分頁連至維運用 Notebook 內建常用維運指令集。 請見 [Maintenance](../maintenance-cht)。 `Enterprise`
 
-+ `Grafana` 檢視 **Grafana** 上的監控儀表板。
++ `Grafana` 開新分頁連至 **Grafana** ，可檢視監控儀表板。
 
 ## 切換 Portal
 

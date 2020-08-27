@@ -6,7 +6,7 @@ sidebar_label: Introduction
 
 **PrimeHub Deploy** is a standalone Model Deployment-only version of **PrimeHub Enterprise**. In addition to the PrimeHub Enterprise version of the Model Deployment feature, PrimeHub Deploy also features an Admin Dashboard that allows administrators to manage resources and access-control.
 
-From **PrimeHub v3.0**, there are huge changes on UI for introducing group-context experience that users have to pre-specify a current working project-group from joining groups, the context/the operations are limited within the working group; PrimeHub becomes more team-centric intuitively.
+From **PrimeHub v3.0**, there are huge changes on UI for introducing **Group-Context** experience that users have to pre-specify a current working project-group from joining groups, accordingly, the context/the operations are retained within the working group; in the past PrimeHub v2, users had to choose a group to perform actions every time in features respectively which didn't provide a project-centric experience; In PrimeHub v3, because group-context, the user experience becomes more project-centric intuitively.
 
 ## User Portal
 
