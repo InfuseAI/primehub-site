@@ -20,7 +20,7 @@ title: 說明
 
 + 專案群組先決的設計下，JupyterHub 會於工作專案群組下啟動。
 
-針對 Data Scientist / ML Engineer 可以參考如何使用 PrimeHub 平台上進行研究：
+### 針對 Data Scientist / ML Engineer 可以參考如何使用 PrimeHub 平台上進行研究：
 
 + [操作登入及啟始專案](zh-tw/quickstart/login-portal-user)
 
@@ -46,7 +46,25 @@ title: 說明
 
 + `Usage Reports` 新功能導入。
 
-針對 PrimeHub 管理者，可以參考：
+### 針對 PrimeHub 管理者，可以參考：
+
++ [進入 Admin Portal](zh-tw/quickstart/login-portal-admin)
+
++ [設定 PrimeHub 系統參數](zh-tw/guide_manual/admin-system-cht)
+
++ [管理使用者及群組](zh-tw/guide_manual/admin-user-cht)
+
++ [管理 Instance types/映像檔/資料集](zh-tw/guide_manual/admin-instancetype-cht)
+
++ [為使用者客製映像檔](zh-tw/guide_manual/admin-build-image-cht)
+  + [客製映像檔指南](zh-tw/guide_manual/custom-image-guideline)
+
++ [管理 secrets](zh-tw/guide_manual/admin-secret-cht) 
+
+  + [GitLab Pull Secret](zh-tw/quickstart/secret-pull-image)
+  + [GitHub gitsync secret](zh-tw/quickstart/secret-gitsync)
+
++ [維運用 Maintenance Notebook](zh-tw/maintenance-cht)
 
 + [快速上手操作](zh-tw/quickstart/create-user)
 
