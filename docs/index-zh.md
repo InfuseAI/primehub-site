@@ -64,6 +64,8 @@ title: 說明
   + [GitLab Pull Secret](zh-tw/quickstart/secret-pull-image)
   + [GitHub gitsync secret](zh-tw/quickstart/secret-gitsync)
 
++ [檢視使用量月報表](zh-tw/guide_manual/admin-report-cht)
+  
 + [維運用 Maintenance Notebook](zh-tw/maintenance-cht)
 
 + [快速上手操作](zh-tw/quickstart/create-user)

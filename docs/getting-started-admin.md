@@ -37,4 +37,7 @@ Guides are included:
   + [GitLab Pull Secret](quickstart/secret-pull-image)
   + [GitHub gitsync secret](quickstart/secret-gitsync)
 
++ [Review monthly usage report](guide_manual/admin-report)
+  
 + [Perform operations via Maintenance Notebook](maintenance)
+
