@@ -11,7 +11,7 @@ title: Group Management
 
 點選 `Add` 新增 Group，會跳出該 Group 的編輯畫面。
 
-![](assets/group_shared_volume_v26.png)
+![](assets/group_shared_volume_v3.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -40,8 +40,6 @@ title: Group Management
 + `GPU Quota` 當使用者選擇此 Group 時，能夠使用的 GPU 數量。當此數值為 0 時，表示使用者無法使用 GPU。預設值為 `0`。
 
 + `Memory Quota` 當使用者選擇此 Group 時，能夠使用的記憶體配額。預設值為沒有限制。
-
-+ `User Volume Capacity` 當使用者選擇此 Group 時，能夠使用的磁碟配額。預設值為 `20GB`;只有*設定之後新建立的 volume* 才會套用此值，如果 user volume 已經存在，則不會有任何變更。
 
 ### Group Quota 
 

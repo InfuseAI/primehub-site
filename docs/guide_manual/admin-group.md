@@ -13,7 +13,7 @@ It lists all of groups in pages, clicking a header of a column for ascending/des
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
-![](assets/group_shared_volume_v27.png)
+![](assets/group_shared_volume_v3.png)
 
 You need to fill in the fields in the above picture:
 
@@ -42,8 +42,6 @@ Set quotas for each user in this group.
 + `GPU Quota` How many GPU can be used by the user within this group. The default is `0`. Default is `0` that means users can't use GPU.
 
 + `Memory Quota` How many Memory can be used by the user within this group. The default is `unlimited`.
-
-+ `User Volume Capacity` The capacity will be allocated for the user within this group. The default is `20GB`; It only works for *newly created volume*, i.e., the user volume capacity won't be changed if the volume exists already.
 
 ### Group Quota
 

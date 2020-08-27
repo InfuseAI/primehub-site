@@ -11,7 +11,7 @@ Dataset management provides the capabilities of managing dataset resources such 
 
 Click `Add` to add a Dataset and it will pop up the edit screen of Datasets.
 
-![](assets/admin_dataset_v26.png)
+![](assets/admin_dataset_v3.png)
 
 You need to fill in these fields:
 
@@ -24,8 +24,6 @@ You need to fill in these fields:
 + `Mount Root` This field is not editable. It displays the path to datasets.
 
 + `Global` If enabled, everyone can read this dataset; furthermore, we can set `Writable` groups. If disabled, linking groups with `ReadOnly` or `Writable` permission by `edit groups` is required.
-
-+ `Launch Group Only` When `Global` is disabled, we can set `Launch Group Only` or not. If enabled, the dataset is only visible to specific groups; furthermore, we can set `ReadOnly` groups or `Writable` groups.
 
 + `Type` Dataset volume type.
 
