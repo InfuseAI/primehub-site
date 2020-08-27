@@ -27,3 +27,9 @@ title: 啟始專案
 ## 關閉
 
 點擊 `Stop My Server`，稍待後會關閉。
+
+## 提醒
+
+>如果在 JupyterHub 啟動後切換工作專群組，頁面會顯示 JupyterHub 原先是啟動於其它專案群組。
+
+![](assets/v3-jupyter-other-group.png)

@@ -31,3 +31,8 @@ This quickstart shows how to launch/stop a project.
 
 Click `Stop My Server`. It takes a short while to stop it.
 
+## Notice
+
+>If switching the current working group after the JupyterHub is launched, it indicates the JupyterHub is retained in the other group.
+
+![](assets/v3-jupyter-other-group.png)
