@@ -9,11 +9,9 @@ Here are steps generating a valid token.
 
 ## Steps
 
-1. Go to `User Portal` and hover over `Profile` at top right.
+1. Go to `User Portal` and hover over the top-right icon.
 
 2. Click `API Token`.
-
-    ![](assets/profile_token.png)
 
 3. Click `Request API Token` to generate a new token, any existing token will be revoked.
 
