@@ -27,6 +27,10 @@ title: SSH Server Feature
 
 After JupyterHub is launched,
 
+> In JupyterHub menu on User Portal, it shows the same instruction for the reference.
+
+![](assets/ssh-server-instruction.png)
+
 5. Drag-n-drop a public key (e.g. `id_rsa.pub`) from your local to the `File Browser` of the opened JupyterHub tab on browser.
 
     ![](assets/ssh-dragdrop-pub.png)

@@ -27,6 +27,10 @@ title: SSH Server 功能
 
 JupyterHub 啟動後，
 
+> User Portal 上 JupyterHub 選單頁上會顯示一樣的指示及設定供參考。
+
+![](assets/ssh-server-instruction.png)
+
 5. 以拖曵方式將公鑰 (e.g. `id_rsa.pub`) 從本地端複製到啟動 JupyterHub 的 `File Browser` 。
 
     ![](assets/ssh-dragdrop-pub.png)
