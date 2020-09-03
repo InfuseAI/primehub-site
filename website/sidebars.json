@@ -60,7 +60,8 @@
           "design/model-deployment",
           "design/primehub-store",
           "design/log-persistence",
-          "design/phfs"
+          "design/phfs",
+          "design/usage"
         ]
       }
     ],
