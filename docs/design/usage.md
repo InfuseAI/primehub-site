@@ -3,40 +3,40 @@ id: usage
 title: PrimeHub Usage
 ---
 
-PrimeHub Usage allows the PrimeHub administrator to know the usage of the PrimeHub platform.
+PrimeHub Usage provides administrators a overall insight of the usage of the PrimeHub.
 
-*Usage* is about resource allocation. For example, an user open an jupyter notebook, there will be a record in the usage data. The usage data keeps how long does a pod allocate, how many CPU, GPU and memory does a pod allocate.
+*Usage* is about **allocated** resources, not about actual utilization. For example, when an user opens an Jupyter notebook, the record of the allocated resources is logged in the usage data, *even if the user doesn't run any program actually on it*. The each record includes the lifetime of a pod, and CPU/GPU/Memory are allocated/occupied for a pod.
 
-# Features
+## Features
 
 - PrimeHub administrator can download monthly usage report (CSV format)
 
-# Non-Goal
+## Non-Goal
 
-* Utilization is not covered in this scope.
+- Actual utilization is not covered in this scope.
 
-Utilization is talking about how many ratio a resource used in an allocation.
+The utilization describes the ratio of actual utilized resources to allocated resources.
 
-# Configruation
+## Configuration
 
-To enable PrimeHub Usage, set the `usage.eanbled` to `true`.
+To enable PrimeHub Usage, set the `usage.enabled` to `true`.
 
 Path | Description | Default Value
 --- | ----- | -----------------------
 `usage.enabled` | If the PrimeHub Usage is enabled | `false`
 
-# Design
+## Design
 
 ![](assets/primehub-usage-design.png)
 
 PrimeHub Usage is made of five components:
 
 * Usage
-    * API: a rest API to query data from the usage database
-    * Prober: a watcher to save pod events to the usage database
-* Database: a postgresql database saves data to a pvc created by StatefulSet
-* Reportint: a cronjob to generate monthly reports daily, it generate two reports (this month and last month) each time.
-* Monitor: similiar to Prober, but it only cares pod events not updated recently. If a pod never changed again, it will mark the pod finished. In general case, the finished state should be handled by Prober. However, we do a final check in a seperated process to deal with edge cases.
+    * API: a Rest API to query data from the usage database
+    * Prober: a watcher to save pod events in the usage database
+* Database: a Postgresql database saves data of a pvc created by StatefulSet
+* Reporting: a cronjob to generate monthly reports daily, it generates two reports (this month and last month) each time.
+* Monitor: similar to Prober, but it only monitors pod events if it is not updated recently. If a pod hasn't been changed for a while, it will mark the pod finished. In general case, the finished state should be handled by Prober. However, we do a final check in a separated process to deal with edge cases.
 
 ## Prober
 
@@ -56,19 +56,16 @@ metadata:
 
 A prober watches pod events and filtering events in specific namespace (e.g. `hub`) with annotation  `primehub.io/usage`. It defines the lifetime of a pod between
 
-- A pod scheduled
+- A pod when scheduled
 - Terminated time of the last container
 
 ## API
 
-
 Usage API is an internal API consumed by GraphQL.
 
+### Available months
 
-### Avaliable months
-
-
-```
+```bash
 curl http://primehub-usage-api/report/monthly
 ```
 
@@ -78,8 +75,7 @@ curl http://primehub-usage-api/report/monthly
 
 ### Get report from a month
 
-
-```
+```bash
 curl http://primehub-usage-api/report/monthly/2020/9
 ```
 
@@ -94,17 +90,17 @@ jupyter,phusers,phadmin,0.00,720.00,720.00,720.00,202009
 
 ## Legacy resources migration
 
-A cluster might have lots of resources created before PrimeHub Usage installed. There is a tool to migrate legacy resources by patching their `primehub.io/usage` annotation.
+A cluster might have lots of resources created before PrimeHub Usage enabled. There is a tool to migrate legacy resources by patching their `primehub.io/usage` annotation.
 
 There is a `primehub-usage-legacy-pods-helper.py` in the prober pod:
 
-```
+```bash
 kubectl -n hub exec -it primehub-usage-prober-it-is-an-example -- primehub-usage-legacy-pods-helper.py
 ```
 
+After execution, it generates patch commands if some resources are needed to patch:
 
-After execution, it will generate patch commands if some resources are needed to patch:
-
+>Please review the commands before applying them.
 
 ```sh
 # patch jupyter pod: jupyter-foo
@@ -113,5 +109,3 @@ kubectl -n hub patch pod jupyter-foo --type='json' -p '[{"op": "add", "path": "/
 # patch phdeployment deployment: tmp-1gawm, it might restart pods if anything have changed
 kubectl -n hub patch deployment tmp-1gawm --type='json' -p '[{"op": "add", "path": "/spec/template/metadata/annotations/primehub.io~1usage", "value": "{\"component\": \"deployment\", \"component_name\": \"tmp-1gawm\", \"group\": \"model-deployment-test-group\", \"user\": \"ericy\", \"instance_type\": \"cpu-tiny\"}"}]'
 ```
-
-Please review the commands before applying them.
