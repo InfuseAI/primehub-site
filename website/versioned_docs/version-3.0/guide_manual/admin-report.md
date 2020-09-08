@@ -10,6 +10,8 @@ original_id: admin-report
 
 From PrimeHub v3.0, the new feature, `Usage Reports`, is introduced that administrators can have a overall insight of who/what consumed resources monthly.
 
+>**Usage** is defined by **allocated** resources, not by actual utilization. For example, when an user opens an Jupyter notebook, the record of the allocated resources is logged in the usage report, *even if the user doesn't run any program actually on it*. The each record includes the lifetime of a pod, and CPU/GPU/Memory are allocated/occupied for a pod.
+
 ## Monthly Report
 
 ![](assets/usage-list.png)

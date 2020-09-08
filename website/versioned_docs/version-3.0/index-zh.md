@@ -1,6 +1,6 @@
 ---
 id: version-3.0-index-zh
-title: 說明
+title: 🌟PrimeHub v3.0 
 original_id: index-zh
 ---
 

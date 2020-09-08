@@ -300,7 +300,6 @@
     "專案": [
       "version-3.0-zh-tw/quickstart/login-portal-user",
       "version-3.0-zh-tw/quickstart/launch-project",
-      "version-3.0-zh-tw/quickstart/close-project",
       {
         "type": "subcategory",
         "label": "Jupyter Notebook",

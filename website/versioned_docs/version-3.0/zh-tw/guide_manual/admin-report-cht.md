@@ -10,6 +10,8 @@ original_id: admin-report-cht
 
 PrimeHub v3.0 導入新功能 `Usage Reports`，藉此管理者可以下載每月報表，透過月報表對專案群組及資源使用狀況有著更清楚的掌握。
 
+>請注意：報告裡的使用量是根據 Pod 的生命期及**要求配置**的資源來定義，而非程式實際運算使用到的資源;如果有個開啟閒置的 Jupyter Notebook，其佔據的資源是會被列入計算的。
+
 ## Monthly Report
 
 ![](assets/usage-list.png)

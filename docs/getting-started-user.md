@@ -3,6 +3,8 @@ id: getting-started-user
 title: Getting Started
 ---
 
+## 🌟PrimeHub v3.0
+
 From **PrimeHub v3.0**, there are huge changes on UI for introducing **Group-Context** experience that users have to pre-specify a current working project-group from joining groups, accordingly, the context/the operations are retained within the working group; in the past PrimeHub v2, users had to choose a group to perform actions every time in features respectively which didn't provide a project-centric experience; In PrimeHub v3, because group-context, the user experience becomes more project-centric intuitively. Please check group-context section below if you come from PrimeHub v2.x or just skip to guides if you are newcomers.
 
 ## Group-context

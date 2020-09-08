@@ -3,9 +3,13 @@ id: getting-started-admin
 title: Administration
 ---
 
+## 🌟PrimeHub v3.0
+
 From **PrimeHub v3.0**, administration features are performed on `Admin Portal` which is independent from **User Portal** now. Please check Admin Portal section below if you come from PrimeHub v2.x or just skip to guides if you are newcomers.
 
 ## Admin Portal
+
+![](assets/v3-admin-portal.png)
 
 + Then entrance of **Admin Portal**. See [Access Admin Portal](quickstart/login-portal-admin). 
 
