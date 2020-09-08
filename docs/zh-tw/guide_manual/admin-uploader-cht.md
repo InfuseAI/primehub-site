@@ -37,6 +37,8 @@ title: Upload Server
 
 拖拉要上傳的檔案進對話框，此時檔案尚未開始上傳。
 
+>Uploader 支援 zip 檔的自動解壓縮；拖拉 **zip** 檔上傳，該檔案會自動解壓縮並維持原有的目錄結構！
+
 ![](assets/dataset_pv_v2_drag_file.png)
 
 按下 `Upload n files` 開始上傳。一旦完成，對話框的下方會顯示 `Complete`。

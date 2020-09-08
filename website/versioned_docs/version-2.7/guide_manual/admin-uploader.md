@@ -37,6 +37,8 @@ A upload dialogue appears.
 
 Dragging files for uploading, files are not uploaded yet at this moment.
 
+>Uploader supports **auto-unzip** to a zip file. Dragging a **zip** file in, the file will be **unzip automatically** and the directory structure is remained.
+
 ![](assets/dataset_pv_v2_drag_file.png)
 
 Click `Upload n files` to trigger the upload. It shows **Complete** at bottom of the uploader once finished.
