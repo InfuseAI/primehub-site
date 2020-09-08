@@ -19,7 +19,9 @@ When login as an administrator, initially, you are directed to **User Portal**, 
 
 ## Admin Portal
 
-Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `JupyterHub Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
+Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `Notebooks Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
+
++ `JupyterHub Admin` is renamed to `Notebooks Admin`.
 
 ![](assets/v3-admin-portal.png)
 
@@ -39,7 +41,7 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `Secrets` where Admin can manage secrets. See [Secret Management](../guide_manual/admin-secret).
 
-+ `JupyterHub Admin` where Admin can manage JupytertHubs of users.
++ `Notebooks Admin` where Admin can manage Notebooks of users.
 
 + `Usage Report` where Admin can review monthly reports of usage. See [Usage Report](../guide_manual/admin-report). `Enterprise`
 

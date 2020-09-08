@@ -28,7 +28,7 @@ title: 說明
 
 + [模型部署 (Alpha)](zh-tw/model-deployment-feature)
 
-+ [遠端 SSH 連線 JupyterHub](zh-tw/guide_manual/ssh-config-cht)
++ [遠端 SSH 連線 Jupyter Notebook](zh-tw/guide_manual/ssh-config-cht)
 
 ---
 
@@ -40,7 +40,9 @@ title: 說明
 
 + `Admin Portal` 請見 [透過 Admin Portal 管理 PrimeHub](zh-tw/quickstart/login-portal-admin)。
 
-+ `JupyterHub Admin` 功能、 `Maintenance` 功能及 `Grafana`連結整合進 Admin Portal。
++ `Notebooks Admin` 功能、 `Maintenance` 功能及 `Grafana`連結整合進 Admin Portal。
+
++ `JupyterHub Admin` 功能更名為 `Notebooks Admin`
 
 + `System` 功能更名為 `System Settings`。
 

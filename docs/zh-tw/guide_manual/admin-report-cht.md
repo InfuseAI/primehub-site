@@ -1,6 +1,6 @@
 ---
 id: admin-report-cht
-title: Usage Report
+title: Usage Reports
 ---
 
 <div class="ee-only tooltip">Enterprise

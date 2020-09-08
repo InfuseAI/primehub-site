@@ -19,7 +19,9 @@ When login as an administrator, initially, you are directed to **User Portal**, 
 
 ## Admin Portal
 
-Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `JupyterHub Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
+Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `Notebooks Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
+
++ `JupyterHub Admin` is renamed to `Notebooks Admin`.
 
 ![](assets/md_admin_portal.png)
 

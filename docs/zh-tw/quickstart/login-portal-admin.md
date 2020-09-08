@@ -21,7 +21,9 @@ title: Admin Portal
 
 Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有：
 
-基本上介面如同原 PrimeHub v2.x 的 **Admin Dashboard**，但追加整合  `JupyterHub Admin` 功能、 `Maintenance` 功能及 `Grafana`連結至 Admin Portal。
+基本上介面如同原 PrimeHub v2.x 的 **Admin Dashboard**，但追加整合  `Notebooks Admin` 功能、 `Maintenance` 功能及 `Grafana`連結至 Admin Portal。
+
++ `JupyterHub Admin` 功能更名為 `Notebooks Admin`
 
 ![](assets/v3-admin-portal.png)
 
@@ -41,7 +43,7 @@ Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有�
 
 + `Secrets` 管理 secrets。 請見 [Secret 管理](../guide_manual/admin-secret-cht)。
 
-+ `JupyterHub Admin` 管理使用者的 JupytertHub。
++ `Notebooks Admin` 管理使用者的 Notebook。
 
 + `Usage Report` 閱覽使用量月報告。 請見 [Usage Report](../guide_manual/admin-report-cht)。 `Enterprise`
 

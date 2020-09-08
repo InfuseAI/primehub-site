@@ -13,22 +13,22 @@ From **PrimeHub v3.0**, there are huge changes on UI for introducing **Group-Con
 
 + Because group-context design, `Jobs` feature, `Schedule` feature and `Models` feature, these features present/operate items *only within the current working group*. Furthermore, user-operations, such as submitting jobs, creating job schedule and deploying models, are also performed against the current working group.
 
-+ Because group-context design, JupyterHub will be launched within the current working group without choosing a group from the spawner page.
++ Because group-context design, Notebook will be launched within the current working group without choosing a group from the spawner page.
 
 ## Guides
 
-As Data/ML scientists, you will learn how to conduct projects and how to deploy models on PrimeHub with JupyterHub, Job Submission and Model Deployment features.
+As Data/ML scientists, you will learn how to conduct projects and how to deploy models on PrimeHub with Notebook, Job Submission and Model Deployment features.
 
 Guides are included:
 
 + [Access User Portal](quickstart/login-portal-user.md)
 
-+ [Launch/Shutdown projects of JupyterHub on PrimeHub](quickstart/launch-project)
++ [Launch/Shutdown Notebooks of projects on PrimeHub](quickstart/launch-project)
 
-+ [Advanced settings of JupyterHub Spawner](user-advanced-setting)
++ [Advanced settings of Notebook Spawner](user-advanced-setting)
   
 + [Submit and schedule Jobs](job-submission-feature)
 
 + [Deploy Models and serve models](model-deployment-feature)
 
-+ [Access JupyterHub remotely via SSH](guide_manual/ssh-config)
++ [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)

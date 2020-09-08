@@ -19,7 +19,7 @@ Portal 頁面上左側為使用者功能選單、右側為「專案群組先決�
 
 + **Home** 使用者可以由此參考 PrimeHub 相關文件。
 
-+ **JupyterHub**  使用者可以由此進行啟始專案。請參考 [啟始專案](launch-project)。
++ **Notebooks**  使用者可以由此進行啟始專案。請參考 [啟始專案](launch-project)。
 
 + **Jobs (Beta)** 使用者可以由此遞交需要費時的任務。請參考 [Job Submission](../job-submission-cht)。`Enterprise`
 

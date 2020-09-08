@@ -9,7 +9,9 @@ From **PrimeHub v3.0**, administration features are performed on `Admin Portal` 
 
 + Then entrance of **Admin Portal**. See [Access Admin Portal](quickstart/login-portal-admin). 
 
-+ `JupyterHub Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
++ `Notebooks Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
+
++ `JupyterHub Admin` is renamed to `Notebooks Admin`.
 
 + `System` is renamed to `System Settings`.
 

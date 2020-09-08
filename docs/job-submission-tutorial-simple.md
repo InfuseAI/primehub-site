@@ -57,9 +57,9 @@ for num in range(start, end + 1):
     print('{}: {}'.format(num, camel.hump(txt)))
 ```
 
-1. Login `PrimeHub` and select `JupyterHub`.
+1. Login `PrimeHub` and select `Notebook`.
 
-2. Select a `group`, an `instance type` and an `image` for launching a jupyterhub.
+2. Select an `instance type` and an `image` for launching a Notebook.
 
 3. Double click your group volume folder for entering it.
 
@@ -69,7 +69,7 @@ for num in range(start, end + 1):
 
 6. Input the code above and save.
 
-We have created a python file for our coming job. We can shutdown the jupyterhub or leave it. Next we are going to run it as a job.
+We have created a python file for our coming job. We can shutdown the Notebook or leave it. Next we are going to run it as a job.
 
 ### Submit a Job
 

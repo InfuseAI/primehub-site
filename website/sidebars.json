@@ -124,7 +124,7 @@
       "quickstart/launch-project",
       {
         "type": "subcategory",
-        "label": "Jupyter Spawner",
+        "label": "Notebook Spawner",
         "ids":[
           "user-advanced-setting"
         ]
@@ -303,7 +303,7 @@
         "zh-tw/quickstart/close-project",
         {
           "type": "subcategory",
-          "label": "Jupyter",
+          "label": "Jupyter Notebook",
           "ids": [
             "zh-tw/user-advanced-setting"
           ]

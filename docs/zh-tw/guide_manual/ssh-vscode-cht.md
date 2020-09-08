@@ -1,10 +1,10 @@
 ---
 id: ssh-vscode-cht
-title: VSCode 透過 SSH 遠端存取 JupyterHub
-sidebar_label: VSCode 遠端存取 JupyterHub
+title: VSCode 透過 SSH 遠端存取 Jupyter Notebook
+sidebar_label: VSCode 遠端存取 Notebooks
 ---
 
->此指南需要 SSH Server 相關設定已經完成並啟動的 JupyterHub； 尚未設定的話，請先參考 [SSH Server feature](ssh-config-cht)。
+>此指南需要 SSH Server 相關設定已經完成並啟動的 Notebook； 尚未設定的話，請先參考 [SSH Server feature](ssh-config-cht)。
 
 
 ## Steps
@@ -29,6 +29,6 @@ sidebar_label: VSCode 遠端存取 JupyterHub
    
    ![](assets/ssh-remote-jovyan.png)
 
-6. 顯示位於遠端 JupyterHub 下的 `/home/jovyan` 檔案。
+6. 顯示位於遠端 Jupyter Notebook 下的 `/home/jovyan` 檔案。
    
    ![](assets/ssh-remote-files.png)

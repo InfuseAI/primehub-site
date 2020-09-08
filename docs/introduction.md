@@ -15,7 +15,7 @@ title: PrimeHub Documentation
 
 + [Deploy Models and serve models](model-deployment-feature)
 
-+ [Access JupyterHub remotely via SSH](guide_manual/ssh-config)
++ [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)
 
 + [More](getting-started-user)
 

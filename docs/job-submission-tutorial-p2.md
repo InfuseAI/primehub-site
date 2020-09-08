@@ -7,9 +7,9 @@ title: (Part2) MNIST classifier training
   <span class="tooltiptext">Available in Enterprise tier only</span>
 </div>
 
-Select the JupyterHub icon upon logging in.
+Select the Notebooks icon upon logging in.
 
-1. After you login to PrimeHub, please open `JupyterHub` in a new tab first.
+1. After you login to PrimeHub, please open `Notebook` in a new tab first.
 2. Select an `instance type` with at least one virtual CPU and 2GB RAM.
 3. Select an `image` with Tensorflow 1.14.
 4. Start the notebook.

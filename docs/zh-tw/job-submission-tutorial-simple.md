@@ -56,9 +56,9 @@ for num in range(start, end + 1):
     print('{}: {}'.format(num, camel.hump(txt)))
 ```
 
-1. 登入`PrimeHub`後，點擊`JupyterHub`。
+1. 登入`PrimeHub`後，點擊`Notebooks`。
 
-2. 選擇`group`、`instance type`及`image`啟始 jupyterhub。
+2. 選擇`instance type`及`image`啟始 Notebook。
 
 3. 啟動後，從左方檔案工作區雙擊我們的 group volume 資料夾進入。
 
@@ -70,7 +70,7 @@ for num in range(start, end + 1):
 
 6. 輸入要執行的程式碼並儲存。
 
-到此我們已經在 group volume 下，新增一個 python 程式檔；此時就算關閉 jupyterhub 對接下來的`Job Submission`也不會有影響。
+到此我們已經在 group volume 下，新增一個 python 程式檔；此時就算關閉 Notebook 對接下來的`Job Submission`也不會有影響。
 
 ### Submit Job
 
@@ -78,7 +78,7 @@ for num in range(start, end + 1):
 
 1. 回到`User Portal`開啟 `Jobs` 並點擊右上方的`Create Job`進入 Job 新增頁。
 
-2. 從左方選擇 `instance type`及`image`；確保跟我們先前用來起始`JupyterHub`的環境一致。
+2. 從左方選擇 `instance type`及`image`；確保跟我們先前用來起始`Notebook`的環境一致。
 
 3. 在右方將 Job 命名為`counting`。
    

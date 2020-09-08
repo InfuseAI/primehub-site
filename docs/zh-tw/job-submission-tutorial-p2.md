@@ -7,10 +7,10 @@ title: (Part2) MNIST classifier 訓練範例程式
   <span class="tooltiptext">Available in Enterprise tier only</span>
 </div>
 
-1. 登入後，進入 `JupyterHub`。
+1. 登入後，進入 `Notebooks`。
 2. 選擇至少有 1 virtual CPU 及 2GB RAM 的 `instance type`。
 3. 選擇有`Tensorflow 1.14`環境的`image`。
-4. 點擊`start`起始 JupyterHub。
+4. 點擊`start Notebook`起始 Notebook。
 
     ![image](assets/jobsub-tt-p2-2.png)
 
@@ -70,7 +70,7 @@ title: (Part2) MNIST classifier 訓練範例程式
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
 1. 點擊右上方的`Create Job`按鈕。
-2. 從左方選擇 `instance type` 及 `image`；確保跟我們用來起始`JupyterHub`的環境一致。
+2. 從左方選擇 `instance type` 及 `image`；確保跟我們用來起始`Notebook`的環境一致。
 3. 在右方將 job 命名為`training mnist`。
 4. 因為我們的範例程式存放在 group volume 且 group volume 會被掛載在`/home/jovyan/<group name> -> /project/<group name>`，在`Commnad`欄位輸入下方指令； 請置換 `<group name>` 為實際名稱 ：
 

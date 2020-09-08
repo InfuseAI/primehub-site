@@ -1,7 +1,7 @@
 ---
 id: launch-project
 title: Launch JupyterHub
-sidebar_label: Launch JupyterHub 
+sidebar_label: Launch Jupyter Notebook
 ---
 
 This quickstart shows how to launch/stop a project.
@@ -10,7 +10,7 @@ This quickstart shows how to launch/stop a project.
 
 ![](assets/spawner_v3.png)
 
-1. Log in `User Portal` with a user account, select `JupyterHub` and click `Start My Server` to enter the spawner page.
+1. Log in `User Portal` with a user account, select `Notebooks` and click `Start My Server` to enter the spawner page.
 
 2. Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
@@ -20,9 +20,9 @@ This quickstart shows how to launch/stop a project.
 
    Accordingly, images are selectable only if `Types` of which match the selected `Instance Type` that guarantees hub is spawned with the proper image.
 
-5. Enabled [Advanced Settings](../user-advanced-setting) if required. Click `Start Notebook`. Your Server environment would be instantiated. Once the JupyterHub is spawned, it will pop up a new tab.
+5. Enabled [Advanced Settings](../user-advanced-setting) if required. Click `Start Notebook`. Your Server environment would be instantiated. Once the Notebook is spawned, it will pop up a new tab.
    
->At very first time, browser will block the pop-up from PrimeHub by default, please allow the pop-up from PrimeHub. Click `My Server` to open JupyterHub in a new tab once the pop-up is allowed.
+>At very first time, browser will block the pop-up from PrimeHub by default, please allow the pop-up from PrimeHub. Click `My Server` to open Notebook in a new tab once the pop-up is allowed.
 
 ![](assets/v3-jupyter-popup-block.png)
 
@@ -33,6 +33,6 @@ Click `Stop My Server`. It takes a short while to stop it.
 
 ## Notice
 
->If switching the current working group after the JupyterHub is launched, it indicates the JupyterHub is retained in the other group.
+>If switching the current working group after the Notebook is launched, it indicates the Notebook is retained in the other group.
 
 ![](assets/v3-jupyter-other-group.png)

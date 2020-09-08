@@ -1,10 +1,10 @@
 ---
 id: ssh-vscode
-title: VSCode SSH JupyterHub Remotely
-sidebar_label: VSCode Remote-SSH JupyterHub
+title: VSCode SSH Jupyter Notebook Remotely
+sidebar_label: VSCode Remote-SSH Notebook
 ---
 
-> This guide requires prerequisites of JupyterHub with enabled SSH Server feature and key-pair. Please go to [SSH Server feature](ssh-config) if it hasn't been set up yet.
+> This guide requires prerequisites of Notebook with enabled SSH Server feature and key-pair. Please go to [SSH Server feature](ssh-config) if it hasn't been set up yet.
 
 
 ## Steps
@@ -28,6 +28,6 @@ sidebar_label: VSCode Remote-SSH JupyterHub
 5. Open the folder, `/home/jovyan`.
    ![](assets/ssh-remote-jovyan.png)
 
-6. It shows files from `/home/jovyan` of remote JupyterHub.
+6. It shows files from `/home/jovyan` of remote Notebook.
    
    ![](assets/ssh-remote-files.png)
