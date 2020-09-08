@@ -1,8 +1,12 @@
 ---
 id: version-3.0-introduction
-title: PrimeHub Documentation
+title: 🌟PrimeHub v3.0
 original_id: introduction
 ---
+
+**PrimeHub v3.0** has a whole new ML user experience base on the **Group-Context** concept that ML users specify a current working project-group prior to any rest of operations. All of operations are performed within the working project-group. It is much different with the past PrimeHub v2 and it allows users to focus on the current project-group intuitively.
+
+In addition, administration features are performed on `Admin Portal` which is independent from **User Portal** now.
 
 ## For Scientists
 
