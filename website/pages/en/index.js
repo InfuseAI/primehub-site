@@ -321,7 +321,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('design/meta-chart')}>Meta Chart</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/image-builder')}>Image Builder</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('design/job-submission')}>Job Submission</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/job-scheduler')}>Job Scheduler</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('design/primehub-store')}>PrimeHub Store</a></div>` +
               '</div>', 
           },
           {
@@ -349,7 +349,6 @@ class Index extends React.Component {
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub">PrimeHub CE Repository</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/comparison')}>Community | Enterprise</a></div>` +
-                `<div class="menu-item"><a href="https://github.com/InfuseAI">GitHub</a></div>` +
                 `<div class="menu-item"><a href="https://medium.com/infuseai">Medium</a></div>` +
                 `<div class="menu-item"><a href="https://www.katacoda.com/infuseai">Katacoda</a></div>` +
               '</div>', 

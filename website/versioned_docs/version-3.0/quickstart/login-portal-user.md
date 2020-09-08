@@ -1,6 +1,7 @@
 ---
-id: login-portal-user
+id: version-3.0-login-portal-user
 title: User Portal
+original_id: login-portal-user
 ---
 
 This quickstart shows how to login/logout `User Portal`.
@@ -17,7 +18,7 @@ Select a `language` you prefer. Click Login with your own username and password.
 
 On Portal, the left side is **side menu**, the right side is the **context of the current working group**. At the top of the right side, there is a `Group:` dropdown for working groups switch. Users can switch the working group among joining groups easily.
 
-First of all, users have to specify a working group from joining groups by using the dropdown. Accordingly, the following context will be retained within the working group.
+First of all, users have to specify a working group from joining groups by using the dropdown. Accordingly, the following context will be limited within the working group.
 
 At side menu, there are
 

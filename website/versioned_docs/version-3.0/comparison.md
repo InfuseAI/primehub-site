@@ -1,6 +1,7 @@
 ---
-id: comparison
+id: version-3.0-comparison
 title: Features Comparison
+original_id: comparison
 ---
 
 
@@ -26,11 +27,11 @@ Here we list the features comparison between tiers for the reference.
 | [Datasets management](guide_manual/admin-dataset) | Admin Portal | ✅️ | ✅️ |
 | [Secrets management](guide_manual/admin-secret) | Admin Portal | ✅️ | ✅️ |
 | [Usage report](guide_manual/admin-report) | Admin Portal | 🚫 | ✅️ |
-| [Spawner](quickstart/launch-project)| Notebooks | ✅️ | ✅️ |
-| [Kernel gateway](user-advanced-setting)| Notebooks | ✅️ | ✅️ |
-| [Safe mode](user-advanced-setting)| Notebooks | ✅️ | ✅️ |
-| [SSH Server](guide_manual/ssh-config)| Notebooks | ✅️ | ✅️ |
+| [Spawner](quickstart/launch-project)| JupyterHub | ✅️ | ✅️ |
+| [Kernel gateway](user-advanced-setting)| JupyterHub | ✅️ | ✅️ |
+| [Safe mode](user-advanced-setting)| JupyterHub | ✅️ | ✅️ |
+| [SSH Server](guide_manual/ssh-config)| JupyterHub | ✅️ | ✅️ |
 | [Maintenance Notebook](maintenance) | Maintenance | 🚫 | ✅️ |
-| [Jobs](job-submission-feature) | Job Submission | 🚫 | ✅️ |
-| [Schedule](job-scheduling-feature) | Job Schedule | 🚫 | ✅️ |
+| [Job management](job-submission-feature) | Job Submission | 🚫 | ✅️ |
+| [Job scheduler](job-scheduling-feature) | Job Submission | 🚫 | ✅️ |
 | [Model Deployment](model-deployment-feature) | Model Deployment | 🚫 | ✅️ |
