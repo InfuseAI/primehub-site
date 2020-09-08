@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Instance Type Management · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Instance type management 提供給管理者 Instance 運算資源管理能力，如：新增、刪除、編輯運算資源分配及群組權限。"/><meta name="docsearch:version" content="2.8"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Instance Type Management · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="Instance type management 提供給管理者 Instance 運算資源管理能力，如：新增、刪除、編輯運算資源分配及群組權限。"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.8</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.8/introduction" target="_self">PrimeHub</a></li><li class=""><a href="/docs/2.8/deploy-index" target="_self">PrimeHub Deploy</a></li><li class=""><a href="/docs/2.8/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/2.8/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Instance Type Management</h1></header><article><div><span><p>Instance type management 提供給管理者 Instance 運算資源管理能力，如：新增、刪除、編輯運算資源分配及群組權限。</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-new-instance-types"></a><a href="#creating-new-instance-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating New Instance Types</h2>
+<p><img src="/docs/assets/instancetype_3.png" alt=""></p>
+<p>點選 <code>Add</code> 新增 Instance Type，會跳出編輯該 Instance Type 的畫面。</p>
+<p><img src="/docs/assets/instancetypes_add.png" alt=""></p>
+<p>需填入以上畫面中 <code>Basic Info</code> 的各個欄位：</p>
+<ul>
+<li><p><code>Name</code> 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）和底線（“_”）。</p></li>
+<li><p><code>Display name</code> 顯示名稱。</p></li>
+<li><p><code>Description</code></p></li>
+<li><p><code>CPU Limit</code> 填入分配給該 Instance Type 的 CPU 使用上限，當 <code>CPU Request</code> 沒有啟用時，該上限值同樣預設給 <code>CPU Request</code> 。</p></li>
+<li><p><code>Memory Limit</code> 填入分配給該 Instance Type 的 Memory 使用上限，當 <code>Memory Limit</code> 沒有啟用時，該上限值同樣預設給 <code>Memory Limit</code> 。</p></li>
+<li><p><code>GPU Limit</code> 填入分配給該 Instance Type 的 GPU 使用上限 。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="overcommitting"></a><a href="#overcommitting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overcommitting</h3>
+<ul>
+<li><p><code>CPU Request</code> 填入分配給該 Instance Type 所請求的 CPU 使用量。啟用時，Instance 保證會分配到所請求的 CPU 使用量。當 <code>CPU Request &lt; CPU Limit</code> 時，系統會在上限內分配閒置的 CPU 。</p></li>
+<li><p><code>Memory Request</code> 填入分配給該 Instance Type 所請求的 Memory 使用量。啟用時，Instance 保證會分配到所請求的 Memory 使用量。當 <code>Memory Request &lt; Memory Limit</code> 時，系統會在上限內分配閒置的 Memory 。</p></li>
+</ul>
+<p>細節請見 <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes">Resource QoS</a>.</p>
+<ul>
+<li><code>Global</code>  開啟後，所有人皆可使用此 Instance Type；若關閉，則需在 <code>Connecting existed Groups</code> 連結有權限使用的 Group 。</li>
+</ul>
+<p>最後點選 <code>confirm</code> 完成新增。</p>
+<h2><a class="anchor" aria-hidden="true" id="toleration"></a><a href="#toleration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Toleration</h2>
+<p>當 node 帶有 <code>taint</code> 時，instance 並不會被排程到此 node 上運作。但您可以用 toleration 來設定 <code>taint</code> 容忍條件，允許排程到滿足條件的 node 上運作。在此，我們僅會說明如何新增 toleration。</p>
+<p>關於 <code>kubectl taint</code> 用法及更多細節請參照 <a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/">Tolerations concept</a>.</p>
+<p><img src="/docs/assets/instance_type_toleration0.png" alt=""></p>
+<p>在 <code>Toleration</code> 頁籤中，您可以點選 <code>Add</code> 新增 <code>Toleration</code> 。</p>
+<p><img src="/docs/assets/instance_type_toleration1.png" alt=""></p>
+<p>需填入以上畫面中的各個欄位：</p>
+<ul>
+<li><p><code>Key</code> 此為想容忍 <code>taint</code> 之 Key 值。</p></li>
+<li><p><code>Value</code> 如果選取 <code>Operator</code> 為 <code>Equal</code> ，則須填入想容忍 <code>taint</code> 之 Value 值。</p></li>
+<li><p><code>Operator</code> 必填， 選取  <code>Equal</code> 或 <code>Exists</code> 。</p></li>
+<li><p><code>Effect</code> 選取 <code>None</code> 、 <code>NoSchedule</code> 、 <code>PreferNoSchedule</code> 及 <code>NoExecute</code> 。</p></li>
+</ul>
+<p>關於 Operator , Effect 選項，請參照 <a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/">Taints and Tolerations</a>.</p>
+<p>點選 <code>OK</code> 新增。</p>
+<p>最後點選 <code>confirm</code> 完成新增。</p>
+<p>關於使用案例，請見 <a href="usecase-toleration-cht">Toleration 使用案例</a>。</p>
+<h2><a class="anchor" aria-hidden="true" id="nodeselector"></a><a href="#nodeselector" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NodeSelector</h2>
+<p>您可以限制 instance 只能排程在帶有特定 labels 的 nodes 上運作。<code>Label</code> 是一對 key-value 值。</p>
+<p>在此，我們僅會說明如何新增 NodeSelector。</p>
+<p>關於 kubectl label 用法及更多細節請參照<a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/"> Assigning Pods to Nodes 概念</a></p>
+<p><img src="/docs/assets/instance_type_nodeselector.png" alt=""></p>
+<p>在 <code>NodeSelector</code> 頁籤中，您可以點選 <code>+ Add field</code> 新增 <code>NodeSelector</code> 。</p>
+<p>填入您想要選取的 Label 的 <code>key/value</code> 後，點選 <code>Confirm</code> 以完成新增。</p>
+<p>關於使用案例，請見 <a href="usecase-nodeselector-cht">NodeSelector 使用案例</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="deleting-instance-types"></a><a href="#deleting-instance-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting Instance Types</h2>
+<p><img src="/docs/assets/instancetype_5.png" alt=""></p>
+<p>點選 <code>Delete</code>，會跳出確認對話框，確認是否刪除該 Instance Type。</p>
+<h2><a class="anchor" aria-hidden="true" id="editing-instance-types"></a><a href="#editing-instance-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing Instance Types</h2>
+<p><img src="/docs/assets/instancetype_4.png" alt=""></p>
+<p>點選 <code>edit</code> 進該 Instance Type 的編輯頁面。</p>
+<h2><a class="anchor" aria-hidden="true" id="connecting-existed-groups"></a><a href="#connecting-existed-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connecting existed Groups</h2>
+<p><img src="/docs/assets/instancetype_9.png" alt=""></p>
+<p>若未開啟 <code>Global</code> 開放給所有使用者使用，在編輯 Instance Type 的畫面下方點選<code>connect existed Groups</code>，即可從現有的 Groups 列表中選取有權限使用該 Instance Type 的 Group，將它們連結在一起。</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-instance-types">Creating New Instance Types</a><ul class="toc-headings"><li><a href="#overcommitting">Overcommitting</a></li></ul></li><li><a href="#toleration">Toleration</a></li><li><a href="#nodeselector">NodeSelector</a></li><li><a href="#deleting-instance-types">Deleting Instance Types</a></li><li><a href="#editing-instance-types">Editing Instance Types</a></li><li><a href="#connecting-existed-groups">Connecting existed Groups</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

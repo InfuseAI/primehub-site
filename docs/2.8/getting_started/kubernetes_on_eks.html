@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Kubernetes on AWS EKS · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This document guides you to deploy a Kubernetes on AWS EKS for PrimeHub."/><meta name="docsearch:version" content="2.8"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Kubernetes on AWS EKS · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="This document guides you to deploy a Kubernetes on AWS EKS for PrimeHub."/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>2.8</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/2.8/introduction" target="_self">PrimeHub</a></li><li class=""><a href="/docs/2.8/deploy-index" target="_self">PrimeHub Deploy</a></li><li class="siteNavGroupActive"><a href="/docs/2.8/dev-introduction" target="_self">Developer</a></li><li class=""><a href="/docs/2.8/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Setup Kubernetes</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.8/dev-introduction">Introduction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/getting_started/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/getting_started/kubernetes_on_gke">Kubernetes on GKE</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/2.8/getting_started/kubernetes_on_eks">Kubernetes on AWS EKS</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/getting_started/kubernetes_on_ubuntu_machine">Kubernetes on an Ubuntu Machine (Single Node)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/getting_started/install_metacontroller">Install Metacontroller</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/getting_started/install_keycloak">Install Keycloak</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/getting_started/install_primehub">Install PrimeHub</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/getting_started/install_helper">Install Helper (Advanced)</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Concepts</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/design/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/data-model">Data Model</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/crds">CRDs</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/graphql">GraphqQL</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/persistence-storage">Persistence Storages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Designs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/design/admission">Admission</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/jupyterhub">JupyterHub</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/notebook-kernel-process">Notebook with kernel process</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/dataset-upload">Dataset Upload</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/image-builder">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/job-scheduler">Job Scheduler</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/install-helper-design">Install Helper</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/user-portal">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/meta-chart">Primehub Meta Chart</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/model-deployment">Model Deployment (Alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/primehub-store">PrimeHub Store</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/log-persistence">Log Persistence</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/design/phfs">PrimeHub File System (PHFS)</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tasks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Build</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/build">Package Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/airgap">Airgap</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/repo2docker">repo2docker image</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/non-standard-image">Non standard image</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Registry</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/dockerhub-registry">Use DockerHub Registry</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Operations</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/cluster_shutdown">Cluster Shutdown</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/benchmark">Benchmark</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12">UPGRADE K8s from 1.10 and 1.10 to 1.12</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/ADVANCED-rook-setup-metadata-on-vg">Setup rook metadata on VG</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">PrimeHub Chart</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/minio_configurations">MinIO Configurations</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/2.8/tasks/api-token">Generate API Token</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/2.8/references/primehub_chart">Chart Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/references/dotenv">Install Helper Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/references/feature-flag">Feature Flags</a></li><li class="navListItem"><a class="navItem" href="/docs/2.8/comparison">Features Comparison</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Kubernetes on AWS EKS</h1></header><article><div><span><p>This document guides you to deploy a Kubernetes on AWS EKS for PrimeHub.</p>
+<h2><a class="anchor" aria-hidden="true" id="prepare"></a><a href="#prepare" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare</h2>
+<p><strong>You must have a valid AWS account with proper permissions to continue this guide.</strong></p>
+<h3><a class="anchor" aria-hidden="true" id="generate-access-key"></a><a href="#generate-access-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generate Access Key</h3>
+<p>Visiting <a href="https://aws.amazon.com/console/">AWS Console</a> and IAM service page to generate your own access key.</p>
+<h3><a class="anchor" aria-hidden="true" id="prepare-aws-credentials"></a><a href="#prepare-aws-credentials" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare AWS credentials</h3>
+<pre><code class="hljs css language-bash"><span class="token function">mkdir</span> -p ~/.aws
+<span class="token function">touch</span> ~/.aws/credentials
+</code></pre>
+<p>Edit <code>credentials</code> and add the content with the generated access key.</p>
+<pre><code class="hljs css language-plantext"><span class="hljs-comment"># credentials</span>
+<span class="hljs-section">[default]</span>
+<span class="hljs-attr">aws_access_key_id</span> = xxx
+<span class="hljs-attr">aws_secret_access_key</span> = xxx
+<span class="hljs-attr">region</span> = ap-northeast-<span class="hljs-number">1</span>
+</code></pre>
+<p>Install <code>aws-cli</code> and <code>eksctl</code> on your working machine</p>
+<pre><code class="hljs css language-bash"><span class="token comment"># Install awscli</span>
+brew <span class="token function">install</span> awscli
+
+<span class="token comment"># Install eksctl</span>
+brew tap weaveworks/tap
+brew <span class="token function">install</span> weaveworks/tap/eksctl
+eksctl version
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="prepare-a-domain-name"></a><a href="#prepare-a-domain-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare a Domain name</h3>
+<p>Prepare your domain name and manage it by <strong>Route53</strong>; Please see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-in-use.html">Making Route 53 the DNS service for a domain that's in use</a> for details.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-eks-kubernetes-cluster"></a><a href="#create-eks-kubernetes-cluster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create EKS Kubernetes Cluster</h2>
+<p>Create EKS cluster by <code>eksctl</code> command with a proper <code>__my_cluster_name__</code>.</p>
+<pre><code class="hljs css language-bash"><span class="token comment"># Prepare customized data</span>
+<span class="token assign-left variable">EKS_CLUSTER_NAME</span><span class="token operator">=</span>__my_cluster_name__
+<span class="token assign-left variable">EKS_REGION</span><span class="token operator">=</span>ap-northeast-1
+<span class="token assign-left variable">EKS_ZONE</span><span class="token operator">=</span><span class="token variable">${EKS_REGION}</span>-a
+<span class="token assign-left variable">K8S_VERSION</span><span class="token operator">=</span><span class="token number">1.16</span>
+
+<span class="token comment"># Running eksctl to create EKS cluster</span>
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span>EOF <span class="token operator">>></span> eks-config.yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+    <span class="token comment"># this is the name of the cluster</span>
+    name: <span class="token variable">${EKS_CLUSTER_NAME}</span>
+    region: <span class="token variable">${EKS_REGION}</span>
+    version: <span class="token string">"<span class="token variable">${K8S_VERSION}</span>"</span>
+    tags:
+      <span class="token comment"># You can customize your own tags</span>
+      Name: <span class="token variable">${EKS_CLUSTER_NAME}</span>
+
+vpc:
+    nat:
+        gateway: Disable
+
+nodeGroups:
+  - name: scaled-cpu-pool
+    instanceType: m5.xlarge
+    desiredCapacity: <span class="token number">0</span>
+    minSize: <span class="token number">0</span>
+    maxSize: <span class="token number">2</span>
+    labels:
+      component: singleuser-server
+      hub.jupyter.org/node-purpose: user
+    taints:
+      hub.jupyter.org/dedicated: <span class="token string">"user:NoSchedule"</span>
+    iam:
+      withAddonPolicies:
+        autoScaler: <span class="token boolean">true</span>
+        externalDNS: <span class="token boolean">true</span>
+    availabilityZones: <span class="token punctuation">[</span><span class="token string">"<span class="token variable">${EKS_ZONE}</span>"</span><span class="token punctuation">]</span>
+    tags:
+      Name: <span class="token string">"<span class="token variable">${EKS_CLUSTER_NAME}</span>-scaled-cpu-pool"</span>
+      cluster: <span class="token string">"<span class="token variable">${EKS_CLUSTER_NAME}</span>"</span>
+      k8s.io/cluster-autoscaler/node-template/label/component: singleuser-server
+      k8s.io/cluster-autoscaler/node-template/taint/hub.jupyter.org/dedicated: <span class="token string">"user:NoSchedule"</span>
+  <span class="token comment"># [Optional] For GPU node</span>
+  <span class="token comment"># - name: scaled-gpu-pool</span>
+  <span class="token comment">#   instanceType: g4dn.xlarge</span>
+  <span class="token comment">#   desiredCapacity: 0</span>
+  <span class="token comment">#   minSize: 0</span>
+  <span class="token comment">#   maxSize: 2</span>
+  <span class="token comment">#   labels:</span>
+  <span class="token comment">#     component: singleuser-server</span>
+  <span class="token comment">#     hub.jupyter.org/node-purpose: user</span>
+  <span class="token comment">#   taints:</span>
+  <span class="token comment">#     hub.jupyter.org/dedicated: "user:NoSchedule"</span>
+  <span class="token comment">#   iam:</span>
+  <span class="token comment">#     withAddonPolicies:</span>
+  <span class="token comment">#       autoScaler: true</span>
+  <span class="token comment">#       externalDNS: true</span>
+  <span class="token comment">#   availabilityZones: ["${EKS_ZONE}"]</span>
+  <span class="token comment">#   tags:</span>
+  <span class="token comment">#     Name: "${EKS_CLUSTER_NAME}-scaled-gpu-pool"</span>
+  <span class="token comment">#     cluster: "${EKS_CLUSTER_NAME}"</span>
+  <span class="token comment">#     k8s.io/cluster-autoscaler/node-template/label/component: singleuser-server</span>
+  <span class="token comment">#     k8s.io/cluster-autoscaler/node-template/taint/hub.jupyter.org/dedicated: "user:NoSchedule"</span>
+
+managedNodeGroups:
+  - name: default-node-group
+    instanceType: t3.medium
+    minSize: <span class="token number">2</span>
+    desiredCapacity: <span class="token number">2</span>
+    maxSize: <span class="token number">3</span>
+    labels:
+    iam:
+      withAddonPolicies:
+        autoScaler: <span class="token boolean">true</span>
+        externalDNS: <span class="token boolean">true</span>
+    availabilityZones: <span class="token punctuation">[</span><span class="token string">"<span class="token variable">${EKS_ZONE}</span>"</span><span class="token punctuation">]</span>
+    tags:
+      Name: <span class="token string">"<span class="token variable">${EKS_CLUSTER_NAME}</span>-default-node-group"</span>
+      cluster: <span class="token string">"<span class="token variable">${EKS_CLUSTER_NAME}</span>"</span>
+EOF
+eksctl create cluster -f eks-config.yaml
+</code></pre>
+<p>Wait until EKS cluster is created, then check the cluster.</p>
+<pre><code class="hljs css language-bash">eksctl get cluster
+</code></pre>
+<p>Update kube-config with the newly created cluster info.</p>
+<pre><code class="hljs css language-bash">aws eks update-kubeconfig --name <span class="token variable">${EKS_CLUSTER_NAME}</span> --alias <span class="token variable">${EKS_CLUSTER_NAME}</span>
+</code></pre>
+<p>Try to get nodes to verify the added kubeconfig:</p>
+<pre><code class="hljs css language-bash">kubectl get nodes
+
+NAME                                                STATUS   ROLES    AGE   VERSION
+ip-192-168-2-53.ap-northeast-1.compute.internal     Ready    <span class="token operator">&lt;</span>none<span class="token operator">></span>   21s   v1.15.10-eks-bac369
+ip-192-168-74-187.ap-northeast-1.compute.internal   Ready    <span class="token operator">&lt;</span>none<span class="token operator">></span>   21s   v1.15.10-eks-bac369
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="install-helm"></a><a href="#install-helm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install helm</h3>
+<p>Install helm 3.2.x+ binary. Please see the installation steps in <a href="/docs/2.8/getting_started/prerequisites">prerequisites</a>. (From PrimeHub v2.8, we use <code>Helm 3</code> for the installation.)</p>
+<pre><code class="hljs">$ helm version
+version.BuildInfo{<span class="hljs-string">Version:</span><span class="hljs-string">"v3.2.4"</span>, <span class="hljs-string">GitCommit:</span><span class="hljs-string">"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688"</span>, <span class="hljs-string">GitTreeState:</span><span class="hljs-string">"clean"</span>, <span class="hljs-string">GoVersion:</span><span class="hljs-string">"go1.13.12"</span>}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="nginx-ingress"></a><a href="#nginx-ingress" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nginx Ingress</h2>
+<pre><code class="hljs css language-bash">helm repo <span class="token function">add</span> stable https://kubernetes-charts.storage.googleapis.com
+helm repo update
+</code></pre>
+<pre><code class="hljs css language-bash">helm <span class="token function">install</span> nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version<span class="token operator">=</span><span class="token number">1.31</span>.0 --set controller.hostNetwork<span class="token operator">=</span>true --set rbac.create<span class="token operator">=</span>true
+</code></pre>
+<p>Find the <code>EXTERNAL-IP</code></p>
+<pre><code class="hljs css language-bash">kubectl get svc -n ingress-nginx
+
+NAME                               TYPE           CLUSTER-IP       EXTERNAL-IP                                                                          PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>                      AGE
+nginx-ingress-controller           LoadBalancer   <span class="token number">10.100</span>.253.162   a3ee868bc0f194ac19c04948497bc8ca-a179fb405d10a39f.elb.ap-northeast-1.amazonaws.com   <span class="token number">80</span>:31938/TCP,443:30853/TCP   21d
+nginx-ingress-controller-metrics   ClusterIP      <span class="token number">10.100</span>.146.39    <span class="token operator">&lt;</span>none<span class="token operator">></span>                                                                               <span class="token number">9913</span>/TCP                     21d
+nginx-ingress-default-backend      ClusterIP      <span class="token number">10.100</span>.49.194    <span class="token operator">&lt;</span>none<span class="token operator">></span>                                                                               <span class="token number">80</span>/TCP                       21d
+</code></pre>
+<p>Go to AWS web console Route53 page and add a Type <code>A</code> record for your domain with alias name.</p>
+<p><img src="/docs/assets/kubernetes_on_eks_route53.png" alt="Setup domain name by route53"></p>
+<h3><a class="anchor" aria-hidden="true" id="verify-by-your-domain"></a><a href="#verify-by-your-domain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verify By Your Domain</h3>
+<p>Query nginx-ingress with your own domain:</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> http://<span class="token operator">&lt;</span>your-own-domain<span class="token operator">></span>
+</code></pre>
+<p>The output will be <code>404</code>, because nobody defines any <code>Ingress</code> resources:</p>
+<pre><code class="hljs css language-text">default backend - 404
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="enable-cluster-autoscaler"></a><a href="#enable-cluster-autoscaler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enable Cluster Autoscaler</h2>
+<p>AWS EKS will use <code>cluster-autoscaler</code> to handle auto scaling. For detail information, please reference the following URL. (<a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-autoscaler.html">https://docs.aws.amazon.com/eks/latest/userguide/cluster-autoscaler.html</a>)</p>
+<h3><a class="anchor" aria-hidden="true" id="deploy-the-cluster-autoscaler"></a><a href="#deploy-the-cluster-autoscaler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy the Cluster Autoscaler</h3>
+<p>To deploy the customized Cluster Autoscaler with the following commands.</p>
+<pre><code class="hljs css language-bash"><span class="token assign-left variable">EKS_CLUSTER_NAME</span><span class="token operator">=</span>__my_cluster_name__
+<span class="token function">curl</span> https://raw.githubusercontent.com/InfuseAI/primehub-site/master/docs/assets/cluster-autoscaler-autodiscover.yaml.tmpl <span class="token operator">|</span> <span class="token function">sed</span> -e <span class="token string">"s/{EKS_CLUSTER_NAME}/<span class="token variable">$EKS_CLUSTER_NAME</span>/"</span> <span class="token operator">|</span> kubectl apply -f -
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="view-your-cluster-autoscaler-logs"></a><a href="#view-your-cluster-autoscaler-logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View your Cluster Autoscaler logs</h3>
+<p>After you have deployed the Cluster Autoscaler, you can view the logs and verify that it is monitoring your cluster load.</p>
+<p>View your Cluster Autoscaler logs with the following command.</p>
+<pre><code class="hljs css language-bash">kubectl -n kube-system logs -f deployment.apps/cluster-autoscaler
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="optional-cert-mananger"></a><a href="#optional-cert-mananger" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[Optional] Cert Mananger</h2>
+<p>If you want to enable Https on your cluster, you can use cert manager to request free certificate from Let's Encrypt.</p>
+<h3><a class="anchor" aria-hidden="true" id="deploy-cert-manager"></a><a href="#deploy-cert-manager" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy Cert Manager</h3>
+<pre><code class="hljs css language-bash">helm <span class="token function">install</span> <span class="token punctuation">\</span>
+  cert-manager <span class="token punctuation">\</span>
+  jetstack/cert-manager <span class="token punctuation">\</span>
+  --create-namespace <span class="token punctuation">\</span>
+  --namespace cert-manager <span class="token punctuation">\</span>
+  --version v0.15.0 <span class="token punctuation">\</span>
+  --set <span class="token assign-left variable">installCRDs</span><span class="token operator">=</span>true <span class="token punctuation">\</span>
+  --set ingressShim.defaultIssuerName<span class="token operator">=</span>letsencrypt-prod <span class="token punctuation">\</span>
+  --set ingressShim.defaultIssuerKind<span class="token operator">=</span>ClusterIssuer
+kubectl -n cert-manager rollout status Deployment/cert-manager-webhook
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="apply-cluster-issuer"></a><a href="#apply-cluster-issuer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apply Cluster Issuer</h3>
+<pre><code class="hljs css language-bash">kubectl apply -f - <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    email: phadmin@&lt;Your-Domain>
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      # Secret resource used to store the account's private key.
+      name: letsencrypt
+    # Add a single challenge solver, HTTP01 using nginx
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+EOF</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="next---setup-primehub"></a><a href="#next---setup-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next - Setup PrimeHub</h2>
+<h3><a class="anchor" aria-hidden="true" id="prepare-primehub-config-for-auto-scaling"></a><a href="#prepare-primehub-config-for-auto-scaling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare PrimeHub Config for auto scaling</h3>
+<p>Please put <code>primehub.yaml</code> under the following path <code>~/.primehub/config/&lt;cluster-name&gt;/helm_override/primehub.yaml</code></p>
+<pre><code class="hljs css language-bash"><span class="token assign-left variable">EKS_CLUSTER_NAME</span><span class="token operator">=</span>__my_cluster_name__
+<span class="token function">mkdir</span> -p ~/.primehub/config/<span class="token variable">${EKS_CLUSTER_NAME}</span>/helm_override/
+<span class="token function">touch</span> ~/.primehub/config/<span class="token variable">${EKS_CLUSTER_NAME}</span>/helm_override/primehub.yaml
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="primehubyaml"></a><a href="#primehubyaml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>primehub.yaml</h3>
+<pre><code class="hljs css language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">jupyterhub:</span>
+  <span class="hljs-attr">scheduling:</span>
+    <span class="hljs-attr">userScheduler:</span>
+      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-attr">image:</span>
+        <span class="hljs-attr">tag:</span> <span class="hljs-string">v1.16.8</span>
+    <span class="hljs-attr">podPriority:</span>
+      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">userPlaceholder:</span>
+      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">false</span>
+    <span class="hljs-attr">userPods:</span>
+      <span class="hljs-attr">nodeAffinity:</span>
+        <span class="hljs-attr">matchNodePurpose:</span> <span class="hljs-string">require</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="install-primehub"></a><a href="#install-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub</h3>
+<p>Now a kubernetes-ready EKS is ready for PrimeHub installation. Next, go to <a href="install_helper">Setup PrimeHub</a> section</p>
+<h3><a class="anchor" aria-hidden="true" id="after-primehub-installed"></a><a href="#after-primehub-installed" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>After PrimeHub Installed</h3>
+<p>Please apply the following command to fix rbac issue of <code>primehub-user-scheduler</code></p>
+<pre><code class="hljs css language-bash"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span> EOF <span class="token operator">></span> primehub-user-scheduler-complementary.patch.yaml
+- apiGroups:
+  - <span class="token string">""</span>
+  resources:
+  - persistentvolume
+  - persistentvolumeclaims
+  verbs:
+  - update
+EOF
+kubectl apply -f <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">cat</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span>kubectl get clusterrole primehub-user-scheduler-complementary -o yaml<span class="token punctuation">)</span> primehub-user-scheduler-complementary.patch.yaml<span class="token punctuation">)</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/2.8/getting_started/kubernetes_on_gke"><span class="arrow-prev">← </span><span>Kubernetes on GKE</span></a><a class="docs-next button" href="/docs/2.8/getting_started/kubernetes_on_ubuntu_machine"><span>Kubernetes on an Ubuntu Machine (Single Node)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prepare">Prepare</a><ul class="toc-headings"><li><a href="#generate-access-key">Generate Access Key</a></li><li><a href="#prepare-aws-credentials">Prepare AWS credentials</a></li><li><a href="#prepare-a-domain-name">Prepare a Domain name</a></li></ul></li><li><a href="#create-eks-kubernetes-cluster">Create EKS Kubernetes Cluster</a><ul class="toc-headings"><li><a href="#install-helm">Install helm</a></li></ul></li><li><a href="#nginx-ingress">Nginx Ingress</a><ul class="toc-headings"><li><a href="#verify-by-your-domain">Verify By Your Domain</a></li></ul></li><li><a href="#enable-cluster-autoscaler">Enable Cluster Autoscaler</a><ul class="toc-headings"><li><a href="#deploy-the-cluster-autoscaler">Deploy the Cluster Autoscaler</a></li><li><a href="#view-your-cluster-autoscaler-logs">View your Cluster Autoscaler logs</a></li></ul></li><li><a href="#optional-cert-mananger">[Optional] Cert Mananger</a><ul class="toc-headings"><li><a href="#deploy-cert-manager">Deploy Cert Manager</a></li><li><a href="#apply-cluster-issuer">Apply Cluster Issuer</a></li></ul></li><li><a href="#next---setup-primehub">Next - Setup PrimeHub</a><ul class="toc-headings"><li><a href="#prepare-primehub-config-for-auto-scaling">Prepare PrimeHub Config for auto scaling</a></li><li><a href="#primehubyaml">primehub.yaml</a></li><li><a href="#install-primehub">Install PrimeHub</a></li><li><a href="#after-primehub-installed">After PrimeHub Installed</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
