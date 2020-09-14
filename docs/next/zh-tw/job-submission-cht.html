@@ -143,23 +143,35 @@ python -u train_minst.py
 <p><code>Submit</code>: 點擊按鈕，送出工作執行。</p>
 <h2><a class="anchor" aria-hidden="true" id="查看-job"></a><a href="#查看-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看 Job</h2>
 <p>在列表上點擊想要查看的<code>job</code>名稱，查看內容資訊及執行記錄；可以<code>Rerun</code>或<code>Clone</code>此 Job。</p>
-<h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
-<p><img src="/docs/assets/jsub_info_beta_v28.png" alt=""></p>
-<p><code>Job</code>記載內容資訊如下：</p>
+<h3><a class="anchor" aria-hidden="true" id="panel"></a><a href="#panel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Panel</h3>
+<p>It shows the brief information of the job.</p>
+<p><img src="/docs/assets/jsub_panel.png" alt=""></p>
 <table>
 <thead>
 <tr><th>Field</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td><code>Status</code></td><td>狀態，<code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Failed</code>, <code>Succeeded</code> 及 <code>Cancelled</code></td></tr>
+<tr><td><code>Duration</code></td><td>執行時間</td></tr>
+<tr><td><code>Finished</code></td><td>多久前結束</td></tr>
+<tr><td><code>Schedule</code></td><td>如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稠；反之顯示<code>-</code>；點擊名稱連結，進入 Job Scheduler 詳細頁。</td></tr>
+<tr><td><code>User</code></td><td>所有者</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
+<p><img src="/docs/assets/jsub_info_beta_v31.png" alt=""></p>
+<p><code>Job</code>記載內容資訊如下：</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td><code>Message</code></td><td>執行回傳訊息</td></tr>
 <tr><td><code>Job ID</code></td><td>ID</td></tr>
 <tr><td><code>Job name</code></td><td>名稱</td></tr>
-<tr><td><code>Schedule</code></td><td>如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稠；反之顯示<code>-</code>；點擊名稱連結，進入 Job Scheduler 詳細頁。</td></tr>
-<tr><td><code>User</code></td><td>所有者</td></tr>
+<tr><td><code>Creation Time</code></td><td>創建時間</td></tr>
 <tr><td><code>Start Time</code></td><td>開始時間</td></tr>
 <tr><td><code>Finished Time</code></td><td>結束時間</td></tr>
-<tr><td><code>Duration</code></td><td>執行時間</td></tr>
 <tr><td><code>Group</code></td><td>所屬群組</td></tr>
 <tr><td><code>Instance type</code></td><td>所佈屬 <code>instance type</code>資源</td></tr>
 <tr><td><code>Image</code></td><td>所屬執行環境</td></tr>
@@ -175,7 +187,7 @@ python -u train_minst.py
 <p>當工作是被「取消」或「中止」，無法由此查到任何記錄！因為此時的 Pod 已被刪除回收。</p>
 <p>有時，我們只想看最後的輸出結果，可以點擊<code>Scroll to Bottom</code>跳過攏長記錄直接到記錄尾端。</p>
 <p>另外，由於介面上只顯示最後的 2000 行記錄，我們可以點擊<code>Download</code>下載完整的記錄檔來檢查。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/next/zh-tw/job-submission-tutorial-simple"><span>初階範例</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#job">Job</a><ul class="toc-headings"><li><a href="#lifetime">Lifetime</a></li></ul></li><li><a href="#job-列表">Job 列表</a></li><li><a href="#創建-job">創建 Job</a><ul class="toc-headings"><li><a href="#job-可存取工作目錄、專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></li><li><a href="#job-可存取環境變數">Job 可存取環境變數</a></li></ul></li><li><a href="#查看-job">查看 Job</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#工作記錄">工作記錄</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/next/zh-tw/job-submission-tutorial-simple"><span>初階範例</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#job">Job</a><ul class="toc-headings"><li><a href="#lifetime">Lifetime</a></li></ul></li><li><a href="#job-列表">Job 列表</a></li><li><a href="#創建-job">創建 Job</a><ul class="toc-headings"><li><a href="#job-可存取工作目錄、專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></li><li><a href="#job-可存取環境變數">Job 可存取環境變數</a></li></ul></li><li><a href="#查看-job">查看 Job</a><ul class="toc-headings"><li><a href="#panel">Panel</a></li><li><a href="#information">Information</a></li><li><a href="#工作記錄">工作記錄</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
