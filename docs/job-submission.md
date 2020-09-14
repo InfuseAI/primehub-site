@@ -99,23 +99,35 @@ python -u /project/research/train_minst.py
 
 Click the job name on the list to view the job information and logs. The job can also be `Rerun` or `Clone` into a new job.
 
-### Information
+### Panel
 
-![](assets/jsub_info_beta_v28.png)
+It shows the brief information of the job.
 
-Here are the information of the job:
+![](assets/jsub_panel.png)
 
 |Field|Description|
 |-----|-----------|
 |`Status`|The status of the job. `Preparing`, `Running`, `Failed`, `Succeeded`, `Cancelled` and `Unknown`.|
+|`Duration`|The duration of the job running.|
+|`Finished`|How much time ago the job finished.|
+|`Schedule`|The name of the job scheduler if the job is triggered by the scheduler; clicking the name to enter the scheduler detail page.|
+|`User`|The owner who submits the job.|
+
+
+### Information
+
+![](assets/jsub_info_beta_v31.png)
+
+Here are the detail information of the job:
+
+|Field|Description|
+|-----|-----------|
 |`Message`|Messages returned from job running.|
 |`Job ID`|The unique id of the job.|
 |`Job name`|The name of the job.|
-|`Schedule`|The name of the job scheduler if the job is triggered by the scheduler; clicking the name to enter the scheduler detail page.|
-|`User`|The owner who submits the job.|
+|`Creation Time`|The time the job is created at.|
 |`Start Time`|The time the job starts at.|
 |`Finished Time`|The time the job finishes at.|
-|`Duration`|The duration of the job running.|
 |`Group`|The group where the the job belongs to.|
 |`Instance type`|The instance type which the job uses.|
 |`Image`|The image which the job run based on.|

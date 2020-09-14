@@ -100,23 +100,35 @@ python -u /project/research/train_minst.py
 
 在列表上點擊想要查看的`job`名稱，查看內容資訊及執行記錄；可以`Rerun`或`Clone`此 Job。
 
+### Panel
+
+It shows the brief information of the job.
+
+![](assets/jsub_panel.png)
+
+|Field|Description|
+|-----|-----------|
+|`Status`|狀態，`Pending`,`Preparing`, `Running`, `Failed`, `Succeeded` 及 `Cancelled`|
+|`Duration`|執行時間|
+|`Finished`|多久前結束|
+|`Schedule`|如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稠；反之顯示`-`；點擊名稱連結，進入 Job Scheduler 詳細頁。|
+|`User`|所有者|
+
+
 ### Information
 
-![](assets/jsub_info_beta_v28.png)
+![](assets/jsub_info_beta_v31.png)
 
 `Job`記載內容資訊如下：
 
 |Field|Description|
 |-----|-----------|
-|`Status`|狀態，`Pending`,`Preparing`, `Running`, `Failed`, `Succeeded` 及 `Cancelled`|
 |`Message`|執行回傳訊息|
 |`Job ID`|ID|
 |`Job name`|名稱|
-|`Schedule`|如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稠；反之顯示`-`；點擊名稱連結，進入 Job Scheduler 詳細頁。|
-|`User`|所有者|
+|`Creation Time`|創建時間|
 |`Start Time`|開始時間|
 |`Finished Time`|結束時間|
-|`Duration`|執行時間|
 |`Group`|所屬群組|
 |`Instance type`|所佈屬 `instance type`資源|
 |`Image`|所屬執行環境|
