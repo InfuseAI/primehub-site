@@ -1,5 +1,6 @@
 ---
-id: dev-introduction
+id: version-3.0-dev-introduction
+original_id: dev-introduction
 title: Introduction
 ---
 
