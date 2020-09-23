@@ -65,7 +65,7 @@ title: 模型部署 (Alpha)
 
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-![](assets/mdeploy_create_v3.png)
+![](assets/mdeploy_create_v31.png)
 
 ### Environment Settings
 
@@ -201,7 +201,7 @@ req.headers.get('X-Forwarded-User') # you can get the client name from the heade
 
 其中有`Group`、 `Deployment name`、 `Deployment ID` 無法更動，其餘欄位皆可更新。
 
-![](assets/mdeploy_update_v3.png)
+![](assets/mdeploy_update_v31.png)
 
 ---
 

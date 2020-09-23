@@ -61,7 +61,7 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-![](assets/mdeploy_create_v3.png)
+![](assets/mdeploy_create_v31.png)
 
 ### Environment Settings
 
@@ -198,7 +198,7 @@ On a deployment detail page, clicking `Update` button to enter the deployment ed
 
 `Group`、 `Deployment name`、 `Deployment ID` are not allowed to be modified in a update once the initial deployment is created.
 
-![](assets/mdeploy_update_v3.png)
+![](assets/mdeploy_update_v31.png)
 
 ---
 
