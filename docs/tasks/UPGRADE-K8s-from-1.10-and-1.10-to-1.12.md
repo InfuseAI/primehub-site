@@ -3,6 +3,8 @@ id: UPGRADE-K8s-from-1.10-and-1.10-to-1.12
 title: UPGRADE K8s from 1.10 and 1.10 to 1.12
 ---
 
+>Deprecated
+
 ## Why
 
 For PrimeHub 1.1, the target, Kubernetes-version-required (abbreviated to K8s) is 1.12, which provides essential features.

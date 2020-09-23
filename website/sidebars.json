@@ -86,7 +86,6 @@
         "ids": [
           "tasks/cluster_shutdown",
           "tasks/benchmark",
-          "tasks/UPGRADE-K8s-from-1.10-and-1.10-to-1.12",
           "tasks/ADVANCED-rook-setup-metadata-on-vg"
         ]
       },
