@@ -21,7 +21,7 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 There is a list showing created jobs within the current group with relevant information; switch the group by the `Group:` dropdown at the top of the right side.
 
-![](assets/jsub_main_beta_v3.png)
+![](assets/jsub_main_beta_v31.png)
 
 There are several informative columns of the job list:
 
@@ -35,7 +35,7 @@ There are several informative columns of the job list:
 |`Timing`|The duration of the running job.|
 |`Action`|The action buttons, `Cancel`, `Rerun`, `Clone`.|
 
-+ `Create Job` button: Click the button to create the job.
++ `New Job` button: Click the button to create the job.
 
 + `Refresh` button: Click the button to refresh the list.
 

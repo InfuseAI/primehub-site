@@ -22,7 +22,7 @@ title: Job Submission (Beta)
 
 此頁列出已創建 Jobs 及其對應資訊。
 
-![](assets/jsub_main_beta_v3.png)
+![](assets/jsub_main_beta_v31.png)
 
 列表中的`Job`對應資訊欄位：
 
@@ -36,7 +36,7 @@ title: Job Submission (Beta)
 |`Timing`|執行時間|
 |`Action`|我們可以<ul><li>`Rerun`已結束的工作</li><li>`Cancel`正在執行的工作</li><li>`Clone`複製同樣設定的工作來建立新的</li></ul>|
 
-+ `Create Job`: 點擊按鈕，創建`job`。
++ `New Job`: 點擊按鈕，創建`job`。
 
 + `Refresh`: 點擊按鈕，刷新`job`列表。
 

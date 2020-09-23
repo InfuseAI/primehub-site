@@ -13,7 +13,7 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 ## 列舉 Schedules
 
-![](assets/jscheduler_main_beta_v3.png)
+![](assets/jscheduler_main_beta_v31.png)
 
 在列舉中，每個 Schedule 帶有下列資訊：
 
@@ -26,7 +26,7 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 |`Created By`| 所有者|
 |`Action`|![action](assets/jscheduler_action.png) `發動`・`編輯`・`刪除` 按鈕。 |
 
-+ `Schedule Job`：點擊按鈕，創建 Schedule.
++ `New Schedule`：點擊按鈕，創建 Schedule.
 
 + `Refresh`: 點擊按鈕，刷新列舉。
 

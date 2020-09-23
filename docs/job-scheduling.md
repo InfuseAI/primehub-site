@@ -13,7 +13,7 @@ We can access `Schedule` feature inside **Job Submission** from the portal.
 
 ## Schedules List
 
-![](assets/jscheduler_main_beta_v3.png)
+![](assets/jscheduler_main_beta_v31.png)
 
 In the Schedule list, there are some information of each Schedule:
 
@@ -26,7 +26,7 @@ In the Schedule list, there are some information of each Schedule:
 |`Created By`| The owner of job/Schedule.|
 |`Action`|The action buttons are `trigger`, `edit` and `delete` in sequence. ![action](assets/jscheduler_action.png)|
 
-+ `Schedule Job` button: Click the button to create a Schedule.
++ `New Schedule` button: Click the button to create a Schedule.
 
 + `Refresh` button: Click the button to refresh the list.
 
