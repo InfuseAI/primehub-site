@@ -25,6 +25,7 @@
         "label": "Configure Components",
         "ids": [
           "getting_started/configure-ssh-server",
+          "getting_started/configure-self-signed-ca",
           "tasks/dockerhub-registry"
         ]
       }

@@ -23,6 +23,7 @@ Parameter | Description | Default
 `primehub.keycloak.realm` | The keycloak realm for primehub | `primehub`
 `primehub.keycloak.clientId` | The keycloak client id for primehub | `admin-ui`
 `primehub.keycloak.rolePrefix` | The prefix of roles for the resource-group binding | `""`
+`primehub.keycloak.svcUrl`| The Keycloak service url| `http://keycloak-http.default/auth` if Keycloak under namespace `default`; <br> `http://keycloak-http.hub/auth` if Keycloak under namespace `hub`.
 `primehub.sharedVolumeStorageClass` | The storage class for shared volume. If the value is empty string `""`, it means to use `groupvolume` to provision shared volume | `""`
 `ingress.annotations` | Annotations for ingress| `{}`
 `ingress.hosts` | a list of ingress hosts | `[]`

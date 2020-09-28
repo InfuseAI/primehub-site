@@ -17,6 +17,7 @@ Environment | Description | Optional
 `KC_PASSWORD` | Keycloak admin password | No
 `KC_DB_PASSWORD` | Keycloak DB password | Yes. default is `$KC_PASSWORD`
 `KC_REALM` | Keycloak realm to install primehub | Yes. default is `primehub`
+`KC_SVC_URL` | Keycloak service url | `http://keycloak-http.default/auth` if Keycloak under namespace `default`; <br> `http://keycloak-http.hub/auth` if Keycloak under namespace `hub`.
 `PRIMEHUB_CONSOLE_DOCKER_USERNAME` | image pulling user for canner images. This is only used for development purpose | Yes
 `PRIMEHUB_CONSOLE_DOCKER_PASSWORD` | image pulling password for canner images. | Yes
 `PRIMEHUB_STORAGE_CLASS` | the default storage class of all RWO PVCs
