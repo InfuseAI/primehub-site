@@ -109,7 +109,8 @@
       "references/primehub_chart",
       "references/dotenv",
       "references/feature-flag",
-      "comparison"
+      "comparison",
+      "guide_manual/kubeflow-installation-guide"
     ]
   },
   "documentation": {

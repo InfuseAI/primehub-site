@@ -299,12 +299,10 @@ class Index extends React.Component {
             imageLink: `${docUrl('dev-introduction')}`,
             content:
               '<div class="grid-menu">' +
-                `<div class="menu-item"><a href=${docUrl('next/getting_started/prerequisites')}>Setup Kubernetes</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/getting_started/install_metacontroller')}>Setup PrimeHub</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('references/feature-flag')}>Feature Flags</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('references/primehub_chart')}>Chart Configuration</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/guide_manual/kubeflow-installation-guide')}>Kubeflow Integration</a></div>` +
-                `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub/blob/master/INSTALL.md">PrimeHub CE Installation</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting_started/prerequisites')}>Prerequisites</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting_started/install_primehub')}>Install PrimeHub</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting_started/kubernetes_on_ubuntu_machine')}>Install PrimeHub on Single Node</a></div>` +
+                `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub/blob/master/INSTALL.md">Install PrimeHub CE ↗</a></div>` +
               '</div>', 
           },
           {
@@ -312,16 +310,14 @@ class Index extends React.Component {
             //image: `${baseUrl}img/features/paper-plane-100.png`,
             image: `${baseUrl}img/server-01.png`,
             imageAlign: 'top',
-            title: `<a href=${docUrl('design/architecture')}>Design</a>`,
+            title: `<a href=${docUrl('design/architecture')}>Configuration</a>`,
             imageLink: `${docUrl('design/architecture')}`,
             content:
               '<div class="grid-menu">' +
-                `<div class="menu-item"><a href=${docUrl('design/architecture')}>Architecture</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/admission')}>Admission</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/meta-chart')}>Meta Chart</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/image-builder')}>Image Builder</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/job-submission')}>Job Submission</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/primehub-store')}>PrimeHub Store</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('references/primehub_chart')}>Chart Configuration</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('references/dotenv')}>Helper Environment Variables</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('references/feature-flag')}>Feature Flags</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('tasks/minio_configurations')}>MinIO Configuration</a></div>` +
               '</div>', 
           },
           {
@@ -332,12 +328,11 @@ class Index extends React.Component {
             imageLink: `${docUrl('introduction')}`,
             content:
               '<div class="grid-menu">' +
-                `<div class="menu-item"><a href=${docUrl('getting-started-admin')}>Administrator</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Scientist</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('maintenance')}>Maintenance</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting-started-admin')}>Administrator</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('next/guide_manual/images-list')}>Available Images</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('deploy-index')}>PrimeHub Deploy</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('index-zh')}>繁中文件</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Edition Features Comparison</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('design/architecture')}>Design and Concept</a></div>` +
               '</div>', 
           },
           {
@@ -347,10 +342,9 @@ class Index extends React.Component {
             title: `<a> Community</a>`,
             content:
               '<div class="grid-menu">' +
-                `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub">PrimeHub CE Repository</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Community | Enterprise</a></div>` +
-                `<div class="menu-item"><a href="https://medium.com/infuseai">Medium</a></div>` +
-                `<div class="menu-item"><a href="https://www.katacoda.com/infuseai">Katacoda</a></div>` +
+                `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub">PrimeHub CE Repository ↗</a></div>` +
+                `<div class="menu-item"><a href="https://medium.com/infuseai">Medium ↗</a></div>` +
+                `<div class="menu-item"><a href="https://www.katacoda.com/infuseai">Katacoda ↗</a></div>` +
               '</div>', 
           },
         ]}

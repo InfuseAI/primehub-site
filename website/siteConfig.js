@@ -56,7 +56,7 @@ const siteConfig = {
     //{ doc: 'getting-started-user', label: 'Scientist'},
     { doc: 'introduction', label: 'PrimeHub'},
     { doc: 'deploy-index', label: 'PrimeHub Deploy'},
-    { doc: 'dev-introduction', label: 'Developer'},
+    { doc: 'dev-introduction', label: 'Technical Reference'},
     { doc: 'index-zh', label: '繁中文件'},
     //{ blog: true, label: 'Blog'},
     //{ page: 'help', label: 'Community'},

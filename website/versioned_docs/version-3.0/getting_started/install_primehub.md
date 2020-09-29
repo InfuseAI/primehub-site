@@ -1,5 +1,6 @@
 ---
-id: install_primehub
+id: version-3.0-install_primehub
+original_id: install_primehub
 title: Install PrimeHub
 ---
 
