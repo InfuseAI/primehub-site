@@ -1,5 +1,6 @@
 ---
-id: kubernetes_on_gke
+id: version-3.0-kubernetes_on_gke
+original_id: kubernetes_on_gke
 title: Kubernetes on GKE
 ---
 

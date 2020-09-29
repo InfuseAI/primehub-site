@@ -1,10 +1,16 @@
 ---
 id: version-3.0-kubernetes_on_ubuntu_machine
 original_id: kubernetes_on_ubuntu_machine
-title: Kubernetes on an Ubuntu Machine (Single Node)
+title: PrimeHub on MicroK8S Single Node (Ubuntu)
+sidebar_label: Install PrimeHub on MicroK8S Single Node
 ---
 
-This document will guide you to create a Kubernetes with [MicroK8s](https://microk8s.io/) for PrimeHub. MicroK8s is only for the *single-node* case.
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Available in Enterprise tier only</span>
+</div>
+
+This document will guide you to install [MicroK8s](https://microk8s.io/) on a single node and **PrimeHub Enterprise** with a easy script.
+
 
 ## Provision a cluster
 
@@ -15,11 +21,11 @@ This document will guide you to create a Kubernetes with [MicroK8s](https://micr
 * IP address: 1.2.3.4
 * Networking: allow port 80 for HTTP
 
-### Install MicroK8s
+### Install MicroK8s Single Node
 
 We provide a install script which makes the installation much easier to create a [MicroK8s-single-node](https://microk8s.io/) Kubernetes.
 
-Download the script
+Download the script `primehub-install`
 
 ```bash
 curl -O https://storage.googleapis.com/primehub-release/bin/primehub-install
@@ -51,7 +57,7 @@ After relogin, run the same command again to finish the single-node provision:
 Access nginx-ingress with the magic `.nip.io` domain, with your `EXTERNAL-IP`:
 
 ```
-$ curl http://1.2.3.4.nip.io
+curl http://1.2.3.4.nip.io
 ```
 
 The output will be `404` because no `Ingress` resources are defined yet:
@@ -80,22 +86,131 @@ microk8s.enable gpu
 
 Please see the [manual](https://snapcraft.io/docs/keeping-snaps-up-to-date) from snapcraft.
 
-## Prepare EXTERNAL-IP & StorageClass
+---
 
-The cluster is ready to install PrimeHub. Please bring `EXTERNAL-IP` and `StorageClass` name to the next steps. They would be used in the value files of `KeyCloak` and `PrimeHub`
+## Using Self-hosted DNS (Optional)
 
-* `EXTERNAL-IP`: 1.2.3.4
+>If your domain name is not hosted by public DNS server, using the self-hosted DNS server instead.
 
-* `StorageClass` name: microk8s-hostpath
-    ```
-    $ kubectl get storageclass
-    NAME                          PROVISIONER            AGE
-    microk8s-hostpath (default)   microk8s.io/hostpath   56m
-    ```
+Validate domain name for PrimeHub. [regexr.com](https://regexr.com/)
 
-## Next - Setup PrimeHub
+```
+# The domain name must match 
+[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
+```
 
-Now a MicroK8s-single-node Kubernetes is ready for PrimeHub installation. Next, go to [Setup PrimeHub](install_primehub) section.
+Configure K8S CoreDNS
+
+```bash
+kubectl edit cm -n kube-system coredns
+```
+
+Please modify the following line and fill your own DNS server
+
+```yaml
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+        }
+        prometheus :9153
+        forward . <Fill your own DSN server>
+        cache 30
+        loop
+        reload
+        loadbalance
+    }
+...
+```
+
+After changing the config map of coredns, please use the following command to restart coredns and apply the new configuration.
+
+```bash
+kubectl rollout -n kube-system restart deploy coredns
+```
+
+Reference
+
+[https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/)
+
+---
+
+## Install PrimeHub
+
+Run the `create primehub` command with a specified version.
+
+```bash
+./primehub-install create primehub --primehub-version v3.0.0
+```
+
+Please enter the domain name of PrimeHub
+
+The password of `KC_PASSWORD` and `PH_PASSWORD` will be auto generated if input empty value.
+
+### Enable Model Deployment (Optional)
+
+To manually enable the Model Deployment feature, please modify the file `~/.primehub/config/microk8s/primehub-values.yaml` and add following contents at the end of the file. 
+
+```yaml
+modelDeployment:
+  enabled: true
+```
+
+After the modification of the primehub config file, run the command with a specified version to apply the change.
+
+```bash
+./primehub-install upgrade primehub --primehub-version v3.0.0
+```
+
+### Monitor the PrimeHub installation
+
+Once running the PrimeHub installation, meanwhile, just open another terminal session to run the command to monitor the installation.
+
+```bash
+watch 'kubectl get pod -n hub'
+```
+
+Once the `primehub-bootstrap` is running, use the the command to watch the log of primehub bootstrap
+
+```bash
+kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d' ' -f1) -f
+```
+
+### Apply license
+
+>It doesn't allow to add new groups, instance types, images by the default license.
+
+Run the command to show the default license.
+
+```bash
+$ ./primehub-install license
+[PrimeHub License]
+  status:
+    expired: unexpired
+    expired_at: "2038-01-19T03:14:00Z"
+    licensed_to: Default
+    max_group: 0
+    started_at: "2020-01-01T00:00:00Z"
+```
+
+
+>If you don't have a valid license file. Please contact InfuseAI for the license inquiry.
+
+Once you have a valid license file from InfuseAI. Put the `license_crd.yml` file under the same folder where `primehub-install` script is and run the the command to apply license.
+
+```bash
+./primehub-install apply-license
+```
 
 ---
 
@@ -105,7 +220,7 @@ You may run into troubles during the installation, we list some of them, hopeful
 
 ### Using valid hostname and domain
 
-- Validate the hostname of the node with the following regular expression.
+- Validate the hostname of the node with the following regular expression. [regexr.com](https://regexr.com/)
 
     ```bash
     [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*

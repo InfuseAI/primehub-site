@@ -8,8 +8,7 @@
         "ids": [
           "getting_started/prerequisites",
           "getting_started/kubernetes_on_gke",
-          "getting_started/kubernetes_on_eks",
-          "getting_started/kubernetes_on_ubuntu_machine"
+          "getting_started/kubernetes_on_eks"
         ]
       },
       {
@@ -17,7 +16,8 @@
         "label": "Setup PrimeHub",
         "ids": [
           "getting_started/install_primehub",
-          "getting_started/install_helper"
+          "getting_started/install_helper",
+          "getting_started/kubernetes_on_ubuntu_machine"
         ]
       },
       {
