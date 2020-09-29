@@ -1,5 +1,6 @@
 ---
-id: kubernetes_on_ubuntu_machine
+id: version-3.0-kubernetes_on_ubuntu_machine
+original_id: kubernetes_on_ubuntu_machine
 title: Kubernetes on an Ubuntu Machine (Single Node)
 ---
 

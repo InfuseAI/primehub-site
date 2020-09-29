@@ -1,5 +1,6 @@
 ---
-id: kubernetes_on_eks
+id: version-3.0-kubernetes_on_eks
+original_id: kubernetes_on_eks
 title: Kubernetes on AWS EKS
 ---
 
