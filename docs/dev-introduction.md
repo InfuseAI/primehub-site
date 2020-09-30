@@ -21,10 +21,9 @@ PrimeHub can be installed in the following environments:
 
 - [Install Kubernetes on GKE](getting_started/kubernetes_on_gke)
 - [Install Kubernetes on AWS EKS](getting_started/kubernetes_on_eks)
-- [Install Kubernetes on an Ubuntu Machine (single node)](getting_started/kubernetes_on_ubuntu_machine.md)
 
 ## Setup PrimeHub
 
 - **[Install PrimeHub](getting_started/install_primehub.md)**
-- **[Install helper](getting_started/install_helper.md)**: Advanced way to install PrimeHub
+- **[Install Kubernetes on an Ubuntu Machine (single node)](getting_started/kubernetes_on_ubuntu_machine.md)**
 

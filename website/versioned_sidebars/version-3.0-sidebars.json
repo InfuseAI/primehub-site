@@ -16,7 +16,6 @@
         "label": "Setup PrimeHub",
         "ids": [
           "version-3.0-getting_started/install_primehub",
-          "version-3.0-getting_started/install_helper",
           "version-3.0-getting_started/kubernetes_on_ubuntu_machine"
         ]
       },

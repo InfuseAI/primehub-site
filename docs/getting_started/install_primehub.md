@@ -5,11 +5,13 @@ title: Install PrimeHub
 
 >Check the [prerequisites](prerequisites) for PrimeHub first before preceding to the PrimeHub installation.
 
-Before installing PrimeHub, please make sure you have the PrimeHub release tarball. 
+This document will guide you how to install **PrimeHub EE (Trial license)** by **Helm**.
 
-```
-tar -zxvf primehub-vx.x.x.tar.gz
-cd primehub-vx.x.x
+## Add InfuseAI Chart repo
+
+```bash
+helm repo add infuseai https://charts.infuseai.io
+helm repo update
 ```
 
 ## Prepare the Value File
@@ -111,19 +113,14 @@ EOF
 
    ![](assets/install_primehub1.png)
 
-3. Open *Jupyterhub* icon
-
-   ![](assets/install_primehub2.png)
-
-4. Click the *Start notebook* button to launch a Jupyter instance
-
-   ![](assets/install_primehub3.png)
+3. Enter `Notebooks` for launching a JupyterHub.
 
 ## Apply License Key (Optional)
 
-For trial and enterprise users, please contact InfuseAI for the license.
+>By the default trial license, it doesn't allow to add new groups, instance types, images.
+>If you don't have a valid license file. Please contact InfuseAI for the license inquiry.
 
-Run this command to apply a license key; 
+If you have a valid license file from InfuseAI, run this command to apply a license key. 
 
 ```
 kubectl -n hub apply -f path/to/license_key_yaml_file
