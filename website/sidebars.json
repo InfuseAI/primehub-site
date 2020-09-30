@@ -183,7 +183,8 @@
         "ids":[
           "guide_manual/admin-instancetype",
           "guide_manual/usecase-toleration",
-          "guide_manual/usecase-nodeselector"
+          "guide_manual/usecase-nodeselector",
+          "guide_manual/admin-it-performance"
         ]
       },
       {

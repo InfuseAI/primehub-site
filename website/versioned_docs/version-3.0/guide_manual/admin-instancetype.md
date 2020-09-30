@@ -1,5 +1,6 @@
 ---
-id: admin-instancetype
+id: version-3.0-admin-instancetype
+original_id: admin-instancetype
 title: Instance Type Management
 ---
 
