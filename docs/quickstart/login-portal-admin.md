@@ -32,7 +32,7 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `JupyterHub Admin` is renamed to `Notebooks Admin`.
 
-![](assets/v3-admin-portal.png)
+![](assets/v3-admin-portal_v31.png)
 
 ### Side Menu
 

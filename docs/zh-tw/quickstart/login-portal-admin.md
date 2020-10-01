@@ -25,7 +25,7 @@ Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有�
 
 + `JupyterHub Admin` 功能更名為 `Notebooks Admin`
 
-![](assets/v3-admin-portal.png)
+![](assets/v3-admin-portal_v31.png)
 
 ### 功能選單
 

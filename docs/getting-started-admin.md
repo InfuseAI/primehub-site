@@ -9,7 +9,7 @@ From **PrimeHub v3.0**, administration features are performed on `Admin Portal` 
 
 ## Admin Portal
 
-![](assets/v3-admin-portal.png)
+![](assets/v3-admin-portal_v31.png)
 
 + Then entrance of **Admin Portal**. See [Access Admin Portal](quickstart/login-portal-admin). 
 
