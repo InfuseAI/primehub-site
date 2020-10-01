@@ -5,7 +5,7 @@ original_id: model-deployment-quickstart-tutorial
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 在本教程中，我們將展示如何透過 PrimeHub 的模型部署功能以部署打包好的模型映像檔。

@@ -5,7 +5,7 @@ sidebar_label: Self-Signed Certificate
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 In certain scenarios we may want to use self-signed certificate HTTPS. For example, in private network or corporation network.

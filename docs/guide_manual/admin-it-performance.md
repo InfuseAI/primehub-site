@@ -4,6 +4,15 @@ title: Quality of Service
 sidebar_label: Quality of Service for Pods
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 If you have ever wondered that the performance of the launching instance doesn't meet the expectation of CPUs request in the setting of the instance type. You many want to learn how Kubernetes manages CPU workload which may affect the performance you .
 
 

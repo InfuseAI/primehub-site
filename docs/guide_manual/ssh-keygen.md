@@ -4,6 +4,16 @@ title: Generating a new SSH Key Pair
 sidebar_label: SSH Key Generation
 ---
 
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 ## Steps
 
 1. At your local, run the command with `<your_username>`.

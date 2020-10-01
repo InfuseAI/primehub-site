@@ -5,7 +5,7 @@ title: 初階範例
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 透過`Job submission`功能，我們可以把需要長時間工作的 ML training 交付到背景執行，同時我們可以進行其它分析工作；讓專案進行更有效率。

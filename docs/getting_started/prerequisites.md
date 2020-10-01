@@ -3,6 +3,16 @@ id: prerequisites
 title: Prerequisites
 ---
 
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 Before installing PrimeHub, we need to provide a PrimeHub-ready Kubernetes, which should contain following essentials.
 
 ## Kubernetes Cluster (1.15+)

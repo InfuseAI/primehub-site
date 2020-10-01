@@ -4,6 +4,15 @@ title: Generate an PrimeHub API Token
 sidebar_label: Generate API Token
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 PrimeHub provides API to allow third party program to access. Regarding querying API, a valid token is mandatory.
 Here are steps generating a valid token.
 

@@ -4,7 +4,7 @@ title: (Part2) MNIST classifier training
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 Select the Notebooks icon upon logging in.

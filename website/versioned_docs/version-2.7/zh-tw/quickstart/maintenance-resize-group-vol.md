@@ -5,7 +5,7 @@ original_id: maintenance-resize-group-vol
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 這份文件介紹如何利用 `Maintenance Notebook` 中的 `Resize Group Volume` 來加大 Group Volume Size。

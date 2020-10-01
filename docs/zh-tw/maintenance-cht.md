@@ -4,7 +4,7 @@ title: Maintenance Notebook
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 PrimeHub 提供內建維運常用工具的 Jupyter notebook。管理者可以快速執行完成數個維運動作，省去繁雜的指令及步驟。管理者可以從 User Portal 進入 **Maintenance Notebook**。

@@ -4,7 +4,7 @@ title: (Part2) MNIST classifier 訓練範例程式
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 1. 登入後，進入 `Notebooks`。

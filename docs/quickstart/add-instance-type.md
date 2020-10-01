@@ -3,6 +3,16 @@ id: add-instance-type
 title: Create/Plan Instance Type
 ---
 
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 **Instance Type**, is a resources allocation setting. According to the it, PrimeHub will try to allocate these resources for launching an instance for a JupyterHub or a Job if vacant resources are sufficient.
 
 This quckstart shows how to crete an instance type and give an advice of planning them according to a real circumstance (CPUs/MEM/GPUs).

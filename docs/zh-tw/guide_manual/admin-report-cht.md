@@ -4,7 +4,7 @@ title: Usage Reports
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 PrimeHub v3.0 導入新功能 `Usage Reports`，藉此管理者可以下載每月報表，透過月報表對專案群組及資源使用狀況有著更清楚的掌握。

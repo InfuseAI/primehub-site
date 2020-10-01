@@ -3,6 +3,15 @@ id: secret-pull-image
 title: Pull Secret for GitLab
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 **Secret**, is a credential for proper permissions on repositories or registries.
 
 ## Add a image pull-secret

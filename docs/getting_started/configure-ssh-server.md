@@ -4,6 +4,16 @@ title: Configure SSH Server
 sidebar_label: SSH Server
 ---
 
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 ## Introduction
 
 With **SSH bastion server**, users are able to connect to their jupyter notebooks directly using **SSH** connections.

@@ -5,7 +5,7 @@ original_id: maintenance-resize-user-vol
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 這份文件介紹如何利用 Maintenance Notebook 來增加 User Volume Size。

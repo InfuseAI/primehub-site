@@ -4,7 +4,7 @@ title: Increase Group Volume
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 This document introduces how to increase a group volume via built-in `Group Volume Size` tool on `Maintenance Notebook`.

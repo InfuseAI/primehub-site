@@ -5,7 +5,7 @@ original_id: maintenance
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 PrimeHub provides Maintenance Notebook including some frequently-used operations. Administrators are able to perform those operations quickly without typing a bunch of commands.

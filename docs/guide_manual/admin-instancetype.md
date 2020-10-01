@@ -3,6 +3,15 @@ id: admin-instancetype
 title: Instance Type Management
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 Instance type management provides the capabilities of managing a cluster of the computation resources by instances management  such as create, delete, edit instances and of permission-control which allows only specified-groups to use the instances.
 
 ## Creating New Instance Types

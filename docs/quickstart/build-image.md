@@ -4,7 +4,7 @@ title: Build Image
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 This quickstart shows how to build a custom image by the feature of `Image Builder`. Here we are going to build an image with **fastai v1 library for PyTorch** provided by [Fast.ai](https://www.fast.ai/) based on the [Jupyter base-notebook](https://github.com/jupyter/docker-stacks/tree/master/base-notebook). Fast.ai is a well-known for free online A.I. courses, please check its site if any interest.

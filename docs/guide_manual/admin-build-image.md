@@ -2,9 +2,10 @@
 id: admin-build-image
 title: Image Builder
 ---
-
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
 </div>
 
 Administrators are able to create custom images with pre-installed tools and libraries which are required for users.

@@ -6,7 +6,7 @@ sidebar_label: Install PrimeHub on MicroK8S Single Node
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 This document will guide you to install [MicroK8s](https://microk8s.io/) on a single node and **PrimeHub Enterprise** with a easy script.

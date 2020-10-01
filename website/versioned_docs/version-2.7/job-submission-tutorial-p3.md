@@ -5,7 +5,7 @@ original_id: job-submission-tutorial-p3
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 For typical machine learning algorithms, there are many hyperparameters to tune. Finding the right hyperparameters can be a very time consuming job. However, with Job Submission, you can let it run the job for you. All you have to do is simply check the results when the job is complete. 

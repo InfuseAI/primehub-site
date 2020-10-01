@@ -5,7 +5,7 @@ title: 建置模型部署所需之映像檔 (R)
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 此文件說明如何建置映像檔 (Docker Image) ，以利在 PrimeHub 模型部署中使用。

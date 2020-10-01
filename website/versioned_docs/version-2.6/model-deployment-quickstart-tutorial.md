@@ -5,7 +5,7 @@ original_id: model-deployment-quickstart-tutorial
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 In this tutorial, we will show how to deploy a packaged image by the PrimeHub model deployment feature. 

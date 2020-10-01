@@ -3,6 +3,15 @@ id: non-standard-image
 title: Non standard image
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 PrimeHub could support non-standard notebook images which are not originated from [Jupyter](https://hub.docker.com/u/jupyter) provided by other sources:
 
 * Google [Deep Learning Container](https://cloud.google.com/ai-platform/deep-learning-containers/docs/choosing-container#choose_a_container_image_type)

@@ -3,6 +3,15 @@ id: kubernetes_on_gke
 title: Kubernetes on GKE
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 This guide helps you to create a Kubernetes on GKE for PrimeHub. 
 
 ## Provision a cluster

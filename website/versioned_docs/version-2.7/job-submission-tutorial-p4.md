@@ -5,7 +5,7 @@ original_id: job-submission-tutorial-p4
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 In this section, we want to post our MNIST classifier online, thus allowing everyone to try our model via a URL. 

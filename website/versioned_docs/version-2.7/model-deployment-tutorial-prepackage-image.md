@@ -5,7 +5,7 @@ title: Prepackage a Base Image and Use It
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 This doc shows how to build a base image and use it. Using the base image has some benefits:

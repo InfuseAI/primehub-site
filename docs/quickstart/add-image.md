@@ -2,6 +2,16 @@
 id: add-image
 title: Add Image
 ---
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 **Image**, is a working environment for an instance, we could have pre-built suitable images from public/private registries. We could even build our own images with customization and push to our registry by Image Builder feature. Here is a reference, [Custom Image Guideline](../guide_manual/custom-image-guideline), describing which official registries we can pull images from and how we build our own ones.
 
 This quickstart shows how we add an pre-built image on PrimeHub for users who can choose it for launching an instance on PrimeHub. If you haven't built any custom image, here is the [[quickstart] build image](build-image). Here we are going to add that custom image which is installed with `fastai v1 library` on PrimeHub.

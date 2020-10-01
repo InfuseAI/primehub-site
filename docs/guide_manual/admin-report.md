@@ -4,7 +4,7 @@ title: Usage Reports
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 From PrimeHub v3.0, the new feature, `Usage Reports`, is introduced that administrators can have a overall insight of who/what consumed resources monthly.

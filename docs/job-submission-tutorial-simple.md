@@ -4,7 +4,7 @@ title: Simple Example
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 By leveraging Job Submission, users can run jobs (such as a time-consuming ML training) in the background while doing other analyses in JupyterLab at the same time.

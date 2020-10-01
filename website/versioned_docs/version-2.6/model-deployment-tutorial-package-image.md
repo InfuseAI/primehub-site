@@ -5,7 +5,7 @@ original_id: model-deployment-tutorial-package-image
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 This doc shows how to package a model into a format-valid docker image for the PrimeHub model deployment feature.

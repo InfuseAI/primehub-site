@@ -5,7 +5,7 @@ title: (Part2) MNIST classifier 訓練範例程式
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 ![image](assets/jobsub-tt-p2-1.png)

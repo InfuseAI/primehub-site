@@ -3,6 +3,15 @@ id: feature-flag
 title: Feature Flags
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 [Feature Flag](https://en.wikipedia.org/wiki/Feature_toggle) a.k.a. Feature Toggle is a technique in software development that attempts to provide an alternative to maintaining multiple source-code branches (known as feature branches), such that a feature can be tested even before it is completed and ready for release.
 
 In PrimeHub, we use environment variables to toggle Alpha, Beta features.

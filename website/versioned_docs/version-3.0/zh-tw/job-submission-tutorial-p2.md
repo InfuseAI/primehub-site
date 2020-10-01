@@ -5,7 +5,7 @@ original_id: job-submission-tutorial-p2
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 1. 登入後，進入 `Notebooks`。

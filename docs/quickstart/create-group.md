@@ -3,6 +3,15 @@ id: create-group
 title: Create Group
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 This quickstart shows how to create a group.
 
 PrimeHub is the group-centric design, things such as users, instance types, images and datasets have to be assigned to groups, otherwise, they cannot be utilized without assigning groups on PrimeHub. Hence, we have to make sure these things are assigned to groups.

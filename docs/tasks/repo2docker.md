@@ -3,6 +3,15 @@ id: repo2docker
 title: repo2docker image
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 PrimeHub could support notebook images built from repo2docker tool, if an images had
 
 * `sudo` installed

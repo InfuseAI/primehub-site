@@ -3,6 +3,12 @@ id: install_primehub
 title: Install PrimeHub
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+</div>
+
 >Check the [prerequisites](prerequisites) for PrimeHub first before preceding to the PrimeHub installation.
 
 This document will guide you how to install **PrimeHub EE (Trial license)** by **Helm**.

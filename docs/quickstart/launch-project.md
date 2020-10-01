@@ -4,6 +4,15 @@ title: Launch JupyterHub
 sidebar_label: Launch Jupyter Notebook
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 This quickstart shows how to launch/stop a project.
 
 ## Launch

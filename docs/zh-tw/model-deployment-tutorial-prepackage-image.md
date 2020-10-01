@@ -4,7 +4,7 @@ title: 透過預建置 Base Image 加速流程
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 此教學介紹如何建置一個 Base Image 並使用它，這樣的方式有兩個主要的好處：

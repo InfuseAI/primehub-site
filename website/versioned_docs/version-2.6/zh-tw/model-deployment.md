@@ -5,7 +5,7 @@ original_id: model-deployment-feature
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 >Please be noticed! This document is still **Working-in-Progress**!

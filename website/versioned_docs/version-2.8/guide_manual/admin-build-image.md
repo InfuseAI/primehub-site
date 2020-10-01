@@ -5,7 +5,7 @@ original_id: admin-build-image
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 Administrators are able to create custom images with pre-installed tools and libraries which are required for users.

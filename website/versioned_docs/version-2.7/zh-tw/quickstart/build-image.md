@@ -5,7 +5,7 @@ original_id: build-image
 ---
 
 <div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Available in Enterprise tier only</span>
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
 這份文件說明如何利用新功能 `Image Builder` 來創建客製 image。
