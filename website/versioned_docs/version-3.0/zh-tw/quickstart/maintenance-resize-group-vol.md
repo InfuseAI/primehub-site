@@ -1,5 +1,6 @@
 ---
-id: maintenance-resize-group-vol
+id: version-3.0-maintenance-resize-group-vol
+original_id: maintenance-resize-group-vol
 title: 加大 Group Volume
 ---
 

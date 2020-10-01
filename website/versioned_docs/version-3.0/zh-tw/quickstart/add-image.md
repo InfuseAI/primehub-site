@@ -1,5 +1,6 @@
 ---
-id: add-image
+id: version-3.0-add-image
+original_id: add-image
 title: 增加 Image
 ---
 <div class="label-sect">

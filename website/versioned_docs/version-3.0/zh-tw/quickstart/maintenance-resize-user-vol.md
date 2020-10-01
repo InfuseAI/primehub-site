@@ -1,5 +1,6 @@
 ---
-id: maintenance-resize-user-vol
+id: version-3.0-maintenance-resize-user-vol
+original_id: maintenance-resize-user-vol
 title: 加大 User Volume
 ---
 

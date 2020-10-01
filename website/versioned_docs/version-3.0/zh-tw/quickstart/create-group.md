@@ -1,5 +1,6 @@
 ---
-id: create-group
+id: version-3.0-create-group
+original_id: create-group
 title: 建立群組
 ---
 <div class="label-sect">

@@ -1,5 +1,6 @@
 ---
-id: build-image
+id: version-3.0-build-image
+original_id: build-image
 title: 創建客製 Image
 ---
 

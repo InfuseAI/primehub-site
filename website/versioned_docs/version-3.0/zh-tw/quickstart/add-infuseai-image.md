@@ -1,5 +1,6 @@
 ---
-id: add-infuseai-image
+id: version-3.0-add-infuseai-image
+original_id: add-infuseai-image
 title: 新增 InfuseAI Image
 ---
 <div class="label-sect">

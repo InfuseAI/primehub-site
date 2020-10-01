@@ -1,5 +1,6 @@
 ---
-id: add-instance-type
+id: version-3.0-add-instance-type
+original_id: add-instance-type
 title: 新增/計劃 Instance Type
 ---
 <div class="label-sect">
