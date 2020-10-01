@@ -1,5 +1,6 @@
 ---
-id: secret-gitsync
+id: version-3.0-secret-gitsync
+original_id: secret-gitsync
 title: Gitsync Secret for GitHub
 ---
 

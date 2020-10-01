@@ -1,5 +1,6 @@
 ---
-id: add-infuseai-image
+id: version-3.0-add-infuseai-image
+original_id: add-infuseai-image
 title: Add InfuseAI Image
 ---
 

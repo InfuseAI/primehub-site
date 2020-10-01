@@ -1,5 +1,6 @@
 ---
-id: create-group
+id: version-3.0-create-group
+original_id: create-group
 title: Create Group
 ---
 

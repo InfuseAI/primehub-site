@@ -1,12 +1,21 @@
 ---
 id: version-3.0-create-user
-title: Create User
 original_id: create-user
+title: Create User
 ---
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 This quickstart shows how to create a user.
 
-1. Log in `User Portal` as an administrator and click `Admin Dashboard` to enter the dashboard.
+1. Log in as an administrator and [switch to Admin Portal](login-portal-admin).
 
 2. Click `Users` management on the side menu, then click `+ Add` button for the creation.
 

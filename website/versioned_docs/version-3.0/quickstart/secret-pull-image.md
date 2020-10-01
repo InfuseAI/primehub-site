@@ -1,5 +1,6 @@
 ---
-id: secret-pull-image
+id: version-3.0-secret-pull-image
+original_id: secret-pull-image
 title: Pull Secret for GitLab
 ---
 
