@@ -53,10 +53,6 @@ Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有�
 
 + `Grafana` 開新分頁連至 **Grafana** ，可檢視監控儀表板。
 
-## 切換 Portal
-
-點擊左上方的 *PrimeHub logo* 切換回 User Portal。
-
 ## 登出
 
 點擊右上角的`Logout`。 導回登入頁。

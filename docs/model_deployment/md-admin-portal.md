@@ -23,7 +23,7 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `JupyterHub Admin` is renamed to `Notebooks Admin`.
 
-![](assets/md_admin_portal.png)
+![](assets/md_admin_portal_v31.png)
 
 ### Side Menu
 
@@ -38,10 +38,6 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 + `System Settings` where Admin can configure system-wise settings. See [System Settings](../guide_manual/admin-system).
 
 + `Grafana` where Admin can an monitor the metrics of serving deployments.
-
-## Switch Portal
-
-Click *PrimeHub logo* at top-left for switching back to User Portal.
 
 ## Logout
 

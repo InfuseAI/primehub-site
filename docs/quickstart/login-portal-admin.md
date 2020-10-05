@@ -60,10 +60,6 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `Grafana` where Admin can view dashboards on **Grafana**.
 
-## Switch Portal
-
-Click *PrimeHub logo* at top-left for switching back to User Portal.
-
 ## Logout
 
 Click `Logout` button at top-right. The page would be directed to the `Login` page.
