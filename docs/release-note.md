@@ -1,6 +1,6 @@
 ---
 id: release-note
-title: 3.0 Release Note
+title: Release Candidate Note
 ---
 
 ## 🌟 What's New

@@ -10,7 +10,6 @@ We are glad to announce our **PrimeHub v3.0** release. **PrimeHub v3.0** has a w
 ![](assets/v3-landing-user.png)
 
 + [ML User Experience of Group-Context](getting-started-user)
-+ [Usage Reports Feature](guide_manual/admin-report) allows admin to have monthly reports of allocated resources usage.
 + [SSH Server Feature](guide_manual/ssh-config) allows users to access their launched JupyterHub remotely via SSH.
   
 ## 🦄 Breaking Changes
