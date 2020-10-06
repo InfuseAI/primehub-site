@@ -20,7 +20,6 @@ From **PrimeHub v3.0**, administration features are performed on `Admin Portal` 
 
 + `System` is renamed to `System Settings`.
 
-+ New feature, `Usage Reports` is introduced.
 
 ## Guides
 
@@ -44,6 +43,5 @@ Guides are included:
   + [GitLab Pull Secret](quickstart/secret-pull-image)
   + [GitHub gitsync secret](quickstart/secret-gitsync)
 
-+ [Review monthly usage report](guide_manual/admin-report)
   
 + [Perform operations via Maintenance Notebook](maintenance)

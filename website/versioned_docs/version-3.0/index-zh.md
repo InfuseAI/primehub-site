@@ -47,7 +47,6 @@ original_id: index-zh
 
 + `System` 功能更名為 `System Settings`。
 
-+ `Usage Reports` 新功能導入。
 
 ### 針對 PrimeHub 管理者，可以參考：
 

@@ -44,7 +44,6 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `Notebooks Admin` where Admin can manage Notebooks of users.
 
-+ `Usage Report` where Admin can review monthly reports of usage. See [Usage Report](../guide_manual/admin-report). `Enterprise`
 
 + `System Settings` where Admin can configure system-wise settings. See [System Settings](../guide_manual/admin-system).
 

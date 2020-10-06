@@ -46,7 +46,6 @@ Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有�
 
 + `Notebooks Admin` 管理使用者的 Notebook。
 
-+ `Usage Report` 閱覽使用量月報告。 請見 [Usage Report](../guide_manual/admin-report-cht)。 `Enterprise`
 
 + `System Settings` 設定系統參數。 請見 [System Settings](../guide_manual/admin-system-cht)。
 
