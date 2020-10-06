@@ -64,7 +64,7 @@ Create EKS cluster by `eksctl` command with a proper `__my_cluster_name__`.
 # Prepare customized data
 EKS_CLUSTER_NAME=__my_cluster_name__
 EKS_REGION=ap-northeast-1
-EKS_ZONE=${EKS_REGION}-a
+EKS_ZONE=${EKS_REGION}a
 K8S_VERSION=1.16
 
 # Running eksctl to create EKS cluster
