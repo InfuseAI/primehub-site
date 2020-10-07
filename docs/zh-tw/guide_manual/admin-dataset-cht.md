@@ -106,9 +106,13 @@ hostPath 可以掛載 Node 檔案系統中指定的檔案/目錄夾至 Pod，做
 
 ---
 
+### 群組存取權限
+
 ![](assets/edit_groups.png)
 
-如果 `Group` 啟用，則需在下方 `edit groups` 設定可存取的 Groups。 點選 `edit groups`，即可從現有的 Groups 列表中選取有權限使用該 Dataset 的 Group，將它們連結在一起。
+`Type`, `Global` 及 `edit groups`為連動的：
++ 若`Type` 本身為可寫入的，`Global`開啟時，可另指定有寫入權限的群組，其餘群組皆為唯讀；`Global`關閉時，須分別指定唯讀權限及寫入權限群組。
++ 若`Type` 本身為唯讀的，`Global`開啟時，不須指定群組，皆唯讀；`Global`關閉時，須指定唯讀權限群組。
 
 ## 刪除 Datasets
 

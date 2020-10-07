@@ -111,6 +111,21 @@ If dataset is an environment variable, not a file, you can use `env` type. Click
 
 > Please be noticed that any `-` will be replaced by `_` in full variable name; the *full name* of env variables will be `<dataset_name>_<variable_key>` in the circumstance.
 
+---
+
+### Groups Access Control
+
+![](assets/edit_groups.png)
+
+`Type`, `Global` and `edit groups` are associated.
+
++ When `Type` of a dataset is **writable**:
+  + `Global` is **enabled**, required to specify groups with writable permission, the rest of groups are read-only.
+  + `Global` is **disabled**, required to specify groups with writable/read-only permission respectively.
+
++ When `Type` of a dataset is **read-only**:
+  + `Global` is **enabled**, all of groups are read-only by default.
+  + `Global` is **disabled**, required to specify groups with read-only permission.
 
 ## Deleting Dataset
 
@@ -118,7 +133,7 @@ If dataset is an environment variable, not a file, you can use `env` type. Click
 
 Click `Delete` in the Datasets list, the confirmation dialog will pop up, and the Dataset will be deleted when you click `OK`.
 
-## Editing Deataset
+## Editing Dataset
 
 ![](assets/actions.png)
 
