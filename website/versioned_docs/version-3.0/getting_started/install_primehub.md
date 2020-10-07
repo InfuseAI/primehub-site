@@ -1,7 +1,8 @@
 ---
 id: version-3.0-install_primehub
 original_id: install_primehub
-title: Install PrimeHub
+title: Install PrimeHub Enterprise
+sidebar_label: Install PrimeHub EE
 ---
 
 >Check the [prerequisites](prerequisites) for PrimeHub first before preceding to the PrimeHub installation.

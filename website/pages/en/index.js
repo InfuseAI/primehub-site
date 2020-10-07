@@ -289,25 +289,21 @@ class Index extends React.Component {
     );
 
     const Category = () => (
-      <Block layout="fourColumn" align="center" background="dark" className="block-menu">
+      <Block layout="threeColumn" align="center" background="dark" className="block-menu">
         {[
           {
-            //image: `${baseUrl}img/features/settings-160.png`,
-            image: `${baseUrl}img/settings-01.png`,
+            //image: `${baseUrl}img/settings-01.png`,
             imageAlign: 'top',
             title: `<a href=${docUrl('dev-introduction')}>Installation</a>`,
             imageLink: `${docUrl('dev-introduction')}`,
             content:
               '<div class="grid-menu">' +
-                `<div class="menu-item"><a href=${docUrl('getting_started/prerequisites')}>Prerequisites</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('getting_started/install_primehub')}>Install PrimeHub</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('getting_started/kubernetes_on_ubuntu_machine')}>Install PrimeHub on Single Node</a></div>` +
-                `<div class="menu-item"><a href="https://github.com/InfuseAI/primehub/blob/master/INSTALL.md">Install PrimeHub CE ↗</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('dev-introduction')}>Getting Started</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting_started/install_primehub_ce')}>Install PrimeHub CE</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting_started/install_primehub')}>Install PrimeHub EE</a></div>` +
               '</div>', 
           },
-          {
-            //content: 'The content of my second feature',
-            //image: `${baseUrl}img/features/paper-plane-100.png`,
+          /*{
             image: `${baseUrl}img/server-01.png`,
             imageAlign: 'top',
             title: `<a href=${docUrl('design/architecture')}>Configuration</a>`,
@@ -319,23 +315,32 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('references/feature-flag')}>Feature Flags</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('tasks/minio_configurations')}>MinIO Configuration</a></div>` +
               '</div>', 
-          },
+          },*/
           {
-            //image: `${baseUrl}img/features/book-shelf-100.png`,
-            image: `${baseUrl}img/files-01.png`,
+            //image: `${baseUrl}img/files-01.png`,
             imageAlign: 'top',
-            title: `<a href=${docUrl('introduction')}>Documentation</a>`,
+            title: `<a href=${docUrl('introduction')}>Features</a>`,
             imageLink: `${docUrl('introduction')}`,
             content:
               '<div class="grid-menu">' +
-                `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Scientist</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('getting-started-admin')}>Administrator</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/guide_manual/images-list')}>Available Images</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('next/comparison')}>Edition Features Comparison</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('design/architecture')}>Design and Concept</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Getting Started</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('quickstart/login-portal-user')}>User Portal features</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('quickstart/login-portal-admin')}>Admin Portal features</a></div>` +
               '</div>', 
           },
           {
+            //image: `${baseUrl}img/files-01.png`,
+            imageAlign: 'top',
+            title: `<a href=${docUrl('introduction')}>Tutorials</a>`,
+            imageLink: `${docUrl('introduction')}`,
+            content:
+              '<div class="grid-menu">' +
+                `<div class="menu-item"><a href=${docUrl('job-submission-tutorial-simple')}>Submit Jobs</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('model-deployment-quickstart-tutorial')}>Serve Models</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('model-deployment-tutorial-package-image')}>Package Models as Images</a></div>` +
+              '</div>', 
+          },
+          /*{
             //image: `${baseUrl}img/features/book-shelf-100.png`,
             image: `${baseUrl}img/community-07.png`,
             imageAlign: 'top',
@@ -346,7 +351,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href="https://medium.com/infuseai">Medium ↗</a></div>` +
                 `<div class="menu-item"><a href="https://www.katacoda.com/infuseai">Katacoda ↗</a></div>` +
               '</div>', 
-          },
+          },*/
         ]}
       </Block>
     );

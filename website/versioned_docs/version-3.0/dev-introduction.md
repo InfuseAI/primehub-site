@@ -1,29 +1,30 @@
 ---
 id: version-3.0-dev-introduction
 original_id: dev-introduction
-title: Introduction
+title: Getting Started
 ---
 
 PrimeHub is a cloud-native Machine Learning platform based on Kubernetes.
 
 ### Katacoda
 
-Before getting hands dirty in real circumstances, we provide a [PrimeHub CE installation scenario on Katacoda](https://www.katacoda.com/infuseai), it helps understand the installation progress and requirements.
+Before getting hands dirty in real circumstances, we provide a [PrimeHub CE installation scenario on Katacoda↗](https://www.katacoda.com/infuseai), it helps understand the installation progress and requirements.
 
 ---
 
-## Setup Kubernetes
+## Setup Kubernetes for PrimeHub
 
-Before installing PrimeHub, we need to ensure that the correct prerequisites are available.
+Before installing PrimeHub, A Kubernetes cluster is required to meet prerequisites. Make sure your cluster is ready for PrimeHub.
 
 - [Prerequisites](getting_started/prerequisites.md)
 
-PrimeHub can be installed in the following environments:
+If PrimeHub on GKE/EKS is one of your preference, you may want to start from our guides to set up a PrimeHub-ready-Kubernetes:
 
 - [Install Kubernetes on GKE](getting_started/kubernetes_on_gke.md)
 - [Install Kubernetes on AWS EKS](getting_started/kubernetes_on_eks)
 
 ## Setup PrimeHub
 
-- **[Install PrimeHub](getting_started/install_primehub.md)**
-- **[Install Kubernetes on an Ubuntu Machine (single node)](getting_started/kubernetes_on_ubuntu_machine.md)**
+- [Install PrimeHub Community](getting_started/install_primehub_ce)
+- [Install PrimeHub Enterprise](getting_started/install_primehub)
+- [Install PrimeHub Enterprise on Single Node](getting_started/kubernetes_on_ubuntu_machine)

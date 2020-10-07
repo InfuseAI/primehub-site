@@ -16,8 +16,6 @@ This quickstart shows how to login/logout `User Portal`.
 
 ## Login
 
-![](assets/login_1.png)
-
 Click Login with your own username (such as `phadmin` by default) and password.
 
 ## User Portal

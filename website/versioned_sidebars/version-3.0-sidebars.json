@@ -1,6 +1,6 @@
 {
   "version-3.0-for-developers": {
-    "Getting Started": [
+    "Installation": [
       "version-3.0-dev-introduction",
       {
         "type": "subcategory",
@@ -13,7 +13,14 @@
       },
       {
         "type": "subcategory",
-        "label": "Setup PrimeHub",
+        "label": "Setup PrimeHub Community",
+        "ids": [
+          "version-3.0-getting_started/install_primehub_ce"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Setup PrimeHub Enterprise",
         "ids": [
           "version-3.0-getting_started/install_primehub",
           "version-3.0-getting_started/kubernetes_on_ubuntu_machine"
@@ -115,9 +122,11 @@
     "Introduction": [
       "version-3.0-introduction"
     ],
-    "Project": [
+    "User Portal": [
       "version-3.0-getting-started-user",
-      "version-3.0-quickstart/login-portal-user",
+      "version-3.0-quickstart/login-portal-user"
+    ],
+    "Notebook": [
       "version-3.0-quickstart/launch-project",
       {
         "type": "subcategory",
@@ -128,25 +137,21 @@
       }
     ],
     "Job": [
+      "version-3.0-job-submission-feature",
       {
         "type": "subcategory",
-        "label": "Submission",
+        "label": "Tutorial",
         "ids": [
-          "version-3.0-job-submission-feature",
           "version-3.0-job-submission-tutorial-simple",
           "version-3.0-job-submission-tutorial-p1",
           "version-3.0-job-submission-tutorial-p2",
           "version-3.0-job-submission-tutorial-p3",
           "version-3.0-job-submission-tutorial-p4"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Schedule",
-        "ids": [
-          "version-3.0-job-scheduling-feature"
-        ]
       }
+    ],
+    "Schedule": [
+      "version-3.0-job-scheduling-feature"
     ],
     "Model": [
       "version-3.0-model-deployment-feature",

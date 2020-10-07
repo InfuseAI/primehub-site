@@ -8,9 +8,7 @@ This quickstart shows how to login/logout `User Portal`.
 
 ## Login
 
-![](assets/login_1.png)
-
-Select a `language` you prefer. Click Login with your own username and password.
+Click Login with your own username (such as `phadmin` by default) and password.
 
 ## User Portal
 
@@ -26,11 +24,11 @@ At side menu, there are
 
 + **Notebooks**  where users can launch a Jupyter Notebook for projects.See [Launch Project](../quickstart/launch-project).
 
-+ **Jobs (Beta)** where users can submit jobs for time-consuming tasks. See [Job Submission](../job-submission-feature).
++ **Jobs (Beta)** where users can submit jobs for time-consuming tasks. See [Job Submission](../job-submission-feature). <span class="ee-only">Enterprise</span>
 
-+ **Schedule (Beta)** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature).
++ **Schedule (Beta)** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
 
-+ **Models (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature).
++ **Models (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
 
 >If users don't belong to any group, the page shows `No group available`. Please contact administrators.
 

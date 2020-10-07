@@ -16,11 +16,9 @@ This quickstart shows how to access `Admin Portal`.
 
 ## Login
 
-![](assets/login_1.png)
+Click Login with your own username (such as `phadmin` by default) and password.
 
-Select a `language` you prefer. Click Login with your own username and password.
-
-## Entrance
+## Switch to Admin Portal 
 
 When login as an administrator, initially, you are directed to **User Portal**, click the icon at top-right and select `Admin Portal` for the switch.
 
@@ -44,7 +42,7 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `Images` where Admin can manage images. See [Image Management](../guide_manul/../guide_manual/admin-image).
 
-+ `Image Builder` where Admin can build custom images. See [Image Builder](../guide_manual/admin-build-image). `Enterprise`
++ `Image Builder` where Admin can build custom images. See [Image Builder](../guide_manual/admin-build-image). <span class="ee-only">Enterprise</span>
 
 + `Datasets` where Admin can manage datasets. See [Dataset Management](../guide_manual/admin-dataset).
 
@@ -52,11 +50,11 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `Notebooks Admin` where Admin can manage Notebooks of users.
 
-+ `Usage Report` where Admin can review monthly reports of usage. See [Usage Report](../guide_manual/admin-report). `Enterprise`
++ `Usage Report` where Admin can review monthly reports of usage. See [Usage Report](../guide_manual/admin-report). <span class="ee-only">Enterprise</span>
 
 + `System Settings` where Admin can configure system-wise settings. See [System Settings](../guide_manual/admin-system).
 
-+ `Maintenance` where Admin can run several built-in useful operations. See [Maintenance](../maintenance). `Enterprise`
++ `Maintenance` where Admin can run several built-in useful operations. See [Maintenance](../maintenance). <span class="ee-only">Enterprise</span>
 
 + `Grafana` where Admin can view dashboards on **Grafana**.
 

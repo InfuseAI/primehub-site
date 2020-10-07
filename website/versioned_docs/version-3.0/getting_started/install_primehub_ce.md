@@ -1,5 +1,6 @@
 ---
-id: install_primehub_ce
+id: version-3.0-install_primehub_ce
+original_id: install_primehub_ce
 title: Install PrimeHub Community
 sidebar_label: Install PrimeHub CE
 ---

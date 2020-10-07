@@ -1,8 +1,8 @@
 ---
 id: version-3.0-kubernetes_on_ubuntu_machine
 original_id: kubernetes_on_ubuntu_machine
-title: PrimeHub on MicroK8S Single Node (Ubuntu)
-sidebar_label: Install PrimeHub on MicroK8S Single Node
+title: Install PrimeHub Enterprise on Single Node (Ubuntu)
+sidebar_label: Install PrimeHub EE on Single Node
 ---
 
 <div class="ee-only tooltip">Enterprise

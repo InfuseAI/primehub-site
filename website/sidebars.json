@@ -1,6 +1,6 @@
 {
   "for-developers": {
-    "Getting Started": [
+    "Installation": [
       "dev-introduction",
       {
         "type": "subcategory",
@@ -15,7 +15,7 @@
         "type": "subcategory",
         "label": "Setup PrimeHub Community",
         "ids": [
-          "getting_started/install-primehub-ce"
+          "getting_started/install_primehub_ce"
         ]
       },
       {
@@ -123,9 +123,11 @@
     "Introduction": [
       "introduction"
     ],
-    "Notebook": [
+    "User Portal": [
       "getting-started-user",
-      "quickstart/login-portal-user",
+      "quickstart/login-portal-user"
+    ],
+    "Notebook": [
       "quickstart/launch-project",
       {
         "type": "subcategory",
@@ -136,25 +138,21 @@
       }
     ],
     "Job": [
+      "job-submission-feature",
       {
         "type": "subcategory",
-        "label": "Submission",
+        "label": "Tutorial",
         "ids": [
-          "job-submission-feature",
           "job-submission-tutorial-simple",
           "job-submission-tutorial-p1",
           "job-submission-tutorial-p2",
           "job-submission-tutorial-p3",
           "job-submission-tutorial-p4"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Schedule",
-        "ids": [
-          "job-scheduling-feature"
-        ]
       }
+    ],
+    "Schedule": [
+      "job-scheduling-feature"
     ],
     "Model": [
       "model-deployment-feature",
