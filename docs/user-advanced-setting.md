@@ -3,6 +3,15 @@ id: user-advanced-setting
 title: Advanced Settings
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 At bottom of Notebook Spawner, there are `advanced settings` which we can consider to enable for special purposes.
 
 ## Safe Mode

@@ -146,13 +146,22 @@ div.grid-menu > div.menu-item {
     align-items: flex-start;
 }
 
-.ee-only {
+div.ee-only {
     color: #fc6d26;
     font-weight: bold;
     margin: 0 10px 0 0;
 }
 
-.ce-only {
+span.ee-only {
+    color: #fc6d26;
+}
+
+div.ce-only {
+    color: #a3d00e;
+    font-weight: bold;
+}
+
+span.ce-only {
     color: #a3d00e;
     font-weight: bold;
 }

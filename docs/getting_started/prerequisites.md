@@ -13,11 +13,15 @@ title: Prerequisites
   </div>
 </div>
 
-Before installing PrimeHub, we need to provide a PrimeHub-ready Kubernetes, which should contain following essentials.
+>Before installing PrimeHub, we need to provide a PrimeHub-ready-Kubernetes, which should contain following essentials.
 
-## Kubernetes Cluster (1.15+)
+## Kubernetes Cluster (1.16+)
 
-PrimeHub is based on Kuberentes. The Kubernetes version 1.15+ is recommended.
+>The Kubernetes version 1.16 is recommended.
+
+If you already have a Kubernetes cluster or going to install one in your own preference, make sure the cluster meets the requirements below.
+
+If a fresh PrimeHub on GKE or EKS is one of your preferences, you may want to start from our [Kubernetes on GKE](kubernetes_on_gke) guide or [Kubernetes on EKS](kubernetes_on_eks) guide.
 
 ## Kubectl
 
@@ -57,11 +61,11 @@ PrimeHub is based on Kuberentes. The Kubernetes version 1.15+ is recommended.
 
 PrimeHub is packaged and installed by [helm](https://helm.sh/docs/using_helm/)
 
-  > From PrimeHub v2.8, we recommend helm v3.2.4+.
+  > From PrimeHub v3.0, we recommend helm v3.3.2+.
 
   Installation steps:
 
-  1. Go to the [helm release page (v3.2.4)](https://github.com/helm/helm/releases/tag/v3.2.4)
+  1. Go to the [helm release page (v3.3.2)](https://github.com/helm/helm/releases/tag/v3.3.2)
   2. Download the package according to your OS
   3. Unpack the package and put the `helm` binary in you `$PATH`
 

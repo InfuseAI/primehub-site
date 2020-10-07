@@ -1,6 +1,7 @@
 ---
 id: install_primehub
-title: Install PrimeHub
+title: Install PrimeHub Enterprise
+sidebar_label: Install PrimeHub EE
 ---
 
 <div class="label-sect">
