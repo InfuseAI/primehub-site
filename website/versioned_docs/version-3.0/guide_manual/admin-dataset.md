@@ -3,6 +3,14 @@ id: version-3.0-admin-dataset
 title: Dataset Management
 original_id: admin-dataset
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 Dataset management provides the capabilities of managing dataset resources such as create, delete, edit datasets and of permission-control so that datasets can be accessed only by specific groups accordingly.
 

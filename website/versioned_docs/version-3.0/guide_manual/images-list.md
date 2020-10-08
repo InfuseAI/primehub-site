@@ -3,6 +3,14 @@ id: version-3.0-images-list
 original_id: images-list
 title: Available Images List
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 InfuseAI provides and maintains certain images which can be base images on Docker hub, here available images are:
 

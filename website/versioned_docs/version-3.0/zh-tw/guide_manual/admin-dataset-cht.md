@@ -3,6 +3,14 @@ id: version-3.0-admin-dataset-cht
 title: Dataset Management
 original_id: admin-dataset-cht
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 Dataset management 提供管理者 Dataset 資源管理能力，如：新增、刪除、編輯 datasets 來源及群組權限。
 

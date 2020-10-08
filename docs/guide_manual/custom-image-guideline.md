@@ -53,7 +53,7 @@ There are two official registries where we can have JupyterHub-compatible base i
 
 ## Build Images via Image Builder
 
-We can build images via `Image Builder` by specification of a base image with required packages, please goes to [Image Builder](admin-build-image) feature for details and try a [build image](../quickstart/build-image) quickstart.
+We can build images via `Image Builder` by specification of a base image with required packages, please goes to [Image Builder](admin-build-image) feature for details and try a [build image](../quickstart/build-image) quickstart.<span class="ee-only">Enterprise</span>
 
 ### Use DockerHub Registry
 

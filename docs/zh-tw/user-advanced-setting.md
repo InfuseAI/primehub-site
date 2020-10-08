@@ -2,6 +2,14 @@
 id: user-advanced-setting
 title: Spawner 進階設定 
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 在 Notebook Spawner 頁面下方，有個`advanced settings`其中包含些進階選項，我們可以考慮在某些特殊狀況下起始 Notebook 時，啟用這些選項。
 

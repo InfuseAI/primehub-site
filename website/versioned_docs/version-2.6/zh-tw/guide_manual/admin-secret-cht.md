@@ -3,6 +3,14 @@ id: version-2.6-admin-secret-cht
 title: Secret Management
 original_id: admin-secret-cht
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 Secret management 提供管理者 Secret 管理能力，如：新增、刪除、編輯。前提我們需要先有從其它服務產生取得的 Secrets；請參照[取得參考](#取得參考)。
 

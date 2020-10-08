@@ -53,6 +53,7 @@ class Footer extends React.Component {
             <a href="https://github.com/infuseai">GitHub</a>
             <a href="https://medium.com/infuseai">Medium</a>
             <a href="https://www.facebook.com/InfuseAI">Facebook</a>
+            <a href="https://www.katacoda.com/infuseai">Katacoda</a>
           </div>
           <div>
             <h5>More</h5>

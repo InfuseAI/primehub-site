@@ -3,6 +3,14 @@ id: version-2.7-admin-uploader
 title: Upload Server
 original_id: admin-uploader
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 In terms of type `pv`, `nfs` and `hostpath` dataset, we can use `Upload Server` feature that allows users to upload files to a dataset volume.
 

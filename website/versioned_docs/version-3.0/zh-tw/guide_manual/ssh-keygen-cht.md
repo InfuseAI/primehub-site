@@ -4,6 +4,14 @@ title: 生成 SSH 金鑰
 sidebar_label: SSH 金鑰生成
 original_id: ssh-keygen-cht
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 ## Steps
 

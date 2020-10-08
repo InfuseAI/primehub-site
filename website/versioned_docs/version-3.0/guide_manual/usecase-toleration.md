@@ -1,7 +1,7 @@
 ---
-id: version-2.2.0-usecase-toleration
-title: [Use Case] Toleration
+id: version-3.0-usecase-toleration
 original_id: usecase-toleration
+title: Toleration
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
@@ -11,6 +11,7 @@ original_id: usecase-toleration
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
 </div>
+
 
 In a real circumstance, we may have multiple nodes with varied performance of GPUs. Let's say we have `Nvidia Tesla V100(high)`, `Tesla M60(Medium)` and `Tesla K80(Low)` and we know there is a project using the instance type (*cancer_prediction*) which requires GPU Tesla M60 and above. In this case, we can taint nodes which have GPU Tesla K80.
 

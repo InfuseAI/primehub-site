@@ -3,6 +3,14 @@ id: version-2.5-custom-image-guideline
 title: 客製 Image 指南
 original_id: custom-image-guideline
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 ## 創建 Images
 
@@ -46,7 +54,7 @@ PrimeHub 期待 JupyterHub 用 image 具備 JupyterHub 環境，一旦起始後�
 
 ## Image Builder 創建 Image
 
-我們可以利用`Image Builder`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Image Builder`就會根據指定規格建立並發佈 image。請見 [Image Builder](admin-build-image-cht) 功能，以及 快速上手[「創建 image」](../quickstart/build-image)。
+我們可以利用`Image Builder`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Image Builder`就會根據指定規格建立並發佈 image。請見 [Image Builder](admin-build-image-cht) 功能，以及 快速上手[「創建 image」](../quickstart/build-image)。<span class="ee-only">Enterprise</span>
 
 ### 利用 DockerHub Registry
 

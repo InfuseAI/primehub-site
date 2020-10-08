@@ -2,6 +2,14 @@
 id: ssh-config-cht
 title: SSH Server 功能
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 **PrimeHub v3.0+** 提供新功能 SSH Server，允許使用者透過 SSH 方式來存取遠端已啟動的 Notebooks。實際的應用情境是使用者可以使用熟悉且較強大的開發工具(如：**VSCode + Remote-SSH**)來進行遠端開發；提供使用者更多開發工具的選擇。
 

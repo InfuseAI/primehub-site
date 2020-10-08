@@ -4,6 +4,11 @@ original_id: install_primehub
 title: Install PrimeHub Enterprise
 sidebar_label: Install PrimeHub EE
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+</div>
 
 >Check the [prerequisites](prerequisites) for PrimeHub first before preceding to the PrimeHub installation.
 

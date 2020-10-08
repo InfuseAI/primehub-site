@@ -3,6 +3,14 @@ id: version-3.0-getting-started-admin
 title: Administration
 original_id: getting-started-admin
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 ## 🌟PrimeHub v3.0
 

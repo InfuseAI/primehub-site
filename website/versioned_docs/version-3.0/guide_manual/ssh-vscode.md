@@ -4,6 +4,14 @@ title: VSCode SSH Jupyter Notebook Remotely
 sidebar_label: VSCode Remote-SSH Notebook
 original_id: ssh-vscode
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 > This guide requires prerequisites of Notebook with enabled SSH Server feature and key-pair. Please go to [SSH Server feature](ssh-config) if it hasn't been set up yet.
 

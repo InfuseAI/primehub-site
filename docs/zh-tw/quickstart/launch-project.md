@@ -2,6 +2,14 @@
 id: launch-project
 title: 啟始 Notebook
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 這份文件說明如何啟始/關閉一個 Notebook。
 

@@ -2,7 +2,14 @@
 id: admin-image-cht
 title: Image Management
 ---
-
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 Image management 提供管理者 Image 的管理能力，如：新增、刪除、編輯及群組權限。
 
 ## Creating New Image

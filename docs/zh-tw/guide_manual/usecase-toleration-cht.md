@@ -2,6 +2,14 @@
 id: usecase-toleration-cht
 title: Toleration
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 在實際環境中，我們可能有數個配置不同 GPU 運算能力的 nodes。  舉例來說，我們有 nodes 分別配置 **Nvidia Tesla V100(high)**、**Tesla M60(Medium)** 及 **Tesla K80(Low)** 的環境，且有個專案 *cancer_prediction* (instance type) 需求 Tesla M60 至少以上的 GPU 運算能力，因此我們可以標記  taint 在配備 Tesla K80 node 上 gpu=low 。
 

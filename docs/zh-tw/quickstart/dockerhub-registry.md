@@ -2,6 +2,11 @@
 id: dockerhub-registry
 title: 利用 DockerHub Registry 
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+</div>
 
 ## Image Builder 利用 DockerHub Registry 發佈 Image
 

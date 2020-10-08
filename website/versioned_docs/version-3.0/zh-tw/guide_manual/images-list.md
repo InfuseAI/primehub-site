@@ -3,6 +3,14 @@ id: version-3.0-images-list
 original_id: images-list
 title: InfuseAI 提供 Images
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 InfuseAI 提供/維護的 Images 如下：  
 

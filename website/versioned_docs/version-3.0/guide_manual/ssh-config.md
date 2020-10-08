@@ -3,6 +3,14 @@ id: version-3.0-ssh-config
 title: SSH Server Feature
 original_id: ssh-config
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 **PrimeHub v3.0+** provides a new feature of SSH Server that users are allowed to access into their own launched JupyterHub via **SSH**. A practical use-case is that users are able to use IDEs such as **VSCode** which has **remote-ssh** extension for the development remotely. In other words, it provides other possible development options for users who like to use rich-features IDEs instead.
 

@@ -3,6 +3,14 @@ id: version-3.0-login-portal-user
 title: User Portal
 original_id: login-portal-user
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 This quickstart shows how to login/logout `User Portal`.
 

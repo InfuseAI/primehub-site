@@ -3,6 +3,14 @@ id: version-2.7-howto-check-group-vol
 title: HOWTO - Check Group Volume Usage
 original_id: howto-check-group-vol
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 ## Group Volume Usage
 

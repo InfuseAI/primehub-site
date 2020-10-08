@@ -4,6 +4,14 @@ title: VSCode 透過 SSH 遠端存取 Jupyter Notebook
 sidebar_label: VSCode 遠端存取 Notebooks
 original_id: ssh-vscode-cht
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 >此指南需要 SSH Server 相關設定已經完成並啟動的 Notebook； 尚未設定的話，請先參考 [SSH Server feature](ssh-config-cht)。
 

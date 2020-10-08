@@ -4,6 +4,12 @@ title: Use DockerHub Registry
 original_id: dockerhub-registry
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+</div>
+
 ## Use DockerHub Registry For Image Builder
 
 PrimeHub provides `Image Builder` feature to let administrators build custom images. Once images are built successfully, they will be pushed into specified repositories of a registry. Here we show to how to configure PrimeHub using **DockerHub** registry for it.

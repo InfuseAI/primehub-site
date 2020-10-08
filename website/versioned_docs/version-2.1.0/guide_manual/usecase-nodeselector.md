@@ -4,6 +4,15 @@ title: NodeSelector
 original_id: usecase-nodeselector
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 When it comes to DevOps, we may arrange downtime of nodes for regular maintenance several times a year, however, for the sake of impact reduction of our service, we keep some of nodes continue to be available for providing the service, and shutdown other nodes in shift. In this case, initially we label all of nodes with `service=on`
 
 ```

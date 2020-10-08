@@ -3,6 +3,14 @@ id: version-2.5-custom-image-guideline
 title: Custom Image Guideline
 original_id: custom-image-guideline
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 ## Build Images
 
@@ -46,7 +54,7 @@ There are two official registries where we can have JupyterHub-compatible base i
 
 ## Build Images via Image Builder
 
-We can build images via `Image Builder` by specification of a base image with required packages, please goes to [Image Builder](admin-build-image) feature for details and try a [build image](../quickstart/build-image) quickstart.
+We can build images via `Image Builder` by specification of a base image with required packages, please goes to [Image Builder](admin-build-image) feature for details and try a [build image](../quickstart/build-image) quickstart.<span class="ee-only">Enterprise</span>
 
 ### Use DockerHub Registry
 

@@ -4,6 +4,15 @@ title: User Portal
 original_id: login-portal-user
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+
 這份文件說明介紹使用者層級的`User Portal`。
 
 ## 登入

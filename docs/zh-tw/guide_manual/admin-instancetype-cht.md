@@ -2,6 +2,14 @@
 id: admin-instancetype-cht
 title: Instance Type Management
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 Instance type management 提供給管理者 Instance 運算資源管理能力，如：新增、刪除、編輯運算資源分配及群組權限。
 

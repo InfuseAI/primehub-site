@@ -2,6 +2,14 @@
 id: usecase-nodeselector-cht
 title: NodeSelector
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 提到服務維運，我們可能一年中有幾次需要進行系統維護。為了降低對現行服務的衝擊，我們會採取部分 nodes 離線，維持一定數量 nodes 繼續提供服務。一旦離線 nodes 維護作業完成，再度回歸服務，直到所有 nodes 作業完成。因此，我們可以先在所有 nodes 標記 `service=on`，
 

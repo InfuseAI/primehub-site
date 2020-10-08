@@ -42,8 +42,12 @@ $ gcloud container clusters get-credentials <cluster-name> --zone asia-east1-a
 
 After update kube-config, try to get nodes:
 
-```
+```bash
 $ kubectl get nodes
+```
+
+Output
+```text
 NAME                                              STATUS   ROLES    AGE   VERSION
 gke-primehub-example-default-pool-51960bca-0cz5   Ready    <none>   98s   v1.15.9-gke.12
 gke-primehub-example-default-pool-51960bca-nfxd   Ready    <none>   98s   v1.15.9-gke.12
@@ -51,21 +55,24 @@ gke-primehub-example-default-pool-51960bca-wr9l   Ready    <none>   98s   v1.15.
 ```
 
 
-### Install helm
+### Install Helm
 
-Install helm 3.2.x+ binary. Please see the installation steps in [prerequisites](prerequisites.md). (From PrimeHub v2.8, we use `Helm 3` for the installation.)
+Install helm 3.x.x+ binary. Please see the installation steps in [prerequisites](prerequisites.md). (From PrimeHub v2.8, we use `Helm 3` for the installation.)
 
 ```
 $ helm version
-version.BuildInfo{Version:"v3.2.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
+version.BuildInfo{Version:"v3.3.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
 ```
 
 ## Nginx Ingress
 
+Add Chart repo
 ```bash
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
 helm repo update
 ```
+
+Helm install
 
 ```bash
 helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
@@ -73,13 +80,13 @@ helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace i
 
 Find the `EXTERNAL-IP`
 
-```
-$ kubectl get svc -n ingress-nginx
+```bash
+kubectl get svc -n ingress-nginx
 ```
 
 You might see `<pending>` status in `EXTERNAL-IP`:
 
-```
+```text
 NAME                            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                      AGE
 nginx-ingress-controller        LoadBalancer   10.23.250.249   <pending>       80:31248/TCP,443:31681/TCP   9m5s
 nginx-ingress-default-backend   ClusterIP      10.23.253.133   <none>          80/TCP                       9m5s
@@ -87,7 +94,7 @@ nginx-ingress-default-backend   ClusterIP      10.23.253.133   <none>          8
 
 It would be updated after GKE bound IP to the LoadBalancer:
 
-```
+```text
 NAME                            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                      AGE
 nginx-ingress-controller        LoadBalancer   10.23.250.249   35.221.223.87   80:31248/TCP,443:31681/TCP   9m5s
 nginx-ingress-default-backend   ClusterIP      10.23.253.133   <none>          80/TCP                       9m5s
@@ -98,12 +105,12 @@ nginx-ingress-default-backend   ClusterIP      10.23.253.133   <none>          8
 Access nginx-ingress with the magic `.nip.io` domain:
 
 ```
-$ curl http://35.221.223.87.nip.io
+curl http://35.221.223.87.nip.io
 ```
 
 The output will be `404`, because nobody defines any `Ingress` resources:
 
-```
+```text
 default backend - 404
 ```
 
@@ -112,13 +119,17 @@ default backend - 404
 The cluster is ready to install PrimeHub. Please bring  `EXTERNAL-IP` and `StorageClass` name to the PrimeHub Installation. They are mandatory in the value files of `KeyCloak` and `PrimeHub`.
 
 * `EXTERNAL-IP`: 35.221.223.87
-    ```
+    ```text
     kubectl get svc -n ingress-nginx
     ```
 
 * `StorageClass` name: **standard**
+    ```bash
+    kubectl get storageclass
     ```
-    $ kubectl get storageclass
+
+    Output
+    ```text
     NAME                 PROVISIONER            AGE
     standard (default)   kubernetes.io/gce-pd   17m
     ```

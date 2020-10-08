@@ -3,7 +3,14 @@ id: version-2.5-admin-user
 title: User Management
 original_id: admin-user
 ---
-
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 ![](assets/user_6_v26.png)
 

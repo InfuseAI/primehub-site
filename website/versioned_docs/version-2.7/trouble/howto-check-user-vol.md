@@ -3,6 +3,14 @@ id: version-2.7-howto-check-user-vol
 title: HOWTO - Check User Volume Usage
 original_id: howto-check-user-vol
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 ## User Volume Usage
 

@@ -4,6 +4,14 @@ title: Image Management
 original_id: admin-image
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 Image management provides the capabilities of managing docker-image resources such as create, delete, edit images and of permission-control which allows only specified-groups to use the images.
 
