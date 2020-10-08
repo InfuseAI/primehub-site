@@ -3,6 +3,14 @@ id: version-3.0-kubernetes_on_eks
 original_id: kubernetes_on_eks
 title: Kubernetes on AWS EKS
 ---
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
 
 This document guides you to deploy a Kubernetes on AWS EKS for PrimeHub.
 
@@ -23,7 +31,7 @@ touch ~/.aws/credentials
 
 Edit `credentials` and add the content with the generated access key.
 
-```plantext
+```text
 # credentials
 [default]
 aws_access_key_id = xxx
@@ -33,11 +41,15 @@ region = ap-northeast-1
 
 Install `aws-cli` and `eksctl` on your working machine
 
-```bash
-# Install awscli
-brew install awscli
+Install awscli
 
-# Install eksctl
+```bash
+brew install awscli
+```
+
+Install eksctl
+
+```
 brew tap weaveworks/tap
 brew install weaveworks/tap/eksctl
 eksctl version
@@ -154,7 +166,11 @@ Try to get nodes to verify the added kubeconfig:
 
 ```bash
 kubectl get nodes
+```
 
+Output
+
+```text
 NAME                                                STATUS   ROLES    AGE   VERSION
 ip-192-168-2-53.ap-northeast-1.compute.internal     Ready    <none>   21s   v1.15.10-eks-bac369
 ip-192-168-74-187.ap-northeast-1.compute.internal   Ready    <none>   21s   v1.15.10-eks-bac369
@@ -162,19 +178,30 @@ ip-192-168-74-187.ap-northeast-1.compute.internal   Ready    <none>   21s   v1.1
 
 ### Install helm
 
-Install helm 3.2.x+ binary. Please see the installation steps in [prerequisites](prerequisites.md). (From PrimeHub v2.8, we use `Helm 3` for the installation.)
+Install helm 3.x.x+ binary. Please see the installation steps in [prerequisites](prerequisites.md). (we recommend `Helm 3` for the installation.)
 
+Verify
+
+```bash
+helm version
 ```
-$ helm version
+
+Output
+
+```text
 version.BuildInfo{Version:"v3.2.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
 ```
 
 ## Nginx Ingress
 
+Add Chart repo
+
 ```bash
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
 helm repo update
 ```
+
+Helm install
 
 ```bash
 helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
@@ -184,7 +211,10 @@ Find the `EXTERNAL-IP`
 
 ```bash
 kubectl get svc -n ingress-nginx
+```
 
+Output
+```text
 NAME                               TYPE           CLUSTER-IP       EXTERNAL-IP                                                                          PORT(S)                      AGE
 nginx-ingress-controller           LoadBalancer   10.100.253.162   a3ee868bc0f194ac19c04948497bc8ca-a179fb405d10a39f.elb.ap-northeast-1.amazonaws.com   80:31938/TCP,443:30853/TCP   21d
 nginx-ingress-controller-metrics   ClusterIP      10.100.146.39    <none>                                                                               9913/TCP                     21d
@@ -307,7 +337,7 @@ jupyterhub:
 
 ### Install PrimeHub
 
-Now a kubernetes-ready EKS is ready for PrimeHub installation. Next, go to [Setup PrimeHub](install_primehub) section
+Now a Kubernetes-ready EKS is ready for PrimeHub installation. Next, install [PrimeHub CE](install_primehub_ce) or [PrimeHub EE](install_primehub).
 
 ### After PrimeHub Installed
 

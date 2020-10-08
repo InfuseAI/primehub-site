@@ -25,16 +25,12 @@
           "getting_started/install_primehub",
           "getting_started/kubernetes_on_ubuntu_machine"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Configure Components",
-        "ids": [
-          "getting_started/configure-ssh-server",
-          "getting_started/configure-self-signed-ca",
-          "tasks/dockerhub-registry"
-        ]
       }
+    ],
+    "Configuration": [
+      "getting_started/configure-ssh-server",
+      "getting_started/configure-self-signed-ca",
+      "tasks/dockerhub-registry"
     ],
     "Designs and Concepts": [
       {

@@ -1,5 +1,6 @@
 ---
-id: prerequisites
+id: version-3.0-prerequisites
+original_id: prerequisites
 title: Prerequisites
 ---
 
