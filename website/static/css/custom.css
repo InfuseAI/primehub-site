@@ -36,10 +36,12 @@ h2.headerTitleWithLogo {
 
 h3.navGroupCategoryTitle.collapsible {
     color: #365ABD !important;
+    font-size: 0.9rem !important;
 }
 
 h4.navGroupSubcategoryTitle {
     color: #6982c8 !important;
+    font-size: 0.9rem !important;
 }
 
 a {
@@ -48,6 +50,7 @@ a {
 
 a.navItem {
     color: #17273b !important;
+    font-size: 0.9rem !important;
 }
 
 .navigationSlider .slidingNav ul li a {
@@ -113,7 +116,10 @@ div.grid-menu > div.menu-item {
 }
 
 .mainContainer {
-    padding-top: 0rem;
+    padding-top: 0.1rem;
+}
+.docsContainer {
+    padding-top: 3rem;
 }
 
 .container.paddingTop {

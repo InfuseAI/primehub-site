@@ -1,5 +1,8 @@
 {
-  "version-3.0-for-developers": {
+  "version-3.0-documentation": {
+    "Introduction": [
+      "version-3.0-introduction"
+    ],
     "Installation": [
       "version-3.0-dev-introduction",
       {
@@ -26,97 +29,6 @@
           "version-3.0-getting_started/kubernetes_on_ubuntu_machine"
         ]
       }
-    ],
-    "Configuration": [
-      "version-3.0-getting_started/configure-ssh-server",
-      "version-3.0-tasks/dockerhub-registry"
-    ],
-    "Designs and Concepts": [
-      {
-        "type": "subcategory",
-        "label": "Concepts",
-        "ids": [
-          "version-3.0-design/architecture",
-          "version-3.0-design/data-model",
-          "version-3.0-design/crds",
-          "version-3.0-design/graphql",
-          "version-3.0-design/persistence-storage"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Designs",
-        "ids": [
-          "version-3.0-design/admission",
-          "version-3.0-design/jupyterhub",
-          "version-3.0-design/notebook-kernel-process",
-          "version-3.0-design/dataset-upload",
-          "version-3.0-design/image-builder",
-          "version-3.0-design/job-submission",
-          "version-3.0-design/job-scheduler",
-          "version-3.0-design/install-helper-design",
-          "version-3.0-design/user-portal",
-          "version-3.0-design/meta-chart",
-          "version-3.0-design/model-deployment",
-          "version-3.0-design/primehub-store",
-          "version-3.0-design/log-persistence",
-          "version-3.0-design/phfs",
-          "version-3.0-design/usage"
-        ]
-      }
-    ],
-    "Tasks": [
-      {
-        "type": "subcategory",
-        "label": "Build",
-        "ids": [
-          "version-3.0-tasks/build",
-          "version-3.0-tasks/airgap"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Jupyter Images",
-        "ids": [
-          "version-3.0-tasks/repo2docker",
-          "version-3.0-tasks/non-standard-image"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Operations",
-        "ids": [
-          "version-3.0-tasks/cluster_shutdown",
-          "version-3.0-tasks/benchmark",
-          "version-3.0-tasks/ADVANCED-rook-setup-metadata-on-vg"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "PrimeHub Chart",
-        "ids": [
-          "version-3.0-tasks/minio_configurations"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "API",
-        "ids": [
-          "version-3.0-tasks/api-token"
-        ]
-      }
-    ],
-    "References": [
-      "version-3.0-references/primehub_chart",
-      "version-3.0-references/dotenv",
-      "version-3.0-references/feature-flag",
-      "version-3.0-comparison",
-      "version-3.0-guide_manual/kubeflow-installation-guide"
-    ]
-  },
-  "version-3.0-documentation": {
-    "Introduction": [
-      "version-3.0-introduction"
     ],
     "User Portal": [
       "version-3.0-getting-started-user",
@@ -199,7 +111,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Manage Datasets and Uploader",
+        "label": "Manage Datasets and Upload",
         "ids": [
           "version-3.0-guide_manual/admin-dataset",
           "version-3.0-guide_manual/admin-uploader"
@@ -255,6 +167,92 @@
         ]
       }
     ],
+    "Designs and Concepts": [
+      {
+        "type": "subcategory",
+        "label": "Concepts",
+        "ids": [
+          "version-3.0-design/architecture",
+          "version-3.0-design/data-model",
+          "version-3.0-design/crds",
+          "version-3.0-design/graphql",
+          "version-3.0-design/persistence-storage"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Designs",
+        "ids": [
+          "version-3.0-design/admission",
+          "version-3.0-design/jupyterhub",
+          "version-3.0-design/notebook-kernel-process",
+          "version-3.0-design/dataset-upload",
+          "version-3.0-design/image-builder",
+          "version-3.0-design/job-submission",
+          "version-3.0-design/job-scheduler",
+          "version-3.0-design/install-helper-design",
+          "version-3.0-design/user-portal",
+          "version-3.0-design/meta-chart",
+          "version-3.0-design/model-deployment",
+          "version-3.0-design/primehub-store",
+          "version-3.0-design/log-persistence",
+          "version-3.0-design/phfs",
+          "version-3.0-design/usage"
+        ]
+      }
+    ],
+    "Configuration": [
+      "version-3.0-getting_started/configure-ssh-server",
+      "version-3.0-tasks/dockerhub-registry"
+    ],
+    "Tasks": [
+      {
+        "type": "subcategory",
+        "label": "Build",
+        "ids": [
+          "version-3.0-tasks/build",
+          "version-3.0-tasks/airgap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Jupyter Images",
+        "ids": [
+          "version-3.0-tasks/repo2docker",
+          "version-3.0-tasks/non-standard-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Operations",
+        "ids": [
+          "version-3.0-tasks/cluster_shutdown",
+          "version-3.0-tasks/benchmark",
+          "version-3.0-tasks/ADVANCED-rook-setup-metadata-on-vg"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "PrimeHub Chart",
+        "ids": [
+          "version-3.0-tasks/minio_configurations"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "API",
+        "ids": [
+          "version-3.0-tasks/api-token"
+        ]
+      }
+    ],
+    "References": [
+      "version-3.0-references/primehub_chart",
+      "version-3.0-references/dotenv",
+      "version-3.0-references/feature-flag",
+      "version-3.0-comparison",
+      "version-3.0-guide_manual/kubeflow-installation-guide"
+    ],
     "Trouble Shooting": [
       "version-3.0-trouble-shoot-guide",
       {
@@ -296,8 +294,10 @@
     "繁中文件": [
       "version-3.0-index-zh"
     ],
-    "專案": [
-      "version-3.0-zh-tw/quickstart/login-portal-user",
+    "User Portal": [
+      "version-3.0-zh-tw/quickstart/login-portal-user"
+    ],
+    "Notebook": [
       "version-3.0-zh-tw/quickstart/launch-project",
       {
         "type": "subcategory",
@@ -308,23 +308,19 @@
       }
     ],
     "Job": [
+      "version-3.0-zh-tw/job-submission-cht",
       {
         "type": "subcategory",
-        "label": "Submission",
+        "label": "教學",
         "ids": [
-          "version-3.0-zh-tw/job-submission-cht",
           "version-3.0-zh-tw/job-submission-tutorial-simple",
           "version-3.0-zh-tw/job-submission-tutorial-p1",
           "version-3.0-zh-tw/job-submission-tutorial-p2"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Schedule",
-        "ids": [
-          "version-3.0-zh-tw/job-scheduling-feature-cht"
-        ]
       }
+    ],
+    "Schedule": [
+      "version-3.0-zh-tw/job-scheduling-feature-cht"
     ],
     "Model": [
       "version-3.0-zh-tw/model-deployment-feature",
@@ -345,6 +341,7 @@
       "version-3.0-zh-tw/guide_manual/ssh-keygen-cht"
     ],
     "PrimeHub 管理": [
+      "version-3.0-zh-tw/quickstart/login-portal-admin",
       {
         "type": "subcategory",
         "label": "使用者及群組管理",
@@ -399,7 +396,6 @@
         "type": "subcategory",
         "label": "快速上手",
         "ids": [
-          "version-3.0-zh-tw/quickstart/login-portal-admin",
           "version-3.0-zh-tw/quickstart/create-user",
           "version-3.0-zh-tw/quickstart/create-group",
           "version-3.0-zh-tw/quickstart/add-instance-type",

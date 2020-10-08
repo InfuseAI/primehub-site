@@ -1,9 +1,9 @@
 ---
 id: launch-project
-title: 啟始專案
+title: 啟始 Notebook
 ---
 
-這份文件說明如何啟始/關閉一個專案。
+這份文件說明如何啟始/關閉一個 Notebook。
 
 ## 起始
 
