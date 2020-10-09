@@ -40,8 +40,8 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }getting-started-admin`}>
-                    Administrator
+                    }getting-started-user`}>
+                    User Portal
                   </a>
                 </td>
                 <td>
@@ -50,8 +50,8 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }getting-started-user`}>
-                    Scientist
+                    }getting-started-admin`}>
+                    Admin Portal
                   </a>
                 </td>
                 <td>
@@ -61,7 +61,7 @@ function Versions(props) {
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
                     }dev-introduction`}>
-                    Technical Reference
+                    Installation
                   </a>
                 </td>
                 <td>
@@ -97,8 +97,8 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }next/getting-started-admin`}>
-                    Administrator
+                    }next/getting-started-user`}>
+                    User Portal
                   </a>
                 </td>
                 <td>
@@ -107,8 +107,8 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }next/getting-started-user`}>
-                    Scientist
+                    }next/getting-started-admin`}>
+                    Admin Portal
                   </a>
                 </td>
                 <td>
@@ -118,7 +118,7 @@ function Versions(props) {
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
                     }next/dev-introduction`}>
-                    Technical Reference
+                    Installation
                   </a>
                 </td>
                 <td>

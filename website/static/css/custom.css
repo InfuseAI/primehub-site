@@ -26,6 +26,16 @@ code.hljs {
     background-color: #dfeaf7;
 }*/
 
+table.versions th {
+    font-family: $PFont;
+    font-size: 1.05rem !important;
+}
+
+table.versions td a {
+    font-family: $PFont;
+    font-size: 1.05rem !important;
+}
+
 p {
     font-family: $PFont;
     font-size: 1.05rem !important;
