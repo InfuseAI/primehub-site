@@ -37,13 +37,13 @@ primehub-example  asia-east1-a  1.15.9-gke.12   104.155.214.113  n1-standard-2  
 Update kube-config:
 
 ```
-$ gcloud container clusters get-credentials <cluster-name> --zone asia-east1-a
+gcloud container clusters get-credentials <cluster-name> --zone asia-east1-a
 ```
 
 After update kube-config, try to get nodes:
 
 ```bash
-$ kubectl get nodes
+kubectl get nodes
 ```
 
 Output
@@ -60,7 +60,7 @@ gke-primehub-example-default-pool-51960bca-wr9l   Ready    <none>   98s   v1.15.
 Install helm 3.x.x+ binary. Please see the installation steps in [prerequisites](prerequisites.md). (From PrimeHub v2.8, we use `Helm 3` for the installation.)
 
 ```
-$ helm version
+helm version
 version.BuildInfo{Version:"v3.3.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
 ```
 

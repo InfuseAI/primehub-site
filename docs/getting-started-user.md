@@ -3,25 +3,35 @@ id: getting-started-user
 title: Getting Started
 ---
 
-## 🌟PrimeHub v3.0
+## Overview
 
-From **PrimeHub v3.0**, there are huge changes on UI for introducing **Group-Context** experience that users have to pre-specify a current working project-group from joining groups, accordingly, the context/the operations are retained within the working group; in the past PrimeHub v2, users had to choose a group to perform actions every time in features respectively which didn't provide a project-centric experience; In PrimeHub v3, because group-context, the user experience becomes more project-centric intuitively. Please check group-context section below if you come from PrimeHub v2.x or just skip to guides if you are newcomers.
+**PrimeHub** is based on team/group-centric design that every user must be associated with one *Group* at least before using features. Initially there are a user `phadmin` who has admin privileges associated with a group `phusers`.
 
-## Group-context
+Also, resources such as image, instance type, dataset must be associated with one *Group* at least or be *Global* before being chosen.
 
-+ Users have to specify a project-group from joining groups as a working group; users can switch working groups to have the different context.
+PrimeHub v3, furthermore, enhances this concept by introducing *Group-Context* design.
 
-+ All of the context is retained within the current working group.
+Initial PrimeHub has a built-in *user* `phadmin`, a built-in *group* `phusers`, several *instance types*/*image* which are available to *Global* ready to use. A user can launch a notebook quickly by using these resources. 
 
-+ Because group-context design, `Jobs` feature, `Schedule` feature and `Models` feature, these features present/operate items *only within the current working group*. Furthermore, user-operations, such as submitting jobs, creating job schedule and deploying models, are also performed against the current working group.
+To add/delete/edit users, groups and other resources, users are required to switch to Admin Portal, use [administration features](getting-started-admin) there to achieve it.
 
-+ Because group-context design, Notebook will be launched within the current working group without choosing a group from the spawner page.
+## Group-Context
+
++ A current working project-group is required to be specified from associated groups of users; users can switch working groups to have the different context.
+
++ Accordingly, the context/the operations are retained within the working group.
+
++ `Jobs` feature, `Schedule` feature and `Models` feature, these features present/operate items *only within the current working group*. Furthermore, user-operations, such as submitting jobs, creating job schedule and serving models, are also performed within the current working group correspondingly.
+
++ Notebook will be launched within the current working group by default.
+
++ Context are independently from groups.
 
 ## Guides
 
-As Data/ML scientists, you will learn how to conduct projects and how to deploy models on PrimeHub with Notebook, Job Submission and Model Deployment features.
+Here are documents to guide you to launch a notebook, to submit jobs, to deploy models via features on User Portal and so on.
 
-Guides are included:
+### User
 
 + [Access User Portal](quickstart/login-portal-user.md)
 
@@ -34,3 +44,5 @@ Guides are included:
 + [Deploy Models and serve models](model-deployment-feature)
 
 + [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)
+
++ [Switch to Admin Portal](quickstart/login-portal-admin)

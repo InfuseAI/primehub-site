@@ -4,17 +4,17 @@ title: 🌟PrimeHub v3.0
 original_id: introduction
 ---
 
-**PrimeHub v3.0** has a whole new ML user experience base on the **Group-Context** concept that ML users specify a current working project-group prior to any rest of operations. All of operations are performed within the working project-group. It is much different with the past PrimeHub v2 and it allows users to focus on the current project-group intuitively.
+**PrimeHub v3**, in order to enhance the team/group-centric design, UI is revamped for introducing **Group-Context** experience to users that a current working project-group is required to be specified from associated groups of users, accordingly, the context/the operations are retained within the working group; therefore, it provides a consistent, intuitive experience of a working group/project; in the past PrimeHub v2, users had to choose a group to perform actions every time repeatedly which didn't provide a project-centric experience consistently.
 
-In addition, administration features are performed on `Admin Portal` which is independent from **User Portal** now.
+In addition, administration features are performed on **Admin Portal** which is independent from **User Portal** now.
 
-## For Scientists
+## User Portal Features
 
 + [Access User Portal](quickstart/login-portal-user.md)
 
-+ [Launch/Shutdown projects of JupyterHub on PrimeHub](quickstart/launch-project)
++ [Launch/Shutdown Jupyter Notebook on PrimeHub](quickstart/launch-project)
 
-+ [Advanced settings of JupyterHub Spawner](user-advanced-setting)
++ [Advanced settings of Notebook Spawner](user-advanced-setting)
   
 + [Submit and schedule Jobs](job-submission-feature)
 
@@ -24,7 +24,7 @@ In addition, administration features are performed on `Admin Portal` which is in
 
 + [More](getting-started-user)
 
-## For Administrators
+## Admin Portal Features
 
 + [Access Admin Portal](quickstart/login-portal-admin)
 
@@ -41,7 +41,6 @@ In addition, administration features are performed on `Admin Portal` which is in
 
   + [GitLab Pull Secret](quickstart/secret-pull-image)
   + [GitHub gitsync secret](quickstart/secret-gitsync)
-
 
 + [Perform operations via Maintenance Notebook](maintenance)
 

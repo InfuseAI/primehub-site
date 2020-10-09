@@ -30,7 +30,7 @@ At side menu, there are
 
 + **Home** where users can find `User Guide` link which connects to this `PrimeHub Documentation` site.
 
-+ **Notebooks**  where users can launch a Jupyter Notebook for projects.See [Launch Project](../quickstart/launch-project).
++ **Notebooks**  where users can launch a Jupyter Notebook for projects.See [Launch Notebook](../quickstart/launch-project).
 
 + **Jobs (Beta)** where users can submit jobs for time-consuming tasks. See [Job Submission](../job-submission-feature). <span class="ee-only">Enterprise</span>
 
