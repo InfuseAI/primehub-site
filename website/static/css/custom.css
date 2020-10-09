@@ -26,22 +26,36 @@ code.hljs {
     background-color: #dfeaf7;
 }*/
 
+p {
+    font-family: $PFont;
+    font-size: 1.05rem !important;
+}
+
+.onPageNav a {
+    font-family: $PFont; 
+    font-size: 0.88rem !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #122844;
+    font-family: $HFont;
 }
 
 h2.headerTitleWithLogo {
     color: white;
+    font-size: 1.5rem !important;
 }
 
 h3.navGroupCategoryTitle.collapsible {
+    font-family: $PFont;
     color: #365ABD !important;
-    font-size: 0.9rem !important;
+    font-size: 1.05rem !important;
 }
 
 h4.navGroupSubcategoryTitle {
+    font-family: $PFont;
     color: #6982c8 !important;
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
 }
 
 a {
@@ -49,11 +63,14 @@ a {
 }
 
 a.navItem {
+    font-family: $PFont;
     color: #17273b !important;
     font-size: 0.9rem !important;
 }
 
 .navigationSlider .slidingNav ul li a {
+    font-family: $PFont;
+    font-size: 1.1rem !important;
     color: white !important;
 }
 
@@ -97,6 +114,11 @@ div.grid-menu > div.menu-item {
     background-color: #1a3682;
 }*/
 
+div.blockContent h2 p a {
+    font-family: $HFont;
+    font-size: 1.5rem !important;
+}
+
 .blockElement.alignCenter.fourByGridBlock.imageAlignTop  h2 {
     margin: 16px auto !important;
 }
@@ -134,6 +156,11 @@ div.grid-menu > div.menu-item {
     background-color: #1a3682;
 }
 
+.nav-footer .sitemap a {
+    font-family: $PFont;
+    font-size: 0.9rem !important;
+}
+
 .fixedHeaderContainer {
     background-color: #1a3682;
 }
@@ -153,6 +180,7 @@ div.grid-menu > div.menu-item {
 }
 
 div.ee-only {
+    font-family: $HFont;
     color: #fc6d26;
     font-weight: bold;
     margin: 0 10px 0 0;
@@ -163,6 +191,7 @@ span.ee-only {
 }
 
 div.ce-only {
+    font-family: $HFont;
     color: #a3d00e;
     font-weight: bold;
 }
@@ -173,6 +202,7 @@ span.ce-only {
 }
 
 .tooltip .tooltiptext {
+  font-family: $PFont;
   visibility: hidden;
   max-width: 220px;
   background-color: #1a3682b3;

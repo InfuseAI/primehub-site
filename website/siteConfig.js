@@ -88,18 +88,22 @@ const siteConfig = {
   gaGtag: true,
 
   /* Custom fonts for website */
-  /*
+  
   fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
+    HFont: [
+      "Oswald",
+      "-apple-system"
     ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
+    OFont: [
+      "Objektiv Mk3",
+      "-apple-system"
+    ],
+    PFont: [
+      "Lato",
+      "-apple-system"
     ]
   },
-  */
+  
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} InfuseAI`,
@@ -116,7 +120,10 @@ const siteConfig = {
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
     '/js/code-block-buttons.js',
   ],
-  stylesheets: ['/css/code-block-buttons.css'],
+  stylesheets: [
+    '/css/code-block-buttons.css',
+    'https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700'
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
