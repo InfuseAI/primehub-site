@@ -337,7 +337,7 @@ class Index extends React.Component {
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('job-submission-tutorial-simple')}>Submit Jobs</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('model-deployment-quickstart-tutorial')}>Serve Models</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('model-deployment-tutorial-package-image')}>Package Models as Images</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('guide_manual/ssh-vscode')}>SSH Notebook Remotely(VSCode)</a></div>` +
               '</div>', 
           },
           /*{
