@@ -7,6 +7,13 @@ original_id: index-zh
 >關於 PrimeHub 的所有文件都是以英文撰寫為主，一部分文件會經翻譯繁體中文化。
 >這裡列出已中文化的文件，如需更多技術資訊請參照英文文件。
 
+## Installation
+
+請參照英文文件 [Provision of Kubernetes cluster, Installation of PrimeHub (Community/Enterprise)](dev-introduction).
+
+
+---
+
 PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至少一個群組才能操作使用者層面的功能。初始時，內建有使用者`phadmin`(「管理者」已開啟)、群組`phusers`及數個 *instance types*/*images*；立即就能利用初始資源啟動 Notebook。
 
 同樣地，*Instance Type*、*Image*、*Dataset* 等資源也須關聯至少一個群組或設定為 *Global* 才能被使用者選用。
@@ -72,3 +79,34 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 + [維運用 Maintenance Notebook](zh-tw/maintenance-cht)
 
 + [快速上手操作](zh-tw/quickstart/create-user)
+
+---
+
+## 英文技術文件
+
+### Components Configuration
+
++ [SSH Server](getting_started/configure-ssh-server)
++ [中文] [DockerHub Registry for Image Builder](zh-tw/quickstart/dockerhub-registry)
+  
+### Design Documents
+
++ [Architecture and more ...](design/architecture)
+
+### Tasks
+
++ [Build](tasks/build)
++ [Jupyter Images](tasks/repo2docker)
++ [Operations](tasks/benchmark)
++ [MinIO Configuration](tasks/minio_configurations)
++ [API Token](tasks/api-token)
+
+### Reference
+
++ [PrimeHub Chart Configuration](references/primehub_chart)
++ [Feature Flags](references/feature-flag)
++ [Features Comparison](comparison)
+
+### Trouble Shooting
+
++ [Category](trouble-shoot-guide)

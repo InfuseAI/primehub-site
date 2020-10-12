@@ -40,28 +40,8 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }getting-started-user`}>
-                    User Portal
-                  </a>
-                </td>
-                <td>
-                  {/* You are supposed to change this href where appropriate
-                        Example: href="<baseUrl>/docs(/:language)/:id" */}
-                  <a
-                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                      props.language ? props.language + '/' : ''
-                    }getting-started-admin`}>
-                    Admin Portal
-                  </a>
-                </td>
-                <td>
-                  {/* You are supposed to change this href where appropriate
-                        Example: href="<baseUrl>/docs(/:language)/:id" */}
-                  <a
-                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                      props.language ? props.language + '/' : ''
-                    }dev-introduction`}>
-                    Installation
+                    }introduction`}>
+                    Documentation
                   </a>
                 </td>
                 <td>
@@ -97,28 +77,8 @@ function Versions(props) {
                   <a
                     href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                       props.language ? props.language + '/' : ''
-                    }next/getting-started-user`}>
-                    User Portal
-                  </a>
-                </td>
-                <td>
-                  {/* You are supposed to change this href where appropriate
-                        Example: href="<baseUrl>/docs(/:language)/next/:id" */}
-                  <a
-                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                      props.language ? props.language + '/' : ''
-                    }next/getting-started-admin`}>
-                    Admin Portal
-                  </a>
-                </td>
-                <td>
-                  {/* You are supposed to change this href where appropriate
-                        Example: href="<baseUrl>/docs(/:language)/next/:id" */}
-                  <a
-                    href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                      props.language ? props.language + '/' : ''
-                    }next/dev-introduction`}>
-                    Installation
+                    }next/introduction`}>
+                    Documentation
                   </a>
                 </td>
                 <td>
@@ -159,28 +119,8 @@ function Versions(props) {
                         <a
                           href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
                             props.language ? props.language + '/' : ''
-                          }${version}/getting-started-admin`}>
-                          Administrator
-                        </a>
-                      </td>
-                      <td>
-                        {/* You are supposed to change this href where appropriate
-                        Example: href="<baseUrl>/docs(/:language)/:version/:id" */}
-                        <a
-                          href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                            props.language ? props.language + '/' : ''
-                          }${version}/getting-started-user`}>
-                          Scientist
-                        </a>
-                      </td>
-                      <td>
-                        {/* You are supposed to change this href where appropriate
-                        Example: href="<baseUrl>/docs(/:language)/:version/:id" */}
-                        <a
-                          href={`${siteConfig.baseUrl}${siteConfig.docsUrl}/${
-                            props.language ? props.language + '/' : ''
-                          }${version}/dev-introduction`}>
-                          Technical Reference
+                          }${version}/introduction`}>
+                          Documentation
                         </a>
                       </td>
                       <td>
