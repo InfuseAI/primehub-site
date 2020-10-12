@@ -79,7 +79,7 @@
       "guide_manual/ssh-vscode",
       "guide_manual/ssh-keygen"
     ],
-    "Administration":[
+    "Admin Portal":[
       "getting-started-admin",
       {
         "type": "subcategory",
@@ -295,8 +295,10 @@
     "繁中文件": [
       "index-zh"
       ],
+    "User Portal": [
+      "zh-tw/quickstart/login-portal-user"
+    ],
     "Notebook":[
-        "zh-tw/quickstart/login-portal-user",
         "zh-tw/quickstart/launch-project",
         {
           "type": "subcategory",
@@ -343,7 +345,7 @@
       "zh-tw/guide_manual/ssh-vscode-cht",
       "zh-tw/guide_manual/ssh-keygen-cht"
     ],
-    "PrimeHub 管理": [
+    "Admin Portal": [
       "zh-tw/quickstart/login-portal-admin",
       {
         "type":"subcategory",
