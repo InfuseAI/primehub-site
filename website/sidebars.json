@@ -42,7 +42,8 @@
         "ids":[
           "user-advanced-setting"
         ]
-      }
+      },
+      "nb-phfs-folder"
     ],
     "Job": [
       "job-submission-feature",
@@ -306,7 +307,8 @@
           "ids": [
             "zh-tw/user-advanced-setting"
           ]
-        }
+        },
+        "zh-tw/nb-phfs-folder-cht"
     ],
     "Job":[
           {

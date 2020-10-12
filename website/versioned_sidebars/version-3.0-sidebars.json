@@ -42,7 +42,8 @@
         "ids": [
           "version-3.0-user-advanced-setting"
         ]
-      }
+      },
+      "version-3.0-nb-phfs-folder"
     ],
     "Job": [
       "version-3.0-job-submission-feature",
@@ -305,7 +306,8 @@
         "ids": [
           "version-3.0-zh-tw/user-advanced-setting"
         ]
-      }
+      },
+      "version-3.0-zh-tw/nb-phfs-folder-cht"
     ],
     "Job": [
       "version-3.0-zh-tw/job-submission-cht",
