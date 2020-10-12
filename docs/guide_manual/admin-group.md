@@ -22,7 +22,7 @@ It lists all of groups in pages, clicking a header of a column for ascending/des
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
-![](assets/group_shared_volume_v3.png)
+![](assets/group_add_v31.png)
 
 You need to fill in the fields in the above picture:
 
@@ -64,6 +64,14 @@ Set quota for the whole group.
 
 Click `Confirm` to complete the addition.
 
+### Users
+
+![](assets/edit_users.png)
+
+The list shows all of users of this group. Click `edit users` to add/remove users into/from groups.
+
+---
+
 ### Datasets
 
 ![](assets/admin_group_ds_v25.png)
@@ -76,11 +84,11 @@ The list shows connecting datasets which can be read or written. We also can edi
 
 The list shows connecting images which are able to be used by this group.
 
-### Users
+### Instance Types
 
-![](assets/edit_users.png)
+![](assets/admin_group_it_v31.png)
 
-The list shows all of users of this group. Click `edit users` to add/remove users into/from groups.
+The list shows connecting instance types which are able to be used by this group.
 
 ## Deleting Group
 

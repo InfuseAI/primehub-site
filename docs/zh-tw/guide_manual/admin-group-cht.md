@@ -19,7 +19,7 @@ title: Group Management
 
 點選 `Add` 新增 Group，會跳出該 Group 的編輯畫面。
 
-![](assets/group_shared_volume_v3.png)
+![](assets/group_add_v31.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -61,6 +61,15 @@ title: Group Management
 
 點選 `confirm` 完成新增。
 
+
+### Users
+
+![](assets/edit_users.png)
+
+列出此群組所有使用者，並可透過`edit users`編輯，加入/移除使用者。
+
+---
+
 ### Datasets
 
 ![](assets/admin_group_ds_v25.png)
@@ -73,11 +82,11 @@ title: Group Management
 
 列出所有此群組可以使用的 Image。
 
-### Users
+### Instance Types
 
-![](assets/edit_users.png)
+![](assets/admin_group_it_v31.png)
 
-列出此群組所有使用者，並可透過`edit users`編輯，加入/移除使用者。
+列出所以此群組可以使用的 Instance Types。
 
 ## Deleting Group
 
