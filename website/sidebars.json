@@ -36,14 +36,14 @@
     ],
     "Notebook": [
       "quickstart/launch-project",
+      "quickstart/nb-data-store",
       {
         "type": "subcategory",
         "label": "Notebook Spawner",
         "ids":[
           "user-advanced-setting"
         ]
-      },
-      "nb-phfs-folder"
+      }
     ],
     "Job": [
       "job-submission-feature",
@@ -55,7 +55,8 @@
           "job-submission-tutorial-p1",
           "job-submission-tutorial-p2",
           "job-submission-tutorial-p3",
-          "job-submission-tutorial-p4"
+          "job-submission-tutorial-p4",
+          "job-artifacts-simple"
         ]
       }
     ],
@@ -74,6 +75,9 @@
           "model-deployment-tutorial-prepackage-image"
         ]
       }
+    ],
+    "Data Store": [
+      "nb-phfs-folder"
     ],
     "SSH Server": [
       "guide_manual/ssh-config",
@@ -301,14 +305,15 @@
     ],
     "Notebook":[
         "zh-tw/quickstart/launch-project",
+        "zh-tw/quickstart/nb-data-store-cht",
         {
           "type": "subcategory",
           "label": "Jupyter Notebook",
           "ids": [
             "zh-tw/user-advanced-setting"
           ]
-        },
-        "zh-tw/nb-phfs-folder-cht"
+        }
+        
     ],
     "Job":[
           {
@@ -318,7 +323,8 @@
               "zh-tw/job-submission-cht",
               "zh-tw/job-submission-tutorial-simple",
               "zh-tw/job-submission-tutorial-p1",
-              "zh-tw/job-submission-tutorial-p2"
+              "zh-tw/job-submission-tutorial-p2",
+              "zh-tw/job-artifacts-simple-cht"
             ]
           },
           {
@@ -341,6 +347,9 @@
           "zh-tw/model-deployment-tutorial-prepackage-image"
         ]
       }
+    ],
+    "Data Store": [
+      "zh-tw/nb-phfs-folder-cht"
     ],
     "SSH Server": [
       "zh-tw/guide_manual/ssh-config-cht",

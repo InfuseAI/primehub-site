@@ -114,10 +114,14 @@ It shows the brief information of the job.
 |`Schedule`|如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稠；反之顯示`-`；點擊名稱連結，進入 Job Scheduler 詳細頁。|
 |`User`|所有者|
 
+---
+
+### Tabs
+
+![](assets/jsub_view_tabs_v31.png)
 
 ### Information
 
-![](assets/jsub_info_beta_v31.png)
 
 `Job`記載內容資訊如下：
 
@@ -134,11 +138,14 @@ It shows the brief information of the job.
 |`Image`|所屬執行環境|
 |`Command`|批次工作項目內容|
 
+### Artifacts
+
+如果工作在執竹的過程中有產出資料 (Artifacts) 存放在 `artifacts/`，這裡會列舉出在此 [PHFS 儲存空間](../design/phfs) 下的所有檔案；同時，在 Notebook 裡這些 artifacts 是位在此路徑  `/phfs/jobArtifacts/job-xxxxx`。請參照 [Job Artifacts 初階範例](job-artifacts-simple-cht)。
+
 ### 工作記錄
 
 >預設此頁只顯示**最新的 2000 行**資訊；按下`Download`下載完整記錄。
 
-![](assets/jsub_log_v28.png)
 
 當工作執行「成功」或「失敗」，我們可以由此查看整個執行過程、結果、甚至除錯。
 

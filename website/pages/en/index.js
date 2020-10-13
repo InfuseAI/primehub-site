@@ -293,9 +293,9 @@ class Index extends React.Component {
         {[
           {
             //image: `${baseUrl}img/settings-01.png`,
-            imageAlign: 'top',
+            //imageLink: `${docUrl('dev-introduction')}`,
             title: `<a href=${docUrl('dev-introduction')}>Installation</a>`,
-            imageLink: `${docUrl('dev-introduction')}`,
+            imageAlign: 'top',
             content:
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('dev-introduction')}>Getting Started</a></div>` +
@@ -318,9 +318,9 @@ class Index extends React.Component {
           },*/
           {
             //image: `${baseUrl}img/files-01.png`,
+            //imageLink: `${docUrl('introduction')}`,
             imageAlign: 'top',
             title: `<a href=${docUrl('introduction')}>Features</a>`,
-            imageLink: `${docUrl('introduction')}`,
             content:
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Getting Started</a></div>` +
@@ -330,9 +330,9 @@ class Index extends React.Component {
           },
           {
             //image: `${baseUrl}img/files-01.png`,
+            //imageLink: `${docUrl('introduction')}`,
             imageAlign: 'top',
-            title: `<a href=${docUrl('introduction')}>Tutorials</a>`,
-            imageLink: `${docUrl('introduction')}`,
+            title: `<a href=${docUrl('job-submission-tutorial-simple')}>Tutorials</a>`,
             content:
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('job-submission-tutorial-simple')}>Submit Jobs</a></div>` +

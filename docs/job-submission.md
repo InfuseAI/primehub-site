@@ -113,10 +113,13 @@ It shows the brief information of the job.
 |`Schedule`|The name of the job scheduler if the job is triggered by the scheduler; clicking the name to enter the scheduler detail page.|
 |`User`|The owner who submits the job.|
 
+---
+
+### Tabs
+
+![](assets/jsub_view_tabs_v31.png)
 
 ### Information
-
-![](assets/jsub_info_beta_v31.png)
 
 Here are the detail information of the job:
 
@@ -133,11 +136,13 @@ Here are the detail information of the job:
 |`Image`|The image which the job run based on.|
 |`Command`|The context of the job.|
 
+### Artifacts
+
+If a Job generates data so called **artifacts** under the [PHFS storage](design/phfs) `artifacts/` during the execution, here it lists those artifacts. Meanwhile, in Notebook, these artifacts are stored under `/phfs/jobArtifacts/job-xxxxx`. See the [simple usage of Job Artifacts](job-artifacts-simple).
+
 ### Logs
 
 >Logs viewer lists latest 2000 lines only of logs; press `Download` for the complete log file.
-
-![](assets/jsub_log_v28.png)
 
 When a job comes to success or failure, it logs the whole of job running progress. This is where we can check the progress, result or even shoot troubles if failed.
 
