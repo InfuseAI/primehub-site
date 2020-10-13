@@ -156,6 +156,10 @@ Parameter | Description | Default
 `jobSubmission.nodeSelector` | The default [node selector](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for the underlying pod | `{}`
 `jobSubmission.affinity` | The default [affinity](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity) setting for the underlying pod | `{}`
 `jobSubmission.tolerations` | The default [tolerations](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) setting for the underlying pod | `[]`
+`jobSubmission.artifact.enabled` | If the job artifact feature is enabled | `true`
+`jobSubmission.artifact.limitSizeMb` | The total size of artifacts a job can upload | `100`
+`jobSubmission.artifact.limitFiles` | The total files a job can upload | `1000`
+`jobSubmission.artifact.retentionSeconds` | How long would the artifacts preserve | `604800`
 `adminNotebook.enabled` | | `false`
 `adminNotebook.replicaCount` | The number of admin notebook replicas | `1`
 `adminNotebook.image.repository` | The admin noteoobk image repository | `infuseai/primehub-admin-notebook`

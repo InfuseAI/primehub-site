@@ -51,7 +51,7 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 + `Recurrence Options`: Schedule 週期性設定。
 
   我們可以從內建的週期選項中選擇，或是依照 [`Cron` 語法 [參考]](https://en.wikipedia.org/wiki/Cron) 客製週期性。
-  
+
   |Options                            |Description                     |
   |-----------------------------------|--------------------------------|
   |`Inactive`                         | 設定 Schedule 有效性；`Inactive` Schedule 無法發動 Job。|
