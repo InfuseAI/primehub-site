@@ -62,33 +62,59 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Usage Reports</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
-<p>PrimeHub v3.0 導入新功能 <code>Usage Reports</code>，藉此管理者可以下載每月報表，透過月報表對專案群組及資源使用狀況有著更清楚的掌握。</p>
+<p>PrimeHub v3.1 導入新功能 <code>Usage Reports</code>，藉此管理者可以下載每月報表，透過月報表對專案群組及資源使用狀況有著更清楚的掌握。</p>
 <blockquote>
-<p>請注意：報告裡的使用量是根據 Pod 的生命期及<strong>要求配置</strong>的資源來定義，而非程式實際運算使用到的資源;如果有個開啟閒置的 Jupyter Notebook，其佔據的資源是會被列入計算的。</p>
+<p>請注意：報告裡的使用量是根據 Pod 的生命期及<strong>要求配置</strong>的資源來定義，而非程式實際運算使用到的資源; 如果有個開啟閒置的 Jupyter Notebook，其佔據的資源是會被列入計算的。</p>
 </blockquote>
-<h2><a class="anchor" aria-hidden="true" id="monthly-report"></a><a href="#monthly-report" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monthly Report</h2>
+<h2><a class="anchor" aria-hidden="true" id="download-report"></a><a href="#download-report" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download Report</h2>
 <p><img src="/docs/assets/usage-list.png" alt=""></p>
-<p>從想要的月份下，點選 <strong>Actions</strong> 下載圖示，下載 csv 檔 或是在 <code>Date</code> 搜尋欄位指定年月；格式： <code>YYYY/M</code> (e.g. 2020/7, 2020/12)。</p>
+<p>從想要的月份下，選擇 <strong>Detailed Report</strong> 或 <strong>Summary Report</strong> 下載 csv 檔 或可用 <code>Date</code> 搜尋欄位指定年月；格式： <code>YYYY/M</code> (e.g. 2020/7, 2020/12)。</p>
 <p>管理者甚至可以下載目前當月份報表，對話框會跳出提醒您，此月報告只包括到今日的資訊；點擊 <code>Confirm</code> 下載。</p>
 <p><img src="/docs/assets/usage-popup.png" alt=""></p>
-<h2><a class="anchor" aria-hidden="true" id="insight"></a><a href="#insight" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Insight</h2>
+<h2><a class="anchor" aria-hidden="true" id="detailed-report"></a><a href="#detailed-report" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Detailed Report</h2>
 <p>月報表中有以下資訊：</p>
 <table>
 <thead>
 <tr><th>項目</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td>component</td><td>如： <code>job</code>, <code>jupyter</code>, <code>deployment</code></td></tr>
-<tr><td>group_name</td><td>component 所屬專案群組</td></tr>
-<tr><td>user_name</td><td>使用者</td></tr>
-<tr><td>gpu_hours</td><td>平均每小時 GPU 使用量</td></tr>
-<tr><td>cpu_hours</td><td>平均每小時 CPU 使用量</td></tr>
-<tr><td>memory_gb_hours</td><td>平均每小時記憶體 GB 使用量</td></tr>
-<tr><td>total_hours</td><td>此月份共幾小時</td></tr>
-<tr><td>report_date</td><td>此報表的年月</td></tr>
+<tr><td><strong>report_month</strong></td><td>此報表的年月</td></tr>
+<tr><td><strong>group</strong></td><td>component 所屬專案群組</td></tr>
+<tr><td><strong>user</strong></td><td>使用者</td></tr>
+<tr><td><strong>component</strong></td><td>類別 如： <code>job</code>, <code>notebook</code>, <code>model_deploy</code></td></tr>
+<tr><td><strong>component_name</strong></td><td>component 實際名稱</td></tr>
+<tr><td><strong>cpu_core_hours</strong></td><td>1CPU 使用時數</td></tr>
+<tr><td><strong>gpu_core_hours</strong></td><td>1GPU 使用時數</td></tr>
+<tr><td><strong>gb_memory_hours</strong></td><td>1GB 使用時數</td></tr>
+<tr><td><strong>usage_hours</strong></td><td>總共時數</td></tr>
+<tr><td><strong>instance_type</strong></td><td>使用的 instance type 名稱</td></tr>
+<tr><td><strong>instance_cpu_core</strong></td><td>使用的 instance 的 最多可用 vCPU 核數</td></tr>
+<tr><td><strong>instance_gpu_core</strong></td><td>使用的 instance 的 可用 GPU 核數</td></tr>
+<tr><td><strong>instance_memory_gb</strong></td><td>使用的 instance 的 最多可用記憶體大小</td></tr>
+<tr><td><strong>pod_name</strong></td><td>pod 名稱</td></tr>
+<tr><td><strong>k8s_uid</strong></td><td>K8S uid</td></tr>
+<tr><td><strong>start_time</strong></td><td>起始時間</td></tr>
+<tr><td><strong>end_time</strong></td><td>結束時間</td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/admin-system-cht"><span class="arrow-prev">← </span><span>System Management</span></a><a class="docs-next button" href="/docs/next/zh-tw/quickstart/create-user"><span>建立使用者</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#monthly-report">Monthly Report</a></li><li><a href="#insight">Insight</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h2><a class="anchor" aria-hidden="true" id="summary-report"></a><a href="#summary-report" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary Report</h2>
+<p>月報表中有以下資訊：</p>
+<table>
+<thead>
+<tr><th>項目</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>report_month</strong></td><td>此報表的年月</td></tr>
+<tr><td><strong>group</strong></td><td>component 所屬專案群組</td></tr>
+<tr><td><strong>user</strong></td><td>使用者</td></tr>
+<tr><td><strong>component</strong></td><td>如： <code>job</code>, <code>notebook</code>, <code>model_deploy</code></td></tr>
+<tr><td><strong>gpu_core_hours</strong></td><td>1GPU 使用時數</td></tr>
+<tr><td><strong>cpu_core_hours</strong></td><td>1CPU 使用時數</td></tr>
+<tr><td><strong>gb_memory_hours</strong></td><td>1GB 使用時數</td></tr>
+<tr><td><strong>usage_hours</strong></td><td>總共時數</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/admin-system-cht"><span class="arrow-prev">← </span><span>System Management</span></a><a class="docs-next button" href="/docs/next/zh-tw/quickstart/create-user"><span>建立使用者</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#download-report">Download Report</a></li><li><a href="#detailed-report">Detailed Report</a></li><li><a href="#summary-report">Summary Report</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
