@@ -1,6 +1,6 @@
 ---
 id: job-submission-feature
-title: Job Submission (Beta)
+title: Job Submission
 ---
 
 <div class="ee-only tooltip">Enterprise

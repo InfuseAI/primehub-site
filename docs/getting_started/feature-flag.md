@@ -51,6 +51,7 @@ Feature|Default|Stage|Since|
 `PRIMEHUB_FEATURE_CUSTOM_IMAGE`|false|alpha|2.2.0
 `PRIMEHUB_FEATURE_ENABLE_KERNEL_GATEWAY`|false|alpha|2.0.0
 `PRIMEHUB_FEATURE_JOB_SUBMISSION`|false|alpha|2.3.0
+`PRIMEHUB_FEATURE_JOB_SUBMISSION`|true|ga|3.1
 `PRIMEHUB_FEATURE_CUSTOM_IMAGE`|false|beta|2.3.0
 
 - `PRIMEHUB_FEATURE_USER_PORTAL`: Enable [User Portal](user-portal.md) to have a unified domain with a landing page.

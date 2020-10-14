@@ -29,9 +29,9 @@ Portal 頁面上左側為使用者功能選單、右側為「專案群組先決�
 
 + **Notebooks**  使用者可以由此進行啟始專案。請參考 [啟始 Jupyter Notebook](launch-project)。
 
-+ **Jobs (Beta)** 使用者可以由此遞交需要費時的任務。請參考 [Job Submission](../job-submission-cht)。<span class="ee-only">Enterprise</span>
++ **Jobs** 使用者可以由此遞交需要費時的任務。請參考 [Job Submission](../job-submission-cht)。<span class="ee-only">Enterprise</span>
 
-+ **Schedule (Beta)** 使用者可以由此排程需要費時的任務。請參考 [Job Scheduler](../job-scheduling-feature-cht)。<span class="ee-only">Enterprise</span>
++ **Schedule** 使用者可以由此排程需要費時的任務。請參考 [Job Scheduler](../job-scheduling-feature-cht)。<span class="ee-only">Enterprise</span>
 
 + **Models (Alpha)** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Model Deployment](../model-deployment-feature)。<span class="ee-only">Enterprise</span>
 

@@ -119,4 +119,4 @@ Congratulations, we have submitted a code as a job and run it successfully and w
 
 ## More About
 
-[Job Submission (Beta) Feature](job-submission-feature)
+[Job Submission Feature](job-submission-feature)

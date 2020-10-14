@@ -123,4 +123,4 @@ for num in range(start, end + 1):
 
 ## 更多關於 Job Submission
 
-[Job Submission (Beta) 功能](job-submission-cht)
+[Job Submission 功能](job-submission-cht)

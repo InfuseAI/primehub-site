@@ -1,6 +1,6 @@
 ---
 id: job-scheduling-feature-cht
-title: Job Scheduler (Beta)
+title: Job Scheduler
 ---
 
 <div class="ee-only tooltip">Enterprise

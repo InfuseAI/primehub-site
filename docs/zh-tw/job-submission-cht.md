@@ -1,6 +1,6 @@
 ---
 id: job-submission-cht
-title: Job Submission (Beta)
+title: Job Submission
 ---
 
 <div class="ee-only tooltip">Enterprise

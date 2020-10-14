@@ -32,9 +32,9 @@ At side menu, there are
 
 + **Notebooks**  where users can launch a Jupyter Notebook for projects.See [Launch Notebook](../quickstart/launch-project).
 
-+ **Jobs (Beta)** where users can submit jobs for time-consuming tasks. See [Job Submission](../job-submission-feature). <span class="ee-only">Enterprise</span>
++ **Jobs** where users can submit jobs for time-consuming tasks. See [Job Submission](../job-submission-feature). <span class="ee-only">Enterprise</span>
 
-+ **Schedule (Beta)** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
++ **Schedule** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
 
 + **Models (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
 

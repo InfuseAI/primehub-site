@@ -34,7 +34,7 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 
 + [操作登入及啟始 Notebook](zh-tw/quickstart/login-portal-user)
 
-+ [Job Submission/Scheduler 使用及教學 (Beta)](zh-tw/job-submission-cht)
++ [Job Submission/Scheduler 使用及教學](zh-tw/job-submission-cht)
 
 + [模型部署 (Alpha)](zh-tw/model-deployment-feature)
 
