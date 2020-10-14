@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: 🌟PrimeHub v3.0
+title: PrimeHub v3.1
 ---
 
 ## Installation

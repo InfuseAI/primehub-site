@@ -37,3 +37,5 @@ If PrimeHub on GKE/EKS is one of your preference, you may want to start from our
 - [Install PrimeHub Enterprise](getting_started/install_primehub)
 
 ### Single Node
+
+- [Install PrimeHub Enterprise on Single Node (Ubuntu)](getting_started/kubernetes_on_ubuntu_machine)
