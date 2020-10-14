@@ -39,9 +39,11 @@ title: Group Management
 
 + `Launch Group Only` 當開啟此選項時，只有當使用者在 PrimeHub 頁面選擇同一 Group 進行專案時，Shared Volume 才會被掛載。
 
-### Default Timeout Setting
+### Job Default Timeout Setting
 
-Job 的逾時期限可以由此更動設定，此設定套用至同群組遞出的 Job；預設為 7 天。若期限內該 Job 尚未完成，該 Job 會被強制中斷。
++ `Default Timeout Setting` 設定 Minutes / Hours / Days.
+
+Job 預設逾時期限，此設定套用至同群組遞出的所有 Job；系統預設值為 7 天。若期限內該 Job 尚未完成，該 Job 會被強制中斷。另外，此設定可被每次遞出 Job 時覆寫。
 
 ### User Quota
 
@@ -53,7 +55,7 @@ Job 的逾時期限可以由此更動設定，此設定套用至同群組遞出�
 
 + `Memory Quota` 當使用者選擇此 Group 時，能夠使用的記憶體配額。預設值為沒有限制。
 
-### Group Quota 
+### Group Quota
 
 設定 Group 的總配額
 
@@ -64,7 +66,6 @@ Job 的逾時期限可以由此更動設定，此設定套用至同群組遞出�
 + `Memory Quota` 群組 Memory 總配額。預設值為沒有限制。
 
 點選 `confirm` 完成新增。
-
 
 ### Users
 

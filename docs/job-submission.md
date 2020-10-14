@@ -57,7 +57,9 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 + `Job name`: The name of the job.
 
-+ `Command`: The sequential commands of the job context. 
++ `Command`: The sequential commands of the job context.
+  
++ `Default Timeout`: `Minutes`/ `Hours` / `Days`; a running Job will be cancelled after the interval of time, the setting here will overwrite the setting from a Group.
   
 ### Directories/paths the job can access if directories exits:
 

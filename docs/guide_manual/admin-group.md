@@ -42,9 +42,11 @@ Create shared volume with specific capacity.
 
 + `Launch Group Only` If enabled, the shared volume is `only mounted` when users select the `same group` to launch a project on PrimeHub page.
 
-### Default Timeout Setting
+### Job Default Timeout Setting
 
-Job is able to be configured with a custom timeout applied within the group that a job will be timed out if it cannot be finished by the setting. By default it is 7 days.
++ `Default Timeout Setting` Set Minutes / Hours / Days.
+
+Group can apply a group-wise Job timeout setting on jobs which are submitted from the same group by default. A running job will be cancelled when it passes the interval of time. This setting is able to be overwritten by each job submission.
 
 ### User Quota
 
