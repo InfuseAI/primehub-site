@@ -36,7 +36,6 @@
     ],
     "Notebook": [
       "quickstart/launch-project",
-      "quickstart/nb-data-store",
       {
         "type": "subcategory",
         "label": "Notebook Spawner",
@@ -77,7 +76,7 @@
       }
     ],
     "Data Store": [
-      "nb-phfs-folder"
+      "quickstart/nb-data-store"
     ],
     "SSH Server": [
       "guide_manual/ssh-config",
@@ -305,7 +304,6 @@
     ],
     "Notebook":[
         "zh-tw/quickstart/launch-project",
-        "zh-tw/quickstart/nb-data-store-cht",
         {
           "type": "subcategory",
           "label": "Jupyter Notebook",
@@ -349,7 +347,7 @@
       }
     ],
     "Data Store": [
-      "zh-tw/nb-phfs-folder-cht"
+      "zh-tw/quickstart/nb-data-store-cht"
     ],
     "SSH Server": [
       "zh-tw/guide_manual/ssh-config-cht",

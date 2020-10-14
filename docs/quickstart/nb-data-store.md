@@ -7,13 +7,13 @@ In Notebook, PrimeHub provides several places of storing various data.
 
 ## User Volume
 
-Each user has own space called **User Volume** which is only accessible to the user to store data. The default volume capacity for everyone is 20 GB. The capacity is able to be enlarged, please contact Admin to learn the what capacity it is or to enlarge it if required.
+Each user has own space called **User Volume** which is only accessible to the user to store data. The default volume capacity for everyone is 20 GB. The capacity is able to be enlarged, please contact Admin to learn the what capacity it is or to enlarge it if required. See [System Settings](../guide_manual/admin-system#system-settings).
 
 In Notebook, it is home folder a.k.a `/home/jovyan`.
 
 ## Group Volume
 
-Each user must be associated with one group at least. If `Shared Volume` of a Group is enabled with a specified capacity by Admin, all of group members are able to access the space called **Group Volume**. please contact Admin to learn what shared capacity it is or to enable a group volume for a group. 
+Each user must be associated with one group at least. If `Shared Volume` of a Group is enabled with a specified capacity by Admin, all of group members are able to access the space called **Group Volume**. please contact Admin to learn what shared capacity it is or to enable a group volume for a group. See [Group Management](../guide_manual/admin-group#shared-volume)
 
 In Notebook which is launched under a group `<GroupId>`, users can see a mounted folder `groupid` under home folder. E.g. `InfuseAICat` -> `infuseaicat/`.
 
@@ -29,6 +29,9 @@ In Notebook, the dataset folders are under `datasets/<dataset_name>`. Please con
 
 ## PHFS Storage
 
-[PHFS Storage](../design/phfs) is based on [PrimeHub Store](../design/primehub-store) technology. This storage is shared and accessed among the same group members, group members can share user data here. In addition, PrimeHub features also store relative group-context data in the storage, such as Job stores artifacts under `/phfs/jobArtifacts/`. Since the limitation of the storage, we don't recommend storing performance-sensitive data such as datasets, please use Dataset Volume instead.
+[PHFS Storage](../design/phfs) is based on [PrimeHub Store](../design/primehub-store) technology. This storage is shared and accessed among the same group members, group members can share user data here. it seems similar to **Group Volume**, however, there are [differences between PHFS and Group Volume](../design/phfs#comparing-to-group-volume).  
+
+In addition, PrimeHub features also store relative group-context data in the storage, such as Job stores artifacts under `/phfs/jobArtifacts/`. Since the limitation of the storage, we don't recommend storing performance-sensitive data such as datasets, please use Dataset Volume instead.
+
 
 In Notebook, the storage is under `/phfs`.

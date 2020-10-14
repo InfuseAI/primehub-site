@@ -45,3 +45,7 @@ Click `Stop My Server`. It takes a short while to stop it.
 >If switching the current working group after the Notebook is launched, it indicates the Notebook is retained in the other group.
 
 ![](assets/v3-jupyter-other-group.png)
+
+## Reference
+
+[Accessible Data Store from Notebook ](nb-data-store)

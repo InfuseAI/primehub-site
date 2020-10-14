@@ -41,3 +41,7 @@ title: 啟始 Notebook
 >如果在 Notebook 啟動後切換工作專群組，頁面會顯示 Notebook 原先是啟動於其它專案群組。
 
 ![](assets/v3-jupyter-other-group.png)
+
+## 參考
+
+[Notebook 可存取的資料儲存空間](nb-data-store-cht)

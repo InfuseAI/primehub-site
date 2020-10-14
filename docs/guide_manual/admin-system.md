@@ -32,7 +32,7 @@ Information of the PrimeHub license:
 
 + `Logo` Click `+ add Image` to upload the logo.
 
-+ `Default User Disk Quota` the default disk quota for user.
++ `Default User Volume Capacity` the default disk quota for user.
 
 + `Timezone` the system timezone.
 
