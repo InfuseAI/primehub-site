@@ -51,7 +51,7 @@ Creating a Schedule is almost as same as creating a job, in addition to the sett
 + `Recurrence Options`: The rule of trigger recurrence if active.
 
     we can select one of presets of rules or customize a rule based on [`Cron` syntax [Reference]](https://en.wikipedia.org/wiki/Cron).
-  
+
   |Options                            |Description                     |
   |-----------------------------------|--------------------------------|
   |`Inactive`                         | Deactivate the Schedule; a inactive Schedule cannot trigger jobs.|

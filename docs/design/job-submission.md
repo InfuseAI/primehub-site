@@ -11,28 +11,8 @@ Allow users to submit machine learning training jobs to the cluster
 1. **Job Queue:** Job is processed by the order of a queue. And one group has one queue.
 1. **Image and InstanceType:** Just like jupyter notebook, a user can select the preset images and instance types according to the currently selected group
 1. **Shared Volume:** The job's running pod would mount the shared volume according to the selected group.
-2. **Cancellation:** Allow to cancel a pending or running pod 
+2. **Cancellation:** Allow to cancel a pending or running pod
 3. **POD Time-To-Live:** Allow to clean up the pod after a job is finished for a period of time.
-
-# Configuration
-
-
-Please add this variable to the `.env` file. 
-
-Name | Value 
---- | ----- 
-`PRIMEHUB_FEATURE_JOB_SUBMISSION` | `true`
-
-Chart value
-
-Path | Description | Default Value 
---- | ----- | -----------------------
-`jobSubmission.workingDirSize` | The size of ephemeral storage for working directory. The format of unit is defined in [kubernetes document](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) | `5Gi`
-`jobSubmission.defaultActiveDeadlineSeconds` | Default timeout (seconds) for a running job | `86400`
-`jobSubmission.defaultTTLSecondsAfterFinished` | Default TTL (seconds) to delete the pod for a finished job | `604800`
-`jobSubmission.nodeSelector` | The default [node selector](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for the underlying pod | `{}`
-`jobSubmission.affinity` | The default [affinity](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity) setting for the underlying pod | `{}`
-`jobSubmission.tolerations` | The default [tolerations](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) setting for the underlying pod | `[]`
 
 ## Memory Setting
 Job submission controller uses 512Mb memory at most by default. Under this setting, it can record around 50 thousand job history. Please delete some old `phjob` records if you found `phjob` records are near 50 thousand. Otherwise, it will run out of memory and cannot work appropriately.
@@ -65,14 +45,14 @@ spec:
     echo "start"
   displayName: Test Job
   userId: 619156fe-43c6-44f3-b20e-2d5f96e4df96
-  userName: jackpan  
+  userName: jackpan
   groupId: d8257cb0-3c89-4243-98c2-cdc737ec61d3
   groupName: test-job-submission
   image: base-notebook
   instanceType: cpu-tiny
 status:
   phase: pending
-```  
+```
 
 
 ## State Diagram
@@ -85,7 +65,7 @@ There are 6 states for the `PhJob`
 - **Pending:** Job is pending in the queue
 - **Preparing:** The job is dequeue and ready to be processed. The underlying pod is created and waiting for scheduled and initiated.
 - **Running:** Pod is running
-- **Failed:** Pod is failed. 
+- **Failed:** Pod is failed.
 - **Succeeded:** Pod is terminated successfully.
 - **Cancelled:** The job is Canceled
 
@@ -171,7 +151,7 @@ Type | Path  | Note
 Working Directory | `/home/jovyan` | Is mounted as `emptyDir`
 Datasets | `/datasets/<dataset-name>` | symlink to `/home/jovyan/datasets`
 Group Volume | `/project/<project-name>` | symlink to `/home/jovyan`
-User Volume | N/A | 
+User Volume | N/A |
 
 
 ```
@@ -226,9 +206,9 @@ Key | Value
 `PRIMEHUB_GROUP` | The launch group of the job
 
 
-### Timeout 
+### Timeout
 
-To prevent the job from running a too long time, there is a default timeout 1 day. The timeout can be configured by 
+To prevent the job from running a too long time, there is a default timeout 1 day. The timeout can be configured by
 
 - Overwrite `PhJob` spec `.spec.activeDeadlineSeconds`
 - Overwrite the helm value `jobSubmission.defaultActiveDeadlineSeconds`
@@ -244,8 +224,8 @@ A job can be canceled in the non-final state. To cancel a job, just set the PhJo
 
 A pod is a heavy resource for these two reasons
 
-- Log 
-- Overlay storage 
+- Log
+- Overlay storage
 
 Even though the container is terminated, these two resources are not released until the pod is deleted.
 
@@ -274,7 +254,7 @@ It is a known issue that there might be some performance issues when `phjob` has
 
 **Q: Can one group run more than one jobs at the same time?**
 
-Yes. If the job have not reached the user quota and group quota 
+Yes. If the job have not reached the user quota and group quota
 
 **Q: Why jobs are not run in the right order?**
 
@@ -292,7 +272,7 @@ The administrator should plan the instance type, user quota, group quota careful
 
 **Q: Can I kill a job?**
 
-Yes. But currently, we only allow users to delete a job from `kubectl`. The command is 
+Yes. But currently, we only allow users to delete a job from `kubectl`. The command is
 
 ```
 kubectl -n hub delete phjob <job name>
