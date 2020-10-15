@@ -47,6 +47,7 @@
     ],
     "Job": [
       "job-submission-feature",
+      "job-artifact-feature",
       {
         "type": "subcategory",
         "label": "Tutorial",
@@ -202,12 +203,14 @@
           "design/primehub-store",
           "design/log-persistence",
           "design/phfs",
-          "design/usage"
+          "design/usage",
+          "design/job-artifact"
         ]
       }
     ],
     "Configuration": [
       "getting_started/configure-ssh-server",
+      "getting_started/configure-job-submission",
       "getting_started/configure-self-signed-ca",
       "tasks/dockerhub-registry"
     ],
@@ -312,7 +315,7 @@
             "zh-tw/user-advanced-setting"
           ]
         }
-        
+
     ],
     "Job":[
           {
@@ -320,6 +323,7 @@
             "label": "Submission",
             "ids":[
               "zh-tw/job-submission-cht",
+              "zh-tw/job-artifact-cht",
               "zh-tw/job-submission-tutorial-simple",
               "zh-tw/job-submission-tutorial-p1",
               "zh-tw/job-submission-tutorial-p2",
