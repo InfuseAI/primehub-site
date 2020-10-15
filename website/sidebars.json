@@ -42,7 +42,8 @@
         "ids":[
           "user-advanced-setting"
         ]
-      }
+      },
+      "notebook-as-job"
     ],
     "Job": [
       "job-submission-feature",
