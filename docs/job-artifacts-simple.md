@@ -1,6 +1,6 @@
 ---
 id: job-artifacts-simple
-title: Job Artifacts Simple Usage
+title: Job Artifacts Simple Usecase
 ---
 
 <div class="ee-only tooltip">Enterprise

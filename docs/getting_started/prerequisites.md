@@ -29,7 +29,7 @@ If a fresh PrimeHub on GKE or EKS is one of your preferences, you may want to st
   Linux
 
   ```
-  KUBECTL_VERSION=v1.15.3
+  KUBECTL_VERSION=v1.16
   curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
   chmod +x ./kubectl
   sudo mv ./kubectl /usr/local/bin/kubectl
@@ -47,7 +47,7 @@ If a fresh PrimeHub on GKE or EKS is one of your preferences, you may want to st
   or below commands
 
   ```
-  KUBECTL_VERSION=v1.15.3
+  KUBECTL_VERSION=v1.16
   curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/darwin/amd64/kubectl
   chmod +x ./kubectl
   sudo mv ./kubectl /usr/local/bin/kubectl
