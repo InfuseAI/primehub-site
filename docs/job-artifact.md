@@ -3,7 +3,9 @@ id: job-artifact-feature
 title: Job Artifacts
 ---
 
-## Job Artifacts
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+</div>
 
 Allows users to store the job output and can be downloaded from the job UI.
 

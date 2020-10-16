@@ -36,14 +36,15 @@
     ],
     "Notebook": [
       "quickstart/launch-project",
+      "user-advanced-setting",
       {
         "type": "subcategory",
-        "label": "Notebook Spawner",
+        "label": "Notebook Extension",
         "ids":[
-          "user-advanced-setting"
+          "ph-notebook-extension",
+          "notebook-as-job"
         ]
-      },
-      "notebook-as-job"
+      }
     ],
     "Job": [
       "job-submission-feature",
@@ -308,14 +309,15 @@
     ],
     "Notebook":[
         "zh-tw/quickstart/launch-project",
+        "zh-tw/user-advanced-setting",
         {
           "type": "subcategory",
-          "label": "Jupyter Notebook",
+          "label": "Notebook Extension",
           "ids": [
-            "zh-tw/user-advanced-setting"
+            "zh-tw/ph-notebook-extension-cht",
+            "zh-tw/notebook-as-job-cht"
           ]
         }
-
     ],
     "Job":[
           {

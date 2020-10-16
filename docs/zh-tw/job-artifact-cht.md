@@ -3,7 +3,9 @@ id: job-artifact-cht
 title: Job Artifacts
 ---
 
-## Job Artifacts
+<div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+</div>
 
 允許使用者把 Job 產生的檔案儲存起來，Job 完成後可以在使用者介面下載所產生的檔案。
 
