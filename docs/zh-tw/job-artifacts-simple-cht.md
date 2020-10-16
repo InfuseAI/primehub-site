@@ -15,7 +15,7 @@ title: Job Artifacts 初階範例
 2. 確認目前所在的工作群組。
 3. 新增 Job。
 4. 將 *artifacts-simple* 填入 `Job name`。
-5. 將下列指令填入 `Command`; 須指定將產出資料存放在 `artifacts/`路徑。
+5. 將下列指令填入 `Command`; 新增`artifacts/`資料夾，須指定將產出資料存放在 `artifacts/`路徑；或是建立 Symbolic link 將任意資料夾指向 `artifacts/`。
 
     ```bash
     mkdir -p artifacts/simple

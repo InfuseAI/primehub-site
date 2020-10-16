@@ -25,7 +25,7 @@ To put artifacts in a job, just create an `artifacts` folder (or said `/home/jov
     echo "hello" > artifacts/sub/test.txt
     ```
 
-1. Go to the newly created job detail page.
+1. Go to the detail page of the newly created job.
 1. Wait for the job completed
 1. Go to the **Artifacts** tab. You will see all the two artifacts we just created
 

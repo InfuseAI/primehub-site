@@ -15,7 +15,7 @@ This simple tutorial shows where to store generated data so called job artifacts
 2. Confirm the current working group.
 3. Select a instance type and image for a job.
 4. Fill in `Job name` with *artifacts-simple*.
-5. Fill in `Command`; `artifacts/` has to be specified for generated artifacts.
+5. Fill in `Command`; it creates a directory `artifacts/` which must be specified for storing generated artifacts. (Or creating a symbolic link of the other directory points to `artifacts/` works as well.)
 
     ```bash
     mkdir -p artifacts/simple
@@ -25,7 +25,7 @@ This simple tutorial shows where to store generated data so called job artifacts
 
 6. Use default timeout setting and submit the job.
 
-Once the job succeeded. View the job and generated data from tab Artifacts.
+Once the job succeeded. View the job and generated data from tab Artifacts. Here right click on a link to view the content or to download a file.
 
 ![](assets/jart_simple_file.png)
 
