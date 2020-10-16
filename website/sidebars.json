@@ -325,20 +325,22 @@
             "label": "Submission",
             "ids":[
               "zh-tw/job-submission-cht",
-              "zh-tw/job-artifact-cht",
+              "zh-tw/job-artifact-cht"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "教學",
+            "ids":[
               "zh-tw/job-submission-tutorial-simple",
               "zh-tw/job-submission-tutorial-p1",
               "zh-tw/job-submission-tutorial-p2",
               "zh-tw/job-artifacts-simple-cht"
             ]
-          },
-          {
-            "type": "subcategory",
-            "label": "Schedule",
-            "ids":[
-              "zh-tw/job-scheduling-feature-cht"
-            ]
           }
+    ],
+    "Schedule":[
+      "zh-tw/job-scheduling-feature-cht"
     ],
     "Model":[
       "zh-tw/model-deployment-feature",
