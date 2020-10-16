@@ -85,6 +85,20 @@ PrimeHub requires a domain name to access the service
 
 [Dynamic Volume Provisioner](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) is used to provision a [PVC](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) dynamically. Make sure that there is a [storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) using this provisioner.
 
+Check if the default storage class is available.
+
+```bash
+kubectl get storageclass
+```
+
+If there is no available storage class, patch it with one you want. See [Change the default StorageClass↗](https://kubernetes.io/docs/tasks/administer-cluster/change-default-storage-class/).
+
+Patch a storage class
+
+```batch
+kubectl patch storageclass <STORAGE_CLASS_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
 ## Cert Manager (Optional)
 
 If https is required in your environment, [cert-manager](https://github.com/jetstack/cert-manager) provides an easy way to set up a certificate.

@@ -1,7 +1,7 @@
 ---
 id: kubernetes_on_ubuntu_machine
 title: Install PrimeHub Enterprise on MicroK8S Single Node (Ubuntu)
-sidebar_label: Install PrimeHub EE onSingle Node
+sidebar_label: Install PrimeHub EE on Single Node
 ---
 
 <div class="ee-only tooltip">Enterprise
