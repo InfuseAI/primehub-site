@@ -29,9 +29,6 @@ Key | Description
 ----|------------------------------------
 `PRIMEHUB_DOMAIN` | The domain name of primehub. It can be the same as primehub's one.
 `PRIMEHUB_PASSWORD` | The password for primehub admin. (The default username of admin is `phadmin`)
-`KEYCLOAK_DOMAIN` | The hostname of keycloak. It can be the same as primehub's one.
-`KEYCLOAK_PASSWORD` | The master password of keycloak
-`STORAGE_CLASS` | The storage class for persistence storage
 `GRAPHQL_SECRET_KEY` | The graphql API secret key
 `HUB_AUTH_STATE_CRYPTO_KEY` | The jupyterhub crypo key. Please reference the [z2jh document](https://zero-to-jupyterhub.readthedocs.io/en/latest/reference/reference.html#auth-state-cryptokey).
 `HUB_PROXY_SECRET_TOKEN` | The jupyterhub secret. Please reference the [z2jh document](https://zero-to-jupyterhub.readthedocs.io/en/latest/reference/reference.html#proxy-secrettoken).
@@ -41,63 +38,44 @@ Modify the environment variables below and execute the commands to generate the 
 ```
 PRIMEHUB_DOMAIN=1.2.3.4.nip.io
 PRIMEHUB_PASSWORD=__my_password__
-KEYCLOAK_DOMAIN=1.2.3.4.nip.io
-KEYCLOAK_PASSWORD=__my_password__
-STORAGE_CLASS=__storage_class__
 GRAPHQL_SECRET_KEY=$(openssl rand -hex 32)
 HUB_AUTH_STATE_CRYPTO_KEY=$(openssl rand -hex 32)
 HUB_PROXY_SECRET_TOKEN=$(openssl rand -hex 32)
 
 cat <<EOF > primehub-values.yaml
 primehub:
-  scheme: http
   domain: ${PRIMEHUB_DOMAIN}
-  keycloak:
-    scheme: http
-    domain: ${KEYCLOAK_DOMAIN}
-    username: keycloak
-    password: ${KEYCLOAK_PASSWORD}
+ingress:
+  annotations:
+    kubernetes.io/ingress.allow-http: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  hosts:
+  - ${PRIMEHUB_DOMAIN}
 bootstrap:
-  usernmae: phadmin  
   password: ${PRIMEHUB_PASSWORD}
 graphql:
   sharedGraphqlSecret: ${GRAPHQL_SECRET_KEY}
-groupvolume:
-  storageClass: ${STORAGE_CLASS}
-ingress:
-  annotations:
-    ingress.kubernetes.io/affinity: cookie
-    kubernetes.io/ingress.class: nginx
-  hosts:
-  -  ${PRIMEHUB_DOMAIN}
 jupyterhub:
   auth:
     state:
-      cryptoKey: ${GRAPHQL_SECRET_KEY}
-  hub:
-    db:
-      pvc:
-        storageClassName: ${STORAGE_CLASS}
+      cryptoKey: ${HUB_AUTH_STATE_CRYPTO_KEY}
   proxy:
     secretToken: ${HUB_PROXY_SECRET_TOKEN}
-  singleuser:
-    storage:
-      dynamic:
-        storageClass: ${STORAGE_CLASS}
 EOF
 ```
+
 ## Install
 
 1. Run helm command to install primehub
 
    ```
    helm upgrade \
+     primehub infuseai/primehub \
      --install \
-     --reset-values \
      --create-namespace \
-     --namespace hub  \
+     --namespace hub \
      --values primehub-values.yaml \
-     primehub modules/charts/primehub
+     --values https://raw.githubusercontent.com/InfuseAI/primehub/master/examples/ee-values.yaml
    ```
 
    > In the first time installation, it may take a longer time to pull images. You can add `--timeout 10m` to change the default timeout duration.
