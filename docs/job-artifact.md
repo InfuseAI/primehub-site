@@ -31,7 +31,7 @@ To put artifacts in a job, just create an `artifacts` folder (or said `/home/jov
 
    ![](assets/jartifact_folder.png)
 
-## Link Artfiacts Folder
+## Link Artifacts Folder
 
 We can also create a symbolic link `artifacts` to the actual folder where the files to copy out are located.
 
@@ -49,10 +49,10 @@ We can also create a symbolic link `artifacts` to the actual folder where the fi
 1. Go to the **Artifacts** tab. You will see all the two artifacts you just created
    ![](assets/jartifact_link.png)
 
-## Rentention
+## Retention
 
 By default, the artifacts are kept only 7 days. The system will clean up the expired artifacts everyday.
 
-## Size and file count Limit
+## Size and File Count Limit
 
-By default, a job can have at most `100Mb` by size and `1000` artifacts. If a job exceeds the limit, no files would be copied.
+By default, a job can have at most `100MB` by size and `1000` artifacts. If a job exceeds the limit, no files would be copied.

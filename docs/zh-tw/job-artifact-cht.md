@@ -31,7 +31,7 @@ title: Job Artifacts
 
    ![](assets/jartifact_folder.png)
 
-## 連結 Artfiacts 目錄
+## 連結 Artifacts 目錄
 
 我們也可以產生一個 symbolic link `artifacts` 指到要被拷貝檔案的所在位置
 
@@ -49,10 +49,10 @@ title: Job Artifacts
 1. 到 **Artifacts** 頁籤，你會看到剛剛產生的兩個 artifacts
    ![](assets/jartifact_link.png)
 
-## Rentention
+## Retention
 
 檔案預設會保留七天，系統會每天自動清除過期的檔案。
 
-## Size and file count Limit
+## Size and File Count Limit
 
-一個 Job 預設最多可以允許 100Mb 大小以及 1000 個 artifact 檔案。如果超過限制，不會有任何檔案被拷貝。
+一個 Job 預設最多可以允許 100MB 大小以及 1000 個 artifact 檔案。如果超過限制，不會有任何檔案被拷貝。
