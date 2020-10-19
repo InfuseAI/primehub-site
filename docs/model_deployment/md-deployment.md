@@ -10,6 +10,7 @@ Documents below are linked to **Model** section from PrimeHub Enterprise documen
 ## Manual
 
 + [Model Deployment](../model-deployment-feature)
++ [模型部署](../zh-tw/model-deployment-feature)
 
 ## Tutorials
 
