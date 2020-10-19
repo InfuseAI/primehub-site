@@ -6,11 +6,7 @@ title: PrimeHub v3.1
 >關於 PrimeHub 的所有文件都是以英文撰寫為主，一部分文件會經翻譯繁體中文化。
 >這裡列出已中文化的文件，如需更多技術資訊請參照英文文件。
 
-## Installation
-
-請參照英文文件 [Provision of Kubernetes cluster, Installation of PrimeHub (Community/Enterprise)](dev-introduction).
-
----
+## 簡介
 
 PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至少一個群組才能操作使用者層面的功能。初始時，內建有使用者`phadmin`(「管理者」已開啟)、群組`phusers`及數個 *instance types*/*images*；立即就能利用初始資源啟動 Notebook。
 
@@ -19,6 +15,16 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 使用者啟用「管理者」功能後，能切換至 Admin Portal 透過其上的管理功能進行新增/刪除/編輯 *User*、*Group*、*Instance Type*、*Image*、*Dataset* 等其它資源其它管理介面。
 
 **PrimeHub v3** 進一步在使用者體驗及介面有著重大的改進；其中以「專案群組先決」的概念上，我們重新設計了 User Portal 的使用者體驗；有別於過往 PrimeHub v2 進入各功能頁後，每次操作都需要另外選擇針對的群組。「專案群組先決」的設計下，使用者先指定目前工作中的專案群組，之後所有的資訊及操作都是自動地限於此專案群組的範籌下，不需每一動都再額外指定，如此讓使用者可以更直覺以專案群組的角度來操作。如果您本是 PrimeHub v2.x 使用者，請先參考「專案群組先決」。
+
+---
+
+## 架設安裝
+
+請參照英文文件 [Provision of Kubernetes cluster, Installation of PrimeHub (Community/Enterprise)](dev-introduction).
+
+---
+
+## 使用者功能
 
 ### 專案群組先決
 
@@ -30,7 +36,7 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 
 + 專案群組先決的設計下，Notebook 於工作專案群組下啟動。
 
-## 使用者功能
+### 功能介紹
 
 + [操作登入及啟始 Notebook](zh-tw/quickstart/login-portal-user)
 
