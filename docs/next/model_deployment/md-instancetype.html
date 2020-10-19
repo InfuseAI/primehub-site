@@ -78,7 +78,7 @@
 <li><p><code>CPU Request</code> define how many CPU are requested to use by this Instance Type initially. Once it is enabled, Instances are guaranteed to get the amount of CPU they request. If <code>CPU Request</code> &lt; <code>CPU Limit</code>, the system will try to overcommit CPU resources within the limit if more resources are available.</p></li>
 <li><p><code>Memory Request</code> define how many Memory are requested to use by this Instance Type initially. Once it is enabled, Instances are guaranteed to get the amount of Memory they request. If <code>Memory Request</code> &lt; <code>Memory Limit</code>, the system will try to overcommit Memory resources within the limit if more resources are available.</p></li>
 </ul>
-<p>For details, please see <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes">Resource QoS</a>.</p>
+<p>For details, please see <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes">Resource QoS</a>, <a href="https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/#static-policy">CPU Management Policies</a> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/">Quality of Service for Pods</a>.</p>
 <ul>
 <li><code>Global</code> If it is turned on, this Instance Type can be chosen by everyone. You can grant permission to specific groups in the <code>edit groups</code>.</li>
 </ul>
