@@ -33,7 +33,7 @@ You need to fill in the fields of Basic Info in the above picture:
 
 + `Memory Request` define how many Memory are requested to use by this Instance Type initially. Once it is enabled, Instances are guaranteed to get the amount of Memory they request. If `Memory Request` < `Memory Limit`, the system will try to overcommit Memory resources within the limit if more resources are available.
 
-For details, please see [Resource QoS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes).
+For details, please see [Resource QoS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes), [CPU Management Policies](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/#static-policy) and [Quality of Service for Pods](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/).
 
 + `Global` If it is turned on, this Instance Type can be chosen by everyone. You can grant permission to specific groups in the `edit groups`.
 

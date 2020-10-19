@@ -9,9 +9,9 @@ This quickstart shows how to access `Admin Portal`.
 
 ![](assets/login_1.png)
 
-Select a `language` you prefer. Click Login with your own username and password.
+Select a `language` you prefer. Click Login with Admin username and password.
 
-## Entrance
+## Switch to Admin Portal
 
 When login as an administrator, initially, you are directed to **User Portal**, click the icon at top-right and select `Admin Portal` for the switch.
 
@@ -27,15 +27,15 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 ### Side Menu
 
-+ `Groups` where Admin can manage groups. See [Group Management](../guide_manual/admin-group).
++ `Groups` where Admin can manage groups. See [Group Management](md-group).
 
-+ `Users` where Admin can manage users. See [User Management](../guide_manual/admin-user).
++ `Users` where Admin can manage users. See [User Management](md-user).
 
-+ `Instance Types` where Admin can manage instance types. See [Instance Type Management](../guide_manual/admin-instancetype).
++ `Instance Types` where Admin can manage instance types. See [Instance Type Management](md-instancetype).
 
-+ `Secrets` where Admin can manage secrets. See [Secret Management](../guide_manual/admin-secret).
++ `Secrets` where Admin can manage secrets. See [Secret Management](md-secret).
 
-+ `System Settings` where Admin can configure system-wise settings. See [System Settings](../guide_manual/admin-system).
++ `System Settings` where Admin can configure system-wise settings. See [System Settings](md-system).
 
 + `Grafana` where Admin can an monitor the metrics of serving deployments.
 
