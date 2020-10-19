@@ -67,62 +67,98 @@
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
 </div>
-<p>InfuseAI provides and maintains certain images which can be base images on Docker hub, here available images are:</p>
+<p>InfuseAI provides and maintains certain images which can be used as base images on <a href="https://hub.docker.com/r/infuseai/docker-stacks/tags">infuseai/docker-stacks↗</a> on Docker Hub, here available images are:</p>
 <h2><a class="anchor" aria-hidden="true" id="tensorflow"></a><a href="#tensorflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TensorFlow</h2>
+<h3><a class="anchor" aria-hidden="true" id="jupyterlab-v2-with-primehub-extension"></a><a href="#jupyterlab-v2-with-primehub-extension" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JupyterLab v2 with PrimeHub Extension</h3>
 <table>
 <thead>
 <tr><th>Framework</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
 </thead>
 <tbody>
-<tr><td>TensorFlow 2.2</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-tf-v2-27d623dc/images/sha256-bf293b8fa9e70882106dc6d9de932242513d4f5e2d15ff2635dd71fbb4423092?context=repo">infuseai/docker-stacks:tensorflow-notebook-tf-v2-27d623dc</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 2.2</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-27d623dc-gpu-cuda-10/images/sha256-8438c2e032c901bf16965e2821d7cedef86e47c4ccd8986440d1ba5264cbdc22?context=repo">infuseai/docker-stacks:tensorflow-notebook-27d623dc-gpu-cuda-10</a></td><td><code>GPU</code><br/><code>CUDA 10.1</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 2.2</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-tf-v2-py3.6-27d623dc/images/sha256-94443ea294acb1b944d1bfc04b5a72979666e89e4097225d5c067da1786b40a9?context=repo">infuseai/docker-stacks:tensorflow-notebook-tf-v2-py3.6-27d623dc</a></td><td><code>CPU</code></td><td>3.6</td></tr>
-<tr><td>TensorFlow 2.2</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-py3.6-27d623dc-gpu-cuda-10/images/sha256-f7fc80e2f127c74eb11577881ea89ac38167868ef4c1f3a5b2bb9b96c40caa33?context=repo">infuseai/docker-stacks:tensorflow-notebook-py3.6-27d623dc-gpu-cuda-10</a></td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.6</td></tr>
-<tr><td>TensorFlow 2.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-tf-v2-3f48358e/images/sha256-ad8d818a534174052ae1399f8b160921b442c96e7ea8d638e60c28484370ed97?context=repo">infuseai/docker-stacks:tensorflow-notebook-tf-v2-3f48358e</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 2.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-3f48358e-gpu-cuda-10/images/sha256-2407779fe836914b67f1f532377b2ee5eb873b62ae06fa38e4f4e626c712e759?context=repo">infuseai/docker-stacks:tensorflow-notebook-3f48358e-gpu-cuda-10</a></td><td><code>GPU</code><br/><code>CUDA 10.1</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 1.15</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-76482a4c/images/sha256-226ab6cc9aca28d2730177661d1a8e3fb754396a70673b407c2db9238e1b41b3?context=repo">infuseai/docker-stacks:tensorflow-notebook-76482a4c</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 1.15</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-76482a4c-gpu/images/sha256-a0bfba9a8994e295a065f555308eaca0aab485cc84bbc9b6e0d0417c9333c3ce?context=repo">infuseai/docker-stacks:tensorflow-notebook-76482a4c-gpu</a></td><td><code>GPU</code><br/><code>CUDA 9</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 1.14</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-27d623dc/images/sha256-3a85a66a8321673e8c2ad96462896b6db23db08b244baf88bdade1c7e6ca2b18?context=repo">infuseai/docker-stacks:tensorflow-notebook-27d623dc</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 1.14</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-27d623dc-gpu/images/sha256-00ecc00ed0d30b453ff4a9070f6fb759a836e01dea6910df634b08bedfa47161?context=repo">infuseai/docker-stacks:tensorflow-notebook-27d623dc-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
-<tr><td>TensorFlow 1.14</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-py3.6-3f48358e/images/sha256-8612d387f728fb7fce7305e643dcbd9bae7b6fdb0baba2c33ae0b2cccbf39747?context=repo">infuseai/docker-stacks:tensorflow-notebook-py3.6-3f48358e</a></td><td><code>CPU</code></td><td>3.6</td></tr>
-<tr><td>TensorFlow 1.14</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/tensorflow-notebook-py3.6-3f48358e-gpu/images/sha256-f9d9d0130e0357742a777dbc29ba5c17d3dfb3d6300f6fae6593446d4813929f?context=repo">infuseai/docker-stacks:tensorflow-notebook-py3.6-3f48358e-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+<tr><td>TensorFlow 2.2</td><td>infuseai/docker-stacks:tensorflow-notebook-tf-v2-b3c52f35</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 2.2</td><td>infuseai/docker-stacks:tensorflow-notebook-b3c52f35-gpu-cuda-10</td><td><code>GPU</code> <code>CUDA10</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.14</td><td>infuseai/docker-stacks:tensorflow-notebook-b3c52f35</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.14</td><td>infuseai/docker-stacks:tensorflow-notebook-b3c52f35-gpu</td><td><code>GPU</code></td><td>3.7</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="jupyterlab-v1-only"></a><a href="#jupyterlab-v1-only" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JupyterLab v1 only</h3>
+<table>
+<thead>
+<tr><th>Framework</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
+</thead>
+<tbody>
+<tr><td>TensorFlow 2.2</td><td>infuseai/docker-stacks:tensorflow-notebook-tf-v2-27d623dc</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 2.2</td><td>infuseai/docker-stacks:tensorflow-notebook-27d623dc-gpu-cuda-10</td><td><code>GPU</code><br/><code>CUDA 10.1</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 2.2</td><td>infuseai/docker-stacks:tensorflow-notebook-tf-v2-py3.6-27d623dc</td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>TensorFlow 2.2</td><td>infuseai/docker-stacks:tensorflow-notebook-py3.6-27d623dc-gpu-cuda-10</td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.6</td></tr>
+<tr><td>TensorFlow 2.1</td><td>infuseai/docker-stacks:tensorflow-notebook-tf-v2-3f48358e</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 2.1</td><td>infuseai/docker-stacks:tensorflow-notebook-3f48358e-gpu-cuda-10</td><td><code>GPU</code><br/><code>CUDA 10.1</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.15</td><td>infuseai/docker-stacks:tensorflow-notebook-76482a4c</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.15</td><td>infuseai/docker-stacks:tensorflow-notebook-76482a4c-gpu</td><td><code>GPU</code><br/><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.14</td><td>infuseai/docker-stacks:tensorflow-notebook-27d623dc</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.14</td><td>infuseai/docker-stacks:tensorflow-notebook-27d623dc-gpu</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>TensorFlow 1.14</td><td>infuseai/docker-stacks:tensorflow-notebook-py3.6-3f48358e</td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>TensorFlow 1.14</td><td>infuseai/docker-stacks:tensorflow-notebook-py3.6-3f48358e-gpu</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
 </tbody>
 </table>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="pytorch"></a><a href="#pytorch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PyTorch</h2>
+<h3><a class="anchor" aria-hidden="true" id="jupyterlab-v2-with-primehub-extension-1"></a><a href="#jupyterlab-v2-with-primehub-extension-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JupyterLab v2 with PrimeHub Extension</h3>
 <table>
 <thead>
 <tr><th>Framework</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
 </thead>
 <tbody>
-<tr><td>PyTorch 1.5</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-27d623dc/images/sha256-03ae97f59ca41e8063b888d641c04a1f9b6de70c27300261962fc1597a5364e7?context=repo">infuseai/docker-stacks:pytorch-notebook-27d623dc</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>PyTorch 1.5</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-27d623dc-gpu/images/sha256-721bc4adac4403bdfa23b43471898a45204808a9a29bbf395ac01c9fa32a7325?context=repo">infuseai/docker-stacks:pytorch-notebook-27d623dc-gpu</a></td><td><code>GPU</code><br/><code>CUDA 9</code></td><td>3.7</td></tr>
-<tr><td>PyTorch 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-3f48358e/images/sha256-e21ea65747e5c46d204554a50b5c3ca360d4442362b92c6aaa274835deaaa89d?context=repo">infuseai/docker-stacks:pytorch-notebook-3f48358e</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>PyTorch 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-3f48358e-gpu/images/sha256-c82057c234e50c958081fe1f8a8df05aea6ec9efb6d5567d55a7fb917e86d931?context=repo">infuseai/docker-stacks:pytorch-notebook-3f48358e-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
-<tr><td>PyTorch 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-py3.6-3f48358e/images/sha256-a951d824a9bc802c85fb0259658a94c102651a9defd1ddd0a9de928ac097f241?context=repo">infuseai/docker-stacks:pytorch-notebook-py3.6-3f48358e</a></td><td><code>CPU</code></td><td>3.6</td></tr>
-<tr><td>PyTorch 1.4</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-py3.6-3f48358e-gpu/images/sha256-15875a752f89d39d853a8b4b17a6477414def58875c3ece7ef5b6bfebb44a9ac?context=repo">infuseai/docker-stacks:pytorch-notebook-py3.6-3f48358e-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
-<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-14fb17d1/images/sha256-6b8127b7a9692faea7bbd85964c37752236748625d59e387d5ffd3d7b0e08970?context=explore">infuseai/docker-stacks:pytorch-notebook-14fb17d1</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-14fb17d1-gpu/images/sha256-f61cf5ca8d0d5b8bb19a330ad2c6196d31fe0ecfb41b39a8b88259b6712e18d6?context=explore">infuseai/docker-stacks:pytorch-notebook-14fb17d1-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
-<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-py3.6-8dd7f89a/images/sha256-83668e13fd408eef969907a2d4b81cef9055450efb9f4621af0a53340371ef37?context=explore">infuseai/docker-stacks:pytorch-notebook-py3.6-8dd7f89a</a></td><td><code>CPU</code></td><td>3.6</td></tr>
-<tr><td>PyTorch 1.1</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/pytorch-notebook-py3.6-8dd7f89a-gpu/images/sha256-961cf0a060b32d3cb93a2c02395b2455e630f90318a8f7222887ef9775d1360d?context=explore">infuseai/docker-stacks:pytorch-notebook-py3.6-8dd7f89a-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+<tr><td>PyTorch 1.5</td><td>infuseai/docker-stacks:pytorch-notebook-b3c52f35</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.5</td><td>infuseai/docker-stacks:pytorch-notebook-b3c52f35-gpu</td><td><code>GPU</code> <code>CUDA 9</code></td><td>3.7</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="jupyterlab-v1-only-1"></a><a href="#jupyterlab-v1-only-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JupyterLab v1 only</h3>
+<table>
+<thead>
+<tr><th>Framework</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
+</thead>
+<tbody>
+<tr><td>PyTorch 1.5</td><td>infuseai/docker-stacks:pytorch-notebook-27d623dc</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.5</td><td>infuseai/docker-stacks:pytorch-notebook-27d623dc-gpu</td><td><code>GPU</code><br/><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.4</td><td>infuseai/docker-stacks:pytorch-notebook-3f48358e</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.4</td><td>infuseai/docker-stacks:pytorch-notebook-3f48358e-gpu</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.4</td><td>infuseai/docker-stacks:pytorch-notebook-py3.6-3f48358e</td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>PyTorch 1.4</td><td>infuseai/docker-stacks:pytorch-notebook-py3.6-3f48358e-gpu</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+<tr><td>PyTorch 1.1</td><td>infuseai/docker-stacks:pytorch-notebook-14fb17d1</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.1</td><td>infuseai/docker-stacks:pytorch-notebook-14fb17d1-gpu</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>PyTorch 1.1</td><td>infuseai/docker-stacks:pytorch-notebook-py3.6-8dd7f89a</td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>PyTorch 1.1</td><td>infuseai/docker-stacks:pytorch-notebook-py3.6-8dd7f89a-gpu</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
 </tbody>
 </table>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="base"></a><a href="#base" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Base</h2>
+<h3><a class="anchor" aria-hidden="true" id="jupyterlab-v2-with-primehub-extension-2"></a><a href="#jupyterlab-v2-with-primehub-extension-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JupyterLab v2 with PrimeHub Extension</h3>
 <table>
 <thead>
 <tr><th>Name</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
 </thead>
 <tbody>
-<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-27d623dc/images/sha256-89372bd6d45ec8c4986dd17d22f1ff23a134a001e6b11f7999c924ed1eda246f?context=repo">infuseai/docker-stacks:ai-notebook-27d623dc</a></td><td><code>CPU</code></td><td>3.7</td></tr>
-<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-27d623dc-gpu-cuda-10/images/sha256-0e7f6a7f4f38197ccb04ea69377710502f8b64ff5cd957e471d155d8caab411c?context=repo">infuseai/docker-stacks:ai-notebook-27d623dc-gpu-cuda-10</a></td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.7</td></tr>
-<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-27d623dc-gpu/images/sha256-342cf6688467bf0c51d00a6f542b2625c97e665160a954d2e6a83c51dcfeb90e?context=repo">infuseai/docker-stacks:ai-notebook-27d623dc-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
-<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-py3.6-27d623dc/images/sha256-43a6999d7f110a9a6b15fe1ecaa643d519165cb58fa69d26815d479a13e59da3?context=repo">infuseai/docker-stacks:ai-notebook-py3.6-27d623dc</a></td><td><code>CPU</code></td><td>3.6</td></tr>
-<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-py3.6-27d623dc-gpu-cuda-10/images/sha256-3bc6d9afb1d0f30b31abe52b5c7a96aa170a77d7c924a283cc965e660b18ba6c?context=repo">infuseai/docker-stacks:ai-notebook-py3.6-27d623dc-gpu-cuda-10</a></td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.6</td></tr>
-<tr><td>AI notebook</td><td><a href="https://hub.docker.com/layers/infuseai/docker-stacks/ai-notebook-py3.6-27d623dc-gpu/images/sha256-c7e7a1948330291846c58aa2fe1ef7964beccf9db28e99a9be735b9fdd0e4ee8?context=repo">infuseai/docker-stacks:ai-notebook-py3.6-27d623dc-gpu</a></td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-b3c52f35</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-b3c52f35-gpu</td><td><code>GPU</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-b3c52f35-gpu-cuda-10</td><td><code>GPU</code><br><code>CUDA 10</code></td><td>3.7</td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/guide_manual/custom-image-guideline"><span class="arrow-prev">← </span><span>Custom Image Guideline</span></a><a class="docs-next button" href="/docs/next/guide_manual/admin-dataset"><span>Dataset Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#tensorflow">TensorFlow</a></li><li><a href="#pytorch">PyTorch</a></li><li><a href="#base">Base</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h3><a class="anchor" aria-hidden="true" id="jupyterlab-v1-only-2"></a><a href="#jupyterlab-v1-only-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JupyterLab v1 only</h3>
+<table>
+<thead>
+<tr><th>Name</th><th>Image</th><th>CPU / GPU</th><th>Python</th></tr>
+</thead>
+<tbody>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-27d623dc</td><td><code>CPU</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-27d623dc-gpu-cuda-10]</td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-27d623dc-gpu]</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.7</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-py3.6-27d623dc]</td><td><code>CPU</code></td><td>3.6</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-py3.6-27d623dc-gpu-cuda-10</td><td><code>GPU</code><br><code>CUDA 10.1</code></td><td>3.6</td></tr>
+<tr><td>AI notebook</td><td>infuseai/docker-stacks:ai-notebook-py3.6-27d623dc-gpu</td><td><code>GPU</code><br><code>CUDA 9</code></td><td>3.6</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/guide_manual/custom-image-guideline"><span class="arrow-prev">← </span><span>Custom Image Guideline</span></a><a class="docs-next button" href="/docs/next/guide_manual/admin-dataset"><span>Dataset Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#tensorflow">TensorFlow</a><ul class="toc-headings"><li><a href="#jupyterlab-v2-with-primehub-extension">JupyterLab v2 with PrimeHub Extension</a></li><li><a href="#jupyterlab-v1-only">JupyterLab v1 only</a></li></ul></li><li><a href="#pytorch">PyTorch</a><ul class="toc-headings"><li><a href="#jupyterlab-v2-with-primehub-extension-1">JupyterLab v2 with PrimeHub Extension</a></li><li><a href="#jupyterlab-v1-only-1">JupyterLab v1 only</a></li></ul></li><li><a href="#base">Base</a><ul class="toc-headings"><li><a href="#jupyterlab-v2-with-primehub-extension-2">JupyterLab v2 with PrimeHub Extension</a></li><li><a href="#jupyterlab-v1-only-2">JupyterLab v1 only</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
