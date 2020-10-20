@@ -37,3 +37,36 @@ title: PrimeHub Documentation
 + [Perform operations via Maintenance Notebook](maintenance)
 
 + [More](getting-started-admin)
+
+
+## Technical Reference
+
+### Installation
+
+Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub (Community/Enterprise)](dev-introduction).
+
+
+### Components Configuration
+
++ [DockerHub Registry for Image Builder](tasks/dockerhub-registry)
+  
+### Design Documents
+
++ [Architecture and more ...](design/architecture)
+
+### Tasks
+
++ [Build](tasks/build)
++ [Jupyter Images](tasks/repo2docker)
++ [Operations](tasks/benchmark)
++ [API Token](tasks/api-token)
+
+### Reference
+
++ [PrimeHub Chart Configuration](references/primehub_chart)
++ [Feature Flags](references/feature-flag)
++ [Features Comparison](comparison)
+
+### Trouble Shooting
+
++ [Category](trouble-shoot-guide)
