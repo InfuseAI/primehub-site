@@ -81,6 +81,25 @@ PrimeHub requires a domain name to access the service
 
   > Other ingress controllers may work. But the nginx ingress controller is the solution we develop on.
 
+Add Chart repo
+
+```bash
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo update
+```
+
+Helm install
+
+```bash
+helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
+```
+
+Verify it
+
+```bash
+kubectl get svc -n ingress-nginx
+```
+
 ## Dynamic Volume Provisioner
 
 [Dynamic Volume Provisioner](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) is used to provision a [PVC](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) dynamically. Make sure that there is a [storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) using this provisioner.
