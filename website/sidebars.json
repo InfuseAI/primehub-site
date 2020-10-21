@@ -212,33 +212,15 @@
     "Configuration": [
       "getting_started/configure-ssh-server",
       "getting_started/configure-job-submission",
-      "getting_started/configure-self-signed-ca",
-      "tasks/dockerhub-registry"
+      "getting_started/configure-self-signed-ca"
     ],
     "Tasks": [
-      {
-        "type": "subcategory",
-        "label": "Build",
-        "ids": [
-          "tasks/build",
-          "tasks/airgap"
-        ]
-      },
       {
         "type": "subcategory",
         "label": "Jupyter Images",
         "ids": [
           "tasks/repo2docker",
           "tasks/non-standard-image"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Operations",
-        "ids": [
-          "tasks/cluster_shutdown",
-          "tasks/benchmark",
-          "tasks/ADVANCED-rook-setup-metadata-on-vg"
         ]
       },
       {
@@ -258,8 +240,6 @@
     ],
     "References": [
       "references/primehub_chart",
-      "references/dotenv",
-      "references/feature-flag",
       "comparison",
       "guide_manual/kubeflow-installation-guide"
     ],
@@ -269,7 +249,6 @@
         "type":"subcategory",
         "label": "JupyterHub",
         "ids": [
-          "trouble/jh-failed-spawn",
           "trouble/jh-blank-page",
           "trouble/dataset-failure"
         ]
@@ -280,13 +259,6 @@
         "ids": [
           "trouble/kc-brute-force-detection",
           "trouble/kc-password-policy"
-        ]
-      },
-      {
-        "type":"subcategory",
-        "label": "Prometheus",
-        "ids": [
-          "trouble/prometheus-fails-startup"
         ]
       },
       {
@@ -440,9 +412,6 @@
           "zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
-    ],
-    "其它配置": [
-      "zh-tw/quickstart/dockerhub-registry"
     ]
   },
   "primehub-deploy": {
