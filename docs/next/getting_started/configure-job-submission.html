@@ -78,6 +78,8 @@
 <tr><td><code>jobSubmission.nodeSelector</code></td><td>The default <a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector">node selector</a> for the underlying pod</td><td><code>{}</code></td></tr>
 <tr><td><code>jobSubmission.affinity</code></td><td>The default <a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity">affinity</a> setting for the underlying pod</td><td><code>{}</code></td></tr>
 <tr><td><code>jobSubmission.tolerations</code></td><td>The default <a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/">tolerations</a> setting for the underlying pod</td><td><code>[]</code></td></tr>
+<tr><td><code>jobSubmission.jobTTLSeconds</code></td><td>the retention of a job that it will be kept in PrimeHub after the job (succeeded, failed, cancelled). The default value is 30 days. Zero value means unlimited.</td><td><code>2592000</code></td></tr>
+<tr><td><code>jobSubmission.jobLimit</code></td><td>The limit of total amount of jobs, the oldest job will be removed if the limit is exceeded; Zero value means unlimited.</td><td><code>0</code></td></tr>
 </tbody>
 </table>
 <p>Example:</p>
