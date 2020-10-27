@@ -32,6 +32,8 @@ In the Schedule list, there are some information of each Schedule:
 
 + `Submitted by Me` if checked off, it lists jobs **ONLY** submitted by the user.
 
++ `Search schedule name` search by the keywords.
+
 ## Create Schedule
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.

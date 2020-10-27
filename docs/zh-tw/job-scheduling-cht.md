@@ -32,6 +32,8 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 + `Submitted by Me`: 勾選，只列舉該使用者創建的`schedule`。
 
++ `Search schedule name` 關鍵字搜尋。
+
 ## 創建 Schedule
 
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
