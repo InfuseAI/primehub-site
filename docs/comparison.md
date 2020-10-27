@@ -16,21 +16,18 @@ Here we list the features comparison between tiers for the reference.
 | [Users management](guide_manual/admin-user)   | Admin Portal | ✅️ | ✅️ |
 | [Groups management](guide_manual/admin-group)  | Admin Portal | ✅️ | ✅️ |
 | [Instance Types management](guide_manual/admin-instancetype) | Admin Portal | ✅️ | ✅️ |
-| [Toleration](guide_manual/admin-instancetype#toleration) | Instance types | ✅️ | ✅️ |
-| [NodeSelector](guide_manual/admin-instancetype#nodeselector)| Instance types | ✅️ | ✅️ |
-| [Resources overcommitting](guide_manual/admin-instancetype#overcommitting-advanced-feature)| Instance types | ✅️ | ✅️ |
 | [Images management](guide_manual/admin-image) | Admin Portal | ✅️ | ✅️ |
-| [Image Builder](guide_manual/admin-build-image) | Admin Portal | 🚫 | ✅️ |
-| [Using Docker stacks](guide_manual/images-list) | Images | ✅️ | ✅️ |
-| [Using private registry with secrets](tasks/dockerhub-registry) | Images | ✅️ | ✅️ |
 | [Datasets management](guide_manual/admin-dataset) | Admin Portal | ✅️ | ✅️ |
 | [Secrets management](guide_manual/admin-secret) | Admin Portal | ✅️ | ✅️ |
+| [Image Builder](guide_manual/admin-build-image) | Admin Portal | 🚫 | ✅️ |
 | [Usage report](guide_manual/admin-report) | Admin Portal | 🚫 | ✅️ |
-| [Spawner](quickstart/launch-project)| Notebooks | ✅️ | ✅️ |
-| [Kernel gateway](user-advanced-setting)| Notebooks | ✅️ | ✅️ |
-| [Safe mode](user-advanced-setting)| Notebooks | ✅️ | ✅️ |
-| [SSH Server](guide_manual/ssh-config)| Notebooks | ✅️ | ✅️ |
-| [Maintenance Notebook](maintenance) | Maintenance | 🚫 | ✅️ |
-| [Jobs](job-submission-feature) | Job Submission | 🚫 | ✅️ |
-| [Schedule](job-scheduling-feature) | Job Schedule | 🚫 | ✅️ |
-| [Model Deployment](model-deployment-feature) | Model Deployment | 🚫 | ✅️ |
+| [Maintenance Notebook](maintenance) | Admin Portal| 🚫 | ✅️ |
+| [Notebooks](quickstart/launch-project)| User Portal| ✅️ | ✅️ |
+| [Jobs](job-submission-feature) | User Portal | 🚫 | ✅️ |
+| [Schedule](job-scheduling-feature) | User Portal | 🚫 | ✅️ |
+| [Models](model-deployment-feature) | User Portal | 🚫 | ✅️ |
+| [SSH Server](guide_manual/ssh-config)| Connectivity | ✅️ | ✅️ |
+| Server to Server| Connectivity | ✅️ | ✅️ |
+| [PrimeHub Store](design/primehub-store)| Storage| ✅️ | ✅️ |
+| [Job Artifacts](job-artifact-feature)  | Job | ✅️ | ✅️ |
+| [Submit Notebooks as Jobs](ph-notebook-extension)  | PrimeHub Extension | ✅️ | ✅️ |
