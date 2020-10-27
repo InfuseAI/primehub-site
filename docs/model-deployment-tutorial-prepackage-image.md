@@ -101,11 +101,12 @@ curl -X POST localhost:5000/api/v1.0/predictions \
     -H 'Content-Type: application/json' \
     -d '{ "data": {"ndarray": [${INPUT_DATA}] } }'
 ```
-The ${INPUT_DATA} is the data that you can feed into deployed model for prediction.
 
-Note, the dimension of input data must be same as model's input shape. 
+The `${INPUT_DATA}` is the data that you can feed into deployed model for prediction.
 
-For example, if we create our model to specify input_shape=(4,) by the following definition:
+>The **dimension** of input data must be same as model's input shape.
+
+For example, if we create our model with a specified `input_shape=(4,)` by the following definition:
 ```python
 model = tf.keras.models.Sequential([
     keras.layers.Dense(64, activation='relu', input_shape=(4,)),
@@ -121,7 +122,7 @@ curl -X POST localhost:5000/api/v1.0/predictions \
     -d '{ "data": {"ndarray": [[5.1, 3.3, 1.7, 0.5]] } }'
 ```
 
-Or if we create our model to specify input_shape=(2,2) by the following definition:
+Or if we create our model with a specified `input_shape=(2,2)` by the following definition:
 ```python
 model = tf.keras.models.Sequential([
     keras.layers.Dense(64, activation='relu', input_shape=(2,2)),
@@ -137,21 +138,21 @@ curl -X POST localhost:5000/api/v1.0/predictions \
     -d '{ "data": {"ndarray": [[[5.1, 3.3], [1.7, 0.5]]] } }'
 ```
 
-After sent the post request, we can obtain the response output in the following format:
+After sending the post request, we can obtain the response output in the following format:
 ```bash
 {"data":{"names":[],"ndarray":[${PREDICTION_RESULT}]},"meta":{}}
 ```
-The ${PREDICTION_RESULT} is a list to represent the prediction value.
+The `${PREDICTION_RESULT}` is a list to represent the prediction value.
 
 For example, the following output shows three prediction values in each class.
 ```bash
 {"data":{"names":[],"ndarray":[[3.093,-0.519,-8.918]]},"meta":{}}
 ```
 
-After verified your model deployment image, now you can use this image in the PrimeHub model deployment function.
+After verifying your model deployment image, now you can use this image in the PrimeHub model deployment feature.
 
 ## Share Your Base Image
 
 Share your base image by pushing it to a docker registry.
 
-Therefore, others don't need to write the model serving code again. They can share the same base image and build a model deployment image by `docker`.
+Therefore, others can re-use the model serving code again. They can share the same base image and build a model deployment image by `docker`.
