@@ -72,16 +72,13 @@ Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub 
 
 ### Tasks
 
-+ [Build](tasks/build)
 + [Jupyter Images](tasks/repo2docker)
-+ [Operations](tasks/benchmark)
 + [MinIO Configuration](tasks/minio_configurations)
 + [API Token](tasks/api-token)
 
 ### Reference
 
 + [PrimeHub Chart Configuration](references/primehub_chart)
-+ [Feature Flags](references/feature-flag)
 + [Features Comparison](comparison)
 
 ### Trouble Shooting
