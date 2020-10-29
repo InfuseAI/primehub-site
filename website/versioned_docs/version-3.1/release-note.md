@@ -36,8 +36,6 @@ Nothing is holding you back from using PrimeHub--not even an air-gapped environm
 
 + [Document](getting_started/configure-self-signed-ca)
 
-## 🦄 Breaking Changes
-
 
 ## 🚀 Improvements
 
