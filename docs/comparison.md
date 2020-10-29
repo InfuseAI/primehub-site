@@ -24,7 +24,6 @@ Here we list the features comparison between tiers for the reference.
 | [Image Builder](guide_manual/admin-build-image)  | 🚫 | ✅️ |
 | [Usage Report](guide_manual/admin-report)  | 🚫 | ✅️ |
 | [Maintenance Notebook](maintenance) | 🚫 | ✅️ |
-|
 
 ## User Portal
 
