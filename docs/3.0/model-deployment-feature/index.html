@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Model Deployment (Alpha) · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta name="docsearch:version" content="3.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Model Deployment (Alpha) · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/3.0/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.0/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Model</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/introduction">🌟PrimeHub v3.0</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/dev-introduction">Getting Started</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/getting_started/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/getting_started/kubernetes_on_gke">Kubernetes on GKE</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/getting_started/kubernetes_on_eks">Kubernetes on AWS EKS</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Community</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/getting_started/install_primehub_ce">Install PrimeHub CE</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Enterprise</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/getting_started/install_primehub">Install PrimeHub EE</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/getting_started/kubernetes_on_ubuntu_machine">Install PrimeHub EE on Single Node</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/getting-started-user">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/login-portal-user">User Portal</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Notebook<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/launch-project">Launch Jupyter Notebook</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Spawner</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/user-advanced-setting">Advanced Settings</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/3.0/nb-phfs-folder">PHFS Storage</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/job-submission-feature">Job Submission (Beta)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorial</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Schedule<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/job-scheduling-feature">Job Scheduler (Beta)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/3.0/model-deployment-feature">Model Deployment (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials (Alpha)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/model-deployment-quickstart-tutorial">Quickstart Tutorial of Model Deployment</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/model-deployment-tutorial-package-image">Package a Docker Image for Model Deployment (Python)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/model-deployment-tutorial-package-image-r">Package a Docker Image for Model Deployment (R)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/model-deployment-tutorial-prepackage-image">Prepackage a Base Image and Use It</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">SSH Server<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/ssh-config">SSH Server Feature</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/ssh-vscode">VSCode Remote-SSH Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/ssh-keygen">SSH Key Generation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Admin Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/getting-started-admin">Administration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage users and groups</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-group">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Instance Type</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/usecase-toleration">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/usecase-nodeselector">NodeSelector</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-it-performance">Quality of Service for Pods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and build images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-image">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-build-image">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/custom-image-guideline">Custom Image Guideline</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/images-list">Available Images List</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Datasets and Upload</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-dataset">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-uploader">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-system">System Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and obtain secrets</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/admin-secret">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Quick Start</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/login-portal-admin">Admin Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/create-user">Create User</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/create-group">Create Group</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/add-instance-type">Create/Plan Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/add-infuseai-image">Add InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/add-image">Add Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/build-image">Build Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/secret-pull-image">Pull Secret for GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/secret-gitsync">Gitsync Secret for GitHub</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Maintenance<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance Notebook</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/maintenance">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/maintenance-resize-user-vol">Increase User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/quickstart/maintenance-resize-group-vol">Increase Group Volume</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tips</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/howto-check-user-vol">HOWTO - Check User Volume Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/howto-check-group-vol">HOWTO - Check Group Volume Usage</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Concepts</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/design/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/data-model">Data Model</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/crds">CRDs</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/graphql">GraphqQL</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/persistence-storage">Persistence Storages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Designs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/design/admission">Admission</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/jupyterhub">JupyterHub</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/notebook-kernel-process">Notebook with kernel process</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/dataset-upload">Dataset Upload</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/image-builder">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/job-scheduler">Job Scheduler</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/install-helper-design">Install Helper</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/user-portal">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/meta-chart">Primehub Meta Chart</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/model-deployment">Model Deployment (Alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/primehub-store">PrimeHub Store</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/log-persistence">Log Persistence</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/phfs">PrimeHub File System (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/design/usage">PrimeHub Usage</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/getting_started/configure-ssh-server">SSH Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/dockerhub-registry">Use DockerHub Registry</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tasks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Build</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/build">Package Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/airgap">Airgap</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/repo2docker">repo2docker image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/non-standard-image">Non standard image</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Operations</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/cluster_shutdown">Cluster Shutdown</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/benchmark">Benchmark</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/ADVANCED-rook-setup-metadata-on-vg">Setup rook metadata on VG</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">PrimeHub Chart</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/minio_configurations">MinIO Configurations</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/tasks/api-token">Generate API Token</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/references/primehub_chart">Chart Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/references/dotenv">Install Helper Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/references/feature-flag">Feature Flags</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/comparison">Features Comparison</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/guide_manual/kubeflow-installation-guide">Kubeflow Installation Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble-shoot-guide">Trouble-shooting Guide</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JupyterHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/jh-failed-spawn">Why JupyterHub fails to spawn?</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/jh-blank-page">After spawned, JupyterHub shows a blank page</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/dataset-failure">Jupyter spawning fails due to mounting datasets</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Keycloak</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/kc-brute-force-detection">Lock down accounts after several login failures</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/kc-password-policy">Password Policy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Prometheus</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/prometheus-fails-startup">Prometheus fails to start up</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SSH Server</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/ssh-server-permission-denied">Permission Denied</a></li><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/ssh-server-connection-refused">Connection Refused</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/3.0/trouble/kubelet-restart">Restart Kubelet</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Model Deployment (Alpha)</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+</div>
+<blockquote>
+<p>Alpha version. It is subject to changes in the stable release.</p>
+</blockquote>
+<p>Model Deployment feature that users are allowed to manage model deployment endpoints within Group Management with CRUD operations. If the feature is enabled within a group, end-users of the group are allowed to deploy models obeying the restriction of the group quota. While a deployed model serves, administrators are able to monitor the status of model service such service health and resources usage information; moreover, end-users are able to check deployment history and log.</p>
+<h2><a class="anchor" aria-hidden="true" id="enable-model-deployment-in-group-management"></a><a href="#enable-model-deployment-in-group-management" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enable Model Deployment in Group Management</h2>
+<p>First, we have to turn on <strong>Model Deployment</strong> in groups.</p>
+<p><img src="/docs/assets/mdeploy_enable.png" alt=""></p>
+<p>If the current group's <code>Model Deployment</code> is not enabled, it shows a message</p>
+<blockquote>
+<p>Feature not available - Model Deployment is not enabled for this group. Please contact your administrator to enable it.</p>
+</blockquote>
+<p>Please contact Admin to turn on it or switch to a group which <code>Model Deployment</code> is enabled.</p>
+<h2><a class="anchor" aria-hidden="true" id="list"></a><a href="#list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>List</h2>
+<p>This page indicates all of deployed services status.</p>
+<p><img src="/docs/assets/mdeploy_grid_v3.png" alt=""></p>
+<table>
+<thead>
+<tr><th><strong>Status</strong></th><th><span style="background-color: #33ea33">Deployed</span></th><th><span style="background-color: red">Failed</span></th><th><span style="background-color: #fba500">Deploying</span></th><th><span style="background-color: #aaaaaa">Stopped</span></th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="cell"></a><a href="#cell" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cell</h3>
+<p>Each cell represents a deployment. Clicking on a cell to view the detail.</p>
+<h4><a class="anchor" aria-hidden="true" id="tips"></a><a href="#tips" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Tips</em></h4>
+<ul>
+<li><p><em>Hovering the cursor over Metadata <code>View</code> of a cell, it lists the metadata view.</em></p></li>
+<li><p><em>Hovering the cursor over Endpoint <code>Link</code> shows the entire link and clicking the link makes a copy to the clipboard.</em></p></li>
+</ul>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Title</td><td>Deployment name</td></tr>
+<tr><td>Group</td><td>Deployment's owner group.</td></tr>
+<tr><td>Endpoint</td><td>Where the model is deployed and serve.</td></tr>
+<tr><td>Metadata</td><td>Hovering over <code>View</code> to display the metadata info</td></tr>
+<tr><td>Last Updated</td><td>Last updated time.</td></tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>Search deploy name</code>: Search deployments by a keyword.</p></li>
+<li><p><code>Create Deployment</code> button: Clicking for a deployment creation.</p></li>
+<li><p><code>Refresh</code> button: Clicking to retrieve the latest statuses of deployments.</p></li>
+<li><p><code>Deployed By Me</code>: Check; list deployments deployed by &quot;me&quot;.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="create"></a><a href="#create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create</h2>
+<p>Confirm if the current group is what you desire; switch the group by the <code>Group:</code> dropdown at the top of the right side.</p>
+<p><img src="/docs/assets/mdeploy_create_v3.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="environment-settings"></a><a href="#environment-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Settings</h3>
+<ul>
+<li><p><code>InstanceTypes</code>: Select a instance type which allocates resources for the job.</p></li>
+<li><p><code>Replicas</code>: How many replicas for the service.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="endpoint"></a><a href="#endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoint</h3>
+<ul>
+<li><code>Private Access</code>: The toggle of private access of the endpoint; if enabled, there is <code>Clients</code> tab appearing in detail page.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
+<ul>
+<li><p><code>Deployment Name</code>: The name of the deployment.</p></li>
+<li><p><code>Deployment ID</code>: An unique ID.</p></li>
+<li><p><code>Model Image</code>: The image which the model is based on.</p></li>
+<li><p><code>Image Pull Secret</code>: a pull secret for the model image if required.</p></li>
+<li><p><code>Descriptions</code>: User input description.</p></li>
+<li><p><code>Update Message</code>: Leave a message here for each update.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
+<p>We can add key-value pairs.</p>
+<ul>
+<li><code>Name</code>: The name of key.</li>
+<li><code>Value</code>: The value.</li>
+</ul>
+<p>Click <code>Deploy</code> button to start the deployment.</p>
+<p>One the deployment is triggered, there is a notification popping up, we can click on it to view the deployment detail.</p>
+<h2><a class="anchor" aria-hidden="true" id="deployment-detail"></a><a href="#deployment-detail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Detail</h2>
+<p><img src="/docs/assets/mdeploy_detail_v27.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Status</td><td>The status of the deployment.</td></tr>
+<tr><td>Message</td><td>The message related to the deployment if any.</td></tr>
+<tr><td>Endpoint</td><td>Where the model is deployed and serve.</td></tr>
+<tr><td>Access Type</td><td>Public or Private</td></tr>
+<tr><td>Model Image</td><td>The image which the model is based on.</td></tr>
+<tr><td>Replicas</td><td>The replicas of the deployment.</td></tr>
+<tr><td>Deployment Name</td><td>The name of the deployment.</td></tr>
+<tr><td>Group</td><td>The owner group.</td></tr>
+<tr><td>Instance Type</td><td>The resources allocation which is requested for the deployment.</td></tr>
+<tr><td>Creation Time</td><td>Timestamps</td></tr>
+<tr><td>Last Updated</td><td>Timestamps</td></tr>
+<tr><td>Description</td><td>The description which users input during the creation.</td></tr>
+<tr><td>Run an Example</td><td>Verifying the service by using <code>curl</code> querying the service; it is varied with <code>Public</code> or <code>Private</code> access.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
+<ul>
+<li><code>Replicas</code>: Select a replica.</li>
+</ul>
+<p><img src="/docs/assets/mdeploy_log_v28.png" alt=""></p>
+<p>In Logs tab, the logs of current deployment are displayed here.</p>
+<blockquote>
+<p>Timestamp reflects Universal Time Coordinated (<strong>UTC</strong>).</p>
+</blockquote>
+<p>Clicking <code>Scroll to Bottom</code> button skips to the bottom of logs.</p>
+<blockquote>
+<p>It displays only logs of <strong>latest 2000 lines</strong>; clicking the <code>Download</code> button to download the whole log file.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
+<p>In History tab, we can view the detail of historical deployments with each update message.</p>
+<p><img src="/docs/assets/mdeploy_history_v28.png" alt=""></p>
+<p>Clicking on the <code>View</code> link for the detail of each deployment.</p>
+<p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>User</td><td>Who triggered this deployment</td></tr>
+<tr><td>Deployment Stopped</td><td><em>true</em> or <em>false</em></td></tr>
+<tr><td>Model Image</td><td>The model image url</td></tr>
+<tr><td>Replicas</td><td>The amount of replicas</td></tr>
+<tr><td>Group</td><td>The deployment's owner group</td></tr>
+<tr><td>Instance Type</td><td>The instance type is selected</td></tr>
+<tr><td>Timestamp</td><td>Last updated time</td></tr>
+<tr><td>Description</td><td>User input description</td></tr>
+<tr><td>Metadata</td><td>Metadata mappings table</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="clients"></a><a href="#clients" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clients</h3>
+<p>This tab appears if <code>Private Access</code> of the endpoint is enabled.</p>
+<p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
+<p>Filling in <code>Client Name</code> and clicking <code>Add client</code> to generate a <code>Client Token</code>.</p>
+<p>The token is mandatory for accessing a private endpoint, we can bring it as <code>-u &lt;client-name&gt;:&lt;client-token&gt;</code> in a curl command.</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST <span class="token punctuation">\</span>
+    -u <span class="token operator">&lt;</span>client-name<span class="token operator">></span>:<span class="token operator">&lt;</span>client-token<span class="token operator">></span> <span class="token punctuation">\</span>
+    -d <span class="token string">'{"data":{"names":["a","b"],"tensor":{"shape":[2,2],"values":[0,0,1,1]}}}'</span> <span class="token punctuation">\</span>
+    -H <span class="token string">"Content-Type: application/json"</span> <span class="token punctuation">\</span>
+    https://<span class="token operator">&lt;</span>primehub<span class="token operator">></span>/deployment/<span class="token operator">&lt;</span>model<span class="token operator">></span>/api/<span class="token operator">&lt;</span>version<span class="token operator">></span>/predictions
+</code></pre>
+<blockquote>
+<p>Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="tips-1"></a><a href="#tips-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips:</h4>
+<p>In the predict function of a deployed model, we may want to collect the information of clients who send requests to.
+We could learn the info from the header of requests, <code>X-Forwarded-User</code> like the example below.</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> request <span class="hljs-keyword">as</span> req
+
+...
+req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class="hljs-comment"># you can get the client name from the header</span>
+...
+
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="update"></a><a href="#update" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update</h2>
+<p>On a deployment detail page, clicking <code>Update</code> button to enter the deployment editing.</p>
+<p><code>Group</code>、 <code>Deployment name</code>、 <code>Deployment ID</code> are not allowed to be modified in a update once the initial deployment is created.</p>
+<p><img src="/docs/assets/mdeploy_update_v3.png" alt=""></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="delete"></a><a href="#delete" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete</h2>
+<p>Clicking on the cell of the deployment which we want to delete.</p>
+<p>On a deployment detail page, clicking <code>Delete</code> button at top-right for the deployment deletion.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="stop"></a><a href="#stop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stop</h2>
+<p>Clicking on the cell of the deployment which we want to stop.</p>
+<p>On a deployment detail page, clicking <code>Stop</code> button at top-right to stop the current deployed service.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="monitor"></a><a href="#monitor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monitor</h2>
+<p>PrimeHub provides a monitoring dashboard based on <strong>Seldon Core Analytics</strong> on Grafana, we are able to monitor metrics of <strong>deployment</strong>/<strong>model</strong>/<strong>model version</strong>.</p>
+<ol>
+<li><p>Accessing the Grafana from User Portal.</p></li>
+<li><p>Selecting <code>PrimeHub / Model Deployments</code> dashboard, it lists deployment which are providing services.</p>
+<p><img src="/docs/assets/mdeploy_grafana_list.png" alt=""></p></li>
+<li><p>Selecting a deployment and monitoring metrics on the board.</p>
+<p><img src="/docs/assets/mdeploy_grafana_metrics.png" alt=""></p></li>
+</ol>
+<p>Default Metrics:</p>
+<ul>
+<li><p>QPS (Queries Per Second)</p></li>
+<li><p>Success rate</p></li>
+<li><p>4xx, error if any</p></li>
+<li><p>5xx, error is any</p></li>
+<li><p>Predict QPS</p></li>
+<li><p>Reward</p>
+<blockquote>
+<p>The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function <em>n_success_failures</em> calculates the number of successes and failures given the batch of data samples and the reward. -<a href="https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md">Reference</a>.</p>
+</blockquote></li>
+<li><p>Latency</p></li>
+</ul>
+<p>The board is based on <strong>Seldon Core Analytics</strong>, it can be advanced customized. Please see the <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> and <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.0/job-scheduling-feature"><span class="arrow-prev">← </span><span>Job Scheduler</span></a><a class="docs-next button" href="/docs/3.0/model-deployment-quickstart-tutorial"><span>Quickstart Tutorial of Model Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#cell">Cell</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

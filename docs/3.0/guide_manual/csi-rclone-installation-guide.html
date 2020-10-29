@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Csi-rclone Installation Guide · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="[csi-rclone](https://github.com/wunderio/csi-rclone) is a csi plugin to mount lots of kind storage by [rclone](https://rclone.org/), we use it to support the object store feature."/><meta name="docsearch:version" content="3.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Csi-rclone Installation Guide · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="[csi-rclone](https://github.com/wunderio/csi-rclone) is a csi plugin to mount lots of kind storage by [rclone](https://rclone.org/), we use it to support the object store feature."/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.0/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.0/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Csi-rclone Installation Guide</h1></header><article><div><span><p><a href="https://github.com/wunderio/csi-rclone">csi-rclone</a> is a csi plugin to mount lots of kind storage by <a href="https://rclone.org/">rclone</a>, we use it to support the object store feature.</p>
+<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p>All files in the <code>module/csi-rclone</code> directory, it could be installed by applying all:</p>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> primehub
+kubectl apply -f modules/csi-rclone
+</code></pre>
+<p>However, if you were using microk8s, it should patch it after installed, because of different kubelet path:</p>
+<pre><code class="hljs css language-bash"><span class="token function">cat</span> modules/csi-rclone/csi-nodeplugin-rclone.yaml <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s#/var/lib/kubelet#/var/snap/microk8s/common/var/lib/kubelet#g"</span> <span class="token operator">|</span> kubectl apply -f -
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h2>
+<p>We already have a csi-rclone now, but it doesn't how and where to connect the default storage. It needs a <code>rclone-secret</code> secret. There are two <code>secret</code> examples for different use cases, please replace <code>${VARIABLES}</code> to fit the real case.</p>
+<h3><a class="anchor" aria-hidden="true" id="connect-to-minio"></a><a href="#connect-to-minio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connect to MinIO</h3>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Secret</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-secret</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">csi-rclone</span>
+<span class="hljs-attr">type:</span> <span class="hljs-string">Opaque</span>
+<span class="hljs-attr">stringData:</span>
+  <span class="hljs-attr">remote:</span> <span class="hljs-string">"s3"</span>
+  <span class="hljs-attr">remotePath:</span> <span class="hljs-string">"${BUCKET}"</span>
+  <span class="hljs-attr">s3-provider:</span> <span class="hljs-string">"Minio"</span>
+  <span class="hljs-attr">s3-endpoint:</span> <span class="hljs-string">"${MINIO_ENDPOINT}"</span>
+  <span class="hljs-attr">s3-access-key-id:</span> <span class="hljs-string">"${S3_ACCESS_KEY_ID}"</span>
+  <span class="hljs-attr">s3-secret-access-key:</span> <span class="hljs-string">"${S3_SECRET_ACCESS_KEY}"</span>
+</code></pre>
+<p><strong>MinIO variables explained</strong></p>
+<ul>
+<li>remotePath
+<ul>
+<li>it could be a <code>BUCKET</code> name or a <code>BUCKET</code> with prefix. e.g. <code>BUCKET/prefix</code></li>
+</ul></li>
+<li>s3-endpoint. e.g. <code>http://minio-release.default:9000</code>. It depends on minio's namespace and service name.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="connect-to-aws-s3"></a><a href="#connect-to-aws-s3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connect to AWS S3</h3>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Secret</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-secret</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">csi-rclone</span>
+<span class="hljs-attr">type:</span> <span class="hljs-string">Opaque</span>
+<span class="hljs-attr">stringData:</span>
+  <span class="hljs-attr">remote:</span> <span class="hljs-string">"s3"</span>
+  <span class="hljs-attr">remotePath:</span> <span class="hljs-string">"${BUCKET}"</span>
+  <span class="hljs-attr">s3-provider:</span> <span class="hljs-string">"AWS"</span>
+  <span class="hljs-attr">s3-region:</span> <span class="hljs-string">"${S3_REGION}"</span>
+  <span class="hljs-attr">s3-access-key-id:</span> <span class="hljs-string">"${S3_ACCESS_KEY_ID}"</span>
+  <span class="hljs-attr">s3-secret-access-key:</span> <span class="hljs-string">"${S3_SECRET_ACCESS_KEY}"</span>
+</code></pre>
+<ul>
+<li>remotePath
+<ul>
+<li>basically same with <code>MinIO</code>, however, you have to create the <code>BUCKET</code> before it could be used.</li>
+</ul></li>
+<li>s3-region
+<ul>
+<li>For a regular <code>AWS S3</code>, we needn't customize endpoint, please use <code>s3-region</code> to setup where is the bucket.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="verification"></a><a href="#verification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verification</h2>
+<p>There are 3 resources in our example:</p>
+<ul>
+<li>a PV in rclone storage class</li>
+<li>*a PVC to use the PV</li>
+<li>*a Pod to mount it</li>
+</ul>
+<pre><code class="hljs css language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">PersistentVolume</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-example-pv</span>
+  <span class="hljs-attr">labels:</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-example-pv</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">accessModes:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">ReadWriteMany</span>
+  <span class="hljs-attr">capacity:</span>
+    <span class="hljs-attr">storage:</span> <span class="hljs-string">10Gi</span>
+  <span class="hljs-attr">storageClassName:</span> <span class="hljs-string">rclone</span>
+  <span class="hljs-attr">csi:</span>
+    <span class="hljs-attr">driver:</span> <span class="hljs-string">csi-rclone</span>
+    <span class="hljs-attr">volumeHandle:</span> <span class="hljs-string">data-id</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">PersistentVolumeClaim</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-example-pv</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">accessModes:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">ReadWriteMany</span>
+  <span class="hljs-attr">resources:</span>
+    <span class="hljs-attr">requests:</span>
+      <span class="hljs-attr">storage:</span> <span class="hljs-string">10Gi</span>
+  <span class="hljs-attr">storageClassName:</span> <span class="hljs-string">rclone</span>
+  <span class="hljs-attr">selector:</span>
+    <span class="hljs-attr">matchLabels:</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-example-pv</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Pod</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-example</span>
+  <span class="hljs-attr">labels:</span>
+    <span class="hljs-attr">run:</span> <span class="hljs-string">nginx-example</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">containers:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">nginx</span>
+    <span class="hljs-attr">imagePullPolicy:</span> <span class="hljs-string">Always</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-example</span>
+    <span class="hljs-attr">ports:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">containerPort:</span> <span class="hljs-number">80</span>
+      <span class="hljs-attr">protocol:</span> <span class="hljs-string">TCP</span>
+    <span class="hljs-attr">volumeMounts:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">mountPath:</span> <span class="hljs-string">/usr/share/nginx/html</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-example-pv</span>
+  <span class="hljs-attr">volumes:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">rclone-example-pv</span>
+    <span class="hljs-attr">persistentVolumeClaim:</span>
+      <span class="hljs-attr">claimName:</span> <span class="hljs-string">rclone-example-pv</span>
+</code></pre>
+<p>Find the mount point</p>
+<pre><code class="hljs css language-bash">$ kubectl <span class="token builtin class-name">exec</span> -it nginx-example -- <span class="token function">mount</span> <span class="token operator">|</span> <span class="token function">grep</span> s3
+:s3:csi-rclone-20200608/foobarbar/ on /usr/share/nginx/html <span class="token builtin class-name">type</span> fuse.rclone <span class="token punctuation">(</span>rw,nosuid,nodev,relatime,user_id<span class="token operator">=</span><span class="token number">0</span>,group_id<span class="token operator">=</span><span class="token number">0</span>,allow_other<span class="token punctuation">)</span>
+</code></pre>
+<p>Create a file to test it working (the file also could be seen at s3 browser)</p>
+<pre><code class="hljs css language-bash">$ kubectl <span class="token builtin class-name">exec</span> -it nginx-example -- <span class="token function">bash</span> -c <span class="token string">"echo 1 > /usr/share/nginx/html/test; ls -l /usr/share/nginx/html/test"</span>
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">2</span> Jun <span class="token number">23</span> 03:33 /usr/share/nginx/html/test
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installation">Installation</a></li><li><a href="#configuration">Configuration</a><ul class="toc-headings"><li><a href="#connect-to-minio">Connect to MinIO</a></li><li><a href="#connect-to-aws-s3">Connect to AWS S3</a></li></ul></li><li><a href="#verification">Verification</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
