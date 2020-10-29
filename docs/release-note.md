@@ -59,7 +59,7 @@ Nothing is holding you back from using PrimeHub--not even an air-gapped environm
 + Jobs show failed when groups are not found.
   
 
-## 🧰 Bug fixes
+## 🧰 Bug Fixes
 
 + Fixed: disappearing header when spawning Jupyter Notebook.
 + Fixed: Notebooks Admin shows wrong context.
