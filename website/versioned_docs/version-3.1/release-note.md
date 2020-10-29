@@ -1,6 +1,7 @@
 ---
-id: release-note
+id: version-3.1-release-note
 title: Release Candidate Note
+original_id: release-note
 ---
 
 ## 🌟 What's New
