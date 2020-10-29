@@ -43,33 +43,33 @@ Nothing is holding you back from using PrimeHub--not even an air-gapped environm
 
 ### Spawner
 
-+ Disabled JupyterHub consecutive_failure_limit due to it will auto restart hub process.
++ Disabled JupyterHub consecutive_failure_limit to prevent an auto-restart of the hub process.
 
 ### Group-Context
 
 + Removed the group column from tables in job/schedule/model.
 
-### Admin Port
+### Admin Portal
 
-+ Redesigned adding/editing Group pages.
++ Redesigned Add/Edit Group pages.
 + Added "Back to User Portal" button on side menu of Admin Portal.
-+ Removed GPU/CPU quota columns from creating/editing tables of Dataset.
++ Removed GPU/CPU quota columns from Create/Edit Dataset tables.
 
 ## Job
 
 + Added the job timeout setting on group and individual job.
 + Added the resource information on job submission page.
 + Jobs show failed when groups are not found.
-+ 
+  
 
-## 🧰 Bug fixes
+## 🧰 Bug Fixes
 
-+ Fixed disappearing header when spawning Jupyter Notebook.
-+ Fixed Notebooks Admin shows wrong context.
-+ Fixed Datasets page is broken after clicking "Add" then clicking "Back".
-+ Fixed failed to clone a job which contains specific char or newline char.
-+ Fixed the log of a job which is submitted by user is not viewable.
-+ Fixed a scheduled job failed because a pod exists already.
++ Fixed: disappearing header when spawning Jupyter Notebook.
++ Fixed: Notebooks Admin shows wrong context.
++ Fixed: Datasets page is broken after clicking "Add" then clicking "Back".
++ Fixed: failed to clone a job which contains specific char or newline char.
++ Fixed: the log of a job which is submitted by user is not viewable.
++ Fixed: a scheduled job failed because a pod exists already.
   
 ---
 
