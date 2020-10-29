@@ -35,10 +35,10 @@ There are some insightful data of usage:
 |**cpu_core_hours**| hours if the computing work runs in a CPU|
 |**gb_memory_hours**| hours if the computing work uses 1 GB memory|
 |**usage_hours**| hours the computing work has done|
-|**instance_type**   |使用的 instance type 名稱 |
-|**instance_cpu_core**| 使用的 instance 的 最多可用 vCPU 核數          |
-|**instance_gpu_core**| 使用的 instance 的 可用 GPU 核數          |
-|**instance_memory_gb**| 使用的 instance 的 最多可用記憶體大小        |
+|**instance_type**   | instance type  |
+|**instance_cpu_core**| vCPU cores of the instance |
+|**instance_gpu_core**| GPU cores of instance  |
+|**instance_memory_gb**| memory of the instance  |
 |**pod_name**| name of the pod         |
 |**k8s_uid**| Kubernetes object id           |
 |**start_time**| time pod began running       |
