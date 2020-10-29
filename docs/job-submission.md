@@ -46,6 +46,8 @@ There are several informative columns of the job list:
 
 + `Submitted by Me` if checked off, it lists jobs **ONLY** submitted by the user.
 
++ `Search job name` search by the keywords.
+
 ## Create Job
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.

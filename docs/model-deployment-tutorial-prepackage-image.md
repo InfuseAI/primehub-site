@@ -87,6 +87,9 @@ Then, you can build the model deployment image by:
 docker build -t tensorflow2-prepackage-model .
 ```
 
+
+## Verify Your Model Deployment Image
+
 In order to verify the image, you can run it:
 ```bash
 docker run -p 5000:5000 --rm tensorflow2-prepackage-model
@@ -96,13 +99,60 @@ And send a post request by the following format:
 ```bash
 curl -X POST localhost:5000/api/v1.0/predictions \
     -H 'Content-Type: application/json' \
-    -d '{ "data": {"ndarray": [your data format] } }'
+    -d '{ "data": {"ndarray": [${INPUT_DATA}] } }'
 ```
 
-Now you can use this image in the PrimeHub model deployment function.
+The `${INPUT_DATA}` is the data that you can feed into deployed model for prediction.
+
+>The **dimension** of input data must be same as model's input shape.
+
+For example, if we create our model with a specified `input_shape=(4,)` by the following definition:
+```python
+model = tf.keras.models.Sequential([
+    keras.layers.Dense(64, activation='relu', input_shape=(4,)),
+    ...
+    ...
+])
+```
+
+Then, we can send a post request that ${INPUT_DATA} with shape 4.
+```bash
+curl -X POST localhost:5000/api/v1.0/predictions \
+    -H 'Content-Type: application/json' \
+    -d '{ "data": {"ndarray": [[5.1, 3.3, 1.7, 0.5]] } }'
+```
+
+Or if we create our model with a specified `input_shape=(2,2)` by the following definition:
+```python
+model = tf.keras.models.Sequential([
+    keras.layers.Dense(64, activation='relu', input_shape=(2,2)),
+    ...
+    ...
+])
+```
+
+Then, we can also send a post request that ${INPUT_DATA} with shape (2,2).
+```bash
+curl -X POST localhost:5000/api/v1.0/predictions \
+    -H 'Content-Type: application/json' \
+    -d '{ "data": {"ndarray": [[[5.1, 3.3], [1.7, 0.5]]] } }'
+```
+
+After sending the post request, we can obtain the response output in the following format:
+```bash
+{"data":{"names":[],"ndarray":[${PREDICTION_RESULT}]},"meta":{}}
+```
+The `${PREDICTION_RESULT}` is a list to represent the prediction value.
+
+For example, the following output shows three prediction values in each class.
+```bash
+{"data":{"names":[],"ndarray":[[3.093,-0.519,-8.918]]},"meta":{}}
+```
+
+After verifying your model deployment image, now you can use this image in the PrimeHub model deployment feature.
 
 ## Share Your Base Image
 
 Share your base image by pushing it to a docker registry.
 
-Therefore, others don't need to write the model serving code again. They can share the same base image and build a model deployment image by `docker`.
+Therefore, others can re-use the model serving code again. They can share the same base image and build a model deployment image by `docker`.

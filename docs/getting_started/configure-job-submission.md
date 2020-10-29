@@ -25,6 +25,8 @@ Path | Description | Default Value
 `jobSubmission.nodeSelector` | The default [node selector](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for the underlying pod | `{}`
 `jobSubmission.affinity` | The default [affinity](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity) setting for the underlying pod | `{}`
 `jobSubmission.tolerations` | The default [tolerations](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) setting for the underlying pod | `[]`
+`jobSubmission.jobTTLSeconds` | the retention of a job that it will be kept in PrimeHub after the job (succeeded, failed, cancelled). The default value is 30 days. Zero value means unlimited. | `2592000`
+`jobSubmission.jobLimit` | The limit of total amount of jobs, the oldest job will be removed if the limit is exceeded; Zero value means unlimited. | `0`
 
 Example:
 
