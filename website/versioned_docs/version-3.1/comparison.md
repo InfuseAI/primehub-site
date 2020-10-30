@@ -18,7 +18,7 @@ Here we list the features comparison between tiers for the reference.
 | [System Management](guide_manual/admin-system)  | ✅️ | ✅️ |
 | [Users Management](guide_manual/admin-user)    | ✅️ | ✅️ |
 | [Groups Management](guide_manual/admin-group)   | ✅️ | ✅️ |
-| [Instance Tpypes Management](guide_manual/admin-instancetype)  | ✅️ | ✅️ |
+| [Instance Types Management](guide_manual/admin-instancetype)  | ✅️ | ✅️ |
 | [Images Management](guide_manual/admin-image) | ✅️ | ✅️ |
 | [Datasets Management](guide_manual/admin-dataset)  | ✅️ | ✅️ |
 | [Secrets Management](guide_manual/admin-secret) | ✅️ | ✅️ |
