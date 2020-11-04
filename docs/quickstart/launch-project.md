@@ -35,6 +35,12 @@ This quickstart shows how to launch/stop a project.
 
 ![](assets/v3-jupyter-popup-block.png)
 
+## Spawning
+
+![](assets/spawner_cancel.png)
+
+Spawning can be cancelled by clicking `Cancel`.
+
 
 ## Stop
 

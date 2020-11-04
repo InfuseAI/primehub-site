@@ -32,6 +32,12 @@ title: 啟始 Notebook
 
 ![](assets/v3-jupyter-popup-block.png)
 
+## 生成
+
+![](assets/spawner_cancel.png)
+
+生成過程可以按 `Cancel` 取消 。
+
 ## 關閉
 
 點擊 `Stop My Server`，稍待後會關閉。
