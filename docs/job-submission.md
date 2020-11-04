@@ -64,6 +64,17 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 + `Default Timeout`: `Minutes`/ `Hours` / `Days`; a running Job will be cancelled after the interval of time, the setting here will overwrite the setting from a Group.
 
+### Command
+
+User are able to run `sudo apt <command` in a Job.
+
+such as
+
+```
+sudo apt update
+sudo apt install <package> --assume-yes
+```
+
 ### Directories/paths the job can access if directories exits:
 
 >**Notice**：The default working directory of a Job is under `/home/jovyan`; This is `/home/jovyan` inside Job Pod *rather than `/home/jovyan` inside JupyterHub Pod*, therefore, *files are located under `/home/jovyan` of JupyterHub **don't exist** here*! There are `<group volume>` and `<dataset>` only mounted here in Job Pod.

@@ -37,6 +37,7 @@
     "Notebook": [
       "quickstart/launch-project",
       "user-advanced-setting",
+      "notebook-tips",
       {
         "type": "subcategory",
         "label": "Notebook Extension",
@@ -282,6 +283,7 @@
     "Notebook":[
         "zh-tw/quickstart/launch-project",
         "zh-tw/user-advanced-setting",
+        "zh-tw/notebook-tips-cht",
         {
           "type": "subcategory",
           "label": "Notebook Extension",

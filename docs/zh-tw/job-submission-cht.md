@@ -62,6 +62,18 @@ title: Job Submission
 
 + `Command`: 指定`job`批次工作項目。
 
+
+### Command
+
+使用者可以在任務內執行 `sudo apt <command` 安裝軟體套件。
+
+例如：
+
+```
+sudo apt update
+sudo apt install <package> --assume-yes
+```
+
 ### Job 可存取工作目錄、專案目錄及資料集目錄
 
  >注意：Job 的預設路徑是在 `/homve/jovyan`，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
