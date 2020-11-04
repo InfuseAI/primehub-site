@@ -23,11 +23,17 @@ We've streamlined the sharing of information between groups by allowing users to
 
 ### PrimeHub Notebook Extension
 
+PrimeHub Extension is an extension of Jupyter Notebook developed for PrimeHub based on JupyterLab. We plans to roll out more features to enhance user's ML workflow and experience from Notebook. To have this extension, an image with built-in PrimeHub Extension is required.
+
++ [Document](ph-notebook-extension)
+
 #### Submit Notebooks as Job
 
 Tired of going back and forth between PrimeHub and your Jupyter notebook? Worry no more, and submit your job directly from your notebook in a few simple clicks with our new JupyterLab extension.
 
 ![](assets/ph-extension-sub-nb.png)
+
++ [Document](notebook-as-job)
 
 ### Server to Server
 
@@ -52,7 +58,7 @@ Nothing is holding you back from using PrimeHub--not even an air-gapped environm
 + Added "Back to User Portal" button on side menu of Admin Portal.
 + Removed GPU/CPU quota columns from Create/Edit Dataset tables.
 
-### Job
+## Job
 
 + Added the job timeout setting on group and individual job.
 + Added the resource information on job submission page.
