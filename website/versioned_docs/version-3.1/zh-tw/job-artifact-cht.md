@@ -12,7 +12,7 @@ original_id: job-artifact-cht
 
 ## 前置需求
 
-此功能必須要 **PrimeHub Store** 跟 **PHFS** 此兩項功能都打開才可以運作
+此功能必須要 [PrimeHub store](../design/primehub-store) 及 [PHFS](../design/phfs) 此兩項功能都打開才可以運作
 
 ## 產生 Artifacts
 
