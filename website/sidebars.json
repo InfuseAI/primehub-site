@@ -127,10 +127,16 @@
       },
       {
         "type": "subcategory",
+        "label": "Monthly Report",
+        "ids": [
+          "guide_manual/admin-report"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "System",
         "ids": [
-          "guide_manual/admin-system",
-          "guide_manual/admin-report"
+          "guide_manual/admin-system"
         ]
       },
       {
@@ -383,10 +389,16 @@
       },
       {
         "type": "subcategory",
+        "label": "使用量月報表",
+        "ids": [
+          "zh-tw/guide_manual/admin-report-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "系統",
         "ids": [
-          "zh-tw/guide_manual/admin-system-cht",
-          "zh-tw/guide_manual/admin-report-cht"
+          "zh-tw/guide_manual/admin-system-cht"
         ]
       },
       {
