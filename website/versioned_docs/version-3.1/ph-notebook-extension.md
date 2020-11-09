@@ -11,7 +11,7 @@ original_id: ph-notebook-extension
 
 **PrimeHub Extension** is an extension of *Jupyter Notebook* developed for PrimeHub. We plans to roll out more features to enhance user's ML workflow and experience from Notebook.
 
->The latest images provided by InfuseAI are built with **PrimeHub Extension** and the corresponding environment to execute extension features smoothly. To Use these features, please make sure the running image is the latest one or is built on top of the latest one from InfuseAI. See the list.
+>The latest images provided by InfuseAI are built with **PrimeHub Extension** and the corresponding environment to execute extension features smoothly. To Use these features, please make sure the running image is the latest one or is built on top of the latest one from InfuseAI. See the [list](guide_manual/images-list).
 
 After opening a Notebook file (*.ipynb), there is **PrimeHub** extension on the menu bar of the Notebook. This document explains these extension features briefly.
 
