@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Install PrimeHub Community on MicroK8S Single Node (Ubuntu) · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;label-sect&quot;&gt;"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Install PrimeHub Community on MicroK8S Single Node (Ubuntu) · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;label-sect&quot;&gt;"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/next/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/next/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Setup PrimeHub Community</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/introduction">PrimeHub v3.2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/dev-introduction">Getting Started</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/kubernetes_on_gke">Kubernetes on GKE</a></li><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/kubernetes_on_eks">Kubernetes on AWS EKS</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Community</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/install_primehub_ce">Install PrimeHub CE</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/next/getting_started/kubernetes_on_ubuntu_ce">Install PrimeHub CE on Single Node</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Enterprise</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/install_primehub">Install PrimeHub EE</a></li><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/kubernetes_on_ubuntu_machine">Install PrimeHub EE on Single Node</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/getting-started-user">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/login-portal-user">User Portal</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Notebook<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/launch-project">Launch Jupyter Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/next/user-advanced-setting">Advanced Settings</a></li><li class="navListItem"><a class="navItem" href="/docs/next/notebook-tips">Tips</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Extension</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/ph-notebook-extension">PrimeHub Extension</a></li><li class="navListItem"><a class="navItem" href="/docs/next/notebook-as-job">Notebook as a Job</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-feature">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-artifact-feature">Job Artifacts</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorial</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li><li class="navListItem"><a class="navItem" href="/docs/next/job-artifacts-simple">Job Artifacts Simple Usecase</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Schedule<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/job-scheduling-feature">Job Scheduler</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/model-deployment-feature">Model Deployment (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials (Alpha)</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/model-deployment-quickstart-tutorial">Quickstart Tutorial of Model Deployment</a></li><li class="navListItem"><a class="navItem" href="/docs/next/model-deployment-tutorial-package-image">Package a Docker Image for Model Deployment (Python)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/model-deployment-tutorial-package-image-r">Package a Docker Image for Model Deployment (R)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/model-deployment-tutorial-prepackage-image">Prepackage a Base Image and Use It</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Data Store<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/nb-data-store">Storing Data</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">SSH Server<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/ssh-config">SSH Server Feature</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/ssh-vscode">VSCode Remote-SSH Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/ssh-keygen">SSH Key Generation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Admin Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/getting-started-admin">Administration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage users and groups</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-group">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Instance Type</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/usecase-toleration">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/usecase-nodeselector">NodeSelector</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-it-performance">Quality of Service for Pods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and build images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-image">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-build-image">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/custom-image-guideline">Custom Image Guideline</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/images-list">Available Images List</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Datasets and Upload</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-dataset">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-uploader">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Monthly Report</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-report">Usage Reports</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-system">System Settings</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and obtain secrets</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/admin-secret">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Quick Start</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/login-portal-admin">Admin Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/create-user">Create User</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/create-group">Create Group</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/add-instance-type">Create/Plan Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/add-infuseai-image">Add InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/add-image">Add Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/build-image">Build Image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/secret-pull-image">Pull Secret for GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/secret-gitsync">Gitsync Secret for GitHub</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Maintenance<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance Notebook</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/maintenance">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/maintenance-resize-user-vol">Increase User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/next/quickstart/maintenance-resize-group-vol">Increase Group Volume</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tips</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/trouble/howto-check-user-vol">HOWTO - Check User Volume Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/next/trouble/howto-check-group-vol">HOWTO - Check Group Volume Usage</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Concepts</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/design/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/data-model">Data Model</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/crds">CRDs</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/graphql">GraphqQL</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/persistence-storage">Persistence Storages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Designs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/design/admission">Admission</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/jupyterhub">JupyterHub</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/notebook-kernel-process">Notebook with kernel process</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/dataset-upload">Dataset Upload</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/image-builder">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/job-scheduler">Job Scheduler</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/install-helper-design">Install Helper</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/user-portal">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/meta-chart">Meta Chart</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/model-deployment">Model Deployment (Alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/primehub-store">PrimeHub Store</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/log-persistence">Log Persistence</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/phfs">PrimeHub File System (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/usage">PrimeHub Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/next/design/job-artifact">Job Artifact</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/configure-ssh-server">SSH Server</a></li><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/configure-job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/next/getting_started/configure-self-signed-ca">Self-Signed Certificate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tasks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/tasks/repo2docker">repo2docker image</a></li><li class="navListItem"><a class="navItem" href="/docs/next/tasks/non-standard-image">Non standard image</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">PrimeHub Chart</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/tasks/minio_configurations">MinIO Configurations</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/tasks/api-token">Generate API Token</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/references/primehub_chart">Chart Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/next/comparison">Features Comparison</a></li><li class="navListItem"><a class="navItem" href="/docs/next/guide_manual/kubeflow-installation-guide">Kubeflow Installation Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/next/trouble-shoot-guide">Trouble-shooting Guide</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JupyterHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/trouble/jh-blank-page">A blank JupyterHub</a></li><li class="navListItem"><a class="navItem" href="/docs/next/trouble/dataset-failure">Jupyter spawning fails due to mounting datasets</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Keycloak</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/trouble/kc-brute-force-detection">Brute force attack password</a></li><li class="navListItem"><a class="navItem" href="/docs/next/trouble/kc-password-policy">Password Policy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SSH Server</h4><ul><li class="navListItem"><a class="navItem" href="/docs/next/trouble/ssh-server-permission-denied">Permission Denied</a></li><li class="navListItem"><a class="navItem" href="/docs/next/trouble/ssh-server-connection-refused">Connection Refused</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/next/trouble/kubelet-restart">Restart Kubelet</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Install PrimeHub Community on MicroK8S Single Node (Ubuntu)</h1></header><article><div><span><div class="label-sect">
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+<p>This document will guide you to install <a href="https://microk8s.io/">MicroK8s</a> on a single node and <strong>PrimeHub Enterprise</strong> with a easy script.</p>
+<h2><a class="anchor" aria-hidden="true" id="provision-a-cluster"></a><a href="#provision-a-cluster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Provision a cluster</h2>
+<p><a href="https://microk8s.io/">MicroK8s</a> supports multi-platform, we demonstrate it in the following spec:</p>
+<ul>
+<li>Ubuntu 18.04 LTS</li>
+<li>Kubernetes 1.17 version</li>
+<li>IP address: 1.2.3.4</li>
+<li>Networking: allow port 80 for HTTP</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="install-microk8s-single-node"></a><a href="#install-microk8s-single-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install MicroK8s Single Node</h3>
+<p>We provide a install script which makes the installation much easier to create a <a href="https://microk8s.io/">MicroK8s-single-node</a> Kubernetes.</p>
+<p>Download the script <code>primehub-install</code></p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -O https://storage.googleapis.com/primehub-release/bin/primehub-install
+<span class="token function">chmod</span> +x primehub-install
+</code></pre>
+<p>Run the <code>create singlenode</code> command:</p>
+<pre><code class="hljs css language-bash">./primehub-install create singlenode
+</code></pre>
+<p>After the first execution, you will see the message. Because it adds the user to <code>microk8s</code> group and needs to relogin:</p>
+<pre><code class="hljs">[Require Action] Please relogin <span class="hljs-keyword">this</span> session <span class="hljs-keyword">and</span> <span class="hljs-built_in">run</span> create singlenode again
+</code></pre>
+<p>After relogin, run the same command again to finish the single-node provision:</p>
+<pre><code class="hljs css language-bash">./primehub-install create singlenode
+</code></pre>
+<blockquote>
+<p>During the installation, you might run into troubles or need to modify the default settings, please check the <a href="#troubleshooting">TroubleShooting</a> section.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="quick-verification"></a><a href="#quick-verification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quick Verification</h3>
+<p>Access nginx-ingress with the magic <code>.nip.io</code> domain, with your <code>EXTERNAL-IP</code>:</p>
+<pre><code class="hljs">curl <span class="hljs-string">http:</span><span class="hljs-comment">//1.2.3.4.nip.io</span>
+</code></pre>
+<p>The output will be <code>404</code> because no <code>Ingress</code> resources are defined yet:</p>
+<pre><code class="hljs"><span class="hljs-keyword">default</span> backend - 404
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configurations"></a><a href="#configurations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurations</h2>
+<h3><a class="anchor" aria-hidden="true" id="configure-gpu-optional"></a><a href="#configure-gpu-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure GPU (optional)</h3>
+<ul>
+<li>Download and install Nvidia GPU drivers from official website</li>
+<li>Enable GPU feature</li>
+</ul>
+<pre><code class="hljs">microk8s.<span class="hljs-builtin-name">enable</span> gpu
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="configure-snap-optional"></a><a href="#configure-snap-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure snap (optional)</h3>
+<p><a href="https://snapcraft.io/">snap</a> will update packages automatically. If you plan to use it in a production-ready environment, you could</p>
+<ul>
+<li>Set the update process run on a special time window, or delay it before a date</li>
+<li>Disable it by setting a wrong proxy</li>
+</ul>
+<p>Please see the <a href="https://snapcraft.io/docs/keeping-snaps-up-to-date">manual</a> from snapcraft.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="using-self-hosted-dns-optional"></a><a href="#using-self-hosted-dns-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Self-hosted DNS (Optional)</h2>
+<blockquote>
+<p>If your domain name is not hosted by public DNS server, using the self-hosted DNS server instead.</p>
+</blockquote>
+<p>Validate domain name for PrimeHub. <a href="https://regexr.com/">regexr.com</a></p>
+<pre><code class="hljs"><span class="hljs-section"># The domain name must match </span>
+[<span class="hljs-string">a-z0-9</span>](<span class="hljs-link">[-a-z0-9]*[a-z0-9]</span>)?(\.[<span class="hljs-string">a-z0-9</span>](<span class="hljs-link">[-a-z0-9]*[a-z0-9]</span>)?)*
+</code></pre>
+<p>Configure K8S CoreDNS</p>
+<pre><code class="hljs css language-bash">kubectl edit cm -n kube-system coredns
+</code></pre>
+<p>Please modify the following line and fill your own DNS server</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># Please edit the object below. Lines beginning with a '#' will be ignored,</span>
+<span class="hljs-comment"># and an empty file will abort the edit. If an error occurs while saving this file will be</span>
+<span class="hljs-comment"># reopened with the relevant failures.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">data:</span>
+  <span class="hljs-attr">Corefile:</span> <span class="hljs-string">|
+    .:53 {
+        errors
+        health
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+        }
+        prometheus :9153
+        forward . &lt;Fill your own DSN server&gt;
+        cache 30
+        loop
+        reload
+        loadbalance
+    }
+</span><span class="hljs-string">...</span>
+</code></pre>
+<p>After changing the config map of coredns, please use the following command to restart coredns and apply the new configuration.</p>
+<pre><code class="hljs css language-bash">kubectl rollout -n kube-system restart deploy coredns
+</code></pre>
+<p>Reference</p>
+<p><a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/">https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/</a></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="install-primehub-ce"></a><a href="#install-primehub-ce" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub CE</h2>
+<p>Run the <code>create primehub</code> command with <code>--primehub-ce</code> and with a specified version such <code>v3.1.0</code>.</p>
+<pre><code class="hljs css language-bash">./primehub-install create primehub --primehub-version <span class="token operator">&lt;</span>version<span class="token operator">></span> --primehub-ce --helm-timeout 20m
+</code></pre>
+<ol>
+<li><p>Please enter the domain name of PrimeHub</p></li>
+<li><p>The password of <code>KC_PASSWORD</code> and <code>PH_PASSWORD</code> will be prompted and will be auto-generated if input empty value.</p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="monitor-the-primehub-installation"></a><a href="#monitor-the-primehub-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monitor the PrimeHub installation</h3>
+<p>Once running the PrimeHub installation, meanwhile, just open another terminal session to run the command to monitor the installation.</p>
+<pre><code class="hljs css language-bash"><span class="token function">watch</span> <span class="token string">'kubectl get pod -n hub'</span>
+</code></pre>
+<p>Once the <code>primehub-bootstrap</code> is running, use the the command to watch the log of primehub bootstrap</p>
+<pre><code class="hljs css language-bash">kubectl logs -n hub <span class="token variable"><span class="token variable">$(</span>kubectl get pod -n hub <span class="token operator">|</span> <span class="token function">grep</span> primehub-bootstrap <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">' '</span> -f1<span class="token variable">)</span></span> -f
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
+<p>You may run into troubles during the installation, we list some of them, hopefully, you find resolutions here.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-valid-hostname-and-domain"></a><a href="#using-valid-hostname-and-domain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using valid hostname and domain</h3>
+<ul>
+<li><p>Validate the hostname of the node with the following regular expression. <a href="https://regexr.com/">regexr.com</a></p>
+<pre><code class="hljs css language-bash"><span class="token punctuation">[</span>a-z0-9<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">[</span>-a-z0-9<span class="token punctuation">]</span>*<span class="token punctuation">[</span>a-z0-9<span class="token punctuation">]</span><span class="token punctuation">)</span>?<span class="token punctuation">(</span><span class="token punctuation">\</span>.<span class="token punctuation">[</span>a-z0-9<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">[</span>-a-z0-9<span class="token punctuation">]</span>*<span class="token punctuation">[</span>a-z0-9<span class="token punctuation">]</span><span class="token punctuation">)</span>?<span class="token punctuation">)</span>*
+</code></pre></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="symptoms"></a><a href="#symptoms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Symptoms</h4>
+<p>When hostname is invalid, the installation might suspend at the <code>microk8s status</code> phase, because the cluster is not running:</p>
+<pre><code class="hljs css language-bash">ubuntu@foo_bar:~$ ./primehub-install create singlenode foo-bar:5000 --k8s-version <span class="token number">1.17</span>
+<span class="token punctuation">[</span>Search<span class="token punctuation">]</span> Folder primehub-v2.6.2
+<span class="token punctuation">[</span>Not Found<span class="token punctuation">]</span> Folder primehub-v2.6.2
+<span class="token punctuation">[</span>Search<span class="token punctuation">]</span> tarball primehub-v2.6.2.tar.gz
+<span class="token punctuation">[</span>Not Found<span class="token punctuation">]</span> tarball primehub-v2.6.2.tar.gz
+<span class="token punctuation">[</span>Search<span class="token punctuation">]</span> primehub helm chart with version: v2.6.2
+<span class="token punctuation">[</span>Not Found<span class="token punctuation">]</span> primehub v2.6.2 <span class="token keyword">in</span> infuseai helm chart
+<span class="token punctuation">[</span>Skip<span class="token punctuation">]</span> Don't need PrimeHub release package when target <span class="token operator">!=</span> primehub
+<span class="token punctuation">[</span>check<span class="token punctuation">]</span> microk8s status
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="resolution"></a><a href="#resolution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resolution</h4>
+<p>You would get <code>microk8s is not running</code> from the status result:</p>
+<pre><code class="hljs css language-bash">ubuntu@foo_bar:~$ microk8s.status
+microk8s is not running. Use microk8s.inspect <span class="token keyword">for</span> a deeper inspection.
+</code></pre>
+<p>If you run the inspect command , it shows everything running:</p>
+<pre><code class="hljs css language-bash">ubuntu@foo_bar:~$ microk8s.inspect
+Inspecting services
+  Service snap.microk8s.daemon-cluster-agent is running
+  Service snap.microk8s.daemon-flanneld is running
+  Service snap.microk8s.daemon-containerd is running
+  Service snap.microk8s.daemon-apiserver is running
+  Service snap.microk8s.daemon-apiserver-kicker is running
+  Service snap.microk8s.daemon-proxy is running
+  Service snap.microk8s.daemon-kubelet is running
+  Service snap.microk8s.daemon-scheduler is running
+  Service snap.microk8s.daemon-controller-manager is running
+  Service snap.microk8s.daemon-etcd is running
+  Copy <span class="token function">service</span> arguments to the final report tarball
+Inspecting AppArmor configuration
+Gathering system information
+  Copy processes list to the final report tarball
+  Copy snap list to the final report tarball
+  Copy VM name <span class="token punctuation">(</span>or none<span class="token punctuation">)</span> to the final report tarball
+  Copy disk usage information to the final report tarball
+  Copy memory usage information to the final report tarball
+  Copy server <span class="token function">uptime</span> to the final report tarball
+  Copy current linux distribution to the final report tarball
+  Copy openSSL information to the final report tarball
+  Copy network configuration to the final report tarball
+Inspecting kubernetes cluster
+  Inspect kubernetes cluster
+
+Building the report tarball
+  Report tarball is at /var/snap/microk8s/1489/inspection-report-20200713_093426.tar.gz
+</code></pre>
+<p>You could find the root cause in the kubelet's inspection-report logs:</p>
+<pre><code class="hljs css language-bash">ubuntu@foo_bar:~/inspection-report/snap.microk8s.daemon-kubelet$ <span class="token function">cat</span> systemctl.log
+● snap.microk8s.daemon-kubelet.service - Service <span class="token keyword">for</span> snap application microk8s.daemon-kubelet
+   Loaded: loaded <span class="token punctuation">(</span>/etc/systemd/system/snap.microk8s.daemon-kubelet.service<span class="token punctuation">;</span> enabled<span class="token punctuation">;</span> vendor preset: enabled<span class="token punctuation">)</span>
+   Active: active <span class="token punctuation">(</span>running<span class="token punctuation">)</span> since Mon <span class="token number">2020</span>-07-13 09:34:10 UTC<span class="token punctuation">;</span> 14s ago
+ Main PID: <span class="token number">10180</span> <span class="token punctuation">(</span>kubelet<span class="token punctuation">)</span>
+    Tasks: <span class="token number">12</span> <span class="token punctuation">(</span>limit: <span class="token number">2329</span><span class="token punctuation">)</span>
+   CGroup: /system.slice/snap.microk8s.daemon-kubelet.service
+           └─10180 /snap/microk8s/1489/kubelet --kubeconfig<span class="token operator">=</span>/var/snap/microk8s/1489/credentials/kubelet.config --cert-dir<span class="token operator">=</span>/var/snap/microk8s/1489/certs --client-ca-file<span class="token operator">=</span>/var/snap/microk8s/1489/certs/ca.crt --anonymous-auth<span class="token operator">=</span>false --network-plugin<span class="token operator">=</span>cni --root-dir<span class="token operator">=</span>/var/snap/microk8s/common/var/lib/kubelet --fail-swap-on<span class="token operator">=</span>false --cni-conf-dir<span class="token operator">=</span>/var/snap/microk8s/1489/args/cni-network/ --cni-bin-dir<span class="token operator">=</span>/snap/microk8s/1489/opt/cni/bin/ --feature-gates<span class="token operator">=</span>DevicePlugins<span class="token operator">=</span>true --eviction-hard<span class="token operator">=</span>memory.available<span class="token operator">&lt;</span>100Mi,nodefs.available<span class="token operator">&lt;</span>1Gi,imagefs.available<span class="token operator">&lt;</span>1Gi --container-runtime<span class="token operator">=</span>remote --container-runtime-endpoint<span class="token operator">=</span>/var/snap/microk8s/common/run/containerd.sock --node-labels<span class="token operator">=</span>microk8s.io/cluster<span class="token operator">=</span>true
+
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.139863   <span class="token number">10180</span> kubelet.go:2263<span class="token punctuation">]</span> node <span class="token string">"foo_bar"</span> not found
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.240093   <span class="token number">10180</span> kubelet.go:2263<span class="token punctuation">]</span> node <span class="token string">"foo_bar"</span> not found
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.340308   <span class="token number">10180</span> kubelet.go:2263<span class="token punctuation">]</span> node <span class="token string">"foo_bar"</span> not found
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.440529   <span class="token number">10180</span> kubelet.go:2263<span class="token punctuation">]</span> node <span class="token string">"foo_bar"</span> not found
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.540736   <span class="token number">10180</span> kubelet.go:2263<span class="token punctuation">]</span> node <span class="token string">"foo_bar"</span> not found
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.640915   <span class="token number">10180</span> kubelet.go:2263<span class="token punctuation">]</span> node <span class="token string">"foo_bar"</span> not found
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: I0713 09:34:24.713484   <span class="token number">10180</span> kubelet_node_status.go:294<span class="token punctuation">]</span> Setting node annotation to <span class="token builtin class-name">enable</span> volume controller attach/detach
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: I0713 09:34:24.714871   <span class="token number">10180</span> kubelet_node_status.go:70<span class="token punctuation">]</span> Attempting to register node foo_bar
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.721575   <span class="token number">10180</span> kubelet_node_status.go:92<span class="token punctuation">]</span> Unable to register node <span class="token string">"foo_bar"</span> with API server: Node <span class="token string">"foo_bar"</span> is invalid: metadata.name: Invalid value: <span class="token string">"foo_bar"</span><span class="token builtin class-name">:</span> a DNS-1123 subdomain must consist of lower <span class="token keyword">case</span> alphanumeric characters, <span class="token string">'-'</span> or <span class="token string">'.'</span>, and must start and end with an alphanumeric character <span class="token punctuation">(</span>e.g. <span class="token string">'example.com'</span>, regex used <span class="token keyword">for</span> validation is <span class="token string">'[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'</span><span class="token punctuation">)</span>
+Jul <span class="token number">13</span> 09:34:24 foo_bar microk8s.daemon-kubelet<span class="token punctuation">[</span><span class="token number">10180</span><span class="token punctuation">]</span>: E0713 09:34:24.741101   <span class="token number">10180</span> kubelet.go:2263<span class="token punctuation">]</span> node <span class="token string">"foo_bar"</span> not found
+</code></pre>
+<blockquote>
+<p>Jul 13 09:34:24 foo_bar microk8s.daemon-kubelet[10180]: E0713 09:34:24.721575   10180 kubelet_node_status.go:92] Unable to register node &quot;foo_bar&quot; with API server: Node &quot;foo_bar&quot; is invalid: metadata.name: Invalid value: &quot;foo_bar&quot;: a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '<a href="[-a-z0-9]*[a-z0-9]">a-z0-9</a>?(.<a href="[-a-z0-9]*[a-z0-9]">a-z0-9</a>?)*')</p>
+</blockquote>
+<p>Please fix the hostname, domain name and reinstall microk8s. You could destroy it with this command:</p>
+<pre><code class="hljs css language-bash">$ ./primehub-install destroy singlenode
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="ensure-cni-ip-range-not-overlaid-with-your-egress-network"></a><a href="#ensure-cni-ip-range-not-overlaid-with-your-egress-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ensure CNI IP Range not overlaid with your Egress network</h3>
+<p>MicroK8s uses <code>iptables</code> as <code>kube-proxy</code> implementation, the overlay IP ranges might cause unexpected behavior with networking. For example, a client in a pod might not access same IP range external endpoint (banned by iptables).</p>
+<pre><code class="hljs css language-bash">ubuntu@foo-bar:~$ <span class="token function">ip</span> addr show
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1000</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope <span class="token function">host</span>
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span>: eth0: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">9001</span> qdisc fq_codel state UP group default qlen <span class="token number">1000</span>
+    link/ether 06:62:0d:d6:82:d4 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">172.31</span>.39.226/20 brd <span class="token number">172.31</span>.47.255 scope global dynamic eth0
+       valid_lft 2651sec preferred_lft 2651sec
+    inet6 fe80::462:dff:fed6:82d4/64 scope <span class="token function">link</span>
+       valid_lft forever preferred_lft forever
+<span class="token number">3</span>: flannel.1: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">8951</span> qdisc noqueue state UNKNOWN group default
+    link/ether ba:0f:7c:6d:8d:56 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">10.1</span>.46.0/32 scope global flannel.1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::b80f:7cff:fe6d:8d56/64 scope <span class="token function">link</span>
+       valid_lft forever preferred_lft forever
+<span class="token number">4</span>: cni0: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">8951</span> qdisc noqueue state UP group default qlen <span class="token number">1000</span>
+    link/ether ee:98:e2:60:4e:18 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">10.1</span>.46.1/24 scope global cni0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ec98:e2ff:fe60:4e18/64 scope <span class="token function">link</span>
+       valid_lft forever preferred_lft forever
+</code></pre>
+<p>Microk8s uses <code>flannel</code> as the default CNI, it would create two interface <code>flannel.1</code> and <code>cni0</code>. In the example <code>eth0</code> IP range(<code>172.31.0.0</code>)  is not overlaid with CNI's IP range (<code>10.1.0.0</code>).</p>
+<h4><a class="anchor" aria-hidden="true" id="resolution-1"></a><a href="#resolution-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resolution</h4>
+<p>If the IP Range is overlaid with each other, please fix it by update CNI's IP range configuration <code>/var/snap/microk8s/current/args/flannel-network-mgr-config</code>:</p>
+<pre><code class="hljs css language-json">{<span class="hljs-attr">"Network"</span>: <span class="hljs-string">"10.1.0.0/16"</span>, <span class="hljs-attr">"Backend"</span>: {<span class="hljs-attr">"Type"</span>: <span class="hljs-string">"vxlan"</span>}}
+</code></pre>
+<p>We might change it to <code>10.3.0.0/16</code> and restart microk8s</p>
+<pre><code class="hljs css language-json">{<span class="hljs-attr">"Network"</span>: <span class="hljs-string">"10.3.0.0/16"</span>, <span class="hljs-attr">"Backend"</span>: {<span class="hljs-attr">"Type"</span>: <span class="hljs-string">"vxlan"</span>}}
+</code></pre>
+<p>We have to delete <code>cni0</code> to make it re-create in the new configuration (flannel.1 would be updated automatically):</p>
+<pre><code class="hljs css language-json">sudo ip link delete cni0
+</code></pre>
+<p>You might find all pods in the new IP ranges:</p>
+<pre><code class="hljs css language-json">ubuntu@foo-bar:~$ k get pod -A -o wide
+NAMESPACE        NAME                                             READY   STATUS             RESTARTS   AGE   IP              NODE      NOMINATED NODE   READINESS GATES
+default          foobar-6bfcbb6974-c2gt7                          1/1     Running            1          29m   10.3.49.116     foo-bar   &lt;none&gt;           &lt;none&gt;
+ingress-nginx    nginx-ingress-controller-676d5ccd4c-gmm5f        1/1     Running            3          32m   172.31.39.226   foo-bar   &lt;none&gt;           &lt;none&gt;
+ingress-nginx    nginx-ingress-default-backend-5b967cf596-crhdp   1/1     Running            2          32m   10.3.49.117     foo-bar   &lt;none&gt;           &lt;none&gt;
+kube-system      coredns-9b8997588-wm2n7                          1/1     Running            4          34m   10.3.49.113     foo-bar   &lt;none&gt;           &lt;none&gt;
+kube-system      hostpath-provisioner-7b9cb5cdb4-d9hlm            1/1     Running            3          34m   10.3.49.115     foo-bar   &lt;none&gt;           &lt;none&gt;
+kube-system      tiller-deploy-969865475-h6gtb                    1/1     Running            2          32m   10.3.49.114     foo-bar   &lt;none&gt;           &lt;none&gt;
+metacontroller   metacontroller-0                                 1/1     Running            2          31m   10.3.49.112     foo-bar   &lt;none&gt;           &lt;none&gt;
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="dns-configuration-might-reset-to-the-default-values-when-enabledisable-microk8s-addons"></a><a href="#dns-configuration-might-reset-to-the-default-values-when-enabledisable-microk8s-addons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DNS configuration might reset to the default values when enable/disable microk8s addons</h3>
+<p>If you update the <code>coredns</code> ConfigMap, please keep a backup to restore it after every microk8s addons enabling or disabling.</p>
+<h4><a class="anchor" aria-hidden="true" id="symptom"></a><a href="#symptom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Symptom</h4>
+<p>Applications are not able to resolve some domain names, they are registered in your internal DNS.</p>
+<pre><code class="hljs css language-json">ubuntu@foo-bar:~$ kubectl -n kube-system get cm coredns -o yaml
+</code></pre>
+<p>Here is the default configuration, we could customize the core-dns by editing it:</p>
+<pre><code class="hljs css language-json">apiVersion: v1
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+        }
+        prometheus :9153
+        forward . 8.8.8.8 8.8.4.4
+        cache 30
+        loop
+        reload
+        loadbalance
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"Corefile":".:53 {\n    errors\n    health\n    ready\n    kubernetes cluster.local in-addr.arpa ip6.arpa {\n      pods insecure\n      fallthrough in-addr.arpa ip6.arpa\n    }\n    prometheus :9153\n    forward . 8.8.8.8 8.8.4.4\n    cache 30\n    loop\n    reload\n    loadbalance\n}\n"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"EnsureExists","k8s-app":"kube-dns"},"name":"coredns","namespace":"kube-system"}}
+  creationTimestamp: "2020-07-13T09:44:53Z"
+  labels:
+    addonmanager.kubernetes.io/mode: EnsureExists
+    k8s-app: kube-dns
+  name: coredns
+  namespace: kube-system
+  resourceVersion: "7079"
+  selfLink: /api/v1/namespaces/kube-system/configmaps/coredns
+  uid: 7b0c948b-083a-49a0-a18e-49b173d78c5a
+</code></pre>
+<p>Try editing <code>forward</code> like this:</p>
+<pre><code class="hljs css language-json">forward . 8.8.8.8 
+</code></pre>
+<p>Enable some addons either:</p>
+<ul>
+<li><code>microk8s.enable istio</code></li>
+<li><code>microk8s.enable gpu</code></li>
+</ul>
+<blockquote>
+<p>The coredns ConfigMap will be <strong>reset</strong> to the default values.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="resolution-2"></a><a href="#resolution-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resolution</h4>
+<p>There is no a good way to tackle it.</p>
+<blockquote>
+<p>Please remember to backup your settings and apply it <em>after every addons enabling or disable</em>.</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/getting_started/install_primehub_ce"><span class="arrow-prev">← </span><span class="function-name-prevnext">Install PrimeHub CE</span></a><a class="docs-next button" href="/docs/next/getting_started/install_primehub"><span class="function-name-prevnext">Install PrimeHub EE</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#provision-a-cluster">Provision a cluster</a><ul class="toc-headings"><li><a href="#install-microk8s-single-node">Install MicroK8s Single Node</a></li><li><a href="#quick-verification">Quick Verification</a></li></ul></li><li><a href="#configurations">Configurations</a><ul class="toc-headings"><li><a href="#configure-gpu-optional">Configure GPU (optional)</a></li><li><a href="#configure-snap-optional">Configure snap (optional)</a></li></ul></li><li><a href="#using-self-hosted-dns-optional">Using Self-hosted DNS (Optional)</a></li><li><a href="#install-primehub-ce">Install PrimeHub CE</a><ul class="toc-headings"><li><a href="#monitor-the-primehub-installation">Monitor the PrimeHub installation</a></li></ul></li><li><a href="#troubleshooting">Troubleshooting</a><ul class="toc-headings"><li><a href="#using-valid-hostname-and-domain">Using valid hostname and domain</a></li><li><a href="#ensure-cni-ip-range-not-overlaid-with-your-egress-network">Ensure CNI IP Range not overlaid with your Egress network</a></li><li><a href="#dns-configuration-might-reset-to-the-default-values-when-enabledisable-microk8s-addons">DNS configuration might reset to the default values when enable/disable microk8s addons</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
