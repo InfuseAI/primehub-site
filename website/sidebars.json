@@ -18,7 +18,8 @@
         "type": "subcategory",
         "label": "Setup PrimeHub Community",
         "ids": [
-          "getting_started/install_primehub_ce"
+          "getting_started/install_primehub_ce",
+          "getting_started/kubernetes_on_ubuntu_ce"
         ]
       },
       {
