@@ -89,8 +89,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 |Name|Image|CPU / GPU|Python|
 |-   |-     |-      |-    |
 |AI notebook|infuseai/docker-stacks:ai-notebook-27d623dc|`CPU`|3.7|
-|AI notebook|infuseai/docker-stacks:ai-notebook-27d623dc-gpu-cuda-10]|`GPU`<br>`CUDA 10.1`|3.7|
-|AI notebook|infuseai/docker-stacks:ai-notebook-27d623dc-gpu]|`GPU`<br>`CUDA 9`|3.7|
-|AI notebook|infuseai/docker-stacks:ai-notebook-py3.6-27d623dc]|`CPU`|3.6|
+|AI notebook|infuseai/docker-stacks:ai-notebook-27d623dc-gpu-cuda-10|`GPU`<br>`CUDA 10.1`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-27d623dc-gpu|`GPU`<br>`CUDA 9`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-py3.6-27d623dc|`CPU`|3.6|
 |AI notebook|infuseai/docker-stacks:ai-notebook-py3.6-27d623dc-gpu-cuda-10|`GPU`<br>`CUDA 10.1`|3.6|
 |AI notebook|infuseai/docker-stacks:ai-notebook-py3.6-27d623dc-gpu|`GPU`<br>`CUDA 9`|3.6|
