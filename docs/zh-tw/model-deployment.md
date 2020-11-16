@@ -65,17 +65,7 @@ title: 模型部署 (Alpha)
 
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-![](assets/mdeploy_create_v31.png)
-
-### Environment Settings
-
-+ `InstanceTypes`: 指定資源配置請求的 instance type。
-  
-+ `Replicas`: 指定上線副本的數量。
-
-### Endpoint
-
-+ `Private Access`: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示`Clients`頁籤，可由此產生存取 Token。
+![](assets/mdeploy_create_v32.png)
 
 ### Deployment Details
 
@@ -91,12 +81,31 @@ title: 模型部署 (Alpha)
 
 + `Update Message`: 使用者針對每次更新附上說明。
 
+### Environment Variables
+
+可加入多個環境變數。
+
++ `Name`: 變數名。
++ `Value`: 數值。
+  
 ### Metadata
 
-可加入多個額外「鍵/值」組合：
+可加入多個額外「鍵/值」組合。
 
 + `Name`: 鍵名。
 + `Value`: 數值。
+
+### Resources
+
++ `InstanceTypes`: 指定資源配置請求的 instance type。
+  
++ `Replicas`: 指定上線副本的數量。
+
+### Endpoint
+
++ `Private Access`: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示`Clients`頁籤，可由此產生存取 Token。
+
+### Deploy
 
 點擊`Deploy`鈕，進行部署。
 
@@ -104,7 +113,7 @@ title: 模型部署 (Alpha)
 
 ## 部署詳細資訊
 
-![](assets/mdeploy_detail_v27.png)
+![](assets/mdeploy_detail_v32.png)
 
 ### Information
 
@@ -113,16 +122,18 @@ title: 模型部署 (Alpha)
 |Status         |狀態|
 |Message        |相關訊息|
 |Endpoint       |佈建上線服務 URL|
-|Access Type    |Public 或 Private|
-|Model Image    |指定的 Model Image|
-|Replicas       |副本個數|
-|Deployment Name|部署 名稱|
-|Group          |所屬群組|
-|Instance Type  |佈建用資源配請求|
 |Creation Time  |創建時間|
 |Last Updated   |最後更新時間|
+|Model Image    |指定的 Model Image|
+|Image Pull Secret | 下拉此 Image 用的 Secret|
 |Description    |使用者輸入描述 |
+|Instance Type  |佈建用資源配請求|
+|Replicas       |副本個數|
+|Access Type    |Public 或 Private|
 |Run an Example |使用`Curl`查詢來驗證部署服務範例；`Private`或`Public`存取代入參數有異|
+
++ Metadata 表
++ Environment Variables 表: 按下小眼睛圖示來顯示變數內容。
 
 ### Logs
 
@@ -146,7 +157,7 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 
 點擊`View`連結來查看查看各個部署詳細記錄。
 
-![](assets/mdeploy_history_view.png)
+![](assets/mdeploy_history_view_v32.png)
 
 | Info   | Description     |
 |---------------|----------|
@@ -158,8 +169,12 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 | Instance Type | 使用的 Instance Type 資源|
 | Timestamp     | 最後更新時間 |
 | Description   | 使用者輸入描述 |
-| Metadata      | Metadata 列舉|
+|Access Type    |Public 或 Private|
+|Clients        |當 Access Type 為 Private 時，可存取的 clients|
 
++ Metadata 表
++ Environment Variables 表: 按下小眼睛圖示來顯示變數內容。
+  
 ### Clients
 
 只有當`Private Access`開啟時，才會顯示此頁籤。
@@ -201,7 +216,7 @@ req.headers.get('X-Forwarded-User') # you can get the client name from the heade
 
 其中有`Group`、 `Deployment name`、 `Deployment ID` 無法更動，其餘欄位皆可更新。
 
-![](assets/mdeploy_update_v31.png)
+![](assets/mdeploy_update_v32.png)
 
 ---
 

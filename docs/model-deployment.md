@@ -61,17 +61,7 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-![](assets/mdeploy_create_v31.png)
-
-### Environment Settings
-
-+ `InstanceTypes`: Select a instance type which allocates resources for the job.
-
-+ `Replicas`: How many replicas for the service.
-
-### Endpoint
-
-+ `Private Access`: The toggle of private access of the endpoint; if enabled, there is `Clients` tab appearing in detail page. 
+![](assets/mdeploy_create_v32.png)
 
 ### Deployment Details
 
@@ -85,14 +75,33 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 + `Descriptions`: User input description.
 
-+ `Update Message`: Leave a message here for each update.
+### Environment Variables
 
-### Metadata
-
-We can add key-value pairs.
+Add key-value pairs of environmental variables.
 
 + `Name`: The name of key.
 + `Value`: The value.
+
+### Metadata
+
+Add key-value pairs of metadata.
+
++ `Name`: The name of key.
++ `Value`: The value.
+
+### Resources
+
++ `InstanceTypes`: Select a instance type which allocates resources for the job.
+
++ `Replicas`: How many replicas for the service.
+
+### Endpoint
+
++ `Private Access`: The toggle of private access of the endpoint; if enabled, there is `Clients` tab appearing in detail page. 
+
+### Deploy
+
++ `Update Message`: Leave a message here for each update.
 
 Click `Deploy` button to start the deployment.
 
@@ -100,7 +109,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 ## Deployment Detail
 
-![](assets/mdeploy_detail_v27.png)
+![](assets/mdeploy_detail_v32.png)
 
 ### Information
 
@@ -109,16 +118,18 @@ One the deployment is triggered, there is a notification popping up, we can clic
 |Status         |The status of the deployment.|
 |Message        |The message related to the deployment if any.|
 |Endpoint       |Where the model is deployed and serve.|
-|Access Type    | Public or Private |
-|Model Image    |The image which the model is based on.|
-|Replicas       |The replicas of the deployment.|
-|Deployment Name|The name of the deployment.|
-|Group          |The owner group.|
-|Instance Type  |The resources allocation which is requested for the deployment.|
 |Creation Time  |Timestamps|
 |Last Updated   |Timestamps|
+|Model Image    |The image which the model is based on.|
+|Image Pull Secret |The secret is used for pulling the image.|
 |Description    |The description which users input during the creation. |
+|Instance Type  |The resources allocation which is requested for the deployment.|
+|Replicas       |The replicas of the deployment.|
+|Access Type    | Public or Private |
 |Run an Example |Verifying the service by using `curl` querying the service; it is varied with `Public` or `Private` access.|
+
++ Metadata table
++ Environment Variables table: disclose values by clicking the eye icon.
 
 ### Logs
 
@@ -142,7 +153,7 @@ In History tab, we can view the detail of historical deployments with each updat
 
 Clicking on the `View` link for the detail of each deployment.
 
-![](assets/mdeploy_history_view.png)
+![](assets/mdeploy_history_view_v32.png)
 
 | Info   | Description     |
 |---------------|----------|
@@ -154,7 +165,11 @@ Clicking on the `View` link for the detail of each deployment.
 | Instance Type | The instance type is selected|
 | Timestamp     | Last updated time|
 | Description   | User input description |
-| Metadata      | Metadata mappings table|
+| Access Type   | Public or Private |
+| Clients   | Clients if Access Type is private |
+
++ Metadata table
++ Environment Variables table: disclose values by clicking the eye icon.
 
 ### Clients
 
@@ -198,7 +213,7 @@ On a deployment detail page, clicking `Update` button to enter the deployment ed
 
 `Group`、 `Deployment name`、 `Deployment ID` are not allowed to be modified in a update once the initial deployment is created.
 
-![](assets/mdeploy_update_v31.png)
+![](assets/mdeploy_update_v32.png)
 
 ---
 
