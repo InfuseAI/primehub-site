@@ -111,8 +111,28 @@
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="create"></a><a href="#create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create</h2>
 <p>Confirm if the current group is what you desire; switch the group by the <code>Group:</code> dropdown at the top of the right side.</p>
-<p><img src="/docs/assets/mdeploy_create_v31.png" alt=""></p>
-<h3><a class="anchor" aria-hidden="true" id="environment-settings"></a><a href="#environment-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Settings</h3>
+<p><img src="/docs/assets/mdeploy_create_v32.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
+<ul>
+<li><p><code>Deployment Name</code>: The name of the deployment.</p></li>
+<li><p><code>Deployment ID</code>: An unique ID.</p></li>
+<li><p><code>Model Image</code>: The image which the model is based on.</p></li>
+<li><p><code>Image Pull Secret</code>: a pull secret for the model image if required.</p></li>
+<li><p><code>Descriptions</code>: User input description.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="environment-variables"></a><a href="#environment-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Variables</h3>
+<p>Add key-value pairs of environmental variables.</p>
+<ul>
+<li><code>Name</code>: The name of key.</li>
+<li><code>Value</code>: The value.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
+<p>Add key-value pairs of metadata.</p>
+<ul>
+<li><code>Name</code>: The name of key.</li>
+<li><code>Value</code>: The value.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="resources"></a><a href="#resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resources</h3>
 <ul>
 <li><p><code>InstanceTypes</code>: Select a instance type which allocates resources for the job.</p></li>
 <li><p><code>Replicas</code>: How many replicas for the service.</p></li>
@@ -121,25 +141,14 @@
 <ul>
 <li><code>Private Access</code>: The toggle of private access of the endpoint; if enabled, there is <code>Clients</code> tab appearing in detail page.</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
+<h3><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h3>
 <ul>
-<li><p><code>Deployment Name</code>: The name of the deployment.</p></li>
-<li><p><code>Deployment ID</code>: An unique ID.</p></li>
-<li><p><code>Model Image</code>: The image which the model is based on.</p></li>
-<li><p><code>Image Pull Secret</code>: a pull secret for the model image if required.</p></li>
-<li><p><code>Descriptions</code>: User input description.</p></li>
-<li><p><code>Update Message</code>: Leave a message here for each update.</p></li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
-<p>We can add key-value pairs.</p>
-<ul>
-<li><code>Name</code>: The name of key.</li>
-<li><code>Value</code>: The value.</li>
+<li><code>Update Message</code>: Leave a message here for each update.</li>
 </ul>
 <p>Click <code>Deploy</code> button to start the deployment.</p>
 <p>One the deployment is triggered, there is a notification popping up, we can click on it to view the deployment detail.</p>
 <h2><a class="anchor" aria-hidden="true" id="deployment-detail"></a><a href="#deployment-detail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Detail</h2>
-<p><img src="/docs/assets/mdeploy_detail_v27.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_detail_v32.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
 <table>
 <thead>
@@ -149,18 +158,21 @@
 <tr><td>Status</td><td>The status of the deployment.</td></tr>
 <tr><td>Message</td><td>The message related to the deployment if any.</td></tr>
 <tr><td>Endpoint</td><td>Where the model is deployed and serve.</td></tr>
-<tr><td>Access Type</td><td>Public or Private</td></tr>
-<tr><td>Model Image</td><td>The image which the model is based on.</td></tr>
-<tr><td>Replicas</td><td>The replicas of the deployment.</td></tr>
-<tr><td>Deployment Name</td><td>The name of the deployment.</td></tr>
-<tr><td>Group</td><td>The owner group.</td></tr>
-<tr><td>Instance Type</td><td>The resources allocation which is requested for the deployment.</td></tr>
 <tr><td>Creation Time</td><td>Timestamps</td></tr>
 <tr><td>Last Updated</td><td>Timestamps</td></tr>
+<tr><td>Model Image</td><td>The image which the model is based on.</td></tr>
+<tr><td>Image Pull Secret</td><td>The secret is used for pulling the image.</td></tr>
 <tr><td>Description</td><td>The description which users input during the creation.</td></tr>
+<tr><td>Instance Type</td><td>The resources allocation which is requested for the deployment.</td></tr>
+<tr><td>Replicas</td><td>The replicas of the deployment.</td></tr>
+<tr><td>Access Type</td><td>Public or Private</td></tr>
 <tr><td>Run an Example</td><td>Verifying the service by using <code>curl</code> querying the service; it is varied with <code>Public</code> or <code>Private</code> access.</td></tr>
 </tbody>
 </table>
+<ul>
+<li>Metadata table</li>
+<li>Environment Variables table: disclose values by clicking the eye icon.</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
 <ul>
 <li><code>Replicas</code>: Select a replica.</li>
@@ -178,7 +190,7 @@
 <p>In History tab, we can view the detail of historical deployments with each update message.</p>
 <p><img src="/docs/assets/mdeploy_history_v28.png" alt=""></p>
 <p>Clicking on the <code>View</code> link for the detail of each deployment.</p>
-<p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_history_view_v32.png" alt=""></p>
 <table>
 <thead>
 <tr><th>Info</th><th>Description</th></tr>
@@ -192,9 +204,14 @@
 <tr><td>Instance Type</td><td>The instance type is selected</td></tr>
 <tr><td>Timestamp</td><td>Last updated time</td></tr>
 <tr><td>Description</td><td>User input description</td></tr>
-<tr><td>Metadata</td><td>Metadata mappings table</td></tr>
+<tr><td>Access Type</td><td>Public or Private</td></tr>
+<tr><td>Clients</td><td>Clients if Access Type is private</td></tr>
 </tbody>
 </table>
+<ul>
+<li>Metadata table</li>
+<li>Environment Variables table: disclose values by clicking the eye icon.</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="clients"></a><a href="#clients" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clients</h3>
 <p>This tab appears if <code>Private Access</code> of the endpoint is enabled.</p>
 <p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
@@ -223,7 +240,7 @@ req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class
 <h2><a class="anchor" aria-hidden="true" id="update"></a><a href="#update" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update</h2>
 <p>On a deployment detail page, clicking <code>Update</code> button to enter the deployment editing.</p>
 <p><code>Group</code>、 <code>Deployment name</code>、 <code>Deployment ID</code> are not allowed to be modified in a update once the initial deployment is created.</p>
-<p><img src="/docs/assets/mdeploy_update_v31.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_update_v32.png" alt=""></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="delete"></a><a href="#delete" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete</h2>
 <p>Clicking on the cell of the deployment which we want to delete.</p>
@@ -256,7 +273,7 @@ req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class
 <li><p>Latency</p></li>
 </ul>
 <p>The board is based on <strong>Seldon Core Analytics</strong>, it can be advanced customized. Please see the <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> and <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/job-scheduling-feature"><span class="arrow-prev">← </span><span>Job Scheduler</span></a><a class="docs-next button" href="/docs/next/model-deployment-quickstart-tutorial"><span>Quickstart Tutorial of Model Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#cell">Cell</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/job-scheduling-feature"><span class="arrow-prev">← </span><span>Job Scheduler</span></a><a class="docs-next button" href="/docs/next/model-deployment-quickstart-tutorial"><span>Quickstart Tutorial of Model Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#cell">Cell</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#environment-variables">Environment Variables</a></li><li><a href="#metadata">Metadata</a></li><li><a href="#resources">Resources</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deploy">Deploy</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

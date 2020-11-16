@@ -113,16 +113,7 @@
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="創建"></a><a href="#創建" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>創建</h2>
 <p>請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 <code>Group:</code>。</p>
-<p><img src="/docs/assets/mdeploy_create_v31.png" alt=""></p>
-<h3><a class="anchor" aria-hidden="true" id="environment-settings"></a><a href="#environment-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Settings</h3>
-<ul>
-<li><p><code>InstanceTypes</code>: 指定資源配置請求的 instance type。</p></li>
-<li><p><code>Replicas</code>: 指定上線副本的數量。</p></li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="endpoint"></a><a href="#endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoint</h3>
-<ul>
-<li><code>Private Access</code>: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示<code>Clients</code>頁籤，可由此產生存取 Token。</li>
-</ul>
+<p><img src="/docs/assets/mdeploy_create_v32.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
 <ul>
 <li><p><code>Deployment Name</code>: 名稱。</p></li>
@@ -132,16 +123,32 @@
 <li><p><code>Descriptions</code>: 使用者輸入描述。</p></li>
 <li><p><code>Update Message</code>: 使用者針對每次更新附上說明。</p></li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="environment-variables"></a><a href="#environment-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Variables</h3>
+<p>可加入多個環境變數。</p>
+<ul>
+<li><code>Name</code>: 變數名。</li>
+<li><code>Value</code>: 數值。</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
-<p>可加入多個額外「鍵/值」組合：</p>
+<p>可加入多個額外「鍵/值」組合。</p>
 <ul>
 <li><code>Name</code>: 鍵名。</li>
 <li><code>Value</code>: 數值。</li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="resources"></a><a href="#resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resources</h3>
+<ul>
+<li><p><code>InstanceTypes</code>: 指定資源配置請求的 instance type。</p></li>
+<li><p><code>Replicas</code>: 指定上線副本的數量。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="endpoint"></a><a href="#endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoint</h3>
+<ul>
+<li><code>Private Access</code>: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示<code>Clients</code>頁籤，可由此產生存取 Token。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h3>
 <p>點擊<code>Deploy</code>鈕，進行部署。</p>
 <p>佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。</p>
 <h2><a class="anchor" aria-hidden="true" id="部署詳細資訊"></a><a href="#部署詳細資訊" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署詳細資訊</h2>
-<p><img src="/docs/assets/mdeploy_detail_v27.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_detail_v32.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
 <table>
 <thead>
@@ -151,18 +158,21 @@
 <tr><td>Status</td><td>狀態</td></tr>
 <tr><td>Message</td><td>相關訊息</td></tr>
 <tr><td>Endpoint</td><td>佈建上線服務 URL</td></tr>
-<tr><td>Access Type</td><td>Public 或 Private</td></tr>
-<tr><td>Model Image</td><td>指定的 Model Image</td></tr>
-<tr><td>Replicas</td><td>副本個數</td></tr>
-<tr><td>Deployment Name</td><td>部署 名稱</td></tr>
-<tr><td>Group</td><td>所屬群組</td></tr>
-<tr><td>Instance Type</td><td>佈建用資源配請求</td></tr>
 <tr><td>Creation Time</td><td>創建時間</td></tr>
 <tr><td>Last Updated</td><td>最後更新時間</td></tr>
+<tr><td>Model Image</td><td>指定的 Model Image</td></tr>
+<tr><td>Image Pull Secret</td><td>下拉此 Image 用的 Secret</td></tr>
 <tr><td>Description</td><td>使用者輸入描述</td></tr>
+<tr><td>Instance Type</td><td>佈建用資源配請求</td></tr>
+<tr><td>Replicas</td><td>副本個數</td></tr>
+<tr><td>Access Type</td><td>Public 或 Private</td></tr>
 <tr><td>Run an Example</td><td>使用<code>Curl</code>查詢來驗證部署服務範例；<code>Private</code>或<code>Public</code>存取代入參數有異</td></tr>
 </tbody>
 </table>
+<ul>
+<li>Metadata 表</li>
+<li>Environment Variables 表: 按下小眼睛圖示來顯示變數內容。</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
 <ul>
 <li><code>Replicas</code>: 查看指定副本。</li>
@@ -180,7 +190,7 @@
 <p>History 頁上顯示過去已部署的 Deployment 的記錄。</p>
 <p><img src="/docs/assets/mdeploy_history_v28.png" alt=""></p>
 <p>點擊<code>View</code>連結來查看查看各個部署詳細記錄。</p>
-<p><img src="/docs/assets/mdeploy_history_view.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_history_view_v32.png" alt=""></p>
 <table>
 <thead>
 <tr><th>Info</th><th>Description</th></tr>
@@ -194,9 +204,14 @@
 <tr><td>Instance Type</td><td>使用的 Instance Type 資源</td></tr>
 <tr><td>Timestamp</td><td>最後更新時間</td></tr>
 <tr><td>Description</td><td>使用者輸入描述</td></tr>
-<tr><td>Metadata</td><td>Metadata 列舉</td></tr>
+<tr><td>Access Type</td><td>Public 或 Private</td></tr>
+<tr><td>Clients</td><td>當 Access Type 為 Private 時，可存取的 clients</td></tr>
 </tbody>
 </table>
+<ul>
+<li>Metadata 表</li>
+<li>Environment Variables 表: 按下小眼睛圖示來顯示變數內容。</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="clients"></a><a href="#clients" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clients</h3>
 <p>只有當<code>Private Access</code>開啟時，才會顯示此頁籤。</p>
 <p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
@@ -224,7 +239,7 @@ req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class
 <h2><a class="anchor" aria-hidden="true" id="變更"></a><a href="#變更" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>變更</h2>
 <p>在 Deployment 頁，點擊 <code>Update</code> 對此部署內容進行更動及部署更新。</p>
 <p>其中有<code>Group</code>、 <code>Deployment name</code>、 <code>Deployment ID</code> 無法更動，其餘欄位皆可更新。</p>
-<p><img src="/docs/assets/mdeploy_update_v31.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_update_v32.png" alt=""></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="刪除"></a><a href="#刪除" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>刪除</h2>
 <p>點擊各個 Deployment 框，在部署詳細頁，點擊右上方<code>Delete</code> 鈕，進行刪除。</p>
@@ -255,7 +270,7 @@ req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class
 <li><p>Latency</p></li>
 </ul>
 <p>此監測板基於 <strong>Seldon Core Analytics</strong>；更多詳細進階資訊可以參照 <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> 及 <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-scheduling-feature-cht"><span class="arrow-prev">← </span><span>Job Scheduler</span></a><a class="docs-next button" href="/docs/next/zh-tw/model-deployment-quickstart-tutorial"><span>模型部署之快速上手</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#開啟功能">開啟功能</a></li><li><a href="#主頁">主頁</a><ul class="toc-headings"><li><a href="#部署">部署</a></li></ul></li><li><a href="#創建">創建</a><ul class="toc-headings"><li><a href="#environment-settings">Environment Settings</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#metadata">Metadata</a></li></ul></li><li><a href="#部署詳細資訊">部署詳細資訊</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#變更">變更</a></li><li><a href="#刪除">刪除</a></li><li><a href="#停止服務">停止服務</a></li><li><a href="#監測服務">監測服務</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-scheduling-feature-cht"><span class="arrow-prev">← </span><span>Job Scheduler</span></a><a class="docs-next button" href="/docs/next/zh-tw/model-deployment-quickstart-tutorial"><span>模型部署之快速上手</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#開啟功能">開啟功能</a></li><li><a href="#主頁">主頁</a><ul class="toc-headings"><li><a href="#部署">部署</a></li></ul></li><li><a href="#創建">創建</a><ul class="toc-headings"><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#environment-variables">Environment Variables</a></li><li><a href="#metadata">Metadata</a></li><li><a href="#resources">Resources</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deploy">Deploy</a></li></ul></li><li><a href="#部署詳細資訊">部署詳細資訊</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#變更">變更</a></li><li><a href="#刪除">刪除</a></li><li><a href="#停止服務">停止服務</a></li><li><a href="#監測服務">監測服務</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
