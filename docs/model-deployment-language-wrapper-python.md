@@ -1,6 +1,6 @@
 ---
-id: model-deployment-tutorial-package-image
-title: Package a Docker Image for Model Deployment (Python)
+id: model-deployment-language-wrapper-python
+title: Package a Model Image for Python
 ---
 
 <div class="ee-only tooltip">Enterprise
