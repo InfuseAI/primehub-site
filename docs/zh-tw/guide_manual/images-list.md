@@ -17,6 +17,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 
 ### JupyterLab v2 with PrimeHub Extension
 
+> 從 PrimeHub v3 開始支援
+
 |Framework|Image|CPU / GPU|Python|
 |-        |-     |-     |-    |
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645|`CPU`|3.7|
@@ -29,6 +31,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35-gpu|`GPU`|3.7|
 
 ### JupyterLab v1 only
+
+> 從 PrimeHub v3 開始不支援
 
 |Framework|Image|CPU / GPU|Python|
 |-        |-     |-     |-    |
@@ -49,6 +53,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 
 ### JupyterLab v2 with PrimeHub Extension
 
+> 從 PrimeHub v3 開始支援
+
 |Framework|Image|CPU / GPU|Python|
 |-   |-    |-        |-     |
 |PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-2d701645-gpu|`CPU`|3.7|
@@ -57,6 +63,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 |PyTorch 1.5|infuseai/docker-stacks:pytorch-notebook-b3c52f35-gpu|`GPU` `CUDA 9`|3.7|
 
 ### JupyterLab v1 only
+
+> 從 PrimeHub v3 開始不支援
 
 |Framework|Image|CPU / GPU|Python|
 |-        |-     |-      |-    |
@@ -77,6 +85,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 
 ### JupyterLab v2 with PrimeHub Extension
 
+> 從 PrimeHub v3 開始支援
+
 |Name|Image|CPU / GPU|Python|
 |-   |-    |-        |-     |
 |AI notebook|infuseai/docker-stacks:ai-notebook-2d701645|`CPU`|3.7|
@@ -84,6 +94,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 |AI notebook|infuseai/docker-stacks:ai-notebook-2d701645-gpu-cuda-10|`GPU`<br>`CUDA 10`|3.7|
 
 ### JupyterLab v1 only
+
+> 從 PrimeHub v3 開始不支援
 
 |Name|Image|CPU / GPU|Python|
 |-   |-     |-      |-    |
