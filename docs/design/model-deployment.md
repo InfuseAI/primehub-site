@@ -24,16 +24,16 @@ Build and deploy a model image
 - Test the packaged image locally
 - Push the image to docker registry
 - In primehub, create a model deployment
-- Select the instance type, model image, and the number of replicas.
+- Select the instance type, model image, and the number of replicas
 - Wait until the deployment is ready
 - Use `curl` to test against the model deployment endpoint
 
 Build and deploy a model by a pre-packaged model server (since v3.2.0)
 - Train a model for tensorflow2 and put the model somewhere in PHFS
 - In primehub, create a model deployment
-- Set the **tensorflow2 pre-packaged image** as the model image and set the model URI accordingly.
+- Set the **tensorflow2 pre-packaged image** as the model image and set the model URI accordingly
 - Wait until the deployment is ready
-- Use `curl` to test against the model deployment endpoint.
+- Use `curl` to test against the model deployment endpoint
 
 Build and deploy a model by a custom pre-packaged model server (since v3.2.0)
 - Train a model for some ML framework and put the model somewhere in PHFS
@@ -41,9 +41,9 @@ Build and deploy a model by a custom pre-packaged model server (since v3.2.0)
 - Test the custom pre-packaged image along with a model file locally
 - Push the image to docker registry
 - In primehub, create a model deployment
-- Set the **custom pre-packaged image** as the model image, set the model URI accordingly.
+- Set the **custom pre-packaged image** as the model image, set the model URI accordingly
 - Wait until the deployment is ready
-- Use `curl` to test against the model deployment endpoint.
+- Use `curl` to test against the model deployment endpoint
 
 Update a deployment
 - Select a deployment
@@ -123,7 +123,7 @@ For each deployment, it requires to provide the model image. It is responsible t
 
 In [Seldon documentation](https://docs.seldon.io/projects/seldon-core/en/latest/index.html), there are three ways to prepare the model image
 
-1. [Pre-Packaged Inference Servers](https://docs.seldon.io/projects/seldon-core/en/latest/servers/overview.html): Users can use the pre-package model image and provide the model URI for the latest model files.
+1. [Pre-Packaged Inference Servers](https://docs.seldon.io/projects/seldon-core/en/latest/servers/overview.html): Users can use the pre-packaged model image and provide the model URI for the latest model files.
 
     - MLflow Server
     - SKLearn server
