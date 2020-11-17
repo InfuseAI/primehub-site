@@ -71,12 +71,29 @@
       "model-deployment-feature",
       {
         "type": "subcategory",
-        "label": "Tutorials (Alpha)",
+        "label": "Tutorials",
         "ids": [
-          "model-deployment-quickstart-tutorial",
-          "model-deployment-tutorial-package-image",
-          "model-deployment-tutorial-package-image-r",
-          "model-deployment-tutorial-prepackage-image"
+          "model-deployment-tutorial-concepts",
+          "model-deployment-tutorial-prepackaged-image",
+          "model-deployment-tutorial-model-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Pre-packaged servers",
+        "ids": [
+          "model-deployment-prepackaged-server-tensorflow2",
+          "model-deployment-prepackaged-server-sklearn",
+          "model-deployment-prepackaged-server-custom"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Package from Language Wrapper",
+        "ids": [
+          "model-deployment-language-wrapper-python",
+          "model-deployment-language-wrapper-r",
+          "model-deployment-language-wrapper-reusable-base-image"
         ]
       }
     ],

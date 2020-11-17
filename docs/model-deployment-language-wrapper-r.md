@@ -1,6 +1,6 @@
 ---
-id: model-deployment-tutorial-package-image-r
-title: Package a Docker Image for Model Deployment (R)
+id: model-deployment-language-wrapper-r
+title: Package a Model Image for R
 ---
 
 <div class="ee-only tooltip">Enterprise

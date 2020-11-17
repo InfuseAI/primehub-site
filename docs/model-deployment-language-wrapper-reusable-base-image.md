@@ -1,6 +1,6 @@
 ---
-id: model-deployment-tutorial-prepackage-image
-title: Prepackage a Base Image and Use It
+id: model-deployment-language-wrapper-reusable-base-image
+title: Package a Model Image from a Reusable Base Image
 ---
 
 <div class="ee-only tooltip">Enterprise
