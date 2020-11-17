@@ -158,6 +158,8 @@ It shows the brief information of the job.
 
 ### Monitoring
 
+>此功能需要 [PHFS](../design/phfs) 開啟；當 PHFS 功能未開啟時，顯示訊息 "feature not enabled, please contact admin".
+
 監測表顯示此 Job 所用到的資源。
 
 + `15 mins`, `1 hour`, `3 hours`, `Lifetime`: 選擇「最近時間區間內」顯示的數據； 15mins 顯示最近 15 分內的數據， Lifetime 顯示從開始到結束的數據。
