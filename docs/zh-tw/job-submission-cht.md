@@ -132,7 +132,7 @@ It shows the brief information of the job.
 
 ### Tabs
 
-![](assets/jsub_view_tabs_v31.png)
+![](assets/jsub_view_tabs_v32.png)
 
 ### Information
 
@@ -156,7 +156,17 @@ It shows the brief information of the job.
 
 如果工作在執竹的過程中有產出資料 (Artifacts) 存放在 `artifacts/`，這裡會列舉出在此 [PHFS 儲存空間](../design/phfs) 下的所有檔案；同時，在 Notebook 裡這些 artifacts 是位在此路徑  `/phfs/jobArtifacts/job-xxxxx`。請參照 [Job Artifacts 初階範例](job-artifacts-simple-cht)。
 
-### 工作記錄
+### Monitoring
+
+監測表顯示此 Job 所用到的資源。
+
++ `15 mins`, `1 hour`, `3 hours`, `Lifetime`: 選擇「最近時間區間內」顯示的數據； 15mins 顯示最近 15 分內的數據， Lifetime 顯示從開始到結束的數據。
++ `Overall Usage`: CPU 及 Memory(MB).
++ `GPU Device Usage`: 當此 Job 有配置到 GPU 時才顯示 GPU 及 Memory(MB)。
+
+![](assets/jsub-monitoring-15m.png)
+
+### Logs
 
 >預設此頁只顯示**最新的 2000 行**資訊；按下`Download`下載完整記錄。
 
