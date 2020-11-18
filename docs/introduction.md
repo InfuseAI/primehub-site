@@ -24,7 +24,7 @@ Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub 
 + [Launch/Shutdown projects of JupyterHub on PrimeHub](quickstart/launch-project)
 
 + [Advanced settings of JupyterHub Spawner](user-advanced-setting)
-  
+
 + [Submit and schedule Jobs](job-submission-feature)
 
 + [Deploy Models and serve models](model-deployment-feature)
@@ -73,7 +73,6 @@ Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub 
 ### Tasks
 
 + [Jupyter Images](tasks/repo2docker)
-+ [MinIO Configuration](tasks/minio_configurations)
 + [API Token](tasks/api-token)
 
 ### Reference

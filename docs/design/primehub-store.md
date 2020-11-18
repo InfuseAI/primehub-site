@@ -23,21 +23,6 @@ Unlike user volume, group volume, and dataset, which are designed for storing us
 1. **[Log Persistence](./log-persistence):** Currently, the job submission log is to retrieve the log from a pod. With the PrimeHub store, we can collect the log and store them in the PrimeHub store. The log can still be accessible even the pod is deleted.
 1. **[PrimeHub File System (PHFS)](./phfs):** new shared storage for groups.
 
-# Configuration
-
-To enable PrimeHub store, set the `store.eanbled` to true.
-
-Path | Description | Default Value
---- | ----- | -----------------------
-`store.enabled` | If the PrimeHub store is enabled | `false`
-`store.accessKey` | The access key for the PrimeHub store | `AKIAIOSFODNN7EXAMPLE`
-`store.secretKey` | The secret key for the PrimeHub store | `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
-`store.bucket` | The bucket name the PrimeHub store use | `primehub`
-`minio.*` | The minio configuration | Please see the [chart configuration](../references/primehub_chart)
-`rclone.*` | The rclone configuration | Please see the [chart configuration](../references/primehub_chart)
-
-To configure MinIO (e.g. different persistence backend), please see the [MinIO configuration](../tasks/minio_configurations)
-
 # Design
 
 ![](assets/primehub-store.png)

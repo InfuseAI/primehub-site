@@ -77,13 +77,13 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 + [為使用者客製映像檔](zh-tw/guide_manual/admin-build-image-cht)
   + [客製映像檔指南](zh-tw/guide_manual/custom-image-guideline)
 
-+ [管理 secrets](zh-tw/guide_manual/admin-secret-cht) 
++ [管理 secrets](zh-tw/guide_manual/admin-secret-cht)
 
   + [GitLab Pull Secret](zh-tw/quickstart/secret-pull-image)
   + [GitHub gitsync secret](zh-tw/quickstart/secret-gitsync)
 
 + [檢視使用量月報表](zh-tw/guide_manual/admin-report-cht)
-  
+
 + [維運用 Maintenance Notebook](zh-tw/maintenance-cht)
 
 + [快速上手操作](zh-tw/quickstart/create-user)
@@ -96,7 +96,7 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 
 + [SSH Server](getting_started/configure-ssh-server)
 + [中文] [DockerHub Registry for Image Builder](zh-tw/quickstart/dockerhub-registry)
-  
+
 ### Design Documents
 
 + [Architecture and more ...](design/architecture)
@@ -106,7 +106,6 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 + [Build](tasks/build)
 + [Jupyter Images](tasks/repo2docker)
 + [Operations](tasks/benchmark)
-+ [MinIO Configuration](tasks/minio_configurations)
 + [API Token](tasks/api-token)
 
 ### Reference
