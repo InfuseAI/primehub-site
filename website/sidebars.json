@@ -219,6 +219,7 @@
       }
     ],
     "Configuration": [
+      "getting_started/configure-primehub-store",
       "getting_started/configure-ssh-server",
       "getting_started/configure-job-submission",
       "getting_started/configure-self-signed-ca"
@@ -230,13 +231,6 @@
         "ids": [
           "tasks/repo2docker",
           "tasks/non-standard-image"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "PrimeHub Chart",
-        "ids": [
-          "tasks/minio_configurations"
         ]
       },
       {
