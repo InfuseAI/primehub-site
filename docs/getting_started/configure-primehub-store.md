@@ -15,7 +15,7 @@ sidebar_label: PrimeHub Store
 
 PrimeHub Store is the central storage for storing PrimeHub files. Many features are based on PrimeHub store to persist, transfer, and load the data.
 
-PrimeHub store selects [MinIO](https://docs.min.io/) as the backend and uses one bucket to store the data. To enable the PrimeHub store, set the `store.eanbled` to true.
+PrimeHub store selects [MinIO](https://docs.min.io/) as the backend and uses one bucket to store the data. To enable the PrimeHub store, set the `store.enabled` to true.
 
 Path | Description | Default Value
 --- | ----- | -----------------------
@@ -104,7 +104,7 @@ store:
 minio:
   gcsgateway:
     enabled: true
-    projectId: "[your-proejct-id]"
+    projectId: "[your-project-id]"
     gcsKeyJson: "[the-content-of-your-json-key-file]"
 ```
 
@@ -121,7 +121,7 @@ minio:
 
 Enabled ingress would export the handy MinIO object browser to `/minio` path. If you upload a large file and see the message `413 Request Entity Too Large`. You could increase the value of `maxBodySize`.
 
-However, the ingress only allows you to use MinIO UI. If you want to operate object with AWS S3 compatible library outside of the kubernetes, do it with `port-forward`:
+However, the ingress only allows you to use MinIO UI. If you want to operate object with AWS S3 compatible library outside of the Kubernetes, do it with `port-forward`:
 
 ```
 kubectl -n hub port-forward service/primehub-minio 9000
@@ -156,7 +156,7 @@ rclone:
 
 Log persistence enables logs to be stored persistently in the PrimeHub store under `mybucket/logs`. Currently, only job logs are supported to persist.
 
-By default, if the Primehub store is enabled, the log persistence is enabled as well. But we can manually disable log persistence by configuring `store.logPersistence.enabled` as false.
+By default, if the PrimeHub store is enabled, the log persistence is enabled as well. But we can manually disable log persistence by configuring `store.logPersistence.enabled` as false.
 
 Path | Description | Default Value
 --- | ----- | -----------------------
