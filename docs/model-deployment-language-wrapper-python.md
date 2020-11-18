@@ -203,7 +203,6 @@ Here are some Python snippets of how to export a model file then load it and run
         class MyModel(object):
             def __init__(self):
                 self.model = load_model('keras-mnist.h5')
-                self.model._make_predict_function()
                 
             def predict(self,X,features_names):
                 imageStream = BytesIO(X)

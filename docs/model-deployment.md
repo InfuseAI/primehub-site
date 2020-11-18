@@ -44,7 +44,6 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 |Info        |Description|
 |------------|-----------|
 |Title       | Deployment name|
-|Group       | Deployment's owner group.|
 |Endpoint    | Where the model is deployed and serve.|
 |Metadata    | Hovering over `View` to display the metadata info |
 |Last Updated| Last updated time.|
@@ -68,6 +67,8 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 + `Deployment Name`: The name of the deployment.
 
 + `Deployment ID`: An unique ID.
+
++ `Model URI`: The location which the trained model is stored in.
 
 + `Model Image`: The image which the model is based on.
 
