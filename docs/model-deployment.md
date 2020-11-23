@@ -68,9 +68,9 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 + `Deployment ID`: An unique ID.
 
-+ `Model URI`: The location which the trained model is stored in.
++ `Model Image`: The image which can be served directly or acted as the pre-packaged ML base image.
 
-+ `Model Image`: The image which the model is based on.
++ `Model URI`: The location which the trained model is stored in.
 
 + `Image Pull Secret`: a pull secret for the model image if required.
 
@@ -121,8 +121,9 @@ One the deployment is triggered, there is a notification popping up, we can clic
 |Endpoint       |Where the model is deployed and serve.|
 |Creation Time  |Timestamps|
 |Last Updated   |Timestamps|
-|Model Image    |The image which the model is based on.|
+|Model Image    |The image which can be served directly or acted as the pre-packaged ML base image.|
 |Image Pull Secret |The secret is used for pulling the image.|
+|Model URI    |The location which the trained model is stored in.|
 |Description    |The description which users input during the creation. |
 |Instance Type  |The resources allocation which is requested for the deployment.|
 |Replicas       |The replicas of the deployment.|
@@ -150,7 +151,7 @@ Clicking `Scroll to Bottom` button skips to the bottom of logs.
 
 In History tab, we can view the detail of historical deployments with each update message.
 
-![](assets/mdeploy_history_v28.png)
+![](assets/mdeploy_history_v32.png)
 
 Clicking on the `View` link for the detail of each deployment.
 
@@ -161,6 +162,7 @@ Clicking on the `View` link for the detail of each deployment.
 | User          | Who triggered this deployment|
 | Deployment Stopped | *true* or *false*|
 | Model Image   | The model image url|
+| Model URI     | The model stored location|
 | Replicas      | The amount of replicas|
 | Group         | The deployment's owner group|
 | Instance Type | The instance type is selected|
