@@ -26,7 +26,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
 4. Fill in the `Deployment name` field with `quickstart-mnist`
 
    Fill in the `Model Image` field with `infuseai/model-tensorflow2-mnist:v0.2.0`; This image is a pre-built image hosted on Docker Hub by InfuseAI.
-   ![](assets/mdeploy_quickstart_deploydetail.png)
+   ![](assets/mdeploy_quickstart_deploydetail_2.png)
    - Check [Package a Model Image for Python](model-deployment-language-wrapper-python) to build/package your own model images for Python.
    - Check [Package a Model Image for R](model-deployment-language-wrapper-r) to build/package your own model images for R.
    - Check [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/) to push images to Docker Hub.
@@ -41,7 +41,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
     ![](assets/mdeploy_quickstart_deployed.png)
 
     When the deployment is deployed successfully, we can click on cell to check its detail.
-    ![](assets/mdeploy_quickstart_detailpage.png)
+    ![](assets/mdeploy_quickstart_detailpage_2.png)
 
 7. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
     ```bash
