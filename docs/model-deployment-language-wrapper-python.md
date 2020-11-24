@@ -1,6 +1,6 @@
 ---
-id: model-deployment-tutorial-package-image
-title: Package a Docker Image for Model Deployment (Python)
+id: model-deployment-language-wrapper-python
+title: Package a Model Image for Python
 ---
 
 <div class="ee-only tooltip">Enterprise
@@ -203,7 +203,6 @@ Here are some Python snippets of how to export a model file then load it and run
         class MyModel(object):
             def __init__(self):
                 self.model = load_model('keras-mnist.h5')
-                self.model._make_predict_function()
                 
             def predict(self,X,features_names):
                 imageStream = BytesIO(X)

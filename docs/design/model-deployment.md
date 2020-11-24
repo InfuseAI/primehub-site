@@ -130,7 +130,7 @@ In [Seldon documentation](https://docs.seldon.io/projects/seldon-core/en/latest/
     - Tensorflow Serving (Not supported in PrimeHub)
     - XGBoost server
 
-2. [Language Wrappers for Custom Model](https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html): Users build the model file by different language wrapper. It provides the most flexibility and loading time.
+2. [Language Wrappers for Custom Model](https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html): Users build the model file by different language wrapper. It provides the best flexibility and loading time.
 
     - Python Language Wrapper (Production)
     - Java Language Wrapper (Incubating)

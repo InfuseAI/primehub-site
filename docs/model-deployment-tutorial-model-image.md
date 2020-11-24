@@ -1,15 +1,13 @@
 ---
-id: model-deployment-quickstart-tutorial
-title: Quickstart Tutorial of Model Deployment
+id: model-deployment-tutorial-model-image
+title: Deploy a Model by Image built from Language Wrapper
 ---
 
 <div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-In this tutorial, we will show how to deploy a packaged image by the PrimeHub model deployment feature. 
-
-By using the pre-built image and providing simple deployment information, we can quickly deploy an MNIST model for real-time serving.
+In this tutorial, we will show how to deploy a model built from [language wrapper](model-deployment-language-wrapper-intro). Here we provided a pre-built TensorFlow2 MNIST model image as an example.
 
 ## Prerequisites
 
@@ -20,32 +18,26 @@ Remember to enable model deployment in your group, contact your admin if it is n
 
 ## Tutorial Steps
 
-1. Go to [User Portal](guide_manual/primehub-manual#user-portal) and select `Models`.
-2. Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
-3. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
-4. In the `Environment Settings`, 
-    - choose the instance type, here we use the one with configuration `(CPU: 1 / Memory: 1 G / GPU: 0)`
+1. Go to [User Portal](quickstart/login-portal-user) and select `Models`.
+2. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
+3. Fill in the `Deployment name` field with `quickstart-mnist`
+
+   Fill in the `Model Image` field with `infuseai/model-tensorflow2-mnist:v0.2.0`; This image is a pre-built image hosted on Docker Hub by InfuseAI.
+   ![](assets/mdeploy_quickstart_deploydetail_2.png)
+   
+4. In the `Resources`,
+    - choose the instance type, here we use the one with configuration `(CPU: 0.5 / Memory: 1 G / GPU: 0)`
     - leave `Replicas` as default (1)
-
-5. In the `Deployment Details`, 
-    - fill in the `Deployment name` field with `quickstart-mnist`
-    - Fill in the `Model Image` field with `infuseai/model-tensorflow2-mnist:v0.1.0`; This image is a pre-built image hosted on Docker Hub by InfuseAI.
-      
-      Check [Package a Docker Image for Model Deployment](model-deployment-tutorial-package-image) to build/package your own model images.
-
-      Check [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/) to push images to Docker Hub.
-      
-    - Leave `Image Pull Secret`, `Description`, and `Metadata` as default (empty)
-    ![](assets/mdeploy_quickstart_deploydetail.png)
-
-6. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
+    ![](assets/mdeploy_quickstart_deployresource.png)
+5. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
     ![](assets/mdeploy_quickstart_deploying.png)
+
     ![](assets/mdeploy_quickstart_deployed.png)
 
     When the deployment is deployed successfully, we can click on cell to check its detail.
-    ![](assets/mdeploy_quickstart_detailpage.png)
+    ![](assets/mdeploy_quickstart_detailpage_2.png)
 
-7. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
+6. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
     ```bash
     curl -X POST ${YOUR_ENDPOINT_URL} \
         -H 'Content-Type: application/json' \
@@ -55,7 +47,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
 
     - Example of request data
         ```bash
-        curl -X POST https://hub.eric5.dev.primehub.io/deployment/quickstart-mnist-pskum/api/v1.0/predictions \
+        curl -X POST https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-t56ah/api/v1.0/predictions \
             -H 'Content-Type: application/json' \
             -d '{ "data": {"ndarray": [[[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.32941176470588235, 0.7254901960784313, 0.6235294117647059, 0.592156862745098, 0.23529411764705882, 0.1411764705882353, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8705882352941177, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9450980392156862, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.6666666666666666, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2627450980392157, 0.4470588235294118, 0.2823529411764706, 0.4470588235294118, 0.6392156862745098, 0.8901960784313725, 0.996078431372549, 0.8823529411764706, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9803921568627451, 0.8980392156862745, 0.996078431372549, 0.996078431372549, 0.5490196078431373, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06666666666666667, 0.25882352941176473, 0.054901960784313725, 0.2627450980392157, 0.2627450980392157, 0.2627450980392157, 0.23137254901960785, 0.08235294117647059, 0.9254901960784314, 0.996078431372549, 0.41568627450980394, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3254901960784314, 0.9921568627450981, 0.8196078431372549, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.08627450980392157, 0.9137254901960784, 1.0, 0.3254901960784314, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5058823529411764, 0.996078431372549, 0.9333333333333333, 0.17254901960784313, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23137254901960785, 0.9764705882352941, 0.996078431372549, 0.24313725490196078, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.7333333333333333, 0.0196078431372549, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03529411764705882, 0.803921568627451, 0.9725490196078431, 0.22745098039215686, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.49411764705882355, 0.996078431372549, 0.7137254901960784, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.29411764705882354, 0.984313725490196, 0.9411764705882353, 0.2235294117647059, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.07450980392156863, 0.8666666666666667, 0.996078431372549, 0.6509803921568628, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.011764705882352941, 0.796078431372549, 0.996078431372549, 0.8588235294117647, 0.13725490196078433, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.14901960784313725, 0.996078431372549, 0.996078431372549, 0.30196078431372547, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.12156862745098039, 0.8784313725490196, 0.996078431372549, 0.45098039215686275, 0.00392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23921568627450981, 0.9490196078431372, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.996078431372549, 0.8588235294117647, 0.1568627450980392, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.8117647058823529, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]]] } }'
         ```
@@ -69,7 +61,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
             "routing": {
             },
             "requestPath": {
-              "model": "infuseai/model-tensorflow2-mnist:v0.1.0"
+              "model": "infuseai/model-tensorflow2-mnist:v0.2.0"
             },
             "metrics": []
           },
@@ -79,19 +71,19 @@ Remember to enable model deployment in your group, contact your admin if it is n
           }
         }
         ```
-8. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
-9. (Advanced) We went through a simple MNIST example by sending tensor data to the deployed model. Next, we can also try out [this example](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) by sending an exact image file to the deployed model.
+7. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
+8. (Advanced) We went through a simple MNIST example by sending tensor data to the deployed model. Next, we can also try out [this example](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) by sending an exact image file to the deployed model.
 
     Follow previous tutorial steps but with following difference,
 
-    - In the `Deployment Details`, fill in the `Model Image` field with `infuseai/model-keras-mnist:v0.1.0` and make a deployment.
+    - In the `Deployment Details`, fill in the `Model Image` field with `infuseai/model-keras-mnist:v0.2.0` and make a deployment.
     - Using this Curl example,
         ```bash
         curl -F 'binData=@${YOUR_IMAGE_FILE}' ${YOUR_ENDPOINT_URL}
         ```
     - Example of request data
         ```bash
-        curl -F 'binData=@test_image.jpg' https://hub.eric5.dev.primehub.io/deployment/quickstart-mnist-pm56r/api/v1.0/predictions
+        curl -F 'binData=@test_image.jpg' https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-pm56r/api/v1.0/predictions
         ```
     - Example of response data
         ```bash
@@ -103,7 +95,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
             "routing": {
             },
             "requestPath": {
-              "model": "infuseai/model-keras-mnist:v0.1.0"
+              "model": "infuseai/model-keras-mnist:v0.2.0"
             },
             "metrics": []
           },
@@ -120,5 +112,5 @@ Remember to enable model deployment in your group, contact your admin if it is n
 ## Reference
 
 - For the completed model deployment feature introduction, see [Model Deployment (Alpha)](model-deployment-feature).
-- For the model image package instruction, see [Package a Docker Image for Model Deployment](model-deployment-tutorial-package-image).
-- For [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/).
+- For the model image package instruction, see [Package from Language Wrapper](model-deployment-language-wrapper-intro).
+- [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/).
