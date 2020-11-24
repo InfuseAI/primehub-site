@@ -7,9 +7,7 @@ title: Deploy a Model by Pre-packaged Server
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-In this tutorial, we will show how to deploy a trained model along with the server image by the PrimeHub model deployment feature.
-
-By just providing the model file and pre-packaged server image, we can simplify the deployment process and conveniently deploy an Iris model for real-time serving.
+In this tutorial, we will show how to deploy a model by a pre-packaged server. We deploy a IRIS model by SKLearn pre-packaged server.
 
 ## Prerequisites
 

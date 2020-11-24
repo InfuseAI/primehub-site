@@ -7,9 +7,7 @@ title: Deploy a Model by Image built from Language Wrapper
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-In this tutorial, we will show how to deploy a packaged image by the PrimeHub model deployment feature. 
-
-By using the pre-built image and providing simple deployment information, we can quickly deploy an MNIST model for real-time serving.
+In this tutorial, we will show how to deploy a model built from [language wrapper](model-deployment-language-wrapper-intro). Here we provided a pre-built TensorFlow2 MNIST model image as an example.
 
 ## Prerequisites
 
