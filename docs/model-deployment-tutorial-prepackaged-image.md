@@ -1,6 +1,6 @@
 ---
 id: model-deployment-tutorial-prepackaged-image
-title: Deploy with a Pre-packaged Image
+title: Deploy a Model by Pre-packaged Server
 ---
 
 <div class="ee-only tooltip">Enterprise
@@ -21,9 +21,8 @@ Remember to enable model deployment in your group, contact your admin if it is n
 ## Tutorial Steps
 
 1. Go to [User Portal](quickstart/login-portal-user) and select `Models`.
-2. Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
-3. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
-4. Fill in the `Deployment name` field with `quickstart-mnist`
+2. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
+3. Fill in the `Deployment name` field with `quickstart-mnist`
 
    Fill in the `Model Image` field with `infuseai/tensorflow2-prepackaged_rest:v0.3.0`; This image is a pre-packaged base image that can serve TensorFlow2 model.
 
@@ -31,14 +30,12 @@ Remember to enable model deployment in your group, contact your admin if it is n
    ![](assets/mdeploy_quickstart_phfs.png)
    
    ![](assets/mdeploy_quickstart_deploydetail_1.png)
-   - Check [Model server images list](will-do-in-ch13864) to view all pre-packaged base image that hosted on Docker Hub by InfuseAI.
-   - Check [TensorFlow2 server](model-deployment-prepackaged-server-tensorflow2) to see the implementations and input/output format of TensorFlow2 server.
    
-5. In the `Resources`,
+4. In the `Resources`,
     - choose the instance type, here we use the one with configuration `(CPU: 0.5 / Memory: 1 G / GPU: 0)`
     - leave `Replicas` as default (1)
     ![](assets/mdeploy_quickstart_deployresource.png)
-6. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
+5. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
     ![](assets/mdeploy_quickstart_deploying.png)
     
     ![](assets/mdeploy_quickstart_deployed.png)
@@ -47,7 +44,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
     
     ![](assets/mdeploy_quickstart_detailpage_1.png)
 
-7. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
+6. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
     ```bash
     curl -X POST ${YOUR_ENDPOINT_URL} \
         -H 'Content-Type: application/json' \
@@ -84,9 +81,10 @@ Remember to enable model deployment in your group, contact your admin if it is n
           "meta": {}
         }
         ```
-8. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
+7. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
 
 ## Reference
 
 - For the completed model deployment feature introduction, see [Model Deployment (Alpha)](model-deployment-feature).
-- For the customized pre-packaged server instruction, see [Custom pre-packaged server](model-deployment-prepackaged-server-custom).
+- For the pre-packaged base image list that provided by InfuseAI, see [Model server images list](will-do-in-ch13864).
+- For the customized pre-packaged server instruction, see [Pre-packaged servers](model-deployment-prepackaged-server-intro).
