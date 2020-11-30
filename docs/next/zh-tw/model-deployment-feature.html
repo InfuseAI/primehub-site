@@ -93,7 +93,6 @@
 </thead>
 <tbody>
 <tr><td>Title</td><td>名稱</td></tr>
-<tr><td>Group</td><td>所屬群組</td></tr>
 <tr><td>Endpoint</td><td>佈建上線服務 URL</td></tr>
 <tr><td>Metadata</td><td>鼠標移到<code>View</code>，顯示 Metadata 資訊</td></tr>
 <tr><td>Last Updated</td><td>最後更新時間</td></tr>
@@ -118,11 +117,14 @@
 <ul>
 <li><p><code>Deployment Name</code>: 名稱。</p></li>
 <li><p><code>Deployment ID</code>: 系統產生 ID。</p></li>
-<li><p><code>Model Image</code>: 指定採用的 Model Image。</p></li>
+<li><p><code>Model Image</code>: 此欄位支援兩種映像檔，一種是 <a href="../model-deployment-tutorial-model-image">已包裝模型檔的映像檔</a> 另一種是 <a href="../model-deployment-tutorial-prepackaged-image">包裝用的映像檔</a> 搭配指定的模型檔 <code>Model URI</code>。</p></li>
+<li><p><code>Model URI</code>: 模型檔案路徑。</p></li>
 <li><p><code>Image Pull Secret</code>: 如果必要，請指定下拉 Model Image 所需的 pull secret。</p></li>
 <li><p><code>Descriptions</code>: 使用者輸入描述。</p></li>
-<li><p><code>Update Message</code>: 使用者針對每次更新附上說明。</p></li>
 </ul>
+<blockquote>
+<p><code>Model Image</code> 此欄位支援兩種映像檔： <em>已包裝模型檔的映像檔</em> 及 <em>包裝用的映像檔</em> (搭配指定的模型檔 <code>Model URI</code>)。 請根據是否帶入模型檔 <code>Model URI</code> 來決定適合的映像檔。</p>
+</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="environment-variables"></a><a href="#environment-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Variables</h3>
 <p>可加入多個環境變數。</p>
 <ul>
@@ -145,6 +147,9 @@
 <li><code>Private Access</code>: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示<code>Clients</code>頁籤，可由此產生存取 Token。</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h3>
+<ul>
+<li><code>Update Message</code>: 使用者針對每次更新附上說明。</li>
+</ul>
 <p>點擊<code>Deploy</code>鈕，進行部署。</p>
 <p>佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。</p>
 <h2><a class="anchor" aria-hidden="true" id="部署詳細資訊"></a><a href="#部署詳細資訊" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署詳細資訊</h2>
@@ -161,6 +166,7 @@
 <tr><td>Creation Time</td><td>創建時間</td></tr>
 <tr><td>Last Updated</td><td>最後更新時間</td></tr>
 <tr><td>Model Image</td><td>指定的 Model Image</td></tr>
+<tr><td>Model URI</td><td>指定的模型檔案路徑</td></tr>
 <tr><td>Image Pull Secret</td><td>下拉此 Image 用的 Secret</td></tr>
 <tr><td>Description</td><td>使用者輸入描述</td></tr>
 <tr><td>Instance Type</td><td>佈建用資源配請求</td></tr>
@@ -188,7 +194,7 @@
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
 <p>History 頁上顯示過去已部署的 Deployment 的記錄。</p>
-<p><img src="/docs/assets/mdeploy_history_v28.png" alt=""></p>
+<p><img src="/docs/assets/mdeploy_history_v32.png" alt=""></p>
 <p>點擊<code>View</code>連結來查看查看各個部署詳細記錄。</p>
 <p><img src="/docs/assets/mdeploy_history_view_v32.png" alt=""></p>
 <table>
@@ -199,6 +205,7 @@
 <tr><td>User</td><td>當時啟動部署的使用者</td></tr>
 <tr><td>Deployment Stopped</td><td><em>true</em> 或 <em>false</em></td></tr>
 <tr><td>Model Image</td><td>使用 model image url</td></tr>
+<tr><td>Model URI</td><td>指定的模型檔案路徑</td></tr>
 <tr><td>Replicas</td><td>副本個數</td></tr>
 <tr><td>Group</td><td>當時啟動部署的群組</td></tr>
 <tr><td>Instance Type</td><td>使用的 Instance Type 資源</td></tr>
