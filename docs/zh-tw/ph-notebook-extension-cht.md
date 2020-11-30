@@ -12,6 +12,8 @@ sidebar_label: PrimeHub Extension
 
 >InfuseAI 提供最新的映像檔已內建 **PrimeHub Extension** 及對應需要的執行環境。為了能順利使用此外掛功能，請確保選擇的映像檔是 InfuseAI 提供最新的映像檔 或是建立在其上的映像檔。參照[列表](guide_manual/images-list)。
 
+>想要自建映像檔包含 **PrimeHub Extension**? [請見 repo](https://github.com/InfuseAI/primehub-job/tree/master/jupyterlab_primehub)。
+
 開啟 notebook (*.ipynb) 檔，**PrimeHub** 外掛位於在功能列上；在此簡介外掛上的功能。
 
 ![](assets/ph-extension-menu.png)
