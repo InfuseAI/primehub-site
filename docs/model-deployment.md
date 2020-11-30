@@ -68,13 +68,15 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 + `Deployment ID`: An unique ID.
 
-+ `Model Image`: The image which can be served directly or acted as the pre-packaged ML base image.
++ `Model Image`: The image which can be served directly ([a model-file-packaged image](model-deployment-tutorial-model-image)) or acted as the [pre-packaged ML base image](model-deployment-tutorial-prepackaged-image) for a model file.
 
-+ `Model URI`: The location which the trained model is stored in.
++ `Model URI`: The location which the trained model is stored in; based on this model file to deploy a model image.
 
 + `Image Pull Secret`: a pull secret for the model image if required.
 
 + `Descriptions`: User input description.
+
+> `Model Image` field can take both of a *ready-to-serve model image* or a *pre-packaged image for a model file* stored in `Model URI` field. Please use a corresponding image according to *Model URI* is required or not.
 
 ### Environment Variables
 

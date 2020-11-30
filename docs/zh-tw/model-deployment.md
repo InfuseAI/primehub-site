@@ -40,7 +40,6 @@ title: 模型部署 (Alpha)
 |Info        |Description|
 |------------|-----------|
 |Title       | 名稱|
-|Group       | 所屬群組|
 |Endpoint    | 佈建上線服務 URL|
 |Metadata    | 鼠標移到`View`，顯示 Metadata 資訊|
 |Last Updated| 最後更新時間|
@@ -73,13 +72,15 @@ title: 模型部署 (Alpha)
 
 + `Deployment ID`: 系統產生 ID。
 
-+ `Model Image`: 指定採用的 Model Image。
++ `Model Image`: 此欄位支援兩種映像檔，一種是 [已包裝模型檔的映像檔](../model-deployment-tutorial-model-image) 另一種是 [包裝用的映像檔](../model-deployment-tutorial-prepackaged-image) 搭配指定的模型檔 `Model URI`。
+
++ `Model URI`: 模型檔案路徑。
 
 + `Image Pull Secret`: 如果必要，請指定下拉 Model Image 所需的 pull secret。
 
 + `Descriptions`: 使用者輸入描述。
 
-+ `Update Message`: 使用者針對每次更新附上說明。
+> `Model Image` 此欄位支援兩種映像檔： *已包裝模型檔的映像檔* 及 *包裝用的映像檔* (搭配指定的模型檔 `Model URI`)。 請根據是否帶入模型檔 `Model URI` 來決定適合的映像檔。
 
 ### Environment Variables
 
@@ -107,6 +108,8 @@ title: 模型部署 (Alpha)
 
 ### Deploy
 
++ `Update Message`: 使用者針對每次更新附上說明。
+
 點擊`Deploy`鈕，進行部署。
 
 佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。
@@ -125,6 +128,7 @@ title: 模型部署 (Alpha)
 |Creation Time  |創建時間|
 |Last Updated   |最後更新時間|
 |Model Image    |指定的 Model Image|
+|Model URI      |指定的模型檔案路徑|
 |Image Pull Secret | 下拉此 Image 用的 Secret|
 |Description    |使用者輸入描述 |
 |Instance Type  |佈建用資源配請求|
@@ -153,7 +157,7 @@ Logs 頁上顯示目前 部署 的記錄。
 
 History 頁上顯示過去已部署的 Deployment 的記錄。
 
-![](assets/mdeploy_history_v28.png)
+![](assets/mdeploy_history_v32.png)
 
 點擊`View`連結來查看查看各個部署詳細記錄。
 
@@ -164,6 +168,7 @@ History 頁上顯示過去已部署的 Deployment 的記錄。
 | User          | 當時啟動部署的使用者|
 | Deployment Stopped | *true* 或 *false*|
 | Model Image   | 使用 model image url|
+| Model URI     | 指定的模型檔案路徑|
 | Replicas      | 副本個數|
 | Group         | 當時啟動部署的群組|
 | Instance Type | 使用的 Instance Type 資源|
