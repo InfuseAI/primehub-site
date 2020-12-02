@@ -44,6 +44,7 @@ PrimeHub v3.1 導入新功能 `Usage Reports`，藉此管理者可以下載每�
 |**k8s_uid**| K8S uid          |
 |**start_time**| 起始時間          |
 |**end_time**| 結束時間          |
+|**running**| 是否正在執行中          |
 
 ## Summary Report
 
@@ -59,3 +60,4 @@ PrimeHub v3.1 導入新功能 `Usage Reports`，藉此管理者可以下載每�
 |**cpu_core_hours**| 1CPU 使用時數|
 |**gb_memory_hours**| 1GB 使用時數|
 |**usage_hours**| 總共時數|
+|**running**| 是否正在執行中          |

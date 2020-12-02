@@ -32,8 +32,9 @@ There are some insightful data of usage:
 |**group**|which group which component runs at|
 |**user**|which user uses resources|
 |**component**|such as `job`, `notebook`, `model_deploy`|
-|**gpu_core_hours**| hours if the computing work runs in a GPU|
+|**component_name**| the name of the component|
 |**cpu_core_hours**| hours if the computing work runs in a CPU|
+|**gpu_core_hours**| hours if the computing work runs in a GPU|
 |**gb_memory_hours**| hours if the computing work uses 1 GB memory|
 |**usage_hours**| hours the computing work has done|
 |**instance_type**   | instance type  |
@@ -44,6 +45,7 @@ There are some insightful data of usage:
 |**k8s_uid**| Kubernetes object id           |
 |**start_time**| time pod began running       |
 |**end_time**| time pod finished running         |
+|**running**| if it's still running|
 
 ## Summary Report
 
@@ -59,3 +61,4 @@ There are some insightful data of usage:
 |**cpu_core_hours**| hours if the computing work runs in a CPU|
 |**gb_memory_hours**| hours if the computing work uses 1 GB memory|
 |**usage_hours**| hours the computing work has done|
+|**running**| if it's still running|
