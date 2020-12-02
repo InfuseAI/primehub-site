@@ -7,7 +7,7 @@ title: PrimeHub v3.2
 
 **PrimeHub v3**, in order to enhance the team/group-centric design, UI is revamped for introducing **Group-Context** experience to users that a current working project-group is required to be specified from associated groups of users, accordingly, the context/the operations are retained within the working group; therefore, it provides a consistent, intuitive experience of a working group/project; in the past PrimeHub v2, users had to choose a group to perform actions every time repeatedly which didn't provide a project-centric experience consistently.
 
-In addition, administration features are performed on **Admin Portal** which is independent from **User Portal** now.
+There are two portals, one is **User Portal** which provides general user-facing features, the other is **Admin Portal** which provides adminstration features.
 
 ---
 

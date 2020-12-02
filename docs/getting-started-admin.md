@@ -3,13 +3,15 @@ id: getting-started-admin
 title: Administration
 ---
 
-## 🌟PrimeHub v3.0
+## 🌟PrimeHub v3
 
-From **PrimeHub v3.0**, administration features are performed on `Admin Portal` which is independent from **User Portal** now. Please check Admin Portal section below if you come from PrimeHub v2.x or just skip to guides if you are newcomers.
+From **PrimeHub v3**, administration features are performed on `Admin Portal` which is independent from **User Portal**. Please check changes below if you come from PrimeHub v2.x or just skip to guides if you are newcomers.
 
 ## Admin Portal
 
 ![](assets/v3-admin-portal_v31.png)
+
+### Changes from PrimeHub v2.x
 
 + Then entrance of **Admin Portal**. See [Access Admin Portal](quickstart/login-portal-admin). 
 
@@ -18,8 +20,6 @@ From **PrimeHub v3.0**, administration features are performed on `Admin Portal` 
 + `JupyterHub Admin` is renamed to `Notebooks Admin`.
 
 + `System` is renamed to `System Settings`.
-
-+ New feature, `Usage Reports` is introduced.
 
 ## Guides
 
