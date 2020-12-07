@@ -9,13 +9,20 @@ title: PyTorch server
 
 In this document, it shows how to use our prepackaged PyTorch image.
 
+## Model Information
+
+* Latest image: infuseai/pytorch-prepackaged_rest:v0.1.0
+* Input: Numpy
+* Output: Numpy
+* Model Files: Follow the [state_dict method](https://pytorch.org/tutorials/beginner/saving_loading_models.html). There should be one model file `xxx.pt` and one model class file `xxx.py` in the same directory.
+
 ## Example
 
 In the `Create Deployment` page, you can see the `Model Image` and `Model URI` columns.
 
 ![](assets/mdeploy_create_v32.png)
 
-Please fill `infuseai/pytorch-prepackaged_rest:v0.1.0` into `Model Image` and fill `gs://primehub-models/pytorch/CIFAR10` into `Model URI`.
+Please fill latest image content in the previous Model Information section into `Model Image` and fill `gs://primehub-models/pytorch/CIFAR10` into `Model URI`.
 After that, you can type your `Deployment name` and then deploy.
 
 When the status shows that the deploy is completed, please use the following command to test the model endpoint:
@@ -53,9 +60,9 @@ And, when a client send the request, it will call the predict function:
 ```python
 def predict(self, X):
     with torch.no_grad():
-        inputs = torch.from_numpy(X).float()
-        return self.model(inputs).tolist()
+        inputs = torch.from_numpy(X)
+        return self.model(inputs).numpy()
 ```
 
-In summary, if you use the `infuseai/pytorch-prepackaged_rest:v0.1.0` image and put your model file and model class file under google bucket or PHFS, 
+In summary, if you use the prepackaged image and put your model file and model class file under google bucket or PHFS, 
 you can directly have the model api endpoint because we pre-implemented the previous code.
