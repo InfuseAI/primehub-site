@@ -7,7 +7,9 @@ title: PrimeHub v3.2
 
 **PrimeHub v3**, in order to enhance the team/group-centric design, UI is revamped for introducing **Group-Context** experience to users that a current working project-group is required to be specified from associated groups of users, accordingly, the context/the operations are retained within the working group; therefore, it provides a consistent, intuitive experience of a working group/project; in the past PrimeHub v2, users had to choose a group to perform actions every time repeatedly which didn't provide a project-centric experience consistently.
 
-There are two portals, one is **User Portal** which provides general user-facing features, the other is **Admin Portal** which provides adminstration features.
+![](assets/group_context.png)
+
+In addition, there are two portals now, one is **User Portal** which provides general user-facing features, the other is **Admin Portal** which provides adminstration features.
 
 ---
 
@@ -25,9 +27,17 @@ Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub 
 
 + [Advanced settings of JupyterHub Spawner](user-advanced-setting)
 
-+ [Submit and schedule Jobs](job-submission-feature)
++ [Submit and monitor jobs](job-submission-feature)
+
++ [Schedule routine jobs](job-scheduling-feature)
+
++ [Store job artifacts](job-artifact-feature)
 
 + [Deploy Models and serve models](model-deployment-feature)
+
++ [Notebook extension and submit notebooks as jobs](ph-notebook-extension)
+
++ [Store user data](quickstart/nb-data-store)
 
 + [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)
 
@@ -64,7 +74,6 @@ Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub 
 ### Components Configuration
 
 + [SSH Server](getting_started/configure-ssh-server)
-+ [DockerHub Registry for Image Builder](tasks/dockerhub-registry)
 
 ### Design Documents
 

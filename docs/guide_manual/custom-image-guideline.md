@@ -93,4 +93,4 @@ FROM infuseai/docker-stacks/<image>
 
 ## Images Built by repo2docker 
 
-For tech savvy users who want to try [repo2docker](https://repo2docker.readthedocs.io/en/latest/) for building images. Please see our technical document [repo2docker image](../concepts/designs/repo2docker.md) to make sure it can be used by PrimeHub.
+For tech savvy users who want to try [repo2docker](https://repo2docker.readthedocs.io/en/latest/) for building images. Please see our technical document [repo2docker image](../tasks/repo2docker.md) to make sure it can be used by PrimeHub.

@@ -31,18 +31,22 @@ To add/delete/edit users, groups and other resources, users are required to swit
 
 Here are documents to guide you to launch a notebook, to submit jobs, to deploy models via features on User Portal and so on.
 
-### User
-
 + [Access User Portal](quickstart/login-portal-user.md)
 
-+ [Launch/Shutdown Notebooks of projects on PrimeHub](quickstart/launch-project)
++ [Launch/Shutdown projects of JupyterHub on PrimeHub](quickstart/launch-project)
 
-+ [Advanced settings of Notebook Spawner](user-advanced-setting)
-  
-+ [Submit and schedule Jobs](job-submission-feature)
++ [Advanced settings of JupyterHub Spawner](user-advanced-setting)
+
++ [Submit and monitor jobs](job-submission-feature)
+
++ [Schedule routine jobs](job-scheduling-feature)
+
++ [Store job artifacts](job-artifact-feature)
 
 + [Deploy Models and serve models](model-deployment-feature)
 
-+ [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)
++ [Notebook extension and submit notebooks as jobs](ph-notebook-extension)
 
-+ [Switch to Admin Portal](quickstart/login-portal-admin)
++ [Store user data](quickstart/nb-data-store)
+
++ [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)

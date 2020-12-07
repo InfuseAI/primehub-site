@@ -26,6 +26,8 @@ On Portal, the left side is **side menu**, the right side is the **context of th
 
 First of all, users have to specify a working group from joining groups by using the dropdown. Accordingly, the following context will be retained within the working group.
 
+![](assets/group_context.png)
+
 At side menu, there are
 
 + **Home** where users can find `User Guide` link which connects to this `PrimeHub Documentation` site.

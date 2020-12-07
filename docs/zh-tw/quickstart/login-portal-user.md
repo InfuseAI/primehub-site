@@ -25,6 +25,8 @@ title: User Portal
 
 Portal 頁面上左側為使用者功能選單、右側為「專案群組先決」下的內容、最右上方則為切換專案群組的下拉選單 `Group:`。
 
+![](assets/group_context.png)
+
 + **Home** 使用者可以由此參考 PrimeHub 相關文件。
 
 + **Notebooks**  使用者可以由此進行啟始專案。請參考 [啟始 Jupyter Notebook](launch-project)。

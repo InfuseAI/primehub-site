@@ -8,13 +8,13 @@ title: PrimeHub v3.2
 
 ## 簡介
 
-PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至少一個群組才能操作使用者層面的功能。初始時，內建有使用者`phadmin`(「管理者」已開啟)、群組`phusers`及數個 *instance types*/*images*；立即就能利用初始資源啟動 Notebook。
+**PrimeHub** 以專案群組的概念為設計中心，每個使用者須關聯至少一個群組才能操作使用者層面的功能。初始時，內建有使用者`phadmin`(「管理者」已開啟)、群組`phusers`及數個 *instance types*/*images*；立即就能利用初始資源啟動 Notebook。
 
 同樣地，*Instance Type*、*Image*、*Dataset*t 等資源也須關聯至少一個群組或設定為 *Global* 才能被使用者選用。
 
 使用者啟用「管理者」功能後，能切換至 Admin Portal 透過其上的管理功能進行新增/刪除/編輯 *User*、*Group*、*Instance Type*、*Image*、*Dataset* 等其它資源其它管理介面。
 
-**PrimeHub v3** 進一步在使用者體驗及介面有著重大的改進；其中以「專案群組先決」的概念上，我們重新設計了 User Portal 的使用者體驗；有別於過往 PrimeHub v2 進入各功能頁後，每次操作都需要另外選擇針對的群組。「專案群組先決」的設計下，使用者先指定目前工作中的專案群組，之後所有的資訊及操作都是自動地限於此專案群組的範籌下，不需每一動都再額外指定，如此讓使用者可以更直覺以專案群組的角度來操作。如果您本是 PrimeHub v2.x 使用者，請先參考「專案群組先決」。
+**PrimeHub v3** 進一步在使用者體驗及介面有著重大的改進；其中以「專案群組先決」的概念上，我們重新設計了 User Portal 的使用者體驗；有別於過往 PrimeHub v2 進入各功能頁後，每次操作都需要另外選擇針對的群組。「專案群組先決」的設計下，使用者先指定目前工作中的專案群組，之後所有的資訊及操作都是自動地限於此專案群組的範籌下，不需每一動都再額外指定，如此讓使用者可以更直覺以專案群組的角度來操作。如果您本是 PrimeHub v2.x 使用者，請先參考[專案群組先決](index-zh#專案群組先決)帶來的改變。
 
 ---
 
@@ -28,6 +28,8 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 
 ### 專案群組先決
 
+![](assets/group_context.png)
+
 + 專案群組先決的設計下，使用者需先指定工作專案群組；使用者也可輕易切換至其它專案群組。
 
 + 專案群組先決的設計下，使用者的一切操作均指定工作專案群組的範籌下發生。
@@ -40,9 +42,19 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 
 + [操作登入及啟始 Notebook](zh-tw/quickstart/login-portal-user)
 
-+ [Job Submission/Scheduler 使用及教學](zh-tw/job-submission-cht)
++ [Notebook 進階啟動設定](zh-tw/user-advanced-setting)
+
++ [遞交 Job 及即時監視其資源使用](zh-tw/job-submission-cht)
+
++ [儲存 Job Artifacts 輸出](zh-tw/job-artifact-cht)
+
++ [週期性 Job 排程](zh-tw/job-scheduling-feature-cht)
 
 + [模型部署 (Alpha)](zh-tw/model-deployment-feature)
+
++ [Notebook Extension 及 將 Notebook 遞交至 Job](zh-tw/ph-notebook-extension-cht)
+
++ [使用者資料儲存](zh-tw/quickstart/nb-data-store-cht)
 
 + [遠端 SSH 連線 Jupyter Notebook](zh-tw/guide_manual/ssh-config-cht)
 
@@ -54,7 +66,7 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 
 ### Admin Portal
 
-**PrimeHub v3.0** 將管理者功能從原先 **User Portal** 獨立於管理者專有 `Admin Portal`。 如果您本是 PrimeHub v2.x 管理者，請先參考 Admin Portal。
+**PrimeHub v3** 將管理者功能從原先 **User Portal** 獨立於管理者專有 `Admin Portal`。 如果您本是 PrimeHub v2.x 管理者，請先參考 Admin Portal。
 
 + `Admin Portal` 請見 [透過 Admin Portal 管理 PrimeHub](zh-tw/quickstart/login-portal-admin)。
 
@@ -67,8 +79,6 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 + `Usage Reports` 新功能導入。
 
 + [進入 Admin Portal](zh-tw/quickstart/login-portal-admin)
-
-+ [設定 PrimeHub 系統參數](zh-tw/guide_manual/admin-system-cht)
 
 + [管理使用者及群組](zh-tw/guide_manual/admin-user-cht)
 
@@ -84,6 +94,8 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 
 + [檢視使用量月報表](zh-tw/guide_manual/admin-report-cht)
 
++ [設定 PrimeHub 系統參數](zh-tw/guide_manual/admin-system-cht)
+
 + [維運用 Maintenance Notebook](zh-tw/maintenance-cht)
 
 + [快速上手操作](zh-tw/quickstart/create-user)
@@ -95,7 +107,6 @@ PrimeHub 以專案群組的概念為設計中心，每個使用者須關聯至�
 ### Components Configuration
 
 + [SSH Server](getting_started/configure-ssh-server)
-+ [中文] [DockerHub Registry for Image Builder](zh-tw/quickstart/dockerhub-registry)
 
 ### Design Documents
 

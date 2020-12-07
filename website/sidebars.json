@@ -147,6 +147,13 @@
       },
       {
         "type": "subcategory",
+        "label": "Manage and obtain secrets",
+        "ids": [
+          "guide_manual/admin-secret"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Monthly Report",
         "ids": [
           "guide_manual/admin-report"
@@ -161,9 +168,13 @@
       },
       {
         "type": "subcategory",
-        "label": "Manage and obtain secrets",
+        "label": "Maintenance tool kits",
         "ids": [
-          "guide_manual/admin-secret"
+          "maintenance",
+          "quickstart/maintenance-resize-user-vol",
+          "quickstart/maintenance-resize-group-vol",
+          "trouble/howto-check-user-vol",
+          "trouble/howto-check-group-vol"
         ]
       },
       {
@@ -179,25 +190,6 @@
           "quickstart/build-image",
           "quickstart/secret-pull-image",
           "quickstart/secret-gitsync"
-        ]
-      }
-    ],
-    "Maintenance": [
-      {
-        "type": "subcategory",
-        "label": "Maintenance Notebook",
-        "ids": [
-          "maintenance",
-          "quickstart/maintenance-resize-user-vol",
-          "quickstart/maintenance-resize-group-vol"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Tips",
-        "ids": [
-          "trouble/howto-check-user-vol",
-          "trouble/howto-check-group-vol"
         ]
       }
     ],
@@ -330,7 +322,8 @@
               "zh-tw/job-submission-tutorial-simple",
               "zh-tw/job-submission-tutorial-p1",
               "zh-tw/job-submission-tutorial-p2",
-              "zh-tw/job-artifacts-simple-cht"
+              "zh-tw/job-artifacts-simple-cht",
+              "zh-tw/job-tutorial-more"
             ]
           }
     ],
@@ -346,7 +339,8 @@
           "zh-tw/model-deployment-quickstart-tutorial",
           "zh-tw/model-deployment-tutorial-package-image",
           "zh-tw/model-deployment-tutorial-package-image-r",
-          "zh-tw/model-deployment-tutorial-prepackage-image"
+          "zh-tw/model-deployment-tutorial-prepackage-image",
+          "zh-tw/model-tutorial-more"
         ]
       }
     ],
@@ -418,6 +412,15 @@
       },
       {
         "type": "subcategory",
+        "label": "維運工具",
+        "ids": [
+          "zh-tw/maintenance-cht",
+          "zh-tw/quickstart/maintenance-resize-user-vol",
+          "zh-tw/quickstart/maintenance-resize-group-vol"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "快速上手",
         "ids": [
           "zh-tw/quickstart/create-user",
@@ -428,17 +431,6 @@
           "zh-tw/quickstart/build-image",
           "zh-tw/quickstart/secret-pull-image",
           "zh-tw/quickstart/secret-gitsync"
-        ]
-      }
-    ],
-    "維運": [
-      {
-        "type": "subcategory",
-        "label": "工具",
-        "ids": [
-          "zh-tw/maintenance-cht",
-          "zh-tw/quickstart/maintenance-resize-user-vol",
-          "zh-tw/quickstart/maintenance-resize-group-vol"
         ]
       }
     ]
