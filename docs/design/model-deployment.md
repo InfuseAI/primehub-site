@@ -1,6 +1,6 @@
 ---
 id: model-deployment
-title: Model Deployment (Alpha)
+title: Model Deployment (Beta)
 ---
 
 Allow users to deploy a model as a service.

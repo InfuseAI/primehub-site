@@ -29,7 +29,7 @@ title: Group Management
 
 ### Model Deployment
 
-`Model Deployment` 此功能為 alpha 階段，需要將 [feature flag](../references/feature-flag) 設為`True`，才能體驗；開啟後， Groups 可以使用[佈署模型](../model-deployment-feature)功能來提供服務。
+`Model Deployment` 此功能為 Beta 階段，需要將 [feature flag](../references/feature-flag) 設為`True`，才能體驗；開啟後， Groups 可以使用[佈署模型](../model-deployment-feature)功能來提供服務。
 
 ### Shared Volume
 

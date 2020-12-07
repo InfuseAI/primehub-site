@@ -18,7 +18,7 @@ After login, it shows **User Portal**, on portal, the left side is **side menu**
 
 + **Home** where users can find `User Guide` link which connects to this `PrimeHub Documentation` site.
 
-+ **Models (Alpha)** where users can deploy and serve models as services. See [Model Deployment](model_deployment/md-deployment).
++ **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](model_deployment/md-deployment).
 
 ### Logout
 

@@ -50,7 +50,7 @@ title: PrimeHub v3.2
 
 + [週期性 Job 排程](zh-tw/job-scheduling-feature-cht)
 
-+ [模型部署 (Alpha)](zh-tw/model-deployment-feature)
++ [模型部署 (Beta)](zh-tw/model-deployment-feature)
 
 + [Notebook Extension 及 將 Notebook 遞交至 Job](zh-tw/ph-notebook-extension-cht)
 

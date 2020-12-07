@@ -334,7 +334,7 @@
       "zh-tw/model-deployment-feature",
       {
         "type": "subcategory",
-        "label": "教學 (Alpha)",
+        "label": "教學 (Beta)",
         "ids": [
           "zh-tw/model-deployment-quickstart-tutorial",
           "zh-tw/model-deployment-tutorial-package-image",

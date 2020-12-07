@@ -10,4 +10,4 @@ title: 資料科學家及工程師
 
 + [Job Submission/Scheduler 使用及教學](job-submission-cht)
 
-+ [Model Deployment 使用 (Alpha)](model-deployment-feature)
++ [Model Deployment 使用 (Beta)](model-deployment-feature)

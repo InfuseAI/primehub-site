@@ -35,7 +35,7 @@ Portal 頁面上左側為使用者功能選單、右側為「專案群組先決�
 
 + **Schedule** 使用者可以由此排程需要費時的任務。請參考 [Job Scheduler](../job-scheduling-feature-cht)。<span class="ee-only">Enterprise</span>
 
-+ **Models (Alpha)** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Model Deployment](../model-deployment-feature)。<span class="ee-only">Enterprise</span>
++ **Models (Beta)** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Model Deployment](../model-deployment-feature)。<span class="ee-only">Enterprise</span>
 
 >如果使用者不屬於任一專案群組，頁面上會顯示 `No group available`，請洽管理者。
 

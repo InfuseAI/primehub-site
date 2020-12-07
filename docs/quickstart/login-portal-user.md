@@ -38,7 +38,7 @@ At side menu, there are
 
 + **Schedule** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
 
-+ **Models (Alpha)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
++ **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
 
 >If users don't belong to any group, the page shows `No group available`. Please contact administrators.
 

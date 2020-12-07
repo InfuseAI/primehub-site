@@ -1,6 +1,6 @@
 ---
 id: md-deployment-cht
-title: 模型部署 (Alpha)
+title: 模型部署 (Beta)
 ---
 
 **Model Deployment** is a feature from PrimeHub Enterprise.

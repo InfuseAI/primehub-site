@@ -1,6 +1,6 @@
 ---
 id: md-deployment
-title: Model Deployment (Alpha)
+title: Model Deployment (Beta)
 ---
 
 **Model Deployment** is a feature from PrimeHub Enterprise.
