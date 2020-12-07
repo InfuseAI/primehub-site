@@ -1,6 +1,7 @@
 ---
-id: login-portal-user
+id: version-3.2-login-portal-user
 title: User Portal
+original_id: login-portal-user
 ---
 
 <div class="label-sect">

@@ -1,6 +1,7 @@
 ---
-id: custom-image-guideline
+id: version-3.2-custom-image-guideline
 title: Custom Image Guideline
+original_id: custom-image-guideline
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

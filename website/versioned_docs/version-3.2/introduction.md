@@ -1,6 +1,7 @@
 ---
-id: introduction
+id: version-3.2-introduction
 title: PrimeHub v3.2
+original_id: introduction
 ---
 
 ## Introduction

@@ -1,6 +1,7 @@
 ---
-id: getting-started-user
+id: version-3.2-getting-started-user
 title: Getting Started
+original_id: getting-started-user
 ---
 
 ## Overview

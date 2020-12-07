@@ -1,6 +1,7 @@
 ---
-id: release-note
+id: version-3.2-release-note
 title: 3.2 Release Note
+original_id: release-note
 ---
 
 In this release, we wanted to give you more power to plug and chug what you want to use into PrimeHub—including your environment variables for model deployments and any custom software. We also took care of some housekeeping items to get rid of some clutter, allowing a clear path to focus on the project in front of you.

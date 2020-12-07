@@ -323,9 +323,9 @@ class Index extends React.Component {
             title: `<a href=${docUrl('introduction')}>Features</a>`,
             content:
               '<div class="grid-menu">' +
-                `<div class="menu-item"><a href=${docUrl('getting-started-user')}>Getting Started</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('quickstart/login-portal-user')}>User Portal features</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('quickstart/login-portal-admin')}>Admin Portal features</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('introduction')}>Getting Started</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting-started-user')}>User Portal features</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('getting-started-admin')}>Admin Portal features</a></div>` +
               '</div>', 
           },
           {
@@ -336,8 +336,9 @@ class Index extends React.Component {
             content:
               '<div class="grid-menu">' +
                 `<div class="menu-item"><a href=${docUrl('job-submission-tutorial-simple')}>Submit Jobs</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('model-deployment-quickstart-tutorial')}>Serve Models</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('guide_manual/ssh-vscode')}>SSH Notebook Remotely(VSCode)</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('job-artifact-feature')}>Job Artifacts</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('model-deployment-tutorial-concepts')}>Serve Models</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('guide_manual/ssh-vscode')}>SSH Notebook (VSCode)</a></div>` +
               '</div>', 
           },
           /*{
