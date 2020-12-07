@@ -20,7 +20,7 @@ Click Login with your own username (such as `phadmin` by default) and password.
 
 ## User Portal
 
-![](assets/v31-landing-user.png)
+![](assets/v32-landing-user.png)
 
 On Portal, the left side is **side menu**, the right side is the **context of the current working group**. At the top of the right side, there is a `Group:` dropdown for working groups switch. Users can switch the working group among joining groups easily.
 

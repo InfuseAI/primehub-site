@@ -21,7 +21,7 @@ title: User Portal
 
 ## User Portal
 
-![](assets/v31-landing-user.png)
+![](assets/v32-landing-user.png)
 
 Portal 頁面上左側為使用者功能選單、右側為「專案群組先決」下的內容、最右上方則為切換專案群組的下拉選單 `Group:`。
 
