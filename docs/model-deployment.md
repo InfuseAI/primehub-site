@@ -1,13 +1,13 @@
 ---
 id: model-deployment-feature
-title: Model Deployment (Alpha)
+title: Model Deployment (Beta)
 ---
 
 <div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
->Alpha version. It is subject to changes in the stable release.
+>Beta version. It is subject to changes in the stable release.
 
 Model Deployment feature that users are allowed to manage model deployment endpoints within Group Management with CRUD operations. If the feature is enabled within a group, end-users of the group are allowed to deploy models obeying the restriction of the group quota. While a deployed model serves, administrators are able to monitor the status of model service such service health and resources usage information; moreover, end-users are able to check deployment history and log.
 
