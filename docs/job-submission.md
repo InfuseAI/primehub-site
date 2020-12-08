@@ -162,7 +162,7 @@ If a Job generates data so called **artifacts** under the [PHFS storage](design/
 
 Monitoring indicates how much resources the Job use.
 
-+ `15 mins`, `1 hour`, `3 hours`, `Lifetime`: Select the latest timespan of metrics; *15min* shows metrics of the latest 15mins only, *Lifetime* shows metrics from the beginning to the end.
++ `15 mins`, `1 hour`, `3 hours`, `Lifetime`: Select the latest timespan of metrics; *15min* shows metrics of the latest 15mins only, *Lifetime* shows metrics from the beginning to the end. See [The interval of data sampling per timespan](design/job-monitoring#data-format).
 + `Overall Usage`: CPU and Memory(MB).
 + `GPU Device Usage`: GPU and Memory(MB) display *if GPU is allocated*.
 

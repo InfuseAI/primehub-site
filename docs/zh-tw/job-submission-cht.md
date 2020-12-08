@@ -162,7 +162,7 @@ It shows the brief information of the job.
 
 監測表顯示此 Job 所用到的資源。
 
-+ `15 mins`, `1 hour`, `3 hours`, `Lifetime`: 選擇「最近時間區間內」顯示的數據； 15mins 顯示最近 15 分內的數據， Lifetime 顯示從開始到結束的數據。
++ `15 mins`, `1 hour`, `3 hours`, `Lifetime`: 選擇「最近時間區間內」顯示的數據； 15mins 顯示最近 15 分內的數據， Lifetime 顯示從開始到結束的數據。請見各區間[取樣刷新頻率設計](../design/job-monitoring#data-format)。
 + `Overall Usage`: CPU 及 Memory(MB).
 + `GPU Device Usage`: 當此 Job 有配置到 GPU 時才顯示 GPU 及 Memory(MB)。
 
