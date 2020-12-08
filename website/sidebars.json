@@ -84,6 +84,7 @@
         "ids": [
           "model-deployment-prepackaged-server-intro",
           "model-deployment-prepackaged-server-tensorflow2",
+          "model-deployment-prepackaged-server-pytorch",
           "model-deployment-prepackaged-server-sklearn",
           "model-deployment-prepackaged-server-custom"
         ]
