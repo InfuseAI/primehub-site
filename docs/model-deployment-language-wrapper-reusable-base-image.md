@@ -7,56 +7,55 @@ title: Package a Model Image from a Reusable Base Image
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-This doc shows how to build a base image and use it. Using the base image has some benefits:
+## Overview
+
+This document shows the best practice to reuse a base image and build the model image on top of the base image. Using the base image has some benefits:
 
 1. If the way you load and use models is the same, these models can share the same base image
-2. If you just want to update the model file, a base image can speed up the building process 
+2. If you just want to update the model file, a base image can speed up the building process
 
-The idea is that you write a general model serving code and assume the model file is placed under a certain path. And build it as the base image by `s2i`.
+The idea is that you write a general model serving code and assume the model file is placed under a certain path. As a model is ready, use `docker build` to generate the model image from the base image along with the the model files.
 
-When a model file is ready, use `docker` to copy the model file into the correct path and build the model deployment image.
+To prepare base image, there are two methods
 
-In the following section, this doc uses Tensorflow 2 as a simple showcase. The code is under [Github](https://github.com/InfuseAI/model-deployment-examples/tree/master/tensorflow2_prepackage).
+1. Build the base image by Language Wrapper
+1. Use pre-pacakged server as Base Image
 
-## Prerequisites
+## Build the Base Image by Language Wrapper
+Here, we use Tensorflow 2 as a simple showcase. The code is under [Github](https://github.com/InfuseAI/model-deployment-examples/tree/master/tensorflow2_prepackage).
 
-- Docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
+### Build the Base Image
 
-Check everything is ready to go by running:
+Install S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation). Check everything is ready to go by running:
 ```bash
 s2i usage seldonio/seldon-core-s2i-python3:0.18
 ```
 
-## Build the Base Image (Python)
+Write a general model serving code `Model.py`. Please use Python 3.6 (Recommended)
+```python
+import tensorflow as tf
 
-- Please use Python 3.6 (Recommended)
+class Model:
+    def __init__(self):
+        self._model = tf.keras.models.load_model('model')
 
-- Write a general model serving code `Model.py`
-    ```python
-    import tensorflow as tf
+    def predict(self, X, feature_names=None, meta=None):
+        output = self._model.predict(X)
+        return output
+```
 
-    class Model:
-        def __init__(self):
-            self._model = tf.keras.models.load_model('model')
+Create a `requirements.txt` file and write down all required packages
+```txt
+tensorflow==2.1.0
+```
 
-        def predict(self, X, feature_names=None, meta=None):
-            output = self._model.predict(X)
-            return output
-    ```
-
-- Create a `requirements.txt` file and write down all required packages
-    ```txt
-    tensorflow==2.1.0
-    ```
-
-- Create a `.s2i` folder and create a `.s2i/environment` file with the following content:
-    ```script
-    MODEL_NAME=Model
-    API_TYPE=REST
-    SERVICE_TYPE=MODEL
-    PERSISTENCE=0
-    ```
+Create a `.s2i` folder and create a `.s2i/environment` file with the following content:
+```script
+MODEL_NAME=Model
+API_TYPE=REST
+SERVICE_TYPE=MODEL
+PERSISTENCE=0
+```
 
 Build the base image by:
 ```bash
@@ -64,8 +63,7 @@ Build the base image by:
 ```
 (Using `seldonio/seldon-core-s2i-python3` instead if using Python 3 rather than Python 3.6)
 
-
-## Use the Base Image to Build the Model Deployment Image
+### Build the Model Image
 
 Based on our previous base image, whenever you have a model outputted by:
 ```python
@@ -76,7 +74,7 @@ You can use this base image to build your model deployment image.
 First, create a `Dockerfile`:
 ```txt
 FROM tensorflow2-prepackage
-COPY export_path model 
+COPY export_path model
 ```
 (Please replace the `export_path` to your path)
 
@@ -87,8 +85,7 @@ Then, you can build the model deployment image by:
 docker build -t tensorflow2-prepackage-model .
 ```
 
-
-## Verify Your Model Deployment Image
+### Verify the Model Image
 
 In order to verify the image, you can run it:
 ```bash
@@ -151,8 +148,50 @@ For example, the following output shows three prediction values in each class.
 
 After verifying your model deployment image, now you can use this image in the PrimeHub model deployment feature.
 
+## Use Pre-pacakged Server as Base Image
+
+Here, we use the [tensorflow2 pre-packaged server](model-deployment-prepackaged-server-tensorflow2.md) as example.
+
+### Build the Model Image
+
+First, prepare the model files. We can use the example model in github. The model files can be found in `tensorflow2/example_model/mnist`
+```
+git clone git@github.com:InfuseAI/primehub-seldon-servers.git
+cd primehub-seldon-servers
+```
+
+Then, create a Dockerfile, in which we copy the model files into the `/mnt/models` and tell the pre-packaged server to use this path as `model_uri`
+```
+FROM infuseai/tensorflow2-prepackaged_rest:v0.4.2
+COPY tensorflow2/example_model/mnist /mnt/models
+ENV PREDICTIVE_UNIT_PARAMETERS='[{"name":"model_uri","value":"/mnt/models","type":"STRING"}]'
+```
+
+Build the image from the Dockerfile
+```
+docker build -t tensorflow2-prepackage-model .
+```
+
+### Verify the Model Image
+Run the model server
+```
+docker run -p 5000:5000 --rm tensorflow2-prepackage-model
+```
+
+Verify the model server
+```
+curl -X POST http://localhost:5000/api/v1.0/predictions \
+    -H 'Content-Type: application/json' \
+    -d '{ "data": {"ndarray": [[[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.32941176470588235, 0.7254901960784313, 0.6235294117647059, 0.592156862745098, 0.23529411764705882, 0.1411764705882353, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8705882352941177, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9450980392156862, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.6666666666666666, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2627450980392157, 0.4470588235294118, 0.2823529411764706, 0.4470588235294118, 0.6392156862745098, 0.8901960784313725, 0.996078431372549, 0.8823529411764706, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9803921568627451, 0.8980392156862745, 0.996078431372549, 0.996078431372549, 0.5490196078431373, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06666666666666667, 0.25882352941176473, 0.054901960784313725, 0.2627450980392157, 0.2627450980392157, 0.2627450980392157, 0.23137254901960785, 0.08235294117647059, 0.9254901960784314, 0.996078431372549, 0.41568627450980394, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3254901960784314, 0.9921568627450981, 0.8196078431372549, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.08627450980392157, 0.9137254901960784, 1.0, 0.3254901960784314, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5058823529411764, 0.996078431372549, 0.9333333333333333, 0.17254901960784313, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23137254901960785, 0.9764705882352941, 0.996078431372549, 0.24313725490196078, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.7333333333333333, 0.0196078431372549, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03529411764705882, 0.803921568627451, 0.9725490196078431, 0.22745098039215686, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.49411764705882355, 0.996078431372549, 0.7137254901960784, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.29411764705882354, 0.984313725490196, 0.9411764705882353, 0.2235294117647059, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.07450980392156863, 0.8666666666666667, 0.996078431372549, 0.6509803921568628, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.011764705882352941, 0.796078431372549, 0.996078431372549, 0.8588235294117647, 0.13725490196078433, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.14901960784313725, 0.996078431372549, 0.996078431372549, 0.30196078431372547, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.12156862745098039, 0.8784313725490196, 0.996078431372549, 0.45098039215686275, 0.00392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23921568627450981, 0.9490196078431372, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.996078431372549, 0.8588235294117647, 0.1568627450980392, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.8117647058823529, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]]] } }'
+```
+
+The response would be like
+```
+{"data":{"names":[],"ndarray":[[2.2179543179845496e-07,1.2331367038598273e-08,2.5685820219223388e-05,0.0001267448824364692,3.67312957827437e-10,8.802280717645772e-07,1.7313700820253963e-11,0.9998445510864258,5.112406711305084e-07,1.4923076605555252e-06]]},"meta":{}}
+```
+
 ## Share Your Base Image
 
 Share your base image by pushing it to a docker registry.
 
-Therefore, others can re-use the model serving code again. They can share the same base image and build a model deployment image by `docker`.
+Therefore, others can re-use the model serving code again. They can share the same base image and build a model image by `docker`.

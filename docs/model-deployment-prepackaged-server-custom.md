@@ -1,10 +1,21 @@
 ---
 id: model-deployment-prepackaged-server-custom
-title: Custom pre-packaged server
+title: Custom Pre-packaged Server
 ---
 
 <div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-to be added
+For better flexibility, we can also build our own pre-packaged server which is able to load models from the model URI. Here are the recommended steps to build your first pre-packaged server.
+
+
+1. Read the document [Package from Language Wrapper for python](model-deployment-language-wrapper-intro). This is the foundamental of a pre-pacakged server.
+1. Refernce existing [pre-packaged servers](https://github.com/InfuseAI/primehub-seldon-servers). Try to build and push the same pre-pacakged server to your container registry (e.g. Dockerhub).
+1. In the `__init__()` method of the model class, add the parameter `model_uri` to load the model. The value is a string which contains the path where the model files are downloaded. Currently, it is always `/mnt/models` rather than the actual model URI the user configure.
+
+    ```
+    def __init__(self, model_uri):
+        super().__init__()
+        self.model = load_model(model_uri)
+    ```

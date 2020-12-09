@@ -20,7 +20,7 @@ Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/mas
 
 ### Model URI Structure
 
-```
+```bash
 <model uri>
 ├── ModelClass.py
 └── model.pt
@@ -28,8 +28,8 @@ Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/mas
 
 There should be two files in the model uri
 
-1. `model.pt`: The model file should be saved by `state_dict()` format.
-1. `ModelClass.py`: A python define the `PyTorchModel` class.
+1. **model.pt**: The model file should be saved by `state_dict()` format.
+1. **ModelClass.py**: A python define the `PyTorchModel` class.
 
 For more information, please see [pytorch Saving & Loading documents](https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-for-inference)
 
@@ -59,9 +59,11 @@ def predict(self, X):
 
 ## Example
 
+In this example, we use the CIFAR-10 dataset, which is used in the [PyTorch tutorial](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html).
+
 Property    | Description
 ------------|------
-Model image | `infuseai/pytorch-prepackaged_rest:v0.1.0`
+Model Image | `infuseai/pytorch-prepackaged_rest:v0.1.0`
 Model URI   | `gs://primehub-models/pytorch/CIFAR10`
 
 **Test Request**
