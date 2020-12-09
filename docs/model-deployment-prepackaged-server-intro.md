@@ -7,9 +7,10 @@ title: Pre-packaged servers
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-In this section, we will show how to build a pre-packaged server image.
+In this section, we will introduce how to build a pre-packaged servers. Here are the list of supported server
 
 - [TensorFlow2 server](model-deployment-prepackaged-server-tensorflow2)
 - [PyTorch Server](model-deployment-prepackaged-server-pytorch)
 - [SKLearn server](model-deployment-prepackaged-server-sklearn)
-- [Custom pre-packaged server](model-deployment-prepackaged-server-custom)
+
+We can build our [Custom pre-packaged server](model-deployment-prepackaged-server-custom) for best flexibility.
