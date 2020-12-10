@@ -23,10 +23,10 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 |-        |-     |-     |-    |
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645|`CPU`|3.7|
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645-gpu-cuda-10|`GPU` `CUDA10`|3.7|
-|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-tf-v2-b3c52f35|`CPU`|3.7|
-|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-b3c52f35-gpu-cuda-10|`GPU` `CUDA10`|3.7|
-|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-2d701645|`CPU`|3.7|
-|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-2d701645-gpu|`GPU`|3.7|
+|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-a7f9696a|`CPU`|3.7|
+|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-a7f9696a-gpu-cuda-10|`GPU` `CUDA10`|3.7|
+|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-a7f9696a|`CPU`|3.7|
+|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-a7f9696a-gpu|`GPU`|3.7|
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35|`CPU`|3.7|
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35-gpu|`GPU`|3.7|
 
@@ -57,8 +57,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 
 |Framework|Image|CPU / GPU|Python|
 |-   |-    |-        |-     |
-|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-2d701645-gpu|`CPU`|3.7|
-|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-2d701645|`GPU` `CUDA 9`|3.7|
+|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-a7f9696a-gpu|`CPU`|3.7|
+|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-a7f9696a|`GPU` `CUDA 9`|3.7|
 |PyTorch 1.5|infuseai/docker-stacks:pytorch-notebook-b3c52f35|`CPU`|3.7|
 |PyTorch 1.5|infuseai/docker-stacks:pytorch-notebook-b3c52f35-gpu|`GPU` `CUDA 9`|3.7|
 
@@ -89,9 +89,9 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 
 |Name|Image|CPU / GPU|Python|
 |-   |-    |-        |-     |
-|AI notebook|infuseai/docker-stacks:ai-notebook-2d701645|`CPU`|3.7|
-|AI notebook|infuseai/docker-stacks:ai-notebook-2d701645-gpu|`GPU`|3.7|
-|AI notebook|infuseai/docker-stacks:ai-notebook-2d701645-gpu-cuda-10|`GPU`<br>`CUDA 10`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-a7f9696a|`CPU`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-a7f9696a-gpu|`GPU`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-a7f9696a-gpu-cuda-10|`GPU`<br>`CUDA 10`|3.7|
 
 ### JupyterLab v1 only
 

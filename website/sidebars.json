@@ -86,7 +86,8 @@
           "model-deployment-prepackaged-server-tensorflow2",
           "model-deployment-prepackaged-server-pytorch",
           "model-deployment-prepackaged-server-sklearn",
-          "model-deployment-prepackaged-server-custom"
+          "model-deployment-prepackaged-server-custom",
+          "model-deployment-prepackaged-server-test"
         ]
       },
       {
@@ -97,6 +98,14 @@
           "model-deployment-language-wrapper-python",
           "model-deployment-language-wrapper-r",
           "model-deployment-language-wrapper-reusable-base-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Advanced",
+        "ids": [
+          "model-deployment-prediction-apis",
+          "model-deployment-model-uri"
         ]
       }
     ],

@@ -1,6 +1,7 @@
 ---
 id: model-deployment-language-wrapper-intro
 title: Package from Language Wrapper
+sidebar_label: Overview
 ---
 
 <div class="ee-only tooltip">Enterprise
