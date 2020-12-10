@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>UPGRADE K8s from 1.10 and 1.10 to 1.12 · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Why"/><meta name="docsearch:version" content="3.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="UPGRADE K8s from 1.10 and 1.10 to 1.12 · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="## Why"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.1/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.1/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">UPGRADE K8s from 1.10 and 1.10 to 1.12</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="why"></a><a href="#why" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why</h2>
+<p>For PrimeHub 1.1, the target, Kubernetes-version-required (abbreviated to K8s) is 1.12, which provides essential features.</p>
+<h2><a class="anchor" aria-hidden="true" id="how"></a><a href="#how" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How</h2>
+<p>According to your K8s bootstrapper or installer, upgrade methods may vary:</p>
+<h2><a class="anchor" aria-hidden="true" id="rke-rancher-kubernetes-engine"></a><a href="#rke-rancher-kubernetes-engine" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RKE (Rancher Kubernetes Engine)</h2>
+<ol>
+<li><p>Ensure if you are using RKE version <code>v0.1.15</code>, you may verify this by running:</p>
+<pre><code class="hljs"><span class="hljs-attribute">rke</span>
+</code></pre>
+<p>According to the output, the <code>VERSION:</code> section should be shown as:</p>
+<pre><code class="hljs">VERSION:
+   v0<span class="hljs-number">.1</span><span class="hljs-number">.15</span>
+</code></pre>
+<p>If not, please update your RKE binary installation:</p>
+<ol>
+<li><p>Locate your <code>rke</code> binary path:</p>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">RKE_LOCATION</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token punctuation">$(</span>dirname `which rke`<span class="token punctuation">)</span><span class="token variable">)</span></span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token variable">$RKE_LOCATION</span>
+</code></pre></li>
+<li><p>Backup your current copy of <code>rke</code>:</p>
+<pre><code class="hljs css language-bash"><span class="token function">mv</span> <span class="token variable">$RKE_LOCATION</span>/rke <span class="token variable">$RKE_LOCATION</span>/rke.bak
+</code></pre></li>
+<li><p>Download RKE version <code>v0.1.15</code> (We assumed that you are using GNU/Linux OS platform and X86-64 system here):</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -Lo <span class="token variable">$RKE_LOCATION</span>/rke-0.1.15 https://github.com/rancher/rke/releases/download/v0.1.15/rke_linux-amd64 <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> u+x r<span class="token variable">$RKE_LOCATION</span>/ke-0.1.15 <span class="token operator">&amp;&amp;</span> <span class="token function">ln</span> -s <span class="token variable">$RKE_LOCATION</span>/rke-0.1.15 <span class="token variable">$RKE_LOCATION</span>/rke
+</code></pre></li>
+<li><p>Run <code>rke</code> again to verify that you have RKE version <code>v0.1.15</code> now.</p></li>
+<li><p>Unset the <code>RKE_LOCATION</code> environment variable:</p>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">unset</span> RKE_LOCATION
+</code></pre></li>
+</ol></li>
+<li><p>Use an updated <code>cluster.yml</code> to re-provision your K8s cluster. The diff-patch would be like this:</p>
+<pre><code class="hljs css language-patch"><span class="hljs-comment">--- cluster.yml  2019-01-15 06:22:38.416839329 +0000</span>
+<span class="hljs-comment">+++ cluster-upgrade-k8s-1.12.yml 2019-01-15 08:09:10.823283582 +0000</span>
+<span class="hljs-meta">@@ -146,7 +146,7 @@</span>
+# If set to true, rke won't fail when unsupported Docker version is found
+ignore_docker_version: false
+# The kubernetes version used. For now, this should match the version defined in rancher/types defaults map: https://github.com/rancher/types/blob/master/apis/management.cattle.io/v3/k8s_defaults.go#L14
+<span class="hljs-deletion">-kubernetes_version: v1.10.11-rancher1-1</span>
+<span class="hljs-addition">+kubernetes_version: v1.12.4-rancher1-1</span>
+
+# addons are deployed using kubernetes jobs. RKE will give up on trying to get the job status after this timeout in seconds..
+addon_job_timeout: 30
+<span class="hljs-meta">@@ -169,20 +169,20 @@</span>
+    enable-ssl-passthrough: ""
+
+system_images:
+<span class="hljs-deletion">-  etcd: quay.io/coreos/etcd:v3.1.12</span>
+<span class="hljs-deletion">-  kubernetes: rancher/hyperkube:v1.10.11-rancher1</span>
+<span class="hljs-deletion">-  alpine: rancher/rke-tools:v0.1.10</span>
+<span class="hljs-deletion">-  nginx_proxy: rancher/rke-tools:v0.1.10</span>
+<span class="hljs-deletion">-  cert_downloader: rancher/rke-tools:v0.1.10</span>
+<span class="hljs-deletion">-  kubernetes_services_sidecar: rancher/rke-tools:v0.1.10</span>
+<span class="hljs-deletion">-  kubedns: gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.8</span>
+<span class="hljs-deletion">-  dnsmasq: gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.8</span>
+<span class="hljs-deletion">-  kubedns_sidecar: gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.8</span>
+<span class="hljs-deletion">-  kubedns_autoscaler: gcr.io/google_containers/cluster-proportional-autoscaler-amd64:1.0.0</span>
+<span class="hljs-deletion">-  calico_node: quay.io/calico/node:v3.1.1</span>
+<span class="hljs-deletion">-  calico_cni: quay.io/calico/cni:v3.1.1</span>
+<span class="hljs-deletion">-  calico_ctl: quay.io/calico/ctl:v2.0.0</span>
+<span class="hljs-deletion">-  pod_infra_container: gcr.io/google_containers/pause-amd64:3.1</span>
+<span class="hljs-addition">+  etcd: rancher/coreos-etcd:v3.2.24</span>
+<span class="hljs-addition">+  kubernetes: rancher/hyperkube:v1.12.4-rancher1</span>
+<span class="hljs-addition">+  alpine: rancher/rke-tools:v0.1.16</span>
+<span class="hljs-addition">+  nginx_proxy: rancher/rke-tools:v0.1.16</span>
+<span class="hljs-addition">+  cert_downloader: rancher/rke-tools:v0.1.16</span>
+<span class="hljs-addition">+  kubernetes_services_sidecar: rancher/rke-tools:v0.1.16</span>
+<span class="hljs-addition">+  kubedns: rancher/k8s-dns-kube-dns-amd64:1.14.13</span>
+<span class="hljs-addition">+  dnsmasq: rancher/k8s-dns-dnsmasq-nanny-amd64:1.14.13</span>
+<span class="hljs-addition">+  kubedns_sidecar: rancher/k8s-dns-sidecar-amd64:1.14.13</span>
+<span class="hljs-addition">+  kubedns_autoscaler: rancher/cluster-proportional-autoscaler-amd64:1.0.0</span>
+<span class="hljs-addition">+  calico_node: rancher/calico-node:v3.1.3</span>
+<span class="hljs-addition">+  calico_cni: rancher/calico-cni:v3.1.3</span>
+<span class="hljs-addition">+  calico_ctl: rancher/calico-ctl:v2.0.0</span>
+<span class="hljs-addition">+  pod_infra_container: rancher/pause-amd64:3.1</span>
+  ingress: rancher/nginx-ingress-controller:0.16.2-rancher1
+<span class="hljs-deletion">-  ingress_backend: k8s.gcr.io/defaultbackend:1.4</span>
+<span class="hljs-deletion">-  metrics_server: gcr.io/google_containers/metrics-server-amd64:v0.2.1</span>
+<span class="hljs-addition">+  ingress_backend: rancher/nginx-ingress-controller-defaultbackend:1.4</span>
+<span class="hljs-addition">+  metrics_server: rancher/metrics-server-amd64:v0.3.1</span>
+</code></pre>
+<p>Before editing your <code>cluster.yml</code>, you may backup it:</p>
+<pre><code class="hljs css language-bash"><span class="token function">cp</span> cluster.yml cluster.yml.bak
+</code></pre></li>
+<li><p>After editing <code>cluster.yml</code>, please re-provisioning your K8s cluster by running:</p>
+<pre><code class="hljs css language-bash">rke up --config cluster.yml
+</code></pre></li>
+<li><p>If re-provisioning is completed successfully, your K8s will be version 1.12, you may verify it by running:</p>
+<pre><code class="hljs css language-bash">kubectl version
+</code></pre>
+<p>server should versioned as GitVersion:&quot;v1.12.4&quot;.</p></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#why">Why</a></li><li><a href="#how">How</a></li><li><a href="#rke-rancher-kubernetes-engine">RKE (Rancher Kubernetes Engine)</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>

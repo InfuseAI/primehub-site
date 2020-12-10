@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configure PrimeHub Store · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;label-sect&quot;&gt;"/><meta name="docsearch:version" content="3.2"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Configure PrimeHub Store · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;label-sect&quot;&gt;"/><meta property="og:image" content="https://docs.primehub.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.2</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/index-zh" target="_self">繁中文件</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Configuration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/introduction">PrimeHub v3.2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dev-introduction">Getting Started</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting_started/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/kubernetes_on_gke">Kubernetes on GKE</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/kubernetes_on_eks">Kubernetes on AWS EKS</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Community</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting_started/install_primehub_ce">Install PrimeHub CE</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/kubernetes_on_ubuntu_ce">Install PrimeHub CE on Single Node</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Enterprise</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting_started/install_primehub">Install PrimeHub EE</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/kubernetes_on_ubuntu_machine">Install PrimeHub EE on Single Node</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started-user">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/login-portal-user">User Portal</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Notebook<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/quickstart/launch-project">Launch Jupyter Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/user-advanced-setting">Advanced Settings</a></li><li class="navListItem"><a class="navItem" href="/docs/notebook-tips">Tips</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Extension</h4><ul><li class="navListItem"><a class="navItem" href="/docs/ph-notebook-extension">PrimeHub Extension</a></li><li class="navListItem"><a class="navItem" href="/docs/notebook-as-job">Notebook as a Job</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Job<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/job-submission-feature">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/job-artifact-feature">Job Artifacts</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorial</h4><ul><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem"><a class="navItem" href="/docs/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li><li class="navListItem"><a class="navItem" href="/docs/job-artifacts-simple">Job Artifacts Simple Usecase</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Schedule<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/job-scheduling-feature">Job Scheduler</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Model<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/model-deployment-feature">Model Deployment (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials</h4><ul><li class="navListItem"><a class="navItem" href="/docs/model-deployment-tutorial-concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-tutorial-prepackaged-image">Deploy a Model by Pre-packaged Server</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-tutorial-model-image">Deploy a Model by Image built from Language Wrapper</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Pre-packaged servers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/model-deployment-prepackaged-server-intro">Pre-packaged servers</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-prepackaged-server-tensorflow2">TensorFlow2 server</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-prepackaged-server-sklearn">SKLearn server</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-prepackaged-server-custom">Custom pre-packaged server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Package from Language Wrapper</h4><ul><li class="navListItem"><a class="navItem" href="/docs/model-deployment-language-wrapper-intro">Package from Language Wrapper</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-language-wrapper-python">Package a Model Image for Python</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-language-wrapper-r">Package a Model Image for R</a></li><li class="navListItem"><a class="navItem" href="/docs/model-deployment-language-wrapper-reusable-base-image">Package a Model Image from a Reusable Base Image</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Data Store<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/quickstart/nb-data-store">Storing Data</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">SSH Server<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/guide_manual/ssh-config">SSH Server Feature</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/ssh-vscode">VSCode Remote-SSH Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/ssh-keygen">SSH Key Generation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Admin Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started-admin">Administration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage users and groups</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-group">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Instance Type</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/usecase-toleration">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/usecase-nodeselector">NodeSelector</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-it-performance">Quality of Service for Pods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and build images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-image">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-build-image">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/custom-image-guideline">Custom Image Guideline</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/images-list">Available Images List</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Datasets and Upload</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-dataset">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-uploader">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and obtain secrets</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-secret">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Monthly Report</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-report">Usage Reports</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide_manual/admin-system">System Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance tool kits</h4><ul><li class="navListItem"><a class="navItem" href="/docs/maintenance">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/maintenance-resize-user-vol">Increase User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/maintenance-resize-group-vol">Increase Group Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/howto-check-user-vol">HOWTO - Check User Volume Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/howto-check-group-vol">HOWTO - Check Group Volume Usage</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Quick Start</h4><ul><li class="navListItem"><a class="navItem" href="/docs/quickstart/login-portal-admin">Admin Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/create-user">Create User</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/create-group">Create Group</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/add-instance-type">Create/Plan Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/add-infuseai-image">Add InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/add-image">Add Image</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/build-image">Build Image</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/secret-pull-image">Pull Secret for GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart/secret-gitsync">Gitsync Secret for GitHub</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Concepts</h4><ul><li class="navListItem"><a class="navItem" href="/docs/design/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/design/data-model">Data Model</a></li><li class="navListItem"><a class="navItem" href="/docs/design/crds">CRDs</a></li><li class="navListItem"><a class="navItem" href="/docs/design/graphql">GraphqQL</a></li><li class="navListItem"><a class="navItem" href="/docs/design/persistence-storage">Persistence Storages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Designs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/design/admission">Admission</a></li><li class="navListItem"><a class="navItem" href="/docs/design/jupyterhub">JupyterHub</a></li><li class="navListItem"><a class="navItem" href="/docs/design/notebook-kernel-process">Notebook with kernel process</a></li><li class="navListItem"><a class="navItem" href="/docs/design/dataset-upload">Dataset Upload</a></li><li class="navListItem"><a class="navItem" href="/docs/design/image-builder">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/design/job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/design/job-scheduler">Job Scheduler</a></li><li class="navListItem"><a class="navItem" href="/docs/design/job-monitoring">Job Monitoring</a></li><li class="navListItem"><a class="navItem" href="/docs/design/install-helper-design">Install Helper</a></li><li class="navListItem"><a class="navItem" href="/docs/design/user-portal">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/design/meta-chart">Primehub Meta Chart</a></li><li class="navListItem"><a class="navItem" href="/docs/design/model-deployment">Model Deployment (Alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/design/primehub-store">PrimeHub Store</a></li><li class="navListItem"><a class="navItem" href="/docs/design/log-persistence">Log Persistence</a></li><li class="navListItem"><a class="navItem" href="/docs/design/phfs">PrimeHub File System (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/design/usage">PrimeHub Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/design/job-artifact">Job Artifact</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/getting_started/configure-primehub-store">PrimeHub Store</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/configure-ssh-server">SSH Server</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/configure-job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/configure-self-signed-ca">Self-Signed Certificate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tasks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/tasks/repo2docker">repo2docker image</a></li><li class="navListItem"><a class="navItem" href="/docs/tasks/non-standard-image">Non standard image</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/tasks/api-token">Generate API Token</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/references/primehub_chart">Chart Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/comparison">Features Comparison</a></li><li class="navListItem"><a class="navItem" href="/docs/guide_manual/kubeflow-installation-guide">Kubeflow Installation Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/trouble-shoot-guide">Trouble-shooting Guide</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JupyterHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/trouble/jh-blank-page">After spawned, JupyterHub shows a blank page</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/dataset-failure">Jupyter spawning fails due to mounting datasets</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Keycloak</h4><ul><li class="navListItem"><a class="navItem" href="/docs/trouble/kc-brute-force-detection">Lock down accounts after several login failures</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/kc-password-policy">Password Policy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SSH Server</h4><ul><li class="navListItem"><a class="navItem" href="/docs/trouble/ssh-server-permission-denied">Permission Denied</a></li><li class="navListItem"><a class="navItem" href="/docs/trouble/ssh-server-connection-refused">Connection Refused</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/trouble/kubelet-restart">Restart Kubelet</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Configure PrimeHub Store</h1></header><article><div><span><div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+<p>PrimeHub Store is the central storage for storing PrimeHub files. Many features are based on PrimeHub store to persist, transfer, and load the data.</p>
+<p>PrimeHub store selects <a href="https://docs.min.io/">MinIO</a> as the backend and uses one bucket to store the data. To enable the PrimeHub store, set the <code>store.enabled</code> to true.</p>
+<table>
+<thead>
+<tr><th>Path</th><th>Description</th><th>Default Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>store.enabled</code></td><td>If the PrimeHub store is enabled</td><td><code>false</code></td></tr>
+<tr><td><code>store.accessKey</code></td><td>The access key for the PrimeHub store</td><td><code>AKIAIOSFODNN7EXAMPLE</code></td></tr>
+<tr><td><code>store.secretKey</code></td><td>The secret key for the PrimeHub store</td><td><code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code></td></tr>
+<tr><td><code>store.bucket</code></td><td>The bucket name the PrimeHub store use</td><td><code>primehub</code></td></tr>
+<tr><td><code>minio.*</code></td><td>The MinIO configuration</td><td>Please see the <a href="../references/primehub_chart">chart configuration</a></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="configure-minio"></a><a href="#configure-minio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure MinIO</h2>
+<p>MinIO is installed if PrimeHub store is enabled. By default, MinIO data are stored in a PVC. However, we have these options to store the data.</p>
+<ul>
+<li><strong>Standalone mode</strong>: Store data in Kuberentes PVC</li>
+<li><strong>AWS S3 gateway</strong>: Store data in <a href="https://aws.amazon.com/s3/">AWS S3</a> and use MinIO as gateway</li>
+<li><strong>Google Cloud Storage gateway</strong>: Store data in <a href="https://cloud.google.com/storage">Google Cloud Storage</a> and use MinIO as gateway</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="standalone-mode"></a><a href="#standalone-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Standalone mode</h3>
+<p>If <code>minio.persistence.enabled</code> is true, the MinIO would operate as standalone mode and one PVC is created. Here is the example for standalone mode:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">store:</span>
+  <span class="hljs-attr">bucket:</span> <span class="hljs-string">"primehub"</span>
+
+<span class="hljs-attr">minio:</span>
+  <span class="hljs-attr">persistence:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">storageClass:</span> <span class="hljs-string">"gp2"</span>
+    <span class="hljs-attr">accessMode:</span> <span class="hljs-string">ReadWriteOnce</span>
+    <span class="hljs-attr">size:</span> <span class="hljs-string">1024Gi</span>
+
+</code></pre>
+<p>As the MinIO is installed, the bucket is also created automatically.</p>
+<h3><a class="anchor" aria-hidden="true" id="aws-s3-gateway"></a><a href="#aws-s3-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AWS S3 Gateway</h3>
+<p>According to <a href="https://docs.min.io/docs/minio-gateway-for-s3.html">MinIO S3 Gateway</a>, prepare the AWS S3 bucket before installation.</p>
+<ul>
+<li>Choose an existing bucket or <a href="https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">create a bucket</a> from Amazon S3 console</li>
+<li>Create an IAM user and get <code>accessKey</code> and <code>secretKey</code></li>
+<li>Attach the user with AWS S3 permissions policies</li>
+</ul>
+<p>Here is the example for AWS S3:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">store:</span>
+  <span class="hljs-attr">bucket:</span> <span class="hljs-string">"the-bucket-your-created"</span>
+
+<span class="hljs-attr">minio:</span>
+  <span class="hljs-attr">s3gateway:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">accessKey:</span> <span class="hljs-string">"[put-your-access-key-id-here]"</span>
+    <span class="hljs-attr">secretKey:</span> <span class="hljs-string">"[put-your-secret-access-key-here]"</span>
+</code></pre>
+<p>MinIO also supports to use s3 gateway to connect to <a href="https://docs.ceph.com/docs/master/radosgw/">Ceph RGW</a>. Here is the example for connecting to Ceph RGW by <a href="https://rook.io/docs/rook/master/ceph-object.html">Rook</a>.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">store:</span>
+  <span class="hljs-attr">bucket:</span> <span class="hljs-string">"primehub"</span>
+
+<span class="hljs-attr">minio:</span>
+  <span class="hljs-attr">s3gateway:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">serviceEndpoint:</span> <span class="hljs-string">"http://rook-ceph-rgw-object-store.rook"</span>
+    <span class="hljs-attr">accessKey:</span> <span class="hljs-string">"[put-your-access-key-id-here]"</span>
+    <span class="hljs-attr">secretKey:</span> <span class="hljs-string">"[put-your-secret-access-key-here]"</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="google-cloud-storage-gateway"></a><a href="#google-cloud-storage-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Google Cloud Storage Gateway</h3>
+<p>According to <a href="https://docs.min.io/docs/minio-gateway-for-gcs.html">MinIO GCS Gateway</a>, prepare the GCS bucket before installation.</p>
+<ul>
+<li>Choose a existing bucket or <a href="https://cloud.google.com/storage/docs/quickstart-console">create a bucket</a> from Google Cloud Storage console</li>
+<li><a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts">Create and manage service accounts</a></li>
+<li><a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">Generate json keyfile</a></li>
+</ul>
+<p>Here is the example for GCS:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">store:</span>
+  <span class="hljs-attr">bucket:</span> <span class="hljs-string">"the-bucket-your-created"</span>
+
+<span class="hljs-attr">minio:</span>
+  <span class="hljs-attr">gcsgateway:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">projectId:</span> <span class="hljs-string">"[your-project-id]"</span>
+    <span class="hljs-attr">gcsKeyJson:</span> <span class="hljs-string">"[the-content-of-your-json-key-file]"</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="access-the-minio-ui"></a><a href="#access-the-minio-ui" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access the MinIO UI</h3>
+<p>You could export the MinIO web UI to the public domain <code>http://${PRIMEHUB_DOMAIN}/minio</code></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">minio:</span>
+  <span class="hljs-attr">ingress:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">maxBodySize:</span> <span class="hljs-string">"8192m"</span>
+</code></pre>
+<p>Enabled ingress would export the handy MinIO object browser to <code>/minio</code> path. If you upload a large file and see the message <code>413 Request Entity Too Large</code>. You could increase the value of <code>maxBodySize</code>.</p>
+<p>However, the ingress only allows you to use MinIO UI. If you want to operate object with AWS S3 compatible library outside of the Kubernetes, do it with <code>port-forward</code>:</p>
+<pre><code class="hljs">kubectl -n hub port-forward service/primehub-minio <span class="hljs-number">9000</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configure-phfs"></a><a href="#configure-phfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure PHFS</h2>
+<p>PHFS(PrimeHub File System) is the PrimeHub store based group sharing space. The group data is stored under <code>mybucket/groups/&lt;group&gt;</code>. It also a fundamental building block for group resources.</p>
+<p>By default, if the Primehub store is enabled, the PHFS is enabled as well. But we can manually disable PHFS by configuring <code>store.phfs.enabled</code> as false.</p>
+<table>
+<thead>
+<tr><th>Path</th><th>Description</th><th>Default Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>store.phfs.enabled</code></td><td>If PHFS is enabled</td><td><code>true</code></td></tr>
+<tr><td><code>rclone.*</code></td><td>The rclone configuration</td><td>Please see the <a href="../references/primehub_chart">chart configuration</a></td></tr>
+</tbody>
+</table>
+<p>The following components would be installed if PHFS is enabled.</p>
+<ol>
+<li><strong>csi-rclone</strong>: A CSI implementation for mounting S3-compatible object storage.</li>
+<li><strong>primehub store PVC</strong>: csi-rclone-provisioned PVC for PrimeHub store. We use it for mounting the MinIO bucket on the user's pod.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="note-for-microk8s"></a><a href="#note-for-microk8s" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Note for MicroK8s</h3>
+<p>Because the default kubelet path for MicroK8s is not <code>/var/lib/kubelet</code>, we need to configure the kubelet path as follow</p>
+<pre><code class="hljs"><span class="hljs-attribute">rclone</span>:
+  <span class="hljs-attribute">kubeletPath</span>: <span class="hljs-string">'/var/snap/microk8s/common/var/lib/kubelet'</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configure-log-persistence"></a><a href="#configure-log-persistence" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure Log Persistence</h2>
+<p>Log persistence enables logs to be stored persistently in the PrimeHub store under <code>mybucket/logs</code>. Currently, only job logs are supported to persist.</p>
+<p>By default, if the PrimeHub store is enabled, the log persistence is enabled as well. But we can manually disable log persistence by configuring <code>store.logPersistence.enabled</code> as false.</p>
+<table>
+<thead>
+<tr><th>Path</th><th>Description</th><th>Default Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>store.logPersistence.enabled</code></td><td>If the log persistence is enabled</td><td><code>true</code></td></tr>
+<tr><td><code>fluentd.*</code></td><td>The fluentd configuration</td><td>Please see the <a href="../references/primehub_chart">chart configuration</a></td></tr>
+</tbody>
+</table>
+<p>The following components would be installed if log persistence is enabled</p>
+<ol>
+<li><strong>fluentd</strong>: The collector to collect container logs and upload to PrimeHub store.</li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/design/job-artifact"><span class="arrow-prev">← </span><span>Job Artifact</span></a><a class="docs-next button" href="/docs/getting_started/configure-ssh-server"><span>SSH Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configure-minio">Configure MinIO</a><ul class="toc-headings"><li><a href="#standalone-mode">Standalone mode</a></li><li><a href="#aws-s3-gateway">AWS S3 Gateway</a></li><li><a href="#google-cloud-storage-gateway">Google Cloud Storage Gateway</a></li><li><a href="#access-the-minio-ui">Access the MinIO UI</a></li></ul></li><li><a href="#configure-phfs">Configure PHFS</a><ul class="toc-headings"><li><a href="#note-for-microk8s">Note for MicroK8s</a></li></ul></li><li><a href="#configure-log-persistence">Configure Log Persistence</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2020 InfuseAI</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f482b898949e00de71a14ed19cc167ce',
+                indexName: 'infuseai_primehub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"hitsPerPage":10}
+              });
+            </script></body></html>
