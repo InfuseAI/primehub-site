@@ -69,7 +69,7 @@ curl -X POST http(s)://${endpoint} \
 
 **Equivalent Code**
 ```python
-X = base64.b64decode("your_image.jpg in base64 encoding string")
+X = bytes(<content of your_image.jpg>)
 ```
 
-Check [our example](https://github.com/InfuseAI/model-deployment-examples/blob/36abce467ab321aa4fdfd7dbb075e1532267ba6d/keras_mnist/MyModel.py#L13-L16) of how to handle the `binData` in the `predict`.
+Check [our example](https://github.com/InfuseAI/model-deployment-examples/blob/36abce467ab321aa4fdfd7dbb075e1532267ba6d/keras_mnist/MyModel.py#L13-L16) of how to handle the `binData` in the `predict` function.
