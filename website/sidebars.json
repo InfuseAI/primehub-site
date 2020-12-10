@@ -99,6 +99,14 @@
           "model-deployment-language-wrapper-r",
           "model-deployment-language-wrapper-reusable-base-image"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Advanced",
+        "ids": [
+          "model-deployment-prediction-apis",
+          "model-deployment-model-uri"
+        ]
       }
     ],
     "Data Store": [
