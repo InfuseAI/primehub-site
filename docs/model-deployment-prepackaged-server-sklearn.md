@@ -25,13 +25,13 @@ Repository | [Link](https://github.com/SeldonIO/seldon-core/tree/master/servers/
 └── model.joblib
 ```
 
-1. **model.joblib**: The model file should be saved by `joblib` format. For more information, please see scikit-learn [Model persistence](https://scikit-learn.org/stable/modules/model_persistence.html) document
+1. **model.joblib**: The model file should be saved by the `joblib` format. For more information, please see scikit-learn [Model persistence](https://scikit-learn.org/stable/modules/model_persistence.html) document
 
 
 ### How It Works
 
 You can check the detailed code in the [Github](https://github.com/SeldonIO/seldon-core/blob/master/servers/sklearnserver/sklearnserver/SKLearnServer.py).
-Here, we demonstrate by the pseudo code.
+Here, we demonstrate by the pseudo-code.
 
 **Load the model**
 ```python

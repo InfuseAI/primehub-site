@@ -14,12 +14,12 @@ This document shows the best practice to reuse a base image and build the model 
 1. If the way you load and use models is the same, these models can share the same base image
 2. If you just want to update the model file, a base image can speed up the building process
 
-The idea is that you write a general model serving code and assume the model file is placed under a certain path. As a model is ready, use `docker build` to generate the model image from the base image along with the the model files.
+The idea is that you write a general model serving code and assume the model file is placed under a certain path. As a model is ready, use `docker build` to generate the model image from the base image along with the model files.
 
-To prepare base image, there are two methods
+To prepare the base image, there are two methods
 
 1. Build the base image by Language Wrapper
-1. Use pre-pacakged server as Base Image
+1. Use pre-packaged server as Base Image
 
 ## Build the Base Image by Language Wrapper
 Here, we use Tensorflow 2 as a simple showcase. The code is under [Github](https://github.com/InfuseAI/model-deployment-examples/tree/master/tensorflow2_prepackage).
@@ -87,7 +87,7 @@ docker build -t tensorflow2-prepackage-model .
 
 ### Verify the Model Image
 
-In order to verify the image, you can run it:
+To verify the image, you can run it:
 ```bash
 docker run -p 5000:5000 --rm tensorflow2-prepackage-model
 ```
@@ -99,9 +99,9 @@ curl -X POST localhost:5000/api/v1.0/predictions \
     -d '{ "data": {"ndarray": [${INPUT_DATA}] } }'
 ```
 
-The `${INPUT_DATA}` is the data that you can feed into deployed model for prediction.
+The `${INPUT_DATA}` is the data that you can feed into the deployed model for prediction.
 
->The **dimension** of input data must be same as model's input shape.
+>The **dimension** of input data must be the same as the model's input shape.
 
 For example, if we create our model with a specified `input_shape=(4,)` by the following definition:
 ```python
@@ -148,9 +148,9 @@ For example, the following output shows three prediction values in each class.
 
 After verifying your model deployment image, now you can use this image in the PrimeHub model deployment feature.
 
-## Use Pre-pacakged Server as Base Image
+## Use Pre-packaged Server as Base Image
 
-Here, we use the [tensorflow2 pre-packaged server](model-deployment-prepackaged-server-tensorflow2.md) as example.
+Here, we use the [tensorflow2 pre-packaged server](model-deployment-prepackaged-server-tensorflow2.md) as an example.
 
 ### Build the Model Image
 

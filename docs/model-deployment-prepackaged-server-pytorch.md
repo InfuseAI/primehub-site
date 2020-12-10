@@ -26,18 +26,18 @@ Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/mas
 └── model.pt
 ```
 
-There should be two files in the model uri
+There should be two files in the model URI
 
 1. **model.pt**: The model file should be saved by `state_dict()` format.
-1. **ModelClass.py**: A python define the `PyTorchModel` class.
+1. **ModelClass.py**: A python defines the `PyTorchModel` class.
 
-For more information, please see [pytorch Saving & Loading documents](https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-for-inference)
+For more information, please see [PyTorch Saving & Loading documents](https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-for-inference)
 
 
 ### How It Works
 
-You can check the detailed code in the [Github](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/pytorch/pytorch/Model.py).
-Here, we demonstrate by the pseudo code.
+You can check the detailed code in [Github](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/pytorch/pytorch/Model.py).
+Here, we demonstrate by the pseudo-code.
 
 **Load the model**
 ```python
