@@ -36,9 +36,7 @@ Get past the image-related errors while staying informed when launching your not
 
 ### Jobs
 
-+ Add search-by-name fields in jobs/schedules page.
-
-### Jobs retention
++ You can now search for jobs and schedules by their name.
 
 From now on, we will clean up and archive your jobs/artifacts after seven days for you to prevent you from getting caught up in all of the clutter.
 
@@ -53,7 +51,7 @@ From now on, we will clean up and archive your jobs/artifacts after seven days f
 + The [instructions](https://github.com/InfuseAI/primehub-job/tree/master/jupyterlab_primehub) of building own images with PrimeHub Extension.
 
 
-## 🧰 Bug Fixes
+## 🧰  Bug Fixes
 
 + Fixed: The default user volume permission to SSH on Microk8s cluster.
 + Fixed: Group name duplicate validation is not case insensitive.
