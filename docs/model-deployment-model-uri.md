@@ -7,7 +7,7 @@ title: Model URI
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-## Support URIs
+## Supported URIs
 
 Type | Format | Note
 -----|--------|------

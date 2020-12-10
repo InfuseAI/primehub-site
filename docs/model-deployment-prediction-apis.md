@@ -26,6 +26,11 @@ curl -X POST http(s)://${endpoint} \
     -d '{ "data": {"ndarray": [[5.964,4.006,2.081,1.031]]} }'
 ```
 
+**Equivalent Code**
+```python
+X = np.array([[5.964,4.006,2.081,1.031]])
+```
+
 ### tensor
 
 **Format**
@@ -33,6 +38,11 @@ curl -X POST http(s)://${endpoint} \
 curl -X POST http(s)://${endpoint} \
     -H 'Content-Type: application/json' \
     -d '{ "data": {"tensor": {"shape":[1,4],"values":[5.964,4.006,2.081,1.031]}} }'
+```
+
+**Equivalent Code**
+```python
+X = np.array([5.964,4.006,2.081,1.031]).reshape([1,4])
 ```
 
 ### strData
@@ -44,6 +54,11 @@ curl -X POST http(s)://${endpoint} \
     -d '{ "strData": "any string" }'
 ```
 
+**Equivalent Code**
+```python
+X = "any string"
+```
+
 ### binData
 
 **Format**
@@ -51,3 +66,10 @@ curl -X POST http(s)://${endpoint} \
 curl -X POST http(s)://${endpoint} \
     -F 'binData=@your_image.jpg'
 ```
+
+**Equivalent Code**
+```python
+X = base64.b64decode("your_image.jpg in base64 encoding string")
+```
+
+Check [our example](https://github.com/InfuseAI/model-deployment-examples/blob/36abce467ab321aa4fdfd7dbb075e1532267ba6d/keras_mnist/MyModel.py#L13-L16) of how to handle the `binData` in the `predict`.
