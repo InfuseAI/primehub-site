@@ -26,7 +26,7 @@ Use your own environment variables when creating a model deployment.
   
 ### Install Custom Software
 
-Use PrimeHub to install custom software in your environment with `!sudo apt-get install`.
+PrimeHub supports installing custom software in your notebook/job environment with `!sudo apt-get install`.
 
 ### Image Error Handling
 
@@ -34,16 +34,34 @@ Use PrimeHub to install custom software in your environment with `!sudo apt-get 
 
 Get past the image-related errors while staying informed when launching your notebook server. If you come across a server request timeout, you will be able to cancel the request, know the reason for the timeout, and continue using the system.
 
-### Archive Jobs
+### Jobs
 
-From now on, we will clean up and archive your jobs after seven days for you to prevent you from getting caught up in all of the clutter.
++ Add search-by-name fields in jobs/schedules page.
 
-+ [Document](job-submission-feature#lifetime)
-  
+### Jobs retention
+
+From now on, we will clean up and archive your jobs/artifacts after seven days for you to prevent you from getting caught up in all of the clutter.
+
++ [Job design document](design/job-submission#pod-ttl-after-finished)
++ [Job artifacts retention](job-artifact-feature#retention)
+
+
+### Miscellaneous
+
++ Support the configuration of liveness and readiness timeout of PrimeHub-graphql by helm value.
++ Support memorizing the last selection of group.
++ The [instructions](https://github.com/InfuseAI/primehub-job/tree/master/jupyterlab_primehub) of building own images with PrimeHub Extension.
+
 
 ## 🧰 Bug Fixes
 
-  
++ Fixed: The default user volume permission to SSH on Microk8s cluster.
++ Fixed: Group name duplicate validation is not case insensitive.
++ Fixed: The vulnerability while job amount are increased.
++ Fixed: Model deployment didn't support all of gpu resources.
++ Fixed: Timeout doesn't work on scheduled jobs.
++ Fixed: An empty file is not editable in phfs from notebook.
+
 ---
 
 ## 🎪 In the Community
