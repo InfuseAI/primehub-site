@@ -14,4 +14,6 @@ In this section, we will introduce how to use pre-packaged servers as a model im
 - [PyTorch Server](model-deployment-prepackaged-server-pytorch)
 - [SKLearn server](model-deployment-prepackaged-server-sklearn)
 
-We can also build our own [Custom pre-packaged server](model-deployment-prepackaged-server-custom) for the best flexibility.
+Here are some advanced topics for pre-packaged servers
+- [Custom Pre-packaged Server](model-deployment-prepackaged-server-custom)
+- [Run the Pre-packaged Server Locally](model-deployment-prepackaged-server-test)
