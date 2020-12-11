@@ -92,7 +92,7 @@ helm repo update
     According to the instruction, run the command to learn the password for account `phadmin` and memory it.
 
     ```bash
-    echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)
+    echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
     ```
 
 3. Label the nodes which can be assigned for JupyterHub servers
