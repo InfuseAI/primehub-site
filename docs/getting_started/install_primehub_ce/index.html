@@ -128,7 +128,7 @@ echo "username: phadmin"
 echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
 </code></pre>
 <p>According to the instruction, run the command to learn the password for account <code>phadmin</code> and memory it.</p>
-<pre><code class="hljs css language-bash"><span class="token builtin class-name">echo</span> "password: <span class="token variable"><span class="token variable">$(</span>kubectl -n hub get secret primehub-bootstrap -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">'{.data.password}'</span> <span class="token operator">|</span> base64 --decode<span class="token variable">)</span></span>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"password: <span class="token variable"><span class="token variable">$(</span>kubectl -n hub get secret primehub-bootstrap -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">'{.data.password}'</span> <span class="token operator">|</span> base64 --decode<span class="token variable">)</span></span>"</span>
 </code></pre></li>
 <li><p>Label the nodes which can be assigned for JupyterHub servers</p>
 <pre><code class="hljs">kubectl label <span class="hljs-keyword">node</span> <span class="hljs-title">component</span>=singleuser-server --all
