@@ -80,16 +80,6 @@
       },
       {
         "type": "subcategory",
-        "label": "Pre-packaged servers",
-        "ids": [
-          "version-3.2-model-deployment-prepackaged-server-intro",
-          "version-3.2-model-deployment-prepackaged-server-tensorflow2",
-          "version-3.2-model-deployment-prepackaged-server-sklearn",
-          "version-3.2-model-deployment-prepackaged-server-custom"
-        ]
-      },
-      {
-        "type": "subcategory",
         "label": "Package from Language Wrapper",
         "ids": [
           "version-3.2-model-deployment-language-wrapper-intro",
