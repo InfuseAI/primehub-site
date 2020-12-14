@@ -342,14 +342,20 @@
     ],
     "Model":[
       "zh-tw/model-deployment-feature",
+      "zh-tw/model-overview",
       {
         "type": "subcategory",
-        "label": "教學 (Beta)",
+        "label": "Package from Language Wrapper 教學 (Beta)",
         "ids": [
-          "zh-tw/model-deployment-quickstart-tutorial",
           "zh-tw/model-deployment-tutorial-package-image",
           "zh-tw/model-deployment-tutorial-package-image-r",
-          "zh-tw/model-deployment-tutorial-prepackage-image",
+          "zh-tw/model-deployment-tutorial-prepackage-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Pre-packaged servers",
+        "ids": [
           "zh-tw/model-tutorial-more"
         ]
       }
