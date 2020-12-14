@@ -19,7 +19,9 @@ title: Group Management
 
 點選 `Add` 新增 Group，會跳出該 Group 的編輯畫面。
 
-![](assets/group_add_v31.png)
+## Info
+
+![](assets/group_add_v33.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -67,27 +69,33 @@ Job 預設逾時期限，此設定套用至同群組遞出的所有 Job；系統
 
 點選 `confirm` 完成新增。
 
-### Users
+### Members
 
-![](assets/edit_users.png)
+![](assets/group_admin.png)
 
 列出此群組所有使用者，並可透過`edit users`編輯，加入/移除使用者。
 
+#### Group Admin
+
+>具有 **Group Admin** 角色的成員，在 User Portal 可以使用 Group Admin 專用的功能，針對其群組進行管理。如： Group Image。
+
+同時，可以指定成員為此群組的 Group Admin；一個群組可以指定多個 `Group Admin`。
+
 ---
 
-### Datasets
+## Datasets
 
 ![](assets/admin_group_ds_v25.png)
 
 列出所有此群組可以讀取或寫入的 Datasets；我們甚至可以由此進入 Dataset 編輯。
 
-### Images
+## Images
 
 ![](assets/admin_group_img_v27.png)
 
 列出所有此群組可以使用的 Image。
 
-### Instance Types
+## Instance Types
 
 ![](assets/admin_group_it_v31.png)
 

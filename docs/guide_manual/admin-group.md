@@ -22,7 +22,9 @@ It lists all of groups in pages, clicking a header of a column for ascending/des
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
-![](assets/group_add_v31.png)
+## Info
+
+![](assets/group_add_v33.png)
 
 You need to fill in the fields in the above picture:
 
@@ -70,27 +72,33 @@ Set quota for the whole group.
 
 Click `Confirm` to complete the addition.
 
-### Users
+### Members
 
-![](assets/edit_users.png)
+![](assets/group_admin.png)
 
 The list shows all of users of this group. Click `edit users` to add/remove users into/from groups.
 
+#### Group Admin
+
+>Members who are assigned **Group Admin** have the privilege *to access features dedicated to Group Admin on User Portal*, such as `Group Image`.
+
+Also, multiple members are able to be selected as **Group Admin** for a group.
+
 ---
 
-### Datasets
+## Datasets
 
 ![](assets/admin_group_ds_v25.png)
 
 The list shows connecting datasets which can be read or written. We also can edit these datasets through here.
 
-### Images
+## Images
 
 ![](assets/admin_group_img_v27.png)
 
 The list shows connecting images which are able to be used by this group.
 
-### Instance Types
+## Instance Types
 
 ![](assets/admin_group_it_v31.png)
 
