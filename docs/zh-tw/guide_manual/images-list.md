@@ -57,8 +57,8 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 
 |Framework|Image|CPU / GPU|Python|
 |-   |-    |-        |-     |
-|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-a7f9696a-gpu|`CPU`|3.7|
-|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-a7f9696a|`GPU` `CUDA 9`|3.7|
+|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-a7f9696a|`CPU`|3.7|
+|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-a7f9696a-gpu|`GPU` `CUDA 9`|3.7|
 |PyTorch 1.5|infuseai/docker-stacks:pytorch-notebook-b3c52f35|`CPU`|3.7|
 |PyTorch 1.5|infuseai/docker-stacks:pytorch-notebook-b3c52f35-gpu|`GPU` `CUDA 9`|3.7|
 
