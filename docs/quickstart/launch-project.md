@@ -37,7 +37,7 @@ This quickstart shows how to launch/stop a project.
 
 ## Spawning
 
-![](assets/spawner_cancel.png)
+![](assets/spawner_cancel_v33.png)
 
 Spawning can be cancelled by clicking `Cancel`.
 
