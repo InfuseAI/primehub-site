@@ -134,7 +134,7 @@ const siteConfig = {
   docsSideNavCollapsible: true,
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/Primehub_icon.svg',
+  ogImage: 'img/primehub_icon.svg',
   twitterImage: 'img/primehub_icon.svg',
 
   // Show documentation's last contributor's name.
