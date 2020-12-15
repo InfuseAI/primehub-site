@@ -74,13 +74,13 @@ title: 模型部署 (Beta)
 
 + `Model Image`: 此欄位支援兩種映像檔，一種是 [已包裝模型檔的映像檔](../model-deployment-tutorial-model-image) 另一種是 [包裝用的映像檔](../model-deployment-tutorial-prepackaged-image) 搭配指定的模型檔 `Model URI`。
 
-+ `Model URI`: 模型檔案路徑。
++ `Model URI`: [模型檔案路徑](../model-deployment-model-uri)。
 
 + `Image Pull Secret`: 如果必要，請指定下拉 Model Image 所需的 pull secret。
 
 + `Descriptions`: 使用者輸入描述。
 
-> `Model Image` 此欄位支援兩種映像檔： *已包裝模型檔的映像檔* 及 *包裝用的映像檔* (搭配指定的模型檔 `Model URI`)。 請根據是否帶入模型檔 `Model URI` 來決定適合的映像檔。
+> 模型部署有兩種方式，直接部署 [已包裝模型檔的映像檔](../model-deployment-language-wrapper-intro)(由使用者事先包裝) 及指定模型檔 `Model URI` 搭配指定[包裝用的映像檔](../model-deployment-prepackaged-server-intro)在機制下自動部署成服務。 請根據部署方法帶入合適的`Model Image`及模型檔 `Model URI` 。
 
 ### Environment Variables
 

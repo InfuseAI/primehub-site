@@ -68,15 +68,16 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 + `Deployment ID`: An unique ID.
 
-+ `Model Image`: The image which can be served directly ([a model-file-packaged image](model-deployment-tutorial-model-image)) or acted as the [pre-packaged ML base image](model-deployment-tutorial-prepackaged-image) for a model file.
++ `Model Image`: The image which can be served directly ([a model-file-packaged image](model-deployment-tutorial-model-image)) or acted as the [pre-packaged ML base image](model-deployment-tutorial-prepackaged-image) with a model file.
 
-+ `Model URI`: The location which the trained model is stored in; based on this model file to deploy a model image.
++ `Model URI`: The [location](model-deployment-model-uri) which the trained model is stored in; based on this model file to deploy a model image.
 
 + `Image Pull Secret`: a pull secret for the model image if required.
 
 + `Descriptions`: User input description.
 
-> `Model Image` field can take both of a *ready-to-serve model image* or a *pre-packaged image for a model file* stored in `Model URI` field. Please use a corresponding image according to *Model URI* is required or not.
+> Since **Model URI** is introduced, there are two ways for model deployments. One way is to deploy a *ready-to-serve packaged model image* which is [packaged by user](model-deployment-language-wrapper-intro) directly in **Model Image** field; the other way is to assign a model file in the **Model URI** field with a [specified pre-packaged image](model-deployment-prepackaged-server-intro) in **Model Image** field, under the hood model files will be packaged into images.
+
 
 ### Environment Variables
 
