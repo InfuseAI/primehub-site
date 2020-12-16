@@ -83,5 +83,5 @@ Remember to enable model deployment in your group, contact your admin if it is n
 ## Reference
 
 - For the completed model deployment feature introduction, see [Model Deployment (Beta)](model-deployment-feature).
-- For the pre-packaged base image list that provided by InfuseAI, see [Model server images list](will-do-in-ch13864).
-- For the customized pre-packaged server instruction, see [Pre-packaged servers](model-deployment-prepackaged-server-intro).
+- For the pre-packaged base image list that provided by InfuseAI, see [Pre-packaged servers](model-deployment-prepackaged-server-intro).
+- For the customized pre-packaged server instruction, see [Custom Pre-packaged Server](model-deployment-prepackaged-server-custom).
