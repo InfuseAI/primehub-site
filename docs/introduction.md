@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: PrimeHub v3.2
+title: PrimeHub v3.3
 ---
 
 ## Introduction

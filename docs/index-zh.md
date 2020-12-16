@@ -1,6 +1,6 @@
 ---
 id: index-zh
-title: PrimeHub v3.2
+title: PrimeHub v3.3
 ---
 
 >關於 PrimeHub 的所有文件都是以英文撰寫為主，一部分文件會經翻譯繁體中文化。
