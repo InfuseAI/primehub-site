@@ -10,7 +10,13 @@ title: 3.3 Release Candidate Note
 
 ### Models (Beta)
 
-+ Deploy models on services from model files via `Model URI`
+In Beta, there are two ways for the model deployment.
+
++ To deploy a *ready-to-serve packaged model image* which is [packaged by user already](model-deployment-language-wrapper-intro) directly using **Model Image** field only.
+
++ To deploy a model file using the **Model URI** field **with** a [specified pre-packaged image](model-deployment-prepackaged-server-intro) using **Model Image** field, under the hood, the model file will be packaged into a image, then the image will be deployed automatically.
+
++ [Tutorials](model-deployment-tutorial-concepts)
 
 ### Notebook Logs
 
@@ -19,7 +25,6 @@ Finally, users can investigate the failure of a spawning Notebook from the log s
 ### Shared Space: Upload
 
 Allow uploading to groups' phfs folder space directly from UI
-
 
 ## 🚀 Improvements
 
