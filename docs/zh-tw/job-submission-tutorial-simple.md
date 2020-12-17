@@ -82,13 +82,13 @@ for num in range(start, end + 1):
 
 3. 在右方將 Job 命名為`counting`。
    
-4. 因為我們的範例程式存放在 group volume 且 group volume 會被掛載在`/home/jovyan/<group name> -> /project/<group name>`，而且 Job 的預設路徑是在 `/homve/jovyan`；在`Commnad`欄位輸入下方指令一， 請置換 `<group name>` 為實際選擇 group 名稱。[Job 可存取工作目錄、專案目錄及資料集目錄](job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄)
+4. 因為我們的範例程式存放在 group volume 且 group volume 會被掛載在`/home/jovyan/<group name> -> /project/<group name>`，而且 Job 的預設路徑是在 `/home/jovyan`；在`Commnad`欄位輸入下方指令一， 請置換 `<group name>` 為實際選擇 group 名稱。[Job 可存取工作目錄、專案目錄及資料集目錄](job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄)
     
     `<group name>` 大小寫有差別；
 
     程式中有用到`camelcase`套件，因此 Job 第一行執行安裝此套件。
 
-    >注意：Job 的預設路徑是在 `/homve/jovyan`，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
+    >注意：Job 的預設路徑是在 `/home/jovyan`，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
     所以 JupyterHub `/home/jovyan`下的其它檔案並 **不存在** 此時 Job Pod 的`/home/jovyan`。Job 這裡只會有掛載的`<group volume>`及`<dataset>`。
 
     ```

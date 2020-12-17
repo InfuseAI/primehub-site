@@ -65,7 +65,7 @@ original_id: job-submission-cht
 
 ### Job 可存取工作目錄、專案目錄及資料集目錄
 
- >注意：Job 的預設路徑是在 `/homve/jovyan`，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
+ >注意：Job 的預設路徑是在 `/home/jovyan`，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
  所以 JupyterHub `/home/jovyan`下的其它檔案並 **不存在** 此時的 Job Pod 的`/home/jovyan`。Job 這裡只會有掛載的`<group volume>`及`<dataset>`。
 
  |目錄|描述|
