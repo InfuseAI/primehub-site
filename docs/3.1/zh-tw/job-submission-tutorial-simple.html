@@ -113,7 +113,7 @@ print("Counting from 1 to 10:")
 <p><code>&lt;group name&gt;</code> 大小寫有差別；</p>
 <p>程式中有用到<code>camelcase</code>套件，因此 Job 第一行執行安裝此套件。</p>
 <blockquote>
-<p>注意：Job 的預設路徑是在 <code>/homve/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
+<p>注意：Job 的預設路徑是在 <code>/home/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
 所以 JupyterHub <code>/home/jovyan</code>下的其它檔案並 <strong>不存在</strong> 此時 Job Pod 的<code>/home/jovyan</code>。Job 這裡只會有掛載的<code>&lt;group volume&gt;</code>及<code>&lt;dataset&gt;</code>。</p>
 </blockquote>
 <pre><code class="hljs">pip install camelcase

@@ -109,11 +109,11 @@ print("Counting from 1 to 10:")
 <li><p>回到<code>User Portal</code>開啟 <code>Jobs</code> 並點擊右上方的<code>Create Job</code>進入 Job 新增頁。</p></li>
 <li><p>從左方選擇 <code>instance type</code>及<code>image</code>；確保跟我們先前用來起始<code>Notebook</code>的環境一致。</p></li>
 <li><p>在右方將 Job 命名為<code>counting</code>。</p></li>
-<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/home/jovyan/&lt;group name&gt; -&gt; /project/&lt;group name&gt;</code>，而且 Job 的預設路徑是在 <code>/homve/jovyan</code>；在<code>Commnad</code>欄位輸入下方指令一， 請置換 <code>&lt;group name&gt;</code> 為實際選擇 group 名稱。<a href="job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></p>
+<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/home/jovyan/&lt;group name&gt; -&gt; /project/&lt;group name&gt;</code>，而且 Job 的預設路徑是在 <code>/home/jovyan</code>；在<code>Commnad</code>欄位輸入下方指令一， 請置換 <code>&lt;group name&gt;</code> 為實際選擇 group 名稱。<a href="job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></p>
 <p><code>&lt;group name&gt;</code> 大小寫有差別；</p>
 <p>程式中有用到<code>camelcase</code>套件，因此 Job 第一行執行安裝此套件。</p>
 <blockquote>
-<p>注意：Job 的預設路徑是在 <code>/homve/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
+<p>注意：Job 的預設路徑是在 <code>/home/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
 所以 JupyterHub <code>/home/jovyan</code>下的其它檔案並 <strong>不存在</strong> 此時 Job Pod 的<code>/home/jovyan</code>。Job 這裡只會有掛載的<code>&lt;group volume&gt;</code>及<code>&lt;dataset&gt;</code>。</p>
 </blockquote>
 <pre><code class="hljs">pip install camelcase
