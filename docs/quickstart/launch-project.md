@@ -41,9 +41,9 @@ This quickstart shows how to launch/stop a project.
 
 Spawning can be cancelled by clicking `Cancel`.
 
-### Logs
+## Notebook Logs
 
-The spawning logs can be viewed in `Logs` tab and be downloaded.
+Logs are retrieved from Notebook spawning to the end of Notebook. The logs can be viewed in `Logs` tab and be downloaded as a file *when Notebook is alive*. Once Notebook is terminated, logs are gone with it. In this case, we can only check logs which is cached by UI.
 
 ![](assets/spawner_log.png)
 

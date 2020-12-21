@@ -20,7 +20,8 @@ In Beta, there are two ways for the model deployment.
 
 ### Notebook Logs
 
-Finally, users can investigate the failure of a spawning Notebook from the log stored in phfs.
+Notebooks, sometimes, are failed to spawn or run into troubles because user programs/environments. Now users are able to investigate failures and shoot troubles from logs of **Notebook Logs**.
+
 
 ### Shared Space: Upload
 

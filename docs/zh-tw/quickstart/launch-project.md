@@ -40,7 +40,7 @@ title: 啟始 Notebook
 
 ### Logs
 
-啟動過程會被記錄在 `Logs` 而且可以下載成檔案。
+從 Notebook 啟動到結束關閉，在 Notebook 存活的情況下 `Logs` 都可以閱覽並可以下載成檔案。一旦 Notebook 正常結束/被強制結束 Logs 就隨之消失。若是無預警結束的，我們就只能查看當下 UI 畫面暫存的資訊。
 
 ![](assets/spawner_log.png)
 
