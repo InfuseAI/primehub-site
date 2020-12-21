@@ -11,11 +11,11 @@ title: Custom Pre-packaged Server
 
 以下為新手的建議步驟：
 
-1. 閱讀文件 [Package from Language Wrapper for python](model-deployment-language-wrapper-intro). 此文件敍述基本的 pre-packaged server。
+1. 閱讀文件 [Package from Language Wrapper for python](model-deployment-language-wrapper-intro-cht). 此文件敍述基本的 pre-packaged server。
    
 2. 仿照現有的 [pre-packaged servers](https://github.com/InfuseAI/primehub-seldon-servers)，試著創建一個相同的 pre-packaged server 映像檔並推傳至自己的 container registry (如： Dockerhub)；演練此流程。
    
-3. 於 model class 中 `__init__()` method，增加傳入參數 `model_uri`作為模型載入用。此參數值為指向可載入模型檔所在路徑的字串。 預設值為 `/mnt/models`，但需依實際路徑來更改。
+3. 於 model class 中 `__init__()` method，增加傳入參數 `model_uri`作為模型載入用。此參數值為指向可載入模型檔所在路徑的字串。 目前設計 Model URI 指向 `/mnt/models`。
 
     ```
     def __init__(self, model_uri):

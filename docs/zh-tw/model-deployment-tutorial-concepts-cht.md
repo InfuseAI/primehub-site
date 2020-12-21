@@ -17,5 +17,5 @@ PrimeHub 整合 [Seldon](https://docs.seldon.io/projects/seldon-core/en/latest/)
 
 以下為兩者模型部署方法的教學：
 
-- [Deploy a Model by Pre-packaged Server](model-deployment-tutorial-prepackaged-image-cht)
-- [Deploy a Model by Image built from Language Wrapper](model-deployment-tutorial-model-image-cht)
+- [透過 Pre-packaged Server 模型部署](model-deployment-tutorial-prepackaged-image-cht)
+- [透過 Language Wrapper 打包模型映像檔部署](model-deployment-tutorial-model-image-cht)

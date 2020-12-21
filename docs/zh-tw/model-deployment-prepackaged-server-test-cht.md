@@ -9,7 +9,7 @@ title: Run Pre-packaged Server Locally
 
 實際情況中，我們會需要先在本機端來驗證創建好的 Pre-packaged model server 及模型檔。以下為範例：
 
-以 [tensorflow2 server](model-deployment-prepackaged-server-tensorflow2#example) 作為範例
+以 [tensorflow2 server](model-deployment-prepackaged-server-tensorflow2-cht#example) 作為範例
 
 設定 pre-packaged model server 映像檔及模型檔路徑的環境變數
 

@@ -20,7 +20,7 @@ title: 透過 Pre-packaged Server 模型部署
 ## 教學步驟
 
 1. 登入 [User Portal](quickstart/login-portal-user) 並選擇 `Models`。
-2. 在 [model deployment 主頁](model-deployment-feature#list) 點擊 `Create Deployment`。
+2. 在 [model deployment 主頁](model-deployment-feature#主頁) 點擊 `Create Deployment`。
 3. `Deployment name` 欄位中填入 `quickstart-iris`。
 
    `Model Image` 欄位中填入 `seldonio/sklearnserver_rest:1.3.0`；此為 `scikit-learn` 用的 pre-packaged 基底映像檔，可以將 `scikit-learn` 模型檔服務化。
@@ -84,5 +84,4 @@ title: 透過 Pre-packaged Server 模型部署
 ## Reference
 
 - 完整模型部署功能，請見 [Model Deployment (Beta)](model-deployment-feature)。
-- InfuseAI 提供 pre-packaged 基底映像檔表 ， 請見 [Pre-packaged Server images list](../model-deployment-prepackaged-server-intro)。
-- 客製 pre-packaged server 指引，請見 [Custom Pre-packaged Server](../model-deployment-prepackaged-server-custom)。
+- 客製 pre-packaged server 指引，請見 [Custom Pre-packaged Server](model-deployment-prepackaged-server-intro-cht)。
