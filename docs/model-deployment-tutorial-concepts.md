@@ -14,7 +14,7 @@ To deploy a model, we need to provide a model image. There are two ways to prepa
 1. **Pre-Packaged Servers**: Users use a pre-packaged server as the model image. PrimeHub provides several ready-to-use pre-packaged servers. To deploy a model, a model URI is required to indicate where to download the model files.
 2. **Package Model by Language Wrapper**: Users build a model image with model files embedded. It is an advanced but flexible way to deploy a model. Seldon provides several language wrappers to package models from different languages.
 
-In the following tutorials, we will present three different ways to deploy models.
+In the following tutorials, we will present several different ways to deploy models.
 
 - [Deploy a Model by Pre-packaged Server](model-deployment-tutorial-prepackaged-image)
 - [Deploy a Model by Pre-packaged Server (PHFS)](model-deployment-tutorial-prepackaged-image-phfs)

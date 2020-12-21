@@ -350,6 +350,7 @@
         "ids": [
           "zh-tw/model-deployment-tutorial-concepts-cht",
           "zh-tw/model-deployment-tutorial-prepackaged-image-cht",
+          "zh-tw/model-deployment-tutorial-prepackaged-image-phfs-cht",
           "zh-tw/model-deployment-tutorial-model-image-cht"
         ]
       },

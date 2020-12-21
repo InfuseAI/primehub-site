@@ -15,7 +15,8 @@ PrimeHub 整合 [Seldon](https://docs.seldon.io/projects/seldon-core/en/latest/)
 
 2. **Package Model by Language Wrapper**: 使用者依需求自行打包模型檔成可部署模型映像檔，並自行發佈至 registry，此方法較為進階但也較有客製彈性。 Seldon 提供多種技術語言的模型檔打包方法。
 
-以下為兩者模型部署方法的教學：
+以下為提供模型部署教學：
 
 - [透過 Pre-packaged Server 模型部署](model-deployment-tutorial-prepackaged-image-cht)
+- [透過 Pre-packaged Server 模型部署 (PHFS)](model-deployment-tutorial-prepackaged-image-phfs-cht)
 - [透過 Language Wrapper 打包模型映像檔部署](model-deployment-tutorial-model-image-cht)

@@ -15,8 +15,8 @@ sidebar_label: SKLearn server
 Property    | Description
 ------------|------
 Model Image | `seldonio/sklearnserver_rest:1.3.0`
-Input       | nparray
-Output      | nparray
+Input       | ndarray
+Output      | ndarray
 Repository | [Link](https://github.com/SeldonIO/seldon-core/tree/master/servers/sklearnserver)
 
 ### Model URI 檔案結構
