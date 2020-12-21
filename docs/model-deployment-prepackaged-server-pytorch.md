@@ -14,8 +14,8 @@ title: PyTorch server
 Property    | Description
 ------------|------
 Model image | `infuseai/pytorch-prepackaged_rest:v0.1.0`
-Input       | nparray
-Output      | nparray
+Input       | ndarray
+Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/pytorch)
 
 ### Model URI Structure

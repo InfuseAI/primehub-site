@@ -14,8 +14,8 @@ title: TensorFlow2 server
 Property    | Description
 ------------|------
 Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.2`
-Input       | nparray
-Output      | nparray
+Input       | ndarray
+Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
 
 ### Model URI Structure
