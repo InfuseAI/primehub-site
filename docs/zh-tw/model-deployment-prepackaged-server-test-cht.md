@@ -7,15 +7,19 @@ title: Run Pre-packaged Server Locally
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-Sometimes, we would like to test if the model is working in the pre-packaged model server. We can run the server locally to verify.
+實際情況中，我們會需要先在本機端來驗證創建好的 Pre-packaged model server 及模型檔。以下為範例：
 
-Here, we use [tensorflow2 server](model-deployment-prepackaged-server-tensorflow2#example) as example
+以 [tensorflow2 server](model-deployment-prepackaged-server-tensorflow2#example) 作為範例
+
+設定 pre-packaged model server 映像檔及模型檔路徑的環境變數
+
 ```bash
 MODEL_IMAGE=infuseai/tensorflow2-prepackaged_rest:v0.4.2
 MODEL_URI=gs://primehub-models/tensorflow2/mnist
 ```
 
-Download the model files to local
+下載模型檔至本機端
+
 ```bash
 docker run -v "${PWD}/models:/mnt/models" --rm  \
   gcr.io/kfserving/storage-initializer:latest \
@@ -23,7 +27,8 @@ docker run -v "${PWD}/models:/mnt/models" --rm  \
   /mnt/models
 ```
 
-Run the model server
+本機端啟動 Model Server
+
 ```bash
 docker run -v "${PWD}/models:/mnt/models" --rm -ti \
   -p 5000:5000 \
@@ -31,7 +36,8 @@ docker run -v "${PWD}/models:/mnt/models" --rm -ti \
   "${MODEL_IMAGE}"
 ```
 
-Test the model
+送出測試請求
+
 ```bash
 curl -X POST http://localhost:5000/api/v1.0/predictions \
     -H 'Content-Type: application/json' \

@@ -1,5 +1,5 @@
 ---
-id: model-deployment-prepackaged-server-custom-cht
+id: model-deployment-prepackaged-server-custom-
 title: Custom Pre-packaged Server
 ---
 
