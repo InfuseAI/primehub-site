@@ -75,6 +75,7 @@
         "ids": [
           "model-deployment-tutorial-concepts",
           "model-deployment-tutorial-prepackaged-image",
+          "model-deployment-tutorial-prepackaged-image-phfs",
           "model-deployment-tutorial-model-image"
         ]
       },
