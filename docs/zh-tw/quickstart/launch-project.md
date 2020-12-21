@@ -38,6 +38,14 @@ title: 啟始 Notebook
 
 啟動過程可以按 `Cancel` 取消 。
 
+### Logs
+
+啟動過程會被記錄在 `Logs` 而且可以下載成檔案。
+
+![](assets/spawner_log.png)
+
+>如果沒有正在啟動的 Notebook，畫面顯示預設訊息 `Error: cannot get log due to pods "jupyter-xxxx" not found`。
+
 ## 關閉
 
 點擊 `Stop My Server`，稍待後會關閉。

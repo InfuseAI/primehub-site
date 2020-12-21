@@ -41,6 +41,13 @@ This quickstart shows how to launch/stop a project.
 
 Spawning can be cancelled by clicking `Cancel`.
 
+### Logs
+
+The spawning logs can be viewed in `Logs` tab and be downloaded.
+
+![](assets/spawner_log.png)
+
+>If there is no spawning notebook, it shows `Error: cannot get log due to pods "jupyter-xxxx" not found` by default.
 
 ## Stop
 
