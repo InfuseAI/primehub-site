@@ -33,9 +33,9 @@ title: 透過 Pre-packaged Server 模型部署
     - 保留 `Replicas` 預設值 (1)
     ![](assets/mdeploy_quickstart_deployresource.png)
 5. 點擊 `Deploy`後，導轉回主頁。 等待同時，可以點擊 `Refresh` 更新部署狀態。
-    ![](assets/mdeploy_quickstart_deploying.png)
+    ![](assets/mdeploy_quickstart_deploying_iris.png)
     
-    ![](assets/mdeploy_quickstart_deployed.png)
+    ![](assets/mdeploy_quickstart_deployed_iris.png)
 
     部署成功後(綠色)，點擊該部署查看詳細資訊。
     
@@ -49,36 +49,36 @@ title: 透過 Pre-packaged Server 模型部署
     ```
     在 Terminal 執行整串指令； 指令中我們帶入 tensor 並送出請求。
 
-    - 請求範例
-        ```bash
-        curl -X POST https://hub.xxx.aws.primehub.io/deployment/quickstart-iris-xxx/api/v1.0/predictions \
-            -H 'Content-Type: application/json' \
-            -d '{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'
-        ```
-    - 回應範例 (it predicts the species is `Iris setosa` as the first index has the highest prediction value)
-        ```bash
-        {
-          "data": {
-            "names": [
-              "t:0",
-              "t:1",
-              "t:2"
+  - 請求範例
+      ```bash
+      curl -X POST https://hub.xxx.aws.primehub.io/deployment/quickstart-iris-xxx/api/v1.0/predictions \
+          -H 'Content-Type: application/json' \
+          -d '{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'
+      ```
+  - 回應範例 (it predicts the species is `Iris setosa` as the first index has the highest prediction value)
+      ```bash
+      {
+        "data": {
+          "names": [
+            "t:0",
+            "t:1",
+            "t:2"
+          ],
+          "tensor": {
+            "shape": [
+              1,
+              3
             ],
-            "tensor": {
-              "shape": [
-                1,
-                3
-              ],
-              "values": [
-                0.8700986370655746,
-                0.12989376988727133,
-                7.5930471540348975e-06
-              ]
-            }
-          },
-          "meta": {}
-        }
-        ```
+            "values": [
+              0.8700986370655746,
+              0.12989376988727133,
+              7.5930471540348975e-06
+            ]
+          }
+        },
+        "meta": {}
+      }
+      ```
 7. 恭喜，至此我們已成功部署模型，並同時提供線上服務接受請求。
 
 ## Reference

@@ -26,7 +26,8 @@ Remember to enable [PHFS Storage](quickstart/nb-data-store#phfs-storage), contac
 
 2. Then we are in [spawner page](quickstart/launch-project#launch), here we choose the instance type with configuration `(CPU: 1 / Memory: 2 G / GPU: 0)`.
 ![](assets/mdeploy_quickstart_notebook_instanceType.png)
-Also, we choosing the `TensorFlow 2.2` as our runtime image and clicking on `Start Notebook` button.
+Also, we choosing the `TensorFlow 2.2` as our runtime image and clicking on `Start Notebook` button, e.g. `infuseai/docker-stacks:tensorflow-notebook-v2-2-1-a7f9696a`
+
 ![](assets/mdeploy_quickstart_notebook_image.png)
 
 3. Once the notebook is started, running this [example notebook](assets/tf-train-mnist.ipynb) to train and save a simple MNIST model.

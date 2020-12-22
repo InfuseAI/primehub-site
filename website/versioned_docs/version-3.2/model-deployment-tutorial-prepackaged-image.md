@@ -33,9 +33,9 @@ Remember to enable model deployment in your group, contact your admin if it is n
     - leave `Replicas` as default (1)
     ![](assets/mdeploy_quickstart_deployresource.png)
 5. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
-    ![](assets/mdeploy_quickstart_deploying.png)
+    ![](assets/mdeploy_quickstart_deploying_iris.png)
     
-    ![](assets/mdeploy_quickstart_deployed.png)
+    ![](assets/mdeploy_quickstart_deployed_iris.png)
 
     When the deployment is deployed successfully, we can click on cell to check its detail.
     
