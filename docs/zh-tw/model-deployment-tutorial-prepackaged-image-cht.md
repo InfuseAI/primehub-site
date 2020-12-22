@@ -7,7 +7,7 @@ title: 透過 Pre-packaged Server 模型部署
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-此教學將會展示採用 pre-packaged server 方式來部署模型。我們採用 SKLearn pre-packaged server 來部署 IRIS 模型檔做為範例。
+此教學將採用 pre-packaged server 方式來部署模型。我們採用 SKLearn pre-packaged server 來部署 IRIS 模型檔做為範例。
 
 ## 前置條件
 
@@ -84,4 +84,4 @@ title: 透過 Pre-packaged Server 模型部署
 ## Reference
 
 - 完整模型部署功能，請見 [Model Deployment (Beta)](model-deployment-feature)。
-- 客製 pre-packaged server 指引，請見 [Custom Pre-packaged Server](model-deployment-prepackaged-server-intro-cht)。
+- 客製 pre-packaged server 指引，請見 [Pre-packaged Server](model-deployment-prepackaged-server-intro-cht)。

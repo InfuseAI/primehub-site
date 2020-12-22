@@ -7,7 +7,7 @@ title: 透過 Language Wrapper 打包模型映像檔部署
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-此教學將展示部署已透過 language wrapper](model-deployment-language-wrapper-intro) 打包的模型映像檔。我們以已打包的 TensorFlow2 MNIST 模型映像檔為範例。
+此教學將部署已透過 [language wrapper](model-deployment-language-wrapper-intro) 打包的模型映像檔。我們以已打包的 TensorFlow2 MNIST 模型映像檔為範例。
 
 ## 前置條件
 
