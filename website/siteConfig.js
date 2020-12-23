@@ -59,7 +59,7 @@ const siteConfig = {
     { doc: 'index-zh', label: '繁中文件'},
     //{ blog: true, label: 'Blog'},
     //{ page: 'help', label: 'Community'},
-    { search: true },
+    //{ search: true }, //algolia
   ],
 
   // If you have users set above, you add it here:
@@ -76,13 +76,13 @@ const siteConfig = {
     secondaryColor: '#365ABD',
   },
 
-  algolia: {
+  /*algolia: {
     apiKey: 'f482b898949e00de71a14ed19cc167ce',
     indexName: 'infuseai_primehub',
     algoliaOptions: {
       hitsPerPage: 10
     } // Optional, if provided by Algolia
-  },
+  },*/
 
   gaTrackingId: 'UA-123266454-3',
   gaGtag: true,
