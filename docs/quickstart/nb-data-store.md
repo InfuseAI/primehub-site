@@ -31,6 +31,10 @@ In Notebook, the dataset folders are under `datasets/<dataset_name>`. Please con
 
 [PHFS Storage](../design/phfs) is based on [PrimeHub Store](../design/primehub-store) technology. This storage is shared and accessed among the same group members, group members can share user data here. it seems similar to **Group Volume**, however, there are [differences between PHFS and Group Volume](../design/phfs#comparing-to-group-volume).  
 
+>PHFS, currently, supports *writing files sequentially only*; within this limitation, writing model files in `HDF5` format directly into PHFS will cause the error, `Problems closing file (file write failed: ...)` since `HDF5` uses *seek* while writing.
+
+>In this case, we suggest this step: *writing HDF5 files into user home directory directly* rather than PHFS, then copying files to PHFS for the preparation of model deployments.
+
 In addition, PrimeHub features also store relative group-context data in the storage, such as Job stores artifacts under `/phfs/jobArtifacts/`. Since the limitation of the storage, we don't recommend storing performance-sensitive data such as datasets, please use Dataset Volume instead.
 
 

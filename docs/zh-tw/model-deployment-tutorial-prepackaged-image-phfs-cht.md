@@ -21,6 +21,10 @@ title: 透過 Pre-packaged Server 模型部署 (PHFS)
 
 須先啟用 [PHFS 空間](quickstart/nb-data-store-cht#phfs-storage)；請洽系統管理者。
 
+>PHFS 目前只支援序列性寫檔；在此限制下，直接寫入 `HDF5` 格式的檔案進 PHFS 會造成寫入錯誤 `Problems closing file (file write failed: ...)`，主因為 `HDF5` 寫檔同時使用 *seek*。
+
+>此情況下，我們建議直接寫入 `HDF5`檔至使用者家目錄，再複製到 PHFS 做為模型部署準備，*避免直接寫入 PHFS*。
+
 ## 教學步驟
 
 1. 登入 [User Portal](quickstart/login-portal-user) 並選擇 `Notebooks`。

@@ -31,6 +31,10 @@ PrimeHub 提供使用者幾個從 Notebook 可以存取儲存資料的空間，�
 
 [PHFS Storage](../../design/phfs) 是基於 [PrimeHub Store](../../design/primehub-store) 技術。此空間共享於同群組成員，也可利用此空間交換使用者資料。 PHFS 空間 與 Group Volume 看來類似，但兩者存在差異，請見[差異比較](../../design/phfs#comparing-to-group-volume)。
 
+>PHFS 目前只支援序列性寫檔；在此限制下，直接寫入 `HDF5` 格式的檔案進 PHFS 會造成寫入錯誤 `Problems closing file (file write failed: ...)`，主因為 `HDF5` 寫檔同時使用 *seek*。
+
+>此情況下，我們建議直接寫入 `HDF5`檔至使用者家目錄，再複製到 PHFS 做為模型部署準備，*避免直接寫入 PHFS*。
+
 除此之外，PrimeHub 功能也會利用到此空間儲放功能相關資料，如：同群組 Job 存放產出的 artifacts 於 `/phfs/jobArtifacts/`；也因為此空間先天的限制，我們不建議存放需求 IO 效能資料集於此，建議放置在專屬資料集空間 Dataset Volume。 PrimeHub 持續會開發提供更多利用存取 PHFS 的功能。
 
 在 Notebook， 此空間位於 `/phfs`。

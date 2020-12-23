@@ -20,6 +20,10 @@ Remember to enable model deployment in your group, contact your admin if it is n
 
 Remember to enable [PHFS Storage](quickstart/nb-data-store#phfs-storage), contact your admin if it is not enabled yet.
 
+>PHFS, currently, supports *writing files sequentially only*; within this limitation, writing model files in `HDF5` format directly into PHFS will cause the error, `Problems closing file (file write failed: ...)` since `HDF5` uses *seek* while writing.
+
+>In this case, we suggest this step: *writing HDF5 files into user home directory directly* rather than PHFS, then copying files to PHFS for the preparation of model deployments
+
 ## Tutorial Steps
 
 1. Go to [User Portal](quickstart/login-portal-user) and select `Notebooks`.
