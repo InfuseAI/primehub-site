@@ -77,9 +77,10 @@ Job 預設逾時期限，此設定套用至同群組遞出的所有 Job；系統
 
 #### Group Admin
 
->具有 **Group Admin** 角色的成員，在 User Portal 可以使用 Group Admin 專用的功能，針對其群組進行管理。如： Group Image。
+同時，可以指定成員為此群組的 Group Admin；一個群組可以指定多個 Group Admin。
 
-同時，可以指定成員為此群組的 Group Admin；一個群組可以指定多個 `Group Admin`。
+>**Group Admin** 成員，在 User Portal 可以使用 Group Admin 專用的功能，針對其群組進行管理。如： Image。
+
 
 ---
 

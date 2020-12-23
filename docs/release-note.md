@@ -8,6 +8,10 @@ title: 3.3 Release Candidate Note
 
 ### Group Admin
 
+Group members who are assigned Group Admin can access specific features on User Portal. Such as **Image**.
+
++ [Document](guide_manual/admin-group#members)
+
 ### Models (Beta)
 
 In Beta, there are two ways for the model deployment.
@@ -21,6 +25,8 @@ In Beta, there are two ways for the model deployment.
 ### Notebook Logs
 
 Notebooks, sometimes, are failed to spawn or run into troubles because user programs/environments. Now users are able to investigate failures and shoot troubles from logs of **Notebook Logs**.
+
++ [Document](quickstart/launch-project#notebook-logs)
 
 
 ### Shared Space: Upload

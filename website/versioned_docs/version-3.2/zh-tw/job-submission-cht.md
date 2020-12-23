@@ -66,13 +66,14 @@ original_id: job-submission-cht
 
 ### Command
 
-使用者可以在任務內執行 `sudo apt <command` 安裝軟體套件。
+使用者可以在任務內執行 `sudo apt <command>` 安裝軟體套件。
 
 例如：
 
 ```
 sudo apt update
 sudo apt install <package> --assume-yes
+pip install <package>
 ```
 
 ### Job 可存取工作目錄、專案目錄及資料集目錄

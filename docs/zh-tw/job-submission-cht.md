@@ -65,7 +65,7 @@ title: Job Submission
 
 ### Command
 
-使用者可以在任務內執行 `sudo apt <command` 安裝軟體套件。
+使用者可以在任務內執行 `sudo apt <command>` 安裝軟體套件。
 
 例如：
 

@@ -34,13 +34,15 @@ title: 啟始 Notebook
 
 ## 啟動
 
+從 Notebook 頁籤可以看到啟始進度。
+
 ![](assets/spawner_cancel_v33.png)
 
 啟動過程可以按 `Cancel` 取消 。
 
-### Logs
+## Notebook Logs
 
-從 Notebook 啟動到結束關閉，在 Notebook 存活的情況下 `Logs` 都可以閱覽並可以下載成檔案。一旦 Notebook 正常結束/被強制結束 Logs 就隨之消失。若是無預警結束的，我們就只能查看當下 UI 畫面暫存的資訊。
+Logs 自 Jupyter pod 接收來的，從 Notebook 一關始啟動到結束關閉。因此，在 Notebook 運作的情況下 `Logs` 都可以閱覽並可以下載成檔案。一旦 Notebook 正常結束/被強制結束， Logs 就隨 pod 消失。所以，若是無預警結束的情況，我們就只能查看當下 UI 畫面暫存的最後資訊。
 
 ![](assets/spawner_log.png)
 

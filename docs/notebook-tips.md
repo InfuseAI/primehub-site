@@ -5,6 +5,6 @@ sidebar_label: Tips
 ---
 
 
-## Sudo apt
+## Install Custom Software
 
 Users are able to run `sudo apt <command>` in a terminal of a Jupyter or `!sudo apt <command> --assume-yes` in a Jupyter Notebook to install required softwares in the environment.

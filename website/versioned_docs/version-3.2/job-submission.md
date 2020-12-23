@@ -67,7 +67,7 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 ### Command
 
-User are able to run `sudo apt <command` in a Job.
+User are able to run `sudo apt <command>` in a Job.
 
 such as
 

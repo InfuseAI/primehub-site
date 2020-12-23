@@ -80,9 +80,10 @@ The list shows all of users of this group. Click `edit users` to add/remove user
 
 #### Group Admin
 
->Members who are assigned **Group Admin** have the privilege *to access features dedicated to Group Admin on User Portal*, such as `Group Image`.
+Also, multiple members are able to be assigned **Group Admin** for a group.
 
-Also, multiple members are able to be selected as **Group Admin** for a group.
+>**Group Admin** have the privilege *to access features dedicated to them on User Portal*, such as `Image`.
+
 
 ---
 

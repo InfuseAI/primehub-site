@@ -1,7 +1,7 @@
 ---
 id: launch-project
-title: Launch JupyterHub
-sidebar_label: Launch Jupyter Notebook
+sidebar_label:  Jupyter Notebook
+title: Launch Notebook Environment
 ---
 
 <div class="label-sect">
@@ -13,7 +13,6 @@ sidebar_label: Launch Jupyter Notebook
   </div>
 </div>
 
-This quickstart shows how to launch/stop a project.
 
 ## Launch
 
@@ -37,17 +36,19 @@ This quickstart shows how to launch/stop a project.
 
 ## Spawning
 
+From Notebook tab, it shows the spawning progress.
+
 ![](assets/spawner_cancel_v33.png)
 
 Spawning can be cancelled by clicking `Cancel`.
 
 ## Notebook Logs
 
-Logs are retrieved from Notebook spawning to the end of Notebook. The logs can be viewed in `Logs` tab and be downloaded as a file *when Notebook is alive*. Once Notebook is terminated, logs are gone with it. In this case, we can only check logs which is cached by UI.
+Logs are retrieved from Jupyter Pod since Notebook spawning to Notebook end. The logs can be viewed from `Logs` tab and be downloaded as a file *as long as Notebook is alive*. Once Notebook is terminated, logs are gone with it. In this case, we can only check latest logs cached by UI.
 
 ![](assets/spawner_log.png)
 
->If there is no spawning notebook, it shows `Error: cannot get log due to pods "jupyter-xxxx" not found` by default.
+>If there is no running notebook, it shows `Error: cannot get log due to pods "jupyter-xxxx" not found`.
 
 ## Stop
 
