@@ -1,6 +1,7 @@
 ---
 id: create-user
 title: 建立使用者
+description: 建立使用者
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

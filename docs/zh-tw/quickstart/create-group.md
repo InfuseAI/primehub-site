@@ -1,6 +1,7 @@
 ---
 id: create-group
 title: 建立群組
+description: 建立群組
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

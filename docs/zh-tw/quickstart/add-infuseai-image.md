@@ -1,6 +1,7 @@
 ---
 id: add-infuseai-image
 title: 新增 InfuseAI Image
+description: 新增 InfuseAI Image
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

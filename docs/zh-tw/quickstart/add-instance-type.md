@@ -1,6 +1,7 @@
 ---
 id: add-instance-type
 title: 新增/計劃 Instance Type
+description: 新增/計劃 Instance Type
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

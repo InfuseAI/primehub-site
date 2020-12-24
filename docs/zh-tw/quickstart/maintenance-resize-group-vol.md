@@ -1,6 +1,7 @@
 ---
 id: maintenance-resize-group-vol
 title: 加大 Group Volume
+description: 加大 Group Volume
 ---
 
 <div class="ee-only tooltip">Enterprise

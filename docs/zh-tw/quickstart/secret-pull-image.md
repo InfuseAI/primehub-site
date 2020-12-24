@@ -1,6 +1,7 @@
 ---
 id: secret-pull-image
 title: GitLab 用 pull secret
+description: GitLab 用 pull secret
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

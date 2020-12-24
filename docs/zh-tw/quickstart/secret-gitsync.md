@@ -1,6 +1,7 @@
 ---
 id: secret-gitsync
 title: GitHub 用 gitsync secret
+description: GitHub 用 gitsync secret
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

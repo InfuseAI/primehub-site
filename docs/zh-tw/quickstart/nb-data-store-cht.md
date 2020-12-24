@@ -1,6 +1,7 @@
 ---
 id: nb-data-store-cht
 title: 資料儲存空間
+description: 資料儲存空間
 ---
 
 PrimeHub 提供使用者幾個從 Notebook 可以存取儲存資料的空間，根據儲存資料空間的屬性有分下列幾種。

@@ -1,6 +1,7 @@
 ---
 id: login-portal-user
 title: User Portal
+description: User Portal
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

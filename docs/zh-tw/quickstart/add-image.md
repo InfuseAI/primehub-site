@@ -1,6 +1,7 @@
 ---
 id: add-image
 title: 增加 Image
+description: 增加 Image
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

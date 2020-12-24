@@ -1,6 +1,7 @@
 ---
 id: launch-project
 title: 啟始 Notebook
+description: 啟始 Notebook
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

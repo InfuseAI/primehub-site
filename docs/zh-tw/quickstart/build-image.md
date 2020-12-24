@@ -1,6 +1,7 @@
 ---
 id: build-image
 title: 創建客製 Image
+description: 創建客製 Image
 ---
 
 <div class="ee-only tooltip">Enterprise
