@@ -100,6 +100,47 @@ Also, we choosing the `TensorFlow 2.2` as our runtime image and clicking on `Sta
         }
         ```
 11. Congratulations! We have trained a model in Notebook and directly deployed it as an endpoint service that can respond requests anytime from everywhere.
+12. (Advanced) We went through a simple MNIST example by sending ndarray data to the deployed model. Next, we can also try to send an exact image file to the deployed model.
+
+  - Follow previous tutorial steps but with `Model Image` to be `infuseai/tensorflow2-prepackaged_rest:v0.4.3`.
+    
+    (starting from v0.4.3, the TensorFlow2 model server image hosted by InfuseAI can handle the image file input)
+
+  - Using this Curl example,
+      ```bash
+      curl -F 'binData=@${YOUR_IMAGE_FILE}' ${YOUR_ENDPOINT_URL}
+      ```
+  - Example of request data
+      ```bash
+      curl -F 'binData=@test_image.jpg' https://hub.xxx.demo.primehub.io/deployment/quickstart-mnist-xxx/api/v1.0/predictions
+      ```
+  - Example of response data
+      ```bash
+      {
+        "data": {
+          "names": [],
+          "tensor": {
+            "shape": [
+              1, 
+              10
+            ],
+            "values": [
+              2.2407566291349212e-07,
+              1.2446706776358951e-08,
+              2.6079691451741382e-05,
+              0.00012795013026334345,
+              3.6888220256159343e-10,
+              8.873519163898891e-07,
+              1.7562220774869353e-11,
+              0.9998427629470825,
+              5.136769800628826e-07,
+              1.499530753790168e-06
+            ]
+          }
+        },
+        "meta": {}
+      }
+      ```
 
 ## Reference
 
