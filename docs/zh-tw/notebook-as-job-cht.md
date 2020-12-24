@@ -1,6 +1,7 @@
 ---
 id: notebook-as-job-cht
 title: Submit a Notebook as a Job
+description: Submit a Notebook as a Job
 sidebar_label: Notebook as a Job
 ---
 

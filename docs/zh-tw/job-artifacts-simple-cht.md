@@ -1,6 +1,7 @@
 ---
 id: job-artifacts-simple-cht
 title: Job Artifacts 初階範例
+description: Job Artifacts 初階範例
 ---
 
 <div class="ee-only tooltip">Enterprise

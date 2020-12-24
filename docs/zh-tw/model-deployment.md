@@ -1,6 +1,7 @@
 ---
 id: model-deployment-feature
 title: 模型部署 (Beta)
+description: 模型部署 (Beta)
 ---
 
 <div class="ee-only tooltip">Enterprise

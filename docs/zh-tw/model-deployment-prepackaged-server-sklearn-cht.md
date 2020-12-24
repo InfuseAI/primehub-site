@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-sklearn-cht
 title: SKLearn Model Server
+description: SKLearn Model Server
 sidebar_label: SKLearn server
 ---
 

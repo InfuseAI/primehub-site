@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-prepackaged-image-cht
 title: 透過 Pre-packaged Server 模型部署
+description: 透過 Pre-packaged Server 模型部署
 ---
 
 <div class="ee-only tooltip">Enterprise

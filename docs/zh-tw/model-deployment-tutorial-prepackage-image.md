@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-prepackage-image
 title: 透過預建置 Base Image 加速流程
+description: 透過預建置 Base Image 加速流程
 ---
 
 <div class="ee-only tooltip">Enterprise

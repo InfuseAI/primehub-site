@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-prepackaged-image-phfs-cht
 title: 透過 Pre-packaged Server 模型部署 (PHFS)
+description: 透過 Pre-packaged Server 模型部署 (PHFS)
 ---
 
 <div class="ee-only tooltip">Enterprise

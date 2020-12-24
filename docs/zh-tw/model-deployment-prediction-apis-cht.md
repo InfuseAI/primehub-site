@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prediction-apis-cht
 title: Prediction APIs
+description: Prediction APIs
 ---
 
 <div class="ee-only tooltip">Enterprise

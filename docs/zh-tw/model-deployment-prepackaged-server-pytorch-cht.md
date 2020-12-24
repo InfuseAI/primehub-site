@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-pytorch-cht
 title: PyTorch server
+description: PyTorch server
 sidebar_label: PyTorch Model Server
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-tensorflow2-cht
 title: TensorFlow2 Model Server
+description: TensorFlow2 Model Server
 sidebar_label: TensorFlow2 server
 ---
 

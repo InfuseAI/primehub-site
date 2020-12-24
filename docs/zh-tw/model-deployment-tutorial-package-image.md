@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-package-image
 title: 建置模型部署所需之映像檔 (Python)
+description: 建置模型部署所需之映像檔 (Python)
 ---
 
 <div class="ee-only tooltip">Enterprise

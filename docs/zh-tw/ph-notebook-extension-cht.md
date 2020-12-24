@@ -1,6 +1,7 @@
 ---
 id: ph-notebook-extension-cht
 title: PrimeHub Notebook Extension
+description: PrimeHub Notebook Extension
 sidebar_label: PrimeHub Extension
 ---
 

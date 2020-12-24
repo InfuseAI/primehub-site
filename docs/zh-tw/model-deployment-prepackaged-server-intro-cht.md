@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-intro-cht
 title: Pre-packaged servers
+description: Pre-packaged servers
 sidebar_label: Overview
 ---
 

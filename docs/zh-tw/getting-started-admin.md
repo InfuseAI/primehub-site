@@ -1,6 +1,7 @@
 ---
 id: getting-started-admin
 title: 管理入門指南
+description: 管理入門指南
 ---
 
 針對 PrimeHub 管理者，可以參考：

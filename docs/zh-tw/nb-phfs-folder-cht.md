@@ -1,6 +1,7 @@
 ---
 id: nb-phfs-folder-cht
 title: PHFS 空間
+description: PHFS 空間
 ---
 
 >PHFS 空間 - 須要先啟用並配置 [PrimeHub Store](design/primehub-store)。

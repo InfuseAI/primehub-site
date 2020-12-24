@@ -1,6 +1,7 @@
 ---
 id: model-deployment-model-uri-cht
 title: Model URI 路徑
+description: Model URI 路徑
 sidebar_label: Model URI
 ---
 

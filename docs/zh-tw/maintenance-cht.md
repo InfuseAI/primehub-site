@@ -1,6 +1,7 @@
 ---
 id: maintenance-cht
 title: Maintenance Notebook
+description: Maintenance Notebook
 ---
 
 <div class="ee-only tooltip">Enterprise

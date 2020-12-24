@@ -1,6 +1,7 @@
 ---
 id: model-deployment-quickstart-tutorial
 title: 模型部署之快速上手
+description: 模型部署之快速上手
 ---
 
 <div class="ee-only tooltip">Enterprise

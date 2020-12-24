@@ -1,6 +1,7 @@
 ---
 id: job-submission-cht
 title: Job Submission
+description: Job Submission
 ---
 
 <div class="ee-only tooltip">Enterprise

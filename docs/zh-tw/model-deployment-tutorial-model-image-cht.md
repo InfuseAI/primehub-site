@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-model-image-cht
 title: 透過 Language Wrapper 打包模型映像檔部署
+description: 透過 Language Wrapper 打包模型映像檔部署
 ---
 
 <div class="ee-only tooltip">Enterprise

@@ -1,6 +1,7 @@
 ---
 id: admin-dashboard
 title: 管理介面
+description: 管理介面
 ---
 
 PrimeHub provides several types of management to administrators as below, please check features in each section

@@ -1,6 +1,7 @@
 ---
 id: job-submission-tutorial-p2
 title: (Part2) MNIST classifier 訓練範例程式
+description: (Part2) MNIST classifier 訓練範例程式
 ---
 
 <div class="ee-only tooltip">Enterprise

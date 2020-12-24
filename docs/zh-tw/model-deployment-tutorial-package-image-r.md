@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-package-image-r
 title: 建置模型部署所需之映像檔 (R)
+description: 建置模型部署所需之映像檔 (R)
 ---
 
 <div class="ee-only tooltip">Enterprise
