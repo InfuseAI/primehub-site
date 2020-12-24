@@ -1,6 +1,7 @@
 ---
 id: admin-uploader-cht
 title: Upload Server
+description: Upload Server
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

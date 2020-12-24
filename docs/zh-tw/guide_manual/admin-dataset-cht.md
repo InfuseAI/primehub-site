@@ -1,6 +1,7 @@
 ---
 id: admin-dataset-cht
 title: Dataset Management
+description: Dataset Management
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

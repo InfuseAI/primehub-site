@@ -1,6 +1,7 @@
 ---
 id: ssh-vscode-cht
 title: VSCode 透過 SSH 遠端存取 Jupyter Notebook
+description: VSCode 透過 SSH 遠端存取 Jupyter Notebook
 sidebar_label: VSCode 遠端存取 Notebooks
 ---
 <div class="label-sect">

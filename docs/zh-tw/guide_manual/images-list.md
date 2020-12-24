@@ -1,6 +1,7 @@
 ---
 id: images-list
 title: InfuseAI 提供 Images
+description: InfuseAI 提供 Images
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

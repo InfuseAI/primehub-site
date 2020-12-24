@@ -1,6 +1,7 @@
 ---
 id: ssh-keygen-cht
 title: 生成 SSH 金鑰
+description: 生成 SSH 金鑰
 sidebar_label: SSH 金鑰生成
 ---
 <div class="label-sect">

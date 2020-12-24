@@ -1,6 +1,7 @@
 ---
 id: ssh-config-cht
 title: SSH Server 功能
+description: SSH Server 功能
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

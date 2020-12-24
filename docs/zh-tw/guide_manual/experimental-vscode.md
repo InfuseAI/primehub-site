@@ -1,6 +1,7 @@
 ---
 id: experimental-vscode
 title: VS Code 體驗
+description: VS Code 體驗
 ---
 
 <div class="ee-only tooltip">Enterprise

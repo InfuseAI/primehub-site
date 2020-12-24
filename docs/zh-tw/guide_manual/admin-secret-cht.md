@@ -1,6 +1,7 @@
 ---
 id: admin-secret-cht
 title: Secret Management
+description: Secret Management
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

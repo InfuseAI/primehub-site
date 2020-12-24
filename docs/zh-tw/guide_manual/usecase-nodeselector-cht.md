@@ -1,6 +1,7 @@
 ---
 id: usecase-nodeselector-cht
 title: NodeSelector
+description: NodeSelector
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

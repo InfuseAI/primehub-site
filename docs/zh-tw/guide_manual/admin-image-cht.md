@@ -1,6 +1,7 @@
 ---
 id: admin-image-cht
 title: Image Management
+description: Image Management
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

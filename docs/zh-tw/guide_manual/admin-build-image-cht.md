@@ -1,6 +1,7 @@
 ---
 id: admin-build-image-cht
 title: Image Builder
+description: Image Builder
 ---
 
 <div class="ee-only tooltip">Enterprise

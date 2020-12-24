@@ -1,6 +1,7 @@
 ---
 id: admin-user-cht
 title: User Management
+description: User Management
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

@@ -1,6 +1,7 @@
 ---
 id: admin-instancetype-cht
 title: Instance Type Management
+description: Instance Type Management
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

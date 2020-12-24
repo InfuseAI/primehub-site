@@ -1,6 +1,7 @@
 ---
 id: admin-system-cht
 title: System Management
+description: System Management
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

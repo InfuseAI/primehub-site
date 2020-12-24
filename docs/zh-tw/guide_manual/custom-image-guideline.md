@@ -1,6 +1,7 @@
 ---
 id: custom-image-guideline
 title: 客製 Image 指南
+description: 客製 Image 指南
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

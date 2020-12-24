@@ -1,6 +1,7 @@
 ---
 id: admin-group-cht
 title: Group Management
+description: Group Management
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
