@@ -120,7 +120,7 @@
 </ul>
 <ol start="7">
 <li><p>恭喜，至此我們已成功部署模型，並同時提供線上服務接受請求。</p></li>
-<li><p>(進階) 上述為簡單帶入 tensor 送出請求至部署模型的 MNIST 範例。 接下來，我們試著送出一個圖片檔至部署模型，依<a href="https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist">此範例</a>。</p>
+<li><p>(進階) 上述為簡單帶入 ndarray 送出請求至部署模型的 MNIST 範例。 接下來，我們試著送出一個圖片檔至部署模型，依<a href="https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist">此範例</a>。</p>
 <p>照著上述的步驟，但略有不同</p></li>
 </ol>
 <ul>
@@ -129,7 +129,7 @@
 <pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@<span class="token variable">${YOUR_IMAGE_FILE}</span>'</span> <span class="token variable">${YOUR_ENDPOINT_URL}</span>
 </code></pre></li>
 <li>請求範例
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@test_image.jpg'</span> https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-pm56r/api/v1.0/predictions
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@test_image.jpg'</span> https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-xxx/api/v1.0/predictions
 </code></pre></li>
 <li>回應範例
 <pre><code class="hljs css language-bash"><span class="token punctuation">{</span>

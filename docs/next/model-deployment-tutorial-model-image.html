@@ -120,7 +120,7 @@
 </ul>
 <ol start="7">
 <li><p>Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.</p></li>
-<li><p>(Advanced) We went through a simple MNIST example by sending tensor data to the deployed model. Next, we can also try out <a href="https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist">this example</a> by sending an exact image file to the deployed model.</p>
+<li><p>(Advanced) We went through a simple MNIST example by sending ndarray data to the deployed model. Next, we can also try out <a href="https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist">this example</a> by sending an exact image file to the deployed model.</p>
 <p>Follow previous tutorial steps but with following difference,</p></li>
 </ol>
 <ul>
@@ -129,7 +129,7 @@
 <pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@<span class="token variable">${YOUR_IMAGE_FILE}</span>'</span> <span class="token variable">${YOUR_ENDPOINT_URL}</span>
 </code></pre></li>
 <li>Example of request data
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@test_image.jpg'</span> https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-pm56r/api/v1.0/predictions
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@test_image.jpg'</span> https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-xxx/api/v1.0/predictions
 </code></pre></li>
 <li>Example of response data
 <pre><code class="hljs css language-bash"><span class="token punctuation">{</span>

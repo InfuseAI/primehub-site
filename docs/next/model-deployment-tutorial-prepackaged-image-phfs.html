@@ -141,7 +141,44 @@ Also, we choosing the <code>TensorFlow 2.2</code> as our runtime image and click
 </code></pre></li>
 </ul></li>
 <li><p>Congratulations! We have trained a model in Notebook and directly deployed it as an endpoint service that can respond requests anytime from everywhere.</p></li>
+<li><p>(Advanced) We went through a simple MNIST example by sending ndarray data to the deployed model. Next, we can also try to send an exact image file to the deployed model.</p></li>
 </ol>
+<ul>
+<li><p>Follow previous tutorial steps but with <code>Model Image</code> to be <code>infuseai/tensorflow2-prepackaged_rest:v0.4.3</code>.</p>
+<p>(starting from v0.4.3, the TensorFlow2 model server image hosted by InfuseAI can handle the image file input)</p></li>
+<li><p>Using this Curl example,</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@<span class="token variable">${YOUR_IMAGE_FILE}</span>'</span> <span class="token variable">${YOUR_ENDPOINT_URL}</span>
+</code></pre></li>
+<li><p>Example of request data</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -F <span class="token string">'binData=@test_image.jpg'</span> https://hub.xxx.demo.primehub.io/deployment/quickstart-mnist-xxx/api/v1.0/predictions
+</code></pre></li>
+<li><p>Example of response data</p>
+<pre><code class="hljs css language-bash"><span class="token punctuation">{</span>
+  <span class="token string">"data"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"names"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+    <span class="token string">"tensor"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"shape"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token number">1</span>, 
+        <span class="token number">10</span>
+      <span class="token punctuation">]</span>,
+      <span class="token string">"values"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token number">2</span>.2407566291349212e-07,
+        <span class="token number">1</span>.2446706776358951e-08,
+        <span class="token number">2</span>.6079691451741382e-05,
+        <span class="token number">0.00012795013026334345</span>,
+        <span class="token number">3</span>.6888220256159343e-10,
+        <span class="token number">8</span>.873519163898891e-07,
+        <span class="token number">1</span>.7562220774869353e-11,
+        <span class="token number">0.9998427629470825</span>,
+        <span class="token number">5</span>.136769800628826e-07,
+        <span class="token number">1</span>.499530753790168e-06
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">"meta"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <ul>
 <li>For the completed model deployment feature introduction, see <a href="model-deployment-feature">Model Deployment (Beta)</a>.</li>
