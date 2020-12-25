@@ -72,7 +72,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
       }
       ```
 7. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
-8. (Advanced) We went through a simple MNIST example by sending tensor data to the deployed model. Next, we can also try out [this example](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) by sending an exact image file to the deployed model.
+8. (Advanced) We went through a simple MNIST example by sending ndarray data to the deployed model. Next, we can also try out [this example](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist) by sending an exact image file to the deployed model.
 
     Follow previous tutorial steps but with following difference,
 
@@ -83,7 +83,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
       ```
   - Example of request data
       ```bash
-      curl -F 'binData=@test_image.jpg' https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-pm56r/api/v1.0/predictions
+      curl -F 'binData=@test_image.jpg' https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-xxx/api/v1.0/predictions
       ```
   - Example of response data
       ```bash
