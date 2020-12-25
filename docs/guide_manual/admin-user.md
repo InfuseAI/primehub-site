@@ -1,6 +1,7 @@
 ---
 id: admin-user
 title: User Management
+description: User Management
 ---
 
 <div class="label-sect">

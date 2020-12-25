@@ -1,6 +1,7 @@
 ---
 id: kubernetes_on_ubuntu_ce
 title: Install PrimeHub Community on MicroK8S Single Node (Ubuntu)
+description: Install PrimeHub Community on MicroK8S Single Node (Ubuntu)
 sidebar_label: Install PrimeHub CE on Single Node
 ---
 

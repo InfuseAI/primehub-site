@@ -1,6 +1,7 @@
 ---
 id: secret-pull-image
 title: Pull Secret for GitLab
+description: Pull Secret for GitLab
 ---
 
 <div class="label-sect">

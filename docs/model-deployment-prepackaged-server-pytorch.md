@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-pytorch
 title: PyTorch server
+description: PyTorch server
 ---
 
 <div class="ee-only tooltip">Enterprise

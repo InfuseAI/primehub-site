@@ -1,6 +1,7 @@
 ---
 id: notebook-tips
 title: Notebook Tips
+description: Notebook Tips
 sidebar_label: Tips
 ---
 

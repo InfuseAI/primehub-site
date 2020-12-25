@@ -1,6 +1,7 @@
 ---
 id: configure-self-signed-ca
 title: Setup Self-Signed Certificate for PrimeHub
+description: Setup Self-Signed Certificate for PrimeHub
 sidebar_label: Self-Signed Certificate
 ---
 

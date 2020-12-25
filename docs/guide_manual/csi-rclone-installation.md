@@ -1,6 +1,7 @@
 ---
 id: csi-rclone-installation-guide
 title: Csi-rclone Installation Guide
+description: Csi-rclone Installation Guide
 ---
 
 [csi-rclone](https://github.com/wunderio/csi-rclone) is a csi plugin to mount lots of kind storage by [rclone](https://rclone.org/), we use it to support the object store feature.

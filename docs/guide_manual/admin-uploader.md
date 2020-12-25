@@ -1,6 +1,7 @@
 ---
 id: admin-uploader
 title: Upload Server
+description: Upload Server
 ---
 
 <div class="label-sect">

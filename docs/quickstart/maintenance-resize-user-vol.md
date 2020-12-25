@@ -1,6 +1,7 @@
 ---
 id: maintenance-resize-user-vol
 title: Increase User Volume
+description: Increase User Volume
 ---
 
 <div class="ee-only tooltip">Enterprise

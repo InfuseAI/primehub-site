@@ -1,6 +1,7 @@
 ---
 id: model-deployment-feature
 title: Model Deployment (Beta)
+description: Model Deployment (Beta)
 ---
 
 <div class="ee-only tooltip">Enterprise

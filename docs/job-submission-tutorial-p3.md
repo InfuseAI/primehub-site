@@ -1,6 +1,7 @@
 ---
 id: job-submission-tutorial-p3
 title: (Advanced) Use Job Submission to Tune Hyperparameters
+description: (Advanced) Use Job Submission to Tune Hyperparameters
 ---
 
 <div class="ee-only tooltip">Enterprise

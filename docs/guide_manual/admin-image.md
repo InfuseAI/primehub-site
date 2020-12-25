@@ -1,6 +1,7 @@
 ---
 id: admin-image
 title: Image Management
+description: Image Management
 ---
 
 <div class="label-sect">

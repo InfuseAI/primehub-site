@@ -1,6 +1,7 @@
 ---
 id: model-deployment-language-wrapper-intro
 title: Package from Language Wrapper
+description: Package from Language Wrapper
 sidebar_label: Overview
 ---
 

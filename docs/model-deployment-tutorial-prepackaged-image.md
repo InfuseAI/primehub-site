@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-prepackaged-image
 title: Deploy a Model by Pre-packaged Server
+description: Deploy a Model by Pre-packaged Server
 ---
 
 <div class="ee-only tooltip">Enterprise

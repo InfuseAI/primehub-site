@@ -1,6 +1,7 @@
 ---
 id: md-user-cht
 title: User Management
+description: User Management
 ---
 
 ## Creating New Users

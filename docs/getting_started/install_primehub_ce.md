@@ -1,6 +1,7 @@
 ---
 id: install_primehub_ce
 title: Install PrimeHub Community
+description: Install PrimeHub Community
 sidebar_label: Install PrimeHub CE
 ---
 <div class="label-sect">

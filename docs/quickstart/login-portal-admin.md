@@ -1,6 +1,7 @@
 ---
 id: login-portal-admin
 title: Admin Portal
+description: Admin Portal
 ---
 
 <div class="label-sect">

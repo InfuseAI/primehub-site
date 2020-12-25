@@ -1,6 +1,7 @@
 ---
 id: configure-primehub-store
 title: Configure PrimeHub Store
+description: Configure PrimeHub Store
 sidebar_label: PrimeHub Store
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: create-group
 title: Create Group
+description: Create Group
 ---
 
 <div class="label-sect">

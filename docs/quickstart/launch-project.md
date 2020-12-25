@@ -2,6 +2,7 @@
 id: launch-project
 sidebar_label:  Jupyter Notebook
 title: Launch Notebook Environment
+description: Launch Notebook Environment
 ---
 
 <div class="label-sect">

@@ -1,6 +1,7 @@
 ---
 id: job-submission-tutorial-p1
 title: (Part1) MNIST classifier training
+description: (Part1) MNIST classifier training
 ---
 
 <div class="ee-only tooltip">Enterprise

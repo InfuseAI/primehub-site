@@ -1,6 +1,7 @@
 ---
 id: admin-group
 title: Group Management
+description: Group Management
 ---
 
 <div class="label-sect">

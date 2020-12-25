@@ -1,6 +1,7 @@
 ---
 id: admin-it-performance
 title: Quality of Service
+description: Quality of Service
 sidebar_label: Quality of Service for Pods
 ---
 

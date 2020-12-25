@@ -1,6 +1,7 @@
 ---
 id: model-deployment-model-uri
 title: Model URI
+description: Model URI
 ---
 
 <div class="ee-only tooltip">Enterprise

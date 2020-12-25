@@ -1,6 +1,7 @@
 ---
 id: kubeflow-installation-guide
 title: Kubeflow Installation Guide
+description: Kubeflow Installation Guide
 ---
 
 **Kubeflow** is a machine learning toolkit for Kubernetes. It provides a series of services like distributed training, hyperparameter tuning and model serving for end-to-end model developing.

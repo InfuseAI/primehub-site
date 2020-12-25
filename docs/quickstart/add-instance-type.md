@@ -1,6 +1,7 @@
 ---
 id: add-instance-type
 title: Create/Plan Instance Type
+description: Create/Plan Instance Type
 ---
 
 

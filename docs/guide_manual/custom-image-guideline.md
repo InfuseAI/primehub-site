@@ -1,6 +1,7 @@
 ---
 id: custom-image-guideline
 title: Custom Image Guideline
+description: Custom Image Guideline
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

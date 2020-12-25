@@ -1,6 +1,7 @@
 ---
 id: configure-ssh-server
 title: Configure SSH Server
+description: Configure SSH Server
 sidebar_label: SSH Server
 ---
 

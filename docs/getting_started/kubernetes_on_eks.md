@@ -1,6 +1,7 @@
 ---
 id: kubernetes_on_eks
 title: Kubernetes on AWS EKS
+description: Kubernetes on AWS EKS
 ---
 
 

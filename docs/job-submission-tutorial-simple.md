@@ -1,6 +1,7 @@
 ---
 id: job-submission-tutorial-simple
 title: Simple Example
+description: Simple Example
 ---
 
 <div class="ee-only tooltip">Enterprise

@@ -1,6 +1,7 @@
 ---
 id: model-deployment-language-wrapper-reusable-base-image
 title: Package a Model Image from a Reusable Base Image
+description: Package a Model Image from a Reusable Base Image
 ---
 
 <div class="ee-only tooltip">Enterprise

@@ -1,6 +1,7 @@
 ---
 id: installation
 title: Installation
+description: Installation
 ---
 
 ## Prerequisites

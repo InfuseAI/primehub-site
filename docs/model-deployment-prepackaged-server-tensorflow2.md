@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-tensorflow2
 title: TensorFlow2 server
+description: TensorFlow2 server
 ---
 
 <div class="ee-only tooltip">Enterprise

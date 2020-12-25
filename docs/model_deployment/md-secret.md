@@ -1,6 +1,7 @@
 ---
 id: md-secret
 title: Secret Management
+description: Secret Management
 ---
 
 Secret management provides the capabilities of managing secrets which are used for pull images or datasets, such as create, delete, edit secrets. Before adding secrets, we have to gain those generated secrets from sources of services. Please see [gain and add secrets](#gain-and-add-secrets).

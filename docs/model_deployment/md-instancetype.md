@@ -1,6 +1,7 @@
 ---
 id: md-instancetype
 title: Instance Type Management
+description: Instance Type Management
 ---
 
 Instance type management provides the capabilities of managing a cluster of the computation resources by instances management  such as create, delete, edit instances and of permission-control which allows only specified-groups to use the instances.

@@ -1,6 +1,7 @@
 ---
 id: add-image
 title: Add Image
+description: Add Image
 ---
 
 <div class="label-sect">

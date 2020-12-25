@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-model-image
 title: Deploy a Model by Image built from Language Wrapper
+description: Deploy a Model by Image built from Language Wrapper
 ---
 
 <div class="ee-only tooltip">Enterprise

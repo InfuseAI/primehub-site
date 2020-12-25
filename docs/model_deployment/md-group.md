@@ -1,6 +1,7 @@
 ---
 id: md-group
 title: Group Management
+description: Group Management
 ---
 
 ## Creating New Group

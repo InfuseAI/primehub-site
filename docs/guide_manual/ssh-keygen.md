@@ -1,6 +1,7 @@
 ---
 id: ssh-keygen
 title: Generating a new SSH Key Pair
+description: Generating a new SSH Key Pair
 sidebar_label: SSH Key Generation
 ---
 

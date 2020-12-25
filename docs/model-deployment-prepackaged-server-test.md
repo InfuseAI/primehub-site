@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-test
 title: Run Pre-packaged Server Locally
+description: Run Pre-packaged Server Locally
 ---
 
 <div class="ee-only tooltip">Enterprise

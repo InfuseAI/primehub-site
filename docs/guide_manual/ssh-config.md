@@ -1,6 +1,7 @@
 ---
 id: ssh-config
 title: SSH Server Feature
+description: SSH Server Feature
 ---
 
 <div class="label-sect">

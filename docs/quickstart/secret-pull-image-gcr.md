@@ -1,6 +1,7 @@
 ---
 id: secret-pull-image-gcr
 title: Add a secret for pulling image from GCR
+description: Add a secret for pulling image from GCR
 ---
 
 

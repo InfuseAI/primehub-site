@@ -1,6 +1,7 @@
 ---
 id: admin-instancetype
 title: Instance Type Management
+description: Instance Type Management
 ---
 
 <div class="label-sect">

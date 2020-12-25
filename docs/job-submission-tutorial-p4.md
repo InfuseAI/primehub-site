@@ -1,6 +1,7 @@
 ---
 id: job-submission-tutorial-p4
 title: (Advanced) Model Serving by Seldon
+description: (Advanced) Model Serving by Seldon
 ---
 
 <div class="ee-only tooltip">Enterprise

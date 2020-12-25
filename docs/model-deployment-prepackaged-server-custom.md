@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-custom
 title: Custom Pre-packaged Server
+description: Custom Pre-packaged Server
 ---
 
 <div class="ee-only tooltip">Enterprise

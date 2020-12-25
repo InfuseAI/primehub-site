@@ -1,6 +1,7 @@
 ---
 id: admin-build-image
 title: Image Builder
+description: Image Builder
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

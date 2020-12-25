@@ -1,6 +1,7 @@
 ---
 id: kubernetes_on_gke
 title: Kubernetes on GKE
+description: Kubernetes on GKE
 ---
 
 <div class="label-sect">

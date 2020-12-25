@@ -1,6 +1,7 @@
 ---
 id: install_helper
 title: Install Helper (Advanced)
+description: Install Helper (Advanced)
 ---
 
 Install Helper is an advanced way to install PrimeHub and relative components. It uses environment variables to share common settings for multiple helm charts. Such as,

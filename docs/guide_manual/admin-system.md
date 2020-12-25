@@ -1,6 +1,7 @@
 ---
 id: admin-system
 title: System Settings
+description: System Settings
 ---
 
 <div class="label-sect">

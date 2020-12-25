@@ -1,6 +1,7 @@
 ---
 id: configure-job-submission
 title: Configure Job Submission
+description: Configure Job Submission
 sidebar_label: Job Submission
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: md-group-cht
 title: Group Management
+description: Group Management
 ---
 
 ## Groups List

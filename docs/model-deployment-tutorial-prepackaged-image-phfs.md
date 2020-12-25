@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-prepackaged-image-phfs
 title: Deploy a Model by Pre-packaged Server (PHFS)
+description: Deploy a Model by Pre-packaged Server (PHFS)
 ---
 
 <div class="ee-only tooltip">Enterprise

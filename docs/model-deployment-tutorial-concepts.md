@@ -1,6 +1,7 @@
 ---
 id: model-deployment-tutorial-concepts
 title: Concepts
+description: Concepts
 ---
 
 <div class="ee-only tooltip">Enterprise

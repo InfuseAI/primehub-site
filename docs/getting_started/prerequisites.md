@@ -1,6 +1,7 @@
 ---
 id: prerequisites
 title: Prerequisites
+description: Prerequisites
 ---
 
 <div class="label-sect">

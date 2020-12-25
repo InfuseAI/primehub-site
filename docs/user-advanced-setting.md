@@ -1,6 +1,7 @@
 ---
 id: user-advanced-setting
 title: Advanced Settings
+description: Advanced Settings
 ---
 
 <div class="label-sect">

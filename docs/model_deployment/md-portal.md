@@ -1,6 +1,7 @@
 ---
 id: md-portal
 title: User Portal
+description: User Portal
 ---
 
 This quickstart shows how to access `User Portal`.

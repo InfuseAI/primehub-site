@@ -1,6 +1,7 @@
 ---
 id: md-instancetype-cht
 title: Instance Type Management
+description: Instance Type Management
 ---
 
 Instance type management 提供給管理者 Instance 運算資源管理能力，如：新增、刪除、編輯運算資源分配及群組權限。

@@ -1,6 +1,7 @@
 ---
 id: usecase-toleration
 title: Toleration
+description: Toleration
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

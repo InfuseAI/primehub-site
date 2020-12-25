@@ -1,6 +1,7 @@
 ---
 id: install_primehub
 title: Install PrimeHub Enterprise
+description: Install PrimeHub Enterprise
 sidebar_label: Install PrimeHub EE
 ---
 

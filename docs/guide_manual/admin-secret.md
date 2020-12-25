@@ -1,6 +1,7 @@
 ---
 id: admin-secret
 title: Secret Management
+description: Secret Management
 ---
 
 <div class="label-sect">

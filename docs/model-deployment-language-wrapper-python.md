@@ -1,6 +1,7 @@
 ---
 id: model-deployment-language-wrapper-python
 title: Package a Model Image for Python
+description: Package a Model Image for Python
 ---
 
 <div class="ee-only tooltip">Enterprise

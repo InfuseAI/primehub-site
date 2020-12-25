@@ -1,6 +1,7 @@
 ---
 id: nb-data-store
 title: Storing Data
+description: Storing Data
 ---
 
 In Notebook, PrimeHub provides several places of storing various data.

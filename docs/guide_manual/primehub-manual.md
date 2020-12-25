@@ -1,6 +1,7 @@
 ---
 id: primehub-manual
 title: PrimeHub Console Manual
+description: PrimeHub Console Manual
 ---
 
 ## Login and Logout

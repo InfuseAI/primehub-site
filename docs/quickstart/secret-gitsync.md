@@ -1,6 +1,7 @@
 ---
 id: secret-gitsync
 title: Gitsync Secret for GitHub
+description: Gitsync Secret for GitHub
 ---
 
 

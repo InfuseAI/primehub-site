@@ -1,6 +1,7 @@
 ---
 id: build-image
 title: Build Image
+description: Build Image
 ---
 
 <div class="ee-only tooltip">Enterprise

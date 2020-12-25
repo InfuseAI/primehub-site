@@ -1,6 +1,7 @@
 ---
 id: model-deployment-prepackaged-server-sklearn
 title: SKLearn server
+description: SKLearn server
 ---
 
 <div class="ee-only tooltip">Enterprise

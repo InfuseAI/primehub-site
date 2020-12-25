@@ -1,6 +1,7 @@
 ---
 id: model-deployment-language-wrapper-r
 title: Package a Model Image for R
+description: Package a Model Image for R
 ---
 
 <div class="ee-only tooltip">Enterprise

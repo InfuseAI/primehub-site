@@ -1,6 +1,7 @@
 ---
 id: job-artifact-feature
 title: Job Artifacts
+description: Job Artifacts
 ---
 
 <div class="ee-only tooltip">Enterprise

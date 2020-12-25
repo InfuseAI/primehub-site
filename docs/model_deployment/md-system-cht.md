@@ -1,6 +1,7 @@
 ---
 id: md-system-cht
 title: System Management
+description: System Management
 ---
 
 ## PrimeHub License

@@ -1,6 +1,7 @@
 ---
 id: job-scheduling-feature
 title: Job Scheduler
+description: Job Scheduler
 ---
 
 <div class="ee-only tooltip">Enterprise

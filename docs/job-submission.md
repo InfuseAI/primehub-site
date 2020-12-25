@@ -1,6 +1,7 @@
 ---
 id: job-submission-feature
 title: Job Submission
+description: Job Submission
 ---
 
 <div class="ee-only tooltip">Enterprise

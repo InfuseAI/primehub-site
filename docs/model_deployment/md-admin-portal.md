@@ -1,6 +1,7 @@
 ---
 id: md-admin-portal
 title: Admin Portal
+description: Admin Portal
 ---
 
 This quickstart shows how to access `Admin Portal`.

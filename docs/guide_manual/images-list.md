@@ -1,6 +1,7 @@
 ---
 id: images-list
 title: Available Images List
+description: Available Images List
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

@@ -1,6 +1,7 @@
 ---
 id: md-user
 title: User Management
+description: User Management
 ---
 
 ![](assets/user_6_v26.png)

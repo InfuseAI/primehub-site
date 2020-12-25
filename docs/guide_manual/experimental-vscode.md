@@ -1,6 +1,7 @@
 ---
 id: experimental-vscode
 title: Experimental VS Code
+description: Experimental VS Code
 ---
 
 InfuseAI provides an experimental image which is pre-installed [code-server](https://github.com/cdr/code-server) allowing users to access VS Code running on a remote JupyterHub.
