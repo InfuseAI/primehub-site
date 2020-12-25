@@ -75,7 +75,7 @@ description: 透過 Language Wrapper 打包模型映像檔部署
       ```
 7. 恭喜，至此我們已成功部署模型，並同時提供線上服務接受請求。
 
-8. (進階) 上述為簡單帶入 tensor 送出請求至部署模型的 MNIST 範例。 接下來，我們試著送出一個圖片檔至部署模型，依[此範例](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist)。
+8. (進階) 上述為簡單帶入 ndarray 送出請求至部署模型的 MNIST 範例。 接下來，我們試著送出一個圖片檔至部署模型，依[此範例](https://github.com/InfuseAI/model-deployment-examples/tree/master/keras_mnist)。
 
     照著上述的步驟，但略有不同
 
@@ -86,7 +86,7 @@ description: 透過 Language Wrapper 打包模型映像檔部署
       ```
   - 請求範例
       ```bash
-      curl -F 'binData=@test_image.jpg' https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-pm56r/api/v1.0/predictions
+      curl -F 'binData=@test_image.jpg' https://hub.xxx.dev.primehub.io/deployment/quickstart-mnist-xxx/api/v1.0/predictions
       ```
   - 回應範例
       ```bash

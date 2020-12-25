@@ -115,6 +115,51 @@ description: 透過 Pre-packaged Server 模型部署 (PHFS)
 
 11. 恭喜，我們已從 Notebook 訓練產出模型檔並移至 PHFS 空間，進一步部署此模型檔至線上服務接受請求。
 
+12. (進階) 上述為簡單帶入 ndarray 送出請求至部署模型的 MNIST 範例。 接下來，我們試著送出一個圖片檔至部署模型。
+
+  - 重複先前的步驟，但選擇 `Model Image` 為 `infuseai/tensorflow2-prepackaged_rest:v0.4.3`。
+    
+    (自 v0.4.3 起， InfuseAI 提供的 TensorFlow2 model server 映像檔可以接收處理輸入圖片檔)
+
+  - Curl 範本,
+
+      ```bash
+      curl -F 'binData=@${YOUR_IMAGE_FILE}' ${YOUR_ENDPOINT_URL}
+      ```
+
+  - 請求範例
+      ```bash
+      curl -F 'binData=@test_image.jpg' https://hub.xxx.demo.primehub.io/deployment/quickstart-mnist-xxx/api/v1.0/predictions
+      ```
+  - 回應範例
+
+      ```bash
+      {
+        "data": {
+          "names": [],
+          "tensor": {
+            "shape": [
+              1, 
+              10
+            ],
+            "values": [
+              2.2407566291349212e-07,
+              1.2446706776358951e-08,
+              2.6079691451741382e-05,
+              0.00012795013026334345,
+              3.6888220256159343e-10,
+              8.873519163898891e-07,
+              1.7562220774869353e-11,
+              0.9998427629470825,
+              5.136769800628826e-07,
+              1.499530753790168e-06
+            ]
+          }
+        },
+        "meta": {}
+      }
+      ```
+
 ## Reference
 
 - 完整模型部署功能，請見 [Model Deployment (Beta)](model-deployment-feature)。

@@ -15,7 +15,7 @@ sidebar_label: TensorFlow2 server
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.2`
+Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.3`
 Input       | nparray
 Output      | nparray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
@@ -67,11 +67,10 @@ def __init__(self, model_uri):
 ```python
 def predict(self, X):
     if self.use_keras_api:
-        output = self.model.predict(X)
-        return output
+        return self.model.predict(X)
     else:
         output = self.model(tf.convert_to_tensor(X, self.model.inputs[0].dtype))
-        return output['x'].numpy()
+        return output[next(iter(output))].numpy()
 ```
 
 ## Example
@@ -80,7 +79,7 @@ def predict(self, X):
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.2`
+Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.3`
 Model URI   | `gs://primehub-models/tensorflow2/mnist` (SavedModel)<br>or `gs://primehub-models/tensorflow2/mnist-h5` (HDF5)
 
 **請求範例**
