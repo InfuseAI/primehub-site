@@ -23,7 +23,8 @@ Remember to enable model deployment in your group, contact your admin if it is n
 2. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
 3. Fill in the `Deployment name` field with `quickstart-iris`
 
-   Fill in the `Model Image` field with `seldonio/sklearnserver_rest:1.3.0`; This image is a pre-packaged base image that can serve `scikit-learn` model.
+   Select the `Model Image` field with `SKLearn server`; This is a pre-packaged model server image that can serve `scikit-learn` model.
+   ![](assets/mdeploy_create_model_image_suggestion.png)
 
    Fill in the `Model URI` field with `gs://seldon-models/sklearn/iris`; This path is included the trained model in the Google Cloud Storage.
    ![](assets/mdeploy_quickstart_deploydetail_1.png)

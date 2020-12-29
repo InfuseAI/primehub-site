@@ -45,7 +45,8 @@ Also, we choosing the `TensorFlow 2.2` as our runtime image and clicking on `Sta
 6. We are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
 7. Fill in the `Deployment name` field with `quickstart-mnist`
 
-   Fill in the `Model Image` field with `infuseai/tensorflow2-prepackaged_rest:v0.4.2`; This image is a pre-packaged model server image that can serve `TensorFlow2` model.
+   Select the `Model Image` field with `TensorFlow2 server`; This is a pre-packaged model server image that can serve `TensorFlow 2` model.
+   ![](assets/mdeploy_create_model_image_suggestion.png)
 
    Fill in the `Model URI` field with `phfs:///TF-MNIST-Model`; This path is included the trained model in the PHFS Storage.
 ![](assets/mdeploy_quickstart_deploydetail_1_phfs.png)
