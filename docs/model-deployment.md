@@ -69,7 +69,12 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 
 + `Deployment ID`: An unique ID.
 
-+ `Model Image`: The image which can be deployed directly ([a model-file-packaged image](model-deployment-tutorial-model-image)) or acted as the [pre-packaged ML base image](model-deployment-tutorial-prepackaged-image) with a model file by Model URI.
++ `Model Image`: 
+  - The image which can be deployed directly ([Tutorial: Deploy a Model by Image built from Language Wrapper](model-deployment-tutorial-model-image)).
+  - Or acted as the pre-packaged model server image whick can be deployed with a model file ([Tutorial: Deploy a Model by Pre-packaged Server](model-deployment-tutorial-prepackaged-image)[、Tutorial: Deploy a Model by Pre-packaged Server (PHFS)](model-deployment-tutorial-prepackaged-image-phfs)).
+
+    We can select the suggested pre-packaged model server image or click on its link to access its server information and input/output examples.
+    ![](assets/mdeploy_create_model_image_suggestion.png)
 
 + `Model URI`: The [location](model-deployment-model-uri) which the trained model is stored in; based on this model file to deploy a model image.
 
