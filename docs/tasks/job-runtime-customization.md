@@ -46,7 +46,7 @@ pip install --target /phfs/mlflow-library mlflow sklearn
 Add python package path at the runtime by `PYTHONPATH` variables
 
 ```bash
-jovyan@jupyter-phadmin:~/phfs/mlflow$ PYTHONPATH=/phfs/mlflow-library/ python examples/sklearn_elasticnet_wine/train.py
+jovyan@jupyter-phadmin:~/mlflow$ PYTHONPATH=/phfs/mlflow-library/ python examples/sklearn_elasticnet_wine/train.py
 Elasticnet model (alpha=0.500000, l1_ratio=0.500000):
   RMSE: 0.7931640229276851
   MAE: 0.6271946374319586
@@ -67,21 +67,22 @@ In some cases, a library works with its native library. It should configure depe
 * install the python package
 
 
-Following the build steps, we could build the `libwarpctc.so` first and copy it to `/phfs/warpctc/warpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
+Following the build steps, we could build the `libwarpctc.so` first and copy it to `/phfs/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
 
 ```bash
-WARP_CTC_PATH=/phfs/warpctc python setup.py install --prefix=/phfs/warpctc
+cd pytorch_binding
+WARP_CTC_PATH=/phfs/warp-ctc python setup.py install --prefix=/phfs/warp-ctc
 ```
 
 In the build log, it told the installed path, we will use it at `PYTHONPATH`
 
 ```bash
-Installed /phfs/warpctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg
+Installed /phfs/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg
 ```
 
 ```bash
-LD_LIBRARY_PATH=/phfs/warpctc \
-PYTHONPATH=/phfs/warpctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg \
+LD_LIBRARY_PATH=/phfs/warp-ctc \
+PYTHONPATH=/phfs/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg \
 python [your-application.py]
 ```
 
