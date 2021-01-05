@@ -13,7 +13,7 @@ title: Customize job runtime
 </div>
 
 
-Primehub users devlop their programs in the Jupyter Notebook evnironment. In the notebook, it is easy to install 3rd-party library to users' home volume. However, any program runs in the job runtime environment, the user volume is not available by design. It could be customized the job runtime environment, if any runtime dependencies installed in the PrimeHub Store (i.e. the `/phfs` directory).
+Primehub users devlop their programs in the Jupyter Notebook evnironment. In the notebook, it is easy to install 3rd-party library to users' home volume. However, any program runs in the job runtime environment, the user volume is not available by design. It could be customized the job runtime environment, if any runtime dependencies installed in the [Group Volume](../quickstart/nb-data-store#group-volume).
 
 We will discuss two examples in this how-to document:
 
@@ -37,16 +37,16 @@ If the list didn't cover your language runtime, please look up its official docu
 
 ## PIP
 
-For python application, using `pip` package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by `--target`. For example, a user want to run jobs with `mlflow`, install libraries into `/phfs/mlflow-library` by `--target` option 
+For python application, using `pip` package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by `--target`. For example, a user want to run jobs with `mlflow`, install libraries into `/group-volume/mlflow-library` by `--target` option
 
 ```bash
-pip install --target /phfs/mlflow-library mlflow sklearn
+pip install --target /group-volume/mlflow-library mlflow sklearn
 ```
 
 Add python package path at the runtime by `PYTHONPATH` variables
 
 ```bash
-jovyan@jupyter-phadmin:~/mlflow$ PYTHONPATH=/phfs/mlflow-library/ python examples/sklearn_elasticnet_wine/train.py
+jovyan@jupyter-phadmin:~/mlflow$ PYTHONPATH=/group-volume/mlflow-library/ python examples/sklearn_elasticnet_wine/train.py
 Elasticnet model (alpha=0.500000, l1_ratio=0.500000):
   RMSE: 0.7931640229276851
   MAE: 0.6271946374319586
@@ -56,7 +56,7 @@ Elasticnet model (alpha=0.500000, l1_ratio=0.500000):
 In job command lines, we will use this form to setup extra dependency:
 
 ```python
-PYTHONPATH=/phfs/mlflow-library/ python [your-application.py]
+PYTHONPATH=/group-volume/mlflow-library/ python [your-application.py]
 ```
 
 ## Run with other native library
@@ -67,22 +67,22 @@ In some cases, a library works with its native library. It should configure depe
 * install the python package
 
 
-Following the build steps, we could build the `libwarpctc.so` first and copy it to `/phfs/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
+Following the build steps, we could build the `libwarpctc.so` first and copy it to `/group-volume/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
 
 ```bash
 cd pytorch_binding
-WARP_CTC_PATH=/phfs/warp-ctc python setup.py install --prefix=/phfs/warp-ctc
+WARP_CTC_PATH=/group-volume/warp-ctc python setup.py install --prefix=/group-volume/warp-ctc
 ```
 
 In the build log, it told the installed path, we will use it at `PYTHONPATH`
 
 ```bash
-Installed /phfs/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg
+Installed /group-volume/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg
 ```
 
 ```bash
-LD_LIBRARY_PATH=/phfs/warp-ctc \
-PYTHONPATH=/phfs/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg \
+LD_LIBRARY_PATH=/group-volume/warp-ctc \
+PYTHONPATH=/group-volume/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg \
 python [your-application.py]
 ```
 
