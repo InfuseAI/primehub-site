@@ -252,7 +252,8 @@
         "label": "Jupyter Images",
         "ids": [
           "tasks/repo2docker",
-          "tasks/non-standard-image"
+          "tasks/non-standard-image",
+          "tasks/customize-job-runtime"
         ]
       },
       {
