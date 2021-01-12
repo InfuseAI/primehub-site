@@ -34,6 +34,8 @@ PrimeHub 提供使用者幾個從 Notebook 可以存取儲存資料的空間，�
 
 >PHFS 目前只支援序列性寫檔；在此限制下，直接寫入 `HDF5` 格式的檔案進 PHFS 會造成寫入錯誤 `Problems closing file (file write failed: ...)`，主因為 `HDF5` 寫檔同時使用 *seek*。
 
+>因為上述的限制，使用者無法從 Notebook/Jupyterlab 上傳**大於 1MB** 的檔案至 PHFS；會出現錯誤且上傳的檔案只有 1MB。
+
 >此情況下，我們建議直接寫入 `HDF5`檔至使用者家目錄，再複製到 PHFS 做為模型部署準備，*避免直接寫入 PHFS*。
 
 除此之外，PrimeHub 功能也會利用到此空間儲放功能相關資料，如：同群組 Job 存放產出的 artifacts 於 `/phfs/jobArtifacts/`；也因為此空間先天的限制，我們不建議存放需求 IO 效能資料集於此，建議放置在專屬資料集空間 Dataset Volume。 PrimeHub 持續會開發提供更多利用存取 PHFS 的功能。

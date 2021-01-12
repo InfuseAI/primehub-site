@@ -34,6 +34,8 @@ In Notebook, the dataset folders are under `datasets/<dataset_name>`. Please con
 
 >PHFS, currently, supports *writing files sequentially only*; within this limitation, writing model files in `HDF5` format directly into PHFS will cause the error, `Problems closing file (file write failed: ...)` since `HDF5` uses *seek* while writing.
 
+>Because the limitation above, users **cannot** upload a file whose size is **> 1MB** to PHFS from Notebook/JubpyerLab; there will be error occurred and the uploaded file size is only 1MB, not intact.
+
 >In this case, we suggest this step: *writing HDF5 files into user home directory directly* rather than PHFS, then copying files to PHFS for the preparation of model deployments.
 
 In addition, PrimeHub features also store relative group-context data in the storage, such as Job stores artifacts under `/phfs/jobArtifacts/`. Since the limitation of the storage, we don't recommend storing performance-sensitive data such as datasets, please use Dataset Volume instead.
