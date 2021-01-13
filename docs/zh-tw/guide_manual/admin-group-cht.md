@@ -32,7 +32,7 @@ description: Group Management
 
 ### Model Deployment
 
-`Model Deployment` 此功能為 Beta 階段，需要將 [feature flag](../references/feature-flag) 設為`True`，才能體驗；開啟後， Groups 可以使用[佈署模型](../model-deployment-feature)功能來提供服務。
+`Model Deployment` 此功能為 Beta 階段，需要將 feature flag 設為`True`，才能體驗；開啟後， Groups 可以使用[佈署模型](../model-deployment-feature)功能來提供服務。
 
 ### Shared Volume
 
@@ -80,7 +80,7 @@ Job 預設逾時期限，此設定套用至同群組遞出的所有 Job；系統
 
 同時，可以指定成員為此群組的 Group Admin；一個群組可以指定多個 Group Admin。
 
->**Group Admin** 成員，在 User Portal 可以使用 Group Admin 專用的功能，針對其群組進行管理。如： Image。
+>**Group Admin** 成員，在 User Portal 可以使用 Group Admin 專用的功能，針對其群組進行管理。如： [Image](../../zh-tw/group-image-cht)。
 
 
 ---

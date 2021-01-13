@@ -11,6 +11,10 @@ title: PrimeHub v3.3
 
 In addition, there are two portals now, one is **User Portal** which provides general user-facing features, the other is **Admin Portal** which provides adminstration features.
 
+## PrimeHub v3.3+
+
+**Group Admin**： v3.3+ onwards, PrimeHub adds this role in a group. PrimeHub Admin is able to [assign group members Group Admin](guide_manual/admin-group#members); Group Admin is able to utilize dedicated new features from User Portal such as [Images](group-image).
+
 ---
 
 ## Installation
@@ -35,6 +39,10 @@ Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub 
 
 + [Deploy Models and serve models](model-deployment-feature)
 
++ [Add group-specific images](group-image) `New`
+
++ [Upload and share files within a group](shared-files) `New`
+
 + [Notebook extension and submit notebooks as jobs](ph-notebook-extension)
 
 + [Store user data](quickstart/nb-data-store)
@@ -50,6 +58,8 @@ Getting Started from [Provision of Kubernetes cluster, Installation of PrimeHub 
 + [Manage PrimeHub system and check the license](guide_manual/admin-system)
 
 + [Manage users and groups](guide_manual/admin-user)
+
++ [Assign group admin](guide_manual/admin-group#members) `New`
 
 + [Manage instance types, images, dataset resources](guide_manual/admin-instancetype)
 

@@ -21,7 +21,7 @@ Click Login with your own username (such as `phadmin` by default) and password.
 
 ## User Portal
 
-![](assets/v32-landing-user.png)
+![](assets/v33-landing-user.png)
 
 On Portal, the left side is **side menu**, the right side is the **context of the current working group**. At the top of the right side, there is a `Group:` dropdown for working groups switch. Users can switch the working group among joining groups easily.
 
@@ -40,6 +40,10 @@ At side menu, there are
 + **Schedule** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
 
 + **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
+
++ **Images** where Group Admin can add group-specific images for the managed group. See [Images](../group-image). (Group Admin Only)
+
++ **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
 
 >If users don't belong to any group, the page shows `No group available`. Please contact administrators.
 

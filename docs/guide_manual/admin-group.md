@@ -35,7 +35,7 @@ You need to fill in the fields in the above picture:
 
 ### Model Deployment
 
-This feature is hidden until the [feature flag](../references/feature-flag) is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+This feature is hidden until the feature flag is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
 
 ### Shared Volume
 
@@ -83,7 +83,7 @@ The list shows all of users of this group. Click `edit users` to add/remove user
 
 Also, multiple members are able to be assigned **Group Admin** for a group.
 
->**Group Admin** have the privilege *to access features dedicated to them on User Portal*, such as `Image`.
+>**Group Admin** have the privilege *to access features dedicated to them on User Portal*, such as [Image](../group-image).
 
 
 ---

@@ -8,13 +8,25 @@ title: 3.3 Release Candidate Note
 
 ### Group Admin
 
-Group members who are assigned Group Admin can access specific features on User Portal. Such as **Image**.
+Group members who are assigned Group Admin to a group can access dedicated features from User Portal. Such as **Image**.
 
 + [Document](guide_manual/admin-group#members)
 
+### Images
+
+Group Admin can add group-specific images for the managed group. 
+
++ [Document](group-image)
+
+### Shared Files
+
+Users can upload files to PHFS storage to share with group members. 
+
++ [Document](shared-files)
+
 ### Models (Beta)
 
-In Beta, there are two ways for the model deployment.
+Move Models from alpha to Beta, in beta we introduce two ways for the model deployment.
 
 + To deploy a *ready-to-serve packaged model image* which is [packaged by user already](model-deployment-language-wrapper-intro) directly using **Model Image** field only.
 

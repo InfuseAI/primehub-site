@@ -110,6 +110,12 @@
         ]
       }
     ],
+    "Images": [
+      "group-image"
+    ],
+    "Shared Files": [
+      "shared-files"
+    ],
     "Data Store": [
       "quickstart/nb-data-store"
     ],
@@ -385,6 +391,12 @@
           "zh-tw/model-deployment-model-uri-cht"
         ]
       }
+    ],
+    "Images": [
+      "zh-tw/group-image-cht"
+    ],
+    "Shared Files": [
+      "zh-tw/shared-files-cht"
     ],
     "Data Store": [
       "zh-tw/quickstart/nb-data-store-cht"

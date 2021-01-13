@@ -16,6 +16,10 @@ title: PrimeHub v3.3
 
 **PrimeHub v3** 進一步在使用者體驗及介面有著重大的改進；其中以「專案群組先決」的概念上，我們重新設計了 User Portal 的使用者體驗；有別於過往 PrimeHub v2 進入各功能頁後，每次操作都需要另外選擇針對的群組。「專案群組先決」的設計下，使用者先指定目前工作中的專案群組，之後所有的資訊及操作都是自動地限於此專案群組的範籌下，不需每一動都再額外指定，如此讓使用者可以更直覺以專案群組的角度來操作。如果您本是 PrimeHub v2.x 使用者，請先參考[專案群組先決](index-zh#專案群組先決)帶來的改變。
 
+## PrimeHub v3.3+
+
+**群組管理者 (Group Admin)**：以往只有使用者及系統管理者兩個層級，自 v3.3+ 起新增此層級。系統管理者可由 [Group 指定成員為特定群組管理者](zh-tw/guide_manual/admin-group-cht#members)；群組管理者可以自 User Portal 使用此層級的功能如： [Images](zh-tw/group-image-cht)。
+
 ---
 
 ## 架設安裝
@@ -52,6 +56,10 @@ title: PrimeHub v3.3
 
 + [模型部署 (Beta)](zh-tw/model-deployment-feature)
 
++ [群組限定映像檔](zh-tw/group-image-cht) `New`
+
++ [上傳群組限定共享檔案](zh-tw/shared-files-cht) `New`
+
 + [Notebook Extension 及 將 Notebook 遞交至 Job](zh-tw/ph-notebook-extension-cht)
 
 + [使用者資料儲存](zh-tw/quickstart/nb-data-store-cht)
@@ -80,7 +88,9 @@ title: PrimeHub v3.3
 
 + [進入 Admin Portal](zh-tw/quickstart/login-portal-admin)
 
-+ [管理使用者及群組](zh-tw/guide_manual/admin-user-cht)
++ [管理使用者、群組](zh-tw/guide_manual/admin-user-cht)
+
++ [指定群組管理者](zh-tw/guide_manual/admin-group-cht#members) `New`
 
 + [管理 Instance types/映像檔/資料集](zh-tw/guide_manual/admin-instancetype-cht)
 
@@ -122,7 +132,6 @@ title: PrimeHub v3.3
 ### Reference
 
 + [PrimeHub Chart Configuration](references/primehub_chart)
-+ [Feature Flags](references/feature-flag)
 + [Features Comparison](comparison)
 
 ### Trouble Shooting
