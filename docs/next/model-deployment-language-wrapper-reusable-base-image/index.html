@@ -171,7 +171,7 @@
 cd primehub-seldon-servers
 </code></pre>
 <p>Then, create a Dockerfile, in which we copy the model files into the <code>/mnt/models</code> and tell the pre-packaged server to use this path as <code>model_uri</code></p>
-<pre><code class="hljs">FROM infuseai/tensorflow2-prepackaged_rest<span class="hljs-function">:v0.4.2</span>
+<pre><code class="hljs">FROM infuseai/tensorflow2-prepackaged_rest<span class="hljs-function">:v0.4.3</span>
 COPY tensorflow2/example_model/mnist <span class="hljs-string">/mnt/models</span>
 ENV PREDICTIVE_UNIT_PARAMETERS='[{<span class="hljs-string">"name"</span>:<span class="hljs-string">"model_uri"</span>,<span class="hljs-string">"value"</span>:<span class="hljs-string">"/mnt/models"</span>,<span class="hljs-string">"type"</span>:<span class="hljs-string">"STRING"</span>}]'
 </code></pre>
