@@ -1,38 +1,39 @@
 ---
-id: model-deployment-language-wrapper-reusable-base-image
-title: Package a Model Image from a Reusable Base Image
-description: Package a Model Image from a Reusable Base Image
+id: model-deployment-language-wrapper-reusable-base-image-cht
+title: 透過預建置 Base Image 加速流程
+description: 透過預建置 Base Image 加速流程
 ---
 
 <div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-## Overview
+此教學介紹如何建置一個 Base Image 並基於此映像檔來建立模型映像檔。這樣的方式有下列好處：
 
-This document shows the best practice to reuse a base image and build the model image on top of the base image. Using the base image has some benefits:
+1. 如果程式中載入和使用模型的方式是一樣的，不同的模型可以共用相同的 Base Image
+2. 當只需要更新模型檔時，使用 Base Image 可以加速流程
 
-1. If the way you load and use models is the same, these models can share the same base image
-2. If you just want to update the model file, a base image can speed up the building process
+概念上是當寫模型服務的程式時，假設模型檔是放在固定的路徑，當模型檔準備好時，用 `docker build` 搭配 base image 來產生模型映像檔。
 
-The idea is that you write a general model serving code and assume the model file is placed under a certain path. As a model is ready, use `docker build` to generate the model image from the base image along with the model files.
+下列方式可以準備 base image
 
-To prepare the base image, there are two methods
+1. 利用 Language Wrapper 建立 Base image
+2. 利用 pre-packaged server 作為 Base Image
 
-1. Build the base image by Language Wrapper
-1. Use pre-packaged server as Base Image
+## 利用 Language Wrapper 建立 Base image
 
-## Build the Base Image by Language Wrapper
-Here, we use Tensorflow 2 as a simple showcase. The code is under [Github](https://github.com/InfuseAI/model-deployment-examples/tree/master/tensorflow2_prepackage).
+此範例採用 Tensorflow 2 ； 範例程式 [Github](https://github.com/InfuseAI/model-deployment-examples/tree/master/tensorflow2_prepackage)。
 
 ### Build the Base Image
 
-Install S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation). Check everything is ready to go by running:
+安裝 S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation). 安裝後，執行指令確認安裝成功。
+
 ```bash
 s2i usage seldonio/seldon-core-s2i-python3:0.18
 ```
 
-Write a general model serving code `Model.py`. Please use Python 3.6 (Recommended)
+準備通用的模型服務程式檔 `Model.py`； Python 3.6 (建議)
+
 ```python
 import tensorflow as tf
 
@@ -45,12 +46,14 @@ class Model:
         return output
 ```
 
-Create a `requirements.txt` file and write down all required packages
+建立 `requirements.txt` 檔並寫入必要的套件名稱
+
 ```txt
 tensorflow==2.1.0
 ```
 
-Create a `.s2i` folder and create a `.s2i/environment` file with the following content:
+建立 `.s2i` 目錄並建立 `.s2i/environment` 檔，其內容為
+
 ```script
 MODEL_NAME=Model
 API_TYPE=REST
@@ -58,53 +61,63 @@ SERVICE_TYPE=MODEL
 PERSISTENCE=0
 ```
 
-Build the base image by:
+建立 base image:
+
 ```bash
  s2i build . seldonio/seldon-core-s2i-python3:0.18 tensorflow2-prepackage
 ```
-(Using `seldonio/seldon-core-s2i-python3` instead if using Python 3 rather than Python 3.6)
 
-### Build the Model Image
+>(若用 Python 3 而非 Python 3.6，改用 `seldonio/seldon-core-s2i-python3` 取代)
 
-Based on our previous base image, whenever you have a model outputted by:
+### 建立模型映像檔
+
+當模型檔產出:
+
 ```python
 model.save(export_path)
 ```
-You can use this base image to build your model deployment image.
 
-First, create a `Dockerfile`:
+基於 base image 我們可以生成模型映像檔。
+
+首先建立 `Dockerfile`:
+
 ```txt
 FROM tensorflow2-prepackage
 COPY export_path model
 ```
-(Please replace the `export_path` to your path)
 
-This means you copy your model files into the path that you pre-defined in the base image code.
+>(置換 `export_path` 為實際路徑)
 
-Then, you can build the model deployment image by:
+上述指複製模型檔到 base image 內指定的路徑
+
+然後，建立模型映像檔
+
 ```bash
 docker build -t tensorflow2-prepackage-model .
 ```
 
-### Verify the Model Image
+### 驗證模型映像檔
 
-To verify the image, you can run it:
+執行驗證指令
+
 ```bash
 docker run -p 5000:5000 --rm tensorflow2-prepackage-model
 ```
 
-And send a post request by the following format:
+送出 post 請求
+
 ```bash
 curl -X POST localhost:5000/api/v1.0/predictions \
     -H 'Content-Type: application/json' \
     -d '{ "data": {"ndarray": [${INPUT_DATA}] } }'
 ```
 
-The `${INPUT_DATA}` is the data that you can feed into the deployed model for prediction.
+`${INPUT_DATA}` 為帶入請求的資料送至模型服務取得預測結果。
 
->The **dimension** of input data must be the same as the model's input shape.
+>帶入資料的 **dimension** 須與模型程式的 shape 相同。
 
-For example, if we create our model with a specified `input_shape=(4,)` by the following definition:
+例如1：建立模型並指定 `input_shape=(4,)` 如定義
+
 ```python
 model = tf.keras.models.Sequential([
     keras.layers.Dense(64, activation='relu', input_shape=(4,)),
@@ -113,14 +126,16 @@ model = tf.keras.models.Sequential([
 ])
 ```
 
-Then, we can send a post request that ${INPUT_DATA} with shape 4.
+然後送出 post 請求帶入的 `${INPUT_DATA}` 為 shape 4。
+
 ```bash
 curl -X POST localhost:5000/api/v1.0/predictions \
     -H 'Content-Type: application/json' \
     -d '{ "data": {"ndarray": [[5.1, 3.3, 1.7, 0.5]] } }'
 ```
 
-Or if we create our model with a specified `input_shape=(2,2)` by the following definition:
+例如2：建立模型並指定  `input_shape=(2,2)` 如定義
+
 ```python
 model = tf.keras.models.Sequential([
     keras.layers.Dense(64, activation='relu', input_shape=(2,2)),
@@ -129,70 +144,78 @@ model = tf.keras.models.Sequential([
 ])
 ```
 
-Then, we can also send a post request that ${INPUT_DATA} with shape (2,2).
+然後送出 post 請求帶入的 `${INPUT_DATA}` 為 shape (2,2)
+
 ```bash
 curl -X POST localhost:5000/api/v1.0/predictions \
     -H 'Content-Type: application/json' \
     -d '{ "data": {"ndarray": [[[5.1, 3.3], [1.7, 0.5]]] } }'
 ```
 
-After sending the post request, we can obtain the response output in the following format:
+post 請求送出後，獲得的回應格式如下
+
 ```bash
 {"data":{"names":[],"ndarray":[${PREDICTION_RESULT}]},"meta":{}}
 ```
-The `${PREDICTION_RESULT}` is a list to represent the prediction value.
 
-For example, the following output shows three prediction values in each class.
+>`${PREDICTION_RESULT}` 為一個 list 存有 prediction value
+
+例如，下列輸出結果顯示每個 class 三個 prediction values
+
 ```bash
 {"data":{"names":[],"ndarray":[[3.093,-0.519,-8.918]]},"meta":{}}
 ```
 
-After verifying your model deployment image, now you can use this image in the PrimeHub model deployment feature.
+驗證過的模型映像檔就可以透過 PrimeHub model deployment 來部署
 
-## Use Pre-packaged Server as Base Image
+## 利用 pre-packaged server 作為 Base Image
 
-Here, we use the [tensorflow2 pre-packaged server](model-deployment-prepackaged-server-tensorflow2.md) as an example.
+範例採用 [tensorflow2 pre-packaged server](model-deployment-prepackaged-server-tensorflow2-cht.md)。
 
 ### Build the Model Image
 
-First, prepare the model files. We can use the example model in github. The model files can be found in `tensorflow2/example_model/mnist`
+首先準備模型檔。 採用 github 裡的模型檔，其位於 `tensorflow2/example_model/mnist`
+
 ```
 git clone git@github.com:InfuseAI/primehub-seldon-servers.git
 cd primehub-seldon-servers
 ```
 
-Then, create a Dockerfile, in which we copy the model files into the `/mnt/models` and tell the pre-packaged server to use this path as `model_uri`
+建立 Dockerfile 指示複製模型檔至 `/mnt/models` 並指定 pre-packaged server 用此路徑作為 `model_uri`
+
 ```
 FROM infuseai/tensorflow2-prepackaged_rest:v0.4.3
 COPY tensorflow2/example_model/mnist /mnt/models
 ENV PREDICTIVE_UNIT_PARAMETERS='[{"name":"model_uri","value":"/mnt/models","type":"STRING"}]'
 ```
 
-Build the image from the Dockerfile
+利用 Dockerfile 建立 image
+
 ```
 docker build -t tensorflow2-prepackage-model .
 ```
 
-### Verify the Model Image
-Run the model server
+### 驗證模型映像檔
+
+啟動 model server
 ```
 docker run -p 5000:5000 --rm tensorflow2-prepackage-model
 ```
 
-Verify the model server
+驗證 model server
 ```
 curl -X POST http://localhost:5000/api/v1.0/predictions \
     -H 'Content-Type: application/json' \
     -d '{ "data": {"ndarray": [[[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.32941176470588235, 0.7254901960784313, 0.6235294117647059, 0.592156862745098, 0.23529411764705882, 0.1411764705882353, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8705882352941177, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9450980392156862, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.7764705882352941, 0.6666666666666666, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2627450980392157, 0.4470588235294118, 0.2823529411764706, 0.4470588235294118, 0.6392156862745098, 0.8901960784313725, 0.996078431372549, 0.8823529411764706, 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.9803921568627451, 0.8980392156862745, 0.996078431372549, 0.996078431372549, 0.5490196078431373, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06666666666666667, 0.25882352941176473, 0.054901960784313725, 0.2627450980392157, 0.2627450980392157, 0.2627450980392157, 0.23137254901960785, 0.08235294117647059, 0.9254901960784314, 0.996078431372549, 0.41568627450980394, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3254901960784314, 0.9921568627450981, 0.8196078431372549, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.08627450980392157, 0.9137254901960784, 1.0, 0.3254901960784314, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5058823529411764, 0.996078431372549, 0.9333333333333333, 0.17254901960784313, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23137254901960785, 0.9764705882352941, 0.996078431372549, 0.24313725490196078, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.7333333333333333, 0.0196078431372549, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03529411764705882, 0.803921568627451, 0.9725490196078431, 0.22745098039215686, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.49411764705882355, 0.996078431372549, 0.7137254901960784, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.29411764705882354, 0.984313725490196, 0.9411764705882353, 0.2235294117647059, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.07450980392156863, 0.8666666666666667, 0.996078431372549, 0.6509803921568628, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.011764705882352941, 0.796078431372549, 0.996078431372549, 0.8588235294117647, 0.13725490196078433, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.14901960784313725, 0.996078431372549, 0.996078431372549, 0.30196078431372547, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.12156862745098039, 0.8784313725490196, 0.996078431372549, 0.45098039215686275, 0.00392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5215686274509804, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23921568627450981, 0.9490196078431372, 0.996078431372549, 0.996078431372549, 0.20392156862745098, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.996078431372549, 0.8588235294117647, 0.1568627450980392, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4745098039215686, 0.996078431372549, 0.8117647058823529, 0.07058823529411765, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]]] } }'
 ```
 
-The response would be like
+回應類似如下
 ```
 {"data":{"names":[],"ndarray":[[2.2179543179845496e-07,1.2331367038598273e-08,2.5685820219223388e-05,0.0001267448824364692,3.67312957827437e-10,8.802280717645772e-07,1.7313700820253963e-11,0.9998445510864258,5.112406711305084e-07,1.4923076605555252e-06]]},"meta":{}}
 ```
 
-## Share Your Base Image
+## 分享 Base Image
 
-Share your base image by pushing it to a docker registry.
+上載 Base image 至 docker registry 來分享
 
-Therefore, others can re-use the model serving code again. They can share the same base image and build a model image by `docker`.
+如此其它使用者可以再利用 model serving 程式，並共享 base image， 透過 `docker`來建立模型映像檔。

@@ -15,7 +15,7 @@ description: Run Pre-packaged Server Locally
 設定 pre-packaged model server 映像檔及模型檔路徑的環境變數
 
 ```bash
-MODEL_IMAGE=infuseai/tensorflow2-prepackaged_rest:v0.4.2
+MODEL_IMAGE=infuseai/tensorflow2-prepackaged_rest:v0.4.3
 MODEL_URI=gs://primehub-models/tensorflow2/mnist
 ```
 

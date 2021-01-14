@@ -24,7 +24,9 @@ description: 透過 Pre-packaged Server 模型部署
 2. 在 [model deployment 主頁](model-deployment-feature#主頁) 點擊 `Create Deployment`。
 3. `Deployment name` 欄位中填入 `quickstart-iris`。
 
-   `Model Image` 欄位中填入 `seldonio/sklearnserver_rest:1.3.0`；此為 `scikit-learn` 用的 pre-packaged 基底映像檔，可以將 `scikit-learn` 模型檔服務化。
+   `Model Image` 欄位中填入 `SKLearn server`；此為 `scikit-learn` 用的 pre-packaged 基底映像檔，可以將 `scikit-learn` 模型檔服務化。
+
+   ![](assets/mdeploy_create_model_image_suggestion.png)
 
    `Model URI` 欄位中填入 `gs://seldon-models/sklearn/iris`；此路徑指向存放在 Google Cloud Storage 已訓練的模型檔。
    ![](assets/mdeploy_quickstart_deploydetail_1.png)

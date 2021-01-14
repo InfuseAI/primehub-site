@@ -16,8 +16,8 @@ sidebar_label: TensorFlow2 server
 Property    | Description
 ------------|------
 Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.3`
-Input       | nparray
-Output      | nparray
+Input       | ndarray or image
+Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
 
 ### Model URI 檔案結構
@@ -82,6 +82,8 @@ Property    | Description
 Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.3`
 Model URI   | `gs://primehub-models/tensorflow2/mnist` (SavedModel)<br>or `gs://primehub-models/tensorflow2/mnist-h5` (HDF5)
 
+### ndarray
+
 **請求範例**
 
 ```bash
@@ -94,4 +96,18 @@ curl -X POST http://localhost:5000/api/v1.0/predictions \
 
 ```bash
 {"data":{"names":[],"ndarray":[[1.2198711374367122e-07,9.869326333955541e-08,3.0142302421154454e-05,0.0001249201741302386,3.9266562223971846e-10,8.974412253337505e-07,6.341080438510005e-11,0.9998371601104736,2.2463413529294485e-07,6.454149115597829e-06]]},"meta":{}}
+```
+
+### Image
+
+**請求範例**
+
+```bash
+curl -F 'binData=@test_image.jpg' http://localhost:5000/api/v1.0/predictions
+```
+
+**回應範例**
+
+```bash
+{"data":{"names":[],"tensor":{"shape":[1,10],"values":[1.4804563130965676e-09,1.0964972041449528e-08,2.2697020085615804e-06,1.4017033436175552e-06,2.7076431374783994e-11,3.51116113961325e-08,3.9478454685014375e-13,0.9999960660934448,3.186500396878955e-09,2.0099747644053423e-07]}},"meta":{}}
 ```

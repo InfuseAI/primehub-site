@@ -13,4 +13,4 @@ sidebar_label: Overview
 
 - [建置模型部署所需之映像檔 (Python)](model-deployment-tutorial-package-image)
 - [建置模型部署所需之映像檔 (R)](model-deployment-tutorial-package-image-r)
-- [透過預建置 Base Image 加速流程](model-deployment-tutorial-prepackage-image)
+- [透過預建置 Base Image 加速流程](mmodel-deployment-language-wrapper-reusable-base-image-cht)

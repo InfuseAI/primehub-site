@@ -12,7 +12,7 @@ Sometimes, we would like to test if the model is working in the pre-packaged mod
 
 Here, we use [tensorflow2 server](model-deployment-prepackaged-server-tensorflow2#example) as example
 ```bash
-MODEL_IMAGE=infuseai/tensorflow2-prepackaged_rest:v0.4.2
+MODEL_IMAGE=infuseai/tensorflow2-prepackaged_rest:v0.4.3
 MODEL_URI=gs://primehub-models/tensorflow2/mnist
 ```
 

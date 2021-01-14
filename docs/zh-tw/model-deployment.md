@@ -73,7 +73,13 @@ description: 模型部署 (Beta)
 
 + `Deployment ID`: 系統產生 ID。
 
-+ `Model Image`: 此欄位支援兩種映像檔，一種是 [已包裝模型檔的映像檔](../model-deployment-tutorial-model-image) 另一種是 [包裝用的映像檔](../model-deployment-tutorial-prepackaged-image) 搭配指定的模型檔 `Model URI`。
++ `Model Image`:
+  - 可以直接部署的映像檔 ([Tutorial: 透過 Language Wrapper 打包模型映像檔部署](model-deployment-tutorial-model-image-cht)).
+  
+  - 或是採用 pre-packaged model server 映像檔搭配 model file ([Tutorial: 透過 Pre-packaged Server 模型部署](model-deployment-tutorial-prepackaged-image-cht)[、Tutorial: 透過 Pre-packaged Server 模型部署 (PHFS)](model-deployment-tutorial-prepackaged-image-phfs-cht)).
+
+    選擇建議合適的 pre-packaged model server 映像檔；可以點擊連結查看相關教學。
+    ![](assets/mdeploy_create_model_image_suggestion.png) 
 
 + `Model URI`: [模型檔案路徑](../model-deployment-model-uri)。
 

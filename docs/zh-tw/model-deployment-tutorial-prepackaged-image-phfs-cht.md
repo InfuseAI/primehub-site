@@ -51,7 +51,9 @@ description: 透過 Pre-packaged Server 模型部署 (PHFS)
    
 7. `Deployment name` 欄位中填入 `quickstart-mnist`。
 
-  `Model Image` 欄位中填入`infuseai/tensorflow2-prepackaged_rest:v0.4.2`; 此為 `TensorFlow2` 模型用的 pre-packaged 基底映像，可以將 `TensorFlow2` 模型檔服務化。
+  `Model Image` 欄位中填入`TensorFlow2 server`; 此為 `TensorFlow 2` 模型用的 pre-packaged 基底映像，可以將 `TensorFlow2` 模型檔服務化。
+
+![](assets/mdeploy_create_model_image_suggestion.png)
 
   `Model URI` 欄位中填入 `phfs:///TF-MNIST-Model`；此路徑指向存放在 PHFS 空間下已訓練的模型檔。
 
