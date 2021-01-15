@@ -8,29 +8,31 @@ title: 3.3 Release Candidate Note
 
 ### Group Admin
 
-Group members who are assigned Group Admin to a group can access dedicated features from User Portal. Such as **Image**.
+We are introducing a new role: the Group Administrator! Group Admin has the privilege to access dedicated features from User Portal, such as Images.
 
 + [Document](guide_manual/admin-group#members)
 
 ### Images
 
-Group Admin can add group-specific images for the managed group. 
+The Group Admin has the ability to create, view, update, and delete images for a group.
 
 + [Document](group-image)
 
 ### Shared Files
 
-Users can upload files to PHFS storage to share with group members. 
+Upload your files to a shared space so that anyone from your group can use it. Stay tuned for our next release (3.4)—we plan to include a browser so that you can easily find the files you need within your group.
 
 + [Document](shared-files)
 
 ### Models (Beta)
 
-Move Models from alpha to Beta, in beta we introduce two ways for the model deployment.
+We wanted to simplify your experience in building and pushing models to fit in with your sleek workflow. Now, you can train and deploy a Tensorflow 2, PyTorch, SKLearn models in PrimeHub without even needing to build an image.
 
-+ To deploy a *ready-to-serve packaged model image* which is [packaged by user already](model-deployment-language-wrapper-intro) directly using **Model Image** field only.
+In beta we introduce two ways for the model deployment.
 
-+ To deploy a model file using the **Model URI** field **with** a [specified pre-packaged image](model-deployment-prepackaged-server-intro) using **Model Image** field, under the hood, the model file will be packaged into a image, then the image will be deployed automatically.
++ [Deploy a Model by Pre-packaged Server](model-deployment-tutorial-prepackaged-image)
+
++ [Deploy a Model by Image built from Language Wrapper](model-deployment-tutorial-model-image)
 
 + [Tutorials](model-deployment-tutorial-concepts)
 
@@ -39,11 +41,6 @@ Move Models from alpha to Beta, in beta we introduce two ways for the model depl
 Notebooks, sometimes, are failed to spawn or run into troubles because user programs/environments. Now users are able to investigate failures and shoot troubles from logs of **Notebook Logs**.
 
 + [Document](quickstart/launch-project#notebook-logs)
-
-
-### Shared Space: Upload
-
-Allow uploading to groups' phfs folder space directly from UI
 
 ## 🚀 Improvements
 
@@ -57,5 +54,3 @@ Allow uploading to groups' phfs folder space directly from UI
 + [PrimeHub CE v3.3 (Community Edition) Release](https://github.com/InfuseAI/primehub/releases)
 
 + [InfuseAI x Youtube](https://www.youtube.com/channel/UCbbRUfqKPWfZxZY62Pian-g)
-
-+ [JupyterLab extension for PrimeHub](https://github.com/InfuseAI/primehub-job/tree/master/jupyterlab_primehub)

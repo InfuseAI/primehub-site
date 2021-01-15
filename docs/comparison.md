@@ -33,6 +33,8 @@ Here we list the features comparison between tiers for the reference.
 | [Jobs](job-submission-feature) |  | ✅️ |
 | [Schedule](job-scheduling-feature) |  | ✅️ |
 | [Models](model-deployment-feature) |  | ✅️ |
+| [Images](group-image) | ✅️ | ✅️ |
+| [Shared Files](shared-files) | ✅️ | ✅️ |
 
 ## Connectivity
 
