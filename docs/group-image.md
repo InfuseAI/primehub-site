@@ -40,7 +40,7 @@ Fill in fields:
 
 + `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
 
-+ `Container image url`: Fill in the Image's url.
++ `Container image url`: Fill in the Image's url. See [Reference](#reference).
 
 + `Image Pull Secret` Enable and select the secret if a pull-secret is required.
 
@@ -69,3 +69,7 @@ Click Pen-icon for the editing.
 
 Click Trash-can-icon for the deletion.
   
+
+## Reference
+
++ [Available images provided by InfuseAI](guide_manual/images-list)

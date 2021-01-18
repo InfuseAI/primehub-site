@@ -30,7 +30,7 @@ sidebar_label: Images
 
 + `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
 
-+ `Container image url`: 填入該 Image 的連結位置。
++ `Container image url`: 填入該 Image Url 的位置。[參考](#reference)
 
 + `Image Pull Secret` 勾選是否需要指定 pull-secret ，並從選單指定該 secret。
 
@@ -57,3 +57,8 @@ Click `Create` to complete the addition.
 ![](assets/actions.png)
 
 點擊「垃圾桶」圖示來刪除。
+
+
+## Reference
+
++ [Available images provided by InfuseAI](guide_manual/images-list)
