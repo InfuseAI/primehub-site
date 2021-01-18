@@ -201,6 +201,7 @@
           "quickstart/login-portal-admin",
           "quickstart/create-user",
           "quickstart/create-group",
+          "quickstart/assign-group-admin",
           "quickstart/add-instance-type",
           "quickstart/add-infuseai-image",
           "quickstart/add-image",
@@ -479,6 +480,7 @@
         "ids": [
           "zh-tw/quickstart/create-user",
           "zh-tw/quickstart/create-group",
+          "zh-tw/quickstart/assign-group-admin-cht",
           "zh-tw/quickstart/add-instance-type",
           "zh-tw/quickstart/add-infuseai-image",
           "zh-tw/quickstart/add-image",
