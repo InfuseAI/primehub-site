@@ -19,7 +19,9 @@ sidebar_label: Notebook as a Job
 
 2. Launch Notebook instance from User Portal by using a base image from InfuseAI or a image built on top of a base image from InfuseAI.
 
-3. Enter the Group Volume of the current working group, open a empty notebook file.
+3. Enter the **Group Volume** directory of the current working group, open an empty notebook file there.
+    >If the notebook is not located in the group volume, you may see *"Now, we only support notebook under group volume. Please move your noteobook into your group volume.*" when submitting it.
+
 4. Add two cells.
    
    ```

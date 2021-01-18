@@ -19,6 +19,7 @@ sidebar_label: Notebook as a Job
 2. 起始 Notebook 環境。
 
 3. 從環境中進入工作群組的共享 Group Volume 資料夾中，新增空白 notebook 檔。
+   >如果開啟的 notebook 檔並非位在 group volume 目錄下，當遞交時將會看到訊息 *"Now, we only support notebook under group volume. Please move your noteobook into your group volume.*"。
 4. 新增兩個 cells，分別為：
    
    ```
