@@ -40,7 +40,7 @@ Fill in fields:
 
 + `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
 
-+ `Container image url`: Fill the Image's link location in it.
++ `Container image url`: Fill in the Image's url.
 
 + `Image Pull Secret` Enable and select the secret if a pull-secret is required.
 

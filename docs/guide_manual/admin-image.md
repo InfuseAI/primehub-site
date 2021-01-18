@@ -33,7 +33,7 @@ You need to fill in the fields in the above picture:
 
 + `Type`: `cpu`, `gpu` and `universal` Indicate what type of the image is.
 
-+ `Container image url` Fill the Image's link location in it.
++ `Container image url` Fill in the Image's url.
 
 + `Specific container image url for GPU` It appears when `universal` is selected. By default it uses the same url as container image url. Check off it if a specific url for GPU is desired.
 
