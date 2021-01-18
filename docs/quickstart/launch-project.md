@@ -49,7 +49,7 @@ Logs are retrieved from Jupyter Pod since Notebook spawning to Notebook end. The
 
 ![](assets/spawner_log.png)
 
->If there is no running notebook, it shows `Error: cannot get log due to pods "jupyter-xxxx" not found`.
+>Logs are shown when Notebook pod is being started or alive. If there is no running notebook, it shows `Error: cannot get log due to pods "jupyter-xxxx" not found`.
 
 ## Stop
 

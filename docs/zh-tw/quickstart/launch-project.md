@@ -47,7 +47,7 @@ Logs 自 Jupyter pod 接收來的，從 Notebook 一關始啟動到結束關閉�
 
 ![](assets/spawner_log.png)
 
->如果沒有正在啟動的 Notebook，畫面顯示預設訊息 `Error: cannot get log due to pods "jupyter-xxxx" not found`。
+>當 Notebook 正在啟動或是運行時，Logs 才有資訊顯示；如果沒有正在啟動的 Notebook，畫面顯示預設訊息 `Error: cannot get log due to pods "jupyter-xxxx" not found`。
 
 ## 關閉
 
