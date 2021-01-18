@@ -70,7 +70,10 @@
 <li><p>從外掛選擇 <strong>API Token</strong> 並填入使用者 Token。參照<a href="../tasks/api-token">產生使用者 Token</a>。</p>
 <p><img src="/docs/assets/ph-extension-token.png" alt=""></p></li>
 <li><p>起始 Notebook 環境。</p></li>
-<li><p>從環境中進入工作群組的共享 Group Volume 資料夾中，新增空白 notebook 檔。</p></li>
+<li><p>從環境中進入工作群組的共享 Group Volume 資料夾中，新增空白 notebook 檔。</p>
+<blockquote>
+<p>如果開啟的 notebook 檔並非位在 group volume 目錄下，當遞交時將會看到訊息 <em>&quot;Now, we only support notebook under group volume. Please move your noteobook into your group volume.</em>&quot;。</p>
+</blockquote></li>
 <li><p>新增兩個 cells，分別為：</p>
 <pre><code class="hljs">!pip <span class="hljs-keyword">install</span> camelcase
 </code></pre>
