@@ -39,7 +39,7 @@ In the Schedule list, there are some information of each Schedule:
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-![](assets/jscheduler_create_beta_v3.png)
+![](assets/jscheduler_create_beta_v33.png)
 
 Creating a Schedule is almost as same as creating a job, in addition to the settings of `InstanceTypes`, `Images`, `Command`, we can set extra `Recurrence Options` setting.
 

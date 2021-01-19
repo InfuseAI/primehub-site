@@ -53,7 +53,7 @@ There are several informative columns of the job list:
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-![](assets/jsub_create_v31.png)
+![](assets/jsub_create_v33.png)
 
 + `InstanceTypes`: Select a instance type which allocates resources for the job.
 

@@ -53,7 +53,7 @@ description: Job Submission
 
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-![](assets/jsub_create_v31.png)
+![](assets/jsub_create_v33.png)
 
 + `InstanceTypes`: 選擇`job`所需`instance type`資源佈屬。
 

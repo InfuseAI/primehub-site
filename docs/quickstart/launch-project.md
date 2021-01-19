@@ -17,7 +17,7 @@ description: Launch Notebook Environment
 
 ## Launch
 
-![](assets/spawner_v3.png)
+![](assets/spawner_v33.png)
 
 1. Log in `User Portal` with a user account, select `Notebooks` and click `Start My Server` to enter the spawner page.
 
@@ -28,6 +28,12 @@ description: Launch Notebook Environment
 4. Select an `Image` which the project is based on. It lists images only within the context of the group.
 
    Accordingly, images are selectable only if `Types` of which match the selected `Instance Type` that guarantees hub is spawned with the proper image.
+
+   #### Group/System Image
+
+    From image selection, `i` hint indicates an image `Group` image or `System` image.
+
+    ![](assets/group-image-hint.png)
 
 5. Enabled [Advanced Settings](../user-advanced-setting) if required. Click `Start Notebook`. Your Server environment would be instantiated. Once the Notebook is spawned, it will pop up a new tab.
    

@@ -16,7 +16,7 @@ description: 啟始 Notebook
 
 ## 起始
 
-![](assets/spawner_v3.png)
+![](assets/spawner_v33.png)
 
 1. 用使用者帳號登入 `User Portal` 後，並選擇 `Notebooks` 及點擊 `Start My Server 進入 spawner 頁。
 2. 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
@@ -25,7 +25,13 @@ description: 啟始 Notebook
 
 4. 指定專案採用 `Image` 環境。
 
-   只有 Image 的 `Types`符合指定`Instance Type`才能被選擇，如此確保起始環境符合需求。 
+   只有 Image 的 `Types`符合指定`Instance Type`才能被選擇，如此確保起始環境符合需求。
+
+   #### Group/System Image
+
+    當在選擇映像檔的場合時，`i` 提示該映像檔從屬於 `Group` 或 `System`。
+
+    ![](assets/group-image-hint.png)
 
 5. 點擊`Start Notebook` 進行環境初始化；完成後，瀏灠器會以新頁面自動開啟 Notebook。
 

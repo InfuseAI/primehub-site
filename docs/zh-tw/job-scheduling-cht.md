@@ -39,7 +39,7 @@ PrimeHub 提供 Job Submission 功能讓我們可以把耗時的任務交付到�
 
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-![](assets/jscheduler_create_beta_v3.png)
+![](assets/jscheduler_create_beta_v33.png)
 
 創建 Schedule 跟創建 Job 幾乎一樣，我們需先設定 `InstanceTypes`, `Images`, `Command`；差別在於我們可以設定其發動 Job 的週期性`Recurrence Options`。
 
