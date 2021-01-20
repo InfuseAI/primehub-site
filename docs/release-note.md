@@ -18,9 +18,9 @@ The Group Admin has the ability to create, view, update, and delete images for a
 
 + [Document](group-image)
 
-### Shared Files
+### Shared Files: Upload
 
-Upload your files to a shared space so that anyone from your group can use it. Stay tuned for our next release (3.4)—we plan to include a browser so that you can easily find the files you need within your group.
+Upload your files to your group's shared space in the Shared Files tab so that anyone from your group can use it. Stay tuned for our next release (3.4)—we plan to include a browser so that you can easily find the files you need within your group. 
 
 + [Document](shared-files)
 
@@ -42,15 +42,24 @@ Notebooks, sometimes, are failed to spawn or run into troubles because user prog
 
 + [Document](quickstart/launch-project#notebook-logs)
 
+
 ## 🚀 Improvements
 
 ## 🧰 Bug Fixes
 
+
+## 💫 One More Thing
+
+### NVIDIA DXG A100 Support Verified
+
+NVIDIA has released A100 Tensor Core GPU with latest [MIG technology](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/). A100 supported by PrimeHub has been verified and confirmed.
   
 ---
 
 ## 🎪 In the Community
 
 + [PrimeHub CE v3.3 (Community Edition) Release](https://github.com/InfuseAI/primehub/releases)
+
++ [MLOps Taiwan on Facebook](https://www.facebook.com/groups/mlopstw/)
 
 + [InfuseAI x Youtube](https://www.youtube.com/channel/UCbbRUfqKPWfZxZY62Pian-g)
