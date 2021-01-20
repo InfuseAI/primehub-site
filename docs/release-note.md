@@ -10,17 +10,23 @@ title: 3.3 Release Candidate Note
 
 We are introducing a new role: the Group Administrator! Group Admin has the privilege to access dedicated features from User Portal, such as Images.
 
+![](assets/group_admin.png)
+
 + [Document](guide_manual/admin-group#members)
 
 ### Images
 
 The Group Admin has the ability to create, view, update, and delete images for a group.
 
+![](assets/group-image-list.png)
+
 + [Document](group-image)
 
 ### Shared Files: Upload
 
 Upload your files to your group's shared space in the Shared Files tab so that anyone from your group can use it. Stay tuned for our next release (3.4)—we plan to include a browser so that you can easily find the files you need within your group. 
+
+![](assets/files-uploader.png)
 
 + [Document](shared-files)
 
