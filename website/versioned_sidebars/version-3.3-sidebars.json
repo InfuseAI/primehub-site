@@ -1,0 +1,540 @@
+{
+  "version-3.3-documentation": {
+    "Overview": [
+      "version-3.3-introduction"
+    ],
+    "Installation": [
+      "version-3.3-dev-introduction",
+      {
+        "type": "subcategory",
+        "label": "Setup Kubernetes",
+        "ids": [
+          "version-3.3-getting_started/prerequisites",
+          "version-3.3-getting_started/kubernetes_on_gke",
+          "version-3.3-getting_started/kubernetes_on_eks"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Setup PrimeHub Community",
+        "ids": [
+          "version-3.3-getting_started/install_primehub_ce",
+          "version-3.3-getting_started/kubernetes_on_ubuntu_ce"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Setup PrimeHub Enterprise",
+        "ids": [
+          "version-3.3-getting_started/install_primehub",
+          "version-3.3-getting_started/kubernetes_on_ubuntu_machine"
+        ]
+      }
+    ],
+    "User Portal": [
+      "version-3.3-getting-started-user",
+      "version-3.3-quickstart/login-portal-user"
+    ],
+    "Notebook": [
+      "version-3.3-quickstart/launch-project",
+      "version-3.3-user-advanced-setting",
+      "version-3.3-notebook-tips",
+      {
+        "type": "subcategory",
+        "label": "Notebook Extension",
+        "ids": [
+          "version-3.3-ph-notebook-extension",
+          "version-3.3-notebook-as-job"
+        ]
+      }
+    ],
+    "Job": [
+      "version-3.3-job-submission-feature",
+      "version-3.3-job-artifact-feature",
+      {
+        "type": "subcategory",
+        "label": "Tutorial",
+        "ids": [
+          "version-3.3-job-submission-tutorial-simple",
+          "version-3.3-job-submission-tutorial-p1",
+          "version-3.3-job-submission-tutorial-p2",
+          "version-3.3-job-submission-tutorial-p3",
+          "version-3.3-job-submission-tutorial-p4",
+          "version-3.3-job-artifacts-simple"
+        ]
+      }
+    ],
+    "Schedule": [
+      "version-3.3-job-scheduling-feature"
+    ],
+    "Model": [
+      "version-3.3-model-deployment-feature",
+      {
+        "type": "subcategory",
+        "label": "Tutorials",
+        "ids": [
+          "version-3.3-model-deployment-tutorial-concepts",
+          "version-3.3-model-deployment-tutorial-prepackaged-image",
+          "version-3.3-model-deployment-tutorial-prepackaged-image-phfs",
+          "version-3.3-model-deployment-tutorial-model-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Pre-packaged servers",
+        "ids": [
+          "version-3.3-model-deployment-prepackaged-server-intro",
+          "version-3.3-model-deployment-prepackaged-server-tensorflow2",
+          "version-3.3-model-deployment-prepackaged-server-pytorch",
+          "version-3.3-model-deployment-prepackaged-server-sklearn",
+          "version-3.3-model-deployment-prepackaged-server-custom",
+          "version-3.3-model-deployment-prepackaged-server-test"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Package from Language Wrapper",
+        "ids": [
+          "version-3.3-model-deployment-language-wrapper-intro",
+          "version-3.3-model-deployment-language-wrapper-python",
+          "version-3.3-model-deployment-language-wrapper-r",
+          "version-3.3-model-deployment-language-wrapper-reusable-base-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Advanced",
+        "ids": [
+          "version-3.3-model-deployment-prediction-apis",
+          "version-3.3-model-deployment-model-uri"
+        ]
+      }
+    ],
+    "Images": [
+      "version-3.3-group-image"
+    ],
+    "Shared Files": [
+      "version-3.3-shared-files"
+    ],
+    "Data Store": [
+      "version-3.3-quickstart/nb-data-store"
+    ],
+    "SSH Server": [
+      "version-3.3-guide_manual/ssh-config",
+      "version-3.3-guide_manual/ssh-vscode",
+      "version-3.3-guide_manual/ssh-keygen"
+    ],
+    "Admin Portal": [
+      "version-3.3-getting-started-admin",
+      {
+        "type": "subcategory",
+        "label": "Manage users and groups",
+        "ids": [
+          "version-3.3-guide_manual/admin-user",
+          "version-3.3-guide_manual/admin-group"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage Instance Type",
+        "ids": [
+          "version-3.3-guide_manual/admin-instancetype",
+          "version-3.3-guide_manual/usecase-toleration",
+          "version-3.3-guide_manual/usecase-nodeselector",
+          "version-3.3-guide_manual/admin-it-performance"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage and build images",
+        "ids": [
+          "version-3.3-guide_manual/admin-image",
+          "version-3.3-guide_manual/admin-build-image",
+          "version-3.3-guide_manual/custom-image-guideline",
+          "version-3.3-guide_manual/images-list"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage Datasets and Upload",
+        "ids": [
+          "version-3.3-guide_manual/admin-dataset",
+          "version-3.3-guide_manual/admin-uploader"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage and obtain secrets",
+        "ids": [
+          "version-3.3-guide_manual/admin-secret"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Monthly Report",
+        "ids": [
+          "version-3.3-guide_manual/admin-report"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "System",
+        "ids": [
+          "version-3.3-guide_manual/admin-system"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Maintenance tool kits",
+        "ids": [
+          "version-3.3-maintenance",
+          "version-3.3-quickstart/maintenance-resize-user-vol",
+          "version-3.3-quickstart/maintenance-resize-group-vol",
+          "version-3.3-trouble/howto-check-user-vol",
+          "version-3.3-trouble/howto-check-group-vol"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Quick Start",
+        "ids": [
+          "version-3.3-quickstart/login-portal-admin",
+          "version-3.3-quickstart/create-user",
+          "version-3.3-quickstart/create-group",
+          "version-3.3-quickstart/assign-group-admin",
+          "version-3.3-quickstart/add-instance-type",
+          "version-3.3-quickstart/add-infuseai-image",
+          "version-3.3-quickstart/add-image",
+          "version-3.3-quickstart/build-image",
+          "version-3.3-quickstart/secret-pull-image",
+          "version-3.3-quickstart/secret-gitsync"
+        ]
+      }
+    ],
+    "Designs and Concepts": [
+      {
+        "type": "subcategory",
+        "label": "Concepts",
+        "ids": [
+          "version-3.3-design/architecture",
+          "version-3.3-design/data-model",
+          "version-3.3-design/crds",
+          "version-3.3-design/graphql",
+          "version-3.3-design/persistence-storage"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Designs",
+        "ids": [
+          "version-3.3-design/admission",
+          "version-3.3-design/jupyterhub",
+          "version-3.3-design/notebook-kernel-process",
+          "version-3.3-design/dataset-upload",
+          "version-3.3-design/image-builder",
+          "version-3.3-design/job-submission",
+          "version-3.3-design/job-scheduler",
+          "version-3.3-design/job-monitoring",
+          "version-3.3-design/install-helper-design",
+          "version-3.3-design/user-portal",
+          "version-3.3-design/meta-chart",
+          "version-3.3-design/model-deployment",
+          "version-3.3-design/primehub-store",
+          "version-3.3-design/log-persistence",
+          "version-3.3-design/phfs",
+          "version-3.3-design/usage",
+          "version-3.3-design/job-artifact"
+        ]
+      }
+    ],
+    "Configuration": [
+      "version-3.3-getting_started/configure-primehub-store",
+      "version-3.3-getting_started/configure-ssh-server",
+      "version-3.3-getting_started/configure-job-submission",
+      "version-3.3-getting_started/configure-self-signed-ca"
+    ],
+    "Tasks": [
+      {
+        "type": "subcategory",
+        "label": "Jupyter Images",
+        "ids": [
+          "version-3.3-tasks/repo2docker",
+          "version-3.3-tasks/non-standard-image",
+          "version-3.3-tasks/customize-job-runtime"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "API",
+        "ids": [
+          "version-3.3-tasks/api-token"
+        ]
+      }
+    ],
+    "References": [
+      "version-3.3-references/primehub_chart",
+      "version-3.3-comparison",
+      "version-3.3-guide_manual/kubeflow-installation-guide"
+    ],
+    "Trouble Shooting": [
+      "version-3.3-trouble-shoot-guide",
+      {
+        "type": "subcategory",
+        "label": "JupyterHub",
+        "ids": [
+          "version-3.3-trouble/jh-blank-page",
+          "version-3.3-trouble/dataset-failure"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Keycloak",
+        "ids": [
+          "version-3.3-trouble/kc-brute-force-detection",
+          "version-3.3-trouble/kc-password-policy"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SSH Server",
+        "ids": [
+          "version-3.3-trouble/ssh-server-permission-denied",
+          "version-3.3-trouble/ssh-server-connection-refused"
+        ]
+      },
+      "version-3.3-trouble/kubelet-restart"
+    ]
+  },
+  "version-3.3-zh-tw": {
+    "繁中文件": [
+      "version-3.3-index-zh"
+    ],
+    "User Portal": [
+      "version-3.3-zh-tw/quickstart/login-portal-user"
+    ],
+    "Notebook": [
+      "version-3.3-zh-tw/quickstart/launch-project",
+      "version-3.3-zh-tw/user-advanced-setting",
+      "version-3.3-zh-tw/notebook-tips-cht",
+      {
+        "type": "subcategory",
+        "label": "Notebook Extension",
+        "ids": [
+          "version-3.3-zh-tw/ph-notebook-extension-cht",
+          "version-3.3-zh-tw/notebook-as-job-cht"
+        ]
+      }
+    ],
+    "Job": [
+      {
+        "type": "subcategory",
+        "label": "Submission",
+        "ids": [
+          "version-3.3-zh-tw/job-submission-cht",
+          "version-3.3-zh-tw/job-artifact-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "教學",
+        "ids": [
+          "version-3.3-zh-tw/job-submission-tutorial-simple",
+          "version-3.3-zh-tw/job-submission-tutorial-p1",
+          "version-3.3-zh-tw/job-submission-tutorial-p2",
+          "version-3.3-zh-tw/job-artifacts-simple-cht",
+          "version-3.3-zh-tw/job-tutorial-more"
+        ]
+      }
+    ],
+    "Schedule": [
+      "version-3.3-zh-tw/job-scheduling-feature-cht"
+    ],
+    "Model": [
+      "version-3.3-zh-tw/model-deployment-feature",
+      "version-3.3-zh-tw/model-overview",
+      {
+        "type": "subcategory",
+        "label": "Tutorials",
+        "ids": [
+          "version-3.3-zh-tw/model-deployment-tutorial-concepts-cht",
+          "version-3.3-zh-tw/model-deployment-tutorial-prepackaged-image-cht",
+          "version-3.3-zh-tw/model-deployment-tutorial-prepackaged-image-phfs-cht",
+          "version-3.3-zh-tw/model-deployment-tutorial-model-image-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Pre-packaged servers",
+        "ids": [
+          "version-3.3-zh-tw/model-deployment-prepackaged-server-intro-cht",
+          "version-3.3-zh-tw/model-deployment-prepackaged-server-tensorflow2-cht",
+          "version-3.3-zh-tw/model-deployment-prepackaged-server-pytorch-cht",
+          "version-3.3-zh-tw/model-deployment-prepackaged-server-sklearn-cht",
+          "version-3.3-zh-tw/model-deployment-prepackaged-server-custom-cht",
+          "version-3.3-zh-tw/model-deployment-prepackaged-server-test-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Package from Language Wrapper 教學 (Beta)",
+        "ids": [
+          "version-3.3-zh-tw/model-deployment-language-wrapper-intro-cht",
+          "version-3.3-zh-tw/model-deployment-tutorial-package-image",
+          "version-3.3-zh-tw/model-deployment-tutorial-package-image-r",
+          "version-3.3-zh-tw/model-deployment-language-wrapper-reusable-base-image-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Advanced",
+        "ids": [
+          "version-3.3-zh-tw/model-deployment-prediction-apis-cht",
+          "version-3.3-zh-tw/model-deployment-model-uri-cht"
+        ]
+      }
+    ],
+    "Images": [
+      "version-3.3-zh-tw/group-image-cht"
+    ],
+    "Shared Files": [
+      "version-3.3-zh-tw/shared-files-cht"
+    ],
+    "Data Store": [
+      "version-3.3-zh-tw/quickstart/nb-data-store-cht"
+    ],
+    "SSH Server": [
+      "version-3.3-zh-tw/guide_manual/ssh-config-cht",
+      "version-3.3-zh-tw/guide_manual/ssh-vscode-cht",
+      "version-3.3-zh-tw/guide_manual/ssh-keygen-cht"
+    ],
+    "Admin Portal": [
+      "version-3.3-zh-tw/quickstart/login-portal-admin",
+      {
+        "type": "subcategory",
+        "label": "使用者及群組管理",
+        "ids": [
+          "version-3.3-zh-tw/guide_manual/admin-user-cht",
+          "version-3.3-zh-tw/guide_manual/admin-group-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Instance Type 管理",
+        "ids": [
+          "version-3.3-zh-tw/guide_manual/admin-instancetype-cht",
+          "version-3.3-zh-tw/guide_manual/usecase-toleration-cht",
+          "version-3.3-zh-tw/guide_manual/usecase-nodeselector-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Image 創建及管理",
+        "ids": [
+          "version-3.3-zh-tw/guide_manual/admin-image-cht",
+          "version-3.3-zh-tw/guide_manual/admin-build-image-cht",
+          "version-3.3-zh-tw/guide_manual/custom-image-guideline",
+          "version-3.3-zh-tw/guide_manual/images-list"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Dataset 管理及上傳",
+        "ids": [
+          "version-3.3-zh-tw/guide_manual/admin-dataset-cht",
+          "version-3.3-zh-tw/guide_manual/admin-uploader-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Secret 管理及取得",
+        "ids": [
+          "version-3.3-zh-tw/guide_manual/admin-secret-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "使用量月報表",
+        "ids": [
+          "version-3.3-zh-tw/guide_manual/admin-report-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "系統",
+        "ids": [
+          "version-3.3-zh-tw/guide_manual/admin-system-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "維運工具",
+        "ids": [
+          "version-3.3-zh-tw/maintenance-cht",
+          "version-3.3-zh-tw/quickstart/maintenance-resize-user-vol",
+          "version-3.3-zh-tw/quickstart/maintenance-resize-group-vol"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "快速上手",
+        "ids": [
+          "version-3.3-zh-tw/quickstart/create-user",
+          "version-3.3-zh-tw/quickstart/create-group",
+          "version-3.3-zh-tw/quickstart/assign-group-admin-cht",
+          "version-3.3-zh-tw/quickstart/add-instance-type",
+          "version-3.3-zh-tw/quickstart/add-infuseai-image",
+          "version-3.3-zh-tw/quickstart/add-image",
+          "version-3.3-zh-tw/quickstart/build-image",
+          "version-3.3-zh-tw/quickstart/secret-pull-image",
+          "version-3.3-zh-tw/quickstart/secret-gitsync"
+        ]
+      }
+    ]
+  },
+  "version-3.3-primehub-deploy": {
+    "PrimeHub Deploy": [
+      "version-3.3-deploy-index",
+      {
+        "type": "subcategory",
+        "label": "Mode Deployment",
+        "ids": [
+          "version-3.3-model_deployment/md-deployment"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "version-3.3-model_deployment/md-admin-portal",
+          "version-3.3-model_deployment/md-system",
+          "version-3.3-model_deployment/md-user",
+          "version-3.3-model_deployment/md-group",
+          "version-3.3-model_deployment/md-instancetype",
+          "version-3.3-model_deployment/md-secret"
+        ]
+      }
+    ]
+  },
+  "version-3.3-primehub-deploy-cht": {
+    "PrimeHub 模型部署": [
+      {
+        "type": "subcategory",
+        "label": "Mode Deployment",
+        "ids": [
+          "version-3.3-model_deployment/md-deployment-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Admin Dashboard",
+        "ids": [
+          "version-3.3-model_deployment/md-system-cht",
+          "version-3.3-model_deployment/md-user-cht",
+          "version-3.3-model_deployment/md-group-cht",
+          "version-3.3-model_deployment/md-instancetype-cht",
+          "version-3.3-model_deployment/md-secret-cht"
+        ]
+      }
+    ]
+  }
+}
