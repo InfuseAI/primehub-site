@@ -9,15 +9,13 @@ original_id: release-note
 
 ### Group Admin
 
-We are introducing a new role: the Group Administrator! Group Admin has the privilege to access dedicated features from User Portal, such as Images.
+We are introducing a new role: the Group Administrator! Group Admin has access to additional features on their PrimeHub sidebar.
 
 ![](assets/group_admin.png)
 
 + [Document](guide_manual/admin-group#members)
 
-### Images
-
-The Group Admin has the ability to create, view, update, and delete images for a group.
+In this release, the Group Administrator has the ability to create, view, update, and delete images for a group in the Images tab. 
 
 ![](assets/group-image-list.png)
 
@@ -33,9 +31,7 @@ Upload your files to your group's shared space in the Shared Files tab so that a
 
 ### Models (Beta)
 
-We wanted to simplify your experience in building and pushing models to fit in with your sleek workflow. Now, you can train and deploy a Tensorflow 2, PyTorch, SKLearn models in PrimeHub without even needing to build an image.
-
-In beta we introduce two ways for the model deployment.
+In our Beta release, We wanted to simplify your experience in building and pushing models to fit in with your sleek workflow. Now, you can train and deploy a Tensorflow 2, PyTorch, SKLearn models in PrimeHub without even needing to build an image.
 
 + [Deploy a Model by Pre-packaged Server](model-deployment-tutorial-prepackaged-image)
 
@@ -45,7 +41,7 @@ In beta we introduce two ways for the model deployment.
 
 ### Notebook Logs
 
-Notebooks, sometimes, are failed to spawn or run into troubles because user programs/environments. Now users are able to investigate failures and shoot troubles from logs of **Notebook Logs**.
+Notebooks, sometimes, are failed to spawn or run into troubles because user programs/environments. Now users are able to investigate failures and shoot troubles from **Notebook Logs**.
 
 + [Document](quickstart/launch-project#notebook-logs)
 
@@ -55,7 +51,6 @@ Notebooks, sometimes, are failed to spawn or run into troubles because user prog
 + Use 24hr instead of 12hr in metrics chart
 + Make cosmetic change to "cancel" into a button when notebook is spawning
 + Simplify all of headings/breadcrumb on User Portal
-+ basic e2e test to cover notebook logs feature
 + Add info hint to Job Monitoring timespan
 + Make Buildah support self-signed certificate
 + Tensorflow2 model server enhancement: support image input
