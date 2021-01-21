@@ -4,7 +4,7 @@ title: 3.3 Release Candidate Note
 ---
 
 
-## 🌟 What's New
+## - 🌟 What's New
 
 ### Group Admin
 
@@ -51,14 +51,27 @@ Notebooks, sometimes, are failed to spawn or run into troubles because user prog
 
 ## 🚀 Improvements
 
++ Use 24hr instead of 12hr in metrics chart
++ Make cosmetic change to "cancel" into a button when notebook is spawning
++ Simplify all of headings/breadcrumb on User Portal
++ basic e2e test to cover notebook logs feature
++ Add info hint to Job Monitoring timespan
++ Make Buildah support self-signed certificate
++ Tensorflow2 model server enhancement: support image input
++ Tensorflow2 model server: upgrade to 2.4.0
+
 ## 🧰 Bug Fixes
 
+Fixed: PhDeploymentController CrashLoopback if no group in response
+Fixed: Group name is not case-insensitive to GraphQL
+Fixed: InstanceTypes/Images are not shown in spawner when a group set "zero" of any type of quota
+Fixed: Job artifacts cannot be accessed by non-Admin users.
 
 ## 💫 One More Thing
 
 ### NVIDIA DXG A100 Support Verified
 
-NVIDIA has released A100 Tensor Core GPU with latest [MIG technology](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/). A100 supported by PrimeHub has been verified and confirmed.
+NVIDIA has released A100 Tensor Core GPU with latest [MIG technology](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/). A100 support by PrimeHub has been verified and confirmed.
   
 ---
 
