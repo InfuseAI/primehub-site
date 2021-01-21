@@ -4,7 +4,7 @@ title: 3.4 Release Candidate Note
 ---
 
 
-## - 🌟 What's New
+## 🌟 What's New
 
 
 ## 🚀 Improvements

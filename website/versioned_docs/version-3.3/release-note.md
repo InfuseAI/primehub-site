@@ -5,7 +5,7 @@ original_id: release-note
 ---
 
 
-## - 🌟 What's New
+## 🌟 What's New
 
 ### Group Admin
 
