@@ -1,6 +1,6 @@
 ---
 id: version-3.3-release-note
-title: 3.3 Release Candidate Note
+title: 3.3 Release Note
 original_id: release-note
 ---
 
