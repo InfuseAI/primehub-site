@@ -14,6 +14,8 @@ sidebar_label: Image Builder
   </div>
 </div>
 
+## Introduction
+
 PrimeHub provides Image Builder feature to let system and group administrators build custom images. Once images are built successfully, they will be pushed into specified repositories of a registry. Here we show to how to configure PrimeHub using remote registry for it.
 
 Path | Description | Default Value
@@ -45,7 +47,7 @@ Path | Description | Default Value
 
 ## Configure Google Container Registry (GCR)
 
-1. please reference this [official document for GCR](https://cloud.google.com/container-registry/docs/advanced-authentication) to get the username and password
+1. Please reference this [official document for GCR](https://cloud.google.com/container-registry/docs/advanced-authentication) to get the username and password
 
 2. The username is always `_json_key`. The password is the keyfile json. Please make it a one-line json string so that we can put it in the environment variable.
 
