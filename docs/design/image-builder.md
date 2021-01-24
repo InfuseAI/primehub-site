@@ -5,42 +5,6 @@ title: Image Builder
 
 Provide a way for admin to build images with custom packages.
 
-
-## Configuration
-
-
-### Settings
-Please add this variable to the `.env` file. 
-
-Name | Value 
---- | ----- 
-`PRIMEHUB_FEATURE_CUSTOM_IMAGE` | `true`
-`PRIMEHUB_CUSTOM_IMAGE_REGISTRY_ENDPOINT` | The registry the built image to push
-`PRIMEHUB_CUSTOM_IMAGE_REGISTRY_USERNAME` | Login user name for registry
-`PRIMEHUB_CUSTOM_IMAGE_REGISTRY_PASSWORD` | Login password for registry
-`PRIMEHUB_CUSTOM_IMAGE_REPO_PREFIX` | The image prefix for the build image. The result image will be `<repo prefix>/<image>:<tag>`
-
-
-### Using GCR (Goolge Container Registry)
-
-1. please reference this [official document for GCR](https://cloud.google.com/container-registry/docs/advanced-authentication) to get the username and password
-
-2. The username is always `_json_key`. The password is the keyfile json. Please make it a one-line json string so that we can put it in the environment variable. 
-
-    ```
-    cat keyfile | jq -c .
-    ```
-3. Setup the environment valuable to `.env`. Here is an example
-
-    ```
-    PRIMEHUB_FEATURE_CUSTOM_IMAGE=true
-    PRIMEHUB_CUSTOM_IMAGE_REGISTRY_ENDPOINT=https://gcr.io
-    PRIMEHUB_CUSTOM_IMAGE_REGISTRY_USERNAME=_json_key
-    PRIMEHUB_CUSTOM_IMAGE_REGISTRY_PASSWORD='{"type":"service_account","project_id":....gserviceaccount.com"}'
-    PRIMEHUB_CUSTOM_IMAGE_REPO_PREFIX=gcr.io/my-private-repo
-    ```
-
-
 ## Design
 
 ![](assets/custom-image-flow-diagram.png)
