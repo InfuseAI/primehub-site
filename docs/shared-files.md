@@ -17,7 +17,25 @@ description: Shared Files
 
 **Shared Files** feature is based on [PHFS Storage](quickstart/nb-data-store#phfs-storage). Users are able to upload files for sharing with same group members.
 
+## Browse
+
+>TBD, files table picture
+
+Navigate around PHFS directory.
+
++ `Name`
++ `Size`
++ `Last Modified`
++ `Action`: `View`, `Copy URI`, `Download`, `Delete`
+
+
 Files can be accessed from `phfs/upload` in environments.
+
+## Upload
+
+>TBD, A Pop-up picture
+
+Click `Upload`.
 
 ![](assets/files-uploader.png)
 
