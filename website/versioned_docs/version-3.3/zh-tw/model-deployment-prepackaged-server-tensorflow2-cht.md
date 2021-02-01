@@ -39,6 +39,8 @@ Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/mas
 
 支援 Keras API 輸出的 [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/keras/Model#save)。
 
+> TensorFlow2 server 可同時支援 TF1 及 TF2 的 HDF5 格式
+
 ```bash
 <model uri>
 └── model.h5
