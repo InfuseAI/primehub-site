@@ -38,7 +38,7 @@ We support tensorflow2 [SavedModel format](https://www.tensorflow.org/guide/save
 **HDF5 Format**
 
 We also support [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/keras/Model#save) which is saved from Keras API.
-(Note: The TensorFlow2 server supports both TF1 and TF2 in HDF5 format)
+(Note: The TensorFlow2 server can support both TF1 and TF2 in HDF5 format)
 
 ```bash
 <model uri>
