@@ -1,7 +1,40 @@
 {
   "documentation": {
     "Overview": [
-      "introduction"
+      "introduction",
+      {
+        "type": "subcategory",
+        "label":"Concept",
+        "ids":[
+            "core-resources",
+            "components",
+            "guide_manual/ssh-config",
+            "guide_manual/ssh-vscode",
+            "guide_manual/ssh-keygen"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label":"Persistence",
+        "ids":[
+          "quickstart/nb-data-store"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label":"Resources quota",
+        "ids":[
+          "resources-quota",
+          "quickstart/add-instance-type"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label":"Permission",
+        "ids":[
+          "permissions"
+        ]
+      }
     ],
     "Installation": [
       "dev-introduction",
@@ -31,30 +64,26 @@
         ]
       }
     ],
-    "User Portal": [
+    "User Guide": [
       "getting-started-user",
-      "quickstart/login-portal-user"
-    ],
-    "Notebook": [
-      "quickstart/launch-project",
-      "user-advanced-setting",
-      "notebook-tips",
+      "quickstart/login-portal-user",
       {
         "type": "subcategory",
-        "label": "Notebook Extension",
+        "label": "Notebook",
         "ids":[
+          "quickstart/launch-project",
+          "user-advanced-setting",
+          "notebook-tips",
           "ph-notebook-extension",
           "notebook-as-job"
         ]
-      }
-    ],
-    "Job": [
-      "job-submission-feature",
-      "job-artifact-feature",
+      },
       {
         "type": "subcategory",
-        "label": "Tutorial",
+        "label": "Jobs",
         "ids": [
+          "job-submission-feature",
+          "job-artifact-feature",
           "job-submission-tutorial-simple",
           "job-submission-tutorial-p1",
           "job-submission-tutorial-p2",
@@ -62,16 +91,24 @@
           "job-submission-tutorial-p4",
           "job-artifacts-simple"
         ]
-      }
-    ],
-    "Schedule": [
-      "job-scheduling-feature"
-    ],
-    "Model": [
-      "model-deployment-feature",
+      },
       {
         "type": "subcategory",
-        "label": "Tutorials",
+        "label": "Schedule",
+        "ids": [
+          "job-scheduling-feature"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Models",
+        "ids": [
+          "model-deployment-feature"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Models: Tutorials",
         "ids": [
           "model-deployment-tutorial-concepts",
           "model-deployment-tutorial-prepackaged-image",
@@ -81,7 +118,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Pre-packaged servers",
+        "label": "Models: Pre-packaged servers",
         "ids": [
           "model-deployment-prepackaged-server-intro",
           "model-deployment-prepackaged-server-tensorflow2",
@@ -93,7 +130,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Package from Language Wrapper",
+        "label": "Models: Package from Language Wrapper",
         "ids": [
           "model-deployment-language-wrapper-intro",
           "model-deployment-language-wrapper-python",
@@ -103,28 +140,28 @@
       },
       {
         "type": "subcategory",
-        "label": "Advanced",
+        "label": "Models: Advanced",
         "ids": [
           "model-deployment-prediction-apis",
           "model-deployment-model-uri"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Images",
+        "ids":[
+          "group-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Shared Files",
+        "ids": [
+          "shared-files"
+        ]
       }
-    ],
-    "Images": [
-      "group-image"
-    ],
-    "Shared Files": [
-      "shared-files"
-    ],
-    "Data Store": [
-      "quickstart/nb-data-store"
-    ],
-    "SSH Server": [
-      "guide_manual/ssh-config",
-      "guide_manual/ssh-vscode",
-      "guide_manual/ssh-keygen"
-    ],
-    "Admin Portal":[
+    ],  
+    "Administration Guide":[
       "getting-started-admin",
       {
         "type": "subcategory",
@@ -202,7 +239,7 @@
           "quickstart/create-user",
           "quickstart/create-group",
           "quickstart/assign-group-admin",
-          "quickstart/add-instance-type",
+          
           "quickstart/add-infuseai-image",
           "quickstart/add-image",
           "quickstart/build-image",
@@ -211,6 +248,7 @@
         ]
       }
     ],
+
     "Designs and Concepts": [
       {
         "type": "subcategory",

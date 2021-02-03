@@ -1,7 +1,8 @@
 ---
 id: job-scheduling-feature
-title: Job Scheduler
-description: Job Scheduler
+title: Schedule
+sidebar_label: Introduction
+description: Job Schedule
 ---
 
 <div class="ee-only tooltip">Enterprise
