@@ -7,10 +7,7 @@
         "label":"Concept",
         "ids":[
             "core-resources",
-            "components",
-            "guide_manual/ssh-config",
-            "guide_manual/ssh-vscode",
-            "guide_manual/ssh-keygen"
+            "components"
         ]
       },
       {
@@ -24,15 +21,16 @@
         "type": "subcategory",
         "label":"Resources quota",
         "ids":[
-          "resources-quota",
-          "quickstart/add-instance-type"
+          "resources-quota"
         ]
       },
       {
         "type": "subcategory",
         "label":"Permission",
         "ids":[
-          "permissions"
+          "admin-role",
+          "group-admin-role",
+          "group-member-role"
         ]
       }
     ],
@@ -73,9 +71,10 @@
         "ids":[
           "quickstart/launch-project",
           "user-advanced-setting",
-          "notebook-tips",
+          "guide_manual/ssh-config",
           "ph-notebook-extension",
-          "notebook-as-job"
+          "notebook-as-job",
+          "notebook-tips"
         ]
       },
       {
@@ -239,7 +238,7 @@
           "quickstart/create-user",
           "quickstart/create-group",
           "quickstart/assign-group-admin",
-          
+          "quickstart/add-instance-type",
           "quickstart/add-infuseai-image",
           "quickstart/add-image",
           "quickstart/build-image",
@@ -313,7 +312,9 @@
     "References": [
       "references/primehub_chart",
       "comparison",
-      "guide_manual/kubeflow-installation-guide"
+      "guide_manual/kubeflow-installation-guide",
+      "guide_manual/ssh-vscode",
+      "guide_manual/ssh-keygen"
     ],
     "Trouble Shooting": [
       "trouble-shoot-guide",
