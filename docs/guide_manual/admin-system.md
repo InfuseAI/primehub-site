@@ -15,11 +15,15 @@ description: System Settings
 
 ## PrimeHub License
 
-![](assets/license_key_v24.png)
+![](assets/license_key_v34.png)
 
 Information of the PrimeHub license:
 
 + `License Status`
+
++ `Utilized Nodes`: Used/Granted; a warning banner appears on User Portal when **Used > Granted**.
+
++ `Deployed Models`: Used/Granted; a warning banner appears on User Portal when **Used > Granted**, furthermore, when **Used > Granted + 10%**, new model creation is disabled.
 
 + `Expiration Date`
 
