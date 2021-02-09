@@ -23,7 +23,7 @@ Information of the PrimeHub license:
 
 + `Utilized Nodes`: Used/Granted; a warning banner appears on User Portal when **Used > Granted**.
 
-+ `Deployed Models`: Used/Granted; a warning banner appears on User Portal when **Used > Granted**, furthermore, when **Used > Granted + 10%**, new model creation is disabled.
++ `Deployed Models`: Used/Granted; a warning banner appears on User Portal when **Used > Granted + 10%**, furthermore, new model creation is disabled.
 
 + `Expiration Date`
 

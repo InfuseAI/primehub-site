@@ -22,7 +22,7 @@ Information of the PrimeHub license:
 
 + `Utilized Nodes`: 已使用數量/授權數量；當已使用數量 > 授權數量，警示訊息會顯示在 User Portal 上。
 
-+ `Deployed Models`: 已使用數量/授權數量；當已使用數量 > 授權數量，警示訊息會顯示在 User Portal 上，更進一步，當已使用數量 > 授權數量 + 10%，將無法再新增模型部署。
++ `Deployed Models`: 已使用數量/授權數量；當已使用數量 > 授權數量 + 10%，警示訊息會顯示在 User Portal 上，更進一步，將無法再新增模型部署。
 
 + `Expiration Date` 授權期限
 

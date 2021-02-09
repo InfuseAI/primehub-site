@@ -1,6 +1,7 @@
 ---
 id: model-deployment-feature
 title: 模型部署 (Beta)
+sidebar_label: Introduction
 description: 模型部署 (Beta)
 ---
 
@@ -278,3 +279,12 @@ PrimeHub 提供一個基於 **Seldon Core Analytics** 的 Grafana 監測板，�
 + Latency
 
 此監測板基於 **Seldon Core Analytics**；更多詳細進階資訊可以參照 [document](https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html) 及 [code](https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics)。
+
+
+## 授權警示
+
+當已使用模型部署數量 > 授權模型部署數量 + 10%，警示訊息會顯示，更進一步，`Create Deployment` 將無法使用。
+
+>Please contact your system administrator for assistance to upgrade your license to run more models.
+
+想要得知目前授權資訊，請見 [PrimeHub License](guide_manual/admin-system-cht#primehub-license)

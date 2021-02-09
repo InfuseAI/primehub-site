@@ -1,6 +1,7 @@
 ---
 id: model-deployment-feature
 title: Model Deployment (Beta)
+sidebar_label: Introduction
 description: Model Deployment (Beta)
 ---
 
@@ -280,3 +281,11 @@ Default Metrics:
 + Latency
 
 The board is based on **Seldon Core Analytics**, it can be advanced customized. Please see the [document](https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html) and [code](https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics).
+
+## License warning
+
+when used model amount > granted model amount + 10%, a warning message appears, furthermore, `Create Deployment` is disabled.
+
+>Please contact your system administrator for assistance to upgrade your license to run more models.
+
+To learn the current PrimeHub license information, please see [PrimeHub License](guide_manual/admin-system#primehub-license).
