@@ -9,7 +9,7 @@ description: Job Schedule
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-PrimeHub has Job Submission feature that we can submit a one-time job immediately for running asynchronously; however, we sometimes want to submit certain jobs regularly according schedules. PrimeHub, hence, provides another feature, **Job Schedule** that we can create Schedules which are responsible for submitting jobs regularly according to the recurrence setting for us.
+PrimeHub has Job Submission feature that we can submit a one-time job immediately for running asynchronously; however, we sometimes want to submit certain jobs regularly according to schedules. PrimeHub, hence, provides another feature, **Job Schedule** that we can create Schedules which are responsible for submitting jobs regularly according to the recurrence setting for us.
 
 We can access `Schedule` feature inside **Job Submission** from the portal.
 

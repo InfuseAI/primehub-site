@@ -1,7 +1,8 @@
 ---
 id: nb-data-store
-title: Storing Data
+title: Persistence
 description: Storing Data
+sidebar_label: Overview
 ---
 
 In Notebook, PrimeHub provides several places of storing various data.

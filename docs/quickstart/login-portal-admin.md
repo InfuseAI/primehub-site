@@ -2,6 +2,7 @@
 id: login-portal-admin
 title: Admin Portal
 description: Admin Portal
+sidebar_label: Introduction
 ---
 
 <div class="label-sect">
@@ -13,27 +14,21 @@ description: Admin Portal
   </div>
 </div>
 
-This quickstart shows how to access `Admin Portal`.
-
-## Login
-
-Click Login with your own username (such as `phadmin` by default) and password.
-
 ## Switch to Admin Portal 
 
-When login as an administrator, initially, you are directed to **User Portal**, click the icon at top-right and select `Admin Portal` for the switch.
+When login as an administrator, initially, you are landed on **User Portal**, click the Profile icon at top-right and select **Admin Portal** for the switch.
 
 ![](assets/v3-admin-entry.png)
 
 ## Admin Portal
 
-Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `Notebooks Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
-
-+ `JupyterHub Admin` is renamed to `Notebooks Admin`.
-
 ![](assets/v3-admin-portal_v31.png)
 
-### Side Menu
+### Profile Menu
+
+Hovering over top-right icon, there is a Profile Menu containing **User Profile**, **Change Password** and **Logout** shortcuts.
+
+## Administration Features
 
 + `Groups` where Admin can manage groups. See [Group Management](../guide_manual/admin-group).
 
@@ -59,6 +54,4 @@ Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition, 
 
 + `Grafana` where Admin can view dashboards on **Grafana**.
 
-## Logout
 
-Click `Logout` button at top-right. The page would be directed to the `Login` page.

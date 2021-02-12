@@ -2,6 +2,7 @@
 id: login-portal-user
 title: User Portal
 description: User Portal
+sidebar_label: Introduction
 ---
 
 <div class="label-sect">
@@ -13,46 +14,53 @@ description: User Portal
   </div>
 </div>
 
-This quickstart shows how to login/logout `User Portal`.
-
-## Login
-
-Click Login with your own username (such as `phadmin` by default) and password.
-
 ## User Portal
+
+After login, a user lands on User Portal.
 
 ![](assets/v33-landing-user.png)
 
-On Portal, the left side is **side menu**, the right side is the **context of the current working group**. At the top of the right side, there is a `Group:` dropdown for working groups switch. Users can switch the working group among joining groups easily.
+On Portal, the left side is **side menu** composed of platforme user features, the right side is the **context of the current working group**. At the top-right, there is a `Group:` dropdown of switching working groups. Users can switch the working group to proceed to different projects easily.
 
-First of all, users have to specify a working group from joining groups by using the dropdown. Accordingly, the following context will be retained within the working group.
+
+### Group-Context
+
+First of all, users have to specify a working group from joining groups by using the dropdown. Accordingly, the following right-side context is retained within the working group, it is so called **Group-Context**.
 
 ![](assets/group_context.png)
 
-At side menu, there are
-
-+ **Home** where users can find `User Guide` link which connects to this `PrimeHub Documentation` site.
-
-+ **Notebooks**  where users can launch a Jupyter Notebook for projects.See [Launch Notebook](../quickstart/launch-project).
-
-+ **Jobs** where users can submit jobs for time-consuming tasks. See [Job Submission](../job-submission-feature). <span class="ee-only">Enterprise</span>
-
-+ **Schedule** where users can schedule jobs regularly. See [Job Scheduler](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
-
-+ **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
-
-+ **Images** where Group Admin can add group-specific images for the managed group. See [Images](../group-image). (Group Admin Only)
-
-+ **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
-
->If users don't belong to any group, the page shows `No group available`. Please contact administrators.
+>If users don't belong to any group, the page shows `No group available` without any features. Please contact administrators.
 
 ![](assets/v3-landing-user-no-group.png)
 
-## Logout
 
-Please click `Logout` button at top-right. The page would be directed to the `Login` page.
+### Profile Menu
 
+Hovering over top-right icon, there is a Profile Menu containing **User Profile**, **Change Password**, **API Token**, **Admin Portal** and **Logout** shortcuts.
+
+
+## User Feature
+
++ **Home** where users can find **User Guide** linking to the **PrimeHub Documentation** site.
+
++ **Notebooks**  where users can launch a Jupyter Notebook for projects. See [Notebook environment](../quickstart/launch-project).
+
++ **Jobs** where users can submit jobs of time-consuming tasks. See [Jobs](../job-submission-feature). <span class="ee-only">Enterprise</span>
+
++ **Schedule** where users can schedule jobs regularly. See [Schedule](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
+
++ **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
+
++ **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
+
+### Group admin feature
+
+Features here are Group-Admin-Only.
+
++ **Images** where Group Admin can add/build group-specific images for the managed group. See [Images](../group-image).
+
+> Please contact administrators to acquire Group Admin privilege.
+ 
 
 ## License warning
 

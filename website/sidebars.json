@@ -28,9 +28,7 @@
         "type": "subcategory",
         "label":"Permission",
         "ids":[
-          "admin-role",
-          "group-admin-role",
-          "group-member-role"
+          "roles"
         ]
       }
     ],
@@ -63,8 +61,13 @@
       }
     ],
     "User Guide": [
-      "getting-started-user",
-      "quickstart/login-portal-user",
+      {
+        "type": "subcategory",
+        "label": "User Portal",
+        "ids":[
+          "quickstart/login-portal-user"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Notebook",
@@ -161,7 +164,7 @@
       }
     ],  
     "Administration Guide":[
-      "getting-started-admin",
+      "quickstart/login-portal-admin",
       {
         "type": "subcategory",
         "label": "Manage users and groups",
@@ -234,7 +237,6 @@
         "type":"subcategory",
         "label":"Quick Start",
         "ids":[
-          "quickstart/login-portal-admin",
           "quickstart/create-user",
           "quickstart/create-group",
           "quickstart/assign-group-admin",

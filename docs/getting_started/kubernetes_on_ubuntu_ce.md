@@ -173,6 +173,12 @@ Once the `primehub-bootstrap` is running, use the the command to watch the log o
 kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d' ' -f1) -f
 ```
 
+## New to PrimeHub
+
+Initially, PrimeHub has a built-in *user* `phadmin`, a built-in *group* `phusers`, several *instance types*/*image* which are available to *Global* ready to use. `phadmin` can launch a notebook quickly by using these resources. 
+
+Now PrimeHub CE is ready, see [Launch Notebook](../quickstart/launch-project) to launch your very first JupyterNotebook on PrimeHub. Also see [User Guide](../quickstart/login-portal-user) to have the fundamental knowledge of PrimeHub.
+
 ---
 
 ## Troubleshooting
