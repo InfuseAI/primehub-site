@@ -2,7 +2,7 @@
 id: group-image
 title: Images
 description: Images
-sidebar_label: Group Images
+sidebar_label: Introduction
 ---
 
 <div class="label-sect">
@@ -15,19 +15,15 @@ sidebar_label: Group Images
 </div>
 <br>
 
-**Images** allows Group Admin to add images to the managed group. Only group members can access these group-specific images when the image selection is required.
+**Images** is a feature that Group Admin can manage images for the managed group. Only group members can access these group-specific images from the image selection when it is required.
 
->Images is a feature dedicated to [Group Admin](guide_manual/admin-group#members); only Group Admin can access it. Please contact Admin for Group Admin role.
+>Images is a feature dedicated to [Group Admin](guide_manual/admin-group#members); only Group Admin can access it from User Portal. Please contact Admin to acquire Group Admin privilege.
 
-## Group Image
 
 ![](assets/group-image-list.png)
 
-If images are added for a group, from image selection, `i` hint indicates them `Group` image.
-
-![](assets/group-image-hint.png)
-
 + `Search Image`: Search images by a keyword and press Enter.
+
 
 ## Adding New Image
 
@@ -44,9 +40,11 @@ Click `New Image` to add an Image.
 
 + `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
 
+Choose `Use existing image` or `Build custom image`.
+
 ## Use Existing Image
 
-Instead of re-using existing images, group admin can build custom images for the group.
+Add a existing image for the group.
 
 + `Container image url`: Fill in the Image's url. See [Reference](#reference).
 
@@ -60,6 +58,8 @@ Click `Create` to complete the addition.
 
 
 ## Build Custom Image
+
+Instead of adding existing images, Group Admin can build custom images and add them for the group.
 
 >TBD
 
@@ -79,53 +79,56 @@ Click `Create` to complete the addition.
 
   >In case of multiple packages, please using the **line break** for each package instead of putting them in one line.
 
-Click `Confirm` to complete the addition.
-
-![](assets/build_img_url.png)
-
-Once the image is built successfully, the url of the image will be listed.
+Click `Confirm` to start the building.
 
 ### Conda Package Match Specification
 
-We want to mention specifically that Conda supports to specify `channel` where the package is sourced from and [match specification](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications) of the package. So we can specify images more precisely. The syntax is 
+Conda supports to specify `channel` where the package is sourced from and [match specification](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications) of the package. So we can specify images more specifically. 
+
+The syntax is 
 
 ```txt
 (channel(/subdir):(namespace):)name(version(build))[key1=value1,key2=value2]
 ```
 
-For example, we want to install `numpy` package which is sourced from the channel,`conda-forge`, [here](https://anaconda.org/conda-forge/numpy).
+For example, to install `numpy` package which is sourced from the channel, **conda-forge**, [here](https://anaconda.org/conda-forge/numpy).
 
-We can use `conda-forge::` to specify the channel:
+Use `-c conda-forge::` to specify the channel:
 
 ```bash
-conda install conda-forge::numpy==1.17*
+-c conda-forge::numpy==1.17*
 ```
 
-### Building Job
+### Building in progress
 
-Clicking the link beside **Container image url**.
->TBD, There is Building Job picture
+Click `Image building in progress` link to view the `Build Details` and `Log`.
 
-+ `Build Details`
+> screenshot of building in progress
 
-+ `Logs`
-
+During the building, the progress can be cancelled.
 
 
+### Building finish
 
+![](assets/build_img_url.png)
 
++ `Container image url`: Once the building finishes, the image url appears here.
+
+### View build details
+
+Click `View build details` to view the build details of custom image spec and logs.
+
+### Group Image
+
+If images are added for a group, from image selection, `i` hint indicates them `Group` image
+
+![](assets/group-image-hint.png)
 
 ## Deleting Image
 
 ![](assets/actions.png)
 
-Click Pen-icon for the editing.
-
-## Editing Image
-
-![](assets/actions.png)
-
-Click Trash-can-icon for the deletion.
+Click Pen-icon for the editing; click Trash-can-icon for the deletion.
 
 ### Rebuild
 
