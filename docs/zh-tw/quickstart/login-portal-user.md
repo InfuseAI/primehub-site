@@ -49,3 +49,21 @@ Portal 頁面上左側為使用者功能選單、右側為「專案群組先決�
 ## 登出
 
 點擊右上角的`Logout`。 導回登入頁
+
+## 授權警示
+
+InfuseAI 發出的授權包括 `授權期限`、 `最多節點數量`, `最多模型部署數量`。
+
++ 當授權逾期時，顯示警示訊息
+
+  >Your license has expired. Please contact your sales team to extend your license.
+
++ 當使用節點數 > 授權節點數量，顯示警示訊息
+
+  > You are using more nodes than your license allows. Please contact your system administrator.
+
++ 當使用模型部署數量 > 授權模型部署數量 + 10%，顯示警示訊息
+
+  >Please contact your system administrator for assistance to upgrade your license to run more models.
+
+想要得知目前授權資訊，請見 [PrimeHub License](../guide_manual/admin-system-cht#primehub-license)。
