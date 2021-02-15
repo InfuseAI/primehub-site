@@ -35,7 +35,7 @@ Images are working environments to **Notebook**, **Job**, **Model**. When launch
 
 Images must be associated with one group at least for being viewable.
 
-See [Image Management](guide_manul/../guide_manual/admin-image)(Admin), [Image Builder](guide_manual/admin-build-image)(Admin), [Image](group-image)(Group Admin).
+See [Image Management](guide_manual/admin-image)(Admin), [Image Builder](guide_manual/admin-build-image)(Admin), [Image](group-image)(Group Admin).
 
 
 ## Datasets

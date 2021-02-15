@@ -5,7 +5,7 @@ description: Storing Data
 sidebar_label: Overview
 ---
 
-In Notebook, PrimeHub provides several places of storing various data.
+PrimeHub provides several types of persistent data stores. These stores can be accessed from working environments.
 
 ## User Volume
 
