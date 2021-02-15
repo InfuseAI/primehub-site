@@ -5,9 +5,11 @@ sidebar_label: Platform
 ---
 
 
-**PrimeHub** is a platform for groups of data scientists. Based on group-centric design, users can share datasets, artifacts and co-work easily within same groups/projects, which accelerates collaborative development for groups and facilitates resources management.
+**PrimeHub** is a Kubernetes-based platform designed for groups of data scientists. Based on the group-centric design, scientists can share datasets, artifacts and co-work easily within same groups/projects, which accelerates collaborative development for project groups, furthermore, platform administrators can manage access control, resources quotas control for project groups accordingly, which facilitates resources managements.
 
 ---
+
+## Portal
 
 PrimeHub platform is composed of **User Portal** and **Admin Portal**.
 
