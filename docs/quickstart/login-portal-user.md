@@ -2,7 +2,7 @@
 id: login-portal-user
 title: User Portal
 description: User Portal
-sidebar_label: Introduction
+sidebar_label: Overview
 ---
 
 <div class="label-sect">

@@ -1,7 +1,7 @@
 ---
 id: roles
 title: Permission
-sidebar_label: Overview
+sidebar_label: Role
 description: Permission 
 ---
 

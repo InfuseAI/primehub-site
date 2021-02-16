@@ -2,14 +2,14 @@
 id: nb-data-store
 title: Persistence
 description: Storing Data
-sidebar_label: Overview
+sidebar_label: Data Store 
 ---
 
 PrimeHub provides several types of persistent data stores. These stores can be accessed from working environments.
 
 ## User Volume
 
-Each user has own space called **User Volume** which is only accessible to the user to store data. The default volume capacity for everyone is 20 GB. The capacity is able to be enlarged, please contact Admin to learn the what capacity it is or to enlarge it if required. See [System Settings](../guide_manual/admin-system#system-settings).
+Each user has own space called **User Volume** which is only accessible to the user to store data. The default volume capacity for everyone is 20 GB. The capacity is able to be increased, please contact Admin to learn the what capacity it is or to increase it if required. See [System Settings](../guide_manual/admin-system#system-settings).
 
 In Notebook, it is home folder a.k.a `/home/jovyan`.
 

@@ -61,13 +61,7 @@
       }
     ],
     "User Guide": [
-      {
-        "type": "subcategory",
-        "label": "User Portal",
-        "ids":[
-          "quickstart/login-portal-user"
-        ]
-      },
+      "quickstart/login-portal-user",
       {
         "type": "subcategory",
         "label": "Notebook",
@@ -351,52 +345,50 @@
     "繁中文件": [
       "index-zh"
       ],
-    "User Portal": [
-      "zh-tw/quickstart/login-portal-user"
-    ],
-    "Notebook":[
-        "zh-tw/quickstart/launch-project",
-        "zh-tw/user-advanced-setting",
-        "zh-tw/notebook-tips-cht",
-        {
-          "type": "subcategory",
-          "label": "Notebook Extension",
-          "ids": [
-            "zh-tw/ph-notebook-extension-cht",
-            "zh-tw/notebook-as-job-cht"
-          ]
-        }
-    ],
-    "Job":[
-          {
-            "type": "subcategory",
-            "label": "Submission",
-            "ids":[
+    "User Guide": [
+      "zh-tw/quickstart/login-portal-user",
+      {
+        "type": "subcategory",
+        "label": "Notebook",
+        "ids": [
+          "zh-tw/quickstart/launch-project",
+          "zh-tw/user-advanced-setting",
+          "zh-tw/guide_manual/ssh-config-cht",
+          "zh-tw/notebook-tips-cht",
+          "zh-tw/ph-notebook-extension-cht",
+          "zh-tw/notebook-as-job-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Jobs",
+        "ids": [
               "zh-tw/job-submission-cht",
-              "zh-tw/job-artifact-cht"
-            ]
-          },
-          {
-            "type": "subcategory",
-            "label": "教學",
-            "ids":[
+              "zh-tw/job-artifact-cht",
               "zh-tw/job-submission-tutorial-simple",
               "zh-tw/job-submission-tutorial-p1",
               "zh-tw/job-submission-tutorial-p2",
               "zh-tw/job-artifacts-simple-cht",
               "zh-tw/job-tutorial-more"
-            ]
-          }
-    ],
-    "Schedule":[
-      "zh-tw/job-scheduling-feature-cht"
-    ],
-    "Model":[
-      "zh-tw/model-deployment-feature",
-      "zh-tw/model-overview",
+        ]
+      },
       {
         "type": "subcategory",
-        "label": "Tutorials",
+        "label": "Schedule",
+        "ids": [
+          "zh-tw/job-scheduling-feature-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Models",
+        "ids": [
+          "zh-tw/model-deployment-feature"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Models: Tutorials",
         "ids": [
           "zh-tw/model-deployment-tutorial-concepts-cht",
           "zh-tw/model-deployment-tutorial-prepackaged-image-cht",
@@ -406,7 +398,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Pre-packaged servers",
+        "label": "Models: Pre-packaged servers",
         "ids": [
           "zh-tw/model-deployment-prepackaged-server-intro-cht",
           "zh-tw/model-deployment-prepackaged-server-tensorflow2-cht",
@@ -418,7 +410,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Package from Language Wrapper 教學 (Beta)",
+        "label": "Models: Package from Language Wrapper",
         "ids": [
           "zh-tw/model-deployment-language-wrapper-intro-cht",
           "zh-tw/model-deployment-tutorial-package-image",
@@ -428,28 +420,35 @@
       },
       {
         "type": "subcategory",
-        "label": "Advanced",
+        "label": "Models: Advanced",
         "ids": [
           "zh-tw/model-deployment-prediction-apis-cht",
           "zh-tw/model-deployment-model-uri-cht"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Images",
+        "ids": [
+          "zh-tw/group-image-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Shared Files",
+        "ids": [
+          "zh-tw/shared-files-cht"
+        ]
       }
-    ],
-    "Images": [
-      "zh-tw/group-image-cht"
-    ],
-    "Shared Files": [
-      "zh-tw/shared-files-cht"
-    ],
+    ], 
     "Data Store": [
       "zh-tw/quickstart/nb-data-store-cht"
     ],
     "SSH Server": [
-      "zh-tw/guide_manual/ssh-config-cht",
       "zh-tw/guide_manual/ssh-vscode-cht",
       "zh-tw/guide_manual/ssh-keygen-cht"
     ],
-    "Admin Portal": [
+    "Administration Guide": [
       "zh-tw/quickstart/login-portal-admin",
       {
         "type":"subcategory",

@@ -1,6 +1,7 @@
 ---
 id: job-submission-cht
 title: Job Submission
+sidebar_label: Introduction
 description: Job Submission
 ---
 

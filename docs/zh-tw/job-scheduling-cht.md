@@ -1,6 +1,7 @@
 ---
 id: job-scheduling-feature-cht
-title: Job Scheduler
+title: Schedule
+sidebar_label: Feature
 description: Job Scheduler
 ---
 
