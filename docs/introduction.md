@@ -9,7 +9,7 @@ sidebar_label: Platform
 
 ---
 
-## Portal
+## Platform
 
 PrimeHub platform is composed of **User Portal** and **Admin Portal**.
 

@@ -18,7 +18,7 @@ sidebar_label: Overview
 
 ---
 
-## Portal
+## Platform
 
 PrimeHub 平台由 **User Portal** 及 **Admin Portal** 組成。
 
