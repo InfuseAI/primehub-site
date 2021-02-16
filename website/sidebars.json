@@ -161,9 +161,15 @@
       "quickstart/login-portal-admin",
       {
         "type": "subcategory",
-        "label": "Manage users and groups",
+        "label": "Manage users",
         "ids":[
-          "guide_manual/admin-user",
+          "guide_manual/admin-user"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Manage groups",
+        "ids": [
           "guide_manual/admin-group"
         ]
       },
@@ -179,12 +185,18 @@
       },
       {
         "type": "subcategory",
-        "label": "Manage and build images",
+        "label": "Manage images",
         "ids":[
           "guide_manual/admin-image",
-          "guide_manual/admin-build-image",
-          "guide_manual/custom-image-guideline",
           "guide_manual/images-list"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Build custom images",
+        "ids": [
+          "guide_manual/admin-build-image",
+          "guide_manual/custom-image-guideline"
         ]
       },
       {
@@ -440,21 +452,20 @@
           "zh-tw/shared-files-cht"
         ]
       }
-    ], 
-    "Data Store": [
-      "zh-tw/quickstart/nb-data-store-cht"
-    ],
-    "SSH Server": [
-      "zh-tw/guide_manual/ssh-vscode-cht",
-      "zh-tw/guide_manual/ssh-keygen-cht"
     ],
     "Administration Guide": [
       "zh-tw/quickstart/login-portal-admin",
       {
         "type":"subcategory",
-        "label":"使用者及群組管理",
+        "label":"使用者管理",
         "ids":[
-          "zh-tw/guide_manual/admin-user-cht",
+          "zh-tw/guide_manual/admin-user-cht"
+        ]
+      },
+      {
+        "type":"subcategory",
+        "label":"群組管理",
+        "ids":[
           "zh-tw/guide_manual/admin-group-cht"
         ]
       },
@@ -469,12 +480,18 @@
       },
       {
         "type":"subcategory",
-        "label":"Image 創建及管理",
+        "label":"Image 管理",
         "ids":[
           "zh-tw/guide_manual/admin-image-cht",
-          "zh-tw/guide_manual/admin-build-image-cht",
-          "zh-tw/guide_manual/custom-image-guideline",
           "zh-tw/guide_manual/images-list"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Image 創建",
+        "ids": [
+          "zh-tw/guide_manual/admin-build-image-cht",
+          "zh-tw/guide_manual/custom-image-guideline"
         ]
       },
       {
@@ -528,6 +545,23 @@
           "zh-tw/quickstart/build-image",
           "zh-tw/quickstart/secret-pull-image",
           "zh-tw/quickstart/secret-gitsync"
+        ]
+      }
+    ],
+    "Reference": [
+      {
+        "type": "subcategory",
+        "label": "Persistence",
+        "ids": [
+          "zh-tw/quickstart/nb-data-store-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SSH Remotely",
+        "ids": [
+          "zh-tw/guide_manual/ssh-vscode-cht",
+          "zh-tw/guide_manual/ssh-keygen-cht"
         ]
       }
     ]

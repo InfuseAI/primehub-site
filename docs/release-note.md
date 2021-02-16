@@ -6,8 +6,16 @@ title: 3.4 Release Candidate Note
 
 ## 🌟 What's New
 
+### Custom group image
+
+### Shared File Browser
+
+### License constraint
+
+
 
 ## 🚀 Improvements
+
 ## 🧰 Bug Fixes
 
 ## 💫 One More Thing
@@ -17,8 +25,8 @@ title: 3.4 Release Candidate Note
 
 ## 🎪 In the Community
 
-+ [PrimeHub CE v3.3 (Community Edition) Release](https://github.com/InfuseAI/primehub/releases)
++ [PrimeHub CE v3.4 Community Edition](https://github.com/InfuseAI/primehub/releases)
 
-+ [MLOps Taiwan on Facebook](https://www.facebook.com/groups/mlopstw/)
++ [MLOps Taiwan x Facebook](https://www.facebook.com/groups/mlopstw/)
 
 + [InfuseAI x Youtube](https://www.youtube.com/channel/UCbbRUfqKPWfZxZY62Pian-g)

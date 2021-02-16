@@ -19,7 +19,7 @@ sidebar_label: Overview
 
 ![](assets/v33-landing-user.png)
 
-Portal 頁面上左側為「使用者功能選單」、右側為「工作專案群組」下的內容。
+Portal 頁面上左側為「使用者功能選單」、右側為「工作專案群組」。
 
 ### Group-Context
 

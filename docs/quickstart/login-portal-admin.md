@@ -2,7 +2,7 @@
 id: login-portal-admin
 title: Admin Portal
 description: Admin Portal
-sidebar_label: Introduction
+sidebar_label: Overview
 ---
 
 <div class="label-sect">
@@ -14,7 +14,7 @@ sidebar_label: Introduction
   </div>
 </div>
 
-## Switch to Admin Portal 
+## Switch to Admin Portal
 
 When login as an administrator, initially, you are landed on **User Portal**, click the Profile icon at top-right and select **Admin Portal** for the switch.
 

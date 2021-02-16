@@ -2,7 +2,7 @@
 id: group-image
 title: Images
 description: Images
-sidebar_label: Introduction
+sidebar_label: Feature
 ---
 
 <div class="label-sect">

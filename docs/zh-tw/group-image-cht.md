@@ -2,7 +2,7 @@
 id: group-image-cht
 title: Images
 description: Images
-sidebar_label: Introduction
+sidebar_label: Feature
 ---
 
 **Images** 提供 Group Admin 針對其管理的群組來管理群組限定的映像檔資源的功能。

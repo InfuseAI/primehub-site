@@ -2,6 +2,7 @@
 id: login-portal-admin
 title: Admin Portal
 description: Admin Portal
+sidebar_label: Overview
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
@@ -12,31 +13,25 @@ description: Admin Portal
   </div>
 </div>
 
-這份文件說明介紹管理者層級的 `Admin Portal`。
+這份文件介紹管理者層級的 `Admin Portal`。
 
-## 登入
+## 切換至 Admin Portal
 
-![](assets/login_1.png)
-
-首先選擇 `language`及用「管理者」帳號密碼登入。
-
-## 入口
-
-當以管理者帳號登入後，起先會進入到 **User Portal**，點擊右上角的圖示並選擇 `Admin Portal` 來切換至管理功能頁。
+當以管理者帳號登入後，起先會進入到 **User Portal**，點擊右上角的個人選單圖示並選擇 `Admin Portal` 來切換至管理後台。
 
 ![](assets/v3-admin-entry.png)
 
 ## Admin Portal
 
-Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有：
-
-基本上介面如同原 PrimeHub v2.x 的 **Admin Dashboard**，但追加整合  `Notebooks Admin` 功能、 `Maintenance` 功能及 `Grafana`連結至 Admin Portal。
-
-+ `JupyterHub Admin` 功能更名為 `Notebooks Admin`
-
 ![](assets/v3-admin-portal_v31.png)
 
-### 功能選單
+### Profile Menu
+
+滑鼠移到右上角圖示顯示「個人選單」包括 User Profile、Change Password、Logout。
+
+## 管理功能
+
+>選單上的功能可能會依實際版本而異。
 
 + `Groups` 管理群組。 請見 [群組管理](../guide_manual/admin-group-cht)。
 
@@ -62,6 +57,4 @@ Portal 頁面上的捷徑圖示會因實際環境而有差異，基本上會有�
 
 + `Grafana` 開新分頁連至 **Grafana** ，可檢視監控儀表板。
 
-## 登出
 
-點擊右上角的`Logout`。 導回登入頁。

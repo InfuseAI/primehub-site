@@ -1,7 +1,7 @@
 ---
 id: job-scheduling-feature
 title: Schedule
-sidebar_label: Introduction
+sidebar_label: Feature
 description: Job Schedule
 ---
 
