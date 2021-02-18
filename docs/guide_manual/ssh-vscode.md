@@ -2,7 +2,7 @@
 id: ssh-vscode
 title: VSCode SSH Jupyter Notebook Remotely
 description: VSCode SSH Jupyter Notebook Remotely
-sidebar_label: VSCode Remote-SSH Notebook
+sidebar_label: VSCode Remote-SSH
 ---
 
 

@@ -4,14 +4,7 @@ title: Core Resources
 description: Core Resources
 ---
 
-
-## Groups
-
-PrimeHub adopts the group-centric design, one of core concepts is **Group-Context** that users and various types of resources must be associated with one group at least. Based on the specified working group, users are able to access corresponding resources and perform features within the group accordingly. Resources are not viewable if no associated group. 
-
-Groups, arguably, are considered as projects when multiple projects are being developed by a group simultaneously.
-
-See [Group Management](guide_manual/admin-group).
+PrimeHub provides various types of resources management.
 
 ## Users
 
@@ -21,9 +14,17 @@ In addition, users can have Group Admin privilege or/and Admin privilege to acce
 
 See [User Management](guide_manual/admin-user).
 
+## Groups
+
+PrimeHub adopts the group-centric design, one of core concepts is **Group-Context** that users and various types of resources must be associated with one group at least. Based on the specified working group, users are able to access corresponding resources and perform features within the group accordingly. Resources are not viewable if no associated group.
+
+Groups, arguably, are considered as projects when multiple projects are being developed by a group simultaneously.
+
+See [Group Management](guide_manual/admin-group).
+
 ## Instance Types
 
-PrimeHub is Kubernetes-based platform. Instance types are presets of resources allocation for environments. When launching a environment, platform needs to know the requested resources for it, under the hood, platform tries to find/allocates an instance according to requested resources for the environment if it is available by then in the circumstance. 
+PrimeHub is *Kubernetes*-based platform. Instance types are presets of resources allocation for environments. When launching a environment, platform needs to know the requested resources for it, under the hood, platform tries to find/allocates an instance according to requested resources for the environment if it is available by then in the circumstance. 
 
 Instance types must be associated with one group at least for being viewable.
 

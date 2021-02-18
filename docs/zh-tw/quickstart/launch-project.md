@@ -1,8 +1,8 @@
 ---
 id: launch-project
-title: 啟始 Notebook
+title: Start Notebook
 description: 啟始 Notebook
-sidebar_label: Feature
+sidebar_label: Start Notebook
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
@@ -22,6 +22,8 @@ sidebar_label: Feature
 1. 用使用者帳號登入 `User Portal` 後，並選擇 `Notebooks` 及點擊 `Start My Server 進入 spawner 頁。
 2. 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
+    ![](assets/group_context.png)
+
 3. 指定 `Instance Type` 為此專案配置所需的運算資源。
 
 4. 指定專案採用 `Image` 環境。
@@ -38,7 +40,7 @@ sidebar_label: Feature
 
 >第一次操作的使用者，瀏灠器預設地阻擋此新分頁，請設定瀏灠器一律允許由 PrimeHub 開啟的新分頁，再來按下 `My Server` 開啟 Notebook 新分頁。
 
-![](assets/v3-jupyter-popup-block.png)
+![](assets/v34-jupyter-popup-block.png)
 
 ## 啟動
 

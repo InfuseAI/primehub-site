@@ -8,7 +8,7 @@ description: Permission
 
 ## User
 
-Every account has the fundamental user privilege, as long as users who are members of groups are able to perform general user features within a working group from User Portal. 
+Every account has the fundamental user privilege, as long as users who are members of groups are able to perform general user features within a working group from User Portal.
 
 See [User Guide](quickstart/login-portal-user).
 
@@ -16,7 +16,7 @@ See [User Guide](quickstart/login-portal-user).
 
 Every user can become a Group Administrator as long as Administrator gives users privileges to specific groups. As a Group Admin, you are able to access not only general user features , but also Group-Admin-Only features from User Portal. You are able to add images or even to build custom images for managed groups.
 
-See [Group admin features](quickstart/login-portal-user#group-admin-feature) and [Group admin role](guide_manual/admin-group#members)
+See [Group admin features](quickstart/login-portal-user#group-admin-feature) and [Group admin role](guide_manual/admin-group#members).
 
 ## Administrator
 

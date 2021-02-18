@@ -1,8 +1,8 @@
 ---
 id: launch-project
-sidebar_label:  Jupyter Notebook
-title: Launch Notebook Environment
-description: Launch Notebook Environment
+sidebar_label: Start Notebook
+title: Start Notebook
+description: Start Notebook
 ---
 
 <div class="label-sect">
@@ -23,6 +23,8 @@ description: Launch Notebook Environment
 
 2. Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
+    ![](assets/group_context.png)
+
 3. Select an `Instance Type` for the resource allocation to this project. It lists instance types only within the context of the group.
 
 4. Select an `Image` which the project is based on. It lists images only within the context of the group.
@@ -39,7 +41,7 @@ description: Launch Notebook Environment
    
 >At very first time, browser will block the pop-up from PrimeHub by default, please allow the pop-up from PrimeHub. Click `My Server` to open Notebook in a new tab once the pop-up is allowed.
 
-![](assets/v3-jupyter-popup-block.png)
+![](assets/v34-jupyter-popup-block.png)
 
 ## Spawning
 

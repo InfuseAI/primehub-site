@@ -1,6 +1,7 @@
 ---
 id: job-artifact-cht
 title: Job Artifacts
+sidebar_label: Artifacts
 description: Job Artifacts
 ---
 
