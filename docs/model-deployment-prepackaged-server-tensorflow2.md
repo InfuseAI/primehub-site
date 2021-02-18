@@ -39,7 +39,7 @@ HDF5         | Yes
 
 **SavedModel Format**
 
-We support tensorflow2 [SavedModel format](https://www.tensorflow.org/guide/saved_model). The model uri structure is just the output of `tf.saved_model.save()`.
+We support TensorFlow2 [SavedModel format](https://www.tensorflow.org/guide/saved_model). The model uri structure is just the output of `tf.saved_model.save()`.
 
 ```bash
 <model uri>

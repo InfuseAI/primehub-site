@@ -1,7 +1,7 @@
 ---
 id: version-3.3-model-deployment-prepackaged-server-tensorflow2
-title: TensorFlow2 server
-description: TensorFlow2 server
+title: TensorFlow server
+description: TensorFlow server
 original_id: model-deployment-prepackaged-server-tensorflow2
 ---
 
@@ -20,13 +20,29 @@ Input       | ndarray or image
 Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
 
+### Compatibility of TensorFlow 2
+
+Model Format | Support
+-------------|---------
+SavedModel   | Yes
+HDF5         | Yes
+
+### Compatibility of TensorFlow 1
+
+Model Format | Support
+-------------|---------
+*.pb         | No
+checkpoint   | No
+SavedModel   | No
+HDF5         | Yes
+
 ### Model URI Structure
 
 
 
 **SavedModel Format**
 
-We support tensorflow2 [SavedModel format](https://www.tensorflow.org/guide/saved_model). The model uri structure is just the output of `tf.saved_model.save()`.
+We support TensorFlow2 [SavedModel format](https://www.tensorflow.org/guide/saved_model). The model uri structure is just the output of `tf.saved_model.save()`.
 
 ```bash
 <model uri>
@@ -38,7 +54,7 @@ We support tensorflow2 [SavedModel format](https://www.tensorflow.org/guide/save
 
 **HDF5 Format**
 
-We also support [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/keras/Model#save) which is saved from Keras API. (Note: The TensorFlow2 server can support both TF1 and TF2 in HDF5 format)
+We also support [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/keras/Model#save) which is saved from Keras API in both `TensorFlow 2` and `TensorFlow 1`.
 
 ```bash
 <model uri>

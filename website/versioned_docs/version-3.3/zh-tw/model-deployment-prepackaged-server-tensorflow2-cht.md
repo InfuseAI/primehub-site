@@ -21,6 +21,22 @@ Input       | ndarray or image
 Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
 
+### Compatibility of TensorFlow 2
+
+Model Format | Support
+-------------|---------
+SavedModel   | Yes
+HDF5         | Yes
+
+### Compatibility of TensorFlow 1
+
+Model Format | Support
+-------------|---------
+*.pb         | No
+checkpoint   | No
+SavedModel   | No
+HDF5         | Yes
+
 ### Model URI 檔案結構
 
 #### SavedModel Format
@@ -37,9 +53,8 @@ Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/mas
 
 #### HDF5 Format
 
-支援 Keras API 輸出的 [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/keras/Model#save)。
+支援從 TensorFlow 2 及 TensorFlow 1 的 Keras API 輸出的 [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/keras/Model#save)。
 
-> TensorFlow2 server 可同時支援 TF1 及 TF2 的 HDF5 格式
 
 ```bash
 <model uri>
