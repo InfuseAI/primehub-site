@@ -5,6 +5,7 @@ sidebar_label: Permission
 description: Role Permission 
 ---
 
+PrimeHub features are accessible/restricted to three different level of roles. A user account can become not only a general user, but also a group administrator or/and a platform administrator. Each role possesses different privileges.
 
 ## User
 
@@ -14,7 +15,7 @@ See [User Guide](quickstart/login-portal-user).
 
 ## Group Administrator
 
-Every user can become a Group Administrator as long as Administrator gives users privileges to specific groups. As a Group Admin, you are able to access not only general user features , but also Group-Admin-Only features from User Portal. You are able to add images or even to build custom images for managed groups.
+Every user can become a Group Administrator as long as Administrator gives users privileges to specific groups. As a Group Admin, you are able to access not only general user features , but also Group-Admin features from User Portal. You are able to add images or even to build custom images for managed groups.
 
 See [Group admin features](quickstart/login-portal-user#group-admin-feature) and [Group admin role](guide_manual/admin-group#members).
 

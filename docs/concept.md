@@ -7,11 +7,11 @@ sidebar_label: Concept
 
 ## Core Resources
 
-PrimeHub provides various types of resources management.
+PrimeHub includes various types of core resources which are prominent existence that administrators must/can manage them according to the circumstance.
 
 ### Users
 
-Users are project/group members. In order to perform features from User Portal, users must be associated with one group at least. 
+Users are project/group members. In order to perform features from User Portal, users must be associated with one group at least.
 
 In addition, users can have Group Admin privilege or/and Admin privilege to access dedicated features.
 
@@ -61,6 +61,8 @@ See [Secret Management](guide_manual/admin-secret).
 ---
 
 ## Components
+
+PrimeHub incorporates several prominent scientist-facing components.
 
 ### Notebooks
 
