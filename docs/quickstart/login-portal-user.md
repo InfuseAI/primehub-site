@@ -2,7 +2,7 @@
 id: login-portal-user
 title: User Portal
 description: User Portal
-sidebar_label: Overview
+sidebar_label: User Portal
 ---
 
 <div class="label-sect">
@@ -14,7 +14,7 @@ sidebar_label: Overview
   </div>
 </div>
 
-## User Portal
+## Portal
 
 After login, a user lands on User Portal.
 

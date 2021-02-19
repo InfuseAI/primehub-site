@@ -2,7 +2,7 @@
 id: nb-data-store
 title: Persistence
 description: Storing Data
-sidebar_label: Data Store 
+sidebar_label: Persistence
 ---
 
 PrimeHub provides several types of persistent data stores. These stores can be accessed from working environments.

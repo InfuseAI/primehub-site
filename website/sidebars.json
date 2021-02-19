@@ -2,35 +2,11 @@
   "documentation": {
     "Overview": [
       "introduction",
-      {
-        "type": "subcategory",
-        "label":"Concept",
-        "ids":[
-            "core-resources",
-            "components"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label":"Persistence",
-        "ids":[
-          "quickstart/nb-data-store"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label":"Resources quota",
-        "ids":[
-          "resources-quota"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label":"Permission",
-        "ids":[
-          "roles"
-        ]
-      }
+      "concept",
+      "quickstart/nb-data-store",
+      "resources-quota",
+      "roles",
+      "quickstart/login-portal-user"
     ],
     "Installation": [
       "dev-introduction",
@@ -60,26 +36,27 @@
         ]
       }
     ],
-    "User Guide": [
-      "quickstart/login-portal-user",
+    "Notebooks": [
+      "quickstart/launch-project",
+      "user-advanced-setting",
+      "guide_manual/ssh-config",
+      "notebook-tips",
       {
         "type": "subcategory",
-        "label": "Notebook",
-        "ids":[
-          "quickstart/launch-project",
-          "user-advanced-setting",
-          "guide_manual/ssh-config",
-          "ph-notebook-extension",
-          "notebook-as-job",
-          "notebook-tips"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Jobs",
+        "label": "Notebook Extension",
         "ids": [
-          "job-submission-feature",
-          "job-artifact-feature",
+          "ph-notebook-extension",
+          "notebook-as-job"
+        ]
+      }
+    ],
+    "Jobs": [
+      "job-submission-feature",
+      "job-artifact-feature",
+      {
+        "type": "subcategory",
+        "label": "Tutorial",
+        "ids": [
           "job-submission-tutorial-simple",
           "job-submission-tutorial-p1",
           "job-submission-tutorial-p2",
@@ -87,24 +64,16 @@
           "job-submission-tutorial-p4",
           "job-artifacts-simple"
         ]
-      },
+      }
+    ],
+    "Schedule": [
+      "job-scheduling-feature"
+    ],
+    "Models": [
+      "model-deployment-feature",
       {
         "type": "subcategory",
-        "label": "Schedule",
-        "ids": [
-          "job-scheduling-feature"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Models",
-        "ids": [
-          "model-deployment-feature"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Models: Tutorials",
+        "label": "Tutorials",
         "ids": [
           "model-deployment-tutorial-concepts",
           "model-deployment-tutorial-prepackaged-image",
@@ -114,7 +83,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Models: Pre-packaged servers",
+        "label": "Pre-packaged servers",
         "ids": [
           "model-deployment-prepackaged-server-intro",
           "model-deployment-prepackaged-server-tensorflow2",
@@ -126,7 +95,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Models: Package from Language Wrapper",
+        "label": "Package from Language Wrapper",
         "ids": [
           "model-deployment-language-wrapper-intro",
           "model-deployment-language-wrapper-python",
@@ -136,47 +105,36 @@
       },
       {
         "type": "subcategory",
-        "label": "Models: Advanced",
+        "label": "Advanced",
         "ids": [
           "model-deployment-prediction-apis",
           "model-deployment-model-uri"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Images",
-        "ids":[
-          "group-image"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Shared Files",
-        "ids": [
-          "shared-files"
-        ]
       }
-    ],  
-    "Administration Guide":[
+    ],
+    "Group Adminstration": [
+      "group-image"
+    ],
+    "Shared Files": [
+      "shared-files"
+    ],
+    "SSH Server": [
+
+    ],
+    "Admin Portal": [
       "quickstart/login-portal-admin",
       {
         "type": "subcategory",
-        "label": "Manage users",
-        "ids":[
-          "guide_manual/admin-user"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Manage groups",
+        "label": "Manage users and groups",
         "ids": [
+          "guide_manual/admin-user",
           "guide_manual/admin-group"
         ]
       },
       {
-        "type":"subcategory",
-        "label":"Manage Instance Type",
-        "ids":[
+        "type": "subcategory",
+        "label": "Manage Instance Type",
+        "ids": [
           "guide_manual/admin-instancetype",
           "guide_manual/usecase-toleration",
           "guide_manual/usecase-nodeselector",
@@ -185,18 +143,12 @@
       },
       {
         "type": "subcategory",
-        "label": "Manage images",
-        "ids":[
-          "guide_manual/admin-image",
-          "guide_manual/images-list"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Build custom images",
+        "label": "Manage and build images",
         "ids": [
+          "guide_manual/admin-image",
           "guide_manual/admin-build-image",
-          "guide_manual/custom-image-guideline"
+          "guide_manual/custom-image-guideline",
+          "guide_manual/images-list"
         ]
       },
       {
@@ -240,9 +192,9 @@
         ]
       },
       {
-        "type":"subcategory",
-        "label":"Quick Start",
-        "ids":[
+        "type": "subcategory",
+        "label": "Quick Start",
+        "ids": [
           "quickstart/create-user",
           "quickstart/create-group",
           "quickstart/assign-group-admin",
@@ -255,7 +207,6 @@
         ]
       }
     ],
-
     "Designs and Concepts": [
       {
         "type": "subcategory",
@@ -296,8 +247,7 @@
       "getting_started/configure-primehub-store",
       "getting_started/configure-ssh-server",
       "getting_started/configure-job-submission",
-      "getting_started/configure-self-signed-ca",
-      "getting_started/configure-image-builder"
+      "getting_started/configure-self-signed-ca"
     ],
     "Tasks": [
       {
@@ -312,7 +262,7 @@
       {
         "type": "subcategory",
         "label": "API",
-        "ids":[
+        "ids": [
           "tasks/api-token"
         ]
       }
@@ -327,7 +277,7 @@
     "Trouble Shooting": [
       "trouble-shoot-guide",
       {
-        "type":"subcategory",
+        "type": "subcategory",
         "label": "JupyterHub",
         "ids": [
           "trouble/jh-blank-page",
@@ -335,7 +285,7 @@
         ]
       },
       {
-        "type":"subcategory",
+        "type": "subcategory",
         "label": "Keycloak",
         "ids": [
           "trouble/kc-brute-force-detection",
@@ -343,7 +293,7 @@
         ]
       },
       {
-        "type":"subcategory",
+        "type": "subcategory",
         "label": "SSH Server",
         "ids": [
           "trouble/ssh-server-permission-denied",
@@ -354,53 +304,54 @@
     ]
   },
   "zh-tw": {
-    "繁中文件": [
-      "index-zh"
-      ],
-    "User Guide": [
-      "zh-tw/quickstart/login-portal-user",
+    "Overview": [
+      "index-zh",
+      "zh-tw/quickstart/login-portal-user"
+    ],
+    "Notebooks": [
+      "zh-tw/quickstart/launch-project",
+      "zh-tw/user-advanced-setting",
+      "zh-tw/guide_manual/ssh-config-cht",
+      "zh-tw/notebook-tips-cht",
       {
         "type": "subcategory",
-        "label": "Notebook",
+        "label": "Notebook Extension",
         "ids": [
-          "zh-tw/quickstart/launch-project",
-          "zh-tw/user-advanced-setting",
-          "zh-tw/guide_manual/ssh-config-cht",
-          "zh-tw/notebook-tips-cht",
           "zh-tw/ph-notebook-extension-cht",
           "zh-tw/notebook-as-job-cht"
         ]
-      },
+      }
+    ],
+    "Jobs": [
       {
         "type": "subcategory",
-        "label": "Jobs",
+        "label": "Submission",
         "ids": [
-              "zh-tw/job-submission-cht",
-              "zh-tw/job-artifact-cht",
-              "zh-tw/job-submission-tutorial-simple",
-              "zh-tw/job-submission-tutorial-p1",
-              "zh-tw/job-submission-tutorial-p2",
-              "zh-tw/job-artifacts-simple-cht",
-              "zh-tw/job-tutorial-more"
+          "zh-tw/job-submission-cht",
+          "zh-tw/job-artifact-cht"
         ]
       },
       {
         "type": "subcategory",
-        "label": "Schedule",
+        "label": "教學",
         "ids": [
-          "zh-tw/job-scheduling-feature-cht"
+          "zh-tw/job-submission-tutorial-simple",
+          "zh-tw/job-submission-tutorial-p1",
+          "zh-tw/job-submission-tutorial-p2",
+          "zh-tw/job-artifacts-simple-cht",
+          "zh-tw/job-tutorial-more"
         ]
-      },
+      }
+    ],
+    "Schedule": [
+      "zh-tw/job-scheduling-feature-cht"
+    ],
+    "Models": [
+      "zh-tw/model-deployment-feature",
+      "zh-tw/model-overview",
       {
         "type": "subcategory",
-        "label": "Models",
-        "ids": [
-          "zh-tw/model-deployment-feature"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Models: Tutorials",
+        "label": "Tutorials",
         "ids": [
           "zh-tw/model-deployment-tutorial-concepts-cht",
           "zh-tw/model-deployment-tutorial-prepackaged-image-cht",
@@ -410,7 +361,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Models: Pre-packaged servers",
+        "label": "Pre-packaged servers",
         "ids": [
           "zh-tw/model-deployment-prepackaged-server-intro-cht",
           "zh-tw/model-deployment-prepackaged-server-tensorflow2-cht",
@@ -422,7 +373,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Models: Package from Language Wrapper",
+        "label": "Package from Language Wrapper 教學 (Beta)",
         "ids": [
           "zh-tw/model-deployment-language-wrapper-intro-cht",
           "zh-tw/model-deployment-tutorial-package-image",
@@ -432,72 +383,52 @@
       },
       {
         "type": "subcategory",
-        "label": "Models: Advanced",
+        "label": "Advanced",
         "ids": [
           "zh-tw/model-deployment-prediction-apis-cht",
           "zh-tw/model-deployment-model-uri-cht"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Images",
-        "ids": [
-          "zh-tw/group-image-cht"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Shared Files",
-        "ids": [
-          "zh-tw/shared-files-cht"
-        ]
       }
     ],
-    "Administration Guide": [
+    "Group Administration": [
+      "zh-tw/group-image-cht"
+    ],
+    "Shared Files": [
+      "zh-tw/shared-files-cht"
+    ],
+    "Admin Portal": [
       "zh-tw/quickstart/login-portal-admin",
       {
-        "type":"subcategory",
-        "label":"使用者管理",
-        "ids":[
-          "zh-tw/guide_manual/admin-user-cht"
-        ]
-      },
-      {
-        "type":"subcategory",
-        "label":"群組管理",
-        "ids":[
+        "type": "subcategory",
+        "label": "使用者及群組管理",
+        "ids": [
+          "zh-tw/guide_manual/admin-user-cht",
           "zh-tw/guide_manual/admin-group-cht"
         ]
       },
       {
-        "type":"subcategory",
-        "label":"Instance Type 管理",
-        "ids":[
+        "type": "subcategory",
+        "label": "Instance Type 管理",
+        "ids": [
           "zh-tw/guide_manual/admin-instancetype-cht",
           "zh-tw/guide_manual/usecase-toleration-cht",
           "zh-tw/guide_manual/usecase-nodeselector-cht"
         ]
       },
       {
-        "type":"subcategory",
-        "label":"Image 管理",
-        "ids":[
+        "type": "subcategory",
+        "label": "Image 創建及管理",
+        "ids": [
           "zh-tw/guide_manual/admin-image-cht",
+          "zh-tw/guide_manual/admin-build-image-cht",
+          "zh-tw/guide_manual/custom-image-guideline",
           "zh-tw/guide_manual/images-list"
         ]
       },
       {
         "type": "subcategory",
-        "label": "Image 創建",
-        "ids": [
-          "zh-tw/guide_manual/admin-build-image-cht",
-          "zh-tw/guide_manual/custom-image-guideline"
-        ]
-      },
-      {
-        "type":"subcategory",
         "label": "Dataset 管理及上傳",
-        "ids":[
+        "ids": [
           "zh-tw/guide_manual/admin-dataset-cht",
           "zh-tw/guide_manual/admin-uploader-cht"
         ]
@@ -505,7 +436,7 @@
       {
         "type": "subcategory",
         "label": "Secret 管理及取得",
-        "ids":[
+        "ids": [
           "zh-tw/guide_manual/admin-secret-cht"
         ]
       },
@@ -549,35 +480,17 @@
       }
     ],
     "Reference": [
-      {
-        "type": "subcategory",
-        "label": "Persistence",
-        "ids": [
-          "zh-tw/quickstart/nb-data-store-cht"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "SSH Remotely",
-        "ids": [
-          "zh-tw/guide_manual/ssh-vscode-cht",
-          "zh-tw/guide_manual/ssh-keygen-cht"
-        ]
-      }
+      "zh-tw/quickstart/nb-data-store-cht",
+      "zh-tw/guide_manual/ssh-vscode-cht",
+      "zh-tw/guide_manual/ssh-keygen-cht"
     ]
   },
   "primehub-deploy": {
     "PrimeHub Deploy": [
-          "deploy-index",
+      "deploy-index",
+      "model_deployment/md-deployment",
       {
         "type": "subcategory",
-        "label": "Mode Deployment",
-        "ids": [
-          "model_deployment/md-deployment"
-        ]
-      },
-      {
-        "type":"subcategory",
         "label": "Admin Dashboard",
         "ids": [
           "model_deployment/md-admin-portal",
@@ -592,16 +505,10 @@
   },
   "primehub-deploy-cht": {
     "PrimeHub 模型部署": [
+      "model_deployment/md-deployment-cht",
       {
         "type": "subcategory",
-        "label": "Mode Deployment",
-        "ids": [
-          "model_deployment/md-deployment-cht"
-        ]
-      },
-      {
-        "type":"subcategory",
-        "label": "Admin Dashboard",
+        "label": "Admin Portal", 
         "ids": [
           "model_deployment/md-system-cht",
           "model_deployment/md-user-cht",

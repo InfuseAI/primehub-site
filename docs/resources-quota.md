@@ -2,7 +2,7 @@
 id: resources-quota
 title: Resources Quota
 description: Resources Quota
-sidebar_label: Quota Control
+sidebar_label: Resources Quota
 ---
 
 Resources such as CPU, GPU, Memory are shared in multiple users and multiple groups. PrimeHub provides quotas control of valuable resources of a multi-tenant platform against users and groups, which can prevent single user/group from utilizing significant amount of resources. 

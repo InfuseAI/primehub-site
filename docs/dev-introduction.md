@@ -1,6 +1,7 @@
 ---
 id: dev-introduction
-title: Getting Started
+title: Overview
+sidebar_label: Overview
 ---
 
 PrimeHub is a Kubernetes-based cloud-native Machine Learning platform.
@@ -20,7 +21,9 @@ Before getting hands dirty in real circumstances, we have a [PrimeHub CE install
 
 ---
 
-## Setup Kubernetes for PrimeHub
+## Getting Started
+
+### Setup Kubernetes for PrimeHub
 
 Before PrimeHub installation, A Kubernetes cluster is required to meet prerequisites. Make sure your cluster is ready for PrimeHub.
 
@@ -31,11 +34,12 @@ If PrimeHub on GKE/EKS is one of your preference, you may want to start from our
 - [Install Kubernetes on GKE](getting_started/kubernetes_on_gke.md)
 - [Install Kubernetes on AWS EKS](getting_started/kubernetes_on_eks)
 
-## Setup PrimeHub
+### Setup PrimeHub
 
 - [Install PrimeHub Community](getting_started/install_primehub_ce)
 - [Install PrimeHub Enterprise](getting_started/install_primehub)
 
-### Single Node
+#### Single Node
 
+- [Install PrimeHub Community on Single Node (Ubuntu)](getting_started/kubernetes_on_ubuntu_cekubernetes_on_ubuntu_ce)
 - [Install PrimeHub Enterprise on Single Node (Ubuntu)](getting_started/kubernetes_on_ubuntu_machine)

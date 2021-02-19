@@ -1,21 +1,21 @@
 ---
 id: md-deployment
-title: Model Deployment (Beta)
+title: Models (beta)
 description: Model Deployment (Beta)
 ---
 
-**Model Deployment** is a feature from PrimeHub Enterprise.
+One of the last stages in the MLOps is Model Deployment that by integration of a machine learning model into an environment which can retrieve query data and respond with an inference/prediction. By serving models, scientists can also learn the performance of trained models in a practical circumstance.
 
-Documents below are linked to **Model** section from PrimeHub Enterprise documentation
+By Models feature of PrimeHub Enterprise, scientists can deploy a model file directly with a specified image of pre-packaged server or can deploy a model image which already packages a model file into.
 
-## Manual
+## Documents 
 
-+ [Model Deployment](../model-deployment-feature)
-+ [模型部署](../zh-tw/model-deployment-feature)
++ [Models feature overview](../model-deployment-feature)
++ [Tutorials overview](../model-deployment-tutorial-concepts)
++ [Pre-packaged servers overview](../model-deployment-prepackaged-server-intro)
++ [Package from Language Wrapper overview](../model-deployment-language-wrapper-intro)
 
-## Tutorials
+### Advanced
 
-+ [Quickstart Tutorial of Model Deployment](../model-deployment-quickstart-tutorial)
-+ [Package a Docker Image for Model Deployment (Python)](../model-deployment-tutorial-package-image)
-+ [Package a Docker Image for Model Deployment (R)](../model-deployment-tutorial-package-image-r)
-+ [Prepackage a Base Image and Use It](../model-deployment-language-wrapper-reusable-base-image-cht)
++ [Prediction API](../model-deployment-prediction-apis)
++ [Model URI](../model-deployment-model-uri)

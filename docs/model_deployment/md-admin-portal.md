@@ -2,17 +2,14 @@
 id: md-admin-portal
 title: Admin Portal
 description: Admin Portal
+sidebar_label: Overview
 ---
 
 This quickstart shows how to access `Admin Portal`.
 
-## Login
-
-![](assets/login_1.png)
-
-Select a `language` you prefer. Click Login with Admin username and password.
-
 ## Switch to Admin Portal
+
+First, login with an Admin account.
 
 When login as an administrator, initially, you are directed to **User Portal**, click the icon at top-right and select `Admin Portal` for the switch.
 

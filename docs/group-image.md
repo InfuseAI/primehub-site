@@ -2,7 +2,7 @@
 id: group-image
 title: Images
 description: Images
-sidebar_label: Overview
+sidebar_label: Images
 ---
 
 <div class="label-sect">
@@ -19,11 +19,9 @@ sidebar_label: Overview
 
 >Images is a feature dedicated to [Group Admin](guide_manual/admin-group#members); only Group Admin can access it from User Portal. Please contact Admin to acquire Group Admin privilege.
 
-
 ![](assets/group-image-list.png)
 
 + `Search Image`: Search images by a keyword and press Enter.
-
 
 ## Adding New Image
 

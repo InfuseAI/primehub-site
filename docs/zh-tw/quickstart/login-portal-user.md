@@ -2,7 +2,7 @@
 id: login-portal-user
 title: User Portal
 description: User Portal
-sidebar_label: Overview
+sidebar_label: User Portal
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
@@ -15,7 +15,7 @@ sidebar_label: Overview
 
 登入後，首頁為 User Portal。
 
-## User Portal
+## Portal
 
 ![](assets/v33-landing-user.png)
 

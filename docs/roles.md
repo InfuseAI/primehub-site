@@ -1,8 +1,8 @@
 ---
 id: roles
 title: Permission
-sidebar_label: Role
-description: Permission 
+sidebar_label: Permission
+description: Role Permission 
 ---
 
 

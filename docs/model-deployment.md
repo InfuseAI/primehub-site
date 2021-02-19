@@ -1,6 +1,6 @@
 ---
 id: model-deployment-feature
-title: Model Deployment (Beta)
+title: Models (Beta)
 sidebar_label: Overview
 description: Model Deployment (Beta)
 ---
@@ -11,7 +11,9 @@ description: Model Deployment (Beta)
 
 >Beta version. It is subject to changes in the stable release.
 
-Model Deployment feature that users are allowed to manage model deployment endpoints within Group Management with CRUD operations. If the feature is enabled within a group, end-users of the group are allowed to deploy models obeying the restriction of the group quota. While a deployed model serves, administrators are able to monitor the status of model service such service health and resources usage information; moreover, end-users are able to check deployment history and log.
+Models feature that users are able to deploy trained models as services and to manage these deployments. While model services are online, administrators are able to monitor the status of model service such service health and resources usage information; moreover, users are able to check deployment history and log.
+
+PrimeHub provides two ways of Model Deployment, one is to deploy a model image directly which has wrapped a model file into, the other is to specify a model file and a pre-packages server image as a deployment, under the hood, PrimeHub serves it as a service.
 
 ## Enable Model Deployment in Group Management
 
@@ -71,8 +73,8 @@ Confirm if the current group is what you desire; switch the group by the `Group:
 + `Deployment ID`: An unique ID.
 
 + `Model Image`: 
-  - The image which can be deployed directly ([Tutorial: Deploy a Model by Image built from Language Wrapper](model-deployment-tutorial-model-image)).
-  - Or acted as the pre-packaged model server image whick can be deployed with a model file ([Tutorial: Deploy a Model by Pre-packaged Server](model-deployment-tutorial-prepackaged-image)[、Tutorial: Deploy a Model by Pre-packaged Server (PHFS)](model-deployment-tutorial-prepackaged-image-phfs)).
+  - The image which has integrated a model file into can be deployed directly ([Tutorial: Deploy a Model by Image built from Language Wrapper](model-deployment-tutorial-model-image)).
+  - Or acted as the pre-packaged model server image which must be deployed with a specified model file ([Tutorial: Deploy a Model by Pre-packaged Server](model-deployment-tutorial-prepackaged-image)[、Tutorial: Deploy a Model by Pre-packaged Server (PHFS)](model-deployment-tutorial-prepackaged-image-phfs)).
 
     We can select the suggested pre-packaged model server image or click on its link to access its server information and input/output examples.
     ![](assets/mdeploy_create_model_image_suggestion.png)
