@@ -1,7 +1,7 @@
 ---
 id: model-deployment-feature
 title: 模型部署 (Beta)
-sidebar_label: Feature
+sidebar_label: Overview
 description: 模型部署 (Beta)
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: shared-files-cht
 title: Shared Files
-sidebar_label: Feature
+sidebar_label: Overview
 description: Shared Files
 ---
 

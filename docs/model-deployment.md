@@ -1,7 +1,7 @@
 ---
 id: model-deployment-feature
 title: Model Deployment (Beta)
-sidebar_label: Feature
+sidebar_label: Overview
 description: Model Deployment (Beta)
 ---
 

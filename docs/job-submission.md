@@ -1,7 +1,7 @@
 ---
 id: job-submission-feature
 title: Job Submission
-sidebar_label: Feature
+sidebar_label: Overview
 description: Job Submission
 ---
 
