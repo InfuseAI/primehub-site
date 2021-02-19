@@ -247,7 +247,8 @@
       "getting_started/configure-primehub-store",
       "getting_started/configure-ssh-server",
       "getting_started/configure-job-submission",
-      "getting_started/configure-self-signed-ca"
+      "getting_started/configure-self-signed-ca",
+      "getting_started/configure-model-deployment"
     ],
     "Tasks": [
       {
