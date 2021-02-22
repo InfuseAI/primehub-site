@@ -18,13 +18,13 @@ Here is the advanced configuration for model deployment.
 
 ## Increase the Timeout of Model Deployment Endpoint
 
-If you find your endpoint needs more time for each request, you can modify the following timeout settings.
+If you find your endpoints need more time for each request, you can modify the following timeout settings.
 
 ### Increase client-body-timeout
 
 Please check the definition of `client-body-timeout` in the [official doc](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#client-body-timeout).
 
-The setting affects globally of all model deployment endpoints and ingress settings.
+The setting affects globally of whole system, not only model deployment.
 
 Here are the steps to modify this setting:
 1. Check the namespace where the ingress pod is running by `kubectl get ns`. The default namespace is `ingress-nginx`.
