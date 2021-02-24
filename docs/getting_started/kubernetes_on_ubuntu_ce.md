@@ -11,7 +11,7 @@ sidebar_label: Install PrimeHub CE on Single Node
   </div>
 </div>
 
-This document will guide you to install [MicroK8s](https://microk8s.io/) on a single node and **PrimeHub Enterprise** with a easy script.
+This document will guide you to install [MicroK8s](https://microk8s.io/) on a single node and **PrimeHub Community** with a easy script.
 
 
 ## Provision a cluster
