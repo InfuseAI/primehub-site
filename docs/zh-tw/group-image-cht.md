@@ -13,15 +13,13 @@ sidebar_label: Images
 
 ![](assets/group-image-list.png)
 
-
 + `Search Image`: 關鍵字搜尋。
 
-## Adding New Image
+## Add New Image
 
 點擊 `New Image` 加入映像檔
 
-![](assets/group-image-new.png)
-
+![](assets/group-image-info.png)
 
 + `Display name`: 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）。
 
@@ -29,13 +27,16 @@ sidebar_label: Images
 
 + `Description`: 描述。
 
-+ `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
 
 選擇加入映像檔方式 `Use existing image` 或 `Build custom image`。
 
 ## Use Existing Image
 
 為群組加入已存在的映像檔。
+
+![](assets/group-image-existing.png)
+
++ `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
 
 + `Container image url`: 填入該 Image Url 的位置。[參考](#reference)
 
@@ -51,9 +52,9 @@ sidebar_label: Images
 
 為群組創建客製映像檔並加入。
 
->TBD
+![](assets/group-image-custom.png)
 
->There is build_custom_image picture
++ `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
 
 + `Base image` 必填，base image 的 url。我們可以輸入任何有效的 Image URL，或是可以從自動列舉清單中選擇，已經透過 Image 管理加入至 PrimeHub 的 Image。
 
@@ -87,39 +88,45 @@ sidebar_label: Images
 -c conda-forge::numpy==1.17*
 ```
 
+---
+
 ### Building in progress
 
-點擊 `Image building in progress` 連結檢視 `Build Details` 及 `Log`。
+創建中的映像檔名稱旁會有個三角提示，提示此映像檔尚未創建完成。
 
-> screenshot of building in progress
+![](assets/group-image-not-ready.png)
 
-創建過程可以被取消。
+點擊 `Image building in progress` 檢視 `Build Details` 及 `Log`。
+
+![](assets/group-image-building-detail.png)
+
+點擊 `Cancel Build` 撤消創建。
 
 ### Building finish
 
-![](assets/build_img_url.png)
+創建完成後，映像檔名稱的三角提示即消失。映像檔則可從各個映像檔清單選用；
 
-+ `Container image url`： 創建完成，該 image url 顯示於此。
+### View build details and Rebuild
 
-### View build details
+![](assets/group-image-built.png)
 
-點擊 `View build details` 檢視客製映像檔規格內容及創建過程記錄。
+點擊 `View build details` 檢視客製映像檔規格內容及創建過程記錄；進一步可編輯內容來重新創建映像檔。
 
-### Group Image
+![](assets/group-image-rebuild.png)
 
-當在映像檔選擇的場合時，`i` 提示該映像檔從屬於 `Group` 或 `System`。
+更新內容且點擊 `Rebuild` 即可重新創建映像檔。
 
-![](assets/group-image-hint.png)
+## Group Image
 
-## Deleting & Editing Image
+加入的群組映像檔，不論是現有映像檔或是創建映像檔，則都可從映像檔清單選用；`i` 提示該映像檔從屬於 `Group`。
+
+![](assets/group-image-selection.png)
+
+## Actions
 
 ![](assets/actions.png)
 
 點擊「筆」圖示來編輯；點擊「垃圾桶」圖示來刪除。
-
-### Rebuild
-
->TBD
 
 ## Reference
 

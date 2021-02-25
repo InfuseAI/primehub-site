@@ -16,7 +16,7 @@ By setting the group quota of a specific group, the sum of requested/allocated r
 
 ## User Quota
 
-By setting the user quota of specific group, a group member cannot request resources more than the user quota. The request will be rejected. 
+By setting the user quota of specific group, a group member cannot request resources more than the user quota. The request will be rejected. And if the request will cause the exeedance of group quotas, the request will be rejected as well.
 
 Since a user can be associated with multiple groups, switching working groups can have a user different user quotas from different group accordingly.
 

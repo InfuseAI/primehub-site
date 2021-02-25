@@ -23,12 +23,11 @@ sidebar_label: Images
 
 + `Search Image`: Search images by a keyword and press Enter.
 
-## Adding New Image
+## Add New Image
 
 Click `New Image` to add an Image.
 
-![](assets/group-image-new.png)
-
+![](assets/group-image-info.png)
 
 + `Display name`: (required): Only lowercase letters, numbers, hyphen `-` and a dot `.` can be filled in.
 
@@ -36,13 +35,15 @@ Click `New Image` to add an Image.
 
 + `Description`
 
-+ `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
-
 Choose `Use existing image` or `Build custom image`.
 
 ## Use Existing Image
 
 Add a existing image for the group.
+
+![](assets/group-image-existing.png)
+
++ `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
 
 + `Container image url`: Fill in the Image's url. See [Reference](#reference).
 
@@ -50,7 +51,7 @@ Add a existing image for the group.
 
    ![](assets/images_pull_secret_v26.png)
 
-+ `Specific container image url for GPU` It appears when `universal` is selected. By default, it uses the same url as container image url. Enable it if a specific url for GPU is desired.
++ `Specific container image url for GPU` It appears when `universal` is selected. By default, it uses the same url as container image url. Enable it if a specific image url for GPU is desired.
 
 Click `Create` to complete the addition.
 
@@ -59,11 +60,11 @@ Click `Create` to complete the addition.
 
 Instead of adding existing images, Group Admin can build custom images and add them for the group.
 
->TBD
+![](assets/group-image-custom.png)
 
->There is build_custom_image picture
++ `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
 
-+ `Base image` (required) The url of the base image; we can use any valid image URLs or we can choose images which are added via Image Management from autocompletion. See [Reference](#reference).
++ `Base image url` (required) The url of the base image; we can use any valid image URLs or we can choose images which are added via Image Management from autocompletion. See [Reference](#reference).
 
 + `Image Pull Secret` Enable and select the secret if a pull-secret is required.
 
@@ -77,7 +78,7 @@ Instead of adding existing images, Group Admin can build custom images and add t
 
   >In case of multiple packages, please using the **line break** for each package instead of putting them in one line.
 
-Click `Confirm` to start the building.
+Click `Create` to start the building.
 
 ### Conda Package Match Specification
 
@@ -97,40 +98,51 @@ Use `-c conda-forge::` to specify the channel:
 -c conda-forge::numpy==1.17*
 ```
 
+---
+
 ### Building in progress
 
-Click `Image building in progress` link to view the `Build Details` and `Log`.
+While building, the image name is amended with an triangular exclamation mark to indicate the image is not ready.
 
-> screenshot of building in progress
+![](assets/group-image-not-ready.png)
 
-During the building, the progress can be cancelled.
+
+Click the image name to view the detail, it shows `Image building in progress` beside Container image url.
+
+![](assets/group-image-building.png)
+
+Click `Image building in progress` to view the `Build Details` and `Log` of the building.
+
+![](assets/group-image-building-detail.png)
+
+The building progress can be cancelled by `Cancel Build`.
 
 
 ### Building finish
 
-![](assets/build_img_url.png)
+Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image becomes available from image selection.
 
-+ `Container image url`: Once the building finishes, the image url appears here.
+### View build details and Rebuild
 
-### View build details
+![](assets/group-image-built.png)
 
-Click `View build details` to view the build details of custom image spec and logs.
+Click `View build details` to view the detail and logs or to modify the detail for rebuilding.
 
-### Group Image
+![](assets/group-image-rebuild.png)
 
-If images are added for a group, from image selection, `i` hint indicates them `Group` image
+To rebuild the image, by modification to the details and pressing `Rebuild`.
 
-![](assets/group-image-hint.png)
+## Group Image
 
-## Deleting Image
+Whether adding an existing image or building a custom image for the managed group, the image can be selected from image selection; `i` hint indicates a `Group` image.
+
+![](assets/group-image-selection.png)
+
+## Actions
 
 ![](assets/actions.png)
 
-Click Pen-icon for the editing; click Trash-can-icon for the deletion.
-
-### Rebuild
-
->TBD  
+Click Pen-icon for the **editing**; click Trash-can-icon for the **deletion**.
 
 ## Reference
 

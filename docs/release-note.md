@@ -20,6 +20,10 @@ title: 3.4 Release Candidate Note
 
 ## 💫 One More Thing
 
+### MATLAB image
+
+See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img).
+
  
 ---
 
