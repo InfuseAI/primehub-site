@@ -1,10 +1,10 @@
 ---
 id: matlab-img
-title: How to use MATLAB
+title: How to launch MATLAB on PrimeHub
 sidebar_label: MATLAB Image
 ---
 
-InfuseAI has provided the PrimeHub-compatible [image of MATLAB environment on DockerHub](https://hub.docker.com/layers/infuseai/custom-image/matlab-proxy-r2020b/images/sha256-d30d67bcbe9f3d130e00d999d7ec569214058da950382aeb211f04b0574d77f9?context=explore), the upstream image is from https://ngc.nvidia.com/catalog/containers/partners:matlab.
+InfuseAI has provided the PrimeHub-compatible [image of MATLAB environment on DockerHub](https://hub.docker.com/layers/infuseai/custom-image/matlab-proxy-r2020b/images/sha256-d30d67bcbe9f3d130e00d999d7ec569214058da950382aeb211f04b0574d77f9?context=explore), the upstream image is from https://ngc.nvidia.com/catalog/containers/partners:matlab. Which we could launch a MATLAB environment on PrimeHub.
 
 The steps of launching MATLAB by using the image is below,
 
