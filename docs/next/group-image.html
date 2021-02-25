@@ -76,35 +76,32 @@
 <ul>
 <li><code>Search Image</code>: Search images by a keyword and press Enter.</li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="adding-new-image"></a><a href="#adding-new-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding New Image</h2>
+<h2><a class="anchor" aria-hidden="true" id="add-new-image"></a><a href="#add-new-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add New Image</h2>
 <p>Click <code>New Image</code> to add an Image.</p>
-<p><img src="/docs/assets/group-image-new.png" alt=""></p>
+<p><img src="/docs/assets/group-image-info.png" alt=""></p>
 <ul>
 <li><p><code>Display name</code>: (required): Only lowercase letters, numbers, hyphen <code>-</code> and a dot <code>.</code> can be filled in.</p></li>
 <li><p><code>Image name</code>: an auto-generated name based on Display name.</p></li>
 <li><p><code>Description</code></p></li>
-<li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: Select what type of the image is.</p></li>
 </ul>
 <p>Choose <code>Use existing image</code> or <code>Build custom image</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="use-existing-image"></a><a href="#use-existing-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use Existing Image</h2>
 <p>Add a existing image for the group.</p>
+<p><img src="/docs/assets/group-image-existing.png" alt=""></p>
 <ul>
+<li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: Select what type of the image is.</p></li>
 <li><p><code>Container image url</code>: Fill in the Image's url. See <a href="#reference">Reference</a>.</p></li>
 <li><p><code>Image Pull Secret</code> Enable and select the secret if a pull-secret is required.</p>
 <p><img src="/docs/assets/images_pull_secret_v26.png" alt=""></p></li>
-<li><p><code>Specific container image url for GPU</code> It appears when <code>universal</code> is selected. By default, it uses the same url as container image url. Enable it if a specific url for GPU is desired.</p></li>
+<li><p><code>Specific container image url for GPU</code> It appears when <code>universal</code> is selected. By default, it uses the same url as container image url. Enable it if a specific image url for GPU is desired.</p></li>
 </ul>
 <p>Click <code>Create</code> to complete the addition.</p>
 <h2><a class="anchor" aria-hidden="true" id="build-custom-image"></a><a href="#build-custom-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build Custom Image</h2>
 <p>Instead of adding existing images, Group Admin can build custom images and add them for the group.</p>
-<blockquote>
-<p>TBD</p>
-</blockquote>
-<blockquote>
-<p>There is build_custom_image picture</p>
-</blockquote>
+<p><img src="/docs/assets/group-image-custom.png" alt=""></p>
 <ul>
-<li><p><code>Base image</code> (required) The url of the base image; we can use any valid image URLs or we can choose images which are added via Image Management from autocompletion. See <a href="#reference">Reference</a>.</p></li>
+<li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: Select what type of the image is.</p></li>
+<li><p><code>Base image url</code> (required) The url of the base image; we can use any valid image URLs or we can choose images which are added via Image Management from autocompletion. See <a href="#reference">Reference</a>.</p></li>
 <li><p><code>Image Pull Secret</code> Enable and select the secret if a pull-secret is required.</p></li>
 <li><p><code>Packages</code> choose packages installer/management and fill in packages requirement.</p>
 <ul>
@@ -116,7 +113,7 @@
 <p>In case of multiple packages, please using the <strong>line break</strong> for each package instead of putting them in one line.</p>
 </blockquote></li>
 </ul>
-<p>Click <code>Confirm</code> to start the building.</p>
+<p>Click <code>Create</code> to start the building.</p>
 <h3><a class="anchor" aria-hidden="true" id="conda-package-match-specification"></a><a href="#conda-package-match-specification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conda Package Match Specification</h3>
 <p>Conda supports to specify <code>channel</code> where the package is sourced from and <a href="https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications">match specification</a> of the package. So we can specify images more specifically.</p>
 <p>The syntax is</p>
@@ -126,31 +123,30 @@
 <p>Use <code>-c conda-forge::</code> to specify the channel:</p>
 <pre><code class="hljs css language-bash">-c conda-forge::numpy<span class="token operator">==</span><span class="token number">1.17</span>*
 </code></pre>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="building-in-progress"></a><a href="#building-in-progress" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building in progress</h3>
-<p>Click <code>Image building in progress</code> link to view the <code>Build Details</code> and <code>Log</code>.</p>
-<blockquote>
-<p>screenshot of building in progress</p>
-</blockquote>
-<p>During the building, the progress can be cancelled.</p>
+<p>While building, the image name is amended with an triangular exclamation mark to indicate the image is not ready.</p>
+<p><img src="/docs/assets/group-image-not-ready.png" alt=""></p>
+<p>Click the image name to view the detail, it shows <code>Image building in progress</code> beside Container image url.</p>
+<p><img src="/docs/assets/group-image-building.png" alt=""></p>
+<p>Click <code>Image building in progress</code> to view the <code>Build Details</code> and <code>Log</code> of the building.</p>
+<p><img src="/docs/assets/group-image-building-detail.png" alt=""></p>
+<p>The building progress can be cancelled by <code>Cancel Build</code>.</p>
 <h3><a class="anchor" aria-hidden="true" id="building-finish"></a><a href="#building-finish" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building finish</h3>
-<p><img src="/docs/assets/build_img_url.png" alt=""></p>
-<ul>
-<li><code>Container image url</code>: Once the building finishes, the image url appears here.</li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="view-build-details"></a><a href="#view-build-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View build details</h3>
-<p>Click <code>View build details</code> to view the build details of custom image spec and logs.</p>
-<h3><a class="anchor" aria-hidden="true" id="group-image"></a><a href="#group-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Image</h3>
-<p>If images are added for a group, from image selection, <code>i</code> hint indicates them <code>Group</code> image</p>
-<p><img src="/docs/assets/group-image-hint.png" alt=""></p>
-<h2><a class="anchor" aria-hidden="true" id="deleting-image"></a><a href="#deleting-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting Image</h2>
+<p>Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image becomes available from image selection.</p>
+<h3><a class="anchor" aria-hidden="true" id="view-build-details-and-rebuild"></a><a href="#view-build-details-and-rebuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View build details and Rebuild</h3>
+<p><img src="/docs/assets/group-image-built.png" alt=""></p>
+<p>Click <code>View build details</code> to view the detail and logs or to modify the detail for rebuilding.</p>
+<p><img src="/docs/assets/group-image-rebuild.png" alt=""></p>
+<p>To rebuild the image, by modification to the details and pressing <code>Rebuild</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="group-image"></a><a href="#group-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Image</h2>
+<p>Whether adding an existing image or building a custom image for the managed group, the image can be selected from image selection; <code>i</code> hint indicates a <code>Group</code> image.</p>
+<p><img src="/docs/assets/group-image-selection.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="actions"></a><a href="#actions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Actions</h2>
 <p><img src="/docs/assets/actions.png" alt=""></p>
-<p>Click Pen-icon for the editing; click Trash-can-icon for the deletion.</p>
-<h3><a class="anchor" aria-hidden="true" id="rebuild"></a><a href="#rebuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rebuild</h3>
-<blockquote>
-<p>TBD</p>
-</blockquote>
+<p>Click Pen-icon for the <strong>editing</strong>; click Trash-can-icon for the <strong>deletion</strong>.</p>
 <h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <ul>
 <li><a href="guide_manual/images-list">Available images provided by InfuseAI</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/model-deployment-model-uri"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/shared-files"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#adding-new-image">Adding New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#conda-package-match-specification">Conda Package Match Specification</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#building-finish">Building finish</a></li><li><a href="#view-build-details">View build details</a></li><li><a href="#group-image">Group Image</a></li></ul></li><li><a href="#deleting-image">Deleting Image</a><ul class="toc-headings"><li><a href="#rebuild">Rebuild</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/model-deployment-model-uri"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/shared-files"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-new-image">Add New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#conda-package-match-specification">Conda Package Match Specification</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#building-finish">Building finish</a></li><li><a href="#view-build-details-and-rebuild">View build details and Rebuild</a></li></ul></li><li><a href="#group-image">Group Image</a></li><li><a href="#actions">Actions</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>

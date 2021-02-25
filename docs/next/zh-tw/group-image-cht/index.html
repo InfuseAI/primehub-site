@@ -68,19 +68,20 @@
 <ul>
 <li><code>Search Image</code>: 關鍵字搜尋。</li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="adding-new-image"></a><a href="#adding-new-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding New Image</h2>
+<h2><a class="anchor" aria-hidden="true" id="add-new-image"></a><a href="#add-new-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add New Image</h2>
 <p>點擊 <code>New Image</code> 加入映像檔</p>
-<p><img src="/docs/assets/group-image-new.png" alt=""></p>
+<p><img src="/docs/assets/group-image-info.png" alt=""></p>
 <ul>
 <li><p><code>Display name</code>: 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）。</p></li>
 <li><p><code>Image name</code>: 依據 Display name 自動產生。</p></li>
 <li><p><code>Description</code>: 描述。</p></li>
-<li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: 指定該 Image 的 Type。</p></li>
 </ul>
 <p>選擇加入映像檔方式 <code>Use existing image</code> 或 <code>Build custom image</code>。</p>
 <h2><a class="anchor" aria-hidden="true" id="use-existing-image"></a><a href="#use-existing-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use Existing Image</h2>
 <p>為群組加入已存在的映像檔。</p>
+<p><img src="/docs/assets/group-image-existing.png" alt=""></p>
 <ul>
+<li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: 指定該 Image 的 Type。</p></li>
 <li><p><code>Container image url</code>: 填入該 Image Url 的位置。<a href="#reference">參考</a></p></li>
 <li><p><code>Image Pull Secret</code> 勾選是否需要指定 pull-secret ，並從選單指定該 secret。</p>
 <p><img src="/docs/assets/images_pull_secret_v26.png" alt=""></p></li>
@@ -89,13 +90,9 @@
 <p>點擊 <code>Create</code> 加入。</p>
 <h2><a class="anchor" aria-hidden="true" id="build-custom-image"></a><a href="#build-custom-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build Custom Image</h2>
 <p>為群組創建客製映像檔並加入。</p>
-<blockquote>
-<p>TBD</p>
-</blockquote>
-<blockquote>
-<p>There is build_custom_image picture</p>
-</blockquote>
+<p><img src="/docs/assets/group-image-custom.png" alt=""></p>
 <ul>
+<li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: 指定該 Image 的 Type。</p></li>
 <li><p><code>Base image</code> 必填，base image 的 url。我們可以輸入任何有效的 Image URL，或是可以從自動列舉清單中選擇，已經透過 Image 管理加入至 PrimeHub 的 Image。</p></li>
 <li><p><code>Image PullSecret</code> 如果 pull secret 為必要，請勾選。</p></li>
 <li><p><code>Packages</code> 於對應的套件管理下輸入要預先安裝的套件名稱。</p>
@@ -117,31 +114,28 @@
 <p>指定<code>-c conda-forge::</code> channel 再配合其進階條件：</p>
 <pre><code class="hljs css language-bash">-c conda-forge::numpy<span class="token operator">==</span><span class="token number">1.17</span>*
 </code></pre>
+<hr>
 <h3><a class="anchor" aria-hidden="true" id="building-in-progress"></a><a href="#building-in-progress" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building in progress</h3>
-<p>點擊 <code>Image building in progress</code> 連結檢視 <code>Build Details</code> 及 <code>Log</code>。</p>
-<blockquote>
-<p>screenshot of building in progress</p>
-</blockquote>
-<p>創建過程可以被取消。</p>
+<p>創建中的映像檔名稱旁會有個三角提示，提示此映像檔尚未創建完成。</p>
+<p><img src="/docs/assets/group-image-not-ready.png" alt=""></p>
+<p>點擊 <code>Image building in progress</code> 檢視 <code>Build Details</code> 及 <code>Log</code>。</p>
+<p><img src="/docs/assets/group-image-building-detail.png" alt=""></p>
+<p>點擊 <code>Cancel Build</code> 撤消創建。</p>
 <h3><a class="anchor" aria-hidden="true" id="building-finish"></a><a href="#building-finish" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building finish</h3>
-<p><img src="/docs/assets/build_img_url.png" alt=""></p>
-<ul>
-<li><code>Container image url</code>： 創建完成，該 image url 顯示於此。</li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="view-build-details"></a><a href="#view-build-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View build details</h3>
-<p>點擊 <code>View build details</code> 檢視客製映像檔規格內容及創建過程記錄。</p>
-<h3><a class="anchor" aria-hidden="true" id="group-image"></a><a href="#group-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Image</h3>
-<p>當在映像檔選擇的場合時，<code>i</code> 提示該映像檔從屬於 <code>Group</code> 或 <code>System</code>。</p>
-<p><img src="/docs/assets/group-image-hint.png" alt=""></p>
-<h2><a class="anchor" aria-hidden="true" id="deleting--editing-image"></a><a href="#deleting--editing-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting &amp; Editing Image</h2>
+<p>創建完成後，映像檔名稱的三角提示即消失。映像檔則可從各個映像檔清單選用；</p>
+<h3><a class="anchor" aria-hidden="true" id="view-build-details-and-rebuild"></a><a href="#view-build-details-and-rebuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View build details and Rebuild</h3>
+<p><img src="/docs/assets/group-image-built.png" alt=""></p>
+<p>點擊 <code>View build details</code> 檢視客製映像檔規格內容及創建過程記錄；進一步可編輯內容來重新創建映像檔。</p>
+<p><img src="/docs/assets/group-image-rebuild.png" alt=""></p>
+<p>更新內容且點擊 <code>Rebuild</code> 即可重新創建映像檔。</p>
+<h2><a class="anchor" aria-hidden="true" id="group-image"></a><a href="#group-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Image</h2>
+<p>加入的群組映像檔，不論是現有映像檔或是創建映像檔，則都可從映像檔清單選用；<code>i</code> 提示該映像檔從屬於 <code>Group</code>。</p>
+<p><img src="/docs/assets/group-image-selection.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="actions"></a><a href="#actions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Actions</h2>
 <p><img src="/docs/assets/actions.png" alt=""></p>
 <p>點擊「筆」圖示來編輯；點擊「垃圾桶」圖示來刪除。</p>
-<h3><a class="anchor" aria-hidden="true" id="rebuild"></a><a href="#rebuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rebuild</h3>
-<blockquote>
-<p>TBD</p>
-</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <ul>
 <li><a href="guide_manual/images-list">Available images provided by InfuseAI</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/model-deployment-model-uri-cht"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/zh-tw/shared-files-cht"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#adding-new-image">Adding New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#指定-conda-套件符合條件">指定 Conda 套件符合條件</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#building-finish">Building finish</a></li><li><a href="#view-build-details">View build details</a></li><li><a href="#group-image">Group Image</a></li></ul></li><li><a href="#deleting--editing-image">Deleting &amp; Editing Image</a><ul class="toc-headings"><li><a href="#rebuild">Rebuild</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/model-deployment-model-uri-cht"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/zh-tw/shared-files-cht"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-new-image">Add New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#指定-conda-套件符合條件">指定 Conda 套件符合條件</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#building-finish">Building finish</a></li><li><a href="#view-build-details-and-rebuild">View build details and Rebuild</a></li></ul></li><li><a href="#group-image">Group Image</a></li><li><a href="#actions">Actions</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="/docs/deploy-index">PrimeHub Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
