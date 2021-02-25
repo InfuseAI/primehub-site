@@ -257,7 +257,7 @@
         "ids": [
           "tasks/repo2docker",
           "tasks/non-standard-image",
-          "tasks/customize-job-runtime"
+          "tasks/matlab-img"
         ]
       },
       {
@@ -266,7 +266,8 @@
         "ids": [
           "tasks/api-token"
         ]
-      }
+      },
+      "tasks/customize-job-runtime"
     ],
     "References": [
       "references/primehub_chart",
