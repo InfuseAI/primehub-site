@@ -3,6 +3,12 @@ id: md-user-cht
 title: User Management
 description: User Management
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 ## Creating New Users
 

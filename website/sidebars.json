@@ -207,6 +207,21 @@
         ]
       }
     ],
+    "PrimeHub Deploy": [
+      "deploy-index",
+      {
+        "type": "subcategory",
+        "label": "Admin Portal",
+        "ids": [
+          "model_deployment/md-admin-portal",
+          "model_deployment/md-group",
+          "model_deployment/md-user",
+          "model_deployment/md-instancetype",
+          "model_deployment/md-secret",
+          "model_deployment/md-system"
+        ]
+      }
+    ],
     "Designs and Concepts": [
       {
         "type": "subcategory",
@@ -485,24 +500,6 @@
       "zh-tw/quickstart/nb-data-store-cht",
       "zh-tw/guide_manual/ssh-vscode-cht",
       "zh-tw/guide_manual/ssh-keygen-cht"
-    ]
-  },
-  "primehub-deploy": {
-    "PrimeHub Deploy": [
-      "deploy-index",
-      "model_deployment/md-deployment",
-      {
-        "type": "subcategory",
-        "label": "Admin Dashboard",
-        "ids": [
-          "model_deployment/md-admin-portal",
-          "model_deployment/md-system",
-          "model_deployment/md-user",
-          "model_deployment/md-group",
-          "model_deployment/md-instancetype",
-          "model_deployment/md-secret"
-        ]
-      }
     ]
   },
   "primehub-deploy-cht": {

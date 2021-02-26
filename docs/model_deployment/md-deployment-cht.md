@@ -3,6 +3,12 @@ id: md-deployment-cht
 title: 模型部署 (Beta)
 description: 模型部署 (Beta)
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 **Model Deployment** is a feature from PrimeHub Enterprise.
 

@@ -42,7 +42,7 @@ incorporates scientists-facing prominent features that scientists are able to tu
 
 + [Deploy Models and serve models](model-deployment-feature)
 
-+ [Add group-specific images](group-image) `New`
++ [Add/Build group-specific images](group-image) `New`
 
 + [Share files within a group](shared-files) `New`
 

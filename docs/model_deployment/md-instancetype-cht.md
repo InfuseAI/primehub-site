@@ -3,6 +3,12 @@ id: md-instancetype-cht
 title: Instance Type Management
 description: Instance Type Management
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 Instance type management 提供給管理者 Instance 運算資源管理能力，如：新增、刪除、編輯運算資源分配及群組權限。
 

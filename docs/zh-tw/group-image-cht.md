@@ -5,6 +5,16 @@ description: Images
 sidebar_label: Images
 ---
 
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+<br>
+
 **Images** 提供 Group Admin 針對其管理的群組來管理群組限定的映像檔資源的功能。
 
 >Images 為 [Group Admin](guide_manual/admin-group-cht#members) 層級才能存取的功能；請洽管理者取得此權限。

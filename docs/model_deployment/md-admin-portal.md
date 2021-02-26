@@ -4,8 +4,14 @@ title: Admin Portal
 description: Admin Portal
 sidebar_label: Overview
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
-This quickstart shows how to access `Admin Portal`.
+The document introduces Admin Portal with administration features dedicated to PrimeHub Deploy.
 
 ## Switch to Admin Portal
 
@@ -15,15 +21,12 @@ When login as an administrator, initially, you are directed to **User Portal**, 
 
 ![](assets/v3-admin-entry.png)
 
-## Admin Portal
 
-Basically, the layout is same as Admin Dashboard in PrimeHub v2.x; in addition,  `Notebooks Admin` feature, `Maintenance` feature and `Grafana` link are merged into Admin Portal.
-
-+ `JupyterHub Admin` is renamed to `Notebooks Admin`.
+## Administration
 
 ![](assets/md_admin_portal_v31.png)
 
-### Side Menu
+### Features
 
 + `Groups` where Admin can manage groups. See [Group Management](md-group).
 

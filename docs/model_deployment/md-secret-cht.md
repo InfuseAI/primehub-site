@@ -3,6 +3,12 @@ id: md-secret-cht
 title: Secret Management
 description: Secret Management
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 Secret management 提供管理者 Secret 管理能力，如：新增、刪除、編輯。前提我們需要先有從其它服務產生取得的 Secrets；請參照[取得參考](#取得參考)。
 

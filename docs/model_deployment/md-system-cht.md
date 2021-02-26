@@ -3,6 +3,12 @@ id: md-system-cht
 title: System Management
 description: System Management
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 ## PrimeHub License
 

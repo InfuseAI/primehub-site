@@ -3,6 +3,12 @@ id: md-group-cht
 title: Group Management
 description: Group Management
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 ## Groups List
 

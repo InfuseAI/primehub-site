@@ -3,6 +3,12 @@ id: md-portal
 title: User Portal
 description: User Portal
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 This quickstart shows how to access `User Portal`.
 

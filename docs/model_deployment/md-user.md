@@ -3,6 +3,12 @@ id: md-user
 title: User Management
 description: User Management
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 ![](assets/user_6_v26.png)
 

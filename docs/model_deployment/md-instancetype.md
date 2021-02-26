@@ -3,6 +3,12 @@ id: md-instancetype
 title: Instance Type Management
 description: Instance Type Management
 ---
+<div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
 
 Instance type management provides the capabilities of managing a cluster of the computation resources by instances management  such as create, delete, edit instances and of permission-control which allows only specified-groups to use the instances.
 
