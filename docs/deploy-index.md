@@ -30,6 +30,3 @@ On portal, the left side is **side menu**, the right side is the **context varie
 
 + **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](model-deployment-feature).
 
-### Logout
-
-Please click `Logout` button at top-right. The page would be directed to the `Login` page.

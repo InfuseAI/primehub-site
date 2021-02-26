@@ -202,6 +202,10 @@ div.ee-only {
     margin: 0 10px 0 0;
 }
 
+span.ee-only {
+    color: #fc6d26;
+}
+
 div.deploy-only {
     font-family: $HFont;
     color: #0C92F0;
@@ -209,8 +213,8 @@ div.deploy-only {
     margin: 0 10px 0 0;
 }
 
-span.ee-only {
-    color: #fc6d26;
+span.deploy-only {
+    color: #0C92F0;
 }
 
 div.ce-only {
