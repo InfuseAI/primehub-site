@@ -204,6 +204,7 @@ div.ee-only {
 
 span.ee-only {
     color: #fc6d26;
+    font-weight: bold;
 }
 
 div.deploy-only {
@@ -215,6 +216,7 @@ div.deploy-only {
 
 span.deploy-only {
     color: #0C92F0;
+    font-weight: bold;
 }
 
 div.ce-only {
