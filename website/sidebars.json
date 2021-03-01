@@ -34,6 +34,13 @@
           "getting_started/install_primehub",
           "getting_started/kubernetes_on_ubuntu_machine"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Upgrade",
+        "ids": [
+          "getting_started/upgrade-ce2ee"
+        ]
       }
     ],
     "Notebooks": [
