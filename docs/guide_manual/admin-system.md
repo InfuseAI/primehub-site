@@ -29,6 +29,22 @@ Information of the PrimeHub license:
 
 + `Licensed To`
 
+### License warning
+
+A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maximum Models`.
+
++ When a license has expired, a warning message appears.
+
+  >Your license has expired. Please contact your sales team to extend your license.
+
++ When used node amount > granted node amount, a warning message appears.
+
+  > You are using more nodes than your license allows. Please contact your system administrator.
+
++ when used model amount > granted model amount + 10%, a warning message appears.
+
+  >Please contact your system administrator for assistance to upgrade your license to run more models.
+
 ## System Settings
 
 ![](assets/system_1_v24.png)
