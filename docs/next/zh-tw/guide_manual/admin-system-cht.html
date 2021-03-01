@@ -77,6 +77,22 @@
 <li><p><code>Expiration Date</code> 授權期限</p></li>
 <li><p><code>Licensed To</code> 授權單位</p></li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="授權警示"></a><a href="#授權警示" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>授權警示</h3>
+<p>InfuseAI 發出的授權包括 <code>授權期限</code>、 <code>最多節點數量</code>, <code>最多模型部署數量</code>。</p>
+<ul>
+<li><p>當授權逾期時，顯示警示訊息</p>
+<blockquote>
+<p>Your license has expired. Please contact your sales team to extend your license.</p>
+</blockquote></li>
+<li><p>當使用節點數 &gt; 授權節點數量，顯示警示訊息</p>
+<blockquote>
+<p>You are using more nodes than your license allows. Please contact your system administrator.</p>
+</blockquote></li>
+<li><p>當使用模型部署數量 &gt; 授權模型部署數量 + 10%，顯示警示訊息</p>
+<blockquote>
+<p>Please contact your system administrator for assistance to upgrade your license to run more models.</p>
+</blockquote></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="system-settings"></a><a href="#system-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>System Settings</h2>
 <p><img src="/docs/assets/system_1_v24.png" alt=""></p>
 <ul>
@@ -99,4 +115,4 @@
 <li><p><code>Enable StartTLS</code> 支援擴充 StartTLS。</p></li>
 <li><p><code>Enable Authentication</code> 身份認證。</p></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/admin-report-cht"><span class="arrow-prev">← </span><span>Usage Reports</span></a><a class="docs-next button" href="/docs/next/zh-tw/maintenance-cht"><span>Maintenance Notebook</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#primehub-license">PrimeHub License</a></li><li><a href="#system-settings">System Settings</a></li><li><a href="#email-settings">Email Settings</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/guide_manual/admin-report-cht"><span class="arrow-prev">← </span><span>Usage Reports</span></a><a class="docs-next button" href="/docs/next/zh-tw/maintenance-cht"><span>Maintenance Notebook</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#primehub-license">PrimeHub License</a><ul class="toc-headings"><li><a href="#授權警示">授權警示</a></li></ul></li><li><a href="#system-settings">System Settings</a></li><li><a href="#email-settings">Email Settings</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
