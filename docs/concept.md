@@ -35,9 +35,9 @@ See [Instance Type Management](guide_manual/admin-instancetype).
 
 ### Images
 
-Images are working environments to **Notebook**, **Job**, **Model**. When launching Notebook, Job, Model, platform needs to know requested environments (images). Existing container images can be added and be specified the access to certain groups. In addition, building custom images is also an option on PrimeHub.
+Images are working environments to **Notebook**, **Job**, **Model**. When launching Notebook, Job, Model, platform needs to know requesting environments (images). Existing container images can be added and be specified the access to certain groups. In addition, building custom images is also an option on PrimeHub.
 
-Images must be associated with one group at least for being viewable.
+Both of Administrator and group administrator are able to add images from Images of Admin Portal and Images of User Portal respectively. Images must be associated with one group at least or be Global for being viewable
 
 See [Image Management](guide_manual/admin-image)(Admin), [Image Builder](guide_manual/admin-build-image)(Admin), [Image](group-image)(Group Admin).
 
@@ -62,7 +62,7 @@ See [Secret Management](guide_manual/admin-secret).
 
 ## Components
 
-PrimeHub incorporates several prominent scientist-facing components.
+PrimeHub incorporates several prominent data-scientist-facing components.
 
 ### Notebooks
 
@@ -82,13 +82,13 @@ See [Jobs](job-submission-feature), [PrimeHub Notebook Extension](ph-notebook-ex
 
 ### Schedule
 
-Jobs are one-time jobs, sometimes, users may want to automate jobs regularly; then **Schedule** feature, could create a schedule which can arrange the submission of a same job recursively.
+Jobs are one-time jobs, sometimes, users may want to automate jobs regularly; then **Schedule** feature can do the work, it could create a schedule which will arrange the submission of a same job recursively.
 
 See [Schedule](job-scheduling-feature).
 
 ### Models
 
-One of the last stages in the MLOps is Model Deployment that by integration of a machine learning model into an environment which can retrieve query data and respond with an inference/prediction. By serving models, scientists can also learn the performance of trained models in a practical circumstance.
+One of the last stages in the MLOps is Model Deployment that by integration of a machine learning model into an service environment which can retrieve queries and respond with inferences/predictions. By serving models, scientists can also learn the performance of trained models in a practical circumstance.
 
 By Models feature of PrimeHub, users can deploy a model file directly with a specified image of pre-packaged server or can deploy a model image which already packages a model file into.
 

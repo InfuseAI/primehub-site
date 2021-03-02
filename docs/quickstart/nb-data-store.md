@@ -5,7 +5,7 @@ description: Storing Data
 sidebar_label: Persistence
 ---
 
-PrimeHub provides several types of persistent data stores. These stores can be accessed from working environments.
+PrimeHub provides several types of persistent data stores for user data/group data. These stores can be accessed from working environments.
 
 ## User Volume
 
@@ -21,13 +21,13 @@ In Notebook which is launched under a group `<GroupId>`, users can see a mounted
 
 ## Dataset Volume
 
-Admin is able to create a volume dedicated to a dataset via Dataset Management for users, the capacity is specified by Admin.
+Admin is able to create a volume dedicated to a dataset via Dataset Management for users, the capacity is specified by Admin. It supports *persistent volume*, *nfs*, *host path*, *git* and *env*.
 
 If one of user's groups is associated with a private dataset or global datasets, user can see the dataset folder from the Notebook which is launched under the same group.
 
-The writable/read-only permission is varied with the combination of dataset *type*, *global* and associated *groups*. See [Dataset - Group Access Control](../guide_manual/admin-dataset#groups-access-control).
+The writable/read-only permission is varied with the combination of dataset *type*, flag *global* and associated *groups*. See [Dataset - Group Access Control](../guide_manual/admin-dataset#groups-access-control).
 
-In Notebook, the dataset folders are under `datasets/<dataset_name>`. Please contact Admin to create dataset volumes for users with the proper permission.
+In Notebook, the created dataset folders are under `datasets/<dataset_name>`. Please contact Admin to create dataset volumes for users with the proper permission.
 
 ## PHFS Storage
 

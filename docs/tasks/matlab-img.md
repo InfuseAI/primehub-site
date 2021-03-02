@@ -44,7 +44,7 @@ The steps of launching MATLAB by using the image is below,
     
     ```
 
-6. Browse the url `https://<your_domain/user/<username>/proxy/6080/matlab.html` in a new tab.
+6. Browse the url `https://<your_domain>/user/<username>/proxy/6080/matlab.html` in a new tab.
 
     ![](assets/matlab_screen.png)
 
