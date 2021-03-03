@@ -269,8 +269,9 @@
       "getting_started/configure-primehub-store",
       "getting_started/configure-ssh-server",
       "getting_started/configure-job-submission",
-      "getting_started/configure-self-signed-ca",
-      "getting_started/configure-model-deployment"
+      "getting_started/configure-model-deployment",
+      "getting_started/configure-image-builder",
+      "getting_started/configure-self-signed-ca"
     ],
     "Tasks": [
       {
@@ -514,7 +515,7 @@
       "model_deployment/md-deployment-cht",
       {
         "type": "subcategory",
-        "label": "Admin Portal", 
+        "label": "Admin Portal",
         "ids": [
           "model_deployment/md-system-cht",
           "model_deployment/md-user-cht",
