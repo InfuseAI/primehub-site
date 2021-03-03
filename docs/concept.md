@@ -7,7 +7,7 @@ sidebar_label: Concept
 
 ## Core Resources
 
-PrimeHub includes various types of core resources which are prominent existence that administrators must/can manage them according to the circumstance.
+PrimeHub incorporates various types of core resources which are prominent existence that administrators must/can manage those resources according to the circumstance.
 
 ### Users
 
@@ -19,9 +19,9 @@ See [User Management](guide_manual/admin-user).
 
 ### Groups
 
-PrimeHub adopts the group-centric design, one of core concepts is **Group-Context** that users and various types of resources must be associated with one group at least. Based on the specified working group, users are able to access corresponding resources and perform features within the group accordingly. Resources are not viewable if no associated group.
+Groups which are arguably considered as projects are critical existence in PrimeHub. 
 
-Groups, arguably, are considered as projects when multiple projects are being developed by a group simultaneously.
+PrimeHub adopts the group-centric design, one of core concepts is **Group-Context** that users and various types of resources must be associated with one group at least. Based on the specified working group, users are able to access corresponding resources and to perform features within the group accordingly. Resources are not viewable if no associated group and not set Global.
 
 See [Group Management](guide_manual/admin-group).
 
