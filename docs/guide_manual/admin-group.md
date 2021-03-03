@@ -39,11 +39,11 @@ This feature is hidden until the feature flag is set `True`; Groups with enabled
 
 ### Shared Volume
 
-Create shared volume with specific capacity.
+Create shared volume with specific capacity. The shared volume is shared among members in the group.
 
 + `Shared Volume Capacity` Set the capacity of the shared volume.
 
-+ `Launch Group Only` If enabled, the shared volume is `only mounted` when users select the `same group` to launch a project on PrimeHub page.
++ `Launch Group Only` Set if the shared volume is only mounted in the launch group. When a user open a notebook, by default, it will mount the shared volume of the current launch group. However, if the user is also the member of a group which configures shared volume `Launch Group Only` as false, this volume would be also mounted in this notebook. In this case, you can see current group shared volumes and some non-launch group shared volumes are all mounted in the `/project/` folder.
 
 ### Job Default Timeout Setting
 
