@@ -16,11 +16,14 @@ sidebar_label: Image Builder
 
 ## Introduction
 
-PrimeHub provides Image Builder feature to let system and group administrators build custom images. Once images are built successfully, they will be pushed into specified repositories of a registry. Here we show to how to configure PrimeHub using remote registry for it.
+PrimeHub provides the capability to build custom images. There are two features related to building image
+- *[Image > Build custom image](../group-image)*: Allows group admin to create custom image.
+- *[Admin Portal > Image Builder](../guide_manual/admin-build-image) (EE only)*: Allows system admin to create custom image
+
+Once images are built successfully, they will be pushed into specified repositories of a registry. Here we show how to configure PrimeHub using a remote registry for it.
 
 Path | Description | Default Value
 --- | ----- | -----------------------
-`customImage.enabled` | If the custom image is enabled | `false`
 `customImage.registryEndpoint` | The registry the built image to push  | `N/A`
 `customImage.registryUsername` | Login user name for registry | `N/A`
 `customImage.registryPassword` | Login password for registry | `N/A`
