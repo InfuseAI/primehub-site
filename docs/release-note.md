@@ -23,21 +23,26 @@ Want to share your project files with your group-mate? Wish to share and find yo
 
 + [Document](shared-files)
 
-### License warning
-
-When your PrimeHub usage has surpassed your license (such as Expiration Date, Maximum Nodes, Maximum Models), you will now see a warning banner to notify you to change your contract. To contact our sales team, please email business@infuseai.io.
-
-![](assets/license_key_v34.png)
-
-+ [Document](guide_manual/admin-system#primehub-license)
 
 ## 🚀 &NonBreakingSpace; Improvements
+
+### Real-time resource dashboard update
+
+System administrators can gain more insight with their Grafana dashboard. Instead of only seeing the status per node and GPU, system administrators now have an overall view of what the current resource utilization and GPU allocation per node is.
+
+### Reuse installed packages
+
+In addition to using group-shared images, users can now follow an instruction to reuse installed packages in jobs and notebook environments more easily.
+
++ [Document](tasks/customize-job-runtime)
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
 
 ## 💫 &NonBreakingSpace; One More Thing
 
-+ **MATLAB** image: we provide PrimeHub-compatible MATLAB environment image. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img).
+### MATLAB image
+
+We provide PrimeHub-compatible MATLAB environment image to public. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img).
 
 ---
 

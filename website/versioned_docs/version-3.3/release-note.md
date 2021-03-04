@@ -56,12 +56,13 @@ Notebooks, sometimes, are failed to spawn or run into troubles because user prog
 + Tensorflow2 model server enhancement: support image input
 + Tensorflow2 model server: upgrade to 2.4.0
 
+
 ## 🧰 Bug Fixes
 
-Fixed: PhDeploymentController CrashLoopback if no group in response
-Fixed: Group name is not case-insensitive to GraphQL
-Fixed: InstanceTypes/Images are not shown in spawner when a group set "zero" of any type of quota
-Fixed: Job artifacts cannot be accessed by non-Admin users.
++ Fixed: PhDeploymentController CrashLoopback if no group in response
++ Fixed: Group name is not case-insensitive to GraphQL
++ Fixed: InstanceTypes/Images are not shown in spawner when a group set "zero" of any type of quota
++ Fixed: Job artifacts cannot be accessed by non-Admin users.
 
 ## 💫 One More Thing
 

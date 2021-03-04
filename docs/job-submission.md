@@ -184,3 +184,7 @@ The log viewer here only list the latest 2000 lines of logs. Clicking `Scroll to
 
 However, when a job comes to cancellation or timeout, **there is no log left** since the pod has been deleted.
 
+
+## Reference
+
++ [Customize Job Runtime](tasks/customize-job-runtime)
