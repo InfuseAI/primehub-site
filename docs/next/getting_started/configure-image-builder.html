@@ -68,13 +68,17 @@
   </div>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
-<p>PrimeHub provides Image Builder feature to let system and group administrators build custom images. Once images are built successfully, they will be pushed into specified repositories of a registry. Here we show to how to configure PrimeHub using remote registry for it.</p>
+<p>PrimeHub provides the capability to build custom images. There are two features related to building image</p>
+<ul>
+<li><em><a href="../group-image">Image &gt; Build custom image</a></em>: Allows group admin to create custom image.</li>
+<li><em><a href="../guide_manual/admin-build-image">Admin Portal &gt; Image Builder</a> (EE only)</em>: Allows system admin to create custom image</li>
+</ul>
+<p>Once images are built successfully, they will be pushed into specified repositories of a registry. Here we show how to configure PrimeHub using a remote registry for it.</p>
 <table>
 <thead>
 <tr><th>Path</th><th>Description</th><th>Default Value</th></tr>
 </thead>
 <tbody>
-<tr><td><code>customImage.enabled</code></td><td>If the custom image is enabled</td><td><code>false</code></td></tr>
 <tr><td><code>customImage.registryEndpoint</code></td><td>The registry the built image to push</td><td><code>N/A</code></td></tr>
 <tr><td><code>customImage.registryUsername</code></td><td>Login user name for registry</td><td><code>N/A</code></td></tr>
 <tr><td><code>customImage.registryPassword</code></td><td>Login password for registry</td><td><code>N/A</code></td></tr>
