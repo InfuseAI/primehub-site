@@ -67,53 +67,64 @@
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
 </div>
-<p>Primehub users devlop their programs in the Jupyter Notebook evnironment. In the notebook, it is easy to install 3rd-party library to users' home volume. However, any program runs in the job runtime environment, the user volume is not available by design. It could be customized the job runtime environment, if any runtime dependencies installed in the <a href="../quickstart/nb-data-store#group-volume">Group Volume</a>.</p>
-<p>We will discuss two examples in this how-to document:</p>
+<p>Users, sometimes, require to install 3rd-party packages into environments (Notebook, Job). Those packages, by default, are installed in individual user home volume which is not available to Jobs environment. It implies that repeating same packages installation in different environment instances is not avoidable if packages also are needed.</p>
+<p>One way is to build custom images with built-in required packages with Admin Privileges, the other is to customize runtime environment as general users.</p>
+<p>This document guides how to install packages once for re-use in other environments, or even re-use by same group members.
+By installing packages specifically in <a href="../quickstart/nb-data-store#group-volume">Group Volume</a> instead of User Volume, users are able to have certain runtime dependencies customization.</p>
+<p>Two examples are demonstrated here:</p>
 <ul>
-<li>All dependencies are installed by pip</li>
+<li>All dependencies are installed by <em>pip</em></li>
 <li>A dependency is compilation needed</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="basic-idea"></a><a href="#basic-idea" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic idea</h2>
-<p>Customzation a job runtime is:</p>
+<p>Customization of runtime are two parts:</p>
 <ol>
-<li>install dependency to the PrimeHub Store</li>
-<li>setup extra search path to your application</li>
+<li>Install packages of dependency into Group Volume</li>
+<li>Append extra search paths to your application</li>
 </ol>
-<p>Please configure the dependency search path to your application:</p>
+<p>Configure the dependency search path to your application:</p>
 <ul>
 <li>Use <code>LD_LIBRARY_PATH</code> environment variable to linux shared library (.so files)</li>
 <li>Use <code>PYTHONPATH</code> environment variable to python application</li>
 </ul>
-<p>If the list didn't cover your language runtime, please look up its official documentation.</p>
+<p>Here only list <em>Python</em>-related path, for other languages, please visit their official documentation.</p>
 <h2><a class="anchor" aria-hidden="true" id="pip"></a><a href="#pip" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PIP</h2>
-<p>For python application, using <code>pip</code> package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by <code>--target</code>. For example, a user want to run jobs with <code>mlflow</code>, install libraries into <code>&lt;GROUP_VOLUME&gt;/mlflow-library</code> by <code>--target</code> option</p>
+<p>For python application, using <code>pip</code> package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by <code>--target</code>.</p>
+<p>E.g. Install  <code>mlflow</code> libraries into <code>&lt;GROUP_VOLUME&gt;/mlflow-library</code> by <code>--target</code> option with specified <code>&lt;GROUP_Volme&gt;</code>.</p>
 <pre><code class="hljs css language-bash">pip <span class="token function">install</span> --target <span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/mlflow-library mlflow sklearn
 </code></pre>
-<p>Add python package path at the runtime by <code>PYTHONPATH</code> variables</p>
-<pre><code class="hljs css language-bash">jovyan@jupyter-phadmin:~/mlflow$ <span class="token assign-left variable">PYTHONPATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/mlflow-library/ python examples/sklearn_elasticnet_wine/train.py
+<p>Then specify <code>PYTHONPATH</code> variables with python package path to Group Volume.</p>
+<pre><code class="hljs css language-bash">jovyan@jupyter-phadmin:~/mlflow$ <span class="token assign-left variable">PYTHONPATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/mlflow-library/
+jovyan@jupyter-phadmin:~/mlflow$ python examples/sklearn_elasticnet_wine/train.py
+
 Elasticnet model <span class="token punctuation">(</span>alpha<span class="token operator">=</span><span class="token number">0.500000</span>, <span class="token assign-left variable">l1_ratio</span><span class="token operator">=</span><span class="token number">0.500000</span><span class="token punctuation">)</span>:
   RMSE: <span class="token number">0.7931640229276851</span>
   MAE: <span class="token number">0.6271946374319586</span>
   R2: <span class="token number">0.10862644997792614</span>
 </code></pre>
-<p>In job command lines, we will use this form to setup extra dependency:</p>
+<p>In command lines of a Job, use this form to specify extra dependency:</p>
 <pre><code class="hljs css language-python">PYTHONPATH=&lt;GROUP_VOLUME&gt;/mlflow-library/ python [your-application.py]
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="run-with-other-native-library"></a><a href="#run-with-other-native-library" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run with other native library</h2>
-<p>In some cases, a library works with its native library. It should configure dependencies by <code>LD_LIBRARY_PATH</code>. For example, a user want to run jobs with <a href="https://github.com/SeanNaren/warp-ctc">warp-ctc</a>. Its build steps was:</p>
+<h2><a class="anchor" aria-hidden="true" id="load-native-dynamic-library-at-runtime"></a><a href="#load-native-dynamic-library-at-runtime" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Load native dynamic library at runtime</h2>
+<p>In some cases, a library works with its native library. It should configure dependencies by <code>LD_LIBRARY_PATH</code>.</p>
+<p>For example, submit a job running <a href="https://github.com/SeanNaren/warp-ctc">warp-ctc</a> which requires two steps according to the installation documents:</p>
 <ul>
-<li>build the native library</li>
-<li>install the python package</li>
+<li>Build the native library</li>
+<li>Install the binding python packages</li>
 </ul>
-<p>Following the build steps, we could build the <code>libwarpctc.so</code> first and copy it to <code>&lt;GROUP_VOLUME&gt;/warp-ctc/libwarpctc.so</code>, then build the Python package with <code>--prefix</code> and <code>WARP_CTC_PATH</code> environment variables</p>
+<p>In this case, we have to build the <code>libwarpctc.so</code> first and copy it to <code>&lt;GROUP_VOLUME&gt;/warp-ctc/libwarpctc.so</code>, then build the Python package with <code>--prefix</code> and <code>WARP_CTC_PATH</code> environment variables</p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> pytorch_binding
-<span class="token assign-left variable">WARP_CTC_PATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc python setup.py <span class="token function">install</span> --prefix<span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc
+<span class="token assign-left variable">WARP_CTC_PATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc <span class="token punctuation">\</span>
+python setup.py <span class="token function">install</span> --prefix<span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc
 </code></pre>
-<p>In the build log, it told the installed path, we will use it at <code>PYTHONPATH</code></p>
+<p>In the build log, it points the installed path, set <code>PYTHONPATH</code> the path</p>
 <pre><code class="hljs css language-bash">Installed <span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg
 </code></pre>
 <pre><code class="hljs css language-bash"><span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc <span class="token punctuation">\</span>
 <span class="token assign-left variable">PYTHONPATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg <span class="token punctuation">\</span>
 python <span class="token punctuation">[</span>your-application.py<span class="token punctuation">]</span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/tasks/non-standard-image"><span class="arrow-prev">← </span><span>Non standard image</span></a><a class="docs-next button" href="/docs/tasks/api-token"><span>Generate API Token</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-idea">Basic idea</a></li><li><a href="#pip">PIP</a></li><li><a href="#run-with-other-native-library">Run with other native library</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+<blockquote>
+<p>Installed packages under Group Volume are also available to other group members as long as paths are specified, since Group Volume is a shared data store within the group.</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/tasks/non-standard-image"><span class="arrow-prev">← </span><span>Non standard image</span></a><a class="docs-next button" href="/docs/tasks/api-token"><span>Generate API Token</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-idea">Basic idea</a></li><li><a href="#pip">PIP</a></li><li><a href="#load-native-dynamic-library-at-runtime">Load native dynamic library at runtime</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
