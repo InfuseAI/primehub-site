@@ -1,6 +1,7 @@
 ---
 id: customize-job-runtime
-title: Customize job runtime
+title: Customize Runtime Environment
+sidebar_label: Customize Runtime
 ---
 
 <div class="label-sect">
@@ -12,69 +13,81 @@ title: Customize job runtime
   </div>
 </div>
 
+Users, sometimes, require to install 3rd-party packages into environments (Notebook, Job). Those packages, by default, are installed in individual user home volume which is not available to Job. It implies that repeating same packages installation in different environment instances is not avoidable if packages also are needed .
 
-Primehub users devlop their programs in the Jupyter Notebook evnironment. In the notebook, it is easy to install 3rd-party library to users' home volume. However, any program runs in the job runtime environment, the user volume is not available by design. It could be customized the job runtime environment, if any runtime dependencies installed in the [Group Volume](../quickstart/nb-data-store#group-volume).
+One way is to build custom images with built-in required packages with Admin Privileges, the other is to customize runtime environment as general users.
 
-We will discuss two examples in this how-to document:
+This document guides how to install packages once for re-use in other environments, or even re-use by same group members.
+By installing packages specifically in [Group Volume](../quickstart/nb-data-store#group-volume) instead of User Volume, users are able to have certain runtime dependencies customization.
 
-* All dependencies are installed by pip
+Two examples are demonstrated here:
+
+* All dependencies are installed by *pip*
 * A dependency is compilation needed
 
 ## Basic idea
 
-Customzation a job runtime is:
+Customization of runtime are two parts:
 
-1. install dependency to the PrimeHub Store
-2. setup extra search path to your application
+1. Install packages of dependency into Group Volume
+2. Append extra search paths to your application
 
-Please configure the dependency search path to your application:
+Configure the dependency search path to your application:
 
 * Use `LD_LIBRARY_PATH` environment variable to linux shared library (.so files)
 * Use `PYTHONPATH` environment variable to python application
 
-If the list didn't cover your language runtime, please look up its official documentation.
-
+Here only list *Python*-related path, for other languages, please visit their official documentation.
 
 ## PIP
 
-For python application, using `pip` package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by `--target`. For example, a user want to run jobs with `mlflow`, install libraries into `<GROUP_VOLUME>/mlflow-library` by `--target` option
+For python application, using `pip` package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by `--target`.
+
+E.g. Install  `mlflow` libraries into `<GROUP_VOLUME>/mlflow-library` by `--target` option with specified `<GROUP_Volme>`.
 
 ```bash
 pip install --target <GROUP_VOLUME>/mlflow-library mlflow sklearn
 ```
 
-Add python package path at the runtime by `PYTHONPATH` variables
+Then specify `PYTHONPATH` variables with python package path to Group Volume.
 
 ```bash
-jovyan@jupyter-phadmin:~/mlflow$ PYTHONPATH=<GROUP_VOLUME>/mlflow-library/ python examples/sklearn_elasticnet_wine/train.py
+jovyan@jupyter-phadmin:~/mlflow$ PYTHONPATH=<GROUP_VOLUME>/mlflow-library/
+jovyan@jupyter-phadmin:~/mlflow$ python examples/sklearn_elasticnet_wine/train.py
+
 Elasticnet model (alpha=0.500000, l1_ratio=0.500000):
   RMSE: 0.7931640229276851
   MAE: 0.6271946374319586
   R2: 0.10862644997792614
 ```
 
-In job command lines, we will use this form to setup extra dependency:
+In command lines of a Job, use this form to specify extra dependency:
 
 ```python
 PYTHONPATH=<GROUP_VOLUME>/mlflow-library/ python [your-application.py]
 ```
 
-## Run with other native library
-
-In some cases, a library works with its native library. It should configure dependencies by `LD_LIBRARY_PATH`. For example, a user want to run jobs with [warp-ctc](https://github.com/SeanNaren/warp-ctc). Its build steps was:
-
-* build the native library
-* install the python package
 
 
-Following the build steps, we could build the `libwarpctc.so` first and copy it to `<GROUP_VOLUME>/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
+## Load native dynamic library at runtime
+
+In some cases, a library works with its native library. It should configure dependencies by `LD_LIBRARY_PATH`. 
+
+For example, submit a job running [warp-ctc](https://github.com/SeanNaren/warp-ctc) which requires two steps according to the installation documents:
+
+* Build the native library
+* Install the binding python packages
+
+
+In this case, we have to build the `libwarpctc.so` first and copy it to `<GROUP_VOLUME>/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
 
 ```bash
 cd pytorch_binding
-WARP_CTC_PATH=<GROUP_VOLUME>/warp-ctc python setup.py install --prefix=<GROUP_VOLUME>/warp-ctc
+WARP_CTC_PATH=<GROUP_VOLUME>/warp-ctc \
+python setup.py install --prefix=<GROUP_VOLUME>/warp-ctc
 ```
 
-In the build log, it told the installed path, we will use it at `PYTHONPATH`
+In the build log, it points the installed path, set `PYTHONPATH` the path
 
 ```bash
 Installed <GROUP_VOLUME>/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg
@@ -87,3 +100,4 @@ python [your-application.py]
 ```
 
 
+>Installed packages under Group Volume are also available to other group members as long as paths are specified, since Group Volume is a shared data store within the group.

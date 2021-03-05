@@ -30,19 +30,19 @@ Want to share your project files with your group-mate? Wish to share and find yo
 
 System administrators can gain more insight with their Grafana dashboard. Instead of only seeing the status per node and GPU, system administrators now have an overall view of what the current resource utilization and GPU allocation per node is.
 
-### Reuse installed packages
 
-In addition to using group-shared images, users can now follow an instruction to reuse installed packages in jobs and notebook environments more easily.
-
-+ [Document](tasks/customize-job-runtime)
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
 
-## 💫 &NonBreakingSpace; One More Thing
+## 💫 &NonBreakingSpace; More Things
 
 ### MATLAB image
 
-We provide PrimeHub-compatible MATLAB environment image to public. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img).
+InfuseAI provides PrimeHub-compatible MATLAB environment image to public. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img).
+
+### Reuse installed packages
+
+In addition to using group-shared images, users can now follow the guide to reuse installed packages in Jobs and Notebook environments more easily without repeating same packages installation. See [Customize Runtime Environment](tasks/customize-job-runtime)
 
 ---
 
