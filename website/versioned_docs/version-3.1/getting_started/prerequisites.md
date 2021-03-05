@@ -85,7 +85,7 @@ PrimeHub requires a domain name to access the service
 Add Chart repo
 
 ```bash
-helm repo add stable  https://charts.helm.sh/stable
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
 ```
 

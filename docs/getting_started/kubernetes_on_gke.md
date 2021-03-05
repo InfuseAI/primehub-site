@@ -69,7 +69,7 @@ version.BuildInfo{Version:"v3.3.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05
 
 Add Chart repo
 ```bash
-helm repo add stable  https://charts.helm.sh/stable
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
 ```
 
