@@ -114,6 +114,8 @@ python -u /project/research/train_minst.py
 
 `Submit`: Click the button to submit the job.
 
+> We, sometimes, may find ourselves repeating frequently-used packages installation in every runtime. Either we can request Group admin/Admin to build a custom image with those packages to avoid the repetition or we can customize own runtime environments at our convenience. See [Reference](#reference).
+
 ## View Job
 
 Click the job name on the list to view the job information and logs. The job can also be `Rerun` or `Clone` into a new job.
@@ -187,4 +189,4 @@ However, when a job comes to cancellation or timeout, **there is no log left** s
 
 ## Reference
 
-+ [Customize Job Runtime](tasks/customize-job-runtime)
++ [Customize Runtime Environment](tasks/customize-job-runtime)

@@ -112,6 +112,8 @@ python -u /project/research/train_minst.py
 
 `Submit`: 點擊按鈕，送出工作執行。
 
+> 有時我們會發現重覆安裝常用的套件在每次的執行環境，此時我們可以請 Group admin/Admin 客製映像檔包函這些常用套件，或是我們可以自行有程度地客製執行環境來減少重覆安裝常用套件的情況。 參照 [Reference](#reference).
+
 ## 查看 Job
 
 在列表上點擊想要查看的`job`名稱，查看內容資訊及執行記錄；可以`Rerun`或`Clone`此 Job。
@@ -185,3 +187,8 @@ It shows the brief information of the job.
 有時，我們只想看最後的輸出結果，可以點擊`Scroll to Bottom`跳過攏長記錄直接到記錄尾端。
 
 另外，由於介面上只顯示最後的 2000 行記錄，我們可以點擊`Download`下載完整的記錄檔來檢查。
+
+
+## Reference
+
++ [Customize Runtime Environment](../tasks/customize-job-runtime)
