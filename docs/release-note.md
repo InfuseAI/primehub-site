@@ -28,8 +28,9 @@ Want to share your project files with your group-mate? Wish to share and find yo
 
 ### Real-time resource dashboard update
 
-System administrators can gain more insight with their Grafana dashboard. Instead of only seeing the status per node and GPU, system administrators now have an overall view of what the current resource utilization and GPU allocation per node is.
+System administrators can gain more insight with their Grafana dashboard (PrimeHub/GPU/Cluster). Instead of only seeing the status per node and GPU, system administrators now have an overall view of what the current resource utilization and GPU allocation per node is.
 
+![](assets/grafana-primehub-gpu-cluster.png)
 
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
@@ -38,7 +39,7 @@ System administrators can gain more insight with their Grafana dashboard. Instea
 
 ### MATLAB image
 
-InfuseAI provides PrimeHub-compatible MATLAB environment image to public. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img).
+InfuseAI provides PrimeHub-compatible MATLAB environment image to public. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img) to learn more.
 
 ### Reuse installed packages
 
