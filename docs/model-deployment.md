@@ -1,15 +1,13 @@
 ---
 id: model-deployment-feature
-title: Models (Beta)
+title: Models
 sidebar_label: Overview
-description: Model Deployment (Beta)
+description: Model Deployment
 ---
 
 <div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
-
->Beta version. It is subject to changes in the stable release.
 
 Models feature that users are able to deploy trained models as services and to manage these deployments. While model services are online, administrators are able to monitor the status of model service such service health and resources usage information; moreover, users are able to check deployment history and log.
 

@@ -114,6 +114,6 @@ description: 透過 Language Wrapper 打包模型映像檔部署
 
 ## Reference
 
-- 完整模型部署功能，請見 [Model Deployment (Beta)](model-deployment-feature)。
+- 完整模型部署功能，請見 [Model Deployment](model-deployment-feature)。
 - 打包模型成映像檔 [Package from Language Wrapper](model-deployment-language-wrapper-intro-cht)。
 - [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/)。

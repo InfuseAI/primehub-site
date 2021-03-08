@@ -164,5 +164,5 @@ description: 透過 Pre-packaged Server 模型部署 (PHFS)
 
 ## Reference
 
-- 完整模型部署功能，請見 [Model Deployment (Beta)](model-deployment-feature)。
+- 完整模型部署功能，請見 [Model Deployment](model-deployment-feature)。
 - 客製 pre-packaged server 指引，請見 [Pre-packaged Server](model-deployment-prepackaged-server-intro-cht)。

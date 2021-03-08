@@ -21,7 +21,7 @@ description: 模型部署之快速上手
 
 ## 教程步驟
 
-1. 進入 [User Portal](guide_manual/primehub-manual#user-portal) 並點選 `Models (Beta)`。
+1. 進入 [User Portal](guide_manual/primehub-manual#user-portal) 並點選 `Models`。
 2. 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 3. 我們將進入 [model deployment list page](model-deployment-feature#格列)， 現在點選 `Create Deployment` 按鈕。
 4. 在 `Environment Settings` ，
@@ -115,6 +115,6 @@ description: 模型部署之快速上手
           }
         }
         ```
-- 檢視完整的模型部署功能介紹，請參照 [模型部署 (Beta)](model-deployment-feature)。
+- 檢視完整的模型部署功能介紹，請參照 [模型部署](model-deployment-feature)。
 - 檢視模型映像檔的建置教學，請參照 [建置模型部署所需之映像檔](model-deployment-tutorial-package-image)。
 - 請參照 [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/) 上載映像檔至 DockerHub。

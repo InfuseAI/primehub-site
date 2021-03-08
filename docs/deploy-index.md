@@ -28,5 +28,5 @@ On portal, the left side is **side menu**, the right side is the **context varie
 
 + **Home** where users can find `User Guide` link which connects to this `PrimeHub Documentation` site.
 
-+ **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](model-deployment-feature).
++ **Models** where users can deploy and serve models as services. See [Model Deployment](model-deployment-feature).
 

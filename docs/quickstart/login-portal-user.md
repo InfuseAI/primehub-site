@@ -49,7 +49,7 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Schedule** where users can schedule jobs regularly. See [Schedule](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
 
-+ **Models (Beta)** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
++ **Models** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
 
 + **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
 

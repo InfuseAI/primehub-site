@@ -146,5 +146,5 @@ Also, we choosing the `TensorFlow 2.2` as our runtime image and clicking on `Sta
 
 ## Reference
 
-- For the completed model deployment feature introduction, see [Model Deployment (Beta)](model-deployment-feature).
+- For the completed model deployment feature introduction, see [Model Deployment](model-deployment-feature).
 - For the customized pre-packaged server instruction, see [Pre-packaged servers](model-deployment-prepackaged-server-intro).

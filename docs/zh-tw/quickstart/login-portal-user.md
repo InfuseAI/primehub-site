@@ -41,7 +41,7 @@ Portal 頁面上左側為「使用者功能選單」、右側為「工作專案�
 
 + **Schedule** 使用者可以由此排程需要費時的任務。請參考 [Schedule](../job-scheduling-feature-cht)。<span class="ee-only">Enterprise</span>
 
-+ **Models (Beta)** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Models](../model-deployment-feature)。<span class="ee-only">Enterprise</span>
++ **Models** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Models](../model-deployment-feature)。<span class="ee-only">Enterprise</span>
 
 + **Shared Files** 使用者可以上傳群組限定共享檔案至 PHFS 空間。請參考 [Shared Files](../shared-files-cht)。
 

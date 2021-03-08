@@ -1,7 +1,7 @@
 ---
 id: md-deployment
-title: Models (beta)
-description: Model Deployment (Beta)
+title: Models
+description: Model Deployment
 ---
 
 <div class="label-sect">

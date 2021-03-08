@@ -1,7 +1,7 @@
 ---
 id: md-deployment-cht
-title: 模型部署 (Beta)
-description: 模型部署 (Beta)
+title: 模型部署
+description: 模型部署
 ---
 <div class="label-sect">
   <div class="deploy-only tooltip">Deploy

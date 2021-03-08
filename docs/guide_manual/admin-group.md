@@ -35,7 +35,7 @@ You need to fill in the fields in the above picture:
 
 ### Model Deployment
 
-This feature is hidden until the feature flag is set `True`; Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
 
 ### Shared Volume
 

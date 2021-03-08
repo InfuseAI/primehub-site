@@ -112,6 +112,6 @@ Remember to enable model deployment in your group, contact your admin if it is n
 
 ## Reference
 
-- For the completed model deployment feature introduction, see [Model Deployment (Beta)](model-deployment-feature).
+- For the completed model deployment feature introduction, see [Model Deployment](model-deployment-feature).
 - For the model image package instruction, see [Package from Language Wrapper](model-deployment-language-wrapper-intro).
 - [Pushing a Docker container image to Docker Hub](https://docs.docker.com/docker-hub/repos/).

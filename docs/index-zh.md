@@ -48,7 +48,7 @@ PrimeHub 平台主要由 **User Portal** 及 **Admin Portal** 組成。
 
 + [週期性 Job 排程](zh-tw/job-scheduling-feature-cht)
 
-+ [模型部署 (Beta)](zh-tw/model-deployment-feature)
++ [模型部署](zh-tw/model-deployment-feature)
 
 + [群組限定工作環境映像檔](zh-tw/group-image-cht) `New`
 
