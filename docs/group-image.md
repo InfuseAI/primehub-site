@@ -39,7 +39,7 @@ Choose `Use existing image` or `Build custom image`.
 
 ## Use Existing Image
 
-Add a existing image for the group.
+Add an existing image for the group.
 
 ![](assets/group-image-existing.png)
 
@@ -72,9 +72,9 @@ Instead of adding existing images, Group Admin can build custom images and add t
 
   + `APT` Packages management of Debian, Ubuntu and related Linux distribution.
 
-  + `Conda` A packages management supports multiple programming language. [[Reference]](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages)
+  + `Conda` A packages management supports multiple programming language. [Ref.&neArr;](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages)
 
-  + `Pip`  Using python packages installer. [[Reference]](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)
+  + `Pip`  Using python packages installer. [Ref.&neArr;](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)
 
   >In case of multiple packages, please using the **line break** for each package instead of putting them in one line.
 
@@ -90,7 +90,7 @@ The syntax is
 (channel(/subdir):(namespace):)name(version(build))[key1=value1,key2=value2]
 ```
 
-For example, to install `numpy` package which is sourced from the channel, **conda-forge**, [here](https://anaconda.org/conda-forge/numpy).
+For example, to install `numpy` package which is sourced from the channel, **conda-forge**, [Ref.&neArr;](https://anaconda.org/conda-forge/numpy).
 
 Use `-c conda-forge::` to specify the channel:
 
@@ -118,11 +118,9 @@ Click `Image building in progress` to view the `Build Details` and `Log` of the 
 The building progress can be cancelled by `Cancel Build`.
 
 
-### Building finish
+### View build details and Rebuild
 
 Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image becomes available from image selection.
-
-### View build details and Rebuild
 
 ![](assets/group-image-built.png)
 
@@ -130,7 +128,8 @@ Click `View build details` to view the detail and logs or to modify the detail f
 
 ![](assets/group-image-rebuild.png)
 
-To rebuild the image, by modification to the details and pressing `Rebuild`.
+
+To rebuild a image, by modification to the details and pressing `Rebuild`.
 
 ## Group Image
 

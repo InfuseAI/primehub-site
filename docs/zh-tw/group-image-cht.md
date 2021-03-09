@@ -66,7 +66,7 @@ sidebar_label: Images
 
 + `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
 
-+ `Base image` 必填，base image 的 url。我們可以輸入任何有效的 Image URL，或是可以從自動列舉清單中選擇，已經透過 Image 管理加入至 PrimeHub 的 Image。
++ `Base image` 必填，base image 的 url。我們可以輸入任何有效的 Image URL，或是可以從自動列舉清單中選擇，已經透過 Image 管理加入至 PrimeHub 的 Image。[參考](#reference)
 
 + `Image PullSecret` 如果 pull secret 為必要，請勾選。
 
@@ -74,9 +74,9 @@ sidebar_label: Images
 
   + `APT` Debian, Ubuntu 及其它相關的 linux distribution 的套件管理。
 
-  + `Conda` 多樣程式語言套件管理。 [[參考]](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages)
+  + `Conda` 多樣程式語言套件管理。 [[參考&neArr;]](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages)
 
-  + `Pip`  Python 套件管理。 [[參考]](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)
+  + `Pip`  Python 套件管理。 [[參考&neArr;]](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)
 
    > 如果需安裝複數個套件時，請輸入一行為一套件，換行後輸入下一個套件
 
@@ -84,13 +84,13 @@ sidebar_label: Images
 
 ### 指定 Conda 套件符合條件
 
-特別提及： Conda 支援指定套件的來源 `channel`，並可以進一步指定套件符合條件 [[參考]](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)。 語法如下：
+特別提及： Conda 支援指定套件的來源 `channel`，並可以進一步指定套件符合條件 [[參考&neArr;]](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)。 語法如下：
 
 ```txt
 (channel(/subdir):(namespace):)name(version(build))[key1=value1,key2=value2]
 ```
 
-例： 安裝由`conda-forge` channel 提供的`numpy`套件，如同[原始頁面](https://anaconda.org/conda-forge/numpy)。
+例： 安裝由`conda-forge` channel 提供的`numpy`套件，如同[原始頁面&neArr;](https://anaconda.org/conda-forge/numpy)。
 
 指定`-c conda-forge::` channel 再配合其進階條件：
 
@@ -112,17 +112,16 @@ sidebar_label: Images
 
 點擊 `Cancel Build` 撤消創建。
 
-### Building finish
+### View build details and Rebuild
 
 創建完成後，映像檔名稱的三角提示即消失。映像檔則可從各個映像檔清單選用；
-
-### View build details and Rebuild
 
 ![](assets/group-image-built.png)
 
 點擊 `View build details` 檢視客製映像檔規格內容及創建過程記錄；進一步可編輯內容來重新創建映像檔。
 
 ![](assets/group-image-rebuild.png)
+
 
 更新內容且點擊 `Rebuild` 即可重新創建映像檔。
 

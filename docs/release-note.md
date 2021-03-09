@@ -39,7 +39,7 @@ System administrators can gain more insight with their Grafana dashboard (PrimeH
 
 ### MATLAB image
 
-InfuseAI provides PrimeHub-compatible MATLAB environment image to public. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img) to learn more.
+MATLAB is a platform that aims to numeric computing, data analysis, and create models. InfuseAI now provides the PrimeHub-compatible image to launch a MATLAB environment on PrimeHub directly. See [How to launch MATLAB environment on PrimeHub](tasks/matlab-img) to learn more.
 
 ### Reuse installed packages
 
