@@ -209,7 +209,7 @@ ip-192-168-74-187.ap-northeast-1.compute.internal   Ready    <none>   21s   v1.1
 helm repo update
 </code></pre>
 <p>Helm install</p>
-<pre><code class="hljs css language-bash">helm <span class="token function">install</span> nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version<span class="token operator">=</span><span class="token number">1.31</span>.0 --set controller.hostNetwork<span class="token operator">=</span>true --set rbac.create<span class="token operator">=</span>true
+<pre><code class="hljs css language-bash">helm <span class="token function">install</span> nginx-ingress --create-namespace --namespace ingress-nginx --version<span class="token operator">=</span><span class="token number">1.31</span>.0 --set controller.hostNetwork<span class="token operator">=</span>true --set rbac.create<span class="token operator">=</span>true
 </code></pre>
 <p>Find the <code>EXTERNAL-IP</code></p>
 <pre><code class="hljs css language-bash">kubectl get svc -n ingress-nginx
