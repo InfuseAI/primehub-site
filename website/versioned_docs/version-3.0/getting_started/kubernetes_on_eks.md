@@ -204,7 +204,7 @@ helm repo update
 Helm install
 
 ```bash
-helm install nginx-ingress stable/nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
+helm install nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
 ```
 
 Find the `EXTERNAL-IP`
