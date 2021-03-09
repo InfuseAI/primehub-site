@@ -102,13 +102,13 @@
 <p><img src="/docs/assets/group-image-custom.png" alt=""></p>
 <ul>
 <li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: 指定該 Image 的 Type。</p></li>
-<li><p><code>Base image</code> 必填，base image 的 url。我們可以輸入任何有效的 Image URL，或是可以從自動列舉清單中選擇，已經透過 Image 管理加入至 PrimeHub 的 Image。</p></li>
+<li><p><code>Base image</code> 必填，base image 的 url。我們可以輸入任何有效的 Image URL，或是可以從自動列舉清單中選擇，已經透過 Image 管理加入至 PrimeHub 的 Image。<a href="#reference">參考</a></p></li>
 <li><p><code>Image PullSecret</code> 如果 pull secret 為必要，請勾選。</p></li>
 <li><p><code>Packages</code> 於對應的套件管理下輸入要預先安裝的套件名稱。</p>
 <ul>
 <li><p><code>APT</code> Debian, Ubuntu 及其它相關的 linux distribution 的套件管理。</p></li>
-<li><p><code>Conda</code> 多樣程式語言套件管理。 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages">[參考]</a></p></li>
-<li><p><code>Pip</code>  Python 套件管理。 <a href="https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing">[參考]</a></p></li>
+<li><p><code>Conda</code> 多樣程式語言套件管理。 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages">[參考⇗]</a></p></li>
+<li><p><code>Pip</code>  Python 套件管理。 <a href="https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing">[參考⇗]</a></p></li>
 </ul>
 <blockquote>
 <p>如果需安裝複數個套件時，請輸入一行為一套件，換行後輸入下一個套件</p>
@@ -116,10 +116,10 @@
 </ul>
 <p>最後點選 <code>Create</code> 啟始創建工作。</p>
 <h3><a class="anchor" aria-hidden="true" id="指定-conda-套件符合條件"></a><a href="#指定-conda-套件符合條件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>指定 Conda 套件符合條件</h3>
-<p>特別提及： Conda 支援指定套件的來源 <code>channel</code>，並可以進一步指定套件符合條件 <a href="https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications">[參考]</a>。 語法如下：</p>
+<p>特別提及： Conda 支援指定套件的來源 <code>channel</code>，並可以進一步指定套件符合條件 <a href="https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications">[參考⇗]</a>。 語法如下：</p>
 <pre><code class="hljs css language-txt">(channel(/subdir):(<span class="hljs-keyword">namespace</span>):)<span class="hljs-symbol">name</span>(<span class="hljs-symbol">version</span>(<span class="hljs-symbol">build</span>))[<span class="hljs-symbol">key1</span>=<span class="hljs-symbol">value1</span>,<span class="hljs-symbol">key2</span>=<span class="hljs-symbol">value2</span>]
 </code></pre>
-<p>例： 安裝由<code>conda-forge</code> channel 提供的<code>numpy</code>套件，如同<a href="https://anaconda.org/conda-forge/numpy">原始頁面</a>。</p>
+<p>例： 安裝由<code>conda-forge</code> channel 提供的<code>numpy</code>套件，如同<a href="https://anaconda.org/conda-forge/numpy">原始頁面⇗</a>。</p>
 <p>指定<code>-c conda-forge::</code> channel 再配合其進階條件：</p>
 <pre><code class="hljs css language-bash">-c conda-forge::numpy<span class="token operator">==</span><span class="token number">1.17</span>*
 </code></pre>
@@ -130,9 +130,8 @@
 <p>點擊 <code>Image building in progress</code> 檢視 <code>Build Details</code> 及 <code>Log</code>。</p>
 <p><img src="/docs/assets/group-image-building-detail.png" alt=""></p>
 <p>點擊 <code>Cancel Build</code> 撤消創建。</p>
-<h3><a class="anchor" aria-hidden="true" id="building-finish"></a><a href="#building-finish" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building finish</h3>
-<p>創建完成後，映像檔名稱的三角提示即消失。映像檔則可從各個映像檔清單選用；</p>
 <h3><a class="anchor" aria-hidden="true" id="view-build-details-and-rebuild"></a><a href="#view-build-details-and-rebuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View build details and Rebuild</h3>
+<p>創建完成後，映像檔名稱的三角提示即消失。映像檔則可從各個映像檔清單選用；</p>
 <p><img src="/docs/assets/group-image-built.png" alt=""></p>
 <p>點擊 <code>View build details</code> 檢視客製映像檔規格內容及創建過程記錄；進一步可編輯內容來重新創建映像檔。</p>
 <p><img src="/docs/assets/group-image-rebuild.png" alt=""></p>
@@ -147,4 +146,4 @@
 <ul>
 <li><a href="guide_manual/images-list">Available images provided by InfuseAI</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/model-deployment-model-uri-cht"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/zh-tw/shared-files-cht"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-new-image">Add New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#指定-conda-套件符合條件">指定 Conda 套件符合條件</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#building-finish">Building finish</a></li><li><a href="#view-build-details-and-rebuild">View build details and Rebuild</a></li></ul></li><li><a href="#group-image">Group Image</a></li><li><a href="#actions">Actions</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/model-deployment-model-uri-cht"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/zh-tw/shared-files-cht"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-new-image">Add New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#指定-conda-套件符合條件">指定 Conda 套件符合條件</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#view-build-details-and-rebuild">View build details and Rebuild</a></li></ul></li><li><a href="#group-image">Group Image</a></li><li><a href="#actions">Actions</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>

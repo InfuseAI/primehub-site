@@ -86,7 +86,7 @@
 </ul>
 <p>Choose <code>Use existing image</code> or <code>Build custom image</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="use-existing-image"></a><a href="#use-existing-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use Existing Image</h2>
-<p>Add a existing image for the group.</p>
+<p>Add an existing image for the group.</p>
 <p><img src="/docs/assets/group-image-existing.png" alt=""></p>
 <ul>
 <li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code>: Select what type of the image is.</p></li>
@@ -106,8 +106,8 @@
 <li><p><code>Packages</code> choose packages installer/management and fill in packages requirement.</p>
 <ul>
 <li><p><code>APT</code> Packages management of Debian, Ubuntu and related Linux distribution.</p></li>
-<li><p><code>Conda</code> A packages management supports multiple programming language. <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages">[Reference]</a></p></li>
-<li><p><code>Pip</code>  Using python packages installer. <a href="https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing">[Reference]</a></p></li>
+<li><p><code>Conda</code> A packages management supports multiple programming language. <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages">Ref.⇗</a></p></li>
+<li><p><code>Pip</code>  Using python packages installer. <a href="https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing">Ref.⇗</a></p></li>
 </ul>
 <blockquote>
 <p>In case of multiple packages, please using the <strong>line break</strong> for each package instead of putting them in one line.</p>
@@ -119,7 +119,7 @@
 <p>The syntax is</p>
 <pre><code class="hljs css language-txt">(channel(/subdir):(<span class="hljs-keyword">namespace</span>):)<span class="hljs-symbol">name</span>(<span class="hljs-symbol">version</span>(<span class="hljs-symbol">build</span>))[<span class="hljs-symbol">key1</span>=<span class="hljs-symbol">value1</span>,<span class="hljs-symbol">key2</span>=<span class="hljs-symbol">value2</span>]
 </code></pre>
-<p>For example, to install <code>numpy</code> package which is sourced from the channel, <strong>conda-forge</strong>, <a href="https://anaconda.org/conda-forge/numpy">here</a>.</p>
+<p>For example, to install <code>numpy</code> package which is sourced from the channel, <strong>conda-forge</strong>, <a href="https://anaconda.org/conda-forge/numpy">Ref.⇗</a>.</p>
 <p>Use <code>-c conda-forge::</code> to specify the channel:</p>
 <pre><code class="hljs css language-bash">-c conda-forge::numpy<span class="token operator">==</span><span class="token number">1.17</span>*
 </code></pre>
@@ -132,13 +132,12 @@
 <p>Click <code>Image building in progress</code> to view the <code>Build Details</code> and <code>Log</code> of the building.</p>
 <p><img src="/docs/assets/group-image-building-detail.png" alt=""></p>
 <p>The building progress can be cancelled by <code>Cancel Build</code>.</p>
-<h3><a class="anchor" aria-hidden="true" id="building-finish"></a><a href="#building-finish" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building finish</h3>
-<p>Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image becomes available from image selection.</p>
 <h3><a class="anchor" aria-hidden="true" id="view-build-details-and-rebuild"></a><a href="#view-build-details-and-rebuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View build details and Rebuild</h3>
+<p>Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image becomes available from image selection.</p>
 <p><img src="/docs/assets/group-image-built.png" alt=""></p>
 <p>Click <code>View build details</code> to view the detail and logs or to modify the detail for rebuilding.</p>
 <p><img src="/docs/assets/group-image-rebuild.png" alt=""></p>
-<p>To rebuild the image, by modification to the details and pressing <code>Rebuild</code>.</p>
+<p>To rebuild a image, by modification to the details and pressing <code>Rebuild</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="group-image"></a><a href="#group-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Image</h2>
 <p>Whether adding an existing image or building a custom image for the managed group, the image can be selected from image selection; <code>i</code> hint indicates a <code>Group</code> image.</p>
 <p><img src="/docs/assets/group-image-selection.png" alt=""></p>
@@ -149,4 +148,4 @@
 <ul>
 <li><a href="guide_manual/images-list">Available images provided by InfuseAI</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/model-deployment-model-uri"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/shared-files"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-new-image">Add New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#conda-package-match-specification">Conda Package Match Specification</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#building-finish">Building finish</a></li><li><a href="#view-build-details-and-rebuild">View build details and Rebuild</a></li></ul></li><li><a href="#group-image">Group Image</a></li><li><a href="#actions">Actions</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/model-deployment-model-uri"><span class="arrow-prev">← </span><span>Model URI</span></a><a class="docs-next button" href="/docs/next/shared-files"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-new-image">Add New Image</a></li><li><a href="#use-existing-image">Use Existing Image</a></li><li><a href="#build-custom-image">Build Custom Image</a><ul class="toc-headings"><li><a href="#conda-package-match-specification">Conda Package Match Specification</a></li><li><a href="#building-in-progress">Building in progress</a></li><li><a href="#view-build-details-and-rebuild">View build details and Rebuild</a></li></ul></li><li><a href="#group-image">Group Image</a></li><li><a href="#actions">Actions</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
