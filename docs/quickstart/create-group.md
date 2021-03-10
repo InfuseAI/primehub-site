@@ -33,7 +33,7 @@ A user can be assigned to multiple groups.
    1. Specify the `volume capacity`
    2. Enabled `Launch Group Only` if this volume is accessed only by this group.
 
-   ![qs-create-group.png](assets/qs-create-group.png)
+   ![qs-create-group.png](assets/jobsub-tt-p1-1.png)
 
 5. Adjust `User Quota` if resource allocation limit is required for each user.
 

@@ -100,9 +100,10 @@ In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesy
 
 Fill the URL of git repo (can be https or git). You can use `#branch` to specify the branch or tag name.
 
+Click `Change` to select a secret from the list if a credential is required.
+
 ![](assets/dataset_secret_list.png)
 
-Click `Change` to select a secret from the list `if a pull-secret is required`.
 
 ---
 

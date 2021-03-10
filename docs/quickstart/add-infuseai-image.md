@@ -31,9 +31,9 @@ We can learn URLs respectively from the list.
 
 ## Steps
 
-1. Log in as an administrator and [switch to Admin Portal](login-portal-admin).
+1. Log in as a Group admin or as an Administrator.
    
-2. Enter `Image` Management and click `+ Add`.
+2. Enter `Image` Management from User Portal/[Admin Portal](login-portal-admin) respectively and click `+ Add`.
 
 3. Fill in `Name`: such as `tf-21`.
 
@@ -41,7 +41,7 @@ We can learn URLs respectively from the list.
    
    1. Select `Type`: `Universal`。
         
-        In terms of  `Universal`, we can assign a CPU-only image and a GPU-supported image respectively. When spawning a JupyterHub, PrimeHub will pick up the corresponding image according to the specified instance type (CPU-only or GPU-required).
+        In terms of  `Universal`, we can assign a CPU-only image and a GPU-supported image respectively. When spawning a Notebook, PrimeHub will pick up the corresponding image according to the specified instance type (CPU-only or GPU-required).
 
 
 5. Fill in `Container image url`: CPU-only `infuseai/docker-stacks:tensorflow-notebook-tf-v2-3f48358e` 
@@ -55,7 +55,7 @@ We can learn URLs respectively from the list.
 
 ## Verify
 
-1. Enter `JupyterHub` from User Portal.
+1. Enter `Notebook` from User Portal.
    
 2. Select a group which can utilize the newly added image.
    
@@ -63,13 +63,13 @@ We can learn URLs respectively from the list.
 
 4. Select the newly added Image `tf-21`.
 
-5. `Start Notebook`. It takes time to pull off the newly added image for the first time; As long as a JupyterHub is launched successfully, the image is pulled successfully.
+5. `Start Notebook`. It takes time to pull off the newly added image for the first time; As long as a Notebook is launched successfully, the image is pulled successfully.
 
 #### Verify GPU Image (Please avoid affecting users )：
 
-1. Close/Stop previously launched JupyterHub. [REF](launch-project#stop)
+1. Close/Stop previously launched Notebook. [REF](launch-project#stop)
 
-2. Enter `JupyterHub` from User Portal.
+2. Enter `Notebook` from User Portal.
    
 3. Select a group which can utilize the newly added image.
    
@@ -77,4 +77,4 @@ We can learn URLs respectively from the list.
 
 5. Select the newly added Image `tf-21`.
 
-6. `Start Notebook`. It takes time to pull off the newly added image for the first time; As long as a JupyterHub is launched successfully, the image is pulled successfully.
+6. `Start Notebook`. It takes time to pull off the newly added image for the first time; As long as a Notebook is launched successfully, the image is pulled successfully.

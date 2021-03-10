@@ -65,4 +65,4 @@ or even a path like `path/to/file`, press `Enter`.
 
 Then upload files.
 
-> The nested directories won't be created until a file is uploaded into, in other words, when showing `No data`, at this moment, no directories is created.
+> The nested directories won't be created until a file is uploaded into, in other words, when showing `No data`, at this moment, no directories is created yet.
