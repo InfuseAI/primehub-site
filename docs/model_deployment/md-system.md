@@ -12,7 +12,7 @@ description: System Management
 
 ## PrimeHub License
 
-![](assets/license_key_v24.png)
+![](assets/license_key_v34.png)
 
 Information of the PrimeHub Deploy license:
 

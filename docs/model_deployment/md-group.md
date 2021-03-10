@@ -16,9 +16,9 @@ description: Group Management
 
 Click `Add` to add a group, which will pop up the editing screen of Groups.
 
-![](assets/md_group_shared_volume_v27.png)
+![](assets/md_group_shared_volume_v34.png)
 
-You need to fill in the fields in the above picture:
+Need to fill in the fields in the above picture:
 
 + `Name` (required): Only lowercase letters, numbers, dash `-` and the bottom line `_` can be filled in.
 
@@ -41,6 +41,13 @@ Click `Confirm` to complete the addition.
 ![](assets/edit_users.png)
 
 Click `edit users` under the edit Group screen to select the group's user from the existing Users list and link them.
+
+### Instance Type
+
+![](assets/md_group_it.png)
+
+View the associations between this group and instance types, furthermore, edit associated instance types.
+
 
 ## Deleting Group
 
