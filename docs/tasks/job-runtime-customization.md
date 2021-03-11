@@ -43,16 +43,22 @@ Here only list *Python*-related path, for other languages, please visit their of
 
 For python application, using `pip` package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by `--target`.
 
-E.g. Install  `mlflow` libraries into `<GROUP_VOLUME>/mlflow-library` by `--target` option with specified `<GROUP_Volme>`.
+E.g. Install  `mlflow` libraries into `${PRIMEHUB_GROUP_VOLUME_PATH}/mlflow-library` by `--target` option with specified `<PRIMEHUB_GROUP_VOLUME_PATH>`.
 
 ```bash
-pip install --target <GROUP_VOLUME>/mlflow-library mlflow sklearn
+pip install --target ${PRIMEHUB_GROUP_VOLUME_PATH}/mlflow-library mlflow sklearn
 ```
 
-Then specify `PYTHONPATH` variables with python package path to Group Volume.
+Then specify your `PYTHONPATH` environment variables via updating the PrimeHub User Profile with the following command:
 
 ```bash
-jovyan@jupyter-phadmin:~/mlflow$ PYTHONPATH=<GROUP_VOLUME>/mlflow-library/
+echo "export PYTHONPATH=$PYTHONPATH:${PRIMEHUB_GROUP_VOLUME_PATH}/my-library" > \
+  ${PRIMEHUB_GROUP_VOLUME_PATH}/.primehub/${PRIMEHUB_USER}.profile
+```
+
+Now you can re-use the installed package in your notebooks and jobs:
+
+```bash
 jovyan@jupyter-phadmin:~/mlflow$ python examples/sklearn_elasticnet_wine/train.py
 
 Elasticnet model (alpha=0.500000, l1_ratio=0.500000):
@@ -61,17 +67,11 @@ Elasticnet model (alpha=0.500000, l1_ratio=0.500000):
   R2: 0.10862644997792614
 ```
 
-In command lines of a Job, use this form to specify extra dependency:
-
-```python
-PYTHONPATH=<GROUP_VOLUME>/mlflow-library/ python [your-application.py]
-```
-
 
 
 ## Load native dynamic library at runtime
 
-In some cases, a library works with its native library. It should configure dependencies by `LD_LIBRARY_PATH`. 
+In some cases, a library works with its native library. It should configure dependencies by `LD_LIBRARY_PATH`.
 
 For example, submit a job running [warp-ctc](https://github.com/SeanNaren/warp-ctc) which requires two steps according to the installation documents:
 
@@ -79,25 +79,45 @@ For example, submit a job running [warp-ctc](https://github.com/SeanNaren/warp-c
 * Install the binding python packages
 
 
-In this case, we have to build the `libwarpctc.so` first and copy it to `<GROUP_VOLUME>/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
+In this case, we have to build the `libwarpctc.so` first and copy it to `${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
 
 ```bash
-cd pytorch_binding
-WARP_CTC_PATH=<GROUP_VOLUME>/warp-ctc \
-python setup.py install --prefix=<GROUP_VOLUME>/warp-ctc
+git clone https://github.com/SeanNaren/warp-ctc.git
+cd warp-ctc
+mkdir build; cd build
+cmake ..
+make
+
+# copy native library to the group volume
+mkdir -p ${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/
+cp $(find . -name "libwarpctc.so") ${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/
 ```
 
-In the build log, it points the installed path, set `PYTHONPATH` the path
+Build the python package
 
 ```bash
-Installed <GROUP_VOLUME>/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg
+cd ~/warp-ctc/pytorch_binding
+WARP_CTC_PATH=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc python setup.py install \
+  --prefix=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc
 ```
 
 ```bash
-LD_LIBRARY_PATH=<GROUP_VOLUME>/warp-ctc \
-PYTHONPATH=<GROUP_VOLUME>/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg \
-python [your-application.py]
+git clone https://github.com/SeanNaren/warp-ctc.git
+cd warp-ctc/pytorch_binding
+WARP_CTC_PATH=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc python setup.py install --prefix=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc
 ```
-
 
 >Installed packages under Group Volume are also available to other group members as long as paths are specified, since Group Volume is a shared data store within the group.
+
+## Troubleshooting
+
+If safe-mode is enabled, User Profile and Group Profile will not be loaded into the environment.
+
+## Environment Variables
+
+For more advanced customization, the following environment variables are available for users.
+
+* `PRIMEHUB_USER`
+* `PRIMEHUB_GROUP`
+* `PRIMEHUB_GROUP_VOLUME_PATH`
+* `PRIMEHUB_PHFS_PATH`
