@@ -52,7 +52,8 @@ pip install --target ${PRIMEHUB_GROUP_VOLUME_PATH}/mlflow-library mlflow sklearn
 Then specify your `PYTHONPATH` environment variables via updating the PrimeHub User Profile with the following command:
 
 ```bash
-echo "export PYTHONPATH=$PYTHONPATH:${PRIMEHUB_GROUP_VOLUME_PATH}/my-library" > \
+mkdir -p ${PRIMEHUB_GROUP_VOLUME_PATH}/.primehub/
+echo "export PYTHONPATH=$PYTHONPATH:${PRIMEHUB_GROUP_VOLUME_PATH}/mlflow-library" > \
   ${PRIMEHUB_GROUP_VOLUME_PATH}/.primehub/${PRIMEHUB_USER}.profile
 ```
 
@@ -79,7 +80,7 @@ For example, submit a job running [warp-ctc](https://github.com/SeanNaren/warp-c
 * Install the binding python packages
 
 
-In this case, we have to build the `libwarpctc.so` first and copy it to `${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/libwarpctc.so`, then build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
+In this case, we have to build the `libwarpctc.so` first and copy it to `${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/libwarpctc.so`
 
 ```bash
 git clone https://github.com/SeanNaren/warp-ctc.git
@@ -93,18 +94,19 @@ mkdir -p ${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/
 cp $(find . -name "libwarpctc.so") ${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/
 ```
 
-Build the python package
+Then, build the Python package with `--prefix` and `WARP_CTC_PATH` environment variables
 
 ```bash
-cd ~/warp-ctc/pytorch_binding
-WARP_CTC_PATH=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc python setup.py install \
-  --prefix=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc
+cd warp-ctc/pytorch_binding
+
+# build pytorch binding
+WARP_CTC_PATH=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc python setup.py install --prefix=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc
 ```
 
 ```bash
-git clone https://github.com/SeanNaren/warp-ctc.git
-cd warp-ctc/pytorch_binding
-WARP_CTC_PATH=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc python setup.py install --prefix=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc
+LD_LIBRARY_PATH=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc \
+PYTHONPATH=${PRIMEHUB_GROUP_VOLUME_PATH}/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg \
+python [your-application.py]
 ```
 
 >Installed packages under Group Volume are also available to other group members as long as paths are specified, since Group Volume is a shared data store within the group.
