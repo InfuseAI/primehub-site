@@ -11,7 +11,7 @@ title: 3.4 Release Note
 
 Group administrators can now build new custom images for their managed groups. From the Images tab, they can create custom images by installing packages to already existing base images.
 
-![](assets/group-image-custom.png)
+![](assets/release_custom_group_image.png)
 
 + [Document](group-image)
 
@@ -19,12 +19,17 @@ Group administrators can now build new custom images for their managed groups. F
 
 Want to share your project files with your group-mate? Wish to share and find your group files in one place? You can now visit the Shared Files tab in PrimeHub and browse through, view, and download your groups' project files.
 
-![](assets/shared-file-list.png)
+![](assets/release_shared_files_browse.png)
 
 + [Document](shared-files)
 
 
 ## 🚀 &NonBreakingSpace; Improvements
+
++ Changed: Notebook spawning timeouts to 600s
++ Added: The [documentation](https://docs.primehub.io/docs/next/getting_started/configure-model-deployment#increase-the-timeout-of-model-deployment-endpoint) of Increase the Timeout of Model Deployment Endpoint
++ Added: The [image](https://docs.primehub.io/docs/next/guide_manual/images-list#jupyterlab-v2-with-primehub-extension-1) of PyTorch 1.7, Python 3.7, Cuda 10.x
++ Added: License constraints of max_node and max_model_deploy
 
 ### Real-time resource dashboard update
 
@@ -34,6 +39,10 @@ System administrators can gain more insight with their Grafana dashboard (PrimeH
 
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
+
++ Fixed: TensorFlow model freezes when .predict() is called
++ Fixed: User quota and group quota fail to function properly
++ Fixed: Notebook page shows "400 Bad Request" after launching
 
 ## 💫 &NonBreakingSpace; More Things
 
