@@ -15,7 +15,7 @@ sidebar_label: TensorFlow server
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.3`
+Model Image | `infuseai/tensorflow2-prepackaged:v0.1.0`
 Input       | ndarray or image
 Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
@@ -66,23 +66,33 @@ HDF5         | Yes
 完整範例代碼，請見 [Github](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/tensorflow2/tensorflow2/Model.py)；摘要一部分代碼如下：
 
 **Load the model**
+
 ```python
-def __init__(self, model_uri):
+def load(self):
+    model_uri = self.model_uri
     self.use_keras_api = 1
     if tf.saved_model.contains_saved_model(model_uri):
         self.model = tf.saved_model.load(model_uri).signatures["serving_default"]
-        if type(self.model) == tf.python.eager.wrap_function.WrappedFunction:
+        if 'saved_model' not in str(type(self.model)):
             self.use_keras_api = 0
+        else:
+            del self.model
     if self.use_keras_api:
         if not glob.glob(os.path.join(model_uri, '*.h5')):
             self.model = tf.keras.models.load_model(model_uri)
         else:
             self.model = tf.keras.models.load_model(glob.glob(os.path.join(model_uri, '*.h5'))[0])
+    self.loaded = True
+    print(f"Use Keras API: {self.use_keras_api}")
+    print(f"Model input layer: {self.model.inputs[0]}")
 ```
 
 **Predict**
+
 ```python
 def predict(self, X):
+    if not self.loaded:
+        self.load()
     if self.use_keras_api:
         return self.model.predict(X)
     else:
@@ -96,7 +106,7 @@ def predict(self, X):
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged_rest:v0.4.3`
+Model Image | `infuseai/tensorflow2-prepackaged:v0.1.0`
 Model URI   | `gs://primehub-models/tensorflow2/mnist` (SavedModel)<br>or `gs://primehub-models/tensorflow2/mnist-h5` (HDF5)
 
 ### ndarray
@@ -112,7 +122,7 @@ curl -X POST http://localhost:5000/api/v1.0/predictions \
 **回應範例**
 
 ```bash
-{"data":{"names":[],"ndarray":[[1.2198711374367122e-07,9.869326333955541e-08,3.0142302421154454e-05,0.0001249201741302386,3.9266562223971846e-10,8.974412253337505e-07,6.341080438510005e-11,0.9998371601104736,2.2463413529294485e-07,6.454149115597829e-06]]},"meta":{}}
+{"data":{"names":[],"ndarray":[[2.2179587233495113e-07,1.2331390131237185e-08,2.5685869331937283e-05,0.0001267452462343499,3.6731301333858823e-10,8.802298339105619e-07,1.7313735514723483e-11,0.9998445510864258,5.112421490593988e-07,1.4923105027264683e-06]]},"meta":{"requestPath":{"model":"NOT_IMPLEMENTED:NOT_IMPLEMENTED"}}}
 ```
 
 ### Image
@@ -126,5 +136,5 @@ curl -F 'binData=@test_image.jpg' http://localhost:5000/api/v1.0/predictions
 **回應範例**
 
 ```bash
-{"data":{"names":[],"tensor":{"shape":[1,10],"values":[1.4804563130965676e-09,1.0964972041449528e-08,2.2697020085615804e-06,1.4017033436175552e-06,2.7076431374783994e-11,3.51116113961325e-08,3.9478454685014375e-13,0.9999960660934448,3.186500396878955e-09,2.0099747644053423e-07]}},"meta":{}}
+{"data":{"names":[],"tensor":{"shape":[1,10],"values":[2.240761034499883e-07,1.2446706776358951e-08,2.6079718736582436e-05,0.00012795037764590234,3.6888223031716905e-10,8.873528258845909e-07,1.7562255469338872e-11,0.9998427629470825,5.136774916536524e-07,1.4995322317190585e-06]}},"meta":{"requestPath":{"model":"NOT_IMPLEMENTED:NOT_IMPLEMENTED"}}}
 ```

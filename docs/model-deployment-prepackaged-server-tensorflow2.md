@@ -35,9 +35,7 @@ HDF5         | Yes
 
 ### Model URI Structure
 
-
-
-**SavedModel Format**
+#### SavedModel Format*
 
 We support TensorFlow2 [SavedModel format](https://www.tensorflow.org/guide/saved_model). The model uri structure is just the output of `tf.saved_model.save()`.
 
@@ -65,6 +63,7 @@ We also support [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/kera
 You can check the detailed code in the [Github](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/tensorflow2/tensorflow2/Model.py). Here, we brief the code as follows.
 
 **Load the model**
+
 ```python
 def load(self):
     model_uri = self.model_uri
@@ -86,6 +85,7 @@ def load(self):
 ```
 
 **Predict**
+
 ```python
 def predict(self, X):
     if not self.loaded:

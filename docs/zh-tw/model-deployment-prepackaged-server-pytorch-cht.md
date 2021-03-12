@@ -15,7 +15,7 @@ sidebar_label: PyTorch Model Server
 
 Property    | Description
 ------------|------
-Model image | `infuseai/pytorch-prepackaged_rest:v0.1.0`
+Model image | `infuseai/pytorch-prepackaged:v0.1.0`
 Input       | ndarray
 Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/pytorch)
@@ -67,7 +67,7 @@ def predict(self, X):
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/pytorch-prepackaged_rest:v0.1.0`
+Model Image | `infuseai/pytorch-prepackaged:v0.1.0`
 Model URI   | `gs://primehub-models/pytorch/CIFAR10`
 
 **請求範例**
@@ -80,7 +80,8 @@ curl -X POST http://localhost:5000/api/v1.0/predictions \
 
 **回應範例**
 
+
 ```bash
-{"data":{"names":[],"ndarray":[[-1.3545889854431152,-2.0941741466522217,0.39545008540153503,3.433469295501709,-0.08178478479385376,1.7413524389266968,0.9827514290809631,-1.3434531688690186,0.6330257654190063,-1.5354186296463013]]},"meta":{}}
+{"data":{"names":[],"ndarray":[[-1.3545894622802734,-2.094174385070801,0.3954501748085022,3.433469295501709,-0.08178478479385376,1.7413527965545654,0.9827516674995422,-1.3434531688690186,0.6330254673957825,-1.5354188680648804]]},"meta":{"requestPath":{"model":"NOT_IMPLEMENTED:NOT_IMPLEMENTED"}}}
 ```
 
