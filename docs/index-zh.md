@@ -37,7 +37,7 @@ PrimeHub 平台主要由 **User Portal** 及 **Admin Portal** 組成。
 
 函括資料科學家不可或缺的常用功能；以 Notebook 進行開發，利用 Job 將工作流程串接成自動化，最後透過 Models 將訓練模型整合進容器環境，部署成服務來驗證效能，反覆持續地改進訓練模型。
 
-![](assets/v33-landing-user.png)
+![](assets/v34-landing-user.png)
 
 
 + [User Portal 總覽](zh-tw/quickstart/login-portal-user)
