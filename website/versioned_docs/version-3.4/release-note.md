@@ -4,7 +4,6 @@ title: 3.4 Release Note
 original_id: release-note
 ---
 
-> 3.4 Release Candidate Note
 
 ## 🌟 &NonBreakingSpace; What's New
 
