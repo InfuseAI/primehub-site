@@ -1,7 +1,8 @@
 ---
-id: introduction
+id: version-3.4-introduction
 title: Platform Introduction
 sidebar_label: Introduction
+original_id: introduction
 ---
 
 
@@ -27,7 +28,6 @@ Adopting the group-centric design, scientists can share datasets, artifacts and 
 incorporates data-scientists-facing prominent features that scientists are able to turn workflows into automating pipelines by Job submission/schedule, able to prepare data/develop trained models from Notebook and able to deploy container-wrapped models as services by Model Deployment.
 
 ![](assets/v34-landing-user.png)
-
 
 ### Getting Started
 
@@ -57,7 +57,6 @@ incorporates administration features that administrators are able to do access-c
 
 ![](assets/v3-admin-portal_v31.png)
 
-
 ### Getting Started
 
 + [Admin Portal overview](quickstart/login-portal-admin)
@@ -78,4 +77,3 @@ incorporates administration features that administrators are able to do access-c
 + [Review monthly usage report](guide_manual/admin-report)
 
 + [Quick start for Administration](quickstart/create-user)
-  
