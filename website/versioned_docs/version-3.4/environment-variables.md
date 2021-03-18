@@ -1,5 +1,6 @@
 ---
-id: environment-variables
+id: version-3.4-environment-variables
+original_id: environment-variables
 title: Environment Variables
 description: Environment Variables
 sidebar_label: Environment Variables
@@ -18,7 +19,7 @@ sidebar_label: Environment Variables
 
 ### User & Group
 
-The following environment variables are available in the PrimeHub runtime.
+The following preset environment variables are available in the PrimeHub runtime.
 
 Name | Description
 ----|------------------------------------

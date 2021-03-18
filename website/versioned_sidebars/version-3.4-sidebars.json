@@ -6,6 +6,7 @@
       "version-3.4-quickstart/nb-data-store",
       "version-3.4-resources-quota",
       "version-3.4-roles",
+      "version-3.4-environment-variables",
       "version-3.4-quickstart/login-portal-user"
     ],
     "Installation": [
