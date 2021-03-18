@@ -6,7 +6,8 @@
       "quickstart/nb-data-store",
       "resources-quota",
       "roles",
-      "quickstart/login-portal-user"
+      "quickstart/login-portal-user",
+      "environment-variables"
     ],
     "Installation": [
       "dev-introduction",
