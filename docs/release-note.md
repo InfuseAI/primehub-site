@@ -1,6 +1,7 @@
 ---
 id: release-note
 title: 3.5 Release Candidate Note
+description: 3.5 Release Candidate Note
 ---
 
 > 3.5 Release Candidate Note

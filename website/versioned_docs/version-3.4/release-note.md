@@ -1,6 +1,7 @@
 ---
 id: version-3.4-release-note
 title: 3.4 Release Note
+description: 3.4 Release Note
 original_id: release-note
 ---
 
