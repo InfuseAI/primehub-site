@@ -1,7 +1,7 @@
 ---
 id: monitoring
-title: Grafana OIDC Integration
-sidebar_label: Grafana OIDC Integration
+title: Grafana PrimeHub Dashboard
+sidebar_label: Grafana PrimeHub Dashboard
 ---
 
 <div class="label-sect">
@@ -14,10 +14,11 @@ sidebar_label: Grafana OIDC Integration
 </div>
 
 
-This document show you how to integrate Grafana with KeyCloak OIDC. We will wall throught
+This document show you how to integrate Grafana with KeyCloak OIDC and install the Grafana PrimeHub Dashboard. We will walk throught
 
 1. create a KeyCloak OIDC client
 2. modify the values file of the prometheus-operator helm chart
+3. Install PrimeHub Grafana dashboard
 
 We assume some precondition:
 
@@ -292,3 +293,22 @@ helm upgrade prometheus-operator prometheus-community/prometheus-operator \
   -n monitoring --create-namespace --install \
   -f prometheus-operator-values.yaml
 ```
+
+### PrimeHub Grafana Dashboard
+
+Add infuseai repo to helm if you haven't installed yet
+
+```bash
+helm repo add infuseai https://charts.infuseai.io
+helm repo update
+```
+
+Install PrimeHub Grafana dashboard
+
+```bash
+helm install primehub-grafana-dashboard-basic \
+  infuseai/primehub-grafana-dashboard-basic \
+  --set "modelDeployment.enabled=true"
+```
+
+The `modelDeployment.enabled` is required if you need to install dashboard for the model deployment feature as well.
