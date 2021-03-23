@@ -291,6 +291,13 @@
           "tasks/api-token"
         ]
       },
+      {
+        "type": "subcategory",
+        "label": "Monitoring",
+        "ids": [
+          "tasks/monitoring"
+        ]
+      },
       "tasks/customize-job-runtime"
     ],
     "References": [
