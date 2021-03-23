@@ -22,9 +22,9 @@ To put artifacts in a job, just create an `artifacts` folder (or said `/home/jov
 1. Create a job with the command
 
     ```
-    mkdir -p artifacts/sub
-    echo "hello" > artifacts/test.txt
-    echo "hello" > artifacts/sub/test.txt
+    mkdir -p /home/jovyan/artifacts/sub
+    echo "hello" > /home/jovyan/artifacts/test.txt
+    echo "hello" > /home/jovyan/artifacts/sub/test.txt
     ```
 
 1. Go to the detail page of the newly created job.

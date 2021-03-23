@@ -21,9 +21,9 @@ original_id: job-artifact-cht
 1. 產生一 Job 並且 Command 如下
 
     ```
-    mkdir -p artifacts/sub
-    echo "hello" > artifacts/test.txt
-    echo "hello" > artifacts/sub/test.txt
+    mkdir -p /home/jovyan/artifacts/sub
+    echo "hello" > /home/jovyan/artifacts/test.txt
+    echo "hello" > /home/jovyan/artifacts/sub/test.txt
     ```
 
 1. 到剛產生出來的 Job 的詳細頁面
