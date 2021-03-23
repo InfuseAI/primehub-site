@@ -69,9 +69,9 @@
 <p>一個 Job 要產生 <code>artifacts</code>，只要建立一個叫 <code>artifacts</code> 的目錄 (也就是 <code>/home/jovyan/artifacts</code> )，並且把要拷貝的檔案放在裡面。步驟如下</p>
 <ol>
 <li><p>產生一 Job 並且 Command 如下</p>
-<pre><code class="hljs">mkdir -p artifacts/<span class="hljs-keyword">sub</span>
-echo <span class="hljs-string">"hello"</span> &gt; artifacts/<span class="hljs-keyword">test</span><span class="hljs-number">.</span>txt
-echo <span class="hljs-string">"hello"</span> &gt; artifacts/<span class="hljs-keyword">sub</span>/<span class="hljs-keyword">test</span><span class="hljs-number">.</span>txt
+<pre><code class="hljs">mkdir -p <span class="hljs-meta-keyword">/home/</span>jovyan<span class="hljs-meta-keyword">/artifacts/</span>sub
+echo <span class="hljs-string">"hello"</span> &gt; <span class="hljs-meta-keyword">/home/</span>jovyan<span class="hljs-meta-keyword">/artifacts/</span>test.txt
+echo <span class="hljs-string">"hello"</span> &gt; <span class="hljs-meta-keyword">/home/</span>jovyan<span class="hljs-meta-keyword">/artifacts/</span>sub/test.txt
 </code></pre></li>
 <li><p>到剛產生出來的 Job 的詳細頁面</p></li>
 <li><p>等待 Job 完成</p></li>
