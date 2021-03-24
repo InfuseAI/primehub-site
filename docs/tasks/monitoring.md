@@ -2,6 +2,7 @@
 id: monitoring
 title: Grafana PrimeHub Dashboard
 sidebar_label: Grafana PrimeHub Dashboard
+description: Grafana PrimeHub Dashboard
 ---
 
 <div class="label-sect">
