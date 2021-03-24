@@ -12,59 +12,65 @@ sidebar_label: Grafana PrimeHub Dashboard
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
 </div>
+<br>
 
 
-This document show you how to integrate Grafana with KeyCloak OIDC and install the Grafana PrimeHub Dashboard. We will walk throught
+This document guides users to integrate Grafana with a existing PrimeHub by KeyCloak OIDC and install PrimeHub dashboard on Grafana. We will walk through
 
-1. create a KeyCloak OIDC client
-2. modify the values file of the prometheus-operator helm chart
-3. Install PrimeHub Grafana dashboard
+1. Create a OIDC client for Grafana on KeyCloak.
+2. Modify the values file of the prometheus-operator Helm chart
+3. Install PrimeHub dashboard
 
-We assume some precondition:
+## What we assume?
 
-1. You already have a KeyCloak and `primehub` realm
-2. PrimeHub domain is `example.primehub.io` and the Grafana will be `http://example.primehub.io/grafana`
-3. Use `nfs-client` as the storageClassName
+In the following steps we assume:
 
-If any settings are not fit in your cluster, please feel free to update it.
++ A KeyCloak with `primehub` realm; usually a installed PrimeHub includes the configuration.
++ PrimeHub domain is `example.primehub.io` and Grafana locates at `http://example.primehub.io/grafana`
++ Use `nfs-client` as the storageClassName
+
+Please modify settings to fit in the real circumstance.
 
 
 ## Prometheus/Grafana
 
-1. Generate Grafana OIDC client
-2. Instal Prometheus-Operator
-3. Grafana integration: primehub-grafana-dashboard (TBD)
++ Create OIDC client for Grafana on KeyCloak
++ Install Prometheus-Operator
++ Install primehub-grafana-dashboard
 
-### Generate Grafana OIDC client
+### Create OIDC client for Grafana on KeyCloak
 
-In the KeyCloak management console: http://example.primehub.io/auth/admin/primehub/console, open the `Clients` and use the `Create` function:
+1. Access KeyCloak management console: http://example.primehub.io/auth/admin/primehub/console, enter `Clients` and `Create` a client.
 
-![keycloak create the new client](assets/monitoring-keycloak-create-client.png)
+  ![keycloak create the new client](assets/monitoring-keycloak-create-client.png)
 
-Name the new client `grafana-proxy`, we will use the **Client ID** later:
+2. Fill in **Client ID**, `grafana-proxy`, we will use it later.
 
-![keycloak add grafana-proxy](assets/monitoring-keycloak-add-client.png)
+  ![keycloak add grafana-proxy](assets/monitoring-keycloak-add-client.png)
 
-Update client settings
+3. Modify client settings
 
-- Access Type should be `confidential`
-- Valid Redirect URIs: `http://example.primehub.io/grafana/*`
-- Web Origins: `http://example.primehub.io`
+   + **Access Type**:  `confidential`
+   + **Valid Redirect URIs**: `http://example.primehub.io/grafana/*`
+   + **Web Origins**: `http://example.primehub.io`
 
-![keycloak update client](assets/monitoring-update-client-settings.png)
+  ![keycloak update client](assets/monitoring-update-client-settings.png)
 
-Because **Access Type** changed, there is a new `Credentials` tab, open it and copy the `Secret` value, we will use it later (`GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET` environment variable for grafana):
+4. When **Access Type** is changed to **confidential**, a new `Credentials` tab displays, open it and copy the `Secret` value, we will use it later (`GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET` environment variable for grafana):
 
-![keycloak get client secret](assets/monitoring-keycloak-client-secret.png)
+  ![keycloak get client secret](assets/monitoring-keycloak-client-secret.png)
 
-### Prometheus-Operator values file
+### Prepare Prometheus-Operator values file
 
-Here is an example values file, you have to update it before applying.
+Here is an example of values file, it requires modifications according to the real circumstance before applying it.
 
-- update the `slack_api_url` to your slack webhook, or remove `alertmanager` and `additionalPrometheusRules` when the alert is not required
-- replace `example.primehub.io` to your domain
-- set `GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET` to the right client secret that we created in the KeyCloak console
-- save the configuration to `prometheus-operator-values.yaml`
++ Update the `slack_api_url` with the slack webhook, or remove `alertmanager` segment and `additionalPrometheusRules` segment when the alert is not required.
+
++ Replace `example.primehub.io` with your domain
+
++ Set `GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET` with the generated client secret by KeyCloak console
+
++ Save the configuration to `prometheus-operator-values.yaml`
 
 ```yaml
 kubelet:
@@ -279,36 +285,36 @@ grafana:
 
 ### Install Prometheus-Operator
 
-Add prometheus-community repo to helm
+1. Add prometheus-community Helm repo
 
-```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-```
+    ```bash
+    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+    ```
 
-Install with the helm
+2. Install by Helm
 
-```bash
-helm upgrade prometheus-operator prometheus-community/prometheus-operator \
-  --version 8.9.3 \
-  -n monitoring --create-namespace --install \
-  -f prometheus-operator-values.yaml
-```
+    ```bash
+    helm upgrade prometheus-operator prometheus-community/prometheus-operator \
+      --version 8.9.3 \
+      -n monitoring --create-namespace --install \
+      -f prometheus-operator-values.yaml
+    ```
 
-### PrimeHub Grafana Dashboard
+### Install PrimeHub Dashboard on Grafana
 
-Add infuseai repo to helm if you haven't installed yet
+1. Add infuseai Helm repo
 
-```bash
-helm repo add infuseai https://charts.infuseai.io
-helm repo update
-```
+    ```bash
+    helm repo add infuseai https://charts.infuseai.io
+    helm repo update
+    ```
 
-Install PrimeHub Grafana dashboard
+2. Install PrimeHub dashboard
 
-```bash
-helm install primehub-grafana-dashboard-basic \
-  infuseai/primehub-grafana-dashboard-basic \
-  --set "modelDeployment.enabled=true"
-```
+    ```bash
+    helm install primehub-grafana-dashboard-basic \
+      infuseai/primehub-grafana-dashboard-basic \
+      --set "modelDeployment.enabled=true"
+    ```
 
-The `modelDeployment.enabled` is required if you need to install dashboard for the model deployment feature as well.
+    The `modelDeployment.enabled=true` is required if PrimeHub dashboard is for the model deployment feature as well.
