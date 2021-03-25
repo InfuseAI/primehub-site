@@ -4,8 +4,13 @@ title: Deploy a Model by Pre-packaged Server (PHFS)
 description: Deploy a Model by Pre-packaged Server (PHFS)
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 In this tutorial, we will show how to deploy a model trained from Jupyter Notebook via PHFS storage. We deploy a MNIST model by TensorFlow2 pre-packaged server.

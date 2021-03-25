@@ -4,8 +4,13 @@ title: Deploy a Model by Image built from Language Wrapper
 description: Deploy a Model by Image built from Language Wrapper
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 In this tutorial, we will show how to deploy a model built from [language wrapper](model-deployment-language-wrapper-intro). Here we provided a pre-built TensorFlow2 MNIST model image as an example.

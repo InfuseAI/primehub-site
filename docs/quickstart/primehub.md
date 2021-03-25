@@ -1,6 +1,6 @@
 ---
 id: qs-primehub
-title: PrimeHub Community/Enterprise
+title: Quick-start: PrimeHub Community/Enterprise
 sidebar_label: PrimeHub CE/EE
 description: Quick-start: PrimeHub CE/EE
 ---
@@ -110,3 +110,16 @@ The next follow-up, *parameter-tuning job*, is for Enterprise users. Remain the 
     ![](assets/qs_tune_job_output.png)
 
 We now have walked through a typical flow of training and saving a simple model file, then submitting a job of tuning the generated on Notebook. In a real project, we may want to use various combinations of jobs and notebooks to pipeline repeatable workflows.
+
+## What's Next?
+
+As Enterprise users, we desperately want to verify the performance of our model, therefore, we can deploy models as services and query the services with testing data.
+
++ [Quick-start: PrimeHub Model Deployment](qs-primehub-deploy)
+
+
+## Reference
+
++ [Submit a Notebook as a Job](../notebook-as-job)
+  
++ [Jobs Submission](../job-submission-feature)

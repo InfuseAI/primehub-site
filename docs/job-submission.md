@@ -11,7 +11,7 @@ description: Job Submission
 
 ## Job
 
-We sometimes have time-consuming tasks which have to be run sequentially, because tasks take considerable time to complete, users are not able to engage with the whole of the progress. In this case, we can use **Job Submission** to create a job of sequential multiple tasks and submit the job for execution at background, meanwhile we can monitor the progress from the log. If we want to create routine jobs that we can achieve it by [**Job Scheduler**](job-scheduling-feature).
+We sometimes have time-consuming tasks which have to be run sequentially, because tasks take considerable time to complete, users are not able to engage with the whole of the progress. In this case, we can use **Job Submission** to create a job of sequential multiple tasks and submit the job for execution at background, meanwhile we can monitor the progress from the log. If we want to create routine jobs that we can achieve it by [**Jobs Schedule**](job-scheduling-feature).
 
 ### Lifetime
 
@@ -189,4 +189,5 @@ However, when a job comes to cancellation or timeout, **there is no log left** s
 
 ## Reference
 
++ [Jobs Schedule](job-scheduling-feature)
 + [Customize Runtime Environment](tasks/customize-job-runtime)

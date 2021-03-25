@@ -4,8 +4,13 @@ title: Run Pre-packaged Server Locally
 description: Run Pre-packaged Server Locally
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 Sometimes, we would like to test if the model is working in the pre-packaged model server. We can run the server locally to verify.

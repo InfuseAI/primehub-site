@@ -4,9 +4,15 @@ title: Deploy a Model by Pre-packaged Server
 description: Deploy a Model by Pre-packaged Server
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
+<br>
 
 In this tutorial, we will show how to deploy a model by a pre-packaged server. We deploy a IRIS model by SKLearn pre-packaged server.
 

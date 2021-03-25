@@ -4,8 +4,13 @@ title: Concepts
 description: Concepts
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 PrimeHub integrates [Seldon](https://docs.seldon.io/projects/seldon-core/en/latest/) as the model deployment solution. Seldon is a container-based solution and provides a common way to package different ML framework's by different programming languages as container images. We also use the Seldon Predition API to communicate.

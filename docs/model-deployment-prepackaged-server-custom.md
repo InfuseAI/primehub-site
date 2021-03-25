@@ -4,8 +4,13 @@ title: Custom Pre-packaged Server
 description: Custom Pre-packaged Server
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 For better flexibility, we can also build our pre-packaged server which can load models from the model URI. Here are the recommended steps to build your first pre-packaged server.

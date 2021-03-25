@@ -5,9 +5,15 @@ sidebar_label: Overview
 description: Model Deployment
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
+<br>
 
 Models feature that users are able to deploy trained models as services and to manage these deployments. While model services are online, administrators are able to monitor the status of model service such service health and resources usage information; moreover, users are able to check deployment history and log.
 
