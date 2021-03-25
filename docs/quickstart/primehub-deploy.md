@@ -1,6 +1,6 @@
 ---
 id: qs-primehub-deploy
-title: PrimeHub Deploy
+title: Quick-start: PrimeHub Deploy
 sidebar_label: PrimeHub Deploy
 description: Quick-start: PrimeHub Deploy
 ---
