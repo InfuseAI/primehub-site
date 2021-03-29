@@ -125,7 +125,8 @@
       }
     ],
     "Group Adminstration": [
-      "group-image"
+      "group-image",
+      "group-setting"
     ],
     "Shared Files": [
       "shared-files"
