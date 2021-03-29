@@ -76,3 +76,10 @@ mkdir -p /home/jovyan/artifacts/
 cp my_model.h5 /home/jovyan/artifacts/
 cp -r logs /home/jovyan/artifacts/
 ```
+
+### Job Artifacts is optional
+
+Because group volume will keep data until someone deletes it, using `Job Artifacts` is optional. Users might get benefits with `Job Artifacts`:
+
+* Download artifacts from PrimeHub Job without opening a Notebook and visit where they keep the data
+* Artifacts will clean automatically
