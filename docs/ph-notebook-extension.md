@@ -21,14 +21,58 @@ After opening a Notebook file (*.ipynb), there is **PrimeHub** extension on the 
 
 ![](assets/ph-extension-menu.png)
 
+
+## API Token
+
+PrimeHub Extension needs an API Token to submit a Job, Please [generate a API Token](tasks/api-token) and setup it.
+
+You could open the PrimeHub Extension dropdown list to find the `API Token` setting:
+
+![](assets/ph-extension-token.png)
+
+
 ## Submit Notebook as a Job
 
 >The working group's Group Volume is required.
 
-Users are able to submit a Notebook file as a executable Job run by PrimeHub Job, then it outputs the result as a Notebook file for the review. See the [simple usecase](notebook-as-job).
+Users could submit their Notebook to the PrimeHub Jobs. Please see our demonstration [Simple UseCase](notebook-as-job).
 
-## API Token
+However, there are differences between to submit a Notebook as Job and to submit a Job directly:
 
-To use these extension features, a API Token of a user is required. See [How to generate a API Token](tasks/api-token).
+* A job submit by PrimeHub Extension always uses the directory of the Notebook as its working directory.
+* Notebook should be put into a group volume.
 
-![](assets/ph-extension-token.png)
+For example: 
+
+There is a group volume `phusers` and a Notebook in the sub path `experiment-1`
+
+```
+/home/jovyan/phusers/experiment-1/my-notebook.ipynb
+```
+
+When the Notebook `my-notebook.ipynb` submit, the job takes `/home/jovyan/phusers/experiment-1/` working directory. All things work like you running all code blocks in a Notebook.
+
+
+### Job Artifacts with a Notebook Job
+
+Users could keep their outputs with the `Job Artifacts` feature but they should consider the differences we discussed.
+
+1. Job Artifacts mechanism is an action running after a job finished. `Job Artifacts` uploads any kinds of data in the path `/home/jovyan/artifacts`.
+2. a Notebook Job would not start at `/home/jovyan`, it changes directory to where the Notebook located.
+
+
+The code snippet could work in the Job not submit from Notebook, because it starts at `/home/jovyan` and put data into `/home/jovyan/artifacts`
+
+```
+mkdir -p artifacts/
+cp my_model.h5 artifacts/
+cp -r logs artifacts/
+```
+
+We could make it work in both cases, using absolute path:
+
+```
+mkdir -p /home/jovyan/artifacts/
+cp my_model.h5 /home/jovyan/artifacts/
+cp -r logs /home/jovyan/artifacts/
+```
