@@ -20,33 +20,35 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
 ## Prerequisites
 
 - Docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- S2I (Source-To-Image): [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
-
-Check everything is ready to go by running:
-```bash
-s2i usage seldonio/seldon-core-s2i-python3:0.18
-```
 
 ## Prepare the Model and Code (Python)
 
-- Please use Python 3.6 (Recommended)
 - Create a `requirements.txt` file and write down all required packages
-    ```txt
+    ```text
     keras
     tensorflow
     numpy
+    seldon-core
     ...
     ```
 
-- Create a `.s2i` folder and create a `.s2i/environment` file with the following content:
-    ```script
-    MODEL_NAME=MyModel
-    API_TYPE=REST
-    SERVICE_TYPE=MODEL
-    PERSISTENCE=0
+- Create a `Dockerfile` with the following content
+    ```text
+    FROM python:3.7-slim
+    COPY . /app
+    WORKDIR /app
+    RUN pip install -r requirements.txt
+    EXPOSE 9000
+
+    # Define environment variable
+    ENV MODEL_NAME MyModel
+    ENV SERVICE_TYPE MODEL
+    ENV PERSISTENCE 0
+
+    CMD exec seldon-core-microservice $MODEL_NAME --service-type $SERVICE_TYPE --persistence $PERSISTENCE --access-log
     ```
 
-- Create a `MyModel.py` file with the following example template:
+- Create a `MyModel.py` file with the following example template
     ```python
     class MyModel(object):
         """
@@ -74,7 +76,7 @@ s2i usage seldonio/seldon-core-s2i-python3:0.18
             return X
     ```
 
-    - File and class name `MyModel` should be the same as **MODEL_NAME** under `.s2i/environment`
+    - File and class name `MyModel` should be the same as **MODEL_NAME** in `Dockerfile`
     - Load or initiate your model under the `__init__` function
     - The predict method takes a numpy-array `X` and list of string `feature_names` (optional), then returns an array of predictions (the return array should be at least 2-dimensional)
 
@@ -82,39 +84,37 @@ s2i usage seldonio/seldon-core-s2i-python3:0.18
 
 ## Build the Image
 
-Make sure you are in the folder that includes `requirements.txt`, `.s2i/environment`, `python file for model deployment`, and `model file`...etc.
+- Make sure you are in the folder that includes `requirements.txt`, `Dockerfile`, `python file for model deployment`, and `model file`.
 
-If this folder is managed by `Git`, please commit all changes into the git.
+- If this folder is managed by `Git`, please commit all changes into the git.
 
-We will use `seldonio/seldon-core-s2i-python3:0.18` as a base image, installing environment and packaging our model file into the target, `my-model-image`. You can use the following command to package the docker image:
+- Execute following command to install environment and package our model file into the target image `my-model-image`.
+    ```bash
+    docker build . -t my-model-image
+    ```
 
-(Using `seldonio/seldon-core-s2i-python3` instead if using Python 3 rather than Python 3.6)
-```bash
- s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
-```
-
-Then check the image by `docker images`.
-
-    REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
-    my-model-image                     latest              4a0f28ee4f4c        3 minutes ago       1.66GB
-    seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 weeks ago         794MB
+- Then check the image by `docker images`.
+    ```text
+    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+    my-model-image      latest              f373fdcc10c5        3 minutes ago       2.46GB
+    python              3.7-slim            ea12296513d7        2 weeks ago         112MB
+    ```
 
 ## Test the Image
 
-In order to make sure your model image is well packaged, you can run your model as a Docker container locally:
+- In order to make sure your model image is well packaged, you can run your model as a Docker container locally:
+    ```bash
+    docker run -p 9000:9000 --rm my-model-image
+    ```
 
-    docker run -p 5000:5000 --rm my-model-image
-
-and curl:
-```bash
-    curl -X POST localhost:5000/api/v1.0/predictions \
+- And curl (replace `ndarray` content in curl example according to your application):
+    ```bash
+    curl -X POST localhost:9000/api/v1.0/predictions \
          -H 'Content-Type: application/json' \
          -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
-```
+    ```
 
-Replace `ndarray` content in curl example according to your application.
-
-You have built the docker image for a PrimeHub model deployment successfully now.
+You have successfully built the docker image for a PrimeHub model deployment.
 
 ## Push the Image
 
@@ -183,9 +183,15 @@ Here are some Python snippets of how to export a model file then load it and run
         
         class MNISTModel:
             def __init__(self):
+                self.loaded = False
+
+            def load(self):
                 self._model = tf.keras.models.load_model('1')
+                self.loaded = True
         
             def predict(self, X, feature_names=None, meta=None):
+                if not self.loaded:
+                    self.load()
                 output = self._model.predict(X)
                 probability = output[0]
                 predicted_number = tf.math.argmax(probability)
@@ -208,9 +214,15 @@ Here are some Python snippets of how to export a model file then load it and run
         
         class MyModel(object):
             def __init__(self):
+                self.loaded = False
+
+            def load(self):
                 self.model = load_model('keras-mnist.h5')
+                self.loaded = True
                 
             def predict(self,X,features_names):
+                if not self.loaded:
+                    self.load()
                 imageStream = BytesIO(X)
                 image = Image.open(imageStream).resize((28, 28)).convert('L')
                 data = np.asarray(image)
@@ -370,7 +382,7 @@ Here are some Python snippets of how to export a model file then load it and run
 
 ## Reference
 
-- [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html)
+- [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_docker.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_docker.html)
 - [https://github.com/SeldonIO/seldon-core/tree/master/examples](https://github.com/SeldonIO/seldon-core/tree/master/examples)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html](https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html)

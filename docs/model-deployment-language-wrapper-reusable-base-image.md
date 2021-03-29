@@ -11,7 +11,7 @@ description: Package a Model Image from a Reusable Base Image
   <div class="deploy-only tooltip">Deploy
     <span class="tooltiptext">Applicable to Deploy Edition</span>
   </div>
-</div>>
+</div>
 
 ## Overview
 
