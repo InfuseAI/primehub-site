@@ -23,16 +23,16 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
 
 ## Prepare the Model and Code (Python)
 
-- Create a `requirements.txt` file and write down all required packages
+- Create a `requirements.txt` file and write down all required packages.
     ```text
+    seldon-core
     keras
     tensorflow
     numpy
-    seldon-core
     ...
     ```
 
-- Create a `Dockerfile` with the following content
+- Create a `Dockerfile` with the following content.
     ```text
     FROM python:3.7-slim
     COPY . /app
@@ -48,7 +48,7 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
     CMD exec seldon-core-microservice $MODEL_NAME --service-type $SERVICE_TYPE --persistence $PERSISTENCE --access-log
     ```
 
-- Create a `MyModel.py` file with the following example template
+- Create a `MyModel.py` file with the following example template.
     ```python
     class MyModel(object):
         """
@@ -94,7 +94,7 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
     ```
 
 - Then check the image by `docker images`.
-    ```text
+    ```bash
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     my-model-image      latest              f373fdcc10c5        3 minutes ago       2.46GB
     python              3.7-slim            ea12296513d7        2 weeks ago         112MB
@@ -102,33 +102,33 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
 
 ## Test the Image
 
-- In order to make sure your model image is well packaged, you can run your model as a Docker container locally:
+- In order to make sure your model image is well packaged, you can run your model as a Docker container locally.
     ```bash
     docker run -p 9000:9000 --rm my-model-image
     ```
 
-- And curl (replace `ndarray` content in curl example according to your application):
+- And curl (replace `ndarray` content in curl example according to your application).
     ```bash
     curl -X POST localhost:9000/api/v1.0/predictions \
-         -H 'Content-Type: application/json' \
-         -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
+        -H 'Content-Type: application/json' \
+        -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
     ```
 
-You have successfully built the docker image for a PrimeHub model deployment.
+You have successfully built the docker image for the PrimeHub model deployment.
 
 ## Push the Image
 
-Next, push the image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.
+- Next, push the image into the docker hub (or other docker registries) and check PrimeHub tutorial to serve the model under PrimeHub.
 
-Tag your docker image:
-```
-docker tag my-model-image test-repo/my-model-image
-```
+    Tag your docker image.
+    ```bash
+    docker tag my-model-image test-repo/my-model-image
+    ```
 
-Then push to docker registry:
-```
-docker push test-repo/my-model-image
-```
+    Then push to docker registry.
+    ```bash
+    docker push test-repo/my-model-image
+    ```
 
 ## (Optional) Example Codes for Different Frameworks
 
