@@ -77,10 +77,10 @@ Replace the 2nd cell with cells below.
 Create the artifacts directory.
 
 ```bash
-!mkdir -p artifacts/
+!mkdir -p /home/jovyan/artifacts/
 ```
 
-This sample code will open a new file `hello_artifact.txt` under the `artifacts/` and write the output in.
+This sample code will open a new file `hello_artifact.txt` under the `/home/jovyan/artifacts/` and write the output in.
 ```python
 import time
 import camelcase
@@ -92,7 +92,7 @@ txt = "this method capitalizes the first letter of each word."
 start = 1
 end = 10
 
-art = open("artifacts/hello_artifact.txt", "w")
+art = open("/home/jovyan/artifacts/hello_artifact.txt", "w")
 
 print("Counting from 1 to 10:")
 for num in range(start, end + 1): 
