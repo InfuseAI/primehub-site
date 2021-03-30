@@ -64,19 +64,54 @@
 </div>
 <p><strong>PrimeHub Extension</strong> 是針對 PrimeHub 在 <em>Jupyter Notebook</em> 開發的外掛。我們會持續開發外掛的功能來強化使用者藉由 Notebook 在 ML 流程的流暢度及體驗度。</p>
 <blockquote>
-<p>PrimeHub 3.1+ 以上</p>
+<p>InfuseAI 提供最新的映像檔已內建 <strong>PrimeHub Extension</strong> 及對應需要的執行環境。為了能順利使用此外掛功能，請確保選擇的映像檔是 InfuseAI 提供最新的映像檔 或是建立在其上的映像檔。參照<a href="guide_manual/images-list">列表</a>。</p>
 </blockquote>
 <blockquote>
-<p>InfuseAI 提供最新的映像檔已內建 <strong>PrimeHub Extension</strong> 及對應需要的執行環境。為了能順利使用此外掛功能，請確保選擇的映像檔是 InfuseAI 提供最新的映像檔 或是建立在其上的映像檔。參照<a href="guide_manual/images-list">列表</a>。</p>
+<p>想要自建映像檔包含 <strong>PrimeHub Extension</strong>? <a href="https://github.com/InfuseAI/primehub-job/tree/master/jupyterlab_primehub">請見 repo</a>。</p>
 </blockquote>
 <p>開啟 notebook (<em>.ipynb) 檔，</em><em>PrimeHub</em>* 外掛位於在功能列上；在此簡介外掛上的功能。</p>
 <p><img src="/docs/assets/ph-extension-menu.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="api-token"></a><a href="#api-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Token</h2>
+<p>為了能使用外掛功能，須先填入使用者 API Token。參照 <a href="../tasks/api-token">How to generate a API Token</a>。</p>
+<p><img src="/docs/assets/ph-extension-token.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="submit-notebook-as-a-job"></a><a href="#submit-notebook-as-a-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Submit Notebook as a Job</h2>
 <blockquote>
 <p>使用者的工作群組須開啟 Group Volume。</p>
 </blockquote>
 <p>使用者可以將 Notebook 檔當作任務遞出至 PrimeHub Job 執行。執行結果會存為另一個 Notebook 檔，以供檢閱。參照<a href="notebook-as-job-cht">初階範例</a>。</p>
-<h2><a class="anchor" aria-hidden="true" id="api-token"></a><a href="#api-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Token</h2>
-<p>為了能使用外掛功能，須先填入使用者 API Token。參照 <a href="../tasks/api-token">How to generate a API Token</a>.</p>
-<p><img src="/docs/assets/ph-extension-token.png" alt=""></p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.1/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/3.1/zh-tw/notebook-as-job-cht"><span>Notebook as a Job</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#submit-notebook-as-a-job">Submit Notebook as a Job</a></li><li><a href="#api-token">API Token</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+<blockquote>
+<p>Notebook 遞出的 Job 與 Job Submission 遞出的 Job 預設的工作目錄為不同</p>
+</blockquote>
+<ul>
+<li>Notebook 遞出的 Job (簡稱 Notebook Job) 一律以 Notebook 檔所在的路徑為工作目錄；然而，Job Submission 遞出的 Job 一律以 <code>/home/jovyan</code> 為工作目錄。</li>
+<li>Notebook 檔必須位在對應的 group volume 內</li>
+</ul>
+<p>路徑範例:</p>
+<p>假設 Group volume 為 <code>phusers</code> 及 notebook 為位在子目錄  <code>experiment-1</code> 下的 <code>my-notebook.ipynb</code></p>
+<pre><code class="hljs css language-bash">/home/jovyan/phusers/experiment-1/my-notebook.ipynb
+</code></pre>
+<p>當 notebook <code>my-notebook.ipynb</code> 遞交成 Job 時， 此時 Job 執行的工作目錄為 <code>/home/jovyan/phusers/experiment-1/</code>。</p>
+<h3><a class="anchor" aria-hidden="true" id="job-artifacts-with-a-notebook-job"></a><a href="#job-artifacts-with-a-notebook-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job Artifacts with a Notebook Job</h3>
+<p>遞交 Notebook Job 時，使用者可以決定將輸出存放在 group volume 或是 <code>Job Artifacts</code>。但記得，由於預設工作目錄的不同，程式裡指到的<strong>相對路徑</strong>可能會造成錯誤！</p>
+<p>舉例：</p>
+<p>此程式在 Job 裡可以正常執行，但在 Notebook Job 裡卻會造成錯誤！原因是 Job 的工作目錄一律為 <code>/home/jovyan</code> 所以相對路徑指到正確的 <code>/home/jovyan/artifacts</code>。</p>
+<pre><code class="hljs"><span class="hljs-attr">mkdir</span> <span class="hljs-string">-p artifacts/</span>
+<span class="hljs-attr">cp</span> <span class="hljs-string">my_model.h5 artifacts/</span>
+<span class="hljs-attr">cp</span> <span class="hljs-string">-r logs artifacts/</span>
+</code></pre>
+<p>但在 <em>Notebook Job</em> 工作目錄一律為 Notebook 檔所在的位置 <code>/home/jovyan/&lt;group_volume&gt;/path/to/</code> 所以相對路徑指到<strong>不正確</strong>的 <code>/home/jovyan/&lt;group_volume&gt;/path/to/artifcats</code>。</p>
+<blockquote>
+<p>因此我們建議盡量使用「絕對路徑」來避免錯誤及誤解。</p>
+</blockquote>
+<pre><code class="hljs">mkdir -p <span class="hljs-regexp">/home/</span>jovyan<span class="hljs-regexp">/artifacts/</span>
+cp my_model.h5 <span class="hljs-regexp">/home/</span>jovyan<span class="hljs-regexp">/artifacts/</span>
+cp -r logs <span class="hljs-regexp">/home/</span>jovyan<span class="hljs-regexp">/artifacts/</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="job-artifacts-is-optional"></a><a href="#job-artifacts-is-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job Artifacts is optional</h3>
+<p>我們建議盡量使用 <em>group volume</em> 存放長駐資料。</p>
+<p><code>Job Artifacts</code> 選用的時機點為</p>
+<ul>
+<li>可以從 Job 直接下載 artifact 無須開啟 Notebook 環境</li>
+<li>期待 artifact 為暫存資料； artifact 會被自動清除</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.1/zh-tw/user-advanced-setting"><span class="arrow-prev">← </span><span>Spawner 進階設定</span></a><a class="docs-next button" href="/docs/3.1/zh-tw/notebook-as-job-cht"><span>Notebook as a Job</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#api-token">API Token</a></li><li><a href="#submit-notebook-as-a-job">Submit Notebook as a Job</a><ul class="toc-headings"><li><a href="#job-artifacts-with-a-notebook-job">Job Artifacts with a Notebook Job</a></li><li><a href="#job-artifacts-is-optional">Job Artifacts is optional</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
