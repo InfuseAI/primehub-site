@@ -57,7 +57,7 @@ In terms of a Notebook Job, users could store outputs either in the group volume
 
 For example,
 
-The code snippet works in a Job but not in a Notebook Job, because the working director is at `/home/jovyan` and it put data relatively into `/home/jovyan/artifacts` which is a **correct path**.
+The code snippet works in a Job but not in a Notebook Job, because the working directory is at `/home/jovyan` and it put data relatively into `/home/jovyan/artifacts` which is a **correct path**.
 
 ```
 mkdir -p artifacts/
