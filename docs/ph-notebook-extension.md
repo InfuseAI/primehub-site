@@ -11,7 +11,6 @@ sidebar_label: PrimeHub Extension
 
 **PrimeHub Extension** is an extension of *Jupyter Notebook* developed for PrimeHub. We plans to roll out more features to enhance user's ML workflow and experience from Notebook.
 
->PrimeHub 3.1+ onwards
 
 >The latest images provided by InfuseAI are built with **PrimeHub Extension** and the corresponding environment to execute extension features smoothly. To Use these features, please make sure the running image is the latest one or is built on top of the latest one from InfuseAI. See the [list](guide_manual/images-list).
 
@@ -35,33 +34,30 @@ You could open the PrimeHub Extension dropdown list to find the `API Token` sett
 
 >The working group's Group Volume is required.
 
-Users could submit their Notebook to the PrimeHub Jobs. Please see our demonstration [Simple UseCase](notebook-as-job).
+Users could submit their Notebook to the PrimeHub Jobs. See [Simple UseCase](notebook-as-job).
 
-However, there are differences between to submit a Notebook as Job and to submit a Job directly:
+>However, there are differences between jobs from Notebook and jobs from Job Submission directly:
 
-* A job submit by PrimeHub Extension always uses the directory of the Notebook as its working directory.
-* Notebook should be put into a group volume.
+* A job submitted by PrimeHub Extension (a.k.a Notebook Job) *always uses the directory where the notebook locates as its working directory*, whereas a job submitted by Job Submission uses `/home/jovyan` instead.
+* A notebook has to locate inside a group volume.
 
-For example: 
+Path, for example:
 
-There is a group volume `phusers` and a Notebook in the sub path `experiment-1`
+There is a group volume `phusers` and a notebook, `my-notebook.ipynb`, in the sub path `experiment-1`
 
-```
+```bash
 /home/jovyan/phusers/experiment-1/my-notebook.ipynb
 ```
 
-When the Notebook `my-notebook.ipynb` submit, the job takes `/home/jovyan/phusers/experiment-1/` working directory. All things work like you running all code blocks in a Notebook.
-
+When the notebook `my-notebook.ipynb` is submitted into a job, the job takes `/home/jovyan/phusers/experiment-1/` as the *working directory* and run all of cells of the notebook.
 
 ### Job Artifacts with a Notebook Job
 
-Users could keep their outputs with the `Job Artifacts` feature but they should consider the differences we discussed.
+In terms of a Notebook Job, users could store outputs either in the group volume or in the `Job Artifacts` but different working directories as we mention above have to be taken into consideration. Since working directories are different, `relative path` in code may cause problems.
 
-1. Job Artifacts mechanism is an action running after a job finished. `Job Artifacts` uploads any kinds of data in the path `/home/jovyan/artifacts`.
-2. a Notebook Job would not start at `/home/jovyan`, it changes directory to where the Notebook located.
+For example,
 
-
-The code snippet could work in the Job not submit from Notebook, because it starts at `/home/jovyan` and put data into `/home/jovyan/artifacts`
+The code snippet works in a Job but not in a Notebook Job, because the working director is at `/home/jovyan` and it put data relatively into `/home/jovyan/artifacts` which is a **correct path**.
 
 ```
 mkdir -p artifacts/
@@ -69,7 +65,9 @@ cp my_model.h5 artifacts/
 cp -r logs artifacts/
 ```
 
-We could make it work in both cases, using absolute path:
+However, a *Notebook Job* starts at `/home/jovyan/<group_volume>/path/to/` where the notebook locates, the *relative path* of same codes above becomes `/home/jovyan/<group_volume>/path/to/artifcats` **incorrectly**. 
+
+>Hence, we encourage using *absolute path* in both of cases instead to avoid the mistake and the confusion.
 
 ```
 mkdir -p /home/jovyan/artifacts/
@@ -79,7 +77,9 @@ cp -r logs /home/jovyan/artifacts/
 
 ### Job Artifacts is optional
 
-Because group volume will keep data until someone deletes it, using `Job Artifacts` is optional. Users might get benefits with `Job Artifacts`:
+We also encourage using *group volume* to store persistent data.
 
-* Download artifacts from PrimeHub Job without opening a Notebook and visit where they keep the data
-* Artifacts will clean automatically
+Using `Job Artifacts` is optional when we expect
+
+* Download artifacts from PrimeHub Job without opening a Notebook
+* Artifacts will be cleaned automatically
