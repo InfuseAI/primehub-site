@@ -89,8 +89,6 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
 
 - Make sure you are in the folder that includes `install.R`, `Dockerfile`, `R scripts`, and `model file`.
 
-- If this folder is managed by `Git`, please commit all changes into the git.
-
 - Execute following command to install environment and package our model file into the target image `my-model-image`.
     ```bash
     docker build . -t my-model-image
