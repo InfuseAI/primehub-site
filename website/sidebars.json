@@ -124,11 +124,14 @@
         ]
       }
     ],
-    "Group Adminstration": [
-      "group-image"
-    ],
     "Shared Files": [
       "shared-files"
+    ],
+    "Apps": [
+      "primehub-app"
+    ],
+    "Group Administration": [
+      "group-image"
     ],
     "SSH Server": [
 
