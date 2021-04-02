@@ -60,19 +60,20 @@ Users should start a notebook built from repo2docker in `Safe Mode`, because it 
 
 ![](assets/repo2docker-safe-mode.png)
 
+---
 
 ## Example: RStudio binder
 
 We could follow steps to build a Jupyter Notebook with RStudio: https://github.com/binder-examples/r
 
-1. ensure repo2docker installed
-2. clone the source code and add `sudo` to `apt.txt` 
-3. build image with arguments `--user-name jovyan --user-id 1000`
-4. add image to PrimeHub and start in `Safe Mode`
+1. Ensure repo2docker installed
+2. Clone the source code and add `sudo` to `apt.txt` 
+3. Build image with arguments `--user-name jovyan --user-id 1000`
+4. Add image to PrimeHub and start in `Safe Mode`
 
-### check repo2docker
+### Check repo2docker
 
-execute `jupyter-repo2docker` command to see any output from `jupyter-repo2docker`
+Execute `jupyter-repo2docker` command to see if any output from the command
 
 ```bash
 $ jupyter-repo2docker --help | head -10
@@ -88,21 +89,21 @@ usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--appendix APPENDIX] [--subdir SUBDIR] [--version]
 ```
 
-If you got `command not found`, please install it by `pip install jupyter-repo2docker`
+If `command not found`, please install it by `pip install jupyter-repo2docker`
 
 ```
 command not found: jupyter-repo2docker
 ```
 
-### update configuration
+### Update configuration
 
-Get the source code
+Clone the source code
 
 ```
 git clone https://github.com/binder-examples/r.git
 ```
 
-In the source, we add `sudo` to `apt.txt`
+In the source, create `apt.txt` and add `sudo` in a line
 
 ```
 $ git status
@@ -117,34 +118,40 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
+Verify
+
 ```
 $ cat apt.txt
 sudo
 ```
 
-### build image
+### Build image
 
-We build a image with tag `infuseai/r` in the source directory (`.`)
+Build a image with the tag `infuseai/r` in the source directory (`.`)
 
 ```
 jupyter-repo2docker --no-run --no-clean --user-name jovyan --user-id 1000 --push --image infuseai/r .
 ```
 
 
-### add Image to PrimeHub
+### Add Image to PrimeHub
 
-After `infuseai/r` pushed, you could add it to the PrimeHub and start the image in `Safe Mode`, it will start like a normal Jupyter Notebook. Where is the RStudio? After checking the [README](https://github.com/binder-examples/r#url-addresses-for-rstudio-and-shiny-environments)
+After the image tagged`infuseai/r` is pushed, add it to the PrimeHub and start Notebook with the image in `Safe Mode`. Initially, it enters a general Jupyter Notebook.
 
-> For the RStudio environment, we must add the following at the end of the URL: `?urlpath=rstudio`
+> For the RStudio environment, we must add the following at the end of the URL: `?urlpath=rstudio` according to the [README](https://github.com/binder-examples/r#url-addresses-for-rstudio-and-shiny-environments).
 
-We have chnage our url to open the RStudio, the current url has `/lab/` suffix
+Regarding accessing RStudio, the current URL looks like
 
 ```
-https://example.primehub.io/user/phuser/lab
+https://example.primehub.io/user/<username>/lab
 ```
 
-Change it to `rstudio` to visit RStudio
+Replace the suffix `lab` with `rstudio` to be like URL below and navigate.
 
-https://example.primehub.io/user/phuser/rstudio
+```
+https://example.primehub.io/user/<username>/rstudio
+```
+
+Here the RStudio is
 
 ![](assets/repo2docker-rstudio.png)
