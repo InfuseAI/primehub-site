@@ -42,7 +42,7 @@ We can also create a symbolic link `artifacts` to the actual folder where the fi
     mkdir -p mymodel
     echo "model1" > mymodel/model1
     echo "model2" > mymodel/model2
-    ln -s mymodel artifacts
+    ln -s mymodel /home/jovyan/artifacts
     ```
 
 1. Go to the newly created job detail page.

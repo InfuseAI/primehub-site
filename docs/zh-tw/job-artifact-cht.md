@@ -43,7 +43,7 @@ description: Job Artifacts
     mkdir -p mymodel
     echo "model1" > mymodel/model1
     echo "model2" > mymodel/model2
-    ln -s mymodel artifacts
+    ln -s mymodel /home/jovyan/artifacts
     ```
 
 1. 到剛產生出來的 Job 的詳細頁面
