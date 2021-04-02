@@ -34,7 +34,7 @@ The landing page of Apps displays installed applications;
 
 
 + `Manage`: Enter the detail page of the instance
-+ `Action`: Start / Stop the instance
++ `Start/Stop`: Toggle the instance
 + `Open`: Open the URL of the application in a new tab
 
 likewise it displays a blank when no installed one.

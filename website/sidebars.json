@@ -430,6 +430,9 @@
         ]
       }
     ],
+    "Apps": [
+      "zh-tw/primehub-app-cht"
+    ],
     "Group Administration": [
       "zh-tw/group-image-cht"
     ],
