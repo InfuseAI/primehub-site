@@ -131,6 +131,13 @@
     "Shared Files": [
       "shared-files"
     ],
+    "Apps": [
+      "primehub-app"
+    ],
+    "Group Administration": [
+      "group-image",
+      "group-setting"
+    ],
     "SSH Server": [
 
     ],
@@ -428,8 +435,12 @@
         ]
       }
     ],
+    "Apps": [
+      "zh-tw/primehub-app-cht"
+    ],
     "Group Administration": [
-      "zh-tw/group-image-cht"
+      "zh-tw/group-image-cht",
+      "zh-tw/group-setting-cht"
     ],
     "Shared Files": [
       "zh-tw/shared-files-cht"
