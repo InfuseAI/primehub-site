@@ -8,6 +8,22 @@ description: 3.5 Release Candidate Note
 
 ## 🌟 &NonBreakingSpace; What's New
 
+### PrimeHub Apps
+
+![](assets/app_overview.png)
+
++ [Document](primehub-app)
+
+
+### Group Dashboard
+
+
+
+### Group Settings
+
+![](assets/group_setting_overview.png)
+
++ [Document](group-setting)
 
 ## 🚀 &NonBreakingSpace; Improvements
 
@@ -17,6 +33,7 @@ description: 3.5 Release Candidate Note
 
 ## 💫 &NonBreakingSpace; More Things
 
++ [Build RStudio binder (repo2docker) image](tasks/repo2docker#example-rstudio-binder)
 
 ---
 
