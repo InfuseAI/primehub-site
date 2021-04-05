@@ -109,18 +109,18 @@
 tensorflow==2.3.1
 </code></pre></li>
 <li><p>Create a <code>Dockerfile</code> with the following content.</p>
-<pre><code class="hljs css language-text">FROM python:3.7-slim
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE 9000
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3.7</span>-slim
+<span class="hljs-keyword">COPY</span><span class="bash"> . /app</span>
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> /app</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> pip install -r requirements.txt</span>
+<span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">9000</span>
 
-# Define environment variable
-ENV MODEL_NAME Model
-ENV SERVICE_TYPE MODEL
-ENV PERSISTENCE 0
+<span class="hljs-comment"># Define environment variable</span>
+<span class="hljs-keyword">ENV</span> MODEL_NAME Model
+<span class="hljs-keyword">ENV</span> SERVICE_TYPE MODEL
+<span class="hljs-keyword">ENV</span> PERSISTENCE <span class="hljs-number">0</span>
 
-CMD exec seldon-core-microservice $MODEL_NAME --service-type $SERVICE_TYPE --persistence $PERSISTENCE --access-log
+<span class="hljs-keyword">CMD</span><span class="bash"> <span class="hljs-built_in">exec</span> seldon-core-microservice <span class="hljs-variable">$MODEL_NAME</span> --service-type <span class="hljs-variable">$SERVICE_TYPE</span> --persistence <span class="hljs-variable">$PERSISTENCE</span> --access-log</span>
 </code></pre></li>
 <li><p>Build the base image.</p>
 <pre><code class="hljs css language-bash">docker build <span class="token builtin class-name">.</span> -t tensorflow2-prepackage
@@ -145,7 +145,7 @@ COPY export_path model
 <h3><a class="anchor" aria-hidden="true" id="verify-the-model-image"></a><a href="#verify-the-model-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verify the Model Image</h3>
 <ul>
 <li><p>To verify the image, you can run it.</p>
-<pre><code class="hljs css language-bash">docker run -p <span class="token number">9000</span>:9000 --rm tensorflow2-prepackage-model
+<pre><code class="hljs css language-bash">docker run -p <span class="token number">5000</span>:5000 --rm tensorflow2-prepackage-model
 </code></pre></li>
 <li><p>And send a post request by the following format.</p>
 <pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
@@ -198,9 +198,9 @@ COPY export_path model
 <span class="token builtin class-name">cd</span> primehub-seldon-servers
 </code></pre></li>
 <li><p>Then, create a Dockerfile, in which we copy the model files into the <code>/mnt/models</code> and tell the pre-packaged server to use this path as <code>model_uri</code>.</p>
-<pre><code class="hljs css language-text">FROM infuseai/tensorflow2-prepackaged:v0.1.0
-COPY tensorflow2/example_model/mnist /mnt/models
-ENV PREDICTIVE_UNIT_PARAMETERS='[{"name":"model_uri","value":"/mnt/models","type":"STRING"}]'
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> infuseai/tensorflow2-prepackaged:v0.<span class="hljs-number">1.0</span>
+<span class="hljs-keyword">COPY</span><span class="bash"> tensorflow2/example_model/mnist /mnt/models</span>
+<span class="hljs-keyword">ENV</span> PREDICTIVE_UNIT_PARAMETERS=<span class="hljs-string">'[{"name":"model_uri","value":"/mnt/models","type":"STRING"}]'</span>
 </code></pre></li>
 <li><p>Build the image from the Dockerfile.</p>
 <pre><code class="hljs css language-bash">docker build <span class="token builtin class-name">.</span> -t tensorflow2-prepackage-model

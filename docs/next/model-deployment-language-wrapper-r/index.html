@@ -79,9 +79,9 @@
 <pre><code class="hljs css language-text">install.packages('pls')
 </code></pre></li>
 <li><p>Create a <code>Dockerfile</code> with the following content.</p>
-<pre><code class="hljs css language-text">FROM rocker/r-apt:bionic
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> rocker/r-apt:bionic
 
-RUN apt-get update && \
+<span class="hljs-keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; \
     apt-get install -y -qq \
         r-cran-plumber \
         r-cran-jsonlite \
@@ -89,22 +89,22 @@ RUN apt-get update && \
         r-cran-stringr \
         r-cran-urltools \
         r-cran-caret \
-        curl
+        curl</span>
 
-ENV MODEL_NAME mnist.R
-ENV API_TYPE REST
-ENV SERVICE_TYPE MODEL
-ENV PERSISTENCE 0
+<span class="hljs-keyword">ENV</span> MODEL_NAME mnist.R
+<span class="hljs-keyword">ENV</span> API_TYPE REST
+<span class="hljs-keyword">ENV</span> SERVICE_TYPE MODEL
+<span class="hljs-keyword">ENV</span> PERSISTENCE <span class="hljs-number">0</span>
 
-RUN mkdir microservice
-COPY . /microservice
-WORKDIR /microservice
+<span class="hljs-keyword">RUN</span><span class="bash"> mkdir microservice</span>
+<span class="hljs-keyword">COPY</span><span class="bash"> . /microservice</span>
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> /microservice</span>
 
-RUN curl -OL https://raw.githubusercontent.com/SeldonIO/seldon-core/master/incubating/wrappers/s2i/R/microservice.R > /microservice/microservice.R
-RUN Rscript install.R
+<span class="hljs-keyword">RUN</span><span class="bash"> curl -OL https://raw.githubusercontent.com/SeldonIO/seldon-core/master/incubating/wrappers/s2i/R/microservice.R &gt; /microservice/microservice.R</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> Rscript install.R</span>
 
-EXPOSE 5000
-CMD Rscript microservice.R --model $MODEL_NAME --api $API_TYPE --service $SERVICE_TYPE --persistence $PERSISTENCE
+<span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">5000</span>
+<span class="hljs-keyword">CMD</span><span class="bash"> Rscript microservice.R --model <span class="hljs-variable">$MODEL_NAME</span> --api <span class="hljs-variable">$API_TYPE</span> --service <span class="hljs-variable">$SERVICE_TYPE</span> --persistence <span class="hljs-variable">$PERSISTENCE</span></span>
 </code></pre></li>
 <li><p>Create a <code>mnist.R</code> file with the following example template.</p>
 <pre><code class="hljs css language-R"><span class="hljs-keyword">library</span>(methods)
