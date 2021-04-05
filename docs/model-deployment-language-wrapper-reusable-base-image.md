@@ -62,7 +62,7 @@ Here, we use Tensorflow 2 as a simple showcase. The code is under [Github](https
     ```
 
 - Create a `Dockerfile` with the following content.
-    ```text
+    ```dockerfile
     FROM python:3.7-slim
     COPY . /app
     WORKDIR /app
@@ -108,7 +108,7 @@ Here, we use Tensorflow 2 as a simple showcase. The code is under [Github](https
 
 - To verify the image, you can run it.
     ```bash
-    docker run -p 9000:9000 --rm tensorflow2-prepackage-model
+    docker run -p 5000:5000 --rm tensorflow2-prepackage-model
     ```
 
 - And send a post request by the following format.
@@ -179,7 +179,7 @@ Here, we use the [tensorflow2 pre-packaged server](model-deployment-prepackaged-
     ```
 
 - Then, create a Dockerfile, in which we copy the model files into the `/mnt/models` and tell the pre-packaged server to use this path as `model_uri`.
-    ```text
+    ```dockerfile
     FROM infuseai/tensorflow2-prepackaged:v0.1.0
     COPY tensorflow2/example_model/mnist /mnt/models
     ENV PREDICTIVE_UNIT_PARAMETERS='[{"name":"model_uri","value":"/mnt/models","type":"STRING"}]'

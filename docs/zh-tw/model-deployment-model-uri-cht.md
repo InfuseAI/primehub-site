@@ -5,8 +5,13 @@ description: Model URI 路徑
 sidebar_label: Model URI
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 ## 已支援 URIs

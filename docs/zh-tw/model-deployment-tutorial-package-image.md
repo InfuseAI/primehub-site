@@ -4,8 +4,13 @@ title: 建置模型部署所需之映像檔 (Python)
 description: 建置模型部署所需之映像檔 (Python)
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 此文件說明如何建置映像檔 (Docker Image) ，以利在 PrimeHub 模型部署中使用。
@@ -17,30 +22,32 @@ PrimeHub 模型部署功能是基於 Seldon 的開源套件。此文件參考 Se
 請先安裝好以下軟體
 
 - docker: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- s2i: [https://github.com/openshift/source-to-image#installation](https://github.com/openshift/source-to-image#installation)
-
-安裝完成後，下達以下指令確認一切正常：
-```bash
-s2i usage seldonio/seldon-core-s2i-python3:0.18
-```
 
 ## 撰寫模型部署程式與設定
 
-- 建議使用 Python 3.6 
-- 產生 `requirements.txt` 檔，並在其中寫下所需套件
+- 產生 `requirements.txt` 檔，並寫入以下套件
     ```
+    seldon-core
     keras
     tensorflow
     numpy
     ...
     ```
 
-- 建立 `.s2i` 資料夾後建立 `.s2i/environment` 檔案，並在其中寫下以下內容
-    ```script
-    MODEL_NAME=MyModel
-    API_TYPE=REST
-    SERVICE_TYPE=MODEL
-    PERSISTENCE=0
+- 產生 `Dockerfile` 檔，並寫入以下內容 
+    ```text
+    FROM python:3.7-slim
+    COPY . /app
+    WORKDIR /app
+    RUN pip install -r requirements.txt
+    EXPOSE 9000
+
+    # Define environment variable
+    ENV MODEL_NAME MyModel
+    ENV SERVICE_TYPE MODEL
+    ENV PERSISTENCE 0
+
+    CMD exec seldon-core-microservice $MODEL_NAME --service-type $SERVICE_TYPE --persistence $PERSISTENCE --access-log
     ```
 
 - 建立 `MyModel.py` 檔，內容可以參考以下的格式內容
@@ -69,7 +76,7 @@ s2i usage seldonio/seldon-core-s2i-python3:0.18
             return X
     ```
 
-    - 檔名和類別名稱 `MyModel` 需與在 `.s2i/environment` 下的 MODEL_NAME 一致
+    - 檔名和類別名稱 `MyModel` 需與在 `Dockerfile` 下的 MODEL_NAME 一致
     - 你可以在 `__init__` 初始化或載入你的模型
     - `predict` 會接受 numpy-array `X` 及 `feature_names` (非必須)，並回傳預測結果 (至少需為二維陣列)
 
@@ -77,38 +84,32 @@ s2i usage seldonio/seldon-core-s2i-python3:0.18
 
 ## 建置映像檔
 
-進入到包含 `requirements.txt` 、 `.s2i/environment` 、 `python file for model deployment` 、 `model file` 的資料夾。
+進入到包含 `requirements.txt` 、 `Dockerfile` 、 `python file for model deployment` 、 `model file` 的資料夾。
 
-如果該資料夾有使用 `Git` ，需要將所有的改變 Commit 。
-
-我們使用 `seldonio/seldon-core-s2i-python3:0.18` 來安裝與建置模型部署映像檔 `my-model-image`：
+建置模型部署映像檔 `my-model-image`：
 ```
-s2i build . seldonio/seldon-core-s2i-python3:0.18 my-model-image
+docker build . -t my-model-image
 ```
-
-(當為 Python 3 而非 Python 3.6 時使用 seldonio/seldon-core-s2i-python3)
 
 透過 `docker images` 檢查建置完成的映像檔，範例結果如下所示：
 ```bash
-    REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
-    my-model-image                     latest              4a0f28ee4f4c        3 minutes ago       1.66GB
-    seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 weeks ago         794MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+my-model-image      latest              f373fdcc10c5        3 minutes ago       2.46GB
+python              3.7-slim            ea12296513d7        2 weeks ago         112MB
 ```
 ## 測試映像檔
 
 為了確保模型映像檔可於後續的模型部署中使用，你可先在本機上透過 Docker 運行 container:
 ```
-docker run -p 5000:5000 --rm my-model-image
+docker run -p 9000:9000 --rm my-model-image
 ```
 
 透過 curl 進行測試：
 ```bash
-    curl -X POST localhost:5000/api/v1.0/predictions \
-         -H 'Content-Type: application/json' \
-         -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
+    curl -X POST localhost:9000/api/v1.0/predictions \
+        -H 'Content-Type: application/json' \
+        -d '{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'
 ```
-
-其中 `ndarray` 的內容請根據你的應用給予不同的值。
 
 到此我們已經成功建置出可以給 PrimeHub 模型部署功能使用的映像檔。
 
@@ -179,10 +180,16 @@ docker push test-repo/my-model-image
         import tensorflow as tf
         
         class MNISTModel:
-            def __init__(self):
+           def __init__(self):
+                self.loaded = False
+
+            def load(self):
                 self._model = tf.keras.models.load_model('1')
+                self.loaded = True
         
             def predict(self, X, feature_names=None, meta=None):
+                if not self.loaded:
+                    self.load()
                 output = self._model.predict(X)
                 probability = output[0]
                 predicted_number = tf.math.argmax(probability)
@@ -205,10 +212,15 @@ docker push test-repo/my-model-image
         
         class MyModel(object):
             def __init__(self):
+                self.loaded = False
+
+            def load(self):
                 self.model = load_model('keras-mnist.h5')
-                self.model._make_predict_function()
+                self.loaded = True
                 
             def predict(self,X,features_names):
+                if not self.loaded:
+                    self.load()
                 imageStream = BytesIO(X)
                 image = Image.open(imageStream).resize((28, 28)).convert('L')
                 data = np.asarray(image)
@@ -368,7 +380,7 @@ docker push test-repo/my-model-image
 
 ## Reference
 
-- [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_s2i.html)
+- [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_docker.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_wrapping_docker.html)
 - [https://github.com/SeldonIO/seldon-core/tree/master/examples](https://github.com/SeldonIO/seldon-core/tree/master/examples)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html](https://docs.seldon.io/projects/seldon-core/en/latest/wrappers/language_wrappers.html)
 - [https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html](https://docs.seldon.io/projects/seldon-core/en/latest/python/python_component.html)

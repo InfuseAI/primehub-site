@@ -4,8 +4,13 @@ title: Custom Pre-packaged Server
 description: Custom Pre-packaged Server
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 當現有提供的 Pre-packaged server 滿足不了實際需求時，我們可以進階到為需求客製自己的 Pre-packaged server 由 Model URI 載入模型檔。

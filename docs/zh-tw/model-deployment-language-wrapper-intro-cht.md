@@ -5,8 +5,13 @@ description: Package from Language Wrapper
 sidebar_label: Overview
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 建置部署所需之模型映像檔

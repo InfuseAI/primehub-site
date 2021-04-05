@@ -4,9 +4,14 @@ title: 透過 Pre-packaged Server 模型部署
 description: 透過 Pre-packaged Server 模型部署
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
-</div>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>>
 
 此教學將採用 pre-packaged server 方式來部署模型。我們採用 SKLearn pre-packaged server 來部署 IRIS 模型檔做為範例。
 

@@ -5,8 +5,13 @@ sidebar_label: Overview
 description: 模型部署
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 透過 Model Deployment 功能，使用者可以對 Deployment 進行新增、刪除、更新及佈建等操作。當 Deployment 功能於 Group 設定中開啟時，該 Group 的成員就可以使用此功能。在資源分配上，佈建上線的 model service 須在同 Group quota 限制下，才能佈建成功。管理者可透過 Grafana 來監測該佈建上線服務的使用狀態及資源使用數據；使用者可以檢視佈建的歷史記錄。

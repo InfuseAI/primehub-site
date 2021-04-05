@@ -4,8 +4,13 @@ title: 透過 Pre-packaged Server 模型部署 (PHFS)
 description: 透過 Pre-packaged Server 模型部署 (PHFS)
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 此教學採用 pre-packaged server 方式來部署模型，模型檔由 Jupyter Notebook 訓練並輸出至 PHFS 空間。我們採用 TensorFlow2 pre-packaged server 來部署 MNIST 模型檔做為範例。

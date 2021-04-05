@@ -29,7 +29,7 @@ The PrimeHub model deployment feature is based on Seldon. This doc takes [refere
     ```
 
 - Create a `Dockerfile` with the following content.
-    ```text
+    ```dockerfile
     FROM rocker/r-apt:bionic
 
     RUN apt-get update && \

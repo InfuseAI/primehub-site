@@ -4,8 +4,13 @@ title: Concepts
 description: Concepts
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 PrimeHub 整合 [Seldon](https://docs.seldon.io/projects/seldon-core/en/latest/) 作為模型部署功能。 Seldon 提供基於容器技術的方案及針對不同技術語言打包多樣 ML framework 成映像檔的方法。 同時，採用 Seldon Prediction API 作為溝通介面。

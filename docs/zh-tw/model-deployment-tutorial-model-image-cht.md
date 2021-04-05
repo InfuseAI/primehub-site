@@ -4,8 +4,13 @@ title: 透過 Language Wrapper 打包模型映像檔部署
 description: 透過 Language Wrapper 打包模型映像檔部署
 ---
 
-<div class="ee-only tooltip">Enterprise
-  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 此教學將部署已透過 [language wrapper](model-deployment-language-wrapper-intro-cht) 打包的模型映像檔。我們以已打包的 TensorFlow2 MNIST 模型映像檔為範例。
