@@ -183,6 +183,12 @@ Now PrimeHub CE is ready, see [Launch Notebook](../quickstart/launch-project) to
 
 ## Troubleshooting
 
+>Generate a log file for diagnosis.
+
+```bash
+./primehub-install diagnose
+```
+
 You may run into troubles during the installation, we list some of them, hopefully, you find resolutions here.
 
 ### Using valid hostname and domain
