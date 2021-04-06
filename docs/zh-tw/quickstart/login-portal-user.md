@@ -51,7 +51,9 @@ Portal 頁面上左側為「使用者功能選單」、右側為「工作專案�
 
 ### Group admin feature
 
-+ **Images** 群組管理者可以為其管理群組增加群組限定映像檔。請參考 [Images](../group-image-cht)。(群組管理者限定)
++ **Images** 群組管理者可以為其管理群組增加群組限定映像檔。請參照 [Images](../group-image-cht)。(群組管理者限定)
+
++ **Settings** 群組管理者可以檢視平台管理者為此群組設定的資訊；變更 Job 預設逾時期限。請參照 [Settings](../group-setting-cht)
 
 >請洽管理者取得群組管理者權限。
 

@@ -59,6 +59,8 @@ Features here are Group-Admin-Only.
 
 + **Images** where Group Admin can add/build group-specific images for the managed group. See [Images](../group-image).
 
++ **Settings** where Group Admin can view settings configured by Platform Admin of the managed group and modify the default timeout setting of Jobs. See [Settings](../group-setting)
+
 > Please contact administrators to acquire Group Admin privilege.
  
 
