@@ -49,6 +49,6 @@ Here we list the features comparison between tiers for the reference.
 
 | Features | Category  | Community | <span class="ee-only">Enterprise</span> |
 |----------|-----------|-----------|-----------|
-| [PrimeHub Store](design/primehub-store)| Storage|  | ✅️ |
+| [PrimeHub Store](design/primehub-store)| Storage| ✅️| ✅️ |
 | [Job Artifacts](job-artifact-feature)  | Job |  | ✅️ |
 | [Submit Notebooks As Jobs](ph-notebook-extension)  | PrimeHub Extension |  | ✅️ 

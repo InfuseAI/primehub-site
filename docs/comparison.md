@@ -21,8 +21,10 @@ Here we list the features comparison among tiers.
 | [Jobs](job-submission-feature) |  | ✅️ ||
 | [Schedule](job-scheduling-feature) |  | ✅️ ||
 | [Models](model-deployment-feature) |  | ✅️ | ✅️ |
-| [Images](group-image) | ✅️ | ✅️ ||
 | [Shared Files](shared-files) | ✅️ | ✅️ ||
+| [Apps (Alpha)](primehub-app) | ✅️ | ✅️ ||
+| [Images](group-image) | ✅️ | ✅️ ||
+| [Settings](group-setting) | ✅️ | ✅️ ||
 
 ## Administration Feature
 
@@ -52,8 +54,8 @@ Here we list the features comparison among tiers.
 
 | Features | Category  | <span class="ce-only">Community</span> | <span class="ee-only">Enterprise</span> |<span class="deploy-only">Deploy</span> |
 |----------|-----------|-----------|-----------------------------------------|----------------------------------------|
-| [PrimeHub Store](design/primehub-store)| Storage|  | ✅️ ||
+| [PrimeHub Store](design/primehub-store)| Storage| ✅️ | ✅️ | ✅️ |
 | [Submit Notebooks As Jobs](ph-notebook-extension)  | PrimeHub Extension |  | ✅️ ||
 
 
-🟢   This indicates the feature is a partial feature where redundant functions are removed from Enterprise edition.
+🟢  &NonBreakingSpace; This indicates the feature is a partial feature where redundant functions are removed from Enterprise edition.
