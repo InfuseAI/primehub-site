@@ -44,6 +44,10 @@
         ]
       }
     ],
+    "QuickStart": [
+      "version-3.4-quickstart/qs-primehub",
+      "version-3.4-quickstart/qs-primehub-deploy"
+    ],
     "Notebooks": [
       "version-3.4-quickstart/launch-project",
       "version-3.4-user-advanced-setting",
