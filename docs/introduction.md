@@ -26,7 +26,7 @@ Adopting the group-centric design, scientists can share datasets, artifacts and 
 
 incorporates data-scientists-facing prominent features that scientists are able to turn workflows into automating pipelines by Job submission/schedule, able to prepare data/develop trained models from Notebook and able to deploy container-wrapped models as services by Model Deployment.
 
-![](assets/v34-landing-user.png)
+![](assets/v35-landing-user.png)
 
 
 ### Getting Started

@@ -18,9 +18,18 @@ sidebar_label: User Portal
 
 After login, a user lands on User Portal.
 
-![](assets/v34-landing-user.png)
+![](assets/v35-landing-user.png)
 
-On Portal, the left side is **side menu** composed of platforme user features, the right side is the **context of the current working group**. At the top-right, there is a `Group:` dropdown of switching working groups. Users can switch the working group to proceed to different projects easily.
+On Portal, the left side is **side menu** composed of platform user features, the right side is the **context of the current working group**. At the top-right, there is a `Group:` dropdown of switching working groups. Users can switch the working group to proceed to different projects easily.
+
+### Home
+
+At Home, the layout has three areas: 
+
++ **Top-left**: it has links of external documents where users can get started from and shortcuts of features where users can take actions quickly.
+
++ **Bottom-left**: it displays recent activities (such as Job, Model) done by the user; where users can have an quick-view of activities status.
++ **Right**: it displays *permitted user quota in this group* and *used/limit group quotas*.
 
 
 ### Group-Context
@@ -40,8 +49,6 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 
 ## User Feature
-
-+ **Home** where users can find **User Guide** linking to the **PrimeHub Documentation** site.
 
 + **Notebooks**  where users can launch a Jupyter Notebook for projects. See [Notebook environment](../quickstart/launch-project).
 

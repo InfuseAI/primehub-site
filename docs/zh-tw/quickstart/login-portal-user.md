@@ -17,9 +17,18 @@ sidebar_label: User Portal
 
 ## Portal
 
-![](assets/v34-landing-user.png)
+![](assets/v35-landing-user.png)
 
 Portal 頁面上左側為「使用者功能選單」、右側為「工作專案群組」。
+
+### Home
+
+Home 頁呈現三個區塊：
+
++ **左上側**: 外部文件連結，新手使用者可以從文件快速上手 PrimeHub 及更多了解；功能捷徑，使用者可以快速進行功能。
+
++ **左下側**: 呈現最近使用者進行的活動，如：Job, Model；使用者可以快速了解活動狀態。
++ **右側**: 呈現此群組使用者允許使用的資源額度；群組整體已使用額度/群組額度上限。
 
 ### Group-Context
 
@@ -32,8 +41,6 @@ Portal 頁面上左側為「使用者功能選單」、右側為「工作專案�
 滑鼠移到右上角圖示顯示「個人選單」包括 User Profile、Change Password、API Token、Admin Portal（管理員專用）、Logout。
 
 ## User Feature
-
-+ **Home** 使用者可以由此參考 PrimeHub 相關文件。
 
 + **Notebooks**  使用者可以由此啟始 Jupyter Notebook。請參考 [Notebook](launch-project)。
 
