@@ -29,16 +29,15 @@ sidebar_label: Introduction
 
 ---
 
-## Platform
+**PrimeHub** 平台主要由 **User Portal** 及 **Admin Portal** 組成。
 
-PrimeHub 平台主要由 **User Portal** 及 **Admin Portal** 組成。
-
-### User Portal
+## User Portal
 
 函括資料科學家不可或缺的常用功能；以 Notebook 進行開發，利用 Job 將工作流程串接成自動化，最後透過 Models 將訓練模型整合進容器環境，部署成服務來驗證效能，反覆持續地改進訓練模型。
 
 ![](assets/v35-landing-user.png)
 
+### Getting Started as Users
 
 + [User Portal 總覽](zh-tw/quickstart/login-portal-user)
 
@@ -50,9 +49,9 @@ PrimeHub 平台主要由 **User Portal** 及 **Admin Portal** 組成。
 
 + [模型部署](zh-tw/model-deployment-feature)
 
-+ [群組限定工作環境映像檔](zh-tw/group-image-cht) `New`
++ [群組限定共享檔案](zh-tw/shared-files-cht)
 
-+ [群組限定共享檔案](zh-tw/shared-files-cht) `New`
++ [擴充 PrimeHub：安裝第一個第三方應用 - MLflow](zh-tw/primehub-app-cht) `NEW` `ALPHA`
 
 + [Notebook Extension 及 將 Notebook 遞交至 Job](zh-tw/ph-notebook-extension-cht)
 
@@ -60,17 +59,25 @@ PrimeHub 平台主要由 **User Portal** 及 **Admin Portal** 組成。
 
 + [遠端 SSH 連線 Jupyter Notebook](zh-tw/guide_manual/ssh-config-cht)
 
-### Admin Portal
+#### As Group Admin
+
++ [群組限定工作環境映像檔](zh-tw/group-image-cht)
+
++ [檢視目前群組相關設定](zh-tw/group-setting-cht) `NEW`
+
+## Admin Portal
 
 函括資源共享管理功能及額度分配控管功能；平台管理者依據實際專案開發需求，建立專案群組，並針對群組資源做分配及額度控管；同時可以監控各個專案使用狀況。
 
 ![](assets/v3-admin-portal_v31.png)
 
+### Getting Started as Platform Admin
+
 + [Admin Portal 總覽](zh-tw/quickstart/login-portal-admin)
 
 + [管理使用者、群組](zh-tw/guide_manual/admin-user-cht)
 
-+ [指定群組管理者](zh-tw/quickstart/assign-group-admin-cht) `New`
++ [指定群組管理者](zh-tw/quickstart/assign-group-admin-cht)
 
 + [管理 Instance types/映像檔/資料集](zh-tw/guide_manual/admin-instancetype-cht)
 

@@ -19,7 +19,17 @@ sidebar_label: User Portal
 
 ![](assets/v35-landing-user.png)
 
-Portal 頁面上左側為「使用者功能選單」、右側為「工作專案群組」。
+Portal 頁面左側為「使用者功能選單」、右側為「工作專案群組對應內容」。
+
+### Group-Context
+
+![](assets/group_context.png)
+
+最右上方則為切換工作專案群組的下拉選單 `Group:`。
+
+>如果使用者不屬於任一專案群組，頁面上會顯示 `No group available`，請洽管理者。
+
+![](assets/v3-landing-user-no-group.png
 
 ### Home
 
@@ -30,11 +40,6 @@ Home 頁呈現三個區塊：
 + **左下側**: 呈現最近使用者進行的活動，如：Job, Model；使用者可以快速了解活動狀態。
 + **右側**: 呈現此群組使用者允許使用的資源額度；群組整體已使用額度/群組額度上限。
 
-### Group-Context
-
-![](assets/group_context.png)
-
-最右上方則為切換工作專案群組的下拉選單 `Group:`。
 
 ### Profile Menu
 
@@ -52,9 +57,9 @@ Home 頁呈現三個區塊：
 
 + **Shared Files** 使用者可以上傳群組限定共享檔案至 PHFS 空間。請參考 [Shared Files](../shared-files-cht)。
 
->如果使用者不屬於任一專案群組，頁面上會顯示 `No group available`，請洽管理者。
++ **Apps** 使用者可以安裝第三方應用來擴充 PrimeHub 功能。請參考 [PrimeHub Apps (Alpha)](../primehub-app-cht)。
 
-![](assets/v3-landing-user-no-group.png)
+)
 
 ### Group admin feature
 

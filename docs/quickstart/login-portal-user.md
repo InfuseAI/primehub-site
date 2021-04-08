@@ -22,16 +22,6 @@ After login, a user lands on User Portal.
 
 On Portal, the left side is **side menu** composed of platform user features, the right side is the **context of the current working group**. At the top-right, there is a `Group:` dropdown of switching working groups. Users can switch the working group to proceed to different projects easily.
 
-### Home
-
-At Home, the layout has three areas: 
-
-+ **Top-left**: it has links of external documents where users can get started from and shortcuts of features where users can take actions quickly.
-
-+ **Bottom-left**: it displays recent activities (such as Job, Model) done by the user; where users can have an quick-view of activities status.
-+ **Right**: it displays *permitted user quota in this group* and *used/limit group quotas*.
-
-
 ### Group-Context
 
 First of all, users have to specify a working group from joining groups by using the dropdown. Accordingly, the following right-side context is retained within the working group, it is so called **Group-Context**.
@@ -41,6 +31,15 @@ First of all, users have to specify a working group from joining groups by using
 >If users don't belong to any group, the page shows `No group available` without any features. Please contact administrators.
 
 ![](assets/v3-landing-user-no-group.png)
+
+### Home
+
+At Home, the layout has three areas: 
+
++ **Top-left**: it has links of external documents where users can get started from and shortcuts of features where users can take actions quickly.
+
++ **Bottom-left**: it displays recent activities (such as Job, Model) done by the user; where users can have an quick-view of activities status.
++ **Right**: it displays *permitted user quota in this group* and *used/limit group quotas*.
 
 
 ### Profile Menu
@@ -60,9 +59,11 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
 
++ **Apps** where user can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps (Alpha)](../primehub-app).
+
 ### Group admin feature
 
-Features here are Group-Admin-Only.
+Features here are Group-Admin only.
 
 + **Images** where Group Admin can add/build group-specific images for the managed group. See [Images](../group-image).
 
@@ -87,4 +88,4 @@ A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maxim
 
   >Please contact your system administrator for assistance to upgrade your license to run more models.
 
-To learn the current PrimeHub license information, please see [PrimeHub License](../guide_manual/admin-system#primehub-license).
+To learn the current PrimeHub license information, see [PrimeHub License](../guide_manual/admin-system#primehub-license).

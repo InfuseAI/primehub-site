@@ -26,24 +26,26 @@ Adopting the group-centric design, scientists can share datasets, artifacts and 
 
 incorporates data-scientists-facing prominent features that scientists are able to turn workflows into automating pipelines by Job submission/schedule, able to prepare data/develop trained models from Notebook and able to deploy container-wrapped models as services by Model Deployment.
 
-![](assets/v35-landing-user.png)
+![landing-user.png](assets/v35-landing-user.png)
 
 
-### Getting Started
+### Getting Started as Users
 
 + [User Portal overview](quickstart/login-portal-user.md)
 
 + [Starts a Jupyter Notebook](quickstart/launch-project)
 
++ [Start training a model and tuning it](quickstart/qs-primehub)
+
++ [Deploy a model in a quick way](quickstart/qs-primehub-deploy)
+
 + [Submit and monitor jobs](job-submission-feature)
 
 + [Schedule routine jobs](job-scheduling-feature)
 
-+ [Deploy and serve Models](model-deployment-feature)
++ [Share files within a group](shared-files)
 
-+ [Add/Build group-specific images](group-image) (Group-Admin) `New`
-
-+ [Share files within a group](shared-files) `New`
++ [Install the first 3rd-party application, MLflow](primehub-app) `NEW` `ALPHA`
 
 + [Notebook extension and submit notebooks as jobs](ph-notebook-extension)
 
@@ -51,14 +53,21 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)
 
+#### As Group Admin
+
++ [Add/Build group-specific images](group-image)
+
++ [View the current settings of the managed group](group-setting) `NEW`
+
+---
+
 ## Admin Portal
 
 incorporates administration features that administrators are able to do access-control management, resources/quotas control management, and to oversight the usage, moreover, administrators are able to build custom environments by customization of images.
 
 ![](assets/v3-admin-portal_v31.png)
 
-
-### Getting Started
+### Getting Started as Platform Admin
 
 + [Admin Portal overview](quickstart/login-portal-admin)
 
@@ -66,7 +75,7 @@ incorporates administration features that administrators are able to do access-c
 
 + [Manage users and groups](guide_manual/admin-user)
 
-+ [Assign group admin](guide_manual/admin-group#members) `New`
++ [Assign group admin](guide_manual/admin-group#members)
 
 + [Manage instance types](guide_manual/admin-instancetype), [Manage images](guide_manual/admin-image), [Manage dataset](guide_manual/admin-dataset)
 
