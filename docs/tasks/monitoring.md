@@ -246,7 +246,7 @@ grafana:
   enabled: true
   env:
     GF_AUTH_GENERIC_OAUTH_API_URL: http://keycloak-http.hub/auth/realms/primehub/protocol/openid-connect/userinfo
-    GF_AUTH_GENERIC_OAUTH_AUTH_URL: http://keycloak-http.hub/auth/realms/primehub/protocol/openid-connect/auth
+    GF_AUTH_GENERIC_OAUTH_AUTH_URL: http://example.primehub.io/auth/realms/primehub/protocol/openid-connect/auth
     GF_AUTH_GENERIC_OAUTH_CLIENT_ID: grafana-proxy
     GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     GF_AUTH_GENERIC_OAUTH_ENABLED: "true"
