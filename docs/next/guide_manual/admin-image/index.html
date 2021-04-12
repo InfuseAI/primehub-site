@@ -77,7 +77,12 @@
 <li><p><code>Name</code> (required): Only lowercase letters, numbers, hyphen <code>-</code> and a dot <code>.</code> can be filled in.</p></li>
 <li><p><code>Display name</code></p></li>
 <li><p><code>Description</code></p></li>
-<li><p><code>Type</code>: <code>cpu</code>, <code>gpu</code> and <code>universal</code> Indicate what type of the image is.</p></li>
+<li><p><code>Type</code>: Indicates what type of the image setting is.</p>
+<ul>
+<li><code>cpu</code>: this image is cpu-only, its environment doesn't support GPU utilization.</li>
+<li><code>gpu</code>: this image environment supports GPU utilization.</li>
+<li><code>universal</code>: this setting contains CPU image/GPU image respectively; PrimeHub will choose the proper one according to the selected instance type then.</li>
+</ul></li>
 <li><p><code>Container image url</code> Fill in the Image's url.</p></li>
 <li><p><code>Specific container image url for GPU</code> It appears when <code>universal</code> is selected. By default it uses the same url as container image url. Check off it if a specific url for GPU is desired.</p></li>
 <li><p><code>Use Image Pull Secret</code> Checked if a pull-secret is required and select a secret from the list.</p>
