@@ -126,7 +126,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 
 ## Deployment Detail
 
-![](assets/mdeploy_detail_v32.png)
+![](assets/mdeploy_detail_v35.png)
 
 ### Information
 
@@ -144,7 +144,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 |Instance Type  |The resources allocation which is requested for the deployment.|
 |Replicas       |The replicas of the deployment.|
 |Access Type    | Public or Private |
-|Run an Example |Verifying the service by using `curl` querying the service; it is varied with `Public` or `Private` access.|
+|Run an Example |Replace `${YOUR_DATA}` with real data in the `Curl` query sample to test the service; the sample varies according to `Public` or `Private` access.|
 
 + Metadata table
 + Environment Variables table: disclose values by clicking the eye icon.

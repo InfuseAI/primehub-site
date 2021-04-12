@@ -127,7 +127,7 @@ description: 模型部署
 
 ## 部署詳細資訊
 
-![](assets/mdeploy_detail_v32.png)
+![](assets/mdeploy_detail_v35.png)
 
 ### Information
 
@@ -145,7 +145,7 @@ description: 模型部署
 |Instance Type  |佈建用資源配請求|
 |Replicas       |副本個數|
 |Access Type    |Public 或 Private|
-|Run an Example |使用`Curl`查詢來驗證部署服務範例；`Private`或`Public`存取代入參數有異|
+|Run an Example |以實際資料來替代 `Curl` 範例中 `${YOUR_DATA}` 來驗證部署服務；範例依據 `Private` 或 `Public` 而有差異|
 
 + Metadata 表
 + Environment Variables 表: 按下小眼睛圖示來顯示變數內容。
