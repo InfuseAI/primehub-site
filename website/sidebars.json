@@ -311,6 +311,7 @@
     "References": [
       "references/primehub_chart",
       "comparison",
+      "license",
       "guide_manual/kubeflow-installation-guide",
       "guide_manual/ssh-vscode",
       "guide_manual/ssh-keygen"

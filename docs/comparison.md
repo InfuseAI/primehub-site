@@ -59,3 +59,10 @@ Here we list the features comparison among tiers.
 
 
 🟢  &NonBreakingSpace; This indicates the feature is a partial feature where redundant functions are removed from Enterprise edition.
+
+
+## License Limitations
+
+Beside feature limitations, license limitations are also varied in licenses.
+
+See [License](license).
