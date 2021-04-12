@@ -58,7 +58,7 @@ Click `edit groups` under the edit user's screen, and to select the group to whi
 
 ![](assets/user_18_v26.png)
 
-The administrator can request the user to change the following settings through system E-mail:
+The administrator can request the user to reset following settings through system E-mail:
 
 + `Update Password` Require users to update their passwords.
 

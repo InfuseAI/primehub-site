@@ -11,4 +11,4 @@ title: Permission Denied
 
 ## Advices for Admin
 
-- You could also try to refresh the SSH key cache manually if none of above worked.
+- You could also try to [refresh the SSH key cache](../getting_started/configure-ssh-server#how-do-i-refresh-the-ssh-key-cache-manually) manually if none of above worked.

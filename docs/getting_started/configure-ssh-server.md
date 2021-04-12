@@ -87,18 +87,19 @@ After that, you'll have to edit the firewall to expose certain TCP 2222 port. Go
 
 ## FAQ
 
-- What's the logic of the SSH key cache mechanism?
-    - 15 min since last update cache → cache invalid, the whole cache will be fully rebuild upon the next ssh connection.
-    - 2 min since last update cache → if incoming ssh key is not in cache store, try to fetch publickey APIs of those pods not in the cache.
-    - cache updated within 2 min → only check incoming SSH key from local cache.
-- How do I refresh the SSH key cache manually?
+### What's the logic of the SSH key cache mechanism?
 
-    If you are able to reach your Kubernetes cluster, you can run the following command to refresh the SSH key cache manually.
+- 15 min since last update cache → cache invalid, the whole cache will be fully rebuild upon the next ssh connection.
+- 2 min since last update cache → if incoming ssh key is not in cache store, try to fetch publickey APIs of those pods not in the cache.
+- cache updated within 2 min → only check incoming SSH key from local cache.
+### How do I refresh the SSH key cache manually?
 
-    ```bash
-    $ POD_NAME=$(kubectl get pod -n hub --selector=ssh-bastion-server/bastion=true -o jsonpath='{.items[*].metadata.name}')
-    $ kubectl exec -it -n hub $POD_NAME bash
-    root@ssh-bastion-server:/# cd /etc/ssh
-    root@ssh-bastion-server:/# python update_authorized_keys.py full
-    root@ssh-bastion-server:/# exit
-    ```
+If you are able to reach your Kubernetes cluster, you can run the following command to refresh the SSH key cache manually.
+
+```bash
+$ POD_NAME=$(kubectl get pod -n hub --selector=ssh-bastion-server/bastion=true -o jsonpath='{.items[*].metadata.name}')
+$ kubectl exec -it -n hub $POD_NAME bash
+root@ssh-bastion-server:/# cd /etc/ssh
+root@ssh-bastion-server:/# python update_authorized_keys.py full
+root@ssh-bastion-server:/# exit
+```
