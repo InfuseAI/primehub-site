@@ -29,7 +29,7 @@ Portal 頁面左側為「使用者功能選單」、右側為「工作專案群�
 
 >如果使用者不屬於任一專案群組，頁面上會顯示 `No group available`，請洽管理者。
 
-![](assets/v3-landing-user-no-group.png
+![](assets/v3-landing-user-no-group.png)
 
 ### Home
 
