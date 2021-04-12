@@ -71,6 +71,8 @@ Here is an example of values file, it requires modifications according to the re
 
 + Set `GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET` with the generated client secret by KeyCloak console
 
++ If NFS client provisioner is not installed, replace `nfs-client` with provisioned storage classes, which are listed by `kubectl get storageclasses`.
+
 + Save the configuration to `prometheus-operator-values.yaml`
 
 ```yaml
@@ -245,12 +247,12 @@ grafana:
   adminUser: admin
   enabled: true
   env:
-    GF_AUTH_GENERIC_OAUTH_API_URL: http://keycloak-http.hub/auth/realms/primehub/protocol/openid-connect/userinfo
-    GF_AUTH_GENERIC_OAUTH_AUTH_URL: http://keycloak-http.hub/auth/realms/primehub/protocol/openid-connect/auth
+    GF_AUTH_GENERIC_OAUTH_API_URL: http://example.primehub.io/auth/realms/primehub/protocol/openid-connect/userinfo
+    GF_AUTH_GENERIC_OAUTH_AUTH_URL: http://example.primehub.io/auth/realms/primehub/protocol/openid-connect/auth
     GF_AUTH_GENERIC_OAUTH_CLIENT_ID: grafana-proxy
     GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     GF_AUTH_GENERIC_OAUTH_ENABLED: "true"
-    GF_AUTH_GENERIC_OAUTH_TOKEN_URL: http://keycloak-http.hub/auth/realms/primehub/protocol/openid-connect/token
+    GF_AUTH_GENERIC_OAUTH_TOKEN_URL: http://example.primehub.io/auth/realms/primehub/protocol/openid-connect/token
     GF_SERVER_ROOT_URL: http://example.primehub.io/grafana
   grafana.ini:
     auth:
