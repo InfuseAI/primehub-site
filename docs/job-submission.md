@@ -17,8 +17,10 @@ We sometimes have time-consuming tasks which have to be run sequentially, becaus
 
 + A running job can run for **24 hours** and it will be failed if the job doesn't finish within 24 hours.
 
-+ Basically, An ended job log is saved for **7 days**. Once expired, The job still remain in the list without logs since the logs is wiped out. Furthermore, a job (succeeded, failed, cancelled), by default, are only ketp for **30 days**.
++ Basically, An ended job log is saved for **7 days**. Once expired, The job still remain in the list without logs since the logs is wiped out. Furthermore, a job (succeeded, failed, cancelled), by default, are only kept for **30 days**.
   >***NOTE: According to the container runtime, the job container is possibly recycled within 7 days so that the logs doesn't exist anymore.***
+
++ The limit of *Jobs total amount*, by default, is **4000**; system will remove executed Job records automatically from oldest one when the sum exceeds the limit, i.e., it only keeps 4000 latest job records.
 
 ## Jobs List
 

@@ -364,14 +364,8 @@
       }
     ],
     "Jobs": [
-      {
-        "type": "subcategory",
-        "label": "Submission",
-        "ids": [
-          "zh-tw/job-submission-cht",
-          "zh-tw/job-artifact-cht"
-        ]
-      },
+      "zh-tw/job-submission-cht",
+      "zh-tw/job-artifact-cht",
       {
         "type": "subcategory",
         "label": "教學",
