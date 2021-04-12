@@ -36,6 +36,7 @@ Group Admin now can view settings configured by Platform Admin for the managed g
 
 ## 🚀 &NonBreakingSpace; Improvements
 
++ Removed **Default Timeout Setting** from *Admin Portal/Groups*.
 
 
 ## 🧰 &NonBreakingSpace; Bug Fixes

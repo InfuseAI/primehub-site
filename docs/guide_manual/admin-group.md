@@ -25,7 +25,7 @@ Click `Add` to add a group, which will pop up the editing screen of Groups.
 
 ## Info
 
-![](assets/group_add_v33.png)
+![](assets/group_add_v35.png)
 
 You need to fill in the fields in the above picture:
 
@@ -44,12 +44,6 @@ Create shared volume with specific capacity. The shared volume is shared among m
 + `Shared Volume Capacity` Set the capacity of the shared volume.
 
 + `Launch Group Only` Set if the shared volume is only mounted in the launch group. When a user open a notebook, by default, it will mount the shared volume of the current launch group. However, if the user is also the member of a group which configures shared volume `Launch Group Only` as false, this volume would be also mounted in this notebook. In this case, you can see current group shared volumes and some non-launch group shared volumes are all mounted in the `/project/` folder.
-
-### Job Default Timeout Setting
-
-+ `Default Timeout Setting` Set Minutes / Hours / Days.
-
-Group can apply a group-wise Job timeout setting on jobs which are submitted from the same group by default. A running job will be cancelled when it passes the interval of time. This setting is able to be overwritten by each job submission.
 
 ### User Quota
 
@@ -85,14 +79,13 @@ Also, multiple members are able to be assigned **Group Admin** for a group.
 
 >**Group Admin** have the privilege *to access features dedicated to them on User Portal*, such as [Image](../group-image).
 
-
 ---
 
-## Datasets
+## Instance Types
 
-![](assets/admin_group_ds_v25.png)
+![](assets/admin_group_it_v31.png)
 
-The list shows connecting datasets which can be read or written. We also can edit these datasets through here.
+The list shows connecting instance types which are able to be used by this group.
 
 ## Images
 
@@ -100,11 +93,12 @@ The list shows connecting datasets which can be read or written. We also can edi
 
 The list shows connecting images which are able to be used by this group.
 
-## Instance Types
+## Datasets
 
-![](assets/admin_group_it_v31.png)
+![](assets/admin_group_ds_v25.png)
 
-The list shows connecting instance types which are able to be used by this group.
+The list shows connecting datasets which can be read or written. We also can edit these datasets through here.
+
 
 ## Deleting Group
 

@@ -22,7 +22,7 @@ description: Group Management
 
 ## Info
 
-![](assets/group_add_v33.png)
+![](assets/group_add_v35.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -42,11 +42,6 @@ description: Group Management
 
 + `Launch Group Only` 當開啟此選項時，只有當使用者在 PrimeHub 頁面選擇同一 Group 進行專案時，Shared Volume 才會被掛載。
 
-### Job Default Timeout Setting
-
-+ `Default Timeout Setting` 設定 Minutes / Hours / Days.
-
-Job 預設逾時期限，此設定套用至同群組遞出的所有 Job；系統預設值為 7 天。若期限內該 Job 尚未完成，該 Job 會被強制中斷。另外，此設定可被每次遞出 Job 時覆寫。
 
 ### User Quota
 
@@ -85,11 +80,11 @@ Job 預設逾時期限，此設定套用至同群組遞出的所有 Job；系統
 
 ---
 
-## Datasets
+## Instance Types
 
-![](assets/admin_group_ds_v25.png)
+![](assets/admin_group_it_v31.png)
 
-列出所有此群組可以讀取或寫入的 Datasets；我們甚至可以由此進入 Dataset 編輯。
+列出所以此群組可以使用的 Instance Types。
 
 ## Images
 
@@ -97,11 +92,12 @@ Job 預設逾時期限，此設定套用至同群組遞出的所有 Job；系統
 
 列出所有此群組可以使用的 Image。
 
-## Instance Types
+## Datasets
 
-![](assets/admin_group_it_v31.png)
+![](assets/admin_group_ds_v25.png)
 
-列出所以此群組可以使用的 Instance Types。
+列出所有此群組可以讀取或寫入的 Datasets；我們甚至可以由此進入 Dataset 編輯。
+
 
 ## Deleting Group
 
