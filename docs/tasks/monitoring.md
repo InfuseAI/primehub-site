@@ -295,10 +295,8 @@ grafana:
 2. Install by Helm
 
     ```bash
-    helm upgrade prometheus-operator prometheus-community/prometheus-operator \
-      --version 8.9.3 \
-      -n monitoring --create-namespace --install \
-      -f prometheus-operator-values.yaml
+    helm upgrade prometheus-operator prometheus-community/kube-prometheus-stack \
+      -n monitoring --create-namespace --install -f prometheus-operator-values.yaml
     ```
 
 ### Install PrimeHub Dashboard on Grafana
@@ -313,7 +311,7 @@ grafana:
 2. Install PrimeHub dashboard
 
     ```bash
-    helm install primehub-grafana-dashboard-basic \
+    helm -n monitoring install primehub-grafana-dashboard-basic \
       infuseai/primehub-grafana-dashboard-basic \
       --set "modelDeployment.enabled=true"
     ```
