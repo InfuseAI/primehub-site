@@ -59,9 +59,8 @@ Home 頁呈現三個區塊：
 
 + **Apps** 使用者可以安裝第三方應用來擴充 PrimeHub 功能。請參考 [PrimeHub Apps (Alpha)](../primehub-app-cht)。
 
-)
 
-### Group admin feature
+### Group Admin Feature
 
 + **Images** 群組管理者可以為其管理群組增加群組限定映像檔。請參照 [Images](../group-image-cht)。(群組管理者限定)
 
