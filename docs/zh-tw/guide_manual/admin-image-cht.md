@@ -43,7 +43,11 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 需要為 image 指定 Type 屬性。如此，使用者試著起始 hub 時，會先指定 `Instance Type`，只有符合該 Instance Type 需求 (`CPU`, `GPU`) 的 image 才能被選擇。
 
-+ `Type`: `cpu`, `gpu` 及 `universal` 指定該 Image 的 Type。
++ `Type`: 指定該 Image 的 Type。
+
+  + `cpu`: 此 image 環境僅支援 CPU 運算。
+  + `gpu`: 此 image 環境支援 CPU 運算。
+  + `universal`: 此組 image 設定分別包括 CPU image 環境及 GPU image 環境； PrimeHub 當下會依據選擇的 Instance Type 來載入對應的環境。
 
 + `Container image url` 填入該 Image 的連結位置。
 

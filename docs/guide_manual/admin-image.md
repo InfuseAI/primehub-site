@@ -31,7 +31,11 @@ You need to fill in the fields in the above picture:
 
 + `Description`
 
-+ `Type`: `cpu`, `gpu` and `universal` Indicate what type of the image is.
++ `Type`: Indicates what type of the image setting is.
+
+  + `cpu`: this image is cpu-only, its environment doesn't support GPU utilization.
+  + `gpu`: this image environment supports GPU utilization.
+  + `universal`: this setting contains CPU image/GPU image respectively; PrimeHub will choose the proper one according to the selected instance type then.
 
 + `Container image url` Fill in the Image's url.
 

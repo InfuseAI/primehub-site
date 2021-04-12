@@ -39,9 +39,9 @@ You need to fill in the fields of Basic Info in the above picture:
 
 ### Overcommitting (advanced feature)
 
-+ `CPU Request` define how many CPU are requested to use by this Instance Type initially. Once it is enabled, Instances are guaranteed to get the amount of CPU they request. If `CPU Request` < `CPU Limit`, the system will try to overcommit CPU resources within the limit if more resources are available.
++ `CPU Request` define how many CPU are requested to use by this Instance Type initially. Once it is enabled, instances are guaranteed to get the amount of CPU they request. If `CPU Request` < `CPU Limit`, the system will try to overcommit CPU resources within the limit if more resources are available.
 
-+ `Memory Request` define how many Memory are requested to use by this Instance Type initially. Once it is enabled, Instances are guaranteed to get the amount of Memory they request. If `Memory Request` < `Memory Limit`, the system will try to overcommit Memory resources within the limit if more resources are available.
++ `Memory Request` define how many Memory are requested to use by this Instance Type initially. Once it is enabled, instances are guaranteed to get the amount of Memory they request. If `Memory Request` < `Memory Limit`, the system will try to overcommit Memory resources within the limit if more resources are available.
 
 For details, please see [Quality of Service for Pods](admin-it-performance) and [Resource QoS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#resource-quality-of-service-in-kubernetes).
 
