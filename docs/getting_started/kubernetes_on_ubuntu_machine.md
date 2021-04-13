@@ -188,7 +188,8 @@ kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d'
 
 ### Apply license
 
->It doesn't allow to add new groups, instance types, images by the default license.
+>By default, a trial license is applied. See [trial license limitations](../license).
+>Please contact InfuseAI for the license inquiry for a valid commercial license
 
 Run the command to show the default license.
 
@@ -203,10 +204,7 @@ $ ./primehub-install license
     started_at: "2020-01-01T00:00:00Z"
 ```
 
-
->If you don't have a valid license file. Please contact InfuseAI for the license inquiry.
-
-Once you have a valid license file from InfuseAI. Put the `license_crd.yml` file under the same folder where `primehub-install` script is and run the the command to apply license.
+Once you have a commercial license file from InfuseAI. Save the `license_crd.yml` file under the same folder where `primehub-install` script is and run the the command to apply license.
 
 ```bash
 ./primehub-install apply-license

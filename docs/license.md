@@ -14,14 +14,22 @@ From [Admin Portal/System Settings](guide_manual/admin-system), we can learn wha
 
 The limitations are varied in licenses.
 
-| Limitation |  Trial | Demo | Licensed |
-|----------|-----------|------|---------|
-| Add new group/instance type/image|✅️ |✅️ | ✅️ |
-| Maximum Nodes|`-`| [By request &neArr;](https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform) |🌟|
-| Maximum Model Deployments|`0`|[By request &neArr;](https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform)  |🌟|
+| Limitation | CE |  EE Trial | EE Demo | EE Licensed |
+|------------|------|-----|------|---------|
+| Add new groups|✅ ️ | |✅️ | ✅️ |
+| Add new instance types| ✅️ | ✅️ | ✅️ | ✅️ |
+| Add new images| ✅ | ✅ ️ |✅️ | ✅️ |
+| Maximum Nodes|`-`|`-`| [By request &neArr;](https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform) |🌟|
+| Maximum Model Deployments|Unavailable feature|`0`|[By request &neArr;](https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform)  |🌟|
 
++ 🌟  &NonBreakingSpace; indicates that the maximum depends on the license purchased from InfuseAI.
 
-🌟  &NonBreakingSpace; indicates that the maximum depends on the license purchased from InfuseAI.
++ CE: Community Edition
+
++ EE: Enterprise Edition
+
++ EE Demo: Enterprise Demo Cluster available on requests only
+
 
 ## License warning
 

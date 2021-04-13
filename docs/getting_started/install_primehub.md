@@ -103,8 +103,8 @@ EOF
 
 ## Apply License Key (Optional)
 
->By the default trial license, it doesn't allow to add new groups, instance types, images.
->If you don't have a valid license file. Please contact InfuseAI for the license inquiry.
+>By default, a trial license is applied. See [trial license limitations](../license).
+>Please contact InfuseAI for the license inquiry for a valid commercial license.
 
 If you have a valid license file from InfuseAI, run this command to apply a license key. 
 
