@@ -10,25 +10,28 @@ description: 3.5 Release Candidate Note
 
 ### PrimeHub Apps (Alpha)
 
-Nowadays there are more and more data/tool in ML ecosystem, PrimeHub as a platform would like to provide the capability that scientists are able to integrate 3rd-party tools with PrimeHub and orchestrate these tools for the acceleration of projects. By the reason, we introduce PrimeHub Apps (Alpha).
+Want to explore more possibilities? Wish to make use of 3rd-party applications to enhance your workflow? You can now visit the PrimeHub Apps to start well-known applications in PrimeHub, we provided MLflow for experiment tracking and will integrate more useful applications.
+
 
 ![](assets/app_overview.png)
 
 + [Document](primehub-app)
 
 
-### Group Dashboard
 
-Home page is renovated and is introduced a dashboard where user can have a quick access to documents, features and have a quick-view of recent activities, furthermore, have the knowledge of current computing resources utilization of this group.
+
+### New informative landing page
+
+We presented a new landing page that providing sections of reference documents, quick actions, recent history, and resource usage status. You can now monitor platform status and perform actions more conveniently.
 
 ![](assets/v35-landing-user.png)
 
 + [Document](quickstart/login-portal-user)
 
 
-### Group Settings
+### Access group settings on user portal
 
-Group Admin now can view settings configured by Platform Admin for the managed group.
+Group administrators can now access detailed group information and adjust per-group job setting on user portal. With this design, we will make more settings available to the group administrators.
 
 ![](assets/group_setting_overview.png)
 
@@ -43,7 +46,18 @@ Group Admin now can view settings configured by Platform Admin for the managed g
 
 ## 💫 &NonBreakingSpace; More Things
 
-+ [Build RStudio binder (repo2docker) image](tasks/repo2docker#example-rstudio-binder)
+### Build model image via the simple Dockerfile
+
+By replacing the S2I (Source-To-Image) with simple Dockerfile in building model image, users can be easier to learn how to build a model image and simplify the entire deployment process. See [Package from Language Wrapper](model-deployment-language-wrapper-intro)
+
+
+### Build RStudio binder image
+
+Build a PrimeHub-compatible RStudio binder image by repo2docker. See [Example: RStudio binder](tasks/repo2docker#example-rstudio-binder).
+
+### Reuse installed packages in job or notebook sessions
+
+With packages installed to the specified location, every team members can now reuse them in every job or notebook sessions. Significantly mitigate the environment establishment efforts. See [Customize Runtime Environment](tasks/customize-job-runtime).
 
 ---
 
