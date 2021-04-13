@@ -58,3 +58,34 @@ o
 
 
 🟢  &NonBreakingSpace; This indicates the feature is a partial feature where redundant functions are removed from Enterprise edition.
+
+## License Limitations
+
+Beside feature limitations, license limitations are also varied in licenses.
+
+| Limitation | EE Trial |  EE Licensed |
+|------------|----------|------|
+| Add new groups|| ✅️ |
+| Add new instance types| ✅️ | ✅️ |
+| Add new images| ✅️ | ✅️ |
+| Maximum Nodes|`-`|🌟|
+| Maximum Model Deployments|`0`|🌟|
+
+🌟  &NonBreakingSpace; indicates that the maximum depends on the license purchased from InfuseAI.
+
+
+### License warning
+
+A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maximum Models`.
+
++ When a license has expired, a warning message appears.
+
+  >Your license has expired. Please contact your sales team to extend your license.
+
++ When used node amount > granted node amount, a warning message appears.
+
+  > You are using more nodes than your license allows. Please contact your system administrator.
+
++ when used model amount > granted model amount + 10%, a warning message appears.
+
+  >Please contact your system administrator for assistance to upgrade your license to run more models.
