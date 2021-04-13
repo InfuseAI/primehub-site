@@ -188,7 +188,7 @@ kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d'
 
 ### Apply license
 
->By default, a trial license is applied. See [trial license limitations](../license).
+>By default, a trial license is applied. See [trial license limitations](../comparison#license-limitations).
 >Please contact InfuseAI for the license inquiry for a valid commercial license
 
 Run the command to show the default license.

@@ -103,7 +103,7 @@ EOF
 
 ## Apply License Key (Optional)
 
->By default, a trial license is applied. See [trial license limitations](../license).
+>By default, a trial license is applied. See [trial license limitations](../comparison#license-limitations).
 >Please contact InfuseAI for the license inquiry for a valid commercial license.
 
 If you have a valid license file from InfuseAI, run this command to apply a license key. 
