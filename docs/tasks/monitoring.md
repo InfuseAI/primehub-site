@@ -71,6 +71,8 @@ Here is an example of values file, it requires modifications according to the re
 
 + Set `GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET` with the generated client secret by KeyCloak console
 
++ If NFS client provisioner is not installed, replace `nfs-client` with provisioned storage classes, which are listed by `kubectl get storageclasses`.
+
 + Save the configuration to `prometheus-operator-values.yaml`
 
 ```yaml
