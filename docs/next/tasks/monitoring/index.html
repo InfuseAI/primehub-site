@@ -116,6 +116,7 @@
 <li><p>Update the <code>slack_api_url</code> with the slack webhook, or remove <code>alertmanager</code> segment and <code>additionalPrometheusRules</code> segment when the alert is not required.</p></li>
 <li><p>Replace <code>example.primehub.io</code> with your domain</p></li>
 <li><p>Set <code>GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET</code> with the generated client secret by KeyCloak console</p></li>
+<li><p>If NFS client provisioner is not installed, replace <code>nfs-client</code> with provisioned storage classes, which are listed by <code>kubectl get storageclasses</code>.</p></li>
 <li><p>Save the configuration to <code>prometheus-operator-values.yaml</code></p></li>
 </ul>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">kubelet:</span>
