@@ -70,6 +70,16 @@ likewise it displays a blank when no installed one.
 
 > Please assure that Group Resources are sufficient to run the instance.
 
+### Preset Environment Variables
+In the `Environment Variables` settings, you can use other environment variables in the value column. The format is `$(PRIMEHUB_APP_ROOT)/data`. Here are some environment variable you can use
+
++ `PRIMEHUB_APP_ID`: The application ID
+`<app-id>`
++ `PRIMEHUB_APP_ROOT`:  The root of application data. This path is supposed to store the application-specific persistent data. The value is:
+  + `/project/<group-name>/phapplications/<app-id>` if the group volume is available
+  + `/phapplications/<app-id>` if the group volume is not available
++ `PRIMEHUB_APP_BASE_URL`: The url prefix for the application. The value is `/console/apps/<app-id>`
+
 ## Installed App Detail
 
 ![](assets/app_detail.png)
@@ -95,7 +105,7 @@ Action buttons:
 |Status|The status of the application instance|
 |Message|The message describes the status; error message if any |
 |App URL|The URL of the application|
-|Service Endpoints| The service endpoint|
+|Service Endpoints| The service endpoints. Clients in the cluster can access this application by HOST:PORT directly.|
 |App ID|A random ID of App|
 |Name|The name of the instance|
 |Instance Type| Allocated instance type|
