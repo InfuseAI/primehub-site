@@ -1,7 +1,7 @@
 ---
 id: primehub-app-tutorial-mlflow
-title: Create a MLflow server
-description: Create a MLflow server
+title: Create an MLflow server
+description: Create an MLflow server
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
@@ -13,7 +13,7 @@ description: Create a MLflow server
 </div>
 <br>
 
-This tutorial covers the basic usage flow to help you get started with MLflow in PrimeHub.
+This tutorial covers the basic flow to help you get started with MLflow in PrimeHub.
 
 ## Install MLflow
 First, you need to install it in the `Apps` tab. Please check the [Overview](primehub-app) section to learn how to install an App. In the installing process, you can change the `backend store` and `artifact store` environment variables. If you don't know the meaning of the environment variables, can just use the default values or check the [MLflow Official Doc](https://mlflow.org/docs/latest/tracking.html#mlflow-tracking-servers) and [Our Setting](primehub-app-builtin-mlflow) for more details.
@@ -38,14 +38,14 @@ It will open a new window and show the MLflow UI. You can see your experiments a
 
 - Choose a group with enabled Shared Volume (a.k.a Group Volume)
 
->Please have the image, the instance type on PrimeHub or request administrators for the assistance before we start.
+>Please have the image, the instance type on PrimeHub, or request administrators for assistance before we start.
 
 ### Steps
 
-1. Enter Notebook from User Portal, select the image, the instance type and start a notebook.
+1. Enter Notebook from User Portal, select the image, the instance type, and start a notebook.
 
     ![](assets/app_tutorial_mlflow_notebook.png)
-    
+
 2. From File Browser of Notebook, navigate into the directory of `<group_name>`  which is a Group Volume; here **mlflow** is our working group.
 
 3. While inside the group volume, copy/drag the downloaded `app_tutorial_mlflow_demo_notebook.ipynb` there in File Browser and open it.

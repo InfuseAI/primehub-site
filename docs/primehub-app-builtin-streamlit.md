@@ -26,12 +26,12 @@ Official Website  | https://streamlit.io/
 
 ## Usage
 
-1. Create a streamlit app
-1. In the create page, fill the `FILE_PATH` variable. The server is run as the command `streamlit run ${FILE_PATH}`. You can fill a streamlit python from:
+1. Create a Streamlit app
+1. In the create page, fill the `FILE_PATH` variable. The server is run as the command `streamlit run ${FILE_PATH}`. You can fill a Streamlit python from:
    - Local file (e.g. `/project/<group-name>/path/to/your/file`)
-   - Web url (e.g. `https://raw.githubusercontent.com/streamlit/streamlit-example/master/streamlit_app.py`)
-1. Open the streamlit server you just created
-1. You can see the streamlit dashboard
+   - Web URL (e.g. `https://raw.githubusercontent.com/streamlit/streamlit-example/master/streamlit_app.py`)
+1. Open the Streamlit server you just created
+1. You can see the Streamlit dashboard
 
 ## Limitation
-Using external dependencies/packages is not supported in current version.
+Using external dependencies/packages is not supported in the current version.
