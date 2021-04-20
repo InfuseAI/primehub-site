@@ -23,7 +23,7 @@ App Image | [`codercom/code-server`](https://hub.docker.com/r/codercom/code-serv
 Official Website  | https://github.com/cdr/code-server
 
 ## Screenshots
-![](assets/primehub-app-builtin-mlflow.png)
+![](assets/primehub-app-builtin-code-server.png)
 
 ## Usage
 

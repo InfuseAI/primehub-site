@@ -11,3 +11,27 @@ description: Streamlit
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
 </div>
+
+## Introduction
+
+Streamlit turns data scripts into shareable web apps in minutes. All in Python. All for free. No front‑end experience required.
+
+Property    | Description
+------------|------
+App Image | [`infuseai/streamlit`](https://hub.docker.com/r/infuseai/streamlit)
+Official Website  | https://streamlit.io/
+
+## Screenshots
+![](assets/primehub-app-builtin-streamlit.png)
+
+## Usage
+
+1. Create a streamlit app
+1. In the create page, fill the `FILE_PATH` variable. The server is run as the command `streamlit run ${FILE_PATH}`. You can fill a streamlit python from:
+   - Local file (e.g. `/project/<group-name>/path/to/your/file`)
+   - Web url (e.g. `https://raw.githubusercontent.com/streamlit/streamlit-example/master/streamlit_app.py`)
+1. Open the streamlit server you just created
+1. You can see the streamlit dashboard
+
+## Limitation
+Using external dependencies/packages is not supported in current version.
