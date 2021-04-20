@@ -139,7 +139,7 @@ One the deployment is triggered, there is a notification popping up, we can clic
 |Last Updated   |Timestamps|
 |Model Image    |The image which can be served directly or acted as the pre-packaged ML base image.|
 |Image Pull Secret |The secret is used for pulling the image.|
-|Model URI    |The location which the trained model is stored in.|
+|Model URI    |The location where the trained model is stored.|
 |Description    |The description which users input during the creation. |
 |Instance Type  |The resources allocation which is requested for the deployment.|
 |Replicas       |The replicas of the deployment.|

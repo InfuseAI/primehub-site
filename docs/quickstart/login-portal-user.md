@@ -59,7 +59,7 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
 
-+ **Apps** where user can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps (Alpha)](../primehub-app).
++ **Apps** where users can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps (Alpha)](../primehub-app).
 
 ### Group admin feature
 
@@ -67,7 +67,7 @@ Features here are Group-Admin only.
 
 + **Images** where Group Admin can add/build group-specific images for the managed group. See [Images](../group-image).
 
-+ **Settings** where Group Admin can view settings configured by Platform Admin of the managed group and modify the default timeout setting of Jobs. See [Settings](../group-setting)
++ **Settings** where Group Admin can view settings configured by Platform Admin of the managed group and modify the default timeout setting of Jobs. See [Settings](../group-setting).
 
 > Please contact administrators to acquire Group Admin privilege.
  
