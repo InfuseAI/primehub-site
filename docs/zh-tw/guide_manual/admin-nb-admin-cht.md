@@ -6,7 +6,7 @@ title: Notebooks Admin
 
 ## Notebook Instances
 
-Notebook Admin 呈現 Hub 記錄的使用者 Notebook instance 的狀能。只要使用者曾經成功啟動過 Notebook 或昰正在執行中的，都會列於此。 正在執行的 instance 會顯示 `stop server`/`access server` 兩個按鈕，管理者可以針對各個 instance 採取動作；如果使用者自帳號建立後不曾啟動過 Notebook，則使用者不會出現在清單上。
+Notebook Admin 呈現 Hub 記錄的使用者 Notebook instance 的狀態。只要使用者曾經成功啟動過 Notebook 或昰正在執行中的，都會列於此頁。 正在執行的 instance 會顯示 `stop server`/`access server` 兩個按鈕，管理者可以針對各個 instance 採取動作；如果使用者自帳號建立後不曾啟動過 Notebook，則使用者不會出現在清單上。
 
 管理者可用 `Stop All` 停止所有執行中的 instance。
 
