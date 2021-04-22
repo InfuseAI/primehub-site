@@ -200,6 +200,13 @@
       },
       {
         "type": "subcategory",
+        "label": "Manage Notebook instances",
+        "ids": [
+          "guide_manual/admin-nb-admin"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Monthly Report",
         "ids": [
           "guide_manual/admin-report"
@@ -493,6 +500,13 @@
         "label": "Secret 管理及取得",
         "ids": [
           "zh-tw/guide_manual/admin-secret-cht"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Notebook Instance 管理",
+        "ids": [
+          "zh-tw/guide_manual/admin-nb-admin-cht"
         ]
       },
       {
