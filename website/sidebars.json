@@ -286,7 +286,8 @@
           "design/log-persistence",
           "design/phfs",
           "design/usage",
-          "design/job-artifact"
+          "design/job-artifact",
+          "design/primehub-apps"
         ]
       }
     ],
