@@ -16,7 +16,7 @@ Allows third-party application integrated into PrimeHub platform.
 
 ### Application
 
-We introduce a new concept: **Application** in PrimeHub. An application is an intance of integrated third-party application (e.g. mlflow). We install it as a group resource and can install multiple instances for a kind of application within a group.
+We introduce a new concept: **Application** in PrimeHub. An application is an instance of an integrated third-party application (e.g. MLflow). We install it as a group resource and can install multiple instances for a kind of application within a group.
 
 ### Application Template
 
@@ -24,7 +24,7 @@ Application template describes how an application is installed. It contains this
 
 1. **podTemplate:** used to create the deployment of the application
 2. **Service Ports:** used to create the service
-3. **HTTP Port:** The HTTP port if it is a web application
+3. **HTTP Port:** The HTTP port if the application has a web interface
 4. **defaultEnvs:** The default env variables are used when creating the application. When an application is created, the values would be put in enviornment variables of the target application.
     - ENV Name
     - Description
@@ -38,7 +38,7 @@ Users can create an application from an application template.
 1. Select an application template
 1. Fill the default envs provided by the template
 1. Select the instance type
-1. Choose the scope (Public / PrimeHub users only/ Group members only) if it is a web-based service
+1. Choose the scope (Public / PrimeHub users only/ Group members only). The scope only affects the web interface of the application.
 1. Create
 
 **Preset Environment Variables**
@@ -56,8 +56,8 @@ The preset environment variables can be used in the value field of the environme
 ### Connect to Application
 There are two ways to connect to the application
 
-- **Connect to a web-based application from sub-path of PrimeHub**: Most of the applications are web-based applications. To access this kind of application, users can access it from `https://<primehub>/console/apps/<app-id>` from the browser.
-- **Connect to a TCP-based application from the host name and port**: For some applications, they provide non-HTTP service. We can access it by the service endpoint `<my-app-svc>:<my-app-port>`. The endpoint can be only accessed in the PrimeHub cluster internally. (like notebooks and jobs)
+- **Connect to a web interface from sub-path of PrimeHub**: Most of the applications are web-based applications. To access this kind of application, users can access it from `https://<primehub>/console/apps/<app-id>` from the browser.
+- **Connect to a TCP endpoint from the host name and port**: For some applications, they provide non-HTTP service. We can access it by the service endpoint `<my-app-svc>:<my-app-port>`. The endpoint can be only accessed in the PrimeHub cluster internally. (like notebooks and jobs)
 
 ### Application Management
 
@@ -135,7 +135,7 @@ status:
 
 - **annotations**:
     - `phapplication.primehub.io/template`: template content used to create this `PhApplication`
-    - `phapplication.primehub.io/template-data`: template data used to create this `PhApplication`. Can be the POST data of the graphql `PhApplication` create.
+    - `phapplication.primehub.io/template-data`: template data used to create this `PhApplication`. It is the POST data of the graphql `PhApplication` create.
 - **spec**:
     - **podTemplate**: the template of pods
     - **svcTemplate**: the template of service
@@ -210,10 +210,10 @@ spec:
     - **description**: free form description of this applicatin
     - **docLink**: the document url
     - **defaultEnvs**: used for create the additional envs
-        - name**: the name of the environment variable
-        - descsription**: description of the variable
-        - defaultValue**: the default value of the variable
-        - optional**: if the environment is optional
+        - **name**: the name of the environment variable
+        - **descsription**: description of the variable
+        - **defaultValue**: the default value of the variable
+        - **optional**: if the environment is optional
     - **template** (the content of phApplication). See the phApplication
 
 NOTE:
@@ -237,7 +237,7 @@ NOTE:
 
 1. Console get the template list from GraphQL
 2. Console select one template and list the defaultEnvs to the UI's variables
-3. Console call phapplication create GraphQL
+3. Console call GraphQL to create phapplication
     1. Get the phapptemplate content
     2. Append env variables to the end of the container's env
     3. Set the scope
