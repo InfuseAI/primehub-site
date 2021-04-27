@@ -22,7 +22,7 @@ description: Group Management
 
 ## Info
 
-![](assets/group_add_v35.png)
+![](assets/group_add_v36.png)
 
 需填入以上畫面中的各個欄位：
 

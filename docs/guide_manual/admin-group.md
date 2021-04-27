@@ -25,7 +25,7 @@ Click `Add` to add a group, which will pop up the editing screen of Groups.
 
 ## Info
 
-![](assets/group_add_v35.png)
+![](assets/group_add_v36.png)
 
 You need to fill in the fields in the above picture:
 

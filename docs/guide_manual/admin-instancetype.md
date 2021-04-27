@@ -79,7 +79,7 @@ Finally, click `Confirm` to complete the addition.
 
 For a use case of toleration, please see [Toleration Use Case](usecase-toleration).
 
-## NodeSelector
+## Node Selector
 
 You can constrain an instance to only be able to run on specific nodes which have specific labels. A `label` is a map of key-value pair. Here we will show you how to add a nodeSelector only.
 
@@ -87,13 +87,13 @@ For more detail, please refer to Assigning Pods to Nodes for usage `kubectl labe
 
 ![](assets/instance_type_nodeselector_v26.png)
 
-In `NodeSelector` tab, you can add a NodeSelector by clicking on `+ Add field` button.
+In `Node Selector` tab, you can add a NodeSelector by clicking on `+ Add field` button.
 
 Filling in `key/value` with key-value of a label you want to specify.
 
 Click `Confirm` to complete the addition.
 
-For a use case, please see [NodeSelector Use Case](usecase-nodeselector).
+For a use case, please see [Node Selector Use Case](usecase-nodeselector).
 
 ## Deleting Instance Types
 

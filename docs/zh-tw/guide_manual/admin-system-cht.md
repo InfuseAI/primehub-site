@@ -63,9 +63,9 @@ InfuseAI 發出的授權包括 `授權期限`、 `最多節點數量`, `最多�
 
 另外也需要設定從此平台發出的 Email 設定，包括：
 
-+ `Smtp Host` 發 Email 的 Server 主機位置。
++ `SMTP Host` 發 Email 的 Server 主機位置。
 
-+ `Smtp port` 發 Email 的 Server 主機 port。
++ `SMTP port` 發 Email 的 Server 主機 port。
 
 + `From Display Name` 顯示發出 Email的名稱。
 

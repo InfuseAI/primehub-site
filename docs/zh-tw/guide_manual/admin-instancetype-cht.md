@@ -78,7 +78,7 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 關於使用案例，請見 [Toleration 使用案例](usecase-toleration-cht)。
 
-## NodeSelector
+## Node Selector
 
 您可以限制 instance 只能排程在帶有特定 labels 的 nodes 上運作。`Label` 是一對 key-value 值。
 
@@ -88,7 +88,7 @@ Instance type management 提供給管理者 Instance 運算資源管理能力，
 
 ![](assets/instance_type_nodeselector_v26.png)
 
-在 `NodeSelector` 頁籤中，您可以點選 `+ Add field` 新增 `NodeSelector` 。
+在 `Node Selector` 頁籤中，您可以點選 `+ Add field` 新增 `NodeSelector` 。
 
 填入您想要選取的 Label 的 `key/value` 後，點選 `Confirm` 以完成新增。
 

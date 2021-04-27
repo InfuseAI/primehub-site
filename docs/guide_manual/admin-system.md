@@ -61,9 +61,9 @@ A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maxim
 
 ![](assets/system_2_v26.png)
 
-+ `Smtp Host` Sends the Sever host location of the email.
++ `SMTP Host` Sends the Sever host location of the email.
 
-+ `Smtp port` Sends the Sever host port of Email.
++ `SMTP port` Sends the Sever host port of Email.
 
 + `From Display Name` A user-friendly name for the "From" address.
 
