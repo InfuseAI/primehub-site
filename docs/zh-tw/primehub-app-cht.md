@@ -70,6 +70,19 @@ Apps 首頁顯示已安裝實體應用服務
 
 > 請確保工作群組有足夠未使用的運算資源可以配置給此實體服務，以利啟動運作。
 
+### Preset Environment Variables
+
+使用環境變數的用法格式，例如： `$(PRIMEHUB_APP_ROOT)/data`。
+
+這裡列出可供使用的內建的環境變數：
+
++ `PRIMEHUB_APP_ID`: 應用服務 ID
+`<app-id>`
++ `PRIMEHUB_APP_ROOT`:  應用服務資料的根目錄；用來存放此應用服務的資料。 其路徑因有無開啟 Group Volume 而異
+  + `/project/<group-name>/phapplications/<app-id>` 開啟 Group Volume 時。
+  + `/phapplications/<app-id>` 關閉 Group Volume 時。
++ `PRIMEHUB_APP_BASE_URL`: 應用服務 URL 前置字串為 `/console/apps/<app-id>`。
+
 ## Installed App Detail
 
 ![](assets/app_detail.png)

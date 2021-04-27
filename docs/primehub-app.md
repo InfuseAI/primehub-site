@@ -59,19 +59,22 @@ likewise it displays a blank when no installed one.
 ![](assets/app_mlflow.png)
 
 + `App`: Selection of applications
-+ `App ID`: A random ID of App
++ `App ID`: A random unique ID of App
 + `Name`: Name the instance
 + `Environment Variables`: Displays/Add/Modify required environment variables by default
 + `Instance Types`: Select an instance type for the application
 + `Access Scope`: Select targeted users who can access the application
   + `Group members only`: Current working group members only
   + `PrimeHub users only`: Platform-wise users
-  + `Public`: To anyone with the URL
+  + `Public`: To anyone who has the URL
 
 > Please assure that Group Resources are sufficient to run the instance.
 
 ### Preset Environment Variables
-In the `Environment Variables` settings, you can use other environment variables in the value column. The format is `$(PRIMEHUB_APP_ROOT)/data`. Here are some environment variable you can use
+
+In the `Environment Variables` settings, to use other environment variables in the value column, the format is `$(PRIMEHUB_APP_ROOT)/data`. 
+
+Here are some preset environment variables we can use
 
 + `PRIMEHUB_APP_ID`: The application ID
 `<app-id>`
