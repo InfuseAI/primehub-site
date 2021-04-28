@@ -22,9 +22,10 @@ App Image | [`nvcr.io/partners/matlab`](https://ngc.nvidia.com/catalog/container
 Official Website  | https://www.mathworks.com/products/matlab.html
 
 ## Screenshots
+
 ![](assets/primehub-app-builtin-matlab.png)
 
 ## Usage
 
 1. Create a MATLAB app
-1. After created, you can visit MATLAB app Web UI and enter your MathWorks account credentials to use MATLAB
+1. After created, visit MATLAB app Web UI and enter your MathWorks account credentials to use MATLAB
