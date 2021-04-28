@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Introduction · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="PrimeHub is managed by helm. The way to [customize helm installation](https://helm.sh/docs/using_helm/#customizing-the-chart-before-installing) is to provide values in the installation command. "/><meta name="docsearch:version" content="3.4"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Introduction · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="PrimeHub is managed by helm. The way to [customize helm installation](https://helm.sh/docs/using_helm/#customizing-the-chart-before-installing) is to provide values in the installation command. "/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.4</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.4/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.4/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Introduction</h1></header><article><div><span><p>PrimeHub is managed by helm. The way to <a href="https://helm.sh/docs/using_helm/#customizing-the-chart-before-installing">customize helm installation</a> is to provide values in the installation command.</p>
+<p>Install helper provides default values to override. We use them to provide</p>
+<ul>
+<li>Common jupyterhub customization (e.g authenticator, spawner)</li>
+<li>Default behaviors</li>
+<li>Ingress settings</li>
+<li>Airgap relative settings</li>
+</ul>
+<p>These helm values reside at <code>helm/primehub/*</code></p>
+<h2><a class="anchor" aria-hidden="true" id="make-helm-installation-easy"></a><a href="#make-helm-installation-easy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make Helm Installation Easy</h2>
+<p>In the common helm installation, it may look like the following command.</p>
+<pre><code class="hljs"><span class="hljs-attr">helm</span> <span class="hljs-string">install \
+  --name primehub \
+  --namespace hub \
+  --values primehub-value.yaml \
+  modules/charts/primehub</span>
+</code></pre>
+<p>However, it is not convenient to issue this long command for each installation and not easy to be source-controlled as well. To solve this problem, we make use of <a href="https://github.com/roboll/helmfile">helmfile</a>. The above command would turn into the yaml file below.</p>
+<pre><code class="hljs"><span class="hljs-meta"># primehub.yaml</span>
+<span class="hljs-symbol">charts:</span>
+  - name: primehub
+<span class="hljs-symbol">    namespace:</span> primehub
+<span class="hljs-symbol">    chart:</span> modules<span class="hljs-meta-keyword">/charts/</span>primehub
+<span class="hljs-symbol">    version:</span> ~<span class="hljs-number">0.1</span><span class="hljs-number">.0</span>
+<span class="hljs-symbol">    values:</span>
+      - primehub-values.yaml
+</code></pre>
+<p>and the install command would change to</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">helmfile</span> <span class="hljs-selector-tag">-f</span> <span class="hljs-selector-tag">primehub</span><span class="hljs-selector-class">.yaml</span>
+</code></pre>
+<p>In this way, we make the installation declarative and easy to run. All these helmfiles are located at <code>helm/helmfile.d</code>.</p>
+<p>As more and more releases need to be installed, we also categorize these releases <a href="https://github.com/roboll/helmfile#labels-overview">by label</a>. There are two labels defined</p>
+<table>
+<thead>
+<tr><th>Label</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>app</code></td><td>The component. (e.g. primehub, prometheus-operator, efk)</td></tr>
+<tr><td><code>release</code></td><td>The individual release (e.g. keycloak, hub, admin-ui, ...)</td></tr>
+</tbody>
+</table>
+<p>Here are the available releases</p>
+<table>
+<thead>
+<tr><th>Release</th><th>App</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>primehub</td><td>primehub</td><td>Primehub</td></tr>
+<tr><td>keycloak</td><td>keycloak</td><td>Keycloak. The identify service</td></tr>
+<tr><td>elasticsearch</td><td>efk</td><td>ElasticSearch</td></tr>
+<tr><td>elasticsearch-curator</td><td>efk</td><td>Tool to manage ElasticSearch</td></tr>
+<tr><td>fluentd-elasticsearch</td><td>efk</td><td>Fluentd. Log collector</td></tr>
+<tr><td>kibana</td><td>efk</td><td>Kibana. Dashboard for Elasticsearch</td></tr>
+<tr><td>prometheus-operator</td><td>prometheus-operator</td><td>Prometheus, Grafana, and Exporters</td></tr>
+<tr><td>primehub-grafana-dashboard-basic</td><td>prometheus-operator</td><td>Dashboard for PrimeHub</td></tr>
+<tr><td>primehub-grafana-dashboard-rook</td><td>prometheus-operator</td><td>Dashboard for rook</td></tr>
+<tr><td>cert-manager</td><td>cert-manager</td><td>Certification Manager</td></tr>
+<tr><td>rook-operator</td><td>rook-operator</td><td>Rook</td></tr>
+</tbody>
+</table>
+<p>To diff, install/upgrade the helm release, we can use these commands</p>
+<pre><code class="hljs">helmfile -f helm/helmfile.d -l <span class="hljs-attribute">release</span>=&lt;release&gt; diff
+helmfile -f helm/helmfile.d -l <span class="hljs-attribute">release</span>=&lt;release&gt; charts
+helmfile -f helm/helmfile.d -l <span class="hljs-attribute">app</span>=&lt;app&gt; diff
+helmfile -f helm/helmfile.d -l <span class="hljs-attribute">app</span>=&lt;app&gt; charts
+</code></pre>
+<p>or these equivalent make commands</p>
+<pre><code class="hljs"><span class="hljs-keyword">make</span> release-diff-<span class="hljs-symbol">&lt;release&gt;</span>
+<span class="hljs-keyword">make</span> release-install-<span class="hljs-symbol">&lt;release&gt;</span>
+<span class="hljs-keyword">make</span> component-diff-<span class="hljs-symbol">&lt;app&gt;</span>
+<span class="hljs-keyword">make</span> component-install-<span class="hljs-symbol">&lt;app&gt;</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="template-the-value"></a><a href="#template-the-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Template the Value</h2>
+<p>Helm provides a great way to template the kubernetes resources. In the helm installation or upgrade, helm consolidates all the values to a single value tree, and uses it to generate the final resource yaml and apply them to cluster.</p>
+<p>However, helm <a href="https://github.com/helm/helm/issues/2492">does not provide a way to template the value</a>, this is why helmfile templating comes in. Helmfile provides a way to <a href="https://github.com/roboll/helmfile#templates">template the value files by environment valuable</a>.</p>
+<p>We can notice that in the <code>helm/&lt;component&gt;/*</code>, these values file have <code>.yaml.gotmpl</code> file extension. When helmfile is run, it would template these value files and output the final plain values.</p>
+<p>The environment variable is from the <code>&lt;config-path&gt;/.env</code>. And the config path is searched in the following order</p>
+<ul>
+<li><code>~/.primehub/config/&lt;cluster name&gt;/</code>  (<cluster name> is <code>kubectl config current-context</code> )</li>
+<li><code>./etc</code></li>
+</ul>
+<p>The helper script <code>bin/phenv</code> would find if <code>${CONFIG_PATH}/.env</code> is in the folder and determine if it is qualified as a config folder.</p>
+<h2><a class="anchor" aria-hidden="true" id="configuration-files"></a><a href="#configuration-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration Files</h2>
+<p>In the previous section, we talk about the config folder. In addition to <code>.env</code> file, the folder also contains these files and folders.</p>
+<table>
+<thead>
+<tr><th>File</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>.env</code></td><td>The environment variables for helmfile templating</td></tr>
+<tr><td><code>helm_override/*.yaml</code></td><td>The final value file to override. All customization for helm values should go here.</td></tr>
+<tr><td><code>inventory.yaml</code></td><td>The ansible inventory file if any</td></tr>
+<tr><td><code>cluster.yml</code></td><td>The rke configuration file if any</td></tr>
+<tr><td><code>cluster-bootstrap.yml</code></td><td>The rke configuration file (for bootstrapping) if any</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#make-helm-installation-easy">Make Helm Installation Easy</a></li><li><a href="#template-the-value">Template the Value</a></li><li><a href="#configuration-files">Configuration Files</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>

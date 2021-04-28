@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>User Management · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="User Management"/><meta name="docsearch:version" content="3.4"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="User Management · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="User Management"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.4</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.4/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.4/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Admin Portal</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub 模型部署<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.4/model_deployment/md-deployment-cht">模型部署</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Admin Portal</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.4/model_deployment/md-system-cht">System Management</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/3.4/model_deployment/md-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.4/model_deployment/md-group-cht">Group Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.4/model_deployment/md-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.4/model_deployment/md-secret-cht">Secret Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">User Management</h1></header><article><div><span><div class="label-sect">
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
+<h2><a class="anchor" aria-hidden="true" id="creating-new-users"></a><a href="#creating-new-users" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating New Users</h2>
+<p><img src="/docs/assets/user_6_v26.png" alt=""></p>
+<p>點選 <code>Add</code> 新增使用者，會跳出該 User 的編輯畫面。</p>
+<p><img src="/docs/assets/user_4_v26.png" alt=""></p>
+<p>需填上 <code>Username</code> 及 <code>Email</code>，點選 <code>Confirm</code> 完成新增。</p>
+<h2><a class="anchor" aria-hidden="true" id="deleting-user"></a><a href="#deleting-user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting User</h2>
+<p>在使用者列表中點選 <code>Delete</code> ，將跳出確認對話框，點選 <code>OK</code> 後即刪除該使用者。</p>
+<p><img src="/docs/assets/actions.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="editing-user"></a><a href="#editing-user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing User</h2>
+<p><img src="/docs/assets/actions.png" alt=""></p>
+<p>在使用者列表中點選 <code>Edit</code> ，即進入編輯該 User 頁面。</p>
+<h3><a class="anchor" aria-hidden="true" id="basic-info"></a><a href="#basic-info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Info</h3>
+<p><img src="/docs/assets/md_user_5_v26.png" alt=""></p>
+<p>在此畫面中編輯使用者資料 &amp; 設定使用者的使用項目，包括：</p>
+<ul>
+<li><p><code>Is Admin</code> 設定為管理者。</p></li>
+<li><p><code>Enable</code> 禁止該使用者。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="edit-groups"></a><a href="#edit-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Edit Groups</h3>
+<p><img src="/docs/assets/edit_groups.png" alt=""></p>
+<p>在編輯使用者的畫面下方點選 <code>edit groups</code>，即可從現有的 groups 列表中點選該使用者所屬的 group，將它們連結在一起。</p>
+<h3><a class="anchor" aria-hidden="true" id="send-email"></a><a href="#send-email" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Send Email</h3>
+<p><img src="/docs/assets/user_18_v26.png" alt=""></p>
+<p>管理者可以透過系統 e-mail 要求使用者變更以下設定：</p>
+<ul>
+<li><p><code>Update Password</code> 要求使用者更新密碼。</p></li>
+<li><p><code>Configure OTP</code> 要求使用者使用google驗證身份或其它OTP軟體（一次性密碼）在其裝置上設置OTP。</p></li>
+<li><p><code>Verify Email</code> 要求使用者驗證 E-mail，將驗證的連結 e-mail 給使用者。</p></li>
+<li><p><code>Update Profile</code> 要求使用者更新個人資料。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="reset-password"></a><a href="#reset-password" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reset Password</h3>
+<p><img src="/docs/assets/user_19_v26.png" alt=""></p>
+<p>要求使用者重設密碼。請輸入密碼兩次。如果開啟<code>Temporary</code>，則新密碼只能使用一次，使用者必須在登入後立即更改密碼。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.4/model_deployment/md-system-cht"><span class="arrow-prev">← </span><span>System Management</span></a><a class="docs-next button" href="/docs/3.4/model_deployment/md-group-cht"><span>Group Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-users">Creating New Users</a></li><li><a href="#deleting-user">Deleting User</a></li><li><a href="#editing-user">Editing User</a><ul class="toc-headings"><li><a href="#basic-info">Basic Info</a></li><li><a href="#edit-groups">Edit Groups</a></li><li><a href="#send-email">Send Email</a></li><li><a href="#reset-password">Reset Password</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
