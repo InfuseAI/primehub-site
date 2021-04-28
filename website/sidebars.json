@@ -142,7 +142,8 @@
         "ids": [
           "primehub-app-builtin-mlflow",
           "primehub-app-builtin-streamlit",
-          "primehub-app-builtin-code-server"
+          "primehub-app-builtin-code-server",
+          "primehub-app-builtin-matlab"
         ]
       }
     ],
