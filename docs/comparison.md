@@ -22,9 +22,9 @@ Here we list the features comparison among tiers.
 | [Schedule](job-scheduling-feature) |  | ✅️ ||
 | [Models](model-deployment-feature) |  | ✅️ | ✅️ |
 | [Shared Files](shared-files) | ✅️ | ✅️ ||
-| [Apps (Alpha)](primehub-app) | ✅️ | ✅️ ||
+| [Apps (Alpha)](primehub-app) | ✅️ | ✅️ |✅️|
 | [Images](group-image) | ✅️ | ✅️ ||
-| [Settings](group-setting) | ✅️ | ✅️ ||
+| [Settings](group-setting) | ✅️ | ✅️ | ✅️|
 
 ## Administration Feature
 
