@@ -82,6 +82,8 @@ Here are some preset environment variables we can use
   + `/project/<group-name>/phapplications/<app-id>` if the group volume is available
   + `/phapplications/<app-id>` if the group volume is not available
 + `PRIMEHUB_APP_BASE_URL`: The url prefix for the application. The value is `/console/apps/<app-id>`
++ `PRIMEHUB_URL`: The external url of PrimeHub
++ `PRIMEHUB_GROUP`: The group name
 
 ## Installed App Detail
 
