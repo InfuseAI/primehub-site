@@ -133,7 +133,8 @@
         "type": "subcategory",
         "label": "Tutorials",
         "ids": [
-          "primehub-app-tutorial-mlflow"
+          "primehub-app-tutorial-mlflow",
+          "primehub-app-tutorial-label-studio"
         ]
       },
       {
