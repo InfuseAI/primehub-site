@@ -36,8 +36,8 @@ It will open a new window and show the Label Studio UI. You can find your login 
 ## Label Dataset
 ### What we need?
 
-- The dataset in PrimeHub you want to label (we use `/datasets/dog-demo` in this tutorial)
-- The directory in group volume that you want to save the labeled results (we use `/project/label-studio/dog-demo-labeled` in the tutorial)
+- The [dataset](guide_manual/admin-dataset) in PrimeHub you want to label (we use `/datasets/dog-demo` in this tutorial)
+- The directory in group volume that you want to save the labeled results (we use `/project/<group_name>/dog-demo-labeled` in the tutorial)
 
 >Please have the dataset, group volume, or request administrators for assistance before we start.
 
@@ -53,11 +53,11 @@ It will open a new window and show the Label Studio UI. You can find your login 
 
     ![](assets/app_tutorial_labelstudio_labeling_setup.png)
 
-4. Click the `Settings` on the upper-right. Click `Cloud Storage` and `Add Source Storage` to sync the `/datasets/dog-demo` dataset to label. You need to set `Local path` to `/datasets/dog-demo` and click `Sync Storage`.
+4. Click the `Settings` on the upper-right. Click `Cloud Storage` and `Add Source Storage` to sync the `/datasets/dog-demo` dataset to label. You need to set `Local path` to `/datasets/dog-demo` and click `Sync Storage`. And turn on toggle of `Treat every bucket object as a source file`.
 
     ![](assets/app_tutorial_labelstudio_sync_source.gif)
 
-5. Click `Add Target Storage` to sync to labeled results to `/project/label-studio/dog-demo-labeled`. You need to set `Local path` to `/project/label-studio/dog-demo-labeled`.
+5. Click `Add Target Storage` to sync to labeled results to `/project/<group_name>/dog-demo-labeled`. You need to set `Local path` to `/project/<group_name>/dog-demo-labeled`.
 
     ![](assets/app_tutorial_labelstudio_sync_target.gif)
 
@@ -66,7 +66,7 @@ It will open a new window and show the Label Studio UI. You can find your login 
     ![](assets/app_tutorial_labelstudio_sync_result.png)
     ![](assets/app_tutorial_labelstudio_labeled.png)
 
-7. After you submit the labeled result, the labeled json file will be under the `/project/label-studio/dog-demo-labeled`.
+7. After you submit the labeled result, the labeled json file will be under the `/project/<group_name>/dog-demo-labeled`.
     ![](assets/app_tutorial_labelstudio_labeled_json.png)
 
 That's the basic use of how to label the dataset by using Label Studio and PrimeHub. Enjoy it!
