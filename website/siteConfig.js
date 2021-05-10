@@ -151,7 +151,19 @@ const siteConfig = {
   // Deprecate certain docs from certain versions
   deletedDocs: {
     "3.0": [
-      "install_helper"
+      "install_helper",
+      "migrate-v2",
+      "dotenv",
+      "envs",
+      "airgap",
+      "benchmark",
+      "build",
+      "cluster_shutdown",
+      "csi-rclone-installation-guide",
+      "dockerhub-registry",
+      "kubeflow-installation-guide",
+      "secret-pull-image-gcr",
+      "UPGRADE-K8s-from-1.10-and-1.10-to-1.12"
     ]
   }
 };
