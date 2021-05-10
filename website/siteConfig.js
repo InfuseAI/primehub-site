@@ -150,7 +150,7 @@ const siteConfig = {
 
   // Deprecate certain docs from certain versions
   deletedDocs: {
-    "3.5": [
+    "3.0": [
       "install_helper"
     ]
   }
