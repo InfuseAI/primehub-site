@@ -23,12 +23,12 @@ InfuseAI provides and maintains certain images which can be used as base images 
 
 |Framework|Image|CPU / GPU|Python|
 |-        |-     |-     |-    |
-|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-58215a89|`CPU`|3.7|
-|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-58215a89-gpu-cuda-11|`GPU` `CUDA10`|3.7|
+|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-311ff598|`CPU`|3.7|
+|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-311ff598-gpu-cuda-11|`GPU` `CUDA11`|3.7|
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645|`CPU`|3.7|
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645-gpu-cuda-10|`GPU` `CUDA10`|3.7|
-|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-2f118efb|`CPU`|3.7|
-|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-2f118efb-gpu-cuda-10|`GPU` `CUDA10`|3.7|
+|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-b2e42842|`CPU`|3.7|
+|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-b2e42842-gpu-cuda-10|`GPU` `CUDA10`|3.7|
 |TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-5b5a244c|`CPU`|3.7|
 |TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-5b5a244c-gpu|`GPU`|3.7|
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35|`CPU`|3.7|
