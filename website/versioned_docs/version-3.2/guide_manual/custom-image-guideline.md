@@ -78,7 +78,7 @@ FROM jupyter/minimal-notebook:177037d09156
 RUN pip install --no-cache-dir astropy
 ```
 
-#### From InfuseAI
+### From InfuseAI
 
 E.g. a Dockerfile using a existing image provided by InfuseAI.
 
