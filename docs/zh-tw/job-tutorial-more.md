@@ -1,9 +1,8 @@
 ---
 id: job-tutorial-more
-sidebar_label: 更多教學
-title: 請見英文文件
-description: 請見英文文件
+sidebar_label: Origins
+title: 教學
+description: 教學
 ---
 
-+ [(Advanced) Use Job Submission to Tune Hyperparameters](../job-submission-tutorial-p3)
-+ [(Advanced) Model Serving by Seldon](../job-submission-tutorial-p4)
+[請參照原英文文件](../job-submission-tutorial-simple)。

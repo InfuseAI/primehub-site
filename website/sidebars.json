@@ -81,7 +81,7 @@
     "Schedule": [
       "job-scheduling-feature"
     ],
-    "Models": [
+    "Deployments": [
       "model-deployment-feature",
       {
         "type": "subcategory",
@@ -373,7 +373,14 @@
   "zh-tw": {
     "Overview": [
       "index-zh",
-      "zh-tw/quickstart/login-portal-user"
+      "zh-tw/quickstart/login-portal-user",
+      "zh-tw/idx-core"
+    ],
+    "Installation": [
+      "zh-tw/idx-installation"
+    ],
+    "QuickStart": [
+      "zh-tw/idx-quickstart"
     ],
     "Notebooks": [
       "zh-tw/quickstart/launch-project",
@@ -396,10 +403,6 @@
         "type": "subcategory",
         "label": "教學",
         "ids": [
-          "zh-tw/job-submission-tutorial-simple",
-          "zh-tw/job-submission-tutorial-p1",
-          "zh-tw/job-submission-tutorial-p2",
-          "zh-tw/job-artifacts-simple-cht",
           "zh-tw/job-tutorial-more"
         ]
       }
@@ -407,7 +410,7 @@
     "Schedule": [
       "zh-tw/job-scheduling-feature-cht"
     ],
-    "Models": [
+    "Deployments": [
       "zh-tw/model-deployment-feature",
       "zh-tw/model-overview",
       {
@@ -434,7 +437,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Package from Language Wrapper 教學 (Beta)",
+        "label": "Package from Language Wrapper 教學",
         "ids": [
           "zh-tw/model-deployment-language-wrapper-intro-cht",
           "zh-tw/model-deployment-tutorial-package-image",
@@ -451,15 +454,22 @@
         ]
       }
     ],
+    "Shared Files": [
+      "zh-tw/shared-files-cht"
+    ],
     "Apps": [
-      "zh-tw/primehub-app-cht"
+      "zh-tw/primehub-app-cht",
+      {
+        "type":"subcategory",
+        "label": "更多資訊",
+        "ids": [
+          "zh-tw/idx-apps"
+        ]
+      }
     ],
     "Group Administration": [
       "zh-tw/group-image-cht",
       "zh-tw/group-setting-cht"
-    ],
-    "Shared Files": [
-      "zh-tw/shared-files-cht"
     ],
     "Admin Portal": [
       "zh-tw/quickstart/login-portal-admin",
@@ -551,26 +561,26 @@
         ]
       }
     ],
+    "PrimeHub Deploy": [
+      "zh-tw/idx-deploy"
+    ],
+    "Designs and Concepts": [
+      "zh-tw/idx-design"
+    ],
+    "Configuration": [
+      "zh-tw/idx-config"
+    ],
+    "Tasks": [
+      "zh-tw/idx-tasks"
+    ],
     "Reference": [
+      "zh-tw/idx-ref",
       "zh-tw/quickstart/nb-data-store-cht",
       "zh-tw/guide_manual/ssh-vscode-cht",
       "zh-tw/guide_manual/ssh-keygen-cht"
-    ]
-  },
-  "primehub-deploy-cht": {
-    "PrimeHub 模型部署": [
-      "model_deployment/md-deployment-cht",
-      {
-        "type": "subcategory",
-        "label": "Admin Portal",
-        "ids": [
-          "model_deployment/md-system-cht",
-          "model_deployment/md-user-cht",
-          "model_deployment/md-group-cht",
-          "model_deployment/md-instancetype-cht",
-          "model_deployment/md-secret-cht"
-        ]
-      }
+    ],
+    "Trouble Shooting": [
+      "zh-tw/idx-trouble"
     ]
   }
 }

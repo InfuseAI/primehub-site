@@ -2,7 +2,7 @@
 id: model-deployment-language-wrapper-intro-cht
 title: Package from Language Wrapper
 description: Package from Language Wrapper
-sidebar_label: Overview
+sidebar_label: Origins
 ---
 
 <div class="label-sect">
@@ -13,9 +13,6 @@ sidebar_label: Overview
     <span class="tooltiptext">Applicable to Deploy Edition</span>
   </div>
 </div>
+<br>
 
-建置部署所需之模型映像檔
-
-- [建置模型部署所需之映像檔 (Python)](model-deployment-tutorial-package-image)
-- [建置模型部署所需之映像檔 (R)](model-deployment-tutorial-package-image-r)
-- [透過預建置 Base Image 加速流程](mmodel-deployment-language-wrapper-reusable-base-image-cht)
+[請參照原英文文件](../model-deployment-language-wrapper-intro)。

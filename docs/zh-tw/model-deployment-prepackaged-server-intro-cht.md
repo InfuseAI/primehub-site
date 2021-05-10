@@ -2,7 +2,7 @@
 id: model-deployment-prepackaged-server-intro-cht
 title: Pre-packaged servers
 description: Pre-packaged servers
-sidebar_label: Overview
+sidebar_label: Origins
 ---
 
 <div class="label-sect">
@@ -13,14 +13,7 @@ sidebar_label: Overview
     <span class="tooltiptext">Applicable to Deploy Edition</span>
   </div>
 </div>
+<br>
 
-## 目前支援 Pre-packaged servers 基底映像檔
+[請參照原英文文件](../model-deployment-prepackaged-server-intro)。
 
-- [TensorFlow2 server](model-deployment-prepackaged-server-tensorflow2-cht)
-- [PyTorch Server](model-deployment-prepackaged-server-pytorch-cht)
-- [SKLearn server](model-deployment-prepackaged-server-sklearn-cht)
-
-## 進階技術
-
-- [Custom Pre-packaged Server](model-deployment-prepackaged-server-custom-cht)
-- [Run the Pre-packaged Server Locally](model-deployment-prepackaged-server-test-cht)

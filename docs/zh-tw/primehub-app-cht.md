@@ -1,7 +1,7 @@
 ---
 id: primehub-app-cht
-title: PrimeHub Apps (Alpha)
-sidebar_label: Overview (Alpha)
+title: PrimeHub Apps (Beta)
+sidebar_label: Overview (Beta)
 description: PrimeHub Apps
 ---
 
