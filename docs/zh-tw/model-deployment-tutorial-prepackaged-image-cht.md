@@ -25,7 +25,7 @@ description: 透過 Pre-packaged Server 模型部署
 
 ## 教學步驟
 
-1. 登入 [User Portal](quickstart/login-portal-user) 並選擇 `Models`。
+1. 登入 [User Portal](quickstart/login-portal-user) 並選擇 `Deployments`。
 2. 在 [model deployment 主頁](model-deployment-feature#主頁) 點擊 `Create Deployment`。
 3. `Deployment name` 欄位中填入 `quickstart-iris`。
 

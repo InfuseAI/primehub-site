@@ -58,4 +58,4 @@ Group Admin can apply a group-wise Job timeout setting on every jobs submitted f
 
 ![](assets/group_setting_model.png)
 
-It displays if **Model Deployment** is enabled to the group, i.e., if the group can use **Models** feature.
+It displays if **Model Deployment** is enabled to the group, i.e., if the group can use **Deployments** feature.

@@ -1,6 +1,6 @@
 ---
 id: model-deployment-feature
-title: Models
+title: Deployments
 sidebar_label: Overview
 description: Model Deployment
 ---
@@ -15,7 +15,7 @@ description: Model Deployment
 </div>
 <br>
 
-Models feature that users are able to deploy trained models as services and to manage these deployments. While model services are online, administrators are able to monitor the status of model service such service health and resources usage information; moreover, users are able to check deployment history and log.
+Deployments feature that users are able to deploy trained models as services and to manage these deployments. While model services are online, administrators are able to monitor the status of model service such service health and resources usage information; moreover, users are able to check deployment history and log.
 
 PrimeHub provides two ways of Model Deployment, one is to deploy a model image directly which has wrapped a model file into, the other is to specify a model file and a pre-packages server image as a deployment, under the hood, PrimeHub serves it as a service.
 

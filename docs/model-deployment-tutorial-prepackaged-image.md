@@ -25,7 +25,7 @@ Remember to enable model deployment in your group, contact your admin if it is n
 
 ## Tutorial Steps
 
-1. Go to [User Portal](quickstart/login-portal-user) and select `Models`.
+1. Go to [User Portal](quickstart/login-portal-user) and select `Deployments`.
 2. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
 3. Fill in the `Deployment name` field with `quickstart-iris`
 

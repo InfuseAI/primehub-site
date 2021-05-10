@@ -26,7 +26,7 @@ description: 模型部署之快速上手
 
 ## 教程步驟
 
-1. 進入 [User Portal](guide_manual/primehub-manual#user-portal) 並點選 `Models`。
+1. 進入 [User Portal](guide_manual/primehub-manual#user-portal) 並點選 `Deployments`。
 2. 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 3. 我們將進入 [model deployment list page](model-deployment-feature#格列)， 現在點選 `Create Deployment` 按鈕。
 4. 在 `Environment Settings` ，

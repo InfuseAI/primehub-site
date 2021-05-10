@@ -1,6 +1,6 @@
 ---
 id: md-deployment
-title: Models
+title: Deployments
 description: Model Deployment
 ---
 
@@ -11,4 +11,4 @@ description: Model Deployment
 </div>
 <br>
 
-Please see [Models](../model-deployment-feature) documentation.
+Please see [Deployments](../model-deployment-feature) documentation.

@@ -18,7 +18,7 @@ description: Quick-start: PrimeHub Deploy
 
 In this quick-start we will learn how to deploy an prepared model file with TensorFlow2 server by Model Deployment. It demonstrates the way of using model URI with an specific image of pre-package server that it integrates the model file into a new image and deploys that image as a service.
 
-- **Models** is a feature of **PrimeHub Enterprise** and **PrimeHub Deploy**.
+- **Deployments** is a feature of **PrimeHub Enterprise** and **PrimeHub Deploy**.
 
 ## What we need?
 
@@ -31,7 +31,7 @@ In this quick-start we will learn how to deploy an prepared model file with Tens
 
 ## Deploy Model file with TensorFlow2 Server
 
-1. Enter **Models** from User Portal and create a **Deployment**.
+1. Enter **Deployments** from User Portal and create a **Deployment**.
 2. Fill in **Deployment name** with `tensorflow2-mnist`
 3. Select `TensorFlow2 server` in Model Image field
 

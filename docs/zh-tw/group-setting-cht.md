@@ -58,4 +58,4 @@ Job 預設逾時期限；此設定套用至同群組遞出的所有 Job；若期
 
 ![](assets/group_setting_model.png)
 
-顯示 Model Deployment 是否開啟，換句話換說，此群組可否使用 **Models** 功能。
+顯示 Model Deployment 是否開啟，換句話換說，此群組可否使用 **Deployments** 功能。

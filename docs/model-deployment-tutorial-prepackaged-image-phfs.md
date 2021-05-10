@@ -46,7 +46,7 @@ Also, we choosing the `TensorFlow 2.2` as our runtime image and clicking on `Sta
 4. If we want to deploy a model trained from Notebook, just move it to the `phfs` directory.
 ![](assets/mdeploy_quickstart_notebook_phfs.png)
 
-5. Then, back to [User Portal](quickstart/login-portal-user) and select `Models`.
+5. Then, back to [User Portal](quickstart/login-portal-user) and select `Deployments`.
 6. We are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
 7. Fill in the `Deployment name` field with `quickstart-mnist`
 

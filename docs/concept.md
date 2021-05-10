@@ -86,10 +86,10 @@ Jobs are one-time jobs, sometimes, users may want to automate jobs regularly; th
 
 See [Schedule](job-scheduling-feature).
 
-### Models
+### Deployments
 
 One of the last stages in the MLOps is Model Deployment that by integration of a machine learning model into an service environment which can retrieve queries and respond with inferences/predictions. By serving models, scientists can also learn the performance of trained models in a practical circumstance.
 
-By Models feature of PrimeHub, users can deploy a model file directly with a specified image of pre-packaged server or can deploy a model image which already packages a model file into.
+By Deployments feature of PrimeHub, users can deploy a model file directly with a specified image of pre-packaged server or can deploy a model image which already packages a model file into.
 
-See [Models](model-deployment-feature), [Tutorials](model-deployment-tutorial-concepts).
+See [Deployments](model-deployment-feature), [Tutorials](model-deployment-tutorial-concepts).

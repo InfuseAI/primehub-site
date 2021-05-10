@@ -11,7 +11,7 @@ sidebar_label: Overview
 </div>
 <br>
 
-**PrimeHub Deploy** is a standalone **Model Deployment** edition from **PrimeHub Enterprise** edition. It incorporates **Models** feature intact and certain administration features from PrimeHub Enterprise edition that administrators can manage resources and group privileges to deployments.
+**PrimeHub Deploy** is a standalone **Model Deployment** edition from **PrimeHub Enterprise** edition. It incorporates **Deployments** feature intact and certain administration features from PrimeHub Enterprise edition that administrators can manage resources and group privileges to deployments.
 
 
 ## User Portal
@@ -28,5 +28,5 @@ On portal, the left side is **side menu**, the right side is the **context varie
 
 + **Home** where users can find `User Guide` link which connects to this `PrimeHub Documentation` site.
 
-+ **Models** where users can deploy and serve models as services. See [Model Deployment](model-deployment-feature).
++ **Deployments** where users can deploy and serve models as services. See [Model Deployment](model-deployment-feature).
 

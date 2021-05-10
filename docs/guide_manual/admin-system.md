@@ -31,7 +31,7 @@ Information of the PrimeHub license:
 
 ### License warning
 
-A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maximum Models`.
+A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maximum Deployments`.
 
 + When a license has expired, a warning message appears.
 

@@ -50,7 +50,7 @@ description: 透過 Pre-packaged Server 模型部署 (PHFS)
    
 ![](assets/mdeploy_quickstart_notebook_phfs.png)
 
-5. 回到 [User Portal](quickstart/login-portal-user) 並選擇 `Models`。
+5. 回到 [User Portal](quickstart/login-portal-user) 並選擇 `Deployments`。
    
 6. 在 [model deployment 主頁](model-deployment-feature#主頁) 點擊 `Create Deployment`。
    
