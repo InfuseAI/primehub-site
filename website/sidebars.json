@@ -338,7 +338,6 @@
     "References": [
       "references/primehub_chart",
       "comparison",
-      "guide_manual/kubeflow-installation-guide",
       "guide_manual/ssh-vscode",
       "guide_manual/ssh-keygen"
     ],
