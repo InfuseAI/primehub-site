@@ -1,7 +1,8 @@
 ---
-id: images-list
+id: version-3.5-images-list
 title: Available Images List
 description: Available Images List
+original_id: images-list
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
@@ -22,14 +23,14 @@ InfuseAI provides and maintains certain images which can be used as base images 
 
 |Framework|Image|CPU / GPU|Python|
 |-        |-     |-     |-    |
-|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1|`CPU`|3.7|
-|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1-gpu-cuda-11|`GPU` `CUDA11`|3.7|
+|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-311ff598|`CPU`|3.7|
+|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-311ff598-gpu-cuda-11|`GPU` `CUDA11`|3.7|
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645|`CPU`|3.7|
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645-gpu-cuda-10|`GPU` `CUDA10`|3.7|
-|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-2f118efb|`CPU`|3.7|
-|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-2f118efb-gpu-cuda-10|`GPU` `CUDA10`|3.7|
-|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-dbdcead1|`CPU`|3.7|
-|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-dbdcead1-gpu|`GPU`|3.7|
+|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-b2e42842|`CPU`|3.7|
+|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-b2e42842-gpu-cuda-10|`GPU` `CUDA10`|3.7|
+|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-5b5a244c|`CPU`|3.7|
+|TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-5b5a244c-gpu|`GPU`|3.7|
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35|`CPU`|3.7|
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35-gpu|`GPU`|3.7|
 
@@ -60,8 +61,8 @@ InfuseAI provides and maintains certain images which can be used as base images 
 
 |Framework|Image|CPU / GPU|Python|
 |-   |-    |-        |-     |
-|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-dbdcead1|`CPU`|3.7|
-|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-dbdcead1-gpu-cuda-11|`GPU``CUDA 11`|3.7|
+|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-2f118efb|`CPU`|3.7|
+|PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-311ff598-gpu-cuda-11|`GPU``CUDA 11`|3.7|
 |PyTorch 1.7|infuseai/docker-stacks:pytorch-notebook-v1-7-0-cuda10-2f118efb-gpu-cuda-10|`GPU` `CUDA 10`|3.7|
 |PyTorch 1.5|infuseai/docker-stacks:pytorch-notebook-b3c52f35|`CPU`|3.7|
 |PyTorch 1.5|infuseai/docker-stacks:pytorch-notebook-b3c52f35-gpu|`GPU` `CUDA 9`|3.7|
@@ -93,9 +94,9 @@ InfuseAI provides and maintains certain images which can be used as base images 
 
 |Name|Image|CPU / GPU|Python|
 |-   |-    |-        |-     |
-|AI notebook|infuseai/docker-stacks:ai-notebook-dbdcead1|`CPU`|3.7|
-|AI notebook|infuseai/docker-stacks:ai-notebook-dbdcead1-gpu|`GPU`|3.7|
-|AI notebook|infuseai/docker-stacks:ai-notebook-dbdcead1-gpu-cuda-11|`GPU`<br>`CUDA 11`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-2f118efb|`CPU`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-2f118efb-gpu|`GPU`|3.7|
+|AI notebook|infuseai/docker-stacks:ai-notebook-2f118efb-gpu-cuda-10|`GPU`<br>`CUDA 10`|3.7|
 
 ### JupyterLab v1 only
 

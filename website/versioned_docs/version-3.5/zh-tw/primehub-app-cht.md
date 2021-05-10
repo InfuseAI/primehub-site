@@ -1,8 +1,9 @@
 ---
-id: primehub-app-cht
+id: version-3.5-primehub-app-cht
 title: PrimeHub Apps (Alpha)
 sidebar_label: Overview (Alpha)
 description: PrimeHub Apps
+original_id: primehub-app-cht
 ---
 
 <div class="label-sect">

@@ -1,7 +1,8 @@
 ---
-id: comparison
+id: version-3.5-comparison
 title: Tiers Feature Comparison
 description: Tiers Feature Comparison
+original_id: comparison
 ---
 
 
@@ -24,7 +25,7 @@ Here we list the features comparison among tiers.
 | [Shared Files](shared-files) | ✅️ | ✅️ ||
 | [Apps (Alpha)](primehub-app) | ✅️ | ✅️ |✅️|
 | [Images](group-image) | ✅️ | ✅️ ||
-| [Settings](group-setting) | ✅️ | ✅️ | ✅️|
+| [Settings](group-setting) | ✅️ | ✅️ |✅️|
 
 ## Administration Feature
 
