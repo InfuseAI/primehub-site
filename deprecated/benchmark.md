@@ -1,7 +1,6 @@
 ---
 id: benchmark
 title: Benchmark
-description: Benchmark
 ---
 
 Scripts to benchmark the system and gather the basic hardware information.
