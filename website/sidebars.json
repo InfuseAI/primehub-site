@@ -133,17 +133,19 @@
         "type": "subcategory",
         "label": "Tutorials",
         "ids": [
-          "primehub-app-tutorial-mlflow"
+          "primehub-app-tutorial-mlflow",
+          "primehub-app-tutorial-label-studio"
         ]
       },
       {
         "type": "subcategory",
         "label": "Builtin Apps",
         "ids": [
-          "primehub-app-builtin-mlflow",
-          "primehub-app-builtin-streamlit",
           "primehub-app-builtin-code-server",
-          "primehub-app-builtin-matlab"
+          "primehub-app-builtin-label-studio",
+          "primehub-app-builtin-matlab",
+          "primehub-app-builtin-mlflow",
+          "primehub-app-builtin-streamlit"
         ]
       }
     ],
