@@ -47,7 +47,7 @@ sidebar_label: Settings
 
 Job 預設逾時期限；此設定套用至同群組遞出的所有 Job；若期限內該 Job 尚未完成，該 Job 會被強制中斷。另外，此設定可被每次遞出 Job 時覆寫；系統預設值為 7 天。
 
-## Models
+## Deployments
 
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

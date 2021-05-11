@@ -47,7 +47,7 @@ It displays group members and group administrators.
 
 Group Admin can apply a group-wise Job timeout setting on every jobs submitted from the group. A running job will be cancelled when it exceeds the setting. This setting is able to be overwritten by each job submission for the customization. By default it is 7 days.
 
-## Models
+## Deployments
 
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
