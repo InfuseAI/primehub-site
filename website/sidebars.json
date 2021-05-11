@@ -81,6 +81,9 @@
     "Schedule": [
       "job-scheduling-feature"
     ],
+    "Models": [
+      "model-management"
+    ],
     "Deployments": [
       "model-deployment-feature",
       {
@@ -410,9 +413,11 @@
     "Schedule": [
       "zh-tw/job-scheduling-feature-cht"
     ],
+    "Models":[
+      "zh-tw/model-management-cht"
+    ],
     "Deployments": [
       "zh-tw/model-deployment-feature",
-      "zh-tw/model-overview",
       {
         "type": "subcategory",
         "label": "Tutorials",

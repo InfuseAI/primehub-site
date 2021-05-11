@@ -406,7 +406,6 @@
     ],
     "Models": [
       "version-3.5-zh-tw/model-deployment-feature",
-      "version-3.5-zh-tw/model-overview",
       {
         "type": "subcategory",
         "label": "Tutorials",
