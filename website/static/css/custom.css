@@ -223,6 +223,7 @@ div.ce-only {
     font-family: $HFont;
     color: #a3d00e;
     font-weight: bold;
+    margin: 0 10px 0 0;
 }
 
 span.ce-only {
