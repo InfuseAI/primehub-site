@@ -66,6 +66,9 @@
   <div class="ce-only tooltip">Community
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 <br>
 <p>Group Admin now can view the current settings of the managed group which are configured by Platform Administrator. All of settings are viewable-only to Group Admin, except <strong>Default Timeout Setting</strong> of Jobs is configurable.</p>
@@ -95,8 +98,30 @@
   <div class="ee-only tooltip">Enterprise
     <span class="tooltiptext">Applicable to Enterprise Edition</span>
   </div>
+  <div class="deploy-only tooltip">Deploy
+  <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 <br>
 <p><img src="/docs/assets/group_setting_model.png" alt=""></p>
 <p>It displays if <strong>Model Deployment</strong> is enabled to the group, i.e., if the group can use <strong>Deployments</strong> feature.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/group-image"><span class="arrow-prev">← </span><span>Images</span></a><a class="docs-next button" href="/docs/next/quickstart/login-portal-admin"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#info">Info</a></li><li><a href="#members">Members</a></li><li><a href="#jobs">Jobs</a></li><li><a href="#deployments">Deployments</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+<h2><a class="anchor" aria-hidden="true" id="mlflow"></a><a href="#mlflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MLflow</h2>
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
+<p>PrimeHub provides models management feature, Models, by integrating MLflow. Before starting using Models, it requires the information of the binding MLflow instance.</p>
+<p><img src="/docs/assets/group-setting-mlflow.png" alt=""></p>
+<p>After <a href="primehub-app">the installation of MLflow by PrimeHub Apps</a>, we can learn <code>App URL</code> and <code>Service Endpoint</code> from the installed App detail.</p>
+<p><img src="/docs/assets/app_detail.png" alt=""></p>
+<ul>
+<li>Fill in <code>MLflow Tracking URI</code> with <code>http://</code>+<code>Service Endpoint</code></li>
+<li>Fill in <code>MLflow UI URI</code> with <code>App URL</code>.</li>
+</ul>
+<p>Save the setting for binding Models to the MLflow instance.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/group-image"><span class="arrow-prev">← </span><span>Images</span></a><a class="docs-next button" href="/docs/next/quickstart/login-portal-admin"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#info">Info</a></li><li><a href="#members">Members</a></li><li><a href="#jobs">Jobs</a></li><li><a href="#deployments">Deployments</a></li><li><a href="#mlflow">MLflow</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
