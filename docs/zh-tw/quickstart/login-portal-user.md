@@ -57,7 +57,7 @@ Home 頁呈現三個區塊：
 
 + **Shared Files** 使用者可以上傳群組限定共享檔案至 PHFS 空間。請參考 [Shared Files](../shared-files-cht)。
 
-+ **Apps** 使用者可以安裝第三方應用來擴充 PrimeHub 功能。請參考 [PrimeHub Apps (Alpha)](../primehub-app-cht)。
++ **Apps** 使用者可以安裝第三方應用來擴充 PrimeHub 功能。請參考 [PrimeHub Apps (Beta)](../primehub-app-cht)。
 
 
 ### Group Admin Feature

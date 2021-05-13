@@ -59,7 +59,7 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
 
-+ **Apps** where users can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps (Alpha)](../primehub-app).
++ **Apps** where users can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps (Beta)](../primehub-app).
 
 ### Group admin feature
 
