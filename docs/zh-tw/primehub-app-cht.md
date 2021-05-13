@@ -15,7 +15,7 @@ description: PrimeHub Apps
 </div>
 <br>
 
-> This is an Alpha feature. The page content is subject to change.
+> This is an Beta feature. The page content is subject to change.
 
 **PrimeHub** 以做為讓資料科學家恣意導入多樣性資料及各種工具的整合性 MLOps 平台為目標，藉此可以加速研究開發的流程。因此我們導入 **PrimeHub Apps** 新功能。藉由此功能，我們可以安裝第三方應用服務來擴充 PrimeHub 的實用性，如：ML 自動化、資料視覺化等工具，可以更貼近開發流程。安裝的第三方應用服務同樣受惠於 PrimeHub 平台的存取權限管理、運算資源分配管理。
 

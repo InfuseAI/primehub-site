@@ -20,7 +20,7 @@ sidebar_label: TensorFlow server
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged:v0.1.0`
+Model Image | `infuseai/tensorflow2-prepackaged:v0.1.1`
 Input       | ndarray or image
 Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
@@ -75,6 +75,11 @@ HDF5         | Yes
 ```python
 def load(self):
     model_uri = self.model_uri
+    # specified model path for mlflow.tensorflow.autolog()
+    if os.path.isdir(os.path.join(model_uri, 'data/model')):
+        print("Loading model exported from mlflow.tensorflow.autolog()")
+        model_uri = os.path.join(model_uri, 'data/model')
+
     self.use_keras_api = 1
     if tf.saved_model.contains_saved_model(model_uri):
         self.model = tf.saved_model.load(model_uri).signatures["serving_default"]
@@ -111,7 +116,7 @@ def predict(self, X):
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged:v0.1.0`
+Model Image | `infuseai/tensorflow2-prepackaged:v0.1.1`
 Model URI   | `gs://primehub-models/tensorflow2/mnist` (SavedModel)<br>or `gs://primehub-models/tensorflow2/mnist-h5` (HDF5)
 
 ### ndarray
@@ -127,7 +132,7 @@ curl -X POST http://localhost:9000/api/v1.0/predictions \
 **回應範例**
 
 ```bash
-{"data":{"names":[],"ndarray":[[2.2179587233495113e-07,1.2331390131237185e-08,2.5685869331937283e-05,0.0001267452462343499,3.6731301333858823e-10,8.802298339105619e-07,1.7313735514723483e-11,0.9998445510864258,5.112421490593988e-07,1.4923105027264683e-06]]},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.1.0"}}}
+{"data":{"names":[],"ndarray":[[2.2179587233495113e-07,1.2331390131237185e-08,2.5685869331937283e-05,0.0001267452462343499,3.6731301333858823e-10,8.802298339105619e-07,1.7313735514723483e-11,0.9998445510864258,5.112421490593988e-07,1.4923105027264683e-06]]},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.1.1"}}}
 ```
 
 ### Image
@@ -141,5 +146,5 @@ curl -F 'binData=@test_image.jpg' http://localhost:9000/api/v1.0/predictions
 **回應範例**
 
 ```bash
-{"data":{"names":[],"tensor":{"shape":[1,10],"values":[2.240761034499883e-07,1.2446706776358951e-08,2.6079718736582436e-05,0.00012795037764590234,3.6888223031716905e-10,8.873528258845909e-07,1.7562255469338872e-11,0.9998427629470825,5.136774916536524e-07,1.4995322317190585e-06]}},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.1.0"}}}}
+{"data":{"names":[],"tensor":{"shape":[1,10],"values":[2.240761034499883e-07,1.2446706776358951e-08,2.6079718736582436e-05,0.00012795037764590234,3.6888223031716905e-10,8.873528258845909e-07,1.7562255469338872e-11,0.9998427629470825,5.136774916536524e-07,1.4995322317190585e-06]}},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.1.1"}}}
 ```

@@ -19,7 +19,7 @@ description: TensorFlow server
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged:v0.1.0`
+Model Image | `infuseai/tensorflow2-prepackaged:v0.2.0`
 Input       | ndarray or image
 Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2)
@@ -40,7 +40,7 @@ HDF5         | Yes
 
 ### Model URI Structure
 
-#### SavedModel Format*
+**SavedModel Format**
 
 We support TensorFlow2 [SavedModel format](https://www.tensorflow.org/guide/saved_model). The model uri structure is just the output of `tf.saved_model.save()`.
 
@@ -62,6 +62,15 @@ We also support [HDF5 format](https://www.tensorflow.org/api_docs/python/tf/kera
 ```
 1. **model.h5**: The file is HDF5 format, and can be any file name with `.h5` file extension.
 
+**MLflow model**
+
+We also support `MLflow model` in `Tensorflow Flavor` and `Keras Flavor` which are exported from [MLflow autologging API](https://www.mlflow.org/docs/latest/tracking.html#automatic-logging).
+
+```bash
+<model uri>
+├── MLmodel
+└── <model files>
+```
 
 ### How It Works
 
@@ -72,6 +81,15 @@ You can check the detailed code in the [Github](https://github.com/InfuseAI/prim
 ```python
 def load(self):
     model_uri = self.model_uri
+    # check model exported from mlflow.tensorflow.autolog()
+    if os.path.isfile(os.path.join(model_uri, 'MLmodel')):
+        if os.path.isdir(os.path.join(model_uri, 'data/model')):
+            print("Loading model from tensorflow.keras.Model.fit + mlflow.tensorflow.autolog()")
+            model_uri = os.path.join(model_uri, 'data/model')
+        elif os.path.isdir(os.path.join(model_uri, 'tfmodel')):
+            print("Loading model from tensorflow.estimator.Estimator.train + mlflow.tensorflow.autolog()")
+            model_uri = os.path.join(model_uri, 'tfmodel')
+
     self.use_keras_api = 1
     if tf.saved_model.contains_saved_model(model_uri):
         self.model = tf.saved_model.load(model_uri).signatures["serving_default"]
@@ -108,7 +126,7 @@ The example uses the [Keras MNIST dataset](https://www.tensorflow.org/api_docs/p
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/tensorflow2-prepackaged:v0.1.0`
+Model Image | `infuseai/tensorflow2-prepackaged:v0.2.0`
 Model URI   | `gs://primehub-models/tensorflow2/mnist` (SavedModel)<br>or `gs://primehub-models/tensorflow2/mnist-h5` (HDF5)
 
 ### ndarray
@@ -124,7 +142,7 @@ curl -X POST http://localhost:9000/api/v1.0/predictions \
 **Test Result**
 
 ```bash
-{"data":{"names":[],"ndarray":[[2.2179587233495113e-07,1.2331390131237185e-08,2.5685869331937283e-05,0.0001267452462343499,3.6731301333858823e-10,8.802298339105619e-07,1.7313735514723483e-11,0.9998445510864258,5.112421490593988e-07,1.4923105027264683e-06]]},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.1.0"}}}
+{"data":{"names":[],"ndarray":[[2.2179587233495113e-07,1.2331390131237185e-08,2.5685869331937283e-05,0.0001267452462343499,3.6731301333858823e-10,8.802298339105619e-07,1.7313735514723483e-11,0.9998445510864258,5.112421490593988e-07,1.4923105027264683e-06]]},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.2.0"}}}
 ```
 
 ### Image
@@ -138,5 +156,5 @@ curl -F 'binData=@test_image.jpg' http://localhost:9000/api/v1.0/predictions
 **Test Result**
 
 ```bash
-{"data":{"names":[],"tensor":{"shape":[1,10],"values":[2.240761034499883e-07,1.2446706776358951e-08,2.6079718736582436e-05,0.00012795037764590234,3.6888223031716905e-10,8.873528258845909e-07,1.7562255469338872e-11,0.9998427629470825,5.136774916536524e-07,1.4995322317190585e-06]}},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.1.0"}}}
+{"data":{"names":[],"tensor":{"shape":[1,10],"values":[2.240761034499883e-07,1.2446706776358951e-08,2.6079718736582436e-05,0.00012795037764590234,3.6888223031716905e-10,8.873528258845909e-07,1.7562255469338872e-11,0.9998427629470825,5.136774916536524e-07,1.4995322317190585e-06]}},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:v0.2.0"}}}
 ```
