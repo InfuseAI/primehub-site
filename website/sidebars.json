@@ -319,7 +319,10 @@
         "ids": [
           "tasks/repo2docker",
           "tasks/non-standard-image",
-          "tasks/matlab-img"
+          "tasks/matlab-img",
+          "tasks/spyder-image",
+          "tasks/rstudio-image",
+          "tasks/ros-image"
         ]
       },
       {

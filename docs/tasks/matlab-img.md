@@ -41,7 +41,7 @@ The steps of launching MATLAB by using the image is below,
     RUNNING: cat "/home/matlab/MATLAB.txt"
     Please use the follow URL to access Matlab Desktop, after ssh tunnel stepped up
         https://<your_domain>/user/<username>/proxy/6080/matlab.html
-    
+
     ```
 
 6. Browse the url `https://<your_domain>/user/<username>/proxy/6080/matlab.html` in a new tab.

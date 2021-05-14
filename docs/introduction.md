@@ -87,4 +87,3 @@ incorporates administration features that administrators are able to do access-c
 + [Review monthly usage report](guide_manual/admin-report)
 
 + [Quick start for Administration](quickstart/create-user)
-  
