@@ -22,14 +22,27 @@ Regarding managing versioned models, PrimeHub ,by integrating well-known *MLflow
 
 ![](assets/model-mgt.png)
 
-> A running installed MLflow instance is required.
+## MLflow is required
+
+A running installed [MLflow instance](primehub-app) is required and [Group Setting](group-setting#mlflow) has to be configured with relative information.
+
+#### MLflow setting is not configured yet
+
+![](assets/model-mgt-not-config.png)
+
+
+#### Mlflow instance is not reachable/running
+
+![](assets/mlflow-not-reachable.png)
+
 
 ## Models
 
 The page displays registered models from binding MLflow.
 
-+ See [Group Setting](group-setting#mlflow) for the information of binding MLflow instance.
 + See [Tutorial: Use MLflow Tracking](primehub-app-tutorial-mlflow#use-mlflow-tracking-in-primehub).
+
+> If a loading page displays only, please double check `MLflow Tracking URI` configuration of Mlflow setting in Group Setting.
 
 ![](assets/model-mgt-list.png)
 
