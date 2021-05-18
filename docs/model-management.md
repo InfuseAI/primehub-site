@@ -60,7 +60,7 @@ By clicking each model name, it navigates into the list of versioned models.
 
 + `Version`: Version number
 + `Registered At`: The registration date/time
-+ `Deployed By`: The Deployment name if the model is deployed.
++ `Deployed By`: The deployment name if the model is used for a deployment; click to navigate into the deployment detail page.
 + `Deploy` button: Deploying the selected versioned model.
 
 ### Versioned Model Detail
@@ -83,3 +83,15 @@ In order to deploy a certain versioned model, click `Deploy` of a versioned mode
 
 ![](assets/model-mgt-deploy-popup.png)
 
+
+### Deployed
+
+The model which is used for the deployment is with the information of the **deployment name** under `Deployed by` column. Click the deployment will navigate into the [deployment detail](model-deployment-feature#deployment-detail) page.
+
+![](assets/model-mgt-deployed.png)
+
+From the deployment information page, `Model URI` presents `models:/<model_name>/<model_version>`, e.g., `models:/tensorflow-model/2`.
+
++ `models:/`: the model which is tracked by MLflow is deployed from Model Management
++ `<model_name>`:the name of the model
++ `<model_version`: the version number of the model
