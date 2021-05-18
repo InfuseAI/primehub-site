@@ -22,8 +22,8 @@ Here we list the features comparison among tiers.
 | [Jobs](job-submission-feature) |  | ✅️ ||
 | [Schedule](job-scheduling-feature) |  | ✅️ ||
 | [Models](model-deployment-feature) |  | ✅️ | ✅️ |
-| [Shared Files](shared-files) | ✅️ | ✅️ ||
-| [Apps (Alpha)](primehub-app) | ✅️ | ✅️ |✅️|
+| [Shared Files](shared-files) | ✅️ | ✅️ | ✅ |
+| [Apps (Alpha)](primehub-app) | ✅️ | ✅️ | ✅ ️|
 | [Images](group-image) | ✅️ | ✅️ ||
 | [Settings](group-setting) | ✅️ | ✅️ |✅️|
 
