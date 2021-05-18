@@ -18,6 +18,11 @@ Adopting the group-centric design, scientists can share datasets, artifacts and 
 + Custom Deep Learning Environments
 + Enterprise-Class Account Management
 
+## Tiers
+
+PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Deploy**, three tiers. Regarding the differences, see [Tiers Feature Comparison](comparison).
+
+
 ---
 
 **PrimeHub** platform is composed of **User Portal** and **Admin Portal**; former provides dedicated features to data scientists, latter provides dedicated features to platform administrators.
