@@ -24,7 +24,7 @@ Regarding managing versioned models, PrimeHub ,by integrating well-known *MLflow
 
 ## MLflow is required
 
-A running installed [MLflow instance](primehub-app) is required and [Group Setting](group-setting#mlflow) has to be configured with relative information.
+A running installed [MLflow instance](primehub-app) is required and [Group Setting](group-setting#mlflow) has to be configured with related information.
 
 #### MLflow setting is not configured yet
 
