@@ -20,6 +20,10 @@ original_id: index-zh
 + 可客製化深度學習環境
 + 企業級帳戶存取管理
 
+### 級別
+
+PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 及 **PrimeHub Deploy**。關於級別功能差異，請見 [Tiers Feature Comparison](comparison)。
+
 ---
 
 ## 架設安裝

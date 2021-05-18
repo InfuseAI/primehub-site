@@ -12,6 +12,9 @@ description: Shared Files
   <div class="ce-only tooltip">Community
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
+    <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 <BR>
 
