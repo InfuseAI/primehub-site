@@ -68,7 +68,59 @@
   </div>
 </div>
 <br>
+<p>資料科學家頻繁地用各種參數・資料集・特徵等組合反覆地訓練模型，並針對各個版號的模型進行反覆實驗以找出合適的模型，進一步部署模型成服務以得到更多的回饋，再重回反覆訓練出更佳更調適的模型。現今，這個循環作業流程為 MLOps 的一部分。</p>
+<p>鑑於模型版號管理的需求，PrimeHub 整合廣泛使用的 <strong>MLflow</strong> 提供使用者模型追蹤管理功能  <strong>Models</strong> 並進一步銜接原有 <strong>Deployment</strong> 功能。資料科學家得以從模型訓練、版號管理、模型部署 簡易迅速的反覆地完成此流程。</p>
+<p><img src="/docs/assets/model-mgt.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="mlflow-is-required"></a><a href="#mlflow-is-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MLflow is required</h2>
+<p>必須具備一個可存取且運作中的 <a href="primehub-app-cht">MLflow instance</a> 服務， 並於 <a href="group-setting-cht#mlflow">Group Setting</a> 中的 MLflow 頁籤填入設定值來綁定服務。</p>
+<h4><a class="anchor" aria-hidden="true" id="mlflow-setting-尚未設定"></a><a href="#mlflow-setting-尚未設定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MLflow setting 尚未設定</h4>
+<p><img src="/docs/assets/model-mgt-not-config.png" alt=""></p>
+<h4><a class="anchor" aria-hidden="true" id="mlflow-服務未運作無法存取"></a><a href="#mlflow-服務未運作無法存取" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MLflow 服務未運作/無法存取</h4>
+<p><img src="/docs/assets/mlflow-not-reachable.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="models"></a><a href="#models" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Models</h2>
+<p>此頁顯示綁定 MLflow 服務中已登錄追蹤的 Registered Models。</p>
+<ul>
+<li>從 Notebook 遞交 Model 至 MLflow Tracking 請見 <a href="../primehub-app-tutorial-mlflow#use-mlflow-tracking-in-primehub">Tutorial: Use MLflow Tracking</a>。</li>
+</ul>
 <blockquote>
-<p>Work in Progress</p>
+<p>如果第一次進入頁面一直看到頁面在載入時，請於 Group Setting 再次確認 <code>MLflow Tracking URI</code> 設定值是否正確。
+<img src="/docs/assets/model-mgt-list.png" alt=""></p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-scheduling-feature-cht"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/docs/next/zh-tw/model-deployment-feature"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+<ul>
+<li><code>MLflow UI</code> ：點擊，開啟新分頁導向綁定 MLflow 服務的網頁介面。</li>
+</ul>
+<p>一旦 Model 進一步登錄於 MLflow 中 (點擊 Register Model)，該 Registered Model 將會顯示在 Models 清單中。</p>
+<p><img src="/docs/assets/mlflow-register-model.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="versioned-model-list"></a><a href="#versioned-model-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Versioned Model List</h3>
+<p>點擊 Model 名稱，導向顯示所有版號的 Model。</p>
+<p><img src="/docs/assets/model-mgt-version-list.png" alt=""></p>
+<ul>
+<li><code>Version</code>: 版號</li>
+<li><code>Registered At</code>: 登錄日期時間</li>
+<li><code>Deployed By</code>: 如果此版號 Model 被部署的話，將會顯示該部署名稱；點擊部署名稱會導向至該部署詳細資訊頁。</li>
+<li><code>Deploy</code>： 點擊，部署該版號 Model</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="versioned-model-detail"></a><a href="#versioned-model-detail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Versioned Model Detail</h3>
+<p>點擊版號，導向顯示該版號的詳細資訊。</p>
+<p><img src="/docs/assets/model-mgt-versioned-item.png" alt=""></p>
+<ul>
+<li><code>Registered At</code>：登錄日期時間</li>
+<li><code>Last Modified</code>：最後更新時間</li>
+<li><code>Source Run</code>: 連結到 MLflow 中 Run 的資訊頁</li>
+<li><code>Parameters</code>: 參數</li>
+<li><code>Metrics</code>: 測量結果</li>
+<li><code>Tags</code>: 標籤</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="deploy-versioned-model"></a><a href="#deploy-versioned-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy Versioned Model</h2>
+<p>選定想要部署的 Model 版號，點擊 <code>Deploy</code>，於對話框選擇建立新部署 <code>+ Create new deployment</code> 或是選擇更新已存在的部署。選擇後導向 <a href="model-deployment-feature">模型部署</a> 並填入必要資訊送出部署。</p>
+<p><img src="/docs/assets/model-mgt-deploy-popup.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="deployed"></a><a href="#deployed" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployed</h3>
+<p>Model 部署後，在 <code>Deployed by</code> 欄位會顯示該部署的名稱，點擊部署名稱會導向該<a href="model-deployment-feature#deployment-details">部署詳細資訊頁</a>。</p>
+<p><img src="/docs/assets/model-mgt-deployed.png" alt=""></p>
+<p>從該部署詳細資訊頁， <code>Model URI</code> 會顯示 <code>models:/&lt;model_name&gt;/&lt;model_version&gt;</code>，如： <code>models:/tensorflow-model/2</code>。</p>
+<ul>
+<li><code>models:/</code>: 顯示此 Model 來自於 MLflow 登錄追蹤。</li>
+<li><code>&lt;model_name&gt;</code>: 模型名稱</li>
+<li><code>&lt;model_version</code>: 模型版號</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/zh-tw/job-scheduling-feature-cht"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/docs/next/zh-tw/model-deployment-feature"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#mlflow-is-required">MLflow is required</a></li><li><a href="#models">Models</a><ul class="toc-headings"><li><a href="#versioned-model-list">Versioned Model List</a></li><li><a href="#versioned-model-detail">Versioned Model Detail</a></li></ul></li><li><a href="#deploy-versioned-model">Deploy Versioned Model</a><ul class="toc-headings"><li><a href="#deployed">Deployed</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/next/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
