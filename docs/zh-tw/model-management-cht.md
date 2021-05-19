@@ -1,8 +1,8 @@
 ---
 id: model-management-cht
-title: 模型管理
+title: 模型管理 (Beta)
 description: Models Management
-sidebar_label: Overview
+sidebar_label: Overview (Beta)
 ---
 
 <div class="label-sect">
@@ -14,6 +14,8 @@ sidebar_label: Overview
   </div>
 </div>
 <br>
+
+> This is a Beta feature. The page content is subject to change.
 
 資料科學家頻繁地用各種參數・資料集・特徵等組合反覆地訓練模型，並針對各個版號的模型進行反覆實驗以找出合適的模型，進一步部署模型成服務以得到更多的回饋，再重回反覆訓練出更佳更調適的模型。現今，這個循環作業流程為 MLOps 的一部分。
 

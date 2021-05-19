@@ -56,7 +56,9 @@ PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 
 
 + [群組限定共享檔案](zh-tw/shared-files-cht)
 
-+ [擴充 PrimeHub：安裝第一個第三方應用 - MLflow](zh-tw/primehub-app-cht) `NEW` `ALPHA`
++ [追蹤管理模型版號 由模型管理開始](zh-tw/model-management-cht) `New` `Beta`
+
++ [擴充 PrimeHub：安裝第一個第三方應用 (更多內建 Apps)](zh-tw/primehub-app-cht) `New` `Beta`
 
 + [Notebook Extension 及 將 Notebook 遞交至 Job](zh-tw/ph-notebook-extension-cht)
 
@@ -68,7 +70,7 @@ PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 
 
 + [群組限定工作環境映像檔](zh-tw/group-image-cht)
 
-+ [檢視目前群組相關設定](zh-tw/group-setting-cht) `NEW`
++ [檢視目前群組相關設定](zh-tw/group-setting-cht)
 
 ## Admin Portal
 
