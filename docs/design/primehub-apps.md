@@ -52,6 +52,8 @@ The preset environment variables can be used in the value field of the environme
     - `/phapplications/<app-id>` (if group volume not available)
 1. `PRIMEHUB_APP_BASE_URL`: The url prefix for the application
 `/console/apps/<app-id>`
+1. `PRIMEHUB_URL`: The external url of PrimeHub
+1. `PRIMEHUB_GROUP`: The group name
 
 ### Connect to Application
 There are two ways to connect to the application
