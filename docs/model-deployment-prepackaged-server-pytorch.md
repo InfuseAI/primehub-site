@@ -18,26 +18,43 @@ description: PyTorch server
 
 Property    | Description
 ------------|------
-Model image | `infuseai/pytorch-prepackaged:v0.1.0`
+Model image | `infuseai/pytorch-prepackaged:v0.2.0`
 Input       | ndarray
 Output      | ndarray
 Repository | [Link](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/pytorch)
 
 ### Model URI Structure
-
+**1. PyTorch model**
 ```bash
 <model uri>
 ├── ModelClass.py
 └── model.pt
 ```
-
-There should be two files in the model URI
+There should be two files in the model URI.
 
 1. **model.pt**: The model file should be saved by `state_dict()` format.
-1. **ModelClass.py**: A python defines the `PyTorchModel` class.
+1. **ModelClass.py**: A python file defines the `PyTorchModel` class that inherited from `torch.nn.Module` class.
 
-For more information, please see [PyTorch Saving & Loading documents](https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-for-inference)
+For more information, please see [PyTorch Saving & Loading documents](https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-for-inference).
 
+**2. MLflow autologging model (PyTorch_Lightning)**
+```bash
+<model uri>
+├── MLmodel
+└── <model files>
+```
+There should be two files in the model URI.
+
+1. **model.pth**: The model file is automatically saved by `mlflow.pytorch.autolog()`.
+1. **ModelClass.py**: A python file defines the `PyTorchModel` class that inherited from `pytorch_lightning.LightningModule` class, this file needs to be manually saved to artifact.
+
+You can check the training example in [Github](...), here are some required actions.
+
+1. Call `mlflow.pytorch.autolog()` before training started.
+1. Call `pytorch_lightning.Trainer().fit(...)` within `mlflow.start_run()` statement.
+1. Call `mlflow.log_artifact("ModelClass.py", artifact_path="model/data")` within `mlflow.start_run()` statement.
+
+For more information, please see [PyTorch Lightning Autologging](https://www.mlflow.org/docs/latest/python_api/mlflow.pytorch.html#mlflow.pytorch.autolog).
 
 ### How It Works
 
@@ -68,7 +85,7 @@ In this example, we use the CIFAR-10 dataset, which is used in the [PyTorch tuto
 
 Property    | Description
 ------------|------
-Model Image | `infuseai/pytorch-prepackaged:v0.1.0`
+Model Image | `infuseai/pytorch-prepackaged:v0.2.0`
 Model URI   | `gs://primehub-models/pytorch/CIFAR10`
 
 **Test Request**
@@ -82,6 +99,6 @@ curl -X POST http://localhost:9000/api/v1.0/predictions \
 **Test Result**
 
 ```bash
-{"data":{"names":[],"ndarray":[[-1.3545894622802734,-2.094174385070801,0.3954501748085022,3.433469295501709,-0.08178478479385376,1.7413527965545654,0.9827516674995422,-1.3434531688690186,0.6330254673957825,-1.5354188680648804]]},"meta":{"requestPath":{"model":"infuseai/pytorch-prepackaged:v0.1.0"}}}
+{"data":{"names":[],"ndarray":[[-1.3545894622802734,-2.094174385070801,0.3954501748085022,3.433469295501709,-0.08178478479385376,1.7413527965545654,0.9827516674995422,-1.3434531688690186,0.6330254673957825,-1.5354188680648804]]},"meta":{"requestPath":{"model":"infuseai/pytorch-prepackaged:v0.2.0"}}}
 ```
 
