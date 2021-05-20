@@ -42,6 +42,7 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Start training a model and tuning it](quickstart/qs-primehub)
 
+
 + [Deploy a model in a quick way](quickstart/qs-primehub-deploy)
 
 + [Submit and monitor jobs](job-submission-feature)
@@ -50,7 +51,9 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Share files within a group](shared-files)
 
-+ [Install the first 3rd-party application, MLflow](primehub-app) `NEW` `ALPHA`
++ [Start tracking versioned models with Model Management](model-management) `New` `Beta`
+
++ [Install the first 3rd-party application from built-in Apps](primehub-app) `New` `Beta`
 
 + [Notebook extension and submit notebooks as jobs](ph-notebook-extension)
 
@@ -62,7 +65,7 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Add/Build group-specific images](group-image)
 
-+ [View the current settings of the managed group](group-setting) `NEW`
++ [View the current settings of the managed group](group-setting)
 
 ---
 

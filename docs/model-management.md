@@ -1,8 +1,8 @@
 ---
 id: model-management
-title: Models
+title: Models (Beta)
 description: Models Management
-sidebar_label: Overview
+sidebar_label: Overview (Beta)
 ---
 
 <div class="label-sect">
@@ -15,6 +15,7 @@ sidebar_label: Overview
 </div>
 <br>
 
+> This is a Beta feature. The page content is subject to change.
 
 Data scientists requires to repeat training models with various combinations of dataset, feature, parameters etc., and conducting experiments on models, furthermore, to register/to version models which have decent performance according to results. Nowadays, this is one part of MLOps. 
 
@@ -42,7 +43,7 @@ The page displays registered models from binding MLflow.
 
 + See [Tutorial: Use MLflow Tracking](primehub-app-tutorial-mlflow#use-mlflow-tracking-in-primehub).
 
-> If a loading page displays only, please double check `MLflow Tracking URI` configuration of Mlflow setting in Group Setting.
+> If a loading page displays only, please double check `MLflow Tracking URI` configuration of MLflow setting in Group Setting.
 
 ![](assets/model-mgt-list.png)
 

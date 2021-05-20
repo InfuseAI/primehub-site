@@ -57,7 +57,7 @@ In the source, update `binder/apt.txt` and add `sudo` in a line
 
 ## Build image
 
-Build a image with the tag `infuseai/r` in the source directory (`.`)
+Build a image with the tag `infuseai/ros` in the source directory (`.`)
 
 ```
 jupyter-repo2docker --no-run --no-clean --user-name jovyan --user-id 1000 --push --image infuseai/ros .

@@ -36,10 +36,10 @@ First of all, users have to specify a working group from joining groups by using
 
 At Home, the layout has three areas: 
 
-+ **Top-left**: it has links of external documents where users can get started from and shortcuts of features where users can take actions quickly.
++ **Getting Started/Open**: it has links of external documents where users can get started from and shortcuts of features where users can take actions quickly.
 
-+ **Bottom-left**: it displays recent activities (such as Job, Model) done by the user; where users can have an quick-view of activities status.
-+ **Right**: it displays *permitted user quota in this group* and *used/limit group quotas*.
++ **Recent**: it displays recent activities (such as Job, Model) done by the user; where users can have an quick-view of activities status.
++ **Resource Dashboard**: it displays *permitted user quota in this group* and *used/limit group quotas*.
 
 
 ### Profile Menu
@@ -51,11 +51,13 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Notebooks**  where users can launch a Jupyter Notebook for projects. See [Notebook environment](../quickstart/launch-project).
 
-+ **Jobs** where users can submit jobs of time-consuming tasks. See [Jobs](../job-submission-feature). <span class="ee-only">Enterprise</span>
++ **Jobs** where users can submit jobs of time-consuming tasks. See [Jobs](../job-submission-feature).
 
-+ **Schedule** where users can schedule jobs regularly. See [Schedule](../job-scheduling-feature). <span class="ee-only">Enterprise</span>
++ **Schedule** where users can schedule jobs regularly. See [Schedule](../job-scheduling-feature).
 
-+ **Deployments** where users can deploy and serve models as services. See [Model Deployment](../model-deployment-feature). <span class="ee-only">Enterprise</span>
++ **Models** where users can track registered models from MLFlow. See [Models Management (Beta)](../model-management).
+ 
++ **Deployments** where users can deploy and serve models as services. See [Deployments Management](../model-deployment-feature). 
 
 + **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
 

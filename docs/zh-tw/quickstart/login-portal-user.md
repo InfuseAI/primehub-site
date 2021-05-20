@@ -35,10 +35,10 @@ Portal 頁面左側為「使用者功能選單」、右側為「工作專案群�
 
 Home 頁呈現三個區塊：
 
-+ **左上側**: 外部文件連結，新手使用者可以從文件快速上手 PrimeHub 及更多了解；功能捷徑，使用者可以快速進行功能。
++ **Getting Started/Open**: 外部文件連結，新手使用者可以從文件快速上手 PrimeHub 及更多了解；功能捷徑，使用者可以快速進行功能。
 
-+ **左下側**: 呈現最近使用者進行的活動，如：Job, Model；使用者可以快速了解活動狀態。
-+ **右側**: 呈現此群組使用者允許使用的資源額度；群組整體已使用額度/群組額度上限。
++ **Recent**: 呈現最近使用者進行的活動，如：Job, Model；使用者可以快速了解活動狀態。
++ **Resource Dashboard**: 呈現此群組使用者允許使用的資源額度；群組整體已使用額度/群組額度上限。
 
 
 ### Profile Menu
@@ -49,11 +49,13 @@ Home 頁呈現三個區塊：
 
 + **Notebooks**  使用者可以由此啟始 Jupyter Notebook。請參考 [Notebook](launch-project)。
 
-+ **Jobs** 使用者可以由此遞交需要費時的任務。請參考 [Jobs](../job-submission-cht)。<span class="ee-only">Enterprise</span>
++ **Jobs** 使用者可以由此遞交需要費時的任務。請參考 [Jobs](../job-submission-cht)。
 
-+ **Schedule** 使用者可以由此排程需要費時的任務。請參考 [Schedule](../job-scheduling-feature-cht)。<span class="ee-only">Enterprise</span>
++ **Schedule** 使用者可以由此排程需要費時的任務。請參考 [Schedule](../job-scheduling-feature-cht)。
 
-+ **Deployments** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Deployments](../model-deployment-feature)。<span class="ee-only">Enterprise</span>
++ ***Models** 使用者可以由此管理由 MLflow 追蹤登錄模型版號。請參考 [Models](../model-management-cht).
+
++ **Deployments** 使用者可以由此部署模型並以模型為中心提供服務。請參考 [Deployments](../model-deployment-feature)。
 
 + **Shared Files** 使用者可以上傳群組限定共享檔案至 PHFS 空間。請參考 [Shared Files](../shared-files-cht)。
 

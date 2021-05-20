@@ -150,7 +150,13 @@ Reference
 Run the `create primehub` command with a specified version.
 
 ```bash
-./primehub-install create primehub --primehub-version v3.0.0
+./primehub-install create primehub
+```
+
+or specify PrimeHub version, such as v3.5.0
+
+```bash
+./primehub-install create primehub --primehub-version <version>
 ```
 
 Please enter the domain name of PrimeHub
@@ -169,7 +175,7 @@ modelDeployment:
 After the modification of the primehub config file, run the command with a specified version to apply the change.
 
 ```bash
-./primehub-install upgrade primehub --primehub-version v3.0.0
+./primehub-install upgrade primehub
 ```
 
 ### Monitor the PrimeHub installation

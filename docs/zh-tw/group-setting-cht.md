@@ -12,6 +12,9 @@ sidebar_label: Settings
   <div class="ce-only tooltip">Community
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 <br>
 
@@ -59,3 +62,28 @@ Job 預設逾時期限；此設定套用至同群組遞出的所有 Job；若期
 ![](assets/group_setting_model.png)
 
 顯示 Model Deployment 是否開啟，換句話換說，此群組可否使用 **Deployments** 功能。
+
+## MLflow
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
+
+PrimeHub 整合 MLflow 提供模型追蹤管理功能，因此必須要綁定運作中的 MLflow 服務。
+
+![](assets/group-setting-mlflow.png)
+
+透過[PrimeHub Apps 安裝 MLflow](primehub-app-cht)，可以從應用服務資訊頁得知 `App URL` 及 `Service Endpoint`。
+
+![](assets/app_detail.png)
+
++ 將 `http://`+`Service Endpoint` 填入 `MLflow Tracking URI`
++ 將 `App URL` 填入 `MLflow UI URI`
+
+儲存綁定 MLflow 服務資訊。
