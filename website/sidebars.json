@@ -82,7 +82,8 @@
       "job-scheduling-feature"
     ],
     "Models": [
-      "model-management"
+      "model-management",
+      "model-configuration"
     ],
     "Deployments": [
       "model-deployment-feature",
