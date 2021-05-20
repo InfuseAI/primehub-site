@@ -1,6 +1,6 @@
 ---
 id: version-2.5-graphql
-title: GraphqQL
+title: GraphQL
 original_id: graphql
 ---
 

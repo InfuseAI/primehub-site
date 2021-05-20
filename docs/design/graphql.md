@@ -1,6 +1,6 @@
 ---
 id: graphql
-title: GraphqQL
+title: GraphQL
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 id: version-2.1.0-graphql
-title: Spawner and GraphqQL
+title: Spawner and GraphQL
 original_id: graphql
 ---
 
