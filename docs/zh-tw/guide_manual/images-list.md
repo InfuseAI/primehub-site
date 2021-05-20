@@ -23,11 +23,11 @@ InfuseAI 在 [infuseai/docker-stacks↗](https://hub.docker.com/r/infuseai/docke
 |Framework|Image|CPU / GPU|Python|
 |-        |-     |-     |-    |
 |TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1|`CPU`|3.7|
-|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1-gpu-cuda-11|`GPU`<br/>`CUDA11`|3.7|
+|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1-gpu-cuda-11|`GPU`<br/>`CUDA 11`|3.7|
 |TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645|`CPU`|3.7|
-|TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645-gpu-cuda-10|`GPU`<br/>`CUDA10`|3.7|
+|TensorFlow 2.3|infuseai/docker-stacks:tensorflow-notebook-v2-3-1-2d701645-gpu-cuda-10|`GPU`<br/>`CUDA 10`|3.7|
 |TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-2f118efb|`CPU`|3.7|
-|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-2f118efb-gpu-cuda-10|`GPU`<br/>`CUDA10`|3.7|
+|TensorFlow 2.2|infuseai/docker-stacks:tensorflow-notebook-v2-2-1-2f118efb-gpu-cuda-10|`GPU`<br/>`CUDA 10`|3.7|
 |TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-dbdcead1|`CPU`|3.7|
 |TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-dbdcead1-gpu|`GPU`|3.7|
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35|`CPU`|3.7|
