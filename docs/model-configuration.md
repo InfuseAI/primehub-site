@@ -23,7 +23,7 @@ The Group Administrator could configure MLflow either one of
 
 ## Configuration
 
-In MLflow configuration page, there is a required field `MLflow Tracking URI` where the MLflow instance serves tracking clients. It will become the `MLFLOW_TRACKING_URI` environment variable in our system. You could use `MLFLOW_TRACKING_URI` in PHJob, Notebook and Deployments. 
+In MLflow configuration page, there is a required field `MLflow Tracking URI` where the MLflow instance serves tracking clients. It will become the `MLFLOW_TRACKING_URI` environment variable in our system. You could use `MLFLOW_TRACKING_URI` in PHJob and Notebook. `MLflow UI URI` is a url to the MLflow web server.
 
 However, you might see two groups of variables in the same page `Tracking Environment Variables` and `Artifact Store Environment Variables`, we will explain their usage later:
 
