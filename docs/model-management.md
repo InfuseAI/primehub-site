@@ -18,13 +18,13 @@ sidebar_label: Overview
 
 Data scientists requires to repeat training models with various combinations of dataset, feature, parameters etc., and conducting experiments on models, furthermore, to register/to version models which have decent performance according to results. Nowadays, this is one part of MLOps. 
 
-Regarding managing versioned models, PrimeHub ,by integrating well-known *MLflow*, provides models management feature, **Models** that scientists can examine the performance of versioned/registered models and deploy a selected model directly as a service by **Deployments** on PrimeHub.
+Regarding managing versioned models, PrimeHub, by integrating well-known *MLflow*, provides models management feature, **Models** that scientists can examine the performance of versioned/registered models and deploy a selected model directly as a service by **Deployments** on PrimeHub.
 
 ![](assets/model-mgt.png)
 
 ## MLflow is required
 
-A running installed [MLflow instance](primehub-app) is required and [Group Setting](group-setting#mlflow) has to be configured with related information.
+A running installed [MLflow instance](primehub-app) is required and [Group Setting](group-setting#mlflow) has to be configured with relative information.
 
 #### MLflow setting is not configured yet
 
