@@ -48,7 +48,7 @@ There should be two files in the model URI.
 1. **model.pth**: The model file is automatically saved by `mlflow.pytorch.autolog()`.
 1. **ModelClass.py**: A python file defines the `PyTorchModel` class that inherited from `pytorch_lightning.LightningModule` class, this file needs to be manually saved to artifact.
 
-You can check the training example in [Github](...), here are some required actions.
+You can check the training example in [Github](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/pytorch/example_train/MLflow), here are some required actions.
 
 1. Call `mlflow.pytorch.autolog()` before training started.
 1. Call `pytorch_lightning.Trainer().fit(...)` within `mlflow.start_run()` statement.
