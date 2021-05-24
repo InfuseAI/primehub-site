@@ -122,3 +122,30 @@ kubectl patch storageclass <STORAGE_CLASS_NAME> -p '{"metadata": {"annotations":
 ## Cert Manager (Optional)
 
 If https is required in your environment, [cert-manager](https://github.com/jetstack/cert-manager) provides an easy way to set up a certificate.
+
+## Behind Firewall (Optional)
+
++ Please open port `22, 80 and 443`.
+
++ Please add these domains below in allow-list
+
+  ```text
+  # Docker image registry
+  *.docker.com
+  *.docker.io
+  *.gitlab.com
+  quay.io
+  gcr.io
+
+  # Helm chart repository
+  *.github.io
+  *.storage.googleapis.com
+  storage.googleapis.com
+  charts.infuseai.io
+  charts.rook.io        
+  charts.jetstack.io
+
+  # Nvidia driver
+  *.nvidia.com
+
+  ```
