@@ -19,7 +19,7 @@ description: SKLearn server
 
 Property    | Description
 ------------|------
-Model Image | `seldonio/sklearnserver_rest:1.3.0`
+Model Image | `infuseai/sklearn-prepackaged:v0.1.0`
 Input       | ndarray
 Output      | ndarray
 Repository | [Link](https://github.com/SeldonIO/seldon-core/tree/master/servers/sklearnserver)
@@ -58,8 +58,8 @@ The example uses the [scikit-learn iris dataset](https://scikit-learn.org/stable
 
 Property    | Description
 ------------|------
-Model Image | `seldonio/sklearnserver_rest:1.3.0`
-Model URI   | `gs://seldon-models/sklearn/iris`
+Model Image | `infuseai/sklearn-prepackaged:v0.1.0`
+Model URI   | `gs://primehub-models/sklearn/iris`
 
 **Test Request**
 
