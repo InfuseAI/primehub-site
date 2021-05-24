@@ -31,7 +31,7 @@ PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Depl
 
 incorporates data-scientists-facing prominent features that scientists are able to turn workflows into automating pipelines by Job submission/schedule, able to prepare data/develop trained models from Notebook and able to deploy container-wrapped models as services by Model Deployment.
 
-![landing-user.png](assets/v35-landing-user.png)
+![landing-user.png](assets/v36-landing-user.png)
 
 
 ### Getting Started as Users

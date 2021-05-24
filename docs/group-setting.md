@@ -90,3 +90,5 @@ After [the installation of MLflow by PrimeHub Apps](primehub-app), we can learn 
 + Fill in `MLflow UI URI` with `App URL`.
 
 Save the setting for binding Models to the MLflow instance.
+
+>By integrating externally-hosted MLflow server, see [Configuration](model-configuration) for the detail.

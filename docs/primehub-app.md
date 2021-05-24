@@ -19,7 +19,7 @@ description: PrimeHub Apps
 
 **PrimeHub** aims at being a MLOps platform where scientists can orchestrate data/tools for the acceleration of researches. In terms of a platform, we introduce **PrimeHub Apps** that PrimeHub capability is able to be extended by integrations of 3rd-party applications such as auto ML tools, visualization tools, etc. These integrated applications also benefit from access-control and resource constraints of PrimeHub.
 
-![](assets/app_overview.png)
+![](assets/app_overview_v36.png)
 
 ## Installed Apps
 

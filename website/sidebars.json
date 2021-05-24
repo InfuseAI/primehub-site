@@ -419,7 +419,8 @@
       "zh-tw/job-scheduling-feature-cht"
     ],
     "Models":[
-      "zh-tw/model-management-cht"
+      "zh-tw/model-management-cht",
+      "zh-tw/idx-model-management"
     ],
     "Deployments": [
       "zh-tw/model-deployment-feature",

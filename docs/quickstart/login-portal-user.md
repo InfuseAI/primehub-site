@@ -18,7 +18,7 @@ sidebar_label: User Portal
 
 After login, a user lands on User Portal.
 
-![](assets/v35-landing-user.png)
+![](assets/v36-landing-user.png)
 
 On Portal, the left side is **side menu** composed of platform user features, the right side is the **context of the current working group**. At the top-right, there is a `Group:` dropdown of switching working groups. Users can switch the working group to proceed to different projects easily.
 

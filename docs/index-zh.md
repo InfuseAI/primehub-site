@@ -40,7 +40,7 @@ PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 
 
 函括資料科學家不可或缺的常用功能；以 Notebook 進行開發，利用 Job 將工作流程串接成自動化，最後透過 Deployments 將訓練模型整合進容器環境，部署成服務來驗證效能，反覆持續地改進訓練模型。
 
-![](assets/v35-landing-user.png)
+![](assets/v36-landing-user.png)
 
 ### Getting Started as Users
 

@@ -17,7 +17,7 @@ sidebar_label: User Portal
 
 ## Portal
 
-![](assets/v35-landing-user.png)
+![](assets/v36-landing-user.png)
 
 Portal 頁面左側為「使用者功能選單」、右側為「工作專案群組對應內容」。
 
