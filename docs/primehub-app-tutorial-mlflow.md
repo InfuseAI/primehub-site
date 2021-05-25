@@ -63,3 +63,7 @@ It will open a new window and show the MLflow UI. You can see your experiments a
     ![](assets/app_tutorial_mlflow_run.png)
 
 That's the basic use of how to track your machine learning experiments by using MLflow and PrimeHub.
+
+## Binding MLflow App to Models
+
+With a running MLflow App, we can bind MLflow service to [Models Management](model-management). Once binding, on Models, we can view registered models, furthermore deploy these models via Deployments at ease on PrimeHub. See [Group Setting - MLflow](group-setting#mlflow) to bind your MLflow App.
