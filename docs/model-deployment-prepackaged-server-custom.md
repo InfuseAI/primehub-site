@@ -24,7 +24,7 @@ This document will show you how to customize a Python model server and focus on 
 
 We will use the code in the [skeleton](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/skeleton) server to explain concepts.
 
-## How pre-packaged server works?
+## How does a pre-packaged server work?
 
 If you look at the [Dockerfile](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/skeleton/Dockerfile) in the skeleton server:
 
