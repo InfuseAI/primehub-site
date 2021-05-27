@@ -16,16 +16,17 @@ description: Build your own Pre-packaged Server
 PrimeHub provides many [pre-packaged servers](model-deployment-prepackaged-server-intro), it might not fit in your use cases:
 
 1. You are adopting a new machine learning library, we haven't provided.
-1. You want to support a serialization format for your model, we havn't supported. 
-1. You want to customize moniotiring metrics data.
+1. You want to support a serialization format for your model, we haven't supported it. 
+1. You want to customize monitoring metrics data.
+1. You want to add the preprocessing or postprocessing code.
 
 This document will show you how to customize a Python model server and focus on the `model_uri` mechanism of the PrimeHub Deployment. You could refer to existing implementation on the git repository [primehub-seldon-servers](https://github.com/InfuseAI/primehub-seldon-servers). 
 
 We will use the code in the [skeleton](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/skeleton) server to explain concepts.
 
-## How pre-packaged server works ?
+## How pre-packaged server works?
 
-If you look the [Dockerfile](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/skeleton/Dockerfile) in the skeleton server:
+If you look at the [Dockerfile](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/skeleton/Dockerfile) in the skeleton server:
 
 ```
 FROM python:3.7-slim
@@ -43,7 +44,7 @@ ENV PERSISTENCE 0
 CMD exec seldon-core-microservice $MODEL_NAME --service-type $SERVICE_TYPE --persistence $PERSISTENCE --access-log
 ```
 
-You will find the entrypoint is `seldon-core-microservice` with a `$MODEL_NAME` (Model). **seldon-core-microservice** plays a HTTP server to get requests from clients and delegates all model requests to your `Model`. **seldon-core-microservice** will validate input data and convert it to proper data type to the `Model`, `Model` does `predict` and sends back results.
+You will find the entrypoint is `seldon-core-microservice` with a `$MODEL_NAME` (Model). **seldon-core-microservice** plays an HTTP server to get requests from clients and delegates all model requests to your `Model`. **seldon-core-microservice** will validate input data and convert it to proper data type to the `Model`, `Model` does `predict` and sends back results.
 
 The main goal of building your pre-packaged server is writing your `Model` python module.
 
@@ -86,7 +87,7 @@ class Model:
         self.load()
 
     def load(self):
-        # load and create the model
+        # load and create a model
         # if model_uri was given, load data and create model instance from it
         if self.ready:
             return
@@ -105,7 +106,7 @@ class Model:
 
 ## Handle model files
 
-The model files could ship with your image, you could make it more feasible with the `model_uri` mechanism of the PrimeHub Deployment.
+The model files could ship along with your image or can be downloaded until the model server starts. To download the file at startup, PrimeHub users could create a Deployment with Model URI:
 
 PrimeHub users could create a Deployment with Model URI:
 ![](assets/mdeploy_quickstart_deploydetail_1_phfs.png)
@@ -118,7 +119,7 @@ def __init__(self, model_uri=None):
     ...
 ```
 
-Please add the `model_uri` argument to the `__init__` function and make sure having `None` as the default value. It means your Model supporting with or without `model_uri`. If a user give a `Model URI` value, the `__init__` will get a mount path from the variable `model_uri`. You can check which files should be loaded in that path.
+Please add the `model_uri` argument to the `__init__` function and make sure to have `None` as the default value. It means your Model supporting with or without `model_uri`. If a user gives a `Model URI` value, the `__init__` will get a mount path from the variable `model_uri`. You can check which files should be loaded in that path.
 
 It is very common to write a load method to load and build model instance:
 
