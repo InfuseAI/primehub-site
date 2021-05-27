@@ -26,7 +26,7 @@ In this tutorial, we will use the MNIST model in TensorFlow 2 as an example to s
 - The prepared notebook file of the example,
 
     Download [model_management_tutorial.ipynb](assets/model_management_tutorial.ipynb).
-    This example file is from [TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner) with added cell to enable MLflow autologging API.
+    This example file is referred to [TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner) with added cell to enable [MLflow autologging API](https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog).
     ![](assets/model-mgt-mlflow-tf-autolog.png)
 
 - Choose a group with enabled Shared Volume (a.k.a Group Volume).
