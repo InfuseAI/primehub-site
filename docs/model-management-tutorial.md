@@ -39,8 +39,10 @@ In this tutorial, we will use the MNIST model in TensorFlow 2 as an example to s
 
 1. While inside the group volume, copy/drag the downloaded `model_management_tutorial.ipynb` to File Browser. Then, let's open it and **Run All Cells**.
 
-1. Enter [Models](model-management) from User Portal then click on `MLflow UI` button, we will see a newly completed run under the `Default` experiment. Now clicking on this run.
+1. Enter [Models](model-management) from User Portal then click on `MLflow UI` button.
 ![](assets/model-mgt-mlflow-ui-button.png)
+
+1. In the MLflow UI, We will see a newly completed run under the `Default` experiment. Now clicking on this run.
 ![](assets/model-mgt-mlflow-run-list.png)
 
 1. In the run information page, scroll down to the `Artifacts` section. Clicking on the exported model and `Register Model` button.
