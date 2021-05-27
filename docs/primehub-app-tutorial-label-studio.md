@@ -86,7 +86,7 @@ Here are examples of good and bad screws. The first image is the good screw. The
 
 - Create a [dataset](guide_manual/admin-dataset) in PrimeHub called `screw`, and set the read/write permission to your group. Please download the [app_tutorial_labelstudio_screw_dataset.zip](assets/app_tutorial_labelstudio_screw_dataset.zip), unzip it and upload images to the `~/datasets/screw` folder by the [notebook](quickstart/launch-project)
 - Create a directory `/project/<group_name>/screw-labeled` in group volume to save the labeled results
-- The image `infuseai/docker-stacks:pytorch-notebook-b3c52f35`
+- The image `infuseai/docker-stacks:pytorch-notebook-v1-7-0-04b2c51f`
 - An instance type >= minimal requirement (CPU=1, GPU=0, Mem=2G)
 - The prepared python file of the example [app_tutorial_labelstudio_screw_prepare.py](assets/app_tutorial_labelstudio_screw_prepare.py) and upload it to `~/screw_train` by the [notebook](quickstart/launch-project)
 - The prepared notebook file of the example [app_tutorial_labelstudio_screw_train.ipynb](assets/app_tutorial_labelstudio_screw_train.ipynb) and upload it to `~/screw_train` by the [notebook](quickstart/launch-project)
@@ -117,7 +117,7 @@ Here are examples of good and bad screws. The first image is the good screw. The
 7. Open a terminal.
     ```bash
       cd ~/screw_train
-      python python app_tutorial_labelstudio_screw_prepare.py --path /project/<group_name>/screw-labeled/
+      python app_tutorial_labelstudio_screw_prepare.py --path /project/<group_name>/screw-labeled/
     ```
     After executed, it will create a folder named `data` and place the labeled images into the correct folder inside `data` folder.
 
