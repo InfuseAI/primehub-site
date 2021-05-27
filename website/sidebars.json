@@ -83,7 +83,14 @@
     ],
     "Models": [
       "model-management",
-      "model-configuration"
+      "model-configuration",
+      {
+        "type": "subcategory",
+        "label": "Tutorial",
+        "ids": [
+          "model-management-tutorial"
+        ]
+      }
     ],
     "Deployments": [
       "model-deployment-feature",
