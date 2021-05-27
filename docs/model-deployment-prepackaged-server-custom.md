@@ -128,45 +128,6 @@ It is very common to write a load method to load and build model instance:
     ...
 ```
 
-You could build the model instance in the `__init__`, if your loading process is very simple. The `load` method is optional.
+You could build the model instance in the `__init__`, if your loading process is very simple. The `load` method is optional. 
 
-## MLflow model
-
-PrimeHub Deployment could work with MLflow Model Registry. When a user set `Model URI` starting with `models:`, it will get model files from MLflow Model Registry. Nothing special with the model files comes from the MLflow Model Registry, it also mounts to the `model_uri`. However, there is a convention to let you know:
-
-> The model files always ships with the `MLmodel` file.
-
-You should register a model with the `MLmodel` file
-
-### Register model
-
-Here is an example to train and log model to the MLflow tracking server:
-
-```python
-import mlflow
-import numpy as np
-from sklearn.linear_model import LinearRegression
-
-# it will set from env MLFLOW_TRACKING_URI
-# mlflow.set_tracking_uri("...")
-mlflow.set_experiment("experiment-1")
-
-X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
-y = np.dot(X, np.array([1, 2])) + 3
-
-# train a model
-model = LinearRegression()
-with mlflow.start_run() as run:
-    model.fit(X, y)
-    print("Logged data and model in run {}".format(run.info.run_id))
-    mlflow.sklearn.log_model(model, "models/model-a")
-```
-
-After the model uploaded, it could be found in the **experiment-1**:
-
-![](assets/mlflow-register-model-with-MLmodel.png)
-
-When you select a directory in the artifact browser, it will show a `Register Model` botton in the right side, please register the directory which contains the `MLmodel` file. Let's check it one by one:
-
-1. (invalid) **models** directory: it doesn't contain a MLmodel file
-1. (valid) **model-a** directory: it contains a MLmodel file
+You might check [Model URI](model-deployment-model-uri) to learn about it.
