@@ -348,6 +348,13 @@
           "tasks/monitoring"
         ]
       },
+      {
+        "type": "subcategory",
+        "label": "MLflow",
+        "ids": [
+          "tasks/mlflow-compare"
+        ]
+      },
       "tasks/customize-job-runtime"
     ],
     "References": [
