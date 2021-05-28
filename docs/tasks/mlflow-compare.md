@@ -42,33 +42,45 @@ In this tutorial, we will show how to record parameters, metrics, and artifacts 
    
 4. Replace `TRACKING_URI` in the notebook to the service endpoint of your MLflow server.
 
-5. **Run All Cells** in the notebook, you will see a new run in `compare-experiment` in the MLflow UI.
+5. **Run All Cells** in the notebook, you will see a new run in `compare-experiment` in the MLflow UI. Click on the `Start Time` to view details.
   
     ![](assets/task_mlflow_compare_run.png)
 
-6. In the notebook, edit it to log parameters, metrics, and artifacts.
+6. Scroll down to the artifects and click on the model folder to register model.
+  
+    ![](assets/task_mlflow_register_model.png)
+
+7. In the `Models` page, you can see a new register model.
+  
+    ![](assets/task_mlflow_view_model.png)
+
+8. In the notebook, edit it to log parameters, metrics, and artifacts.
    
     ![](assets/mlflow_log.png)
 
-7. Set the API token.
+9. Set the API token.
 
     ![](assets/task_mlflow_set_api_token.png)   
 
-8. Submit notebook as job.
+10. Submit notebook as job.
    
     ![](assets/task_mlflow_submit_job.png)
 
-9. You can see the job status in PrimeHub `Jobs`.
+11. You can see the job status in PrimeHub `Jobs`.
 
     ![](assets/task_mlflow_running_job.png)
 
-10. After job done, a notebook is added, which is the result.
+12. After job done, a notebook is added, which is the result.
 
     ![](assets/task_mlflow_job_done.png)
 
-11. You will see two runs in compare-experiment in the MLflow UI and you can compare them.
+13. Register the new run with the same model name. In the `Models` page, the latest version is `Version 2`.
   
-    ![](assets/task_mlflow_compare_result.png)
+    ![](assets/task_mlflow_model_version.png)
+
+14. Click on the model name, you can see and compare those versions.
+
+    ![](assets/task_mlflow_model_result.png)
     
     ![](assets/task_mlflow_compare_detail.png)
 
