@@ -56,10 +56,6 @@ There are two official registries where we can have JupyterHub-compatible base i
 
 We can build images via `Image Builder` by specification of a base image with required packages, please goes to [Image Builder](admin-build-image) feature for details and try a [build image](../quickstart/build-image) quickstart.<span class="ee-only">Enterprise</span>
 
-### Use DockerHub Registry
-
-Once images are built via **Image Builder**, they will be pushed to a specified repositories of a registry. Here we have a document introducing [How to configure PrimeHub using a DockerHub registry for Image Builder](../tasks/dockerhub-registry.md).
-
 ## Build Images via Dockerfile
 
 ### From Jupyter

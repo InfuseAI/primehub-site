@@ -47,7 +47,9 @@ likewise it displays a blank when no installed one.
 
 ## App Store
 
-![](assets/app_store.png)
+App Store menu includes built-in Apps templates and [user-customizing Apps](primehub-app-tutorial-template) template if any.
+
+![](assets/app_store_v36.png)
 
 + `Search`: Search available applications by a keyword
 + `App Documents`: Open the external official documentation of the application in a new tab

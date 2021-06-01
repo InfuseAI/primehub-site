@@ -521,8 +521,7 @@
         "ids": [
           "zh-tw/guide_manual/admin-image-cht",
           "zh-tw/guide_manual/admin-build-image-cht",
-          "zh-tw/guide_manual/custom-image-guideline",
-          "zh-tw/guide_manual/images-list"
+          "zh-tw/guide_manual/custom-image-guideline"
         ]
       },
       {
@@ -602,7 +601,8 @@
       "zh-tw/idx-ref",
       "zh-tw/quickstart/nb-data-store-cht",
       "zh-tw/guide_manual/ssh-vscode-cht",
-      "zh-tw/guide_manual/ssh-keygen-cht"
+      "zh-tw/guide_manual/ssh-keygen-cht",
+      "zh-tw/guide_manual/images-list"
     ],
     "Trouble Shooting": [
       "zh-tw/idx-trouble"

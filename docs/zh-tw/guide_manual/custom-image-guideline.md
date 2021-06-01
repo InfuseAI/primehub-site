@@ -58,7 +58,7 @@ PrimeHub 期待 JupyterHub 用 image 具備 JupyterHub 環境，一旦起始後�
 
 ### 利用 DockerHub Registry
 
-經由 **Image Builder** 創建的 image 會被發佈至 PrimeHub 設定的 registry 上指定的 repository；我們可以設定自己的 DockerHub registry 做為發佈目地的。請見[「利用 DockerHub Registry」](../quickstart/dockerhub-registry.md)。
+經由 **Image Builder** 創建的 image 會被發佈至 PrimeHub 設定的 registry 上指定的 repository；我們可以設定自己的 DockerHub registry 做為發佈目地的。
 
 ## Dockerfile 創建 Image
 
@@ -93,4 +93,4 @@ FROM infuseai/docker-stacks/<image>
 
 ## 由 repo2docker 建立 image
 
-進階的使用者如果想要試試 [repo2docker](https://repo2docker.readthedocs.io/en/latest/) 工具建立 image。請務必參考我們的技術文件 [「repo2docker image」](../../concepts/designs/repo2docker.md) 確認建立出來的 image 符合 PrimeHub 要求。
+進階的使用者如果想要試試 [repo2docker](https://repo2docker.readthedocs.io/en/latest/) 工具建立 image。請務必參考我們的技術文件 [「repo2docker image」](../../tasks/repo2docker.md) 確認建立出來的 image 符合 PrimeHub 要求。

@@ -47,7 +47,9 @@ Apps 首頁顯示已安裝實體應用服務
 
 ## App Store
 
-![](assets/app_store.png)
+App Store 呈現內建的應用服務選單及[使用者自建應用服務](../primehub-app-tutorial-template)。
+
+![](assets/app_store_v36.png)
 
 + `Search`: 關鍵字搜尋
 + `App Documents`: 於新頁開啟應用服務的官方文件網站

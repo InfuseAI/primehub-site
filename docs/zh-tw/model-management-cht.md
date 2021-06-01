@@ -41,7 +41,7 @@ sidebar_label: Overview (Beta)
 
 此頁顯示綁定 MLflow 服務中已登錄追蹤的 Registered Models。
 
-+ 從 Notebook 遞交 Model 至 MLflow Tracking 請見 [Tutorial: Use MLflow Tracking](../primehub-app-tutorial-mlflow#use-mlflow-tracking-in-primehub)。
++ 從 Notebook 遞交 Model 至 MLflow Tracking 請見 [Tutorial: Use MLflow Tracking](../primehub-app-tutorial-mlflow#use-mlflow-tracking-in-primehub) 及 [Tutorial: Manage and Deploy a Model](../model-management-tutorial)。
 
 > 如果第一次進入頁面一直看到頁面在載入時，請於 Group Setting 再次確認 `MLflow Tracking URI` 設定值是否正確。
 ![](assets/model-mgt-list.png)

@@ -10,6 +10,8 @@ description: 3.6 Release Note
 
 Want to compare your trained models or give every single model a unique version? You can now visit the PrimeHub Model Management to analyze the experiments, to manage the trained models, and further to deploy the best model to PrimeHub Model Deployment.
 
+![](assets/model-mgt-list.png)
+
 + [Document](model-management)
 
 

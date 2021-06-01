@@ -128,6 +128,6 @@ Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具�
 
 對於企業用戶，PrimeHub 在安裝時已經根據需求設定完成，Image Builder 立即可以使用。
 
-其它用戶，若看到此警告訊息`image registry not found`，表示 Registry 尚未設定；請參照 [利用 DockerHub Registry](../quickstart/dockerhub-registry) 進行設定。
+其它用戶，若看到此警告訊息`image registry not found`，表示 Registry 尚未設定。
 
 ![](assets/build_img_warning.png)

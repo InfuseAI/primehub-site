@@ -42,6 +42,7 @@ A running installed [MLflow instance](primehub-app) is required and [Group Setti
 The page displays registered models from binding MLflow.
 
 + See [Tutorial: Use MLflow Tracking](primehub-app-tutorial-mlflow#use-mlflow-tracking-in-primehub).
++ See [Tutorial: Manage and Deploy a Model](model-management-tutorial).
 
 > If a loading page displays only, please double check `MLflow Tracking URI` configuration of MLflow setting in Group Setting.
 
