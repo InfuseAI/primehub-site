@@ -8,7 +8,7 @@ sidebar_label: Introduction
 
 ## 簡介
 
-**PrimeHub** 為以 *Kubernetes* 為基礎針對加速資料科學/機器學習研究開發而設計的平台。藉由專案群組為中心的設計概念，資料科學家可以輕易與專案成員共享研究資料/過程，並可以協同進行專案加速開發流程；同時藉由運算資源共享管理後台，平台管理者能有效兼彈性地分配並控管運算資源，提升運算資源的利用率。
+**PrimeHub** 為以 *Kubernetes* 為基礎針對加速資料科學/機器學習研究開發而設計的平台。藉由專案群組為中心的設計概念，資料科學家可以輕易與專案成員共享研究資料/過程，並可以協同進行專案加速開發流程；同時藉由運算資源共享管理後台，平台管理者能有效兼彈性地分配並控管運算資源，提升運算資源的利用率。更進一步，藉由安裝第三方應用服務來擴充平台功能。
 
 ### 主要特色
 
@@ -18,8 +18,9 @@ sidebar_label: Introduction
 + 資源分配及額度管理
 + 可客製化深度學習環境
 + 企業級帳戶存取管理
++ 可擴充第三方應用服務
 
-### 級別
+### 產品級別
 
 PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 及 **PrimeHub Deploy**。關於級別功能差異，請見 [Tiers Feature Comparison](comparison)。
 
@@ -65,6 +66,14 @@ PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 
 + [使用者資料儲存](zh-tw/quickstart/nb-data-store-cht)
 
 + [遠端 SSH 連線 Jupyter Notebook](zh-tw/guide_manual/ssh-config-cht)
+
++ [Start training a model and tuning it](../quickstart/qs-primehub) `Quick-start`
+
++ [Deploy a model in a quick way](../quickstart/qs-primehub-deploy) `Quick-start`
+
++ [Manage and Deploy a Model with MLflow](model-management-tutorial) `Tutorial`
+
++ [Data Labeling with Label Studio](primehub-app-tutorial-label-studio) `Tutorial`
 
 #### As Group Admin
 

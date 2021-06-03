@@ -124,3 +124,9 @@ Action buttons:
 工作記錄觀覽只顯示最新的倒數 2000 行記錄。 點擊 `Scroll to Bottom` 至記錄最下方，或點擊 `Download` 下載完整記錄。
 
 ![](assets/app_log.png)
+
+
+## Built-in Apps
+
+請參照[英文文件](../primehub-app-builtin-code-server)。
+

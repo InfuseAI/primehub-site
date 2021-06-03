@@ -7,7 +7,7 @@ sidebar_label: Introduction
 
 **PrimeHub** is a *Kubernetes*-based platform designed for groups of data scientists. It aims at being a all-in-one enterprise machine learning platform to provide seamless MLOps experience.
 
-Adopting the group-centric design, scientists can share datasets, artifacts and collaborates easily within same groups/projects, which accelerates collaborative development for project groups, besides, scientists are capable of developing models, serving models and monitoring models performance with full governance and transparency. In terms of platform administration, PrimeHub provides administrators capability of access control management, resources management and quotas control for project groups accordingly, which facilitates the efficiency of resources utilization.
+Adopting the group-centric design, scientists can share datasets, artifacts and collaborates easily within same groups/projects, which accelerates collaborative development for project groups, besides, scientists are capable of developing models, serving models and monitoring models performance with full governance and transparency. In terms of platform administration, PrimeHub provides administrators capability of access control management, resources management and quotas control for project groups accordingly, which facilitates the efficiency of resources utilization. Furthermore, with installed 3rd-party Apps, PrimeHub capabilities can be augmented on demand.
 
 ## Key Capabilities
 
@@ -17,8 +17,9 @@ Adopting the group-centric design, scientists can share datasets, artifacts and 
 + Management of Resource & Quota Privileges
 + Custom Deep Learning Environments
 + Enterprise-Class Account Management
++ Capability Augmentation with 3rd-party Apps
 
-## Tiers
+## Product Tiers
 
 PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Deploy**, three tiers. Regarding the differences, see [Tiers Feature Comparison](comparison).
 
@@ -40,10 +41,9 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Starts a Jupyter Notebook](quickstart/launch-project)
 
-+ [Start training a model and tuning it](quickstart/qs-primehub)
++ [Start training a model and tuning it](quickstart/qs-primehub) `Quick-start`
 
-
-+ [Deploy a model in a quick way](quickstart/qs-primehub-deploy)
++ [Deploy a model in a quick way](quickstart/qs-primehub-deploy) `Quick-start`
 
 + [Submit and monitor jobs](job-submission-feature)
 
@@ -57,9 +57,13 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Notebook extension and submit notebooks as jobs](ph-notebook-extension)
 
-+ [Persistent data stores](quickstart/nb-data-store)
++ [Learn about Persistent data stores](quickstart/nb-data-store)
 
 + [Access Jupyter Notebook remotely via SSH](guide_manual/ssh-config)
+
++ [Manage and Deploy a Model with MLflow](model-management-tutorial) `Tutorial`
+
++ [Data Labeling with Label Studio](primehub-app-tutorial-label-studio) `Tutorial`
 
 #### As Group Admin
 

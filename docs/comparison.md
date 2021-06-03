@@ -20,7 +20,7 @@ Here we list the features comparison among tiers.
 | [Notebooks](quickstart/launch-project)| ✅️ | ✅️ ||
 | [Jobs](job-submission-feature) |  | ✅️ ||
 | [Schedule](job-scheduling-feature) |  | ✅️ ||
-| [Models](model-management) |  | ✅️ | ✅️ |
+| [Models (Beta)](model-management) |  | ✅️ | ✅️ |
 | [Deployments](model-deployment-feature) |  | ✅️ | ✅️ |
 | [Shared Files](shared-files) | ✅️ | ✅️ |✅ |
 | [Apps (Beta)](primehub-app) | ✅️ | ✅️ ||

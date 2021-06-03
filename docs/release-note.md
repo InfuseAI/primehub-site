@@ -28,12 +28,19 @@ Users, sometimes, are lost in terms on interface. Don't bother looking around do
 
 ## 💫 &NonBreakingSpace; More Things
 
-+ **Apps (Beta)**, PrimeHub Apps is continually to extend MLOps integration universe, with adding few [built-in Apps more](primehub-app-builtin-code-server) you can easily access Code Server, Matlab, Label Studio, MLflow, and Streamlit now. Allowing users to orchestrate data/tools for the acceleration of ML workflow. Besides, few tutorials are published as well, such as [Create Your Own App](primehub-app-tutorial-template) if built-in Apps don't meet your needs.
++ **Apps (Beta)**, PrimeHub Apps is continually to extend MLOps integration universe, with adding [few built-in Apps more](primehub-app-builtin-code-server) you can easily access Code Server, Matlab, Label Studio, MLflow, and Streamlit now. Allowing users to orchestrate data/tools for the acceleration of ML workflow.
 
++ [Tutorial: Manage and Deploy a Model with MLflow](model-management-tutorial)
+
++ [Tutorial: Data Labeling with Label Studio](primehub-app-tutorial-label-studio)
+
++ [Tutorial: Create Your Own App](primehub-app-tutorial-template)
 
 ---
 
 ## 🎪 &NonBreakingSpace; In the Community
+
++ [Use Intel OpenVINO Toolkit in PrimeHub Notebooks](https://medium.com/infuseai/use-intel-openvino-toolkit-in-primehub-notebooks-45e5463063e6) &neArr;
 
 + [PrimeHub Community Edition v3.6](https://github.com/InfuseAI/primehub/releases) &neArr;
 
