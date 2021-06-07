@@ -42,7 +42,6 @@ A running installed [MLflow instance](primehub-app) is required and [Group Setti
 The page displays registered models from binding MLflow.
 
 + See [Tutorial: Use MLflow Tracking](primehub-app-tutorial-mlflow#use-mlflow-tracking-in-primehub).
-+ See [Tutorial: Manage and Deploy a Model](model-management-tutorial).
 
 > If a loading page displays only, please double check `MLflow Tracking URI` configuration of MLflow setting in Group Setting.
 
@@ -97,3 +96,5 @@ From the deployment information page, `Model URI` presents `models:/<model_name>
 + `models:/`: the model which is tracked by MLflow is deployed from Model Management
 + `<model_name>`:the name of the model
 + `<model_version`: the version number of the model
+
+See [Tutorial: Manage and Deploy a Model](model-management-tutorial).
