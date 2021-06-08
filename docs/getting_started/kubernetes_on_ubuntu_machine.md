@@ -28,7 +28,7 @@ We provide a install script which makes the installation much easier to create a
 Download the script `primehub-install`
 
 ```bash
-curl -O https://storage.googleapis.com/primehub-release/bin/primehub-install
+curl -O https://raw.githubusercontent.com/InfuseAI/primehub/master/install/primehub-installl
 chmod +x primehub-install
 ```
 
