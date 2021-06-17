@@ -20,6 +20,7 @@ Type | Format | Note
 Google Cloud Storage | `gs://mybucket/path/to/my/model` | Please make sure your google cloud storage bucket is public.
 PHFS | `phfs:///path/to/my/model` | This path is mapped to `/phfs/path/to/the/model` path in the PrimeHub Notebook.
 MLflow Model | `models:/model-name/version` | It maps to the MLflow Model Registry. The version could be either a version number or the stage of a model.
+NFS | `nfs://1.2.3.4/to/my/model` | This path is mapped to `/nfs/to/my/model` in the Model Deployment containers
 
 ## How does the Model URI work?
 
