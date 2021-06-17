@@ -1,0 +1,95 @@
+---
+id: version-3.6-model-deployment-tutorial-prepackaged-image
+title: Deploy a Model by Pre-packaged Server
+description: Deploy a Model by Pre-packaged Server
+original_id: model-deployment-tutorial-prepackaged-image
+---
+
+<div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<br>
+
+In this tutorial, we will show how to deploy a model by a pre-packaged server. We deploy a IRIS model by SKLearn pre-packaged server.
+
+## Prerequisites
+
+### Enable Model Deployment in Group Management
+
+Remember to enable model deployment in your group, contact your admin if it is not enabled yet.
+![](assets/mdeploy_enable.png)
+
+## Tutorial Steps
+
+1. Go to [User Portal](quickstart/login-portal-user) and select `Deployments`.
+2. Then we are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
+3. Fill in the `Deployment name` field with `quickstart-iris`
+
+   Select the `Model Image` field with `SKLearn server`; This is a pre-packaged model server image that can serve `scikit-learn` model.
+   ![](assets/mdeploy_create_model_image_suggestion.png)
+
+   Fill in the `Model URI` field with `gs://seldon-models/sklearn/iris`; This path is included the trained model in the Google Cloud Storage.
+   ![](assets/mdeploy_quickstart_deploydetail_1.png)
+   
+4. In the `Resources`,
+    - choose the instance type, here we use the one with configuration `(CPU: 0.5 / Memory: 1 G / GPU: 0)`
+    - leave `Replicas` as default (1)
+    ![](assets/mdeploy_quickstart_deployresource.png)
+5. Click on `Deploy` button, then we will be redirected to model deployment list page. Wait for a while and click on `Refresh` button to check our model is deployed or not.
+    ![](assets/mdeploy_quickstart_deploying_iris.png)
+    
+    ![](assets/mdeploy_quickstart_deployed_iris.png)
+
+    When the deployment is deployed successfully, we can click on cell to check its detail.
+    
+    ![](assets/mdeploy_quickstart_detailpage_1.png)
+
+6. We can view some detailed information in detail page, now let's test our deployed model! Copy the `endpoint URL` and replace the `${YOUR_ENDPOINT_URL}` in the following block.
+    ```bash
+    curl -X POST ${YOUR_ENDPOINT_URL} \
+        -H 'Content-Type: application/json' \
+        -d '{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'
+    ```
+    Then copy the entire block to the terminal for execution, and we are sending tensor as request data.
+
+  - Example of request data
+      ```bash
+      curl -X POST https://hub.xxx.aws.primehub.io/deployment/quickstart-iris-xxx/api/v1.0/predictions \
+          -H 'Content-Type: application/json' \
+          -d '{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'
+      ```
+  - Example of response data (it predicts the species is `Iris setosa` as the first index has the highest prediction value)
+      ```bash
+      {
+        "data": {
+          "names": [
+            "t:0",
+            "t:1",
+            "t:2"
+          ],
+          "tensor": {
+            "shape": [
+              1,
+              3
+            ],
+            "values": [
+              0.8700986370655746,
+              0.12989376988727133,
+              7.5930471540348975e-06
+            ]
+          }
+        },
+        "meta": {}
+      }
+      ```
+7. Congratulations! We have deployed a model as an endpoint service that can respond requests anytime from everywhere.
+
+## Reference
+
+- For the completed model deployment feature introduction, see [Model Deployment](model-deployment-feature).
+- For the customized pre-packaged server instruction, see [Pre-packaged servers](model-deployment-prepackaged-server-intro).
