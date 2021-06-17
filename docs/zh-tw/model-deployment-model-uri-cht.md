@@ -21,6 +21,7 @@ Type | Format | Note
 Google Cloud Storage | `gs://mybucket/path/to/my/model` | google cloud storage bucket 需設為公開
 PHFS | `phfs:///path/to/my/model` | 此路徑對應到 PrimeHub Notebook 為 `/phfs/path/to/the/model` 路徑。
 MLflow Model | `models:/model-name/version` | 對應到 MLflow Model Registry. version 可以是版號或是階段(stage) 名稱。
+NFS | `nfs://1.2.3.4/to/my/model` |對應到 Model Deployment containers 可存取的 NFS 路徑 `/nfs/to/my/model` 
 
 ## Model URI 運用原理
 
