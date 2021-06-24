@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>PrimeHub Apps · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Allows third-party application integrated into PrimeHub platform."/><meta name="docsearch:version" content="3.5"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="PrimeHub Apps · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="Allows third-party application integrated into PrimeHub platform."/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.5</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/3.5/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.5/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Designs</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/concept">Concept</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/nb-data-store">Persistence</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/resources-quota">Resources Quota</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/roles">Permission</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/environment-variables">Environment Variables</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/login-portal-user">User Portal</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/dev-introduction">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/kubernetes_on_gke">Kubernetes on GKE</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/kubernetes_on_eks">Kubernetes on AWS EKS</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Community</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/install_primehub_ce">Install PrimeHub CE</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/kubernetes_on_ubuntu_ce">Install PrimeHub CE on Single Node</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup PrimeHub Enterprise</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/install_primehub">Install PrimeHub EE</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/kubernetes_on_ubuntu_machine">Install PrimeHub EE on Single Node</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Upgrade</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/upgrade-ce2ee">From CE to EE</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">QuickStart<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/qs-primehub">PrimeHub CE/EE</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/qs-primehub-deploy">PrimeHub Deploy</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Notebooks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/launch-project">Start Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/user-advanced-setting">Advanced Settings</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/ssh-config">SSH Server Feature</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/notebook-tips">Tips</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Extension</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/ph-notebook-extension">PrimeHub Extension</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/notebook-as-job">Notebook as a Job</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Jobs<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/job-submission-feature">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/job-artifact-feature">Job Artifacts</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorial</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/job-submission-tutorial-simple">Simple Example</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/job-submission-tutorial-p1">(Part1) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/job-submission-tutorial-p2">(Part2) MNIST classifier training</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/job-submission-tutorial-p3">(Advanced) Use Job Submission to Tune Hyperparameters</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/job-submission-tutorial-p4">(Advanced) Model Serving by Seldon</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/job-artifacts-simple">Job Artifacts Simple Usecase</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Schedule<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/job-scheduling-feature">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Models<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-feature">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-tutorial-concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-tutorial-prepackaged-image">Deploy a Model by Pre-packaged Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-tutorial-prepackaged-image-phfs">Deploy a Model by Pre-packaged Server (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-tutorial-model-image">Deploy a Model by Image built from Language Wrapper</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Pre-packaged servers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-prepackaged-server-intro">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-prepackaged-server-tensorflow2">TensorFlow server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-prepackaged-server-pytorch">PyTorch server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-prepackaged-server-sklearn">SKLearn server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-prepackaged-server-custom">Custom Pre-packaged Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-prepackaged-server-test">Run Pre-packaged Server Locally</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Package from Language Wrapper</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-language-wrapper-intro">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-language-wrapper-python">Package a Model Image for Python</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-language-wrapper-r">Package a Model Image for R</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-language-wrapper-reusable-base-image">Package a Model Image from a Reusable Base Image</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Advanced</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-prediction-apis">Prediction APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model-deployment-model-uri">Model URI</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Shared Files<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/shared-files">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Apps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/primehub-app">Overview (Alpha)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/primehub-app-tutorial-mlflow">Create an MLflow server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Builtin Apps</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/primehub-app-builtin-mlflow">MLflow</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/primehub-app-builtin-streamlit">Streamlit</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/primehub-app-builtin-code-server">Code Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/primehub-app-builtin-matlab">MATLAB</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Group Administration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/group-image">Images</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/group-setting">Settings</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Admin Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/login-portal-admin">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage users and groups</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-group">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Instance Type</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/usecase-toleration">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/usecase-nodeselector">NodeSelector</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-it-performance">Quality of Service for Pods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and build images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-image">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-build-image">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/custom-image-guideline">Custom Image Guideline</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/images-list">Available Images List</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Datasets and Upload</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-dataset">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-uploader">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage and obtain secrets</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-secret">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Manage Notebook instances</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-nb-admin">Notebooks Admin</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Monthly Report</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-report">Usage Reports</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/admin-system">System Settings</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Maintenance tool kits</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/maintenance">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/maintenance-resize-user-vol">Increase User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/maintenance-resize-group-vol">Increase Group Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/howto-check-user-vol">HOWTO - Check User Volume Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/howto-check-group-vol">HOWTO - Check Group Volume Usage</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Quick Start</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/create-user">Create User</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/create-group">Create Group</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/assign-group-admin">Assign Group Admin</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/add-instance-type">Create/Plan Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/add-infuseai-image">Add InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/add-image">Add Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/build-image">Build Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/secret-pull-image">Pull Secret for GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/quickstart/secret-gitsync">Gitsync Secret for GitHub</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub Deploy<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/deploy-index">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Admin Portal</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/model_deployment/md-admin-portal">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model_deployment/md-group">Group Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model_deployment/md-user">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model_deployment/md-instancetype">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model_deployment/md-secret">Secret Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/model_deployment/md-system">System Management</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Concepts</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/design/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/data-model">Data Model</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/crds">CRDs</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/graphql">GraphQL</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/persistence-storage">Persistence Storages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Designs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/design/admission">Admission</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/jupyterhub">JupyterHub</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/notebook-kernel-process">Notebook with kernel process</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/dataset-upload">Dataset Upload</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/image-builder">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/job-scheduler">Job Scheduler</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/job-monitoring">Job Monitoring</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/install-helper-design">Install Helper</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/user-portal">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/meta-chart">Primehub Meta Chart</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/model-deployment">Model Deployment (Alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/primehub-store">PrimeHub Store</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/log-persistence">Log Persistence</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/phfs">PrimeHub File System (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/usage">PrimeHub Usage</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/design/job-artifact">Job Artifact</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/3.5/design/primehub-apps">PrimeHub Apps</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/configure-primehub-store">PrimeHub Store</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/configure-ssh-server">SSH Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/configure-job-submission">Job Submission</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/configure-model-deployment">Model Deployment</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/configure-image-builder">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/getting_started/configure-self-signed-ca">Self-Signed Certificate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tasks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Jupyter Images</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/tasks/repo2docker">repo2docker image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/tasks/non-standard-image">Non standard image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/tasks/matlab-img">MATLAB Image</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/tasks/api-token">Generate API Token</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Monitoring</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/tasks/monitoring">Grafana PrimeHub Dashboard</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/3.5/tasks/customize-job-runtime">Customize Runtime</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">References<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/references/primehub_chart">Chart Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/comparison">Tiers Feature Comparison</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/kubeflow-installation-guide">Kubeflow Installation Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/ssh-vscode">VSCode Remote-SSH Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/guide_manual/ssh-keygen">SSH Key Generation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble-shoot-guide">Trouble-shooting Guide</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JupyterHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/jh-blank-page">After spawned, JupyterHub shows a blank page</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/dataset-failure">Jupyter spawning fails due to mounting datasets</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Keycloak</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/kc-brute-force-detection">Lock down accounts after several login failures</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/kc-password-policy">Password Policy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SSH Server</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/ssh-server-permission-denied">Permission Denied</a></li><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/ssh-server-connection-refused">Connection Refused</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/3.5/trouble/kubelet-restart">Restart Kubelet</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">PrimeHub Apps</h1></header><article><div><span><p>Allows third-party application integrated into PrimeHub platform.</p>
+<h2><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h2>
+<ol>
+<li><strong>Shared domain</strong>: The installed application can be accessed in the sub-path of PrimeHub's domain. We don't need an additional domain for this application.</li>
+<li><strong>Authorization</strong>: Allows to restrict the applications only accessible to group members, PrimeHub logged-in users, or public users.</li>
+<li><strong>Data Persistence</strong>: Allows applications to persist data in group volume and access data in other persistent storage, like datasets and PHFS.</li>
+<li><strong>Resource constraint</strong>: Enforce the resource CPU, memory, GPU quota limitation in a group.</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="concepts"></a><a href="#concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concepts</h2>
+<h3><a class="anchor" aria-hidden="true" id="application"></a><a href="#application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application</h3>
+<p>We introduce a new concept: <strong>Application</strong> in PrimeHub. An application is an instance of an integrated third-party application (e.g. MLflow). We install it as a group resource and can install multiple instances for a kind of application within a group.</p>
+<h3><a class="anchor" aria-hidden="true" id="application-template"></a><a href="#application-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application Template</h3>
+<p>Application template describes how an application is installed. It contains this information</p>
+<ol>
+<li><strong>podTemplate:</strong> used to create the deployment of the application</li>
+<li><strong>Service Ports:</strong> used to create the service</li>
+<li><strong>HTTP Port:</strong> The HTTP port if the application has a web interface</li>
+<li><strong>defaultEnvs:</strong> The default env variables are used when creating the application. When an application is created, the values would be put in enviornment variables of the target application.
+<ul>
+<li>ENV Name</li>
+<li>Description</li>
+<li>Default value</li>
+<li>Optional</li>
+</ul></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="create-an-application"></a><a href="#create-an-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create an Application</h3>
+<p>Users can create an application from an application template.</p>
+<ol>
+<li>Select an application template</li>
+<li>Fill the default envs provided by the template</li>
+<li>Select the instance type</li>
+<li>Choose the scope (Public / PrimeHub users only/ Group members only). The scope only affects the web interface of the application.</li>
+<li>Create</li>
+</ol>
+<p><strong>Preset Environment Variables</strong></p>
+<p>The preset environment variables can be used in the value field of the environment variables. Here is the list of preset environment variables</p>
+<ol>
+<li><code>PRIMEHUB_APP_ID</code>: The PhApplication k8s resource name
+<code>&lt;app-id&gt;</code></li>
+<li><code>PRIMEHUB_APP_ROOT</code>:  The root of persistence storage for the application.
+<ul>
+<li><code>&lt;group-volume&gt;/phapplications/&lt;app-id&gt;</code> (if group volume available)</li>
+<li><code>/phapplications/&lt;app-id&gt;</code> (if group volume not available)</li>
+</ul></li>
+<li><code>PRIMEHUB_APP_BASE_URL</code>: The url prefix for the application
+<code>/console/apps/&lt;app-id&gt;</code></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="connect-to-application"></a><a href="#connect-to-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connect to Application</h3>
+<p>There are two ways to connect to the application</p>
+<ul>
+<li><strong>Connect to a web interface from sub-path of PrimeHub</strong>: Most of the applications are web-based applications. To access this kind of application, users can access it from <code>https://&lt;primehub&gt;/console/apps/&lt;app-id&gt;</code> from the browser.</li>
+<li><strong>Connect to a TCP endpoint from the host name and port</strong>: For some applications, they provide non-HTTP service. We can access it by the service endpoint <code>&lt;my-app-svc&gt;:&lt;my-app-port&gt;</code>. The endpoint can be only accessed in the PrimeHub cluster internally. (like notebooks and jobs)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="application-management"></a><a href="#application-management" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application Management</h3>
+<ol>
+<li>Users can start/stop an application</li>
+<li>Users can get the basic information of the application</li>
+<li>Users can get the application log</li>
+<li>Users can delete an application</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="implementation"></a><a href="#implementation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation</h2>
+<h3><a class="anchor" aria-hidden="true" id="principles"></a><a href="#principles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Principles</h3>
+<ol>
+<li>Introduce a new CRD <code>PhApplication</code> that represents the app to install. It will derive a deployment and service for this app.</li>
+<li>We use <code>PhAppTemplate</code> to create <code>PhApplication</code>. However, <code>PhApplication</code> can work standalone without PhAppTemplate. The controller of <code>PhApplication</code> should not know <code>PhAppTemplate</code>.</li>
+<li>GraphQL uses <code>PhAppTemplate</code> to create <code>PhApplication</code>. And the template and template data are stored in the <code>PhApplication</code>'s annotation for update use thereafter.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="crds"></a><a href="#crds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CRDs</h3>
+<p><strong>PhApplication</strong></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">primehub.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">PhApplication</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">mlflow-xyzab</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">hub</span>
+  <span class="hljs-attr">annotations:</span>
+      <span class="hljs-attr">phapplication.primehub.io/template:</span> <span class="hljs-string">'&lt;json of app template&gt;'</span>
+      <span class="hljs-attr">phapplication.primehub.io/template-data:</span> <span class="hljs-string">'&lt;json of app template&gt;'</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">stop:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">displayName:</span> <span class="hljs-string">"My MLflow"</span>
+  <span class="hljs-attr">groupName:</span> <span class="hljs-string">"phusers"</span>
+  <span class="hljs-attr">instanceType:</span> <span class="hljs-string">""</span>
+  <span class="hljs-attr">scope:</span> <span class="hljs-string">"group"</span>
+  <span class="hljs-attr">podTemplate:</span>
+    <span class="hljs-attr">spec:</span>
+      <span class="hljs-attr">containers:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">mlflow</span>
+        <span class="hljs-attr">image:</span> <span class="hljs-string">larribas/mlflow:1.9.1</span>
+        <span class="hljs-attr">command:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">mlflow</span>
+        <span class="hljs-attr">args:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">server</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">--host</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">--default-artifact-root</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">$(DEFAULT_ARTIFACT_ROOT)</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">--backend-store-uri</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">$(BACKEND_STORE_URI)</span>
+        <span class="hljs-attr">env:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">FOO</span>
+          <span class="hljs-attr">value:</span> <span class="hljs-string">bar</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">BACKEND_STORE_URI</span>
+          <span class="hljs-attr">value:</span> <span class="hljs-string">"sqlite:///$(PRIMEHUB_APP_ROOT)/mlflow.db"</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">DEFAULT_ARTIFACT_ROOT</span>
+          <span class="hljs-attr">value:</span> <span class="hljs-string">"$(PRIMEHUB_APP_ROOT)/mlruns"</span>
+        <span class="hljs-attr">ports:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">containerPort:</span> <span class="hljs-number">5000</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">http</span>
+          <span class="hljs-attr">protocol:</span> <span class="hljs-string">TCP</span>
+  <span class="hljs-attr">svcTemplate:</span>
+    <span class="hljs-attr">spec:</span>
+      <span class="hljs-attr">ports:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">http</span>
+            <span class="hljs-attr">port:</span> <span class="hljs-number">5000</span>
+            <span class="hljs-attr">protocol:</span> <span class="hljs-string">TCP</span>
+            <span class="hljs-attr">targetPort:</span> <span class="hljs-number">5000</span>
+  <span class="hljs-attr">httpPort:</span> <span class="hljs-number">5000</span>
+<span class="hljs-attr">status:</span>
+  <span class="hljs-attr">phase:</span> <span class="hljs-string">"Ready"</span>
+  <span class="hljs-attr">message:</span> <span class="hljs-string">"Error message"</span>
+  <span class="hljs-attr">serviceName:</span> <span class="hljs-string">"app-mlflow-xyzab"</span>
+</code></pre>
+<ul>
+<li><strong>annotations</strong>:
+<ul>
+<li><code>phapplication.primehub.io/template</code>: template content used to create this <code>PhApplication</code></li>
+<li><code>phapplication.primehub.io/template-data</code>: template data used to create this <code>PhApplication</code>. It is the POST data of the graphql <code>PhApplication</code> create.</li>
+</ul></li>
+<li><strong>spec</strong>:
+<ul>
+<li><strong>podTemplate</strong>: the template of pods</li>
+<li><strong>svcTemplate</strong>: the template of service</li>
+<li><strong>scope</strong>: &quot;group&quot;, &quot;primehub&quot;, &quot;public&quot;</li>
+<li><strong>httpPort</strong>: the backend service port that the proxy should forward to</li>
+</ul></li>
+<li><strong>status</strong>:
+<ul>
+<li><strong>phase</strong>: &quot;Starting&quot;, &quot;Ready&quot;, &quot;Updating&quot;, &quot;Stopping&quot;, &quot;Stopped&quot;, &quot;Error&quot;</li>
+<li><strong>message</strong>: human readable message</li>
+<li><strong>serviceName</strong>: name of service  (used for graphql <code>serviceName</code> field)</li>
+</ul></li>
+</ul>
+<p><strong>PhAppTemplate</strong></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">primehub.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">PhAppTemplate</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">mlflow</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">hub</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">MLFlow</span>
+  <span class="hljs-attr">description:</span>
+  <span class="hljs-attr">version:</span>
+  <span class="hljs-attr">docLink:</span>
+  <span class="hljs-attr">icon:</span> <span class="hljs-string">&lt;url</span> <span class="hljs-string">to</span> <span class="hljs-string">icon</span> <span class="hljs-string">or</span> <span class="hljs-string">data-uri&gt;</span>
+    <span class="hljs-attr">defaultEnvs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">BACKEND_STORE_URI</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">""</span>
+    <span class="hljs-attr">defaultValue:</span> <span class="hljs-string">"sqlite://$(PRIMEHUB_APP_ROOT)/mlflow.db"</span>
+    <span class="hljs-attr">optional:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">DEFAULT_ARTIFACT_ROOT</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">""</span>
+    <span class="hljs-attr">defaultValue:</span> <span class="hljs-string">"$(PRIMEHUB_APP_ROOT)/mlruns"</span>
+    <span class="hljs-attr">optional:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">template:</span>
+    <span class="hljs-comment"># The template of phApplication</span>
+    <span class="hljs-attr">spec:</span>
+      <span class="hljs-attr">podTemplate:</span>
+        <span class="hljs-attr">spec:</span>
+          <span class="hljs-attr">containers:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">mlflow</span>
+            <span class="hljs-attr">image:</span> <span class="hljs-string">larribas/mlflow:1.9.1</span>
+            <span class="hljs-attr">command:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">mlflow</span>
+            <span class="hljs-attr">args:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">server</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">--host</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">--default-artifact-root</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">$(DEFAULT_ARTIFACT_ROOT)</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">--backend-store-uri</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">$(BACKEND_STORE_URI)</span>
+            <span class="hljs-attr">env:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">FOO</span>
+              <span class="hljs-attr">value:</span> <span class="hljs-string">bar</span>
+            <span class="hljs-attr">ports:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">containerPort:</span> <span class="hljs-number">5000</span>
+              <span class="hljs-attr">name:</span> <span class="hljs-string">http</span>
+              <span class="hljs-attr">protocol:</span> <span class="hljs-string">TCP</span>
+      <span class="hljs-attr">svcTemplate:</span>
+        <span class="hljs-attr">spec:</span>
+          <span class="hljs-attr">ports:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">http</span>
+            <span class="hljs-attr">port:</span> <span class="hljs-number">5000</span>
+            <span class="hljs-attr">protocol:</span> <span class="hljs-string">TCP</span>
+            <span class="hljs-attr">targetPort:</span> <span class="hljs-number">5000</span>
+      <span class="hljs-attr">httpPort:</span> <span class="hljs-number">5000</span>
+
+</code></pre>
+<ul>
+<li><strong>spec</strong>:
+<ul>
+<li><strong>version</strong>: the version string of the template</li>
+<li><strong>description</strong>: free form description of this applicatin</li>
+<li><strong>docLink</strong>: the document url</li>
+<li><strong>defaultEnvs</strong>: used for create the additional envs
+<ul>
+<li><strong>name</strong>: the name of the environment variable</li>
+<li><strong>descsription</strong>: description of the variable</li>
+<li><strong>defaultValue</strong>: the default value of the variable</li>
+<li><strong>optional</strong>: if the environment is optional</li>
+</ul></li>
+<li><strong>template</strong> (the content of phApplication). See the phApplication</li>
+</ul></li>
+</ul>
+<p>NOTE:</p>
+<ol>
+<li>Why we copy the content of PhAppTemplate to PhApplication instead of use name ref is we want to decouple the created app from the template.</li>
+<li><code>phapplication.primehub.io/template</code> is used for GraphQL to use. We keep the template so we can use it thereafter while updating the app.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="control-plane"></a><a href="#control-plane" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Control Plane</h3>
+<ol>
+<li><p>GraphQL create <code>PhApplication</code> resource from <code>PhAppTemplate</code></p></li>
+<li><p>The controller of <code>PhApplication</code> reconciles the <code>PhApplication</code>. The hierarchy is</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-string">PhApplication</span>
+<span class="hljs-string">├──</span> <span class="hljs-string">Deployment</span>
+<span class="hljs-string">├──</span> <span class="hljs-string">Service</span>
+<span class="hljs-string">└──</span> <span class="hljs-string">NetworkPolicy</span>
+</code></pre></li>
+</ol>
+<p><strong>Create</strong></p>
+<ol>
+<li>Console get the template list from GraphQL</li>
+<li>Console select one template and list the defaultEnvs to the UI's variables</li>
+<li>Console call GraphQL to create phapplication
+<ol>
+<li>Get the phapptemplate content</li>
+<li>Append env variables to the end of the container's env</li>
+<li>Set the scope</li>
+</ol></li>
+</ol>
+<p><strong>Update</strong></p>
+<ol>
+<li>Console gets the PhApplication from GraphQL.</li>
+<li>GraphQL returns PhApplication user data <code>phapplication.primehub.io/template-data</code> and the PhApplication default envs from <code>phapplication.primehub.io/template</code></li>
+<li>Console can reset the variables</li>
+<li>Console can add/remove/update the env vars</li>
+<li>Console call update to the GraphQL</li>
+<li>GraphQL gets the current PhApplication, and modify container env, scope, instance type.</li>
+<li>GraphQL cannot change the appId and template</li>
+</ol>
+<p><strong>Controller</strong></p>
+<ul>
+<li><p>Deployment</p>
+<ul>
+<li>name <code>app-&lt;app-id&gt;</code></li>
+<li>Use <code>spec.podTemplate.spec</code></li>
+<li>Volumes
+<ul>
+<li>Add group, dataset volumes</li>
+<li>Add empty dir if no group volume available</li>
+</ul></li>
+<li>Init Container
+<ul>
+<li>run as root</li>
+<li><code>mkdir -p $(PRIMEHUB_APP_ROOT)</code></li>
+</ul></li>
+<li>Container
+<ul>
+<li>Keep only the first container</li>
+<li>Set resources from instanceType</li>
+<li>Prepend (not append) the primehub required envs.  <code>PRIMEHUB_APP_ID</code>, ,<code>PRIMEHUB_APP_ROOT</code> and <code>PRIMEHUB_APP_BASE_URL</code></li>
+<li>Mount group, dataset volumes</li>
+<li>Mount empty dir if no group volume available (<code>/phapplications/&lt;app-id&gt;</code>)</li>
+</ul></li>
+<li>The created pod should have label
+<ul>
+<li><code>app=primehub-app</code></li>
+<li><code>primehub.io/phapplication=&lt;appid&gt;</code>,</li>
+<li><code>primehub.io/group: &lt;escaped group&gt;</code></li>
+</ul></li>
+</ul></li>
+<li><p>Service</p>
+<ul>
+<li>name <code>app-&lt;app-id&gt;</code></li>
+<li>Use <code>spec.svcTemplates.spec</code></li>
+</ul></li>
+<li><p>NetworkPolicy</p>
+<ul>
+<li>Allows the ingress traffic from
+<ul>
+<li>pod label with <code>primehub.io/group=&lt;escape-group&gt;</code></li>
+<li>primehub-console (for proxy)</li>
+</ul></li>
+</ul></li>
+<li><p><code>status.Phase</code></p>
+<p>The phase of PhApplication</p>
+<ol>
+<li><strong>Starting</strong>: App is starting, no ready pod and service still not available
+<code>deployment.status.readyReplicas==0</code></li>
+<li><strong>Ready</strong>: App is ready to use
+<code>deployment.status.readyReplicas==1</code> and <code>deployment.status.replicas==1</code></li>
+<li><strong>Updating</strong>: App is updating, old pod is still ready to use, but new version of app is starting.
+<code>deployment.status.readyReplicas==1</code> and <code>deployment.status.replicas&gt;1</code></li>
+<li><strong>Stopping</strong>: App is stopping, the pod is terminating but resource has not been freed.
+<code>spec.stop=true</code>  and <code>deployment.status.replicas&gt;0</code></li>
+<li><strong>Stopped</strong>: App is stopped, the pod is delated. No resource is used.
+<code>spec.stop=true</code> and <code>deployment.status.replicas==0</code></li>
+</ol>
+<ul>
+<li>We can check by <code>starting</code> and <code>updating</code> by deployment status</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data-plane"></a><a href="#data-plane" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data Plane</h3>
+<p><strong>Http Proxy</strong></p>
+<p>App path is under <code>https://&lt;primehub&gt;/console/apps/&lt;app-id&gt;</code>. We validate if the user can access app by server session. The first solution we come out is to validate the traffic by access token. The flow is as follows:</p>
+<p><img src="/docs/assets/primehub-apps-design-data-plane1.png" alt=""></p>
+<ol>
+<li>Get the app information of <code>&lt;app-id&gt;</code> in the path</li>
+<li>If app is with scope <code>group only</code>, it will check if the owner of this access token has permission of the group</li>
+<li>If yes, accept the request and proxy to upstream service</li>
+</ol>
+<p>Performance issue:</p>
+<ol>
+<li>Access Token is expired about 5 mins. Too short to cache.</li>
+<li>To refresh the access token, we need to request Keycloak token endpoint to ask for a new access token.</li>
+<li>If the refresh token is expired, we need to go through the OIDC process.</li>
+<li>The cache miss rate would be high because we keep changing the access token.</li>
+</ol>
+<p>The solution is to implement the &quot;session&quot; concept</p>
+<p><img src="/docs/assets/primehub-apps-design-data-plane2.png" alt=""></p>
+<ol>
+<li>If a new connection to the app, it will use the access token to authorize the request by the access token. If the traffic is accepted, create a session.</li>
+<li>When the session is created, the console sets a cookie with key <code>phapplication-session-id</code> under path <code>/console/apps/&lt;app&gt;</code>, expired in 30mins, and maintains the session cache on the server side.</li>
+<li>If the request contains the session cookie and it is found in the session cache. Allows the request to the backend. And it will extend the expiration time to 30mins.</li>
+<li>If the session id is not found in the server, authorize the request as step 1</li>
+</ol>
+<p>Performance issue:</p>
+<ol>
+<li>Because the session can be easily extended, there would be much fewer Keycloak token endpoint requests.</li>
+<li>The cache miss rate would be low because the session id is only expired if it is not used for 30 mins.</li>
+</ol>
+<p><strong>Log Traffic</strong></p>
+<p>Log API</p>
+<ol>
+<li>Add a new endpoint (generic log endpoints authorized by group label)
+<code>/api/logs/pods/&lt;pod&gt;</code></li>
+<li>GraphQL get the pod and find if there are <code>primehub.io/group</code> label and unescaped the group. If not found, rejected.</li>
+<li>Check the user of the token is the group member of the app</li>
+<li>Get the pod log from k8s API</li>
+</ol>
+<p>Console &amp; GraphQL</p>
+<ol>
+<li><p>Get the pod list from GraphQL API (reference <code>PhDeployment</code>)</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-string">phApplication(...)</span> <span class="hljs-string">{</span>
+   <span class="hljs-string">pods</span> <span class="hljs-string">{</span>
+     <span class="hljs-string">name</span>         <span class="hljs-string">//</span> <span class="hljs-string">app-mlflow-xyzab-xxxx-yyyyy</span>
+     <span class="hljs-string">logEndpoint</span>  <span class="hljs-string">//</span> <span class="hljs-string">https://hub.a.demo.primehub.io/api/logs/pods/app-mlflow-xyzab-xxxx-yyyyy</span>
+   <span class="hljs-string">}</span>
+<span class="hljs-string">}</span>
+</code></pre></li>
+<li><p>GraphQL get the pods from the label <code>primehub.io/phapplication=&lt;appid&gt;</code></p></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.5/design/job-artifact"><span class="arrow-prev">← </span><span>Job Artifact</span></a><a class="docs-next button" href="/docs/3.5/getting_started/configure-primehub-store"><span class="function-name-prevnext">PrimeHub Store</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#features">Features</a></li><li><a href="#concepts">Concepts</a><ul class="toc-headings"><li><a href="#application">Application</a></li><li><a href="#application-template">Application Template</a></li><li><a href="#create-an-application">Create an Application</a></li><li><a href="#connect-to-application">Connect to Application</a></li><li><a href="#application-management">Application Management</a></li></ul></li><li><a href="#implementation">Implementation</a><ul class="toc-headings"><li><a href="#principles">Principles</a></li><li><a href="#crds">CRDs</a></li><li><a href="#control-plane">Control Plane</a></li><li><a href="#data-plane">Data Plane</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>

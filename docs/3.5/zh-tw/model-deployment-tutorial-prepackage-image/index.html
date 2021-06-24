@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>透過預建置 Base Image 加速流程 · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta name="docsearch:version" content="3.5"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="透過預建置 Base Image 加速流程 · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.5</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.5/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.5/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">透過預建置 Base Image 加速流程</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+</div>
+<p>此教學介紹如何建置一個 Base Image 並使用它，這樣的方式有兩個主要的好處：</p>
+<ol>
+<li>如果程式中讀取和使用模型的方式是一樣的，許多不同的模型可以共用相同的 Base Image</li>
+<li>當只需要更新模型時，使用 Base Image 可以加速流程</li>
+</ol>
+<p>基本的概念是，先寫一個較通用的模型讀取和使用程式，讀取模型時假設模型會放在一個固定的路徑上。然後用 <code>s2i</code> 建置出 Base Image 。</p>
+<p>之後每當要更換模型時，只需要用 <code>docker</code> 將模型移動到正確的路徑上，並建置出最後的 Image 即可以使用。</p>
+<p>以下的章節，使用 Tensorflow 2 當作範例，完整的程式可以在 <a href="https://github.com/InfuseAI/model-deployment-examples/tree/master/tensorflow2_prepackage">Github</a> 中找到。</p>
+<h2><a class="anchor" aria-hidden="true" id="軟體需求"></a><a href="#軟體需求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>軟體需求</h2>
+<p>請先安裝好以下軟體</p>
+<ul>
+<li>docker: <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></li>
+<li>s2i: <a href="https://github.com/openshift/source-to-image#installation">https://github.com/openshift/source-to-image#installation</a></li>
+</ul>
+<p>安裝完成後，下達以下指令確認一切正常：</p>
+<pre><code class="hljs css language-bash">s2i usage seldonio/seldon-core-s2i-python3:0.18
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="建置-base-image-python"></a><a href="#建置-base-image-python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>建置 Base Image (Python)</h2>
+<ul>
+<li><p>建議使用 Python 3.6</p></li>
+<li><p>建立 <code>Model.py</code> 檔，內容可以參考以下的格式內容</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Model</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self._model = tf.keras.models.load_model(<span class="hljs-string">'model'</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(self, X, feature_names=None, meta=None)</span>:</span>
+        output = self._model.predict(X)
+        <span class="hljs-keyword">return</span> output
+</code></pre></li>
+<li><p>產生 <code>requirements.txt</code> 檔，並在其中寫下所需套件</p>
+<pre><code class="hljs css language-txt">tensorflow==<span class="hljs-number">2.1</span><span class="hljs-number">.0</span>
+</code></pre></li>
+<li><p>建立 <code>.s2i</code> 資料夾後建立 <code>.s2i/environment</code> 檔案，並在其中寫下以下內容</p>
+<pre><code class="hljs css language-script"><span class="hljs-attr">MODEL_NAME</span>=Model
+<span class="hljs-attr">API_TYPE</span>=REST
+<span class="hljs-attr">SERVICE_TYPE</span>=MODEL
+<span class="hljs-attr">PERSISTENCE</span>=<span class="hljs-number">0</span>
+</code></pre></li>
+</ul>
+<p>建置 Base Image</p>
+<pre><code class="hljs css language-bash"> s2i build <span class="token builtin class-name">.</span> seldonio/seldon-core-s2i-python3:0.18 tensorflow2-prepackage
+</code></pre>
+<p>(當為 Python 3 而非 Python 3.6 時使用 seldonio/seldon-core-s2i-python3)</p>
+<h2><a class="anchor" aria-hidden="true" id="使用-base-image-建置最後模型部署之-image"></a><a href="#使用-base-image-建置最後模型部署之-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用 Base Image 建置最後模型部署之 Image</h2>
+<p>依我們 Base Image 的撰寫方式，假設模型是使用以下方式輸出</p>
+<pre><code class="hljs css language-python">model.save(export_path)
+</code></pre>
+<p>皆可以使用此 Base Image 來建置模型部署的 Image 。</p>
+<p>首先, 產生 <code>Dockerfile</code></p>
+<pre><code class="hljs css language-txt"><span class="hljs-keyword">FROM</span> tensorflow2-prepackage
+<span class="hljs-keyword">COPY</span><span class="bash"> export_path model </span>
+</code></pre>
+<p>(請取代 <code>export_path</code> 成為模型的路徑)</p>
+<p>這代表將模型拷貝進 Base Image 所預先定義的模型路徑上。</p>
+<p>接著便可以透過 <code>docker</code> 建置模型部署的 Image ：</p>
+<pre><code class="hljs css language-bash">docker build -t tensorflow2-prepackage-model <span class="token builtin class-name">.</span>
+</code></pre>
+<p>建置完成後，將其跑起來，測試剛剛建置好的 Image。</p>
+<pre><code class="hljs css language-bash">docker run -p <span class="token number">5000</span>:5000 --rm tensorflow2-prepackage-model
+</code></pre>
+<p>送出 Post Request 並觀察回傳的訊息是否符合預期。</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
+    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    -d <span class="token string">'{ "data": {"ndarray": [your data format] } }'</span>
+</code></pre>
+<p>確認符合預期後，便可以將這個 Image 用在 PrimeHub 的模型部署功能上。</p>
+<h2><a class="anchor" aria-hidden="true" id="共用-base-image"></a><a href="#共用-base-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>共用 Base Image</h2>
+<p>只需要將 Base Image 推送到 Docker Registry 就可以跟其他人共用。</p>
+<p>因此，其他人不需要再自己重寫一次模型讀取和使用的程式，他們只需要將模型用 <code>docker</code> 拷貝到正確的路徑上，然後建置出模型部署 Image 就可以了。</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#軟體需求">軟體需求</a></li><li><a href="#建置-base-image-python">建置 Base Image (Python)</a></li><li><a href="#使用-base-image-建置最後模型部署之-image">使用 Base Image 建置最後模型部署之 Image</a></li><li><a href="#共用-base-image">共用 Base Image</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>CRD Structural Schema · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="From Kubernetes v1.15, CustomResources(CR) is able to adopt a schema of Open API V3 validation by specifying it in a definition file. The schema is used to validate the JSON data during creation and updates so that it can prevent from invalid data, moreover, from malicious attacks."/><meta name="docsearch:version" content="3.5"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="CRD Structural Schema · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="From Kubernetes v1.15, CustomResources(CR) is able to adopt a schema of Open API V3 validation by specifying it in a definition file. The schema is used to validate the JSON data during creation and updates so that it can prevent from invalid data, moreover, from malicious attacks."/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.5</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.5/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.5/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">CRD Structural Schema</h1></header><article><div><span><p>From Kubernetes v1.15, CustomResources(CR) is able to adopt a schema of Open API V3 validation by specifying it in a definition file. The schema is used to validate the JSON data during creation and updates so that it can prevent from invalid data, moreover, from malicious attacks.</p>
+<p>While in <code>apiextensions.k8s.io/v1beta1</code>, the definition of a structural schema is <strong>optional</strong>, whereas in <code>apiextensions.k8s.io/v1</code> it is <strong>mandatory</strong>.</p>
+<p>Please see <a href="https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/20190425-structural-openapi.md">[KEP]20190425-structural-openapi</a> for more detail.</p>
+<h2><a class="anchor" aria-hidden="true" id="structural-schema"></a><a href="#structural-schema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structural Schema</h2>
+<p>A schema is called <strong>structural</strong> if it obeys all of principles below:</p>
+<ol>
+<li>specifies a non-empty type (via <code>type</code> in OpenAPI) for the root, for each specified field of an object node (via <code>properties</code> or <code>additionalProperties</code> in OpenAPI) and for each item in an array node (via <code>items</code> in OpenAPI), with the exception of:</li>
+</ol>
+<ul>
+<li>a node with <code>x-kubernetes-int-or-string: true</code></li>
+<li>a node with <code>x-kubernetes-preserve-unknown-fields: true</code></li>
+</ul>
+<ol start="2">
+<li><p>for each field in an object and each item in an array which is specified within any of <code>allOf</code>, <code>anyOf</code>, <code>oneOf</code> or <code>not</code>, the schema also specifies the field/item outside of those logical junctors.</p></li>
+<li><p>does not set <code>description</code>, <code>type</code>, <code>default</code>, <code>additionProperties</code>, <code>nullable</code> within an <code>allOf</code>, <code>anyOf</code>, <code>oneOf</code> or <code>not</code>, with the exception of the two pattern for <code>x-kubernetes-int-or-string: true</code>.</p></li>
+<li><p>if <code>metadata</code> is specified, then only restrictions on <code>metadata.name</code> and <code>metadata.generateName</code> are allowed.</p></li>
+</ol>
+<p>A <strong>non-structural</strong> schema example:</p>
+<pre><code class="hljs"><span class="hljs-attribute">properties</span>:
+  <span class="hljs-attribute">foo</span>:
+    <span class="hljs-attribute">pattern</span>: <span class="hljs-string">"abc"</span>
+  <span class="hljs-attribute">metadata</span>:
+    <span class="hljs-attribute">type</span>: object
+    <span class="hljs-attribute">properties</span>:
+      <span class="hljs-attribute">name</span>:
+        <span class="hljs-attribute">type</span>: string
+        <span class="hljs-attribute">pattern</span>: <span class="hljs-string">"^a"</span>
+      <span class="hljs-attribute">finalizers</span>:
+        <span class="hljs-attribute">type</span>: array
+        <span class="hljs-attribute">items</span>:
+          <span class="hljs-attribute">type</span>: string
+          <span class="hljs-attribute">pattern</span>: <span class="hljs-string">"my-finalizer"</span>
+<span class="hljs-attribute">anyOf</span>:
+- <span class="hljs-attribute">properties</span>:
+    <span class="hljs-attribute">bar</span>:
+      <span class="hljs-attribute">type</span>: integer
+      <span class="hljs-attribute">minimum</span>: <span class="hljs-number">42</span>
+  <span class="hljs-attribute">required</span>: [<span class="hljs-string">"bar"</span>]
+  <span class="hljs-attribute">description</span>: <span class="hljs-string">"foo bar object"</span>
+</code></pre>
+<p>The example above is <strong>not a structural</strong> schema because of the following violations.</p>
+<ul>
+<li>the <code>type</code> at the root is missing (rule 1).</li>
+<li>the <code>type</code> of foo is missing (rule 1).</li>
+<li>bar inside of <code>anyOf</code> is <em>not specified outside</em> (rule 2).</li>
+<li>bar’s <code>type</code> is within <code>anyOf</code> (rule 3).</li>
+<li>the <code>description</code> is set within <code>anyOf</code> (rule 3).</li>
+<li><code>metadata.finalizer</code> might <em>not be restricted</em> (rule 4).</li>
+</ul>
+<p>Violations of the structural schema rules are reported in the <strong>NonStructural</strong> condition in the CustomResourceDefinition.</p>
+<p>In contrast, the following corresponding schema is <strong>structural</strong>:</p>
+<pre><code class="hljs"><span class="hljs-attribute">type</span>: object
+<span class="hljs-attribute">description</span>: <span class="hljs-string">"foo bar object"</span>
+<span class="hljs-attribute">properties</span>:
+  <span class="hljs-attribute">foo</span>:
+    <span class="hljs-attribute">type</span>: string
+    <span class="hljs-attribute">pattern</span>: <span class="hljs-string">"abc"</span>
+  <span class="hljs-attribute">bar</span>:
+    <span class="hljs-attribute">type</span>: integer
+  <span class="hljs-attribute">metadata</span>:
+    <span class="hljs-attribute">type</span>: object
+    <span class="hljs-attribute">properties</span>:
+      <span class="hljs-attribute">name</span>:
+        <span class="hljs-attribute">type</span>: string
+        <span class="hljs-attribute">pattern</span>: <span class="hljs-string">"^a"</span>
+<span class="hljs-attribute">anyOf</span>:
+- <span class="hljs-attribute">properties</span>:
+    <span class="hljs-attribute">bar</span>:
+      <span class="hljs-attribute">minimum</span>: <span class="hljs-number">42</span>
+  <span class="hljs-attribute">required</span>: [<span class="hljs-string">"bar"</span>]
+</code></pre>
+<p>For more examples, please see <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema">Specifying a structural schema</a> and <a href="https://kubernetes.io/blog/2019/06/20/crd-structural-schema/">Future of CRDs: Structural Schemas</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="validation-schema"></a><a href="#validation-schema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validation Schema</h2>
+<h3><a class="anchor" aria-hidden="true" id="keywords-for-applying-subschemas-with-boolean-logic"></a><a href="#keywords-for-applying-subschemas-with-boolean-logic" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keywords for Applying Subschemas With Boolean Logic</h3>
+<table>
+<thead>
+<tr><th>Keyword</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>allOf</td><td>if it validates successfully against all schemas defined by this keyword's value.</td></tr>
+<tr><td>anyOf</td><td>if it validates successfully against at least one schema defined by this keyword's value.</td></tr>
+<tr><td>oneOf</td><td>f it validates successfully against exactly one schema defined by this keyword's value.</td></tr>
+<tr><td>not</td><td>if it fails to validate successfully against the schema defined by this keyword.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="validation-keywords-for-numeric-instances-number-and-integer"></a><a href="#validation-keywords-for-numeric-instances-number-and-integer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validation Keywords for Numeric Instances (number and integer)</h3>
+<table>
+<thead>
+<tr><th>Keyword</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>multipleOf</td><td>if division by this keyword's value results in an integer.</td></tr>
+<tr><td>maximum</td><td>if the instance is less than or exactly equal to &quot;maximum&quot;.</td></tr>
+<tr><td>exclusiveMaximum</td><td>if it has a value strictly less than (not equal to) &quot;exclusiveMaximum&quot;.</td></tr>
+<tr><td>minimum</td><td>if the instance is greater than or exactly equal to &quot;minimum&quot;.</td></tr>
+<tr><td>exclusiveMinimum</td><td>if it has a value strictly greater than (not equal to) &quot;exclusiveMinimum&quot;.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="validation-keywords-for-strings"></a><a href="#validation-keywords-for-strings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validation Keywords for Strings</h3>
+<table>
+<thead>
+<tr><th>Keyword</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>maxLength</td><td>if its length is less than, or equal to, the value of this keyword.</td></tr>
+<tr><td>minLength</td><td>if its length is greater than, or equal to, the value of this keyword.</td></tr>
+<tr><td>pattern</td><td>if the regular expression matches the instance successfully. Recall: regular expressions are not implicitly anchored.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="validation-keywords-for-arrays"></a><a href="#validation-keywords-for-arrays" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validation Keywords for Arrays</h3>
+<table>
+<thead>
+<tr><th>Keyword</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>items</td><td><em>If &quot;items&quot; is a schema</em>, validation succeeds if all elements in the array successfully validate against that schema. <em>If &quot;items&quot; is an array of schemas</em>, validation succeeds if each element of the instance validates against the schema at the same position, if any.</td></tr>
+<tr><td>maxItems</td><td>if its size is less than, or equal to, the value of this keyword.</td></tr>
+<tr><td>minItems</td><td>if its size is greater than, or equal to, the value of this keyword.</td></tr>
+<tr><td>uniqueItems</td><td>If this keyword has boolean value <code>false</code>, the instance validates successfully. If it has boolean value <code>true</code>, the instance validates successfully if all of its elements are unique.</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="crds-of-primehub-with-validation-schema"></a><a href="#crds-of-primehub-with-validation-schema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CRDs of PrimeHub with validation schema</h2>
+<h3><a class="anchor" aria-hidden="true" id="current-instance-type-data-is-like-below"></a><a href="#current-instance-type-data-is-like-below" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current <code>Instance Type</code> data is like below,</h3>
+<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">primehub.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">InstanceType</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">generation:</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">p100</span>
+  <span class="hljs-attr">selfLink:</span> <span class="hljs-string">/apis/primehub.io/v1alpha1/namespaces/hub/instancetypes/p100</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">p100</span>
+  <span class="hljs-attr">displayName:</span> <span class="hljs-string">p100</span>
+  <span class="hljs-attr">limits.cpu:</span> <span class="hljs-number">4</span>
+  <span class="hljs-attr">limits.memory:</span> <span class="hljs-string">26G</span>
+  <span class="hljs-attr">limits.nvidia.com/gpu:</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">requests.cpu:</span> <span class="hljs-number">4</span>
+  <span class="hljs-attr">requests.memory:</span> <span class="hljs-string">26G</span>
+</code></pre>
+<p>Taking this data as an example, the validation schema might look like:</p>
+<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apiextensions.k8s.io/v1beta1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">CustomResourceDefinition</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">instancetypes.primehub.io</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">group:</span> <span class="hljs-string">primehub.io</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-string">v1alpha1</span>
+  <span class="hljs-attr">names:</span>
+    <span class="hljs-attr">kind:</span> <span class="hljs-string">InstanceType</span>
+    <span class="hljs-attr">plural:</span> <span class="hljs-string">instancetypes</span>
+  <span class="hljs-attr">scope:</span> <span class="hljs-string">Namespaced</span>
+  <span class="hljs-attr">preserveUnknownFields:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">validation:</span>
+   <span class="hljs-comment"># openAPIV3Schema is the schema for validating custom objects.</span>
+    <span class="hljs-attr">openAPIV3Schema:</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">metadata:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">name:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">required:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">name</span>
+        <span class="hljs-attr">spec:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">description:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">displayName:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">limits.cpu:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">number</span>
+            <span class="hljs-attr">limits.memory:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">limits.nvidia.com/gpu:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">integer</span>
+            <span class="hljs-attr">requests.cpu:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">number</span>
+            <span class="hljs-attr">request.memory:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">required:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">limits.cpu</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">limits.memory</span>
+
+</code></pre>
+<p>We define <code>validation.openAPIV3Schema</code> with schema object and <code>preserveUnknownFields: false</code> to enforce pruning unknown fields.
+Also, both of <code>displayName</code> and <code>limits</code> are mandatory, so we define</p>
+<pre><code class="hljs">required
+<span class="hljs-bullet">- </span>displayName
+<span class="hljs-bullet">- </span>limits
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="current-dataset-data-is-like-below"></a><a href="#current-dataset-data-is-like-below" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current <code>Dataset</code> data is like below,</h3>
+<pre><code class="hljs"><span class="hljs-symbol">apiVersion:</span> primehub.io/v1alpha1
+<span class="hljs-symbol">kind:</span> Dataset
+<span class="hljs-symbol">metadata:</span>
+<span class="hljs-symbol">  annotations:</span>
+    dataset.primehub.io/homeSymlink: <span class="hljs-string">"false"</span>
+    dataset.primehub.io/launchGroupOnly: <span class="hljs-string">"false"</span>
+    dataset.primehub.io/mountRoot: /datasets
+<span class="hljs-symbol">  generation:</span> <span class="hljs-number">1</span>
+<span class="hljs-symbol">  name:</span> data-rw-test
+<span class="hljs-symbol">  selfLink:</span> <span class="hljs-meta-keyword">/apis/</span>primehub.io<span class="hljs-meta-keyword">/v1alpha1/</span>namespaces<span class="hljs-meta-keyword">/hub/</span>datasets/data-rw-test
+<span class="hljs-symbol">spec:</span>
+<span class="hljs-symbol">  description:</span> data-rw-test
+<span class="hljs-symbol">  displayName:</span> data-rw-test
+<span class="hljs-symbol">  type:</span> pv
+<span class="hljs-symbol">  url:</span> <span class="hljs-string">""</span>
+<span class="hljs-symbol">  variables:</span> {}
+<span class="hljs-symbol">  volumeName:</span> data-rw-test
+
+</code></pre>
+<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apiextensions.k8s.io/v1beta1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">CustomResourceDefinition</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">datasets.primehub.io</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">group:</span> <span class="hljs-string">primehub.io</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-string">v1alpha1</span>
+  <span class="hljs-attr">names:</span>
+    <span class="hljs-attr">kind:</span> <span class="hljs-string">Dataset</span>
+    <span class="hljs-attr">plural:</span> <span class="hljs-string">datasets</span>
+  <span class="hljs-attr">scope:</span> <span class="hljs-string">Namespaced</span>
+  <span class="hljs-attr">preserveUnknownFields:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">validation:</span>
+   <span class="hljs-comment"># openAPIV3Schema is the schema for validating custom objects.</span>
+    <span class="hljs-attr">openAPIV3Schema:</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">metadata:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">name:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">annotations:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">properties:</span>
+                <span class="hljs-attr">dataset.primehub.io/homeSymlink:</span>
+                  <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+                  <span class="hljs-attr">pattern:</span> <span class="hljs-string">'^(true|false|yes|no)$'</span>
+                <span class="hljs-attr">dataset.primehub.io/launchGroupOnly:</span>
+                  <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+                  <span class="hljs-attr">pattern:</span> <span class="hljs-string">'^(true|false|yes|no)$'</span>
+                <span class="hljs-attr">dataset.primehub.io/mountRoot:</span>
+                  <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">required:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">name</span>
+        <span class="hljs-attr">spec:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">description:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">displayName:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">gitsync:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">properties:</span>
+                <span class="hljs-attr">secret:</span>
+                  <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">type:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+              <span class="hljs-attr">pattern:</span> <span class="hljs-string">'^(env|git|pv)$'</span>
+            <span class="hljs-attr">url:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">variables:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+            <span class="hljs-attr">volumeName:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="current-image-data-is-like-below"></a><a href="#current-image-data-is-like-below" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current <code>image</code> data is like below,</h3>
+<pre><code class="hljs"><span class="hljs-symbol">apiVersion:</span> primehub.io/v1alpha1
+<span class="hljs-symbol">kind:</span> Image
+<span class="hljs-symbol">metadata:</span>
+<span class="hljs-symbol">  generation:</span> <span class="hljs-number">1</span>
+<span class="hljs-symbol">  name:</span> name-of-image
+<span class="hljs-symbol">  selfLink:</span> <span class="hljs-meta-keyword">/apis/</span>primehub.io<span class="hljs-meta-keyword">/v1alpha1/</span>namespaces<span class="hljs-meta-keyword">/hub/</span>images/name-of-image
+<span class="hljs-symbol">spec:</span>
+<span class="hljs-symbol">  description:</span> <span class="hljs-string">""</span>
+<span class="hljs-symbol">  displayName:</span> name-of-image
+<span class="hljs-symbol">  pullSecret:</span> pull-secret-xxx
+<span class="hljs-symbol">  url:</span> registry.gitlab.com<span class="hljs-meta-keyword">/infuseai/</span>docker-stacks/scipy-notebook:<span class="hljs-number">073</span>d6073
+
+</code></pre>
+<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apiextensions.k8s.io/v1beta1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">CustomResourceDefinition</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">images.primehub.io</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">group:</span> <span class="hljs-string">primehub.io</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-string">v1alpha1</span>
+  <span class="hljs-attr">names:</span>
+    <span class="hljs-attr">kind:</span> <span class="hljs-string">Image</span>
+    <span class="hljs-attr">plural:</span> <span class="hljs-string">images</span>
+  <span class="hljs-attr">scope:</span> <span class="hljs-string">Namespaced</span>
+  <span class="hljs-attr">preserveUnknownFields:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">validation:</span>
+   <span class="hljs-comment"># openAPIV3Schema is the schema for validating custom objects.</span>
+    <span class="hljs-attr">openAPIV3Schema:</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">metadata:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">name:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">required:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">name</span>
+        <span class="hljs-attr">spec:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">description:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">displayName:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">pullSecret:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">url:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="pruning--dont-preserve-unknown-fields"></a><a href="#pruning--dont-preserve-unknown-fields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pruning – don’t preserve unknown fields</h2>
+<p>In <code>apiextensions.k8s.io/v1</code> pruning will be the default, with ways to opt-out of it. Pruning in <code>apiextensions.k8s.io/v1beta1</code> is enabled via</p>
+<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apiextensions/v1beta1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">CustomResourceDefinition</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-string">…</span>
+  <span class="hljs-attr">preserveUnknownFields:</span> <span class="hljs-literal">false</span>
+</code></pre>
+<p>Pruning can only be enabled if the global schema or the schemas of all versions are <strong>structural</strong>.</p>
+<p>If pruning is enabled, the pruning algorithm</p>
+<ul>
+<li>assumes that the schema is complete, i.e. every field is mentioned and not-mentioned fields can be dropped</li>
+<li>is run on
+<ul>
+<li>data received via an API request</li>
+<li>after conversion and admission requests</li>
+<li>when reading from etcd (using the schema version of the data in etcd).</li>
+</ul></li>
+</ul>
+<p>With <code>spec.preserveUnknownField: false</code> in the CustomResourceDefinition, pruning is enabled for all custom resources of that type and in all versions.
+However, it is also possible to partially specify the permitted JSON without any thing being pruned by <code>x-kubernetes-preserve-unknown-fields: true</code>. e.g.:</p>
+<pre><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-class"><span class="hljs-keyword">object</span></span>
+properties:
+  json:
+    x-kubernetes-preserve-unknown-fields: <span class="hljs-literal">true</span>
+    <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-class"><span class="hljs-keyword">object</span></span>
+    description: <span class="hljs-keyword">this</span> is arbitrary <span class="hljs-type">JSON</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="defaulting"></a><a href="#defaulting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Defaulting</h2>
+<p><code>default:</code> is available as alpha since 1.15. It is disabled by default and can be enabled via the <code>CustomResourceDefaulting</code> feature gate. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#defaulting">[More details]</a></p>
+<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apiextensions.k8s.io/v1beta1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">CustomResourceDefinition</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">crontabs.stable.example.com</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">group:</span> <span class="hljs-string">stable.example.com</span>
+  <span class="hljs-attr">versions:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">v1</span>
+      <span class="hljs-attr">served:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-attr">storage:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-string">v1</span>
+  <span class="hljs-attr">scope:</span> <span class="hljs-string">Namespaced</span>
+  <span class="hljs-attr">names:</span>
+    <span class="hljs-attr">plural:</span> <span class="hljs-string">crontabs</span>
+    <span class="hljs-attr">singular:</span> <span class="hljs-string">crontab</span>
+    <span class="hljs-attr">kind:</span> <span class="hljs-string">CronTab</span>
+    <span class="hljs-attr">shortNames:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">ct</span>
+  <span class="hljs-attr">preserveUnknownFields:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">validation:</span>
+   <span class="hljs-comment"># openAPIV3Schema is the schema for validating custom objects.</span>
+    <span class="hljs-attr">openAPIV3Schema:</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">metadata:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">name:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+        <span class="hljs-attr">spec:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">cronSpec:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+              <span class="hljs-attr">pattern:</span> <span class="hljs-string">'^(\d+|\*)(/\d+)?(\s+(\d+|\*)(/\d+)?){4}$'</span>
+              <span class="hljs-attr">default:</span> <span class="hljs-string">"5 0 * * *"</span>
+            <span class="hljs-attr">image:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+            <span class="hljs-attr">replicas:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">integer</span>
+              <span class="hljs-attr">minimum:</span> <span class="hljs-number">1</span>
+              <span class="hljs-attr">maximum:</span> <span class="hljs-number">10</span>
+              <span class="hljs-attr">default:</span> <span class="hljs-number">1</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="printer-columns"></a><a href="#printer-columns" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Printer Columns</h2>
+<p>The server decides which columns are shown by the <code>kubectl get</code> command. We can customize these columns by <code>additionalPrinterColumns:</code> e.g.:</p>
+<pre><code class="hljs"><span class="hljs-attribute">apiVersion</span>: apiextensions.k8s.io/v1beta1
+  <span class="hljs-attribute">kind</span>: CustomResourceDefinition
+  <span class="hljs-attribute">metadata</span>:
+    <span class="hljs-attribute">name</span>: crontabs.stable.example.com
+  <span class="hljs-attribute">spec</span>:
+    <span class="hljs-attribute">group</span>: stable.example.com
+    <span class="hljs-attribute">version</span>: v1
+    <span class="hljs-attribute">scope</span>: Namespaced
+    <span class="hljs-attribute">names</span>:
+      <span class="hljs-attribute">plural</span>: crontabs
+      <span class="hljs-attribute">singular</span>: crontab
+      <span class="hljs-attribute">kind</span>: CronTab
+      <span class="hljs-attribute">shortNames</span>:
+      - ct
+    <span class="hljs-attribute">additionalPrinterColumns</span>:
+    - <span class="hljs-attribute">name</span>: Spec
+      <span class="hljs-attribute">type</span>: string
+      <span class="hljs-attribute">description</span>: The cron spec defining the interval a CronJob is run
+      <span class="hljs-attribute">JSONPath</span>: .spec.cronSpec
+    - <span class="hljs-attribute">name</span>: Replicas
+      <span class="hljs-attribute">type</span>: integer
+      <span class="hljs-attribute">description</span>: The number of jobs launched by the CronJob
+      <span class="hljs-attribute">JSONPath</span>: .spec.replicas
+    - <span class="hljs-attribute">name</span>: Age
+      <span class="hljs-attribute">type</span>: date
+      <span class="hljs-attribute">JSONPath</span>: .metadata.creationTimestamp
+
+</code></pre>
+<p>By <code>kubectl get</code>, notice the <code>NAME</code>, <code>SPEC</code>, <code>REPLICAS</code>, and <code>AGE</code> columns in the output:</p>
+<pre><code class="hljs"><span class="hljs-type">NAME</span>                 SPEC        REPLICAS   AGE
+my-<span class="hljs-built_in">new</span>-cron-<span class="hljs-keyword">object</span>   * * * * *   <span class="hljs-number">1</span>          <span class="hljs-number">7</span>s
+</code></pre>
+<p>Regarding usages of<code>Priority</code>, <code>Type</code> and <code>Format</code> of columns, please see <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#additional-printer-columns">[More details]</a></p>
+<h2><a class="anchor" aria-hidden="true" id="categories"></a><a href="#categories" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Categories</h2>
+<p>This feature is beta and available from v1.10.
+We can categorize CRs into <code>all</code> or customized categories by <code>categories:</code> e.g.:</p>
+<pre><code class="hljs"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apiextensions.k8s.io/v1beta1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">CustomResourceDefinition</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">crontabs.stable.example.com</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">group:</span> <span class="hljs-string">stable.example.com</span>
+  <span class="hljs-attr">versions:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">v1</span>
+      <span class="hljs-attr">served:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-attr">storage:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">scope:</span> <span class="hljs-string">Namespaced</span>
+  <span class="hljs-attr">names:</span>
+    <span class="hljs-attr">plural:</span> <span class="hljs-string">crontabs</span>
+    <span class="hljs-attr">singular:</span> <span class="hljs-string">crontab</span>
+    <span class="hljs-attr">kind:</span> <span class="hljs-string">CronTab</span>
+    <span class="hljs-attr">shortNames:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">ct</span>
+    <span class="hljs-comment"># categories is a list of grouped resources the custom resource belongs to.</span>
+    <span class="hljs-attr">categories:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">all</span>
+</code></pre>
+<p>Therefore, this CR object is included in result of <code>kubectl get all</code>.</p>
+<p><a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#categories">[More details]</a></p>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<table>
+<thead>
+<tr><th>Reference</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema">Specifying a structural schema</a></td></tr>
+<tr><td><a href="https://kubernetes.io/blog/2019/06/20/crd-structural-schema/">Future of CRDs: Structural Schemas</a></td></tr>
+<tr><td><a href="https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/20190425-structural-openapi.md">[KEP]20190425-structural-openapi</a></td></tr>
+<tr><td><a href="https://github.com/kubernetes-sigs/kubebuilder">Kubebuilder - SDK for building Kubernetes APIs using CRDs</a></td></tr>
+<tr><td><a href="https://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1">JSON Schema Validation</a></td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#structural-schema">Structural Schema</a></li><li><a href="#validation-schema">Validation Schema</a><ul class="toc-headings"><li><a href="#keywords-for-applying-subschemas-with-boolean-logic">Keywords for Applying Subschemas With Boolean Logic</a></li><li><a href="#validation-keywords-for-numeric-instances-number-and-integer">Validation Keywords for Numeric Instances (number and integer)</a></li><li><a href="#validation-keywords-for-strings">Validation Keywords for Strings</a></li><li><a href="#validation-keywords-for-arrays">Validation Keywords for Arrays</a></li></ul></li><li><a href="#crds-of-primehub-with-validation-schema">CRDs of PrimeHub with validation schema</a><ul class="toc-headings"><li><a href="#current-instance-type-data-is-like-below">Current <code>Instance Type</code> data is like below,</a></li><li><a href="#current-dataset-data-is-like-below">Current <code>Dataset</code> data is like below,</a></li><li><a href="#current-image-data-is-like-below">Current <code>image</code> data is like below,</a></li></ul></li><li><a href="#pruning--dont-preserve-unknown-fields">Pruning – don’t preserve unknown fields</a></li><li><a href="#defaulting">Defaulting</a></li><li><a href="#printer-columns">Printer Columns</a></li><li><a href="#categories">Categories</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
