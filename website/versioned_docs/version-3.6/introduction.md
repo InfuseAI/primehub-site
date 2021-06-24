@@ -66,6 +66,10 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Data Labeling with Label Studio](primehub-app-tutorial-label-studio) `Tutorial`
 
++ [Install Grafana PrimeHub Dashboard](tasks/monitoring)
+
++ [Build Notebook image by repo2docker](tasks/repo2docker)
+
 #### As Group Admin
 
 + [Add/Build group-specific images](group-image)

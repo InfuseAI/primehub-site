@@ -30,7 +30,8 @@ We provide a install script which makes the installation much easier to create a
 Download the script `primehub-install`
 
 ```bash
-curl -O https://raw.githubusercontent.com/InfuseAI/primehub/master/install/primehub-installl
+git clone https://github.com/InfuseAI/primehub
+cd /path/to/primehub/install
 chmod +x primehub-install
 ```
 

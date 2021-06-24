@@ -17,7 +17,7 @@ Want to compare your trained models or give every single model a unique version?
 
 ## ❣️ &NonBreakingSpace; Breaking Changes
 
-+ We introduce whole new Models Management feature in this release, the original Models feature is renamed **Deployments** onwards.
++ We introduce whole new Models Management (Beta) feature in this release, the original Models feature is renamed **Deployments** onwards.
 
 ## 🚀 &NonBreakingSpace; Improvements
 
@@ -72,6 +72,8 @@ Users, sometimes, are lost in terms on interface. Don't bother looking around do
 
 + [在 PrimeHub 中使用 PyTorch Hub 的 YOLOV5 以及 OpenAI 的 CLIP 模型，快速打造行人安全的偵測系統](https://medium.com/infuseai/%E5%9C%A8-primehub-%E4%B8%AD%E4%BD%BF%E7%94%A8-pytorch-hub-%E7%9A%84-yolov5-%E4%BB%A5%E5%8F%8A-openai-%E7%9A%84-clip-%E6%A8%A1%E5%9E%8B-%E5%BF%AB%E9%80%9F%E6%89%93%E9%80%A0%E8%A1%8C%E4%BA%BA%E5%AE%89%E5%85%A8%E7%9A%84%E5%81%B5%E6%B8%AC%E7%B3%BB%E7%B5%B1-bb865921e590) &neArr;
 
+
++ [Ways of doing ML](https://waysof.ml) &neArr;
 
 + [PrimeHub Community Edition v3.6](https://github.com/InfuseAI/primehub/releases) &neArr;
 

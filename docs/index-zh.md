@@ -74,6 +74,11 @@ PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 
 + [Manage and Deploy a Model with MLflow](model-management-tutorial) `Tutorial`
 
 + [Data Labeling with Label Studio](primehub-app-tutorial-label-studio) `Tutorial`
+  
++ [Install Grafana PrimeHub Dashboard](tasks/monitoring)
+
++ [Build Notebook image by repo2docker](tasks/repo2docker)
+
 
 #### As Group Admin
 
