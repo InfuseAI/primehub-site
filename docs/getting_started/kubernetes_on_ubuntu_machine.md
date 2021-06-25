@@ -29,8 +29,7 @@ Download the script `primehub-install`
 
 ```bash
 git clone https://github.com/InfuseAI/primehub
-cd /path/to/primehub/install
-chmod +x primehub-install
+cd primehub/install
 ```
 
 Run the `create singlenode` command:
