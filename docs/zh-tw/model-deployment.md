@@ -69,13 +69,13 @@ description: 模型部署
 
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
 
-![](assets/mdeploy_create_v32.png)
+![](assets/mdeploy_create_v37.png)
 
 ### Deployment Details
 
 + `Deployment Name`: 名稱。
 
-+ `Deployment ID`: 系統產生 ID。
++ `Deployment ID`: 系統產生或使用者自行輸入唯一 ID。
 
 + `Model Image`:
   - 可以直接部署的映像檔 ([Tutorial: 透過 Language Wrapper 打包模型映像檔部署](model-deployment-tutorial-model-image-cht)).

@@ -11,13 +11,16 @@ description: 3.7 Release Note
 
 ## 🚀 &NonBreakingSpace; Improvements
 
++ NFS support by [Model URI](model-deployment-model-uri)
 
++ Deployment ID can be decided by users
 
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
 
 
 ## 💫 &NonBreakingSpace; More Things
+
 
 ---
 

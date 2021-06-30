@@ -68,13 +68,13 @@ Each cell represents a deployment. Clicking on a cell to view the detail.
 
 Confirm if the current group is what you desire; switch the group by the `Group:` dropdown at the top of the right side.
 
-![](assets/mdeploy_create_v32.png)
+![](assets/mdeploy_create_v37.png)
 
 ### Deployment Details
 
 + `Deployment Name`: The name of the deployment.
 
-+ `Deployment ID`: An unique ID.
++ `Deployment ID`: An system-generated unique ID or a user-input unique ID.
 
 + `Model Image`: 
   - The image which has integrated a model file into can be deployed directly ([Tutorial: Deploy a Model by Image built from Language Wrapper](model-deployment-tutorial-model-image)).
