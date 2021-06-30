@@ -85,7 +85,7 @@ description: 模型部署
     選擇建議合適的 pre-packaged model server 映像檔；可以點擊連結查看相關教學。
     ![](assets/mdeploy_create_model_image_suggestion.png) 
 
-+ `Model URI`: [模型檔案路徑](../model-deployment-model-uri)。
++ `Model URI`: 模型檔案路徑；[支援的 URIs](model-deployment-model-uri-cht)。
 
 + `Image Pull Secret`: 如果必要，請指定下拉 Model Image 所需的 pull secret。
 

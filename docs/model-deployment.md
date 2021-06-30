@@ -83,7 +83,7 @@ Confirm if the current group is what you desire; switch the group by the `Group:
     We can select the suggested pre-packaged model server image or click on its link to access its server information and input/output examples.
     ![](assets/mdeploy_create_model_image_suggestion.png)
 
-+ `Model URI`: The [location](model-deployment-model-uri) which the trained model is stored in; based on this model file to deploy a model image.
++ `Model URI`: The location which the trained model is stored in; based on this model file to deploy a model image. Here is [supported URIs](model-deployment-model-uri).
 
 + `Image Pull Secret`: a pull secret for the model image if required.
 
