@@ -18,7 +18,7 @@ We have prepared the dataset for you. The dataset contains three folders. `train
 
 Create a [dataset](guide_manual/admin-dataset) in PrimeHub called `screw`, and set the read/write permission to your group. (If you don't have permission to create the dataset in PrimeHub, please request administrators for assistance.)
 
-### What we need?
+## What we need?
 - The image `infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1`
 - An instance type >= minimal requirement (CPU=1, GPU=0, Mem=3G)
 
@@ -39,7 +39,7 @@ rm tutorial_screw_dataset.zip
 
 In the `~/datasets/screw`, you can see there are folders `train/good`, `train/bad`, `unlabeled` now.
 
-## Use Label Studio to Label Unlabeled Data
+## 1. Use Label Studio to Label Unlabeled Data
 
 Install and login to the [App](primehub-app-tutorial-label-studio) of label studio.
 
@@ -61,7 +61,7 @@ Back to the project in Label Studio. The data in the dataset has been shown on t
 
 Now you have labeled all data by the label studio. We can go back to our [notebook](quickstart/launch-project) to train the model.
 
-## Train the Model
+## 2. Train the Model
 
 We provide the prepared notebook file [tutorial_screw_train.ipynb](assets/tutorial_screw_train.ipynb) to train the model to classify the good or bad screw.
 
@@ -78,7 +78,7 @@ After modified that cell, you can run all cells in the notebook. It uses the mob
 
 We can see that we achieve around 90% of accuracy both in training and the validation dataset after training.
 
-## Send Notebook as Job (Tuning: learning_rate)
+## 3. Send Notebook as Job (Tuning: learning_rate)
 
 Now, we have a runnable notebook to train the screw classification model.
 
@@ -138,7 +138,7 @@ Click on Submit button to start training with base_learning_rate = 0.05.
 Back to PrimeHub UI, select Jobs page to check our two submitted jobs are succeeded now!
 ![](assets/tutorial_job_succeeded.png)
 
-## Model Management (Choose Best Model)
+## 4. Model Management (Choose Best Model)
 With the Submit Notebook as Job feature, we can set multiple variables combination to fine-tune our model. 
 
 After all submitted jobs completed, we now select `Models` in PrimeHub UI.
@@ -178,3 +178,136 @@ We can see our model is successfully registered as version 1.
 
 Back and refresh the models page in the PrimeHub UI, now we can see our model tf-screw-model is managed in model list.
 ![](assets/tutorial_models_managed.png)
+
+## 5. Customize Model Server Image
+
+Now, we have registered current best model in Model Management. To deploy the managed model, we need to setup the pre-packaged model image to be runnable container environment.
+
+Use the [Tensorflow2 Prepackaged Model Server](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2) as template of pre-packaged model image.
+
+```bash
+git clone https://github.com/InfuseAI/primehub-seldon-servers.git
+cd tensorflow2/
+```
+
+We can edit [tensorflow2/Model.py](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/tensorflow2/tensorflow2/Model.py) to meet our input data requirements.
+
+Original template
+
+```python
+def predict(self, X, feature_names = None, meta = None):
+    ...
+    if isinstance(X, bytes):
+        img = Image.open(BytesIO(X))
+        img = np.array(img).astype(np.float32)
+        X = np.copy(img)
+        X /= 255.0
+        X = np.expand_dims(X, axis=0)
+    ...
+```
+
+Ours
+
+```python
+def predict(self, X, feature_names = None, meta = None):
+    ...
+    if isinstance(X, bytes):
+        img = Image.open(BytesIO(X))
+        img = np.array(img).astype(np.float32)
+        img = np.stack((img,)*3, axis=-1)
+        X = np.expand_dims(img, axis=0)
+    ...
+```
+
+the `np.stack((img,)*3, axis=-1)` can convert a grayscale input image to a 3-channel image, making it able to fit the shape of model input layer
+
+After edited the Model.py, let's execute following command to build the pre-packaged model image.
+
+```bash
+docker build . -t tensorflow2-prepackaged
+```
+
+Execute `docker images` to check the built image.
+
+```bash
+REPOSITORY                TAG          IMAGE ID       CREATED        SIZE
+tensorflow2-prepackaged   latest       689530dd1ef9   3 minutes ago  1.67GB
+```
+
+Next, tag the built image based on your docker registries, we added screw-classification tag to this image and used Docker Hub to store image.
+
+```bash
+docker tag tensorflow2-prepackaged:latest infuseai/tensorflow2-prepackaged:screw-classification
+```
+
+Then push to docker registry.
+
+```bash
+docker push infuseai/tensorflow2-prepackaged:screw-classification
+```
+
+## 6. Model Deployment
+
+Now, we have prepared the trained model in PrimeHub Model Management and pushed the customized pre-packaged model image to Docker Hub.
+
+Let's continue to deploy our model!
+
+Back to Models page, click on our managed model name tf-screw-model.
+![](assets/tutorial_models_managed.png)
+
+It shows all versions of tf-screw-model, let's click on the Deploy button of Version 1.
+![](assets/tutorial_models_version.png)
+
+In the deployment selector, choose the Create new deployment and click on OK button.
+![](assets/tutorial_models_create_new_deployment.png)
+
+We will be directed to Create Deployment page. And the Model URI field will be auto fill-in with registered model scheme (models:/tf-screw-model/1).
+![](assets/tutorial_deployment_model_uri.png)
+
+Next,
+
+1. Fill in the [Deployment Name] field with [tf-screw-deployment].
+2. Fill in the [Model Image] field with [infuseai/tensorflow2-prepackaged:screw-classification]; this is our customized pre-packaged model image that can serve the trained screw model.
+![](assets/tutorial_deployment_name_model_image.png)
+
+Choose the Instance Type, the minimal requirements in this tutorial is CPU: 0.5 / Memory: 1 G / GPU: 0.
+![](assets/mdeploy_quickstart_deployresource.png)
+
+Then, click on `Deploy` button.
+
+Our model is deploying, let's click on the `tf-screw-deployment` cell.
+![](assets/tutorial_deployment_cell.png)
+
+In the deployment detail page, we can see the Status is Deploying.
+![](assets/tutorial_deployment_deploying.png)
+
+Wait for a while and our model is `Deployed` now!
+
+We can view some detailed information, now let's copy the value of `Endpoint` (`https://.../predictions`) to test our deployed model!
+![](assets/tutorial_deployment_deployed.png)
+
+Replace the ${YOUR_ENDPOINT_URL} with the copied `Endpoint` value in the following block.
+
+```bash
+curl -F 'binData=@path/to/image' ${YOUR_ENDPOINT_URL}
+```
+
+Then copy the entire block to the terminal for execution, and we are sending exact image as request data.
+
+- Example of request data
+
+    ```bash
+    curl -F 'binData=@val/good/000.png' https://xxx.primehub.io/deployment/tf-screw-deployment-xxxxx/api/v1.0/predictions
+    ```
+    ![](assets/tutorial_good_screw.png)
+
+- Example of response data
+    ```bash
+    {"data":{"names":["t:0"],"tensor":{"shape":[1,1],"values":[2.065972089767456]}},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:screw-classification"}}}
+    ```
+    The positive return value represented as good screw; and the negative return value represented as bad screw.
+    
+    Therefore, the return value `2.065972089767456` indicated that the requested screw image is a good screw!
+
+Congratulations! We have trained the model in Notebooks, fine-tuned the model in Jobs, versioned the trained model in Model Management, and further deploy it as an endpoint service in Model Deployment. Making it able to respond to requests anytime from everywhere.
+
