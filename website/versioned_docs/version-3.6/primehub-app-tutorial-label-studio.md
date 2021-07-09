@@ -23,7 +23,7 @@ In the installing process, you can change the environment variables.
 
 `DEFAULT_USERNAME` and `DEFAULT_PASSWORD` are the login account information. You can change them and use them to log into Label Studio after installed.
 
-If you don't know the meaning of other environment variables, you can use the default values or check the [Label Studio Official Doc](https://github.com/heartexlabs/label-studio/blob/master/docs/source/guide/start.md) or the tooltip beside the environment variable for more details.
+If you don't know the meaning of other environment variables, you can use the default values or check the [Label Studio Official Doc](https://labelstud.io/guide/start.html#Command-line-arguments-for-starting-Label-Studio) or the tooltip beside the environment variable for more details.
 
 ## Label Studio UI
 PrimeHub shows the app's state in the `Apps` tab. You can open the Label Studio UI by clicking `Open` after the state becomes `Ready`.
