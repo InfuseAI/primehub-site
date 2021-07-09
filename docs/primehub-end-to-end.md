@@ -147,7 +147,7 @@ Click on `Submit` button to start training with `base_learning_rate = 0.05`.
 ![](assets/tutorial_submit_job_lr_0.05.png)
 
 Back to PrimeHub UI, select `Jobs` page to check our two submitted jobs are succeeded now!
-![](assets/tutorial_job_succeeded.png)
+![](assets/tutorial_jobs_succeeded.png)
 
 ## 4. Model Management (Choose Best Model)
 With the `Submit Notebook as Job` feature, we can set multiple variables combination to fine-tune our model. 
