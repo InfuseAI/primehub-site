@@ -7,7 +7,14 @@
       "resources-quota",
       "roles",
       "environment-variables",
-      "quickstart/login-portal-user"
+      "quickstart/login-portal-user",
+      {
+        "type": "subcategory",
+        "label": "Tutorials",
+        "ids": [
+          "primehub-app-tutorial-end-to-end"
+        ]
+      }
     ],
     "Installation": [
       "dev-introduction",
