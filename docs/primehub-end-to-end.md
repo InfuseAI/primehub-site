@@ -10,32 +10,30 @@ description: Using PrimeHub from Training to Serving the Model
 </div>
 <br>
 
-This tutorial shows how to use PrimeHub functions to do the end-to-end machine learning project life cycle.
+This tutorial shows how to construct the end-to-end machine learning project life cycle in PrimeHub.
 
-We have prepared the dataset for you. The dataset contains three folders, `train/good` folder contains the perfect screw, `train/bad` folder contains the screw with some defects, and `unlabeled` folder contains the screw images that are not yet labeled as good or bad screw. 
+We have prepared the dataset for you. The dataset contains three folders:
+1. `train/good` contains the perfect screw
+1. `train/bad` contains the screw with some defects
+1. `unlabeled` contains the screw images that are not yet labeled as good or bad screw 
 
-We will use the `train/good` and `train/bad` folder as our model's training dataset. And use label studio to label the images under the `unlabeled` folder and use it as our model's validation dataset.
-
-## Prepare Dataset
-
-Create a [dataset](guide_manual/admin-dataset) in PrimeHub called `screw`, and set the read/write permission to your group. (If you don't have permission to create the dataset in PrimeHub, please request administrators for assistance.)
+We will use the images in `train/good` and `train/bad` as the training dataset and use Label Studio to label the images in `unlabeled` as the validation dataset.
 
 ## What we need?
-
-- Remember to follow [configuration](model-configuration) to enable model management in your group, contact your admin if it is not enabled yet.
-- Remember to enable model deployment in your group, contact your admin if it is not enabled yet.
-![](assets/mdeploy_enable.png)
+- Create a [dataset](guide_manual/admin-dataset) named `screw` with read/write permission to your group.
+- Configuration [model management](model-configuration) in your group.
+- Enable [model deployment](model-deployment-feature) in your group.
 - The notebook image `infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1`.
 - An instance type >= minimal requirement (CPU=1, GPU=0, Mem=3G).
 - Please download the [tutorial_screw_dataset.zip](assets/tutorial_screw_dataset.zip), unload the zip file to the `~/datasets/screw` folder by the [notebook](quickstart/launch-project).
 
-Choose the notebook image and instance type based on `What we need?`. (If the image or instance type is not existed in the UI, please request administrators for assistance.)
+Choose the notebook image and instance type based on `What we need?`. (If the notebook image or instance type is not existed, please request administrators for assistance.)
 
-You might see the large file size warning. Please just upload the zip file. And there will be a upload progress bar in the bottom. Wait the progress bar completed.
-    ![](assets/tutorial_upload_dataset_progress_bar.png)
+Please ignore the warning of large file size warning and upload the zip file. There will be a progress bar in the bottom.
+![](assets/tutorial_upload_dataset_progress_bar.png)
 
-Open a terminal in the `notebook`.
-    ![](assets/tutorial_notebook_open_terminal.png)
+After the file uploaded, open a terminal in the `notebook`.
+![](assets/tutorial_notebook_open_terminal.png)
 
 Type the following command:
 ```bash
@@ -44,27 +42,40 @@ unzip tutorial_screw_dataset.zip
 rm tutorial_screw_dataset.zip
 ```
 
-In the `~/datasets/screw`, you can see there are folders `train/good`, `train/bad`, `unlabeled` now.
+Now you can see there are folders `train/good`, `train/bad`, and `unlabeled` in `~/datasets/screw`.
+
+Here are examples of good and bad screws. The first image is the good screw. The second image is the bad screw as you can see the there is a manipulated front.
+
+![](assets/app_tutorial_labelstudio_screw_good.png)
+![](assets/app_tutorial_labelstudio_screw_bad.png)
 
 ## 1. Use Label Studio to Label Unlabeled Data
 
-Install and login to the [App](primehub-app-tutorial-label-studio) of label studio.
+Install and login to the [App](primehub-app-tutorial-label-studio) of Label Studio.
 
-After login, please click `Create` button. Enter your `Project Name`. Skip the `Data Import` step. And choose the `Labeling Setup`. Here we choose `Image Classification`.
+Please click `Create` button and enter your project name. Skip the `Data Import` step and choose the `Labeling Setup`. Here we choose `Image Classification`.
 ![](assets/app_tutorial_labelstudio_create.png)
 
-Delete the original `Labels` settings and `Add` our own label classes: `good`, `bad`.
+Delete the original choices and add our own label classes: `good`, `bad`, then save it to create the proeject.
 ![](assets/app_tutorial_labelstudio_screw_label_classes.png)
 
-Click the `Settings` on the upper-right. 
+Go to `Settings -> Cloud Storage` to setup source and target storage.
 
-Click `Cloud Storage` and `Add Source Storage` to sync the `/datasets/screw/unlabeled` data to label. 
+`Add Source Storage` with following settings:
+- Stroage Type: `Local files`
+- Absolute local path: `/datasets/screw/unlabeled`
+- File Filter Regex: `.*png`
+- Turn on toggle of `Treat every bucket object as a source file`.
 
-Set `Local path` to `/datasets/screw/unlabeled`, set `File Filter Regex` to `.*png`, turn on toggle of `Treat every bucket object as a source file`. After added, click `Sync Storage`.
+After added, click `Sync Storage`.
 
-Click `Add Target Storage` to sync to labeled results to `/project/<group_name>/screw-labeled`. Choose `Local path` and you need to set `Local path` to `/project/<group_name>/screw-labeled`.
+`Add Target Storage` with following settings:
+- Stroage Type: `Local files`
+- Absolute local path: `/project/<group_name>/screw-labeled`
 
-Back to the project in Label Studio. The data in the dataset has been shown on the UI. And you can click `Label` to start labeling. (Tip: you can type keyboard numbers to select the class)
+The labeled results will be synced to the local path.
+
+Back to the project in Label Studio. The images in the dataset has been shown and you can click `Label` to start labeling. (Tip: you can type keyboard numbers to select the class)
 ![](assets/app_tutorial_labelstudio_screw_label_start.png)
 
 > After you labeled all images, you may see the following message. This is a known issue. Please click `OK`, click your project name and refresh the page.
@@ -74,16 +85,9 @@ Now you have labeled all data by the label studio. We can go back to our [notebo
 
 ## 2. Train the Model
 
-We provide the prepared notebook file [tutorial_screw_train.ipynb](assets/tutorial_screw_train.ipynb) to train the model to classify the good or bad screw.
+Please download the notebook file [tutorial_screw_train.ipynb](assets/tutorial_screw_train.ipynb), which trains a model to classify the good or bad screw. Then, go to PrimeHub [notebook](quickstart/launch-project), upload it to `~/<group_name>/screw-train` based on the similar steps of uploading the zip file in `What we need?`.
 
-Here are examples of good and bad screws. The first image is the good screw. The second image is the bad screw and you can see the there is a manipulated front.
-
-![](assets/app_tutorial_labelstudio_screw_good.png)
-![](assets/app_tutorial_labelstudio_screw_bad.png)
-
-Back to PrimeHub [notebook](quickstart/launch-project) based on `What we need?` in the `Prepare Dataset` section and upload the `tutorial_screw_train.ipynb` to the `~/<group_name>/screw-train` folder.
-
-There is one cell need to be modified in the notebook file. In the second code cell, please replace the `<group_name>` into your real group name. And that is the folder location of the labeled results that we labeled in the previous step. We use these new labeled data as our validation dataset.
+There is one cell need to be modified in the notebook file. In the second code cell, please replace the `<group_name>` with your group name. `dir_path` is the target storage of the labeled results that we labeled in the previous step. We use these new labeled data as the validation dataset.
 
 After modified that cell, you can run all cells in the notebook. It uses the mobilenet as the pre-trained model and uses it's outputted feature vector to classify the screw quality.
 
@@ -95,7 +99,7 @@ Now, we have a runnable notebook to train the screw classification model.
 
 Next, we can access [PrimeHub Notebook Extension](ph-notebook-extension) to submit our notebook as job to perform parameters tuning.
 
-Let's configure the learning_rate to see how model accuracy can be better!
+Let's configure the learning rate to see how model accuracy can be better!
 
 Click on the `cell 18` with default `base_learning_rate` configured.
 ![](assets/tutorial_notebook_learning_rate.png)
@@ -103,7 +107,7 @@ Click on the `cell 18` with default `base_learning_rate` configured.
 Click on `Property Inspector` button.
 ![](assets/tutorial_notebook_property_inspector.png)
 
-Click on `Add Tag`, fill in `parameters`, and click on `+` icon. This making the feed parameters can be changed to the `base_learning_rate`.
+Click on `Add Tag`, fill in `parameters`, and click on `+` icon. This makes the feed parameters to overwrite the `base_learning_rate`.
 ![](assets/tutorial_notebook_property_inspector_parameters.png)
 
 Click on PrimeHub button to expand extension menu, we need to setup [API Token](tasks/api-token) at first.
@@ -115,10 +119,10 @@ Back to PrimeHub UI, select `API Token` from the top-right menu.
 Click on `Request API Token` button.
 ![](assets/tutorial_request_api_token.png)
 
-After the `API token` displayed, click on `Copy` button to store our token value.
+After the API token displayed, click on `Copy` to store our token value.
 ![](assets/tutorial_copy_api_token.png)
 
-Back to `Notebooks`, click on PrimeHub button and select `API Token`.
+Back to notebooks, click on PrimeHub button and select `API Token`.
 ![](assets/tutorial_notebook_extension_api.png)
 
 We can paste our token here then click on `OK` button.
@@ -126,24 +130,21 @@ We can paste our token here then click on `OK` button.
 
 Next, click on PrimeHub button and select `Submit Notebook as Job`.
 
-In the pop-up dialog, we can adjust `Instance Type` to gain more running resources, or we can adjust `Image` to make notebook execution on different environment. Here, we left both the `Instance Type` and `Image` are default selected.
+In the pop-up dialog, we can adjust instance type to gain more running resources, or we can adjust image to make notebook execution on different environment. Here is the settings: 
+- Instance Type: default value
+- Image: default value
+- Job Name: `tf-screw-training-lr-0.01`.
+- Notebook Parameters: `base_learning_rate = 0.01`
 
-Fill in the `Job Name` field with `tf-screw-training-lr-0.01`.
-
-Fill in the `Notebook Parameters` field with `base_learning_rate = 0.01`.
-
-Click on `Submit` button to start training with `base_learning_rate = 0.01`.
+Click on `Submit` to start training with `base_learning_rate = 0.01`.
 ![](assets/tutorial_submit_job_lr_0.01.png)
 
-Again, click on PrimeHub button and select `Submit Notebook as Job`.
+Again, click on PrimeHub button and select `Submit Notebook as Job`. Let's submit another training with `base_learning_rate = 0.05` with following settings:
+- Instance Type: default value
+- Image: default value
+- Job Name: `tf-screw-training-lr-0.05`.
+- Notebook Parameters: `base_learning_rate = 0.05`
 
-This time we will set `base_learning_rate` to `0.05`.
-
-Fill in the `Job Name` field with `tf-screw-training-lr-0.05`.
-
-Fill in the `Notebook Parameters` field with `base_learning_rate = 0.05`.
-
-Click on `Submit` button to start training with `base_learning_rate = 0.05`.
 ![](assets/tutorial_submit_job_lr_0.05.png)
 
 Back to PrimeHub UI, select `Jobs` page to check our two submitted jobs are succeeded now!
@@ -158,7 +159,7 @@ In the `Models` page, click on the `MLflow UI` button.
 ![](assets/tutorial_models_mlflow_ui.png)
 
 In the MLflow UI, switch to `Experiments` tab.
-![](assets/tutorial_models_mlflow_experiments.png)
+![](assets/tutorial_mlflow_experiments.png)
 
 Select our specified experiment name `tutorial_screw_train`.
 ![](assets/tutorial_mlflow_experiment_selected.png)
@@ -175,13 +176,13 @@ Thus, we click on its Run ID: `b353b109a79b4ba0ab4dadc3da4a1b03`.
 Both parameters, metrics, and artifacts of this run can be found in this page.
 ![](assets/tutorial_mlflow_run.png)
 
-Scroll down to the `Artifacts` section. Click on the `exported model` and `Register Model` button.
+Scroll down to the artifacts section. Click on the `exported model` and `Register Model` button.
 ![](assets/tutorial_mlflow_run_register_model.png)
 
-In the model selector, choose the `Create New Model`.
+In the model selector, choose `Create New Model`.
 ![](assets/tutorial_mlflow_create_new_model.png)
 
-Fill in the [Model Name] field with [tf-screw-model] and click on `Register` button.
+Fill in model name with `tf-screw-model` and click on `Register` button.
 ![](assets/tutorial_mlflow_fill_model_name.png)
 
 We can see our model is successfully registered as `version 1`.
@@ -275,11 +276,11 @@ We will be directed to [Create Deployment](model-deployment-feature#create) page
 
 Next,
 
-1. Fill in the [Deployment Name] field with [tf-screw-deployment].
-2. Fill in the [Model Image] field with [infuseai/tensorflow2-prepackaged:screw-classification]; this is our customized pre-packaged model image that can serve the trained screw model.
+1. Fill in deployment name with `tf-screw-deployment`.
+2. Fill in model image with `infuseai/tensorflow2-prepackaged:screw-classification`; this is our customized pre-packaged model image that can serve the trained screw model.
 ![](assets/tutorial_deployment_name_model_image.png)
 
-Choose the `Instance Type`, the minimal requirements in this tutorial is `CPU: 0.5 / Memory: 1 G / GPU: 0`.
+Choose the instance type, the minimal requirements in this tutorial is `CPU: 0.5 / Memory: 1 G / GPU: 0`.
 ![](assets/mdeploy_quickstart_deployresource.png)
 
 Then, click on `Deploy` button.
@@ -287,7 +288,7 @@ Then, click on `Deploy` button.
 Our model is deploying, let's click on the `tf-screw-deployment` cell.
 ![](assets/tutorial_deployment_cell.png)
 
-In the [deployment detail](model-deployment-feature#deployment-detail) page, we can see the `Status` is `Deploying`.
+In the [deployment detail](model-deployment-feature#deployment-detail) page, we can see the status is `Deploying`.
 ![](assets/tutorial_deployment_deploying.png)
 
 Wait for a while and our model is `Deployed` now!
@@ -295,7 +296,7 @@ Wait for a while and our model is `Deployed` now!
 We can view some detailed information, now let's copy the value of `Endpoint` (`https://.../predictions`) to test our deployed model!
 ![](assets/tutorial_deployment_deployed.png)
 
-Replace the `${YOUR_ENDPOINT_URL}` with the copied `Endpoint` value in the following block.
+Replace `${YOUR_ENDPOINT_URL}` with your `Endpoint` value in the following block.
 
 ```bash
 curl -F 'binData=@path/to/image' ${YOUR_ENDPOINT_URL}
