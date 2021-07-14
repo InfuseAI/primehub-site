@@ -15,6 +15,8 @@ description: 3.7 Release Note
 
 + Deployment ID can be decided by users
 
++ Add two quick-launch for the frequently-used Notebooks on Home: *Open TensorFlow Notebook* and *Open PyTorch Notebook*
+
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
 
@@ -30,6 +32,8 @@ description: 3.7 Release Note
 + [PrimeHub Community Edition v3.6](https://github.com/InfuseAI/primehub/releases) &neArr;
 
 + [Ways of doing ML](https://waysof.ml) &neArr;
+
++ [MLOps.toys](https://mlops.toys/) &neArr;
 
 + [MLOps Taiwan x Facebook](https://www.facebook.com/groups/mlopstw/) &neArr;
 
