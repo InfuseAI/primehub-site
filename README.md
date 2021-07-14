@@ -20,7 +20,7 @@ The site is hosted on the [github pages](https://pages.github.com/) of the [prim
 1. Install the dependency
 
    ```
-   cd websites
+   cd website
    npm install
    ```
 
