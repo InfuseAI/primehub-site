@@ -22,7 +22,7 @@ For example, the page here indicates a user's Notebook instance running, but out
 kubectl -n hub get pod | grep jupyter-<user_id>
 ```
 
-In this case, use `delete user` for the reset of the user. Don't worry, it don't *delete user account from PrimeHub*, once the user launches a Notebook instance, the user account is listed here again. It forces Hub to synchronize with Kubernetes  when the user try launching Notebook next time.
+In this case, use `delete user` for the reset of the user. Don't worry, it doesn't *delete user account from PrimeHub*, once the user launches a Notebook instance, the user account is listed here again. It forces Hub to synchronize with Kubernetes  when the user try launching Notebook next time.
 
 
 
