@@ -29,6 +29,8 @@ Path | Description | Default Value
 `customImage.registryUsername` | Login user name for registry | `N/A`
 `customImage.registryPassword` | Login password for registry | `N/A`
 `customImage.pushRepoPrefix` | The image prefix for the build image. The result image will be `<repo prefix>/<image>:<tag>` | `N/A`
+`customImage.pushSecretName` | The secret name of the registry push secret | `primehub-controller-custom-image-push-secret`
+
 
 ## Configure DockerHub Registry
 
@@ -40,7 +42,7 @@ Path | Description | Default Value
 
 4. Configuration example of DockerHub registry
 
-    ```
+    ```yaml
     customImage:
       enabled: true
       registryEndpoint: docker.io
@@ -55,13 +57,13 @@ Path | Description | Default Value
 
 2. The username is always `_json_key`. The password is the keyfile json. Please make it a one-line json string so that we can put it in the environment variable.
 
-    ```
+    ```bash
     cat keyfile | jq -c .
     ```
 
 3. Configuration example of GCR
 
-    ```
+    ```yaml
     customImage:
       enabled: true
       registryEndpoint: https://gcr.io
@@ -69,3 +71,39 @@ Path | Description | Default Value
       registryPassword: <gcr_service_account_json>
       pushRepoPrefix: gcr.io/<gcp_project_name>
     ```
+
+## Configure AWS Elastic Container Registry (ECR)
+
+1. Please reference this [official document for ECR](https://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_on_EKS.html) to setup IAM role policy with ECR.
+
+2. Install the tool `aws-ecr-credential` by helm to fetch the latest access token of AWS ECR.
+
+    ```bash
+    helm repo add infuseai https://charts.infuseai.io
+    helm repo update
+    helm install aws-ecr-credential infuseai/aws-ecr-credential \
+      --set-string aws.account="<aws_account_id>" \
+      --set aws.region="<aws_region>" \
+      --set targetNamespace=hub
+    ```
+
+    The access token of ECR will be generated into a k8s secret `aws-registry` under the target namespace.
+
+    ```text
+    $ kubectl get secret -n hub aws-registry
+    NAME           TYPE                             DATA   AGE
+    aws-registry   kubernetes.io/dockerconfigjson   1      3h32m
+    ```
+
+3. Configuration example of ECR
+
+    ```yaml
+      customImage:
+        registryEndpoint: https://8<aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com
+        pushRepoPrefix: <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com
+        pushSecretName: aws-registry
+    ```
+
+### Notice
+
+> AWS ECR only support push the container image to an existed repository. Please reference the [official document](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html) to create the corresponding repository on AWS ESC before adding the custom image build.
