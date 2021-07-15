@@ -20,12 +20,14 @@ We have prepared the dataset for you. The dataset contains three folders:
 We will use the images in `train/good` and `train/bad` as the training dataset and use Label Studio to label the images in `unlabeled` as the validation dataset.
 
 ## What we need?
-- Create a [dataset](guide_manual/admin-dataset) named `screw` with read/write permission to your group.
-- Configuration [model management](model-configuration) in your group.
 - Enable [model deployment](model-deployment-feature) in your group.
-- The notebook image `infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1`.
-- An instance type >= minimal requirement (CPU=1, GPU=0, Mem=3G).
+- Enable [shared volume](guide_manual/admin-group#shared-volume) in your group.
+- Configuration [model management](model-configuration) in your group.
+- Add [notebook image](guide_manual/admin-image) `infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1`.
+- Add [instance type](guide_manual/admin-instancetype) with 1 CPU and 3 GB memory at least.
+- Create a [dataset](guide_manual/admin-dataset) named `screw` and add your group to writable groups.
 - Please download the [tutorial_screw_dataset.zip](assets/tutorial_screw_dataset.zip), unload the zip file to the `~/datasets/screw` folder by the [notebook](quickstart/launch-project).
+- Create a folder `/<group_name>/screw-labeled` in notebooks to save labels later.
 
 Choose the notebook image and instance type based on `What we need?`. (If the notebook image or instance type is not existed, please request administrators for assistance.)
 
