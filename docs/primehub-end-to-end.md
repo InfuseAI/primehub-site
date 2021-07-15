@@ -27,7 +27,7 @@ We will use the images in `train/good` and `train/bad` as the training dataset a
 - Add [instance type](guide_manual/admin-instancetype) with 1 CPU and 3 GB memory at least.
 - Create a [dataset](guide_manual/admin-dataset) named `screw` and add your group to writable groups.
 - Please download the [tutorial_screw_dataset.zip](assets/tutorial_screw_dataset.zip), unload the zip file to the `~/datasets/screw` folder by the [notebook](quickstart/launch-project).
-- Create a folder `/<group_name>/screw-labeled` in notebooks to save labels later.
+- Create a folder `~/<group_name>/screw-labeled` in notebooks to save labels later.
 
 Choose the notebook image and instance type based on `What we need?`. (If the notebook image or instance type is not existed, please request administrators for assistance.)
 
