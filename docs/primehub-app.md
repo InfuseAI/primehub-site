@@ -66,8 +66,8 @@ App Store menu includes built-in Apps templates and [user-customizing Apps](prim
 + `Environment Variables`: Displays/Add/Modify required environment variables by default
 + `Instance Types`: Select an instance type for the application
 + `Access Scope`: Select targeted users who can access the application
-  + `Group members only`: Current working group members only
-  + `PrimeHub users only`: Platform-wise users
+  + `Group members only`: Current working group members only **(Enterprise Edition Only)**
+  + `PrimeHub users only`: Platform-wise users **(Enterprise Edition Only)**
   + `Public`: To anyone who has the URL
 
 > Please assure that Group Resources are sufficient to run the instance.
