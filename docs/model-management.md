@@ -57,12 +57,20 @@ As long as an experimental model is registered on MLflow, it is listed in Models
 
 By clicking each model name, it navigates into the list of versioned models.
 
-![](assets/model-mgt-version-list.png)
+![](assets/model-mgt-version-list_v37.png)
 
 + `Version`: Version number
 + `Registered At`: The registration date/time
 + `Deployed By`: The deployment name if the model is used for a deployment; click to navigate into the deployment detail page.
++ `Parameters`: selected parameters of the model
++ `Metrics`: selected metrics of the model
 + `Deploy` button: Deploying the selected versioned model.
+
+#### Parameters and Metrics
+
+Clicking `Columns` and select parameters and metrics to display as columns in the table.
+
+![](assets/model-metrics-paras.gif)
 
 ### Versioned Model Detail
 
@@ -76,7 +84,6 @@ The page displays the information regarding this version.
 + `Parameters`: if any
 + `Metrics`: if any
 + `Tags`: if any
-
 
 ## Deploy Versioned Model
 

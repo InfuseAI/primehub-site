@@ -57,12 +57,21 @@ sidebar_label: Overview (Beta)
 
 點擊 Model 名稱，導向顯示所有版號的 Model。
 
-![](assets/model-mgt-version-list.png)
+![](assets/model-mgt-version-list_v37.png)
 
 + `Version`: 版號
 + `Registered At`: 登錄日期時間
 + `Deployed By`: 如果此版號 Model 被部署的話，將會顯示該部署名稱；點擊部署名稱會導向至該部署詳細資訊頁。
++ `Parameters`: 顯示選擇的 parameters。
++ `Metrics`: 顯示選擇的 metrics。
 + `Deploy`： 點擊，部署該版號 Model
+
+
+#### Parameters and Metrics
+
+點擊 `Columns` 選擇想顯示的 parameters 及 metrics 資訊於表中。
+
+![](assets/model-metrics-paras.gif)
 
 ### Versioned Model Detail
 

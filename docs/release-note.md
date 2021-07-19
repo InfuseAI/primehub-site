@@ -17,6 +17,10 @@ description: 3.7 Release Note
 
 + Add two quick-launch for the frequently-used Notebooks on Home: *Open TensorFlow Notebook* and *Open PyTorch Notebook*
 
++ Display selected parameters and metrics of a model
+
+  ![](assets/model-metrics-paras.gif)
+
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
 
