@@ -75,12 +75,14 @@
 <p>We will use the images in <code>train/good</code> and <code>train/bad</code> as the training dataset and use Label Studio to label the images in <code>unlabeled</code> as the validation dataset.</p>
 <h2><a class="anchor" aria-hidden="true" id="what-we-need"></a><a href="#what-we-need" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What we need?</h2>
 <ul>
-<li>Create a <a href="guide_manual/admin-dataset">dataset</a> named <code>screw</code> with read/write permission to your group.</li>
-<li>Configuration <a href="model-configuration">model management</a> in your group.</li>
 <li>Enable <a href="model-deployment-feature">model deployment</a> in your group.</li>
-<li>The notebook image <code>infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1</code>.</li>
-<li>An instance type &gt;= minimal requirement (CPU=1, GPU=0, Mem=3G).</li>
+<li>Enable <a href="guide_manual/admin-group#shared-volume">shared volume</a> in your group.</li>
+<li>Configuration <a href="model-configuration">model management</a> in your group.</li>
+<li>Add <a href="guide_manual/admin-image">notebook image</a> <code>infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1</code>.</li>
+<li>Add <a href="guide_manual/admin-instancetype">instance type</a> with 1 CPU and 3 GB memory at least.</li>
+<li>Create a <a href="guide_manual/admin-dataset">dataset</a> named <code>screw</code> and add your group to writable groups.</li>
 <li>Please download the <a href="/docs/assets/tutorial_screw_dataset.zip">tutorial_screw_dataset.zip</a>, unload the zip file to the <code>~/datasets/screw</code> folder by the <a href="quickstart/launch-project">notebook</a>.</li>
+<li>Create a folder <code>~/&lt;group_name&gt;/screw-labeled</code> in notebooks to save labels later.</li>
 </ul>
 <p>Choose the notebook image and instance type based on <code>What we need?</code>. (If the notebook image or instance type is not existed, please request administrators for assistance.)</p>
 <p>Please ignore the warning of large file size warning and upload the zip file. There will be a progress bar in the bottom.
