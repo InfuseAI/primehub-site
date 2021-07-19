@@ -35,7 +35,10 @@ Portal 頁面左側為「使用者功能選單」、右側為「工作專案群�
 
 Home 頁呈現三個區塊：
 
-+ **Getting Started/Open**: 外部文件連結，新手使用者可以從文件快速上手 PrimeHub 及更多了解；功能捷徑，使用者可以快速進行功能。
++ **User Guide/Quickstart**: 外部文件連結，新手使用者可以從文件快速上手 PrimeHub 及更多了解；功能捷徑，使用者可以快速進行功能。
+
+  快速啟動 *TensorFlow / PyTorch* Notebook 環境
+  ![](assets/quick-launch-tf.gif)
 
 + **Recent**: 呈現最近使用者進行的活動，如：Job, Model；使用者可以快速了解活動狀態。
 + **Resource Dashboard**: 呈現此群組使用者允許使用的資源額度；群組整體已使用額度/群組額度上限。

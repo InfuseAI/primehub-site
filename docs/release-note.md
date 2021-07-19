@@ -13,9 +13,11 @@ description: 3.7 Release Note
 
 + NFS support by [Model URI](model-deployment-model-uri)
 
-+ Deployment ID can be decided by users
++ To learn what the deployment is for from its ID, now you can name the Deployment ID you want.
 
-+ Add two quick-launch for the frequently-used Notebooks on Home: *Open TensorFlow Notebook* and *Open PyTorch Notebook*
++ TensorFlow or PyTorch is frequently used!? Use *Open TensorFlow Notebook* and *Open PyTorch Notebook* quick-launch next time.
+  
+  ![](assets/quick-launch-tf.gif)
 
 + Display selected parameters and metrics of a model
 

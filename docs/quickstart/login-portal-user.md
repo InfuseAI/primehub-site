@@ -36,7 +36,10 @@ First of all, users have to specify a working group from joining groups by using
 
 At Home, the layout has three areas: 
 
-+ **Getting Started/Open**: it has links of external documents where users can get started from and shortcuts of features where users can take actions quickly.
++ **User Guide/Quickstart**: it has links of external documents where users can get started from and shortcuts of features where users can take actions quickly.
+  
+  *Quick-launch for TensorFlow and PyTorch*
+  ![](assets/quick-launch-tf.gif)
 
 + **Recent**: it displays recent activities (such as Job, Model) done by the user; where users can have an quick-view of activities status.
 + **Resource Dashboard**: it displays *permitted user quota in this group* and *used/limit group quotas*.
