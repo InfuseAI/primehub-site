@@ -403,7 +403,8 @@
     "Overview": [
       "index-zh",
       "zh-tw/quickstart/login-portal-user",
-      "zh-tw/idx-core"
+      "zh-tw/idx-core",
+      "zh-tw/idx-tutorial"
     ],
     "Installation": [
       "zh-tw/idx-installation"

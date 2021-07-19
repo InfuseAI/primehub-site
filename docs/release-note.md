@@ -29,13 +29,15 @@ description: 3.7 Release Note
 
 ## 💫 &NonBreakingSpace; More Things
 
++ [A complete tutorial - from training to serving: Construct the end-to-end machine learning project life cycle in PrimeHub with Label Studio](primehub-app-tutorial-end-to-end)
+
 
 ---
 
 ## 🎪 &NonBreakingSpace; In the Community
 
 
-+ [PrimeHub Community Edition v3.6](https://github.com/InfuseAI/primehub/releases) &neArr;
++ [PrimeHub Community Edition v3.7](https://github.com/InfuseAI/primehub/releases) &neArr;
 
 + [Ways of doing ML](https://waysof.ml) &neArr;
 
