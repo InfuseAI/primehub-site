@@ -206,7 +206,25 @@ helm repo update
 Helm install
 
 ```bash
-helm install nginx-ingress --create-namespace --namespace ingress-nginx --version=1.31.0 --set controller.hostNetwork=true --set rbac.create=true
+cat <<EOF > nginx-ingress-config.yaml
+---
+controller:
+  containerPort:
+    http: 80
+    https: 443
+  service:
+    targetPorts:
+      http: http
+      https: https
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
+      service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+EOF
+
+helm install nginx-ingress ingress-nginx/ingress-nginx \
+    --create-namespace \
+    --namespace ingress-nginx \
+    --values nginx-ingress-config.yaml
 ```
 
 Find the `EXTERNAL-IP`
