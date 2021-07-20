@@ -23,6 +23,10 @@ description: 3.7 Release Note
 
   ![](assets/model-metrics-paras.gif)
 
++ Certain groups use out the license-permitted quota of deployments? Administrators, now, can set the limit per group to prevent it.
+
+  ![](assets/release-maximum-deploy.png)
+
 
 ## 🧰 &NonBreakingSpace; Bug Fixes
 

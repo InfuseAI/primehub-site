@@ -22,7 +22,7 @@ description: Group Management
 
 ## Info
 
-![](assets/group_add_v36.png)
+![](assets/group_add_v37.png)
 
 需填入以上畫面中的各個欄位：
 
@@ -32,7 +32,9 @@ description: Group Management
 
 ### Model Deployment
 
-`Model Deployment` 開啟後， Groups 可以使用[佈署模型](../model-deployment-feature)功能來提供服務。
++ `Model Deployment` 開啟後， Groups 可以使用[佈署模型](../model-deployment-feature)功能來提供服務。
+
++ `Maximum Deployment` 設定此群組部署上限。
 
 ### Shared Volume
 

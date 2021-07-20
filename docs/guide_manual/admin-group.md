@@ -25,7 +25,7 @@ Click `Add` to add a group, which will pop up the editing screen of Groups.
 
 ## Info
 
-![](assets/group_add_v36.png)
+![](assets/group_add_v37.png)
 
 You need to fill in the fields in the above picture:
 
@@ -36,6 +36,8 @@ You need to fill in the fields in the above picture:
 ### Model Deployment
 
 Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
+
++ `Maximum Deployment`: set limit on the amount of deployments for this group.
 
 ### Shared Volume
 
