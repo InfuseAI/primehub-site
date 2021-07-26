@@ -240,7 +240,7 @@ req.headers.get('X-Forwarded-User') # you can get the client name from the heade
 
 點擊各個 Deployment 框，在部署詳細頁，點擊右上方`Delete` 鈕，並輸入欲刪除的部署名稱做為確認。
 
-![](assets/deployment_deletion_confirmation.png)
+![](assets/deployment_deletion_confirmation.gif)
 
 ---
 

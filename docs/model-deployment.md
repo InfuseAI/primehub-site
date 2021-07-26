@@ -242,7 +242,7 @@ Clicking on the cell of the deployment which we want to delete.
 
 On a deployment detail page, clicking `Delete` button and inputting the name of deployment for the confirmation.
 
-![](assets/deployment_deletion_confirmation.png)
+![](assets/deployment_deletion_confirmation.gif)
 
 ---
 
