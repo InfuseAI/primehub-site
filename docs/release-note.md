@@ -68,7 +68,7 @@ description: 3.7 Release Note
   
   ![](assets/release-note-ce-app-public-only.png)
   
-+ PrimeHub-Install tool supports `./primehub-innsall usage` to check the current Kubernetes resources usage.
++ PrimeHub-Install tool supports `./primehub-install usage` to check the current Kubernetes resources usage.
 
 + Quick-access to API Token generation page from PrimeHub Notebook Extension
 
