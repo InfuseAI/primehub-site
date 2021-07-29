@@ -27,6 +27,8 @@ This document will guide you to install [MicroK8s](https://microk8s.io/) on a si
 
 We provide a install script which makes the installation much easier to create a [MicroK8s-single-node](https://microk8s.io/) Kubernetes.
 
+Please make sure the machine has installed [cURL](prerequisites#curl).
+
 Download the script `primehub-install`
 
 ```bash
@@ -149,7 +151,7 @@ Reference
 
 ## Install PrimeHub CE
 
-Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.1.0`.
+Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.6.0`.
 
 ```bash
 ./primehub-install create primehub --primehub-version <version> --primehub-ce --helm-timeout 20m

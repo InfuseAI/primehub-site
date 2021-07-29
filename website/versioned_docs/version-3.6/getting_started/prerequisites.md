@@ -24,6 +24,24 @@ If you already have a Kubernetes cluster or going to install one in your own pre
 
 If a fresh PrimeHub on GKE or EKS is one of your preferences, you may want to start from our [Kubernetes on GKE](kubernetes_on_gke) guide or [Kubernetes on EKS](kubernetes_on_eks) guide.
 
+
+## cURL
+
+[cURL](https://curl.se/) is a command-line tool that allows us to do HTTP requests from shell. To install cURL, please follow the os-specific method. For example.
+
+  Ubuntu
+
+  ```
+  sudo apt update
+  sudo apt install curl
+  ```
+
+  RHEL/CentOS
+
+  ```
+  yum install curl
+  ```
+
 ## Kubectl
 
 [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) is used to access the cluster. To install kubectl, please follow the instructions
