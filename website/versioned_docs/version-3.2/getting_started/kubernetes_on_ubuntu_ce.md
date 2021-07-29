@@ -126,7 +126,7 @@ data:
           fallthrough in-addr.arpa ip6.arpa
         }
         prometheus :9153
-        forward . <Fill your own DSN server>
+        forward . <Fill your own DNS server>
         cache 30
         loop
         reload
