@@ -8,7 +8,7 @@ description: 3.7 Release Note
 
 ### Display model params and metrics
 
-  Display selected parameters and metrics of versioned models, overview differences among versions easily
+  Wondering what makes models performance different in versions? Parameters and metrics may show you clues. Overview selected parameters and metrics of versioned models to compare differences easily.
 
   ![](assets/model-metrics-paras.gif)
 
@@ -18,14 +18,9 @@ description: 3.7 Release Note
 
   ![](assets/release-maximum-deploy.png)
 
-## ❣️ &NonBreakingSpace; Breaking Changes
-
-
 ## 🚀 &NonBreakingSpace; Improvements
 
 + Improve the view component experience of log used by Job, Deployment, Custom Image
-
-+ 
 
 ### Customizable deployment ID
 
@@ -40,7 +35,6 @@ description: 3.7 Release Note
   ![](assets/quick-launch-tf.gif)
 
   ![](assets/release-note-tf-notebook.png)
-
 
 
 ### Colorful status label
@@ -87,7 +81,6 @@ description: 3.7 Release Note
 
 
 + [A complete tutorial - from training to serving: Construct the end-to-end machine learning project life cycle in PrimeHub with Label Studio](primehub-app-tutorial-end-to-end)
-
 
 
 ---

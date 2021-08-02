@@ -62,7 +62,7 @@ Install helm 3.x.x+ binary. Please see the installation steps in [prerequisites]
 
 ```
 helm version
-version.BuildInfo{Version:"v3.3.4", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
+version.BuildInfo{Version:"v3.6.2", GitCommit:"0ad800ef43d3b826f31a5ad8dfbb4fe05d143688", GitTreeState:"clean", GoVersion:"go1.13.12"}
 ```
 
 ## Nginx Ingress
