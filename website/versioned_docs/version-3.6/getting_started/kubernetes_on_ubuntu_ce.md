@@ -21,25 +21,35 @@ This document will guide you to install [MicroK8s](https://microk8s.io/) on a si
 
 * Ubuntu 18.04 LTS
 * Kubernetes 1.17 version
-* IP address: 1.2.3.4
+* IP address: `EXTERNAL-IP`
 * Networking: allow port 80 for HTTP
+
+
+### Clone the PrimeHub install repository
+
+```
+git clone https://github.com/InfuseAI/primehub.git
+```
+
+
+### Install PrimeHub required binaries
+
+```
+./primehub/install/primehub-install required-bin
+```
+
+This will install the required commands onto `~/bin`. You should append the `~/bin` to your `PATH` variables.
+
 
 ### Install MicroK8s Single Node
 
 We provide a install script which makes the installation much easier to create a [MicroK8s-single-node](https://microk8s.io/) Kubernetes.
 
-Download the script `primehub-install`
-
-```bash
-git clone https://github.com/InfuseAI/primehub
-cd /path/to/primehub/install
-chmod +x primehub-install
-```
 
 Run the `create singlenode` command:
 
 ```bash
-./primehub-install create singlenode
+./primehub/install/primehub-install create singlenode
 ```
 
 After the first execution, you will see the message. Because it adds the user to `microk8s` group and needs to relogin:
@@ -51,17 +61,17 @@ After the first execution, you will see the message. Because it adds the user to
 After relogin, run the same command again to finish the single-node provision:
 
 ```bash
-./primehub-install create singlenode
+./primehub/install/primehub-install create singlenode
 ```
 
 >During the installation, you might run into troubles or need to modify the default settings, please check the [TroubleShooting](#troubleshooting) section.
 
 ### Quick Verification
 
-Access nginx-ingress with the magic `.nip.io` domain, with your `EXTERNAL-IP`:
+Access nginx-ingress with your `EXTERNAL-IP`:
 
 ```
-curl http://1.2.3.4.nip.io
+curl http://$EXTERNAL-IP
 ```
 
 The output will be `404` because no `Ingress` resources are defined yet:
@@ -151,10 +161,10 @@ Reference
 
 ## Install PrimeHub CE
 
-Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.1.0`.
+Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.6.2`.
 
 ```bash
-./primehub-install create primehub --primehub-version <version> --primehub-ce --helm-timeout 20m
+./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce
 ```
 
 1. Please enter the domain name of PrimeHub
@@ -188,7 +198,7 @@ Now PrimeHub CE is ready, see [Launch Notebook](../quickstart/launch-project) to
 >Generate a log file for diagnosis.
 
 ```bash
-./primehub-install diagnose
+./primehub/install/primehub-install diagnose
 ```
 
 You may run into troubles during the installation, we list some of them, hopefully, you find resolutions here.
