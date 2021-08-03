@@ -321,6 +321,7 @@
       }
     ],
     "Configuration": [
+      "config-prereq",
       "getting_started/configure-primehub-store",
       "getting_started/configure-ssh-server",
       "getting_started/configure-job-submission",

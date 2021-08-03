@@ -139,6 +139,16 @@ Path | Description | Default Value
 `store.phfs.enabled` | If PHFS is enabled | `true`
 `rclone.*` | The rclone configuration | Please see the [chart configuration](../references/primehub_chart)
 
+
+Configuration:
+
+```yaml
+store:
+  enabled: true
+  phfs:
+    enabled: true
+```
+
 The following components would be installed if PHFS is enabled.
 
 1. **csi-rclone**: A CSI implementation for mounting S3-compatible object storage.
