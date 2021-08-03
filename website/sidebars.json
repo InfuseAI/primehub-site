@@ -12,7 +12,10 @@
         "type": "subcategory",
         "label": "Tutorials",
         "ids": [
-          "primehub-app-tutorial-end-to-end"
+          "primehub-end-to-end-tutorial-overview",
+          "primehub-end-to-end-tutorial-1",
+          "primehub-end-to-end-tutorial-2",
+          "primehub-end-to-end-tutorial-3"
         ]
       }
     ],
