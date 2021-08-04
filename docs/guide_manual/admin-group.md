@@ -37,7 +37,7 @@ You need to fill in the fields in the above picture:
 
 Groups with enabled model deployment are able to deploy/serve models via [Model Deployment](../model-deployment-feature).
 
-+ `Maximum Deployment`: set limit on the amount of deployments for this group.
++ `Maximum Deployment`: set limit on the amount of deployments for this group; it takes *running* deployments into consideration only, i.e., *stopped* deployments are not counted.
 
 ### Shared Volume
 

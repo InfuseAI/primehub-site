@@ -34,7 +34,7 @@ description: Group Management
 
 + `Model Deployment` 開啟後， Groups 可以使用[佈署模型](../model-deployment-feature)功能來提供服務。
 
-+ `Maximum Deployment` 設定此群組部署上限。
++ `Maximum Deployment` 設定此群組部署上限；只將「執行中」的部署列入計算，不包括中止的部署。
 
 ### Shared Volume
 
