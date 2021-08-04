@@ -14,104 +14,149 @@ sidebar_label: Install PrimeHub CE
 
 The document assumes there is a PrimeHub-ready-Kubernetes already. The steps below are performed against the cluster.
 
-## Prepare the Value File
+## Prepare the environment variables
 
-Prepare the value file `primehub-values.yaml` for helm installation.
+Prepare the variables before installation
 
-> Pure IP address is not allowed because we use Kubernetes ingress to route the traffic. A trick is to use the [nip.io](https://nip.io/) service to map an IP to a domain name. (e.g., `1.2.3.4.nip.io`)
+Key | Description | Example value
+----|-------------| ----
+`PRIMEHUB_DOMAIN` | The domain name of PrimeHub which user can access to. | `example.primehub.io`
+`PH_PASSWORD` | PrimeHub admin `phadmin` default password| `yourDefaultPassw0rd`
+`KC_PASSWORD` | Keycloak admin `keycloak` default password | `yourDefaultPassw0rd`
 
-Key | Description
-----|------------------------------------
-`PRIMEHUB_DOMAIN` | The domain name of PrimeHub. It can be the same as PrimeHub's one.
 
-
-
-Modify the environment variables below and execute the commands to generate the value file.
-
-```
-PRIMEHUB_DOMAIN=1.2.3.4.nip.io
-
-cat <<EOF > primehub-values.yaml
-primehub:
-  domain: ${PRIMEHUB_DOMAIN}
-ingress:
-  annotations:
-    kubernetes.io/ingress.allow-http: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-  hosts:
-  -  ${PRIMEHUB_DOMAIN}
-EOF
-```
-
-## Add the chart repository
+## Clone the PrimeHub install repository
 
 ```bash
-helm repo add infuseai https://charts.infuseai.io
+git clone https://github.com/InfuseAI/primehub.git
 ```
+
+## Validate the primehub-install command is executable
 
 ```bash
-helm repo update
+./primehub/install/primehub-install
 ```
 
-## Install
+You should see the usage message like this:
+```bash
+USAGE:
+  primehub-install create  singlenode  [options]            : Create single-node k8s environment
+  primehub-install status  singlenode                       : Show the statuse of single-node k8s environment
+  primehub-install destroy singlenode                       : Destroy single-node k8s environment
+...
+```
 
-1. Run Helm command to install PrimeHub
+## Install PrimeHub required binaries
 
+```bash
+./primehub/install/primehub-install required-bin
+```
+
+This will install the required commands onto `~/bin`. You should append the `~/bin` to your `PATH` variables, or use the following command to append and read from the `.bashrc`
+
+```bash
+echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+
+## Install PrimeHub 
+
+Prepare two terminals, one to execute the primehub install script, the other to monitor the install progress by watching the pods status.
+
+### Terminal one
+
+Install by `primehub-install create primehub` and specify the version. ex. `v3.6.2`. Please check the latest stable version.
+
+   ```bash
+   ./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce
    ```
-   helm upgrade \
-     primehub infuseai/primehub \
-     --install \
-     --create-namespace \
-     --namespace hub  \
-     --timeout 30m  \
-     --values primehub-values.yaml
+
+   Enter the `PRIMEHUB_DOMAIN`, `KC_PASSWORD`, `PH_PASSWORD` by command prompt.
+
+   The install script will start by preflight check, init config, and so on.
+   ```
+   [Preflight Check]
+   [Preflight Check] Pass
+   [Verify] Mininal k8s resources
+   ...
+   [Install] PrimeHub
+   [Check] primehub.yaml
+   [Generate] primehub.yaml
+   [Install] PrimeHub   
+   ...
+   [Progress] wait for bootstrap job ready
+   ...
    ```
 
-   > In the first time installation, it may take a longer time to pull images. You can extend `--timeout 30m` to change the default timeout duration.
+### Terminal two
 
-2. Wait and watch
+Open another terminal to run the command to watch the progress.
    
-   In another Terminal, run the command to watch the progress.
+```bash
+watch 'kubectl -n hub get pods'
+```
+
+
+Once to see most pods with Running STATUS except **primehub-bootstrap-xxx** pod in **Completed** STATUS and the READY indicator should be **N/N**. 
+
+Example watch console for the completed installation:
+
+```bash
+NAME                                                   READY   STATUS      RESTARTS   AGE
+hub-758bd48876-wwwww                                   1/1     Running     0          17m
+keycloak-0                                             1/1     Running     0          17m
+keycloak-postgres-0                                    1/1     Running     0          17m
+metacontroller-0                                       1/1     Running     0          17m
+primehub-admission-xxxxxxxxxx-yyyyy                    1/1     Running     0          17m
+primehub-bootstrap-xxxxx                               0/1     Completed   0          17m
+primehub-console-xxxxxxxxxx-yyyyy                      1/1     Running     0          17m
+primehub-controller-xxxxxxxxxx-yyyyy                   2/2     Running     0          17m
+primehub-graphql-xxxxxxxxx-yyyyy                       1/1     Running     0          17m
+primehub-metacontroller-webhook-xxxxxxxxxx-yyyyy       1/1     Running     0          17m
+primehub-watcher-xxxxxxxxxx-yyyyy                      1/1     Running     0          17m
+proxy-6bdd94cc-yyyyy                                   1/1     Running     0          17m
+```
+
+Then go back to Terminal one and wait until you see messages:
+
+```bash
+[Completed] Install PrimeHub
+
+PrimeHub:   http://`$PRIMEHUB_DOMAIN` ( phadmin / `$PH_PASSWORD` )
+Id Server:  http://`$PRIMEHUB_DOMAIN`/auth/admin/ ( keycloak / `$KC_PASSWORD` )
+
+[Completed]
+```
+
+## Enable PrimeHub Store
+
+After the fresh installation, need to enable PrimeHub Store.
+
+1. Set flag by edit the env
+
+   ```bash
+   ~/primehub/install/primehub-install env edit
    ```
-   watch 'kubectl -n hub get pods'
-   ```
 
-    Please wait and ignore the interim pods status, `CreateContainerConfigError` until you see **primehub-bootstrap-xxx** pod and **admission-post-install-job-xxx** pod are **Completed** and other pods are **Running** with Ready(1/1).
-
-    Then go back to first Terminal and wait until you see messages:
-
-    ```text
-    NOTES:
-    PrimeHub is installed at:
-
-    To get the login account, please enter the following commands:
-    echo "username: phadmin"
-    echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
-    ```
-
-    According to the instruction, run the command to learn the password for account `phadmin` and memory it.
-
-    ```bash
-    echo "password: $(kubectl -n hub get secret primehub-bootstrap -o jsonpath='{.data.password}' | base64 --decode)"
-    ```
-
-3. Label the nodes which can be assigned for JupyterHub servers
+2. Add PRIMEHUB_FEATURE_STORE flag to the last line of `.env`
 
    ```
-   kubectl label node component=singleuser-server --all
+   PRIMEHUB_FEATURE_STORE=true
    ```
+
+3. Update the configuration by primehub-install command
+
+   ```bash
+   ~/primehub/install/primehub-install upgrade primehub
+   ```
+
 
 ## Verify the Installation
 
-1. Run this command
-
-   ```bash
-   kubectl -n hub rollout status deploy/primehub-console
-   ```
-
-2. Browse `http://${PRIMEHUB_DOMAIN}` and log in by the `phadmin` and the password. `phadmain` is a default account with admin privileges.
+Browse `http://${PRIMEHUB_DOMAIN}` and log in by the `phadmin` and the password. `phadmain` is a default account with admin privileges.
 
 Hooray! PrimeHub CE has been installed and is running now. 
+
 
 ## New to PrimeHub
 

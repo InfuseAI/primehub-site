@@ -23,6 +23,9 @@ If you already have a Kubernetes cluster or going to install one in your own pre
 
 If a fresh PrimeHub on GKE or EKS is one of your preferences, you may want to start from our [Kubernetes on GKE](kubernetes_on_gke) guide or [Kubernetes on EKS](kubernetes_on_eks) guide.
 
+## Git
+  > Please follow the os-specific command to install git command
+
 ## cURL
 
 [cURL](https://curl.se/) is a command-line tool that allows us to do HTTP requests from shell. To install cURL, please follow the os-specific method. For example.
@@ -89,9 +92,9 @@ PrimeHub is packaged and installed by [Helm](https://helm.sh/docs/using_helm/)
 
 ## Domain name
 
-PrimeHub requires a domain name to access the service
+PrimeHub requires a domain name or fix IP address to access the service from the user machines.
 
-  > Pure IP address is not allowed because we use kubernetes ingress to route the traffic. A trick is to use the [nip.io](https://nip.io/) service to map an IP to a domain name. (e.g., `1.2.3.4.nip.io`)
+  > The minimum requirement: The domain name can be accessible to the ingress node (by DNS CNAME or L4/L7 load balancer) from the users machines
 
 ## Nginx ingress Controller
 
