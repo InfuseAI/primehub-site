@@ -70,31 +70,36 @@
 <ul>
 <li>Ubuntu 18.04 LTS</li>
 <li>Kubernetes 1.17 version</li>
-<li>IP address: 1.2.3.4</li>
+<li>IP address: <code>EXTERNAL-IP</code></li>
 <li>Networking: allow port 80 for HTTP</li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="clone-the-primehub-install-repository"></a><a href="#clone-the-primehub-install-repository" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clone the PrimeHub install repository</h3>
+<pre><code class="hljs">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/<span class="hljs-literal">Inf</span>useAI/primehub.git
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="install-primehub-required-binaries"></a><a href="#install-primehub-required-binaries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub required binaries</h3>
+<pre><code class="hljs">./primehub/<span class="hljs-keyword">install</span>/primehub-<span class="hljs-keyword">install</span> <span class="hljs-keyword">required</span>-<span class="hljs-keyword">bin</span>
+</code></pre>
+<p>This will install the required commands onto <code>~/bin</code>. You should append the <code>~/bin</code> to your <code>PATH</code> variables, or use the following command to append and read from the <code>.bashrc</code></p>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$HOME</span>/bin:<span class="token environment constant">$PATH</span>"</span> <span class="token operator">>></span> ~/.bashrc
+<span class="token builtin class-name">source</span> ~/.bashrc
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="install-microk8s-single-node"></a><a href="#install-microk8s-single-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install MicroK8s Single Node</h3>
 <p>We provide a install script which makes the installation much easier to create a <a href="https://microk8s.io/">MicroK8s-single-node</a> Kubernetes.</p>
-<p>Download the script <code>primehub-install</code></p>
-<pre><code class="hljs css language-bash"><span class="token function">git</span> clone https://github.com/InfuseAI/primehub
-<span class="token builtin class-name">cd</span> /path/to/primehub/install
-<span class="token function">chmod</span> +x primehub-install
-</code></pre>
 <p>Run the <code>create singlenode</code> command:</p>
-<pre><code class="hljs css language-bash">./primehub-install create singlenode
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install create singlenode
 </code></pre>
 <p>After the first execution, you will see the message. Because it adds the user to <code>microk8s</code> group and needs to relogin:</p>
 <pre><code class="hljs">[Require Action] Please relogin <span class="hljs-keyword">this</span> session <span class="hljs-keyword">and</span> <span class="hljs-built_in">run</span> create singlenode again
 </code></pre>
 <p>After relogin, run the same command again to finish the single-node provision:</p>
-<pre><code class="hljs css language-bash">./primehub-install create singlenode
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install create singlenode
 </code></pre>
 <blockquote>
 <p>During the installation, you might run into troubles or need to modify the default settings, please check the <a href="#troubleshooting">TroubleShooting</a> section.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="quick-verification"></a><a href="#quick-verification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quick Verification</h3>
-<p>Access nginx-ingress with the magic <code>.nip.io</code> domain, with your <code>EXTERNAL-IP</code>:</p>
-<pre><code class="hljs">curl <span class="hljs-string">http:</span><span class="hljs-comment">//1.2.3.4.nip.io</span>
+<p>Access nginx-ingress with your <code>EXTERNAL-IP</code>:</p>
+<pre><code class="hljs"><span class="hljs-attribute">curl</span> http://<span class="hljs-variable">$EXTERNAL</span>-IP
 </code></pre>
 <p>The output will be <code>404</code> because no <code>Ingress</code> resources are defined yet:</p>
 <pre><code class="hljs"><span class="hljs-keyword">default</span> backend - 404
@@ -158,8 +163,8 @@
 <p><a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/">https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="install-primehub-ce"></a><a href="#install-primehub-ce" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub CE</h2>
-<p>Run the <code>create primehub</code> command with <code>--primehub-ce</code> and with a specified version such <code>v3.1.0</code>.</p>
-<pre><code class="hljs css language-bash">./primehub-install create primehub --primehub-version <span class="token operator">&lt;</span>version<span class="token operator">></span> --primehub-ce --helm-timeout 20m
+<p>Run the <code>create primehub</code> command with <code>--primehub-ce</code> and with a specified version such <code>v3.6.2</code>.</p>
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install create primehub --primehub-version <span class="token operator">&lt;</span>version<span class="token operator">></span> --primehub-ce
 </code></pre>
 <ol>
 <li><p>Please enter the domain name of PrimeHub</p></li>
@@ -172,6 +177,19 @@
 <p>Once the <code>primehub-bootstrap</code> is running, use the the command to watch the log of primehub bootstrap</p>
 <pre><code class="hljs css language-bash">kubectl logs -n hub <span class="token variable"><span class="token variable">$(</span>kubectl get pod -n hub <span class="token operator">|</span> <span class="token function">grep</span> primehub-bootstrap <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">' '</span> -f1<span class="token variable">)</span></span> -f
 </code></pre>
+<h2><a class="anchor" aria-hidden="true" id="enable-primehub-store"></a><a href="#enable-primehub-store" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enable PrimeHub Store</h2>
+<p>After the fresh installation, need to enable PrimeHub Store.</p>
+<ol>
+<li><p>Set flag by edit the env</p>
+<pre><code class="hljs css language-bash">~/primehub/install/primehub-install <span class="token function">env</span> edit
+</code></pre></li>
+<li><p>Add PRIMEHUB_FEATURE_STORE flag to the last line of <code>.env</code></p>
+<pre><code class="hljs"><span class="hljs-attr">PRIMEHUB_FEATURE_STORE</span>=<span class="hljs-literal">true</span>
+</code></pre></li>
+<li><p>Update the configuration by primehub-install command</p>
+<pre><code class="hljs css language-bash">~/primehub/install/primehub-install upgrade primehub
+</code></pre></li>
+</ol>
 <h2><a class="anchor" aria-hidden="true" id="new-to-primehub"></a><a href="#new-to-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New to PrimeHub</h2>
 <p>Initially, PrimeHub has a built-in <em>user</em> <code>phadmin</code>, a built-in <em>group</em> <code>phusers</code>, several <em>instance types</em>/<em>image</em> which are available to <em>Global</em> ready to use. <code>phadmin</code> can launch a notebook quickly by using these resources.</p>
 <p>Now PrimeHub CE is ready, see <a href="../quickstart/launch-project">Launch Notebook</a> to launch your very first JupyterNotebook on PrimeHub. Also see <a href="../quickstart/login-portal-user">User Guide</a> to have the fundamental knowledge of PrimeHub.</p>
@@ -180,7 +198,7 @@
 <blockquote>
 <p>Generate a log file for diagnosis.</p>
 </blockquote>
-<pre><code class="hljs css language-bash">./primehub-install diagnose
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install diagnose
 </code></pre>
 <p>You may run into troubles during the installation, we list some of them, hopefully, you find resolutions here.</p>
 <h3><a class="anchor" aria-hidden="true" id="using-valid-hostname-and-domain"></a><a href="#using-valid-hostname-and-domain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using valid hostname and domain</h3>
@@ -372,4 +390,4 @@ metadata:
 <blockquote>
 <p>Please remember to backup your settings and apply it <em>after every addons enabling or disable</em>.</p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting_started/install_primehub_ce"><span class="arrow-prev">← </span><span class="function-name-prevnext">Install PrimeHub CE</span></a><a class="docs-next button" href="/docs/getting_started/install_primehub"><span class="function-name-prevnext">Install PrimeHub EE</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#provision-a-cluster">Provision a cluster</a><ul class="toc-headings"><li><a href="#install-microk8s-single-node">Install MicroK8s Single Node</a></li><li><a href="#quick-verification">Quick Verification</a></li></ul></li><li><a href="#configurations">Configurations</a><ul class="toc-headings"><li><a href="#configure-gpu-optional">Configure GPU (optional)</a></li><li><a href="#configure-snap-optional">Configure snap (optional)</a></li></ul></li><li><a href="#using-self-hosted-dns-optional">Using Self-hosted DNS (Optional)</a></li><li><a href="#install-primehub-ce">Install PrimeHub CE</a><ul class="toc-headings"><li><a href="#monitor-the-primehub-installation">Monitor the PrimeHub installation</a></li></ul></li><li><a href="#new-to-primehub">New to PrimeHub</a></li><li><a href="#troubleshooting">Troubleshooting</a><ul class="toc-headings"><li><a href="#using-valid-hostname-and-domain">Using valid hostname and domain</a></li><li><a href="#ensure-cni-ip-range-not-overlaid-with-your-egress-network">Ensure CNI IP Range not overlaid with your Egress network</a></li><li><a href="#dns-configuration-might-reset-to-the-default-values-when-enabledisable-microk8s-addons">DNS configuration might reset to the default values when enable/disable microk8s addons</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting_started/install_primehub_ce"><span class="arrow-prev">← </span><span class="function-name-prevnext">Install PrimeHub CE</span></a><a class="docs-next button" href="/docs/getting_started/install_primehub"><span class="function-name-prevnext">Install PrimeHub EE</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#provision-a-cluster">Provision a cluster</a><ul class="toc-headings"><li><a href="#clone-the-primehub-install-repository">Clone the PrimeHub install repository</a></li><li><a href="#install-primehub-required-binaries">Install PrimeHub required binaries</a></li><li><a href="#install-microk8s-single-node">Install MicroK8s Single Node</a></li><li><a href="#quick-verification">Quick Verification</a></li></ul></li><li><a href="#configurations">Configurations</a><ul class="toc-headings"><li><a href="#configure-gpu-optional">Configure GPU (optional)</a></li><li><a href="#configure-snap-optional">Configure snap (optional)</a></li></ul></li><li><a href="#using-self-hosted-dns-optional">Using Self-hosted DNS (Optional)</a></li><li><a href="#install-primehub-ce">Install PrimeHub CE</a><ul class="toc-headings"><li><a href="#monitor-the-primehub-installation">Monitor the PrimeHub installation</a></li></ul></li><li><a href="#enable-primehub-store">Enable PrimeHub Store</a></li><li><a href="#new-to-primehub">New to PrimeHub</a></li><li><a href="#troubleshooting">Troubleshooting</a><ul class="toc-headings"><li><a href="#using-valid-hostname-and-domain">Using valid hostname and domain</a></li><li><a href="#ensure-cni-ip-range-not-overlaid-with-your-egress-network">Ensure CNI IP Range not overlaid with your Egress network</a></li><li><a href="#dns-configuration-might-reset-to-the-default-values-when-enabledisable-microk8s-addons">DNS configuration might reset to the default values when enable/disable microk8s addons</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
