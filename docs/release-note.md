@@ -6,9 +6,9 @@ description: 3.7 Release Note
 
 ## 🌟 &NonBreakingSpace; What's New
 
-### Display model params and metrics
+### Overview models params and metrics
 
-  Wondering what makes models performance different in versions? Parameters and metrics may show you clues. Overview selected parameters and metrics of versioned models to compare differences easily.
+  Wondering what makes performance of models varied in versions? Parameters and metrics may show you clues. Selecting parameters and metrics of versioned models to have an overview of differences easily.
 
   ![](assets/model-metrics-paras.gif)
 
