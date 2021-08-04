@@ -24,7 +24,7 @@ In this tutorial, we will use `PrimeHub Apps` with `Label Studio` to label the s
 - Install [Label Studio]() in PrimeHub Apps.
     1. Click `Install to PrimeHub` in Label Studio.
     ![](assets/primehub-end-to-end-tutorial-install-label-studio-1.png)
-    2. Fill in `Name` field with `label-studio`.
+    2. Fill in `Name` with `label-studio`.
     ![](assets/primehub-end-to-end-tutorial-install-label-studio-2.png)
     3. Click `Create` button.
     ![](assets/primehub-end-to-end-tutorial-install-label-studio-3.png)
