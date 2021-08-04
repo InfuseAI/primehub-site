@@ -52,7 +52,12 @@ USAGE:
 ./primehub/install/primehub-install required-bin
 ```
 
-This will install the required commands onto `~/bin`. You should append the `~/bin` to your `PATH` variables.
+This will install the required commands onto `~/bin`. You should append the `~/bin` to your `PATH` variables, or use the following command to append and read from the `.bashrc`
+
+```bash
+echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## Install PrimeHub 
 
@@ -60,7 +65,7 @@ Prepare two terminals, one to execute the primehub install script, the other to 
 
 ### Terminal one
 
-Install by `primehub-install create primehub` and specify the version. ex. `v3.6.2`.
+Install by `primehub-install create primehub` and specify the version. ex. `v3.6.2`. Please check the latest stable version.
 
    ```bash
    ./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce
@@ -122,6 +127,28 @@ Id Server:  http://`$PRIMEHUB_DOMAIN`/auth/admin/ ( keycloak / `$KC_PASSWORD` )
 
 [Completed]
 ```
+
+## Enable PrimeHub Store
+
+After the fresh installation, need to enable PrimeHub Store.
+
+1. Set flag by edit the env
+
+   ```bash
+   ~/primehub/install/primehub-install env edit
+   ```
+
+2. Add PRIMEHUB_FEATURE_STORE flag to the last line of `.env`
+
+   ```
+   PRIMEHUB_FEATURE_STORE=true
+   ```
+
+3. Update the configuration by primehub-install command
+
+   ```bash
+   ~/primehub/install/primehub-install upgrade primehub
+   ```
 
 
 ## Verify the Installation

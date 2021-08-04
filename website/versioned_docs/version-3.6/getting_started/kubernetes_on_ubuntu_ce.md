@@ -38,7 +38,12 @@ git clone https://github.com/InfuseAI/primehub.git
 ./primehub/install/primehub-install required-bin
 ```
 
-This will install the required commands onto `~/bin`. You should append the `~/bin` to your `PATH` variables.
+This will install the required commands onto `~/bin`. You should append the `~/bin` to your `PATH` variables, or use the following command to append and read from the `.bashrc`
+
+```bash
+echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
 
 
 ### Install MicroK8s Single Node
@@ -184,6 +189,28 @@ Once the `primehub-bootstrap` is running, use the the command to watch the log o
 ```bash
 kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d' ' -f1) -f
 ```
+
+## Enable PrimeHub Store
+
+After the fresh installation, need to enable PrimeHub Store.
+
+1. Set flag by edit the env
+
+   ```bash
+   ~/primehub/install/primehub-install env edit
+   ```
+
+2. Add PRIMEHUB_FEATURE_STORE flag to the last line of `.env`
+
+   ```
+   PRIMEHUB_FEATURE_STORE=true
+   ```
+
+3. Update the configuration by primehub-install command
+
+   ```bash
+   ~/primehub/install/primehub-install upgrade primehub
+   ```
 
 ## New to PrimeHub
 
