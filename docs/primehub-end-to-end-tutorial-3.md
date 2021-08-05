@@ -10,18 +10,18 @@ description: Using PrimeHub from Training to Serving the Model
 </div>
 <br>
 
-In this tutorial, we will go to MLflow app to compare training results in different parameters. Also, the best training results can be registered to [PrimeHub Model Management]() and further deployed to be an onlice service in [PrimeHub Model Deployment]().
+In this tutorial, we will go to `MLflow` app to compare training results in different parameters. Also, the best training results can be registered to [PrimeHub Model Management](model-management) and further deployed to be an onlice service in [PrimeHub Model Deployment](model-deployment-feature).
 
 ## What we need?
 
-- Enable [Model Deployment](model-deployment-feature) in your group.
+- Enable `Model Deployment` in your group.
 ![](assets/primehub-end-to-end-tutorial-model-deployment.png)
 
 ## Model Management (Choose Best Model)
 
 With the `Submit Notebook as Job` feature, we can set multiple variable combinations to fine-tune our model. 
 
-After all submitted jobs completed, we now select [Models](model-management) in PrimeHub UI and click `MLflow UI`.
+After all submitted jobs completed, we now go to `Models` page and click `MLflow UI`.
 ![](assets/tutorial_models_mlflow_ui.png)
 
 In the MLflow UI, switch to `Experiments` tab.
@@ -36,7 +36,7 @@ It shows all runs in `tutorial_screw_train` experiment, now check our two execut
 We will be directed to page that comparing 2 runs' parameters and metrics. We analyzed these 2 runs and found the `base_learning_rate=0.01` can perform better results.
 ![](assets/tutorial_mlflow_experiment_compare_result.png)
 
-Thus, we click its Run ID: `b353b109a79b4ba0ab4dadc3da4a1b03`.
+Thus, we click its `Run ID`: `b353b109a79b4ba0ab4dadc3da4a1b03`.
 ![](assets/tutorial_mlflow_experiment_click_run_id.png)
 
 Both parameters, metrics, and artifacts of this run can be found in this page.
@@ -54,12 +54,12 @@ Fill in model name with `tf-screw-model` and click `Register`.
 We can see our model is successfully registered as `version 1`.
 ![](assets/tutorial_mlflow_registered_v1.png)
 
-Back to PrimeHub UI and refresh the models page, now we can see our model `tf-screw-model` is managed in model list.
+Back to PrimeHub UI and refresh the `Models` page, we can see our model `tf-screw-model` is managed in model list.
 ![](assets/tutorial_models_managed.png)
 
 ## Customize Model Server Image
 
-Now, we have registered current best model in Model Management. To deploy the managed model, we need to setup the pre-packaged model image to be runnable container environment.
+Now, we have registered current best model in `Model Management`. To deploy the managed model, we need to setup the pre-packaged model image to be runnable container environment.
 
 Use the [Tensorflow2 Prepackaged Model Server](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2) as template of pre-packaged model image.
 
@@ -116,15 +116,17 @@ Next, tag the built image based on your docker registries, we added `screw-class
 docker tag tensorflow2-prepackaged:latest infuseai/tensorflow2-prepackaged:screw-classification
 ```
 
-Then push to docker registry.
+Push to docker registry.
 
 ```bash
 docker push infuseai/tensorflow2-prepackaged:screw-classification
 ```
 
+Finally, our pre-packaged model image is pushed to `infuseai/tensorflow2-prepackaged:screw-classification` and ready to serve model in `Model Deployment`.
+
 ## Model Deployment
 
-Now, we have prepared the trained model in PrimeHub Model Management and pushed the customized pre-packaged model image to Docker Hub.
+Now, we have prepared the trained model in `Model Management` and pushed the customized pre-packaged model image to Docker Hub.
 
 Let's continue to deploy our model!
 
@@ -189,16 +191,16 @@ Then copy the entire block to the terminal for execution, and we are sending exa
 
 Congratulations! We have finished the tutorials!
 
-In the [1 - Label Data](), we've used `Label Studio` installed in `PrimeHub Apps` to label the screw images.
+In the [1 - Label Data](primehub-end-to-end-tutorial-1), we've used `Label Studio` installed in `PrimeHub Apps` to label the screw images.
 - In addition to image data, `Label Studio` can also be beneficial to text, audio, and video data labeling.
 - In `PrimeHub Apps`, it provides an easy way for setting up well-known applications for your team such as [Code Server](primehub-app-builtin-code-server), [Matlab](primehub-app-builtin-matlab), [Label Studio](primehub-app-builtin-label-studio), [MLflow](primehub-app-builtin-mlflow), and [Streamlit](primehub-app-builtin-streamlit). Allowing users to orchestrate data/tools for the acceleration of machine learning workflow.
 
-In the [2 - Train and Tune the Model](), we've trained the model in `PrimeHub Notebooks` and submit entire notebook file as a parameterized job. Furthermore, the results of training job is logged to MLflow app for experiment tracking.
+In the [2 - Train and Tune the Model](primehub-end-to-end-tutorial-2), we've trained the model in `PrimeHub Notebooks` and submit entire notebook file as a parameterized job. Furthermore, the results of training job is logged to MLflow app for experiment tracking.
 - With the feature of `submit notebook as job`, we can simply adjust instance type to gain more running resources, change image to make notebook execution on experimental environment, and even use different parameter specifications to achieve flexible parameter tuning.
 - With configured `MLflow` app, we can easily perform `MLflow autologging` in `PrimeHub Notebooks` and `PrimeHub Jobs`. It makes every training execution can be parsed and collected so that we can review parameters, metrics, and artifacts of each training history.
 
-In the [3 - Manage, Compare, and Deploy the Model](), we've made the best model to be version managed in `PrimeHub Model Management` and deployed it as an endpoint service in `PrimeHub Model Deployment`.
+In the [3 - Manage, Compare, and Deploy the Model](primehub-end-to-end-tutorial-3), we've made the best model to be version managed in `PrimeHub Model Management` and deployed it as an endpoint service in `PrimeHub Model Deployment`.
 - In `Model Management`, the trained models can be version managed in different projects, frameworks, or any designated patterns. Users can reuse previous trained models, deploy the latest model to `Model Deployment`, and share the well-trained models across teams.
-- In `Model Deployment`, we can customize model input/output in model image then deploy it in a cloud-ready environment. It is no need to prepare the infrastructure for model deployment purpose, PrimeHub will setup all required resources to ensure it can respond to requests anytime from everywhere.
+- In `Model Deployment`, we can customize model input/output in model image then deploy it in a cloud-ready environment. It is no need to prepare the infrastructure for model deployment purpose by yourself, PrimeHub will setup all required resources to ensure it can respond to requests anytime from everywhere.
 
 With PrimeHub, you will experience a wonderful machine learning journey! Enjoy it!
