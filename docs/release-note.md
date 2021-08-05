@@ -80,7 +80,7 @@ description: 3.7 Release Note
   ![](assets/release-note-api-token-quick-access.png)
 
 
-+ [A complete tutorial - from training to serving: Construct the end-to-end machine learning project life cycle in PrimeHub with Label Studio](primehub-app-tutorial-end-to-end)
++ [A complete tutorial - from training to serving: Construct the end-to-end machine learning project life cycle in PrimeHub with Label Studio](primehub-end-to-end-tutorial-1)
 
 
 ---
