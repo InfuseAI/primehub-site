@@ -149,16 +149,22 @@ Reference
 
 ## Install PrimeHub
 
-Run the `create primehub` command with a specified version.
+Check available stable versions
+
+```bash
+./primehub/install/primehub-install
+```
+
+Install the latest stable version by default
 
 ```bash
 ./primehub-install create primehub
 ```
 
-or specify PrimeHub version, such as v3.6.0
+Or install the specific version such as v3.7.0 as below
 
 ```bash
-./primehub-install create primehub --primehub-version <version>
+./primehub/install/primehub-install create primehub --primehub-version <version>
 ```
 
 Please enter the domain name of PrimeHub

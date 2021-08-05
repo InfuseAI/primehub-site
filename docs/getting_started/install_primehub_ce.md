@@ -67,6 +67,20 @@ Prepare two terminals, one to execute the primehub install script, the other to 
 
 Install by `primehub-install create primehub` and specify the version. ex. `v3.6.2`. Please check the latest stable version.
 
+Check available stable versions
+
+```bash
+./primehub/install/primehub-install
+```
+
+Install the latest stable version by default
+
+   ```bash
+   ./primehub/install/primehub-install create primehub --primehub-ce
+   ```
+
+Or install the specific version as below
+
    ```bash
    ./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce
    ```
@@ -96,6 +110,11 @@ Open another terminal to run the command to watch the progress.
 watch 'kubectl -n hub get pods'
 ```
 
+Or once the `primehub-bootstrap` is running, check the progress of bootstrapping.
+
+```bash
+kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d' ' -f1) -f
+```
 
 Once to see most pods with Running STATUS except **primehub-bootstrap-xxx** pod in **Completed** STATUS and the READY indicator should be **N/N**. 
 

@@ -163,31 +163,96 @@ Reference
 
 ---
 
-## Install PrimeHub CE
+## Install PrimeHub 
 
-Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.6.2`. Please check the latest stable version.
+Prepare two terminals, one to execute the primehub install script, the other to monitor the install progress by watching the pods status.
 
-```bash
-./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce
-```
+### Terminal one
 
-1. Please enter the domain name of PrimeHub
+Install by `primehub-install create primehub` and specify the version. ex. `v3.6.2`. Please check the latest stable version.
 
-2. The password of `KC_PASSWORD` and `PH_PASSWORD` will be prompted and will be auto-generated if input empty value.
-
-### Monitor the PrimeHub installation
-
-Once running the PrimeHub installation, meanwhile, just open another terminal session to run the command to monitor the installation.
+Check available stable versions
 
 ```bash
-watch 'kubectl get pod -n hub'
+./primehub/install/primehub-install
 ```
 
-Once the `primehub-bootstrap` is running, use the the command to watch the log of primehub bootstrap
+Install the latest stable version by default
+
+   ```bash
+   ./primehub/install/primehub-install create primehub --primehub-ce
+   ```
+
+Or install the specific version such as v3.7.0 as below
+
+   ```bash
+   ./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce
+   ```
+
+   Enter the `PRIMEHUB_DOMAIN`, `KC_PASSWORD`, `PH_PASSWORD` by command prompt.
+
+   The install script will start by preflight check, init config, and so on.
+   ```
+   [Preflight Check]
+   [Preflight Check] Pass
+   [Verify] Mininal k8s resources
+   ...
+   [Install] PrimeHub
+   [Check] primehub.yaml
+   [Generate] primehub.yaml
+   [Install] PrimeHub   
+   ...
+   [Progress] wait for bootstrap job ready
+   ...
+   ```
+
+### Terminal two
+
+Open another terminal to run the command to watch the progress.
+   
+```bash
+watch 'kubectl -n hub get pods'
+```
+
+Or once the `primehub-bootstrap` is running, check the progress of bootstrapping.
 
 ```bash
 kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d' ' -f1) -f
 ```
+
+
+Once to see most pods with Running STATUS except **primehub-bootstrap-xxx** pod in **Completed** STATUS and the READY indicator should be **N/N**. 
+
+Example watch console for the completed installation:
+
+```bash
+NAME                                                   READY   STATUS      RESTARTS   AGE
+hub-758bd48876-wwwww                                   1/1     Running     0          17m
+keycloak-0                                             1/1     Running     0          17m
+keycloak-postgres-0                                    1/1     Running     0          17m
+metacontroller-0                                       1/1     Running     0          17m
+primehub-admission-xxxxxxxxxx-yyyyy                    1/1     Running     0          17m
+primehub-bootstrap-xxxxx                               0/1     Completed   0          17m
+primehub-console-xxxxxxxxxx-yyyyy                      1/1     Running     0          17m
+primehub-controller-xxxxxxxxxx-yyyyy                   2/2     Running     0          17m
+primehub-graphql-xxxxxxxxx-yyyyy                       1/1     Running     0          17m
+primehub-metacontroller-webhook-xxxxxxxxxx-yyyyy       1/1     Running     0          17m
+primehub-watcher-xxxxxxxxxx-yyyyy                      1/1     Running     0          17m
+proxy-6bdd94cc-yyyyy                                   1/1     Running     0          17m
+```
+
+Then go back to Terminal one and wait until you see messages:
+
+```bash
+[Completed] Install PrimeHub
+
+PrimeHub:   http://`$PRIMEHUB_DOMAIN` ( phadmin / `$PH_PASSWORD` )
+Id Server:  http://`$PRIMEHUB_DOMAIN`/auth/admin/ ( keycloak / `$KC_PASSWORD` )
+
+[Completed]
+```
+
+
 
 ## Enable PrimeHub Store
 
@@ -229,6 +294,7 @@ Now PrimeHub CE is ready, see [Launch Notebook](../quickstart/launch-project) to
 ```
 
 You may run into troubles during the installation, we list some of them, hopefully, you find resolutions here.
+
 
 ### Using valid hostname and domain
 
