@@ -31,7 +31,7 @@ Please make sure the machine has installed [cURL](prerequisites#curl).
 Download the script `primehub-install`
 
 ```bash
-git clone https://github.com/InfuseAI/primehub
+git clone https://github.com/InfuseAI/primehub.git
 cd primehub/install
 ```
 

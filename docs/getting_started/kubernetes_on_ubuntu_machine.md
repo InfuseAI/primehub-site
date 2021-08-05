@@ -30,7 +30,7 @@ Please make sure the machine has installed [cURL](prerequisites#curl).
 Download the script `primehub-install`
 
 ```bash
-git clone https://github.com/InfuseAI/primehub
+git clone https://github.com/InfuseAI/primehub.git
 cd primehub/install
 ```
 
@@ -56,7 +56,7 @@ After relogin, run the same command again to finish the single-node provision:
 
 ### Quick Verification
 
-Access nginx-ingress with the magic `.nip.io` domain, with your `EXTERNAL-IP`:
+Access nginx-ingress with the domain or magic `.nip.io` domain, with your `EXTERNAL-IP`:
 
 ```
 curl http://1.2.3.4.nip.io
@@ -164,7 +164,7 @@ Install the latest stable version by default
 Or install the specific version such as v3.7.0 as below
 
 ```bash
-./primehub/install/primehub-install create primehub --primehub-version <version>
+./primehub-install create primehub --primehub-version <version>
 ```
 
 Please enter the domain name of PrimeHub

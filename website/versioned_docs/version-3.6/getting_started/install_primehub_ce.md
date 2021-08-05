@@ -1,19 +1,19 @@
 ---
-id: install_primehub
-title: Install PrimeHub Enterprise
-description: Install PrimeHub Enterprise
-sidebar_label: Install PrimeHub EE
+id: version-3.6-install_primehub_ce
+title: Install PrimeHub Community
+description: Install PrimeHub Community
+sidebar_label: Install PrimeHub CE
+original_id: install_primehub_ce
 ---
-
 <div class="label-sect">
-  <div class="ee-only tooltip">Enterprise
-    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
 </div>
 
->Check the [prerequisites](prerequisites) for PrimeHub first before preceding to the PrimeHub installation.
+>To prepare a PrimeHub-ready-Kubernetes, Please check the [Prerequisites](prerequisites) for PrimeHub first before preceding to the PrimeHub CE installation.
 
-The document assumes there is a PrimeHub-ready-Kubernetes already and will guide you how to install **PrimeHub EE (Trial license)** by **primehub-install**. The steps below are performed against the cluster.
+The document assumes there is a PrimeHub-ready-Kubernetes already. The steps below are performed against the cluster.
 
 ## Prepare the environment variables
 
@@ -66,17 +66,10 @@ Prepare two terminals, one to execute the primehub install script, the other to 
 
 ### Terminal one
 
-Install by `primehub-install create primehub` with the latest stable version.
-
-
-```bash
-./primehub/install/primehub-install
-```
-
-Or install the specific version as below
+Install by `primehub-install create primehub` and specify the version. ex. `v3.6.2`. Please check the latest stable version.
 
    ```bash
-   ./primehub/install/primehub-install create primehub --primehub-version <version>
+   ./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce
    ```
 
    Enter the `PRIMEHUB_DOMAIN`, `KC_PASSWORD`, `PH_PASSWORD` by command prompt.
@@ -104,11 +97,6 @@ Open another terminal to run the command to watch the progress.
 watch 'kubectl -n hub get pods'
 ```
 
-Or once the `primehub-bootstrap` is running, check the progress of bootstrapping.
-
-```bash
-kubectl logs -n hub $(kubectl get pod -n hub | grep primehub-bootstrap | cut -d' ' -f1) -f
-```
 
 Once to see most pods with Running STATUS except **primehub-bootstrap-xxx** pod in **Completed** STATUS and the READY indicator should be **N/N**. 
 
@@ -141,35 +129,35 @@ Id Server:  http://`$PRIMEHUB_DOMAIN`/auth/admin/ ( keycloak / `$KC_PASSWORD` )
 [Completed]
 ```
 
+## Enable PrimeHub Store
+
+After the fresh installation, need to enable PrimeHub Store.
+
+1. Set flag by edit the env
+
+   ```bash
+   ~/primehub/install/primehub-install env edit
+   ```
+
+2. Add PRIMEHUB_FEATURE_STORE flag to the last line of `.env`
+
+   ```
+   PRIMEHUB_FEATURE_STORE=true
+   ```
+
+3. Update the configuration by primehub-install command
+
+   ```bash
+   ~/primehub/install/primehub-install upgrade primehub
+   ```
+
 
 ## Verify the Installation
 
-1. Open `http://${PRIMEHUB_DOMAIN}` and log in by the admin username and password.
+Browse `http://${PRIMEHUB_DOMAIN}` and log in by the `phadmin` and the password. `phadmain` is a default account with admin privileges.
 
-   ![](assets/install_primehub1.png)
+Hooray! PrimeHub CE has been installed and is running now. 
 
-2. Enter `Notebooks` for launching a JupyterHub.
-
-## Apply License Key (Optional)
-
->By default, a trial license is applied. See [trial license limitations](../comparison#license-limitations).
->Please contact InfuseAI for the license inquiry for a valid commercial license.
-
-If you have a valid license file from InfuseAI, run this command to apply a license key. 
-
-```bash
-./primehub/install/primehub-install apply-license <path/to/license_key_yaml_file>
-```
-
-You can check the license status from [System Management](../guide_manual/admin-system#primehub-license) in the admin dashboard.
-
-## Troubleshooting
-
-1. If there is something run when installing, you can check the bootstrap job log to see what's going on
-
-   ```bash
-   kubectl -n hub logs jobs/primehub-bootstrap
-   ```
 
 ## New to PrimeHub
 
