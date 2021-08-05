@@ -7,16 +7,7 @@
       "resources-quota",
       "roles",
       "environment-variables",
-      "quickstart/login-portal-user",
-      {
-        "type": "subcategory",
-        "label": "Tutorials",
-        "ids": [
-          "primehub-end-to-end-tutorial-1",
-          "primehub-end-to-end-tutorial-2",
-          "primehub-end-to-end-tutorial-3"
-        ]
-      }
+      "quickstart/login-portal-user"
     ],
     "Installation": [
       "dev-introduction",
@@ -56,6 +47,17 @@
     "QuickStart": [
       "quickstart/qs-primehub",
       "quickstart/qs-primehub-deploy"
+    ],
+    "Tutorial": [
+      {
+        "type": "subcategory",
+        "label": "From Training to Serving Models",
+        "ids": [
+          "primehub-end-to-end-tutorial-1",
+          "primehub-end-to-end-tutorial-2",
+          "primehub-end-to-end-tutorial-3"
+        ]
+      }
     ],
     "Notebooks": [
       "quickstart/launch-project",
