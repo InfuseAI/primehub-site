@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>PrimeHub Apps (Beta) · PrimeHub</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="PrimeHub Apps"/><meta name="docsearch:version" content="3.6"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="PrimeHub Apps (Beta) · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="PrimeHub Apps"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.6</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.6/introduction" target="_self">Documentation</a></li><li class="siteNavGroupActive"><a href="/docs/3.6/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Apps</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/index-zh">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-core">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-installation">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">QuickStart<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-quickstart">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Notebooks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/launch-project">Start Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/user-advanced-setting">Spawner 進階設定</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/ssh-config-cht">SSH Server 功能</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/notebook-tips-cht">小訣竅</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Extension</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/ph-notebook-extension-cht">PrimeHub Extension</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/notebook-as-job-cht">Notebook as a Job</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Jobs<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/job-submission-cht">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/job-artifact-cht">Job Artifacts</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">教學</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/job-tutorial-more">Origins</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Schedule<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/job-scheduling-feature-cht">Job Scheduler</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Models<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-management-cht">Overview (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-model-management">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deployments<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-feature">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-tutorial-concepts-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-tutorial-prepackaged-image-cht">透過 Pre-packaged Server 模型部署</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-tutorial-prepackaged-image-phfs-cht">透過 Pre-packaged Server 模型部署 (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-tutorial-model-image-cht">透過 Language Wrapper 打包模型映像檔部署</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Pre-packaged servers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-prepackaged-server-intro-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-prepackaged-server-tensorflow2-cht">TensorFlow server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-prepackaged-server-pytorch-cht">PyTorch Model Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-prepackaged-server-sklearn-cht">SKLearn server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-prepackaged-server-custom-cht">Customize Pre-packaged Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-prepackaged-server-test-cht">Run Pre-packaged Server Locally</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Package from Language Wrapper 教學</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-language-wrapper-intro-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-tutorial-package-image">建置模型部署所需之映像檔 (Python)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-tutorial-package-image-r">建置模型部署所需之映像檔 (R)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-language-wrapper-reusable-base-image-cht">透過預建置 Base Image 加速流程</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Advanced</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-prediction-apis-cht">Prediction APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/model-deployment-model-uri-cht">Model URI</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Shared Files<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/shared-files-cht">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Apps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/3.6/zh-tw/primehub-app-cht">Overview (Beta)</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">更多資訊</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-apps">Origins</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Group Administration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/group-image-cht">Images</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/group-setting-cht">Settings</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Admin Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/login-portal-admin">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用者及群組管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-group-cht">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Instance Type 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/usecase-toleration-cht">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/usecase-nodeselector-cht">[使用案例] NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Image 創建及管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-build-image-cht">Image Builder</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/custom-image-guideline">客製 Image 指南</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Dataset 管理及上傳</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-uploader-cht">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Secret 管理及取得</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Instance 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-nb-admin-cht">Notebooks Admin</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用量月報表</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-report-cht">Usage Reports</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系統</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/admin-system-cht">System Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">維運工具</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/maintenance-cht">Maintenance Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/assign-group-admin-cht">指定群組管理者</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/add-infuseai-image">新增 InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub Deploy<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-deploy">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-design">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-config">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-ref">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/quickstart/nb-data-store-cht">資料儲存空間</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/ssh-vscode-cht">VSCode 遠端存取 Notebooks</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/ssh-keygen-cht">SSH 金鑰生成</a></li><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/guide_manual/images-list">InfuseAI 提供 Images</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.6/zh-tw/idx-trouble">Origins</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">PrimeHub Apps (Beta)</h1></header><article><div><span><div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+<br>
+<blockquote>
+<p>This is an Beta feature. The page content is subject to change.</p>
+</blockquote>
+<p><strong>PrimeHub</strong> 以做為讓資料科學家恣意導入多樣性資料及各種工具的整合性 MLOps 平台為目標，藉此可以加速研究開發的流程。因此我們導入 <strong>PrimeHub Apps</strong> 新功能。藉由此功能，我們可以安裝第三方應用服務來擴充 PrimeHub 的實用性，如：ML 自動化、資料視覺化等工具，可以更貼近開發流程。安裝的第三方應用服務同樣受惠於 PrimeHub 平台的存取權限管理、運算資源分配管理。</p>
+<p><img src="/docs/assets/app_overview_v36.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="installed-apps"></a><a href="#installed-apps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installed Apps</h2>
+<p>Apps 首頁顯示已安裝實體應用服務</p>
+<p><img src="/docs/assets/app_landing_cards.png" alt=""></p>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Title</td><td>使用者命名的實體服務名稱</td></tr>
+<tr><td>Status</td><td>實體服務狀態</td></tr>
+<tr><td>App version</td><td>實體服務使用的應用程式及版號</td></tr>
+</tbody>
+</table>
+<ul>
+<li><code>Manage</code>: 進入實體服務詳細資訊頁</li>
+<li><code>Start/Stop</code>: 實體服務開關</li>
+<li><code>Open</code>: 於新分頁開啟實體服務 URL</li>
+</ul>
+<p>同樣地，當沒有任何安裝實體服務時，首頁顯示空白。</p>
+<p><img src="/docs/assets/app_landing_empty.png" alt=""></p>
+<ul>
+<li><code>+ Applications</code>: 進入 Store 頁，選擇安裝的應用服務</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="app-store"></a><a href="#app-store" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>App Store</h2>
+<p>App Store 呈現內建的應用服務選單及<a href="../primehub-app-tutorial-template">使用者自建應用服務</a>。</p>
+<p><img src="/docs/assets/app_store_v36.png" alt=""></p>
+<ul>
+<li><code>Search</code>: 關鍵字搜尋</li>
+<li><code>App Documents</code>: 於新頁開啟應用服務的官方文件網站</li>
+<li><code>+ Install to PrimeHub</code>: 進入應用服務安裝設定頁</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="installing-app"></a><a href="#installing-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing App</h2>
+<p><img src="/docs/assets/app_mlflow.png" alt=""></p>
+<ul>
+<li><code>App</code>: 應用服務選擇</li>
+<li><code>App ID</code>: 實體服務 ID</li>
+<li><code>Name</code>: 實體服務命名</li>
+<li><code>Environment Variables</code>: 新增/修改預設環境變數</li>
+<li><code>Instance Types</code>: 選擇實體服務配置運算資源</li>
+<li><code>Access Scope</code>: 選擇實體服務存取的使用者群
+<ul>
+<li><code>Group members only</code>: 工作群組成員</li>
+<li><code>PrimeHub users only</code>: 全平台使用者</li>
+<li><code>Public</code>: 全開放，不限平台使用者；有實體服務 URL 的人皆可存取</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>請確保工作群組有足夠未使用的運算資源可以配置給此實體服務，以利啟動運作。</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="preset-environment-variables"></a><a href="#preset-environment-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preset Environment Variables</h3>
+<p>使用環境變數的用法格式，例如： <code>$(PRIMEHUB_APP_ROOT)/data</code>。</p>
+<p>這裡列出可供使用的內建的環境變數：</p>
+<ul>
+<li><code>PRIMEHUB_APP_ID</code>: 應用服務 ID
+<code>&lt;app-id&gt;</code></li>
+<li><code>PRIMEHUB_APP_ROOT</code>:  應用服務資料的根目錄；用來存放此應用服務的資料。 其路徑因有無開啟 Group Volume 而異
+<ul>
+<li><code>/project/&lt;group-name&gt;/phapplications/&lt;app-id&gt;</code> 開啟 Group Volume 時。</li>
+<li><code>/phapplications/&lt;app-id&gt;</code> 關閉 Group Volume 時。</li>
+</ul></li>
+<li><code>PRIMEHUB_APP_BASE_URL</code>: 應用服務 URL 前置字串為 <code>/console/apps/&lt;app-id&gt;</code>。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="installed-app-detail"></a><a href="#installed-app-detail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installed App Detail</h2>
+<p><img src="/docs/assets/app_detail.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="panel"></a><a href="#panel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Panel</h3>
+<ul>
+<li><code>Title</code>: 使用者命名的實體服務名稱</li>
+<li><code>App version</code>: 使用的應用程式及版號</li>
+<li><code>Description</code>: 應用程式摘要</li>
+</ul>
+<p>Action buttons:</p>
+<ul>
+<li><code>Open Web UI</code>: 於新分頁開啟實體服務 URL</li>
+<li><code>App Documents</code>: 於新頁開啟應用服務的官方文件網站</li>
+<li><code>Start/Stop</code>: 實體服務開關</li>
+<li><code>Update</code>: 變更實體服務設定並重啟服務套用新設定值</li>
+<li><code>Uninstall</code>: 卸載實體服務</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Status</td><td>實體服務狀態</td></tr>
+<tr><td>Message</td><td>實體服務狀態描述；如有錯誤發生，顯示錯誤訊息</td></tr>
+<tr><td>App URL</td><td>實體服務 URL</td></tr>
+<tr><td>Service Endpoints</td><td>實體服務端點</td></tr>
+<tr><td>App ID</td><td>實體服務 ID</td></tr>
+<tr><td>Name</td><td>實體服務的使用者命名</td></tr>
+<tr><td>Instance Type</td><td>配置運算資源</td></tr>
+<tr><td>Access Scope</td><td>實體服務存取的使用者群</td></tr>
+<tr><td>Environment Variables</td><td>已設定的環境變數</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
+<p>實體服務工作記錄。</p>
+<p>工作記錄觀覽只顯示最新的倒數 2000 行記錄。 點擊 <code>Scroll to Bottom</code> 至記錄最下方，或點擊 <code>Download</code> 下載完整記錄。</p>
+<p><img src="/docs/assets/app_log.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="built-in-apps"></a><a href="#built-in-apps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Built-in Apps</h2>
+<p>請參照<a href="../primehub-app-builtin-code-server">英文文件</a>。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.6/zh-tw/shared-files-cht"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/docs/3.6/zh-tw/idx-apps"><span>Origins</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installed-apps">Installed Apps</a></li><li><a href="#app-store">App Store</a></li><li><a href="#installing-app">Installing App</a><ul class="toc-headings"><li><a href="#preset-environment-variables">Preset Environment Variables</a></li></ul></li><li><a href="#installed-app-detail">Installed App Detail</a><ul class="toc-headings"><li><a href="#panel">Panel</a></li><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li></ul></li><li><a href="#built-in-apps">Built-in Apps</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
