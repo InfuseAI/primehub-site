@@ -15,9 +15,19 @@ sidebar_label: Start Notebook
 
 這份文件說明如何啟始/關閉一個 Notebook。
 
-## 起始
+## 縱觀
 
-![](assets/spawner_v33.png)
+![](assets/spawner_v38.png)
+
++ `Instance Types`: 此群組可選擇的 instance type
++ `Images`: 此群組可選擇的 images
++ `User Limits`: 此使用者可利用運算資源的限制
++ `Group Resources`: 此群組運算資源的可用狀態，包括目前使用量及群組整體限制量
++ `Dataset`: 此群組可存取的 dataset
++ `Show advanced settings`: 起始 Notebook 的進階設定
+
+
+### 起始
 
 1. 用使用者帳號登入 `User Portal` 後，並選擇 `Notebooks` 及點擊 `Start My Server 進入 spawner 頁。
 2. 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。
