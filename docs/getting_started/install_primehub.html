@@ -67,76 +67,95 @@
 <blockquote>
 <p>Check the <a href="prerequisites">prerequisites</a> for PrimeHub first before preceding to the PrimeHub installation.</p>
 </blockquote>
-<p>This document will guide you how to install <strong>PrimeHub EE (Trial license)</strong> by <strong>Helm</strong>.</p>
-<h2><a class="anchor" aria-hidden="true" id="add-infuseai-chart-repo"></a><a href="#add-infuseai-chart-repo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add InfuseAI Chart repo</h2>
-<pre><code class="hljs css language-bash">helm repo <span class="token function">add</span> infuseai https://charts.infuseai.io
-helm repo update
-</code></pre>
-<h2><a class="anchor" aria-hidden="true" id="prepare-the-value-file"></a><a href="#prepare-the-value-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare the Value File</h2>
-<p>Prepare the value file <code>primehub-values.yaml</code> for helm installation.</p>
+<p>The document assumes there is a PrimeHub-ready-Kubernetes already and will guide you how to install <strong>PrimeHub EE (Trial license)</strong> by <strong>primehub-install</strong>. The steps below are performed against the cluster.</p>
+<h2><a class="anchor" aria-hidden="true" id="prepare-the-environment-variables"></a><a href="#prepare-the-environment-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare the environment variables</h2>
+<p>Prepare the variables before installation</p>
 <table>
 <thead>
-<tr><th>Key</th><th>Description</th></tr>
+<tr><th>Key</th><th>Description</th><th>Example value</th></tr>
 </thead>
 <tbody>
-<tr><td><code>PRIMEHUB_DOMAIN</code></td><td>The domain name of primehub. It can be the same as primehub's one.</td></tr>
-<tr><td><code>PRIMEHUB_PASSWORD</code></td><td>The password for primehub admin. (The default username of admin is <code>phadmin</code>)</td></tr>
-<tr><td><code>GRAPHQL_SECRET_KEY</code></td><td>The graphql API secret key</td></tr>
-<tr><td><code>HUB_AUTH_STATE_CRYPTO_KEY</code></td><td>The jupyterhub crypo key. Please reference the <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/reference/reference.html#auth-state-cryptokey">z2jh document</a>.</td></tr>
-<tr><td><code>HUB_PROXY_SECRET_TOKEN</code></td><td>The jupyterhub secret. Please reference the <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/reference/reference.html#proxy-secrettoken">z2jh document</a>.</td></tr>
+<tr><td><code>PRIMEHUB_DOMAIN</code></td><td>The domain name of PrimeHub which user can access to.</td><td><code>example.primehub.io</code></td></tr>
+<tr><td><code>PH_PASSWORD</code></td><td>PrimeHub admin <code>phadmin</code> default password</td><td><code>yourDefaultPassw0rd</code></td></tr>
+<tr><td><code>KC_PASSWORD</code></td><td>Keycloak admin <code>keycloak</code> default password</td><td><code>yourDefaultPassw0rd</code></td></tr>
 </tbody>
 </table>
-<p>Modify the environment variables below and execute the commands to generate the value file.</p>
-<pre><code class="hljs"><span class="hljs-attr">PRIMEHUB_DOMAIN</span>=<span class="hljs-string">1.2.3.4.nip.io</span>
-<span class="hljs-attr">PRIMEHUB_PASSWORD</span>=<span class="hljs-string">__my_password__</span>
-<span class="hljs-attr">GRAPHQL_SECRET_KEY</span>=<span class="hljs-string">$(openssl rand -hex 32)</span>
-<span class="hljs-attr">HUB_AUTH_STATE_CRYPTO_KEY</span>=<span class="hljs-string">$(openssl rand -hex 32)</span>
-<span class="hljs-attr">HUB_PROXY_SECRET_TOKEN</span>=<span class="hljs-string">$(openssl rand -hex 32)</span>
+<h2><a class="anchor" aria-hidden="true" id="clone-the-primehub-install-repository"></a><a href="#clone-the-primehub-install-repository" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clone the PrimeHub install repository</h2>
+<pre><code class="hljs css language-bash"><span class="token function">git</span> clone https://github.com/InfuseAI/primehub.git
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="validate-the-primehub-install-command-is-executable"></a><a href="#validate-the-primehub-install-command-is-executable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validate the primehub-install command is executable</h2>
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install
+</code></pre>
+<p>You should see the usage message like this:</p>
+<pre><code class="hljs css language-bash">USAGE:
+  primehub-install create  singlenode  <span class="token punctuation">[</span>options<span class="token punctuation">]</span>            <span class="token builtin class-name">:</span> Create single-node k8s environment
+  primehub-install status  singlenode                       <span class="token builtin class-name">:</span> Show the statuse of single-node k8s environment
+  primehub-install destroy singlenode                       <span class="token builtin class-name">:</span> Destroy single-node k8s environment
+<span class="token punctuation">..</span>.
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="install-primehub-required-binaries"></a><a href="#install-primehub-required-binaries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub required binaries</h2>
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install required-bin
+</code></pre>
+<p>This will install the required commands onto <code>~/bin</code>. You should append the <code>~/bin</code> to your <code>PATH</code> variables, or use the following command to append and read from the <code>.bashrc</code></p>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$HOME</span>/bin:<span class="token environment constant">$PATH</span>"</span> <span class="token operator">>></span> ~/.bashrc
+<span class="token builtin class-name">source</span> ~/.bashrc
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="install-primehub"></a><a href="#install-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub</h2>
+<p>Prepare two terminals, one to execute the primehub install script, the other to monitor the install progress by watching the pods status.</p>
+<h3><a class="anchor" aria-hidden="true" id="terminal-one"></a><a href="#terminal-one" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Terminal one</h3>
+<p>Install by <code>primehub-install create primehub</code> with the latest stable version.</p>
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install
+</code></pre>
+<p>Or install the specific version as below</p>
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install create primehub --primehub-version <span class="token operator">&lt;</span>version<span class="token operator">></span>
+</code></pre>
+<p>Enter the <code>PRIMEHUB_DOMAIN</code>, <code>KC_PASSWORD</code>, <code>PH_PASSWORD</code> by command prompt.</p>
+<p>The install script will start by preflight check, init config, and so on.</p>
+<pre><code class="hljs">[<span class="hljs-symbol">Preflight</span> <span class="hljs-symbol">Check</span>]
+[<span class="hljs-symbol">Preflight</span> <span class="hljs-symbol">Check</span>] <span class="hljs-symbol">Pass</span>
+[<span class="hljs-symbol">Verify</span>] <span class="hljs-symbol">Mininal</span> k8s resources
+...
+[<span class="hljs-symbol">Install</span>] <span class="hljs-symbol">PrimeHub</span>
+[<span class="hljs-symbol">Check</span>] primehub.yaml
+[<span class="hljs-symbol">Generate</span>] primehub.yaml
+[<span class="hljs-symbol">Install</span>] <span class="hljs-symbol">PrimeHub</span>   
+...
+[<span class="hljs-symbol">Progress</span>] wait for bootstrap job ready
+...
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="terminal-two"></a><a href="#terminal-two" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Terminal two</h3>
+<p>Open another terminal to run the command to watch the progress.</p>
+<pre><code class="hljs css language-bash"><span class="token function">watch</span> <span class="token string">'kubectl -n hub get pods'</span>
+</code></pre>
+<p>Or once the <code>primehub-bootstrap</code> is running, check the progress of bootstrapping.</p>
+<pre><code class="hljs css language-bash">kubectl logs -n hub <span class="token variable"><span class="token variable">$(</span>kubectl get pod -n hub <span class="token operator">|</span> <span class="token function">grep</span> primehub-bootstrap <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">' '</span> -f1<span class="token variable">)</span></span> -f
+</code></pre>
+<p>Once to see most pods with Running STATUS except <strong>primehub-bootstrap-xxx</strong> pod in <strong>Completed</strong> STATUS and the READY indicator should be <strong>N/N</strong>.</p>
+<p>Example watch console for the completed installation:</p>
+<pre><code class="hljs css language-bash">NAME                                                   READY   STATUS      RESTARTS   AGE
+hub-758bd48876-wwwww                                   <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+keycloak-0                                             <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+keycloak-postgres-0                                    <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+metacontroller-0                                       <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+primehub-admission-xxxxxxxxxx-yyyyy                    <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+primehub-bootstrap-xxxxx                               <span class="token number">0</span>/1     Completed   <span class="token number">0</span>          17m
+primehub-console-xxxxxxxxxx-yyyyy                      <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+primehub-controller-xxxxxxxxxx-yyyyy                   <span class="token number">2</span>/2     Running     <span class="token number">0</span>          17m
+primehub-graphql-xxxxxxxxx-yyyyy                       <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+primehub-metacontroller-webhook-xxxxxxxxxx-yyyyy       <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+primehub-watcher-xxxxxxxxxx-yyyyy                      <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+proxy-6bdd94cc-yyyyy                                   <span class="token number">1</span>/1     Running     <span class="token number">0</span>          17m
+</code></pre>
+<p>Then go back to Terminal one and wait until you see messages:</p>
+<pre><code class="hljs css language-bash"><span class="token punctuation">[</span>Completed<span class="token punctuation">]</span> Install PrimeHub
 
-<span class="hljs-attr">cat</span> <span class="hljs-string">&lt;&lt;EOF &gt; primehub-values.yaml</span>
-<span class="hljs-attr">primehub</span>:<span class="hljs-string"></span>
-  <span class="hljs-attr">domain</span>: <span class="hljs-string">${PRIMEHUB_DOMAIN}</span>
-<span class="hljs-attr">ingress</span>:<span class="hljs-string"></span>
-  <span class="hljs-attr">annotations</span>:<span class="hljs-string"></span>
-    <span class="hljs-meta">kubernetes.io/ingress.allow-http</span>: <span class="hljs-string">"true"</span>
-    <span class="hljs-meta">nginx.ingress.kubernetes.io/ssl-redirect</span>: <span class="hljs-string">"false"</span>
-  <span class="hljs-attr">hosts</span>:<span class="hljs-string"></span>
-  <span class="hljs-meta">-</span> <span class="hljs-string">${PRIMEHUB_DOMAIN}</span>
-<span class="hljs-attr">bootstrap</span>:<span class="hljs-string"></span>
-  <span class="hljs-attr">password</span>: <span class="hljs-string">${PRIMEHUB_PASSWORD}</span>
-<span class="hljs-attr">graphql</span>:<span class="hljs-string"></span>
-  <span class="hljs-attr">sharedGraphqlSecret</span>: <span class="hljs-string">${GRAPHQL_SECRET_KEY}</span>
-<span class="hljs-attr">jupyterhub</span>:<span class="hljs-string"></span>
-  <span class="hljs-attr">auth</span>:<span class="hljs-string"></span>
-    <span class="hljs-attr">state</span>:<span class="hljs-string"></span>
-      <span class="hljs-attr">cryptoKey</span>: <span class="hljs-string">${HUB_AUTH_STATE_CRYPTO_KEY}</span>
-  <span class="hljs-attr">proxy</span>:<span class="hljs-string"></span>
-    <span class="hljs-attr">secretToken</span>: <span class="hljs-string">${HUB_PROXY_SECRET_TOKEN}</span>
-<span class="hljs-attr">EOF</span>
+PrimeHub:   http://<span class="token variable"><span class="token variable">`</span>$PRIMEHUB_DOMAIN<span class="token variable">`</span></span> <span class="token punctuation">(</span> phadmin / <span class="token variable"><span class="token variable">`</span>$PH_PASSWORD<span class="token variable">`</span></span> <span class="token punctuation">)</span>
+Id Server:  http://<span class="token variable"><span class="token variable">`</span>$PRIMEHUB_DOMAIN<span class="token variable">`</span></span>/auth/admin/ <span class="token punctuation">(</span> keycloak / <span class="token variable"><span class="token variable">`</span>$KC_PASSWORD<span class="token variable">`</span></span> <span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span>Completed<span class="token punctuation">]</span>
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
-<ol>
-<li><p>Run helm command to install primehub</p>
-<pre><code class="hljs">helm upgrade \
-  primehub infuseai/primehub \
-  --install \
-  --<span class="hljs-keyword">create</span>-<span class="hljs-keyword">namespace</span> \
-  --<span class="hljs-keyword">namespace</span> hub \
-  --<span class="hljs-keyword">values</span> primehub-<span class="hljs-keyword">values</span>.yaml \
-  --<span class="hljs-keyword">values</span> https://<span class="hljs-keyword">raw</span>.githubusercontent.com/InfuseAI/primehub/master/examples/ee-<span class="hljs-keyword">values</span>.yaml
-</code></pre>
-<blockquote>
-<p>In the first time installation, it may take a longer time to pull images. You can add <code>--timeout 10m</code> to change the default timeout duration.</p>
-</blockquote></li>
-<li><p>Label the nodes which can be assigned for jupyterhub servers</p>
-<pre><code class="hljs">kubectl label <span class="hljs-keyword">node</span> <span class="hljs-title">component</span>=singleuser-server --all
-</code></pre></li>
-</ol>
 <h2><a class="anchor" aria-hidden="true" id="verify-the-installation"></a><a href="#verify-the-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verify the Installation</h2>
 <ol>
-<li><p>Run this command to wait for PrimeHub ready</p>
-<pre><code class="hljs">kubectl -n hub rollout status deploy/primehub-<span class="hljs-built_in">console</span>
-</code></pre></li>
 <li><p>Open <code>http://${PRIMEHUB_DOMAIN}</code> and log in by the admin username and password.</p>
 <p><img src="/docs/assets/install_primehub1.png" alt=""></p></li>
 <li><p>Enter <code>Notebooks</code> for launching a JupyterHub.</p></li>
@@ -147,16 +166,16 @@ helm repo update
 Please contact InfuseAI for the license inquiry for a valid commercial license.</p>
 </blockquote>
 <p>If you have a valid license file from InfuseAI, run this command to apply a license key.</p>
-<pre><code class="hljs">kubectl -n hub<span class="hljs-built_in"> apply</span> -f<span class="hljs-built_in"> path</span>/<span class="hljs-keyword">to</span>/license_key_yaml_file
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install apply-license <span class="token operator">&lt;</span>path/to/license_key_yaml_file<span class="token operator">></span>
 </code></pre>
 <p>You can check the license status from <a href="../guide_manual/admin-system#primehub-license">System Management</a> in the admin dashboard.</p>
 <h2><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
 <ol>
-<li><p>If there is something wrong when installing, you can check the bootstrap job log to see what's going on</p>
-<pre><code class="hljs"><span class="hljs-symbol">kubectl</span> -n hub logs jobs/primehub-<span class="hljs-keyword">bootstrap
-</span></code></pre></li>
+<li><p>If there is something run when installing, you can check the bootstrap job log to see what's going on</p>
+<pre><code class="hljs css language-bash">kubectl -n hub logs jobs/primehub-bootstrap
+</code></pre></li>
 </ol>
 <h2><a class="anchor" aria-hidden="true" id="new-to-primehub"></a><a href="#new-to-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New to PrimeHub</h2>
 <p>Initially, PrimeHub has a built-in <em>user</em> <code>phadmin</code>, a built-in <em>group</em> <code>phusers</code>, several <em>instance types</em>/<em>image</em> which are available to <em>Global</em> ready to use. <code>phadmin</code> can launch a notebook quickly by using these resources.</p>
 <p>Now PrimeHub CE is ready, see <a href="../quickstart/launch-project">Launch Notebook</a> to launch your very first JupyterNotebook on PrimeHub. Also see <a href="../quickstart/login-portal-user">User Guide</a> to have the fundamental knowledge of PrimeHub.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting_started/kubernetes_on_ubuntu_ce"><span class="arrow-prev">← </span><span class="function-name-prevnext">Install PrimeHub CE on Single Node</span></a><a class="docs-next button" href="/docs/getting_started/kubernetes_on_ubuntu_machine"><span class="function-name-prevnext">Install PrimeHub EE on Single Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-infuseai-chart-repo">Add InfuseAI Chart repo</a></li><li><a href="#prepare-the-value-file">Prepare the Value File</a></li><li><a href="#install">Install</a></li><li><a href="#verify-the-installation">Verify the Installation</a></li><li><a href="#apply-license-key-optional">Apply License Key (Optional)</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#new-to-primehub">New to PrimeHub</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting_started/kubernetes_on_ubuntu_ce"><span class="arrow-prev">← </span><span class="function-name-prevnext">Install PrimeHub CE on Single Node</span></a><a class="docs-next button" href="/docs/getting_started/kubernetes_on_ubuntu_machine"><span class="function-name-prevnext">Install PrimeHub EE on Single Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prepare-the-environment-variables">Prepare the environment variables</a></li><li><a href="#clone-the-primehub-install-repository">Clone the PrimeHub install repository</a></li><li><a href="#validate-the-primehub-install-command-is-executable">Validate the primehub-install command is executable</a></li><li><a href="#install-primehub-required-binaries">Install PrimeHub required binaries</a></li><li><a href="#install-primehub">Install PrimeHub</a><ul class="toc-headings"><li><a href="#terminal-one">Terminal one</a></li><li><a href="#terminal-two">Terminal two</a></li></ul></li><li><a href="#verify-the-installation">Verify the Installation</a></li><li><a href="#apply-license-key-optional">Apply License Key (Optional)</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#new-to-primehub">New to PrimeHub</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
