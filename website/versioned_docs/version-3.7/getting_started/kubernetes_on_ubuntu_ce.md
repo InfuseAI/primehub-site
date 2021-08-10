@@ -25,7 +25,7 @@ This document will guide you to install [MicroK8s](https://microk8s.io/) on a si
 * Networking: allow port 80 for HTTP
 
 
-### Clone the PrimeHub install repository
+### Clone PrimeHub Repository
 
 ```
 git clone https://github.com/InfuseAI/primehub.git

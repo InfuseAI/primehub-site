@@ -26,7 +26,7 @@ Key | Description | Example value
 `KC_PASSWORD` | Keycloak admin `keycloak` default password | `yourDefaultPassw0rd`
 
 
-## Clone the PrimeHub install repository
+## Clone PrimeHub Repository
 
 ```bash
 git clone https://github.com/InfuseAI/primehub.git
