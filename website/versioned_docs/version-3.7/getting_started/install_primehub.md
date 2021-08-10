@@ -1,8 +1,9 @@
 ---
-id: install_primehub
+id: version-3.7-install_primehub
 title: Install PrimeHub Enterprise
 description: Install PrimeHub Enterprise
 sidebar_label: Install PrimeHub EE
+original_id: install_primehub
 ---
 
 <div class="label-sect">
@@ -165,7 +166,7 @@ You can check the license status from [System Management](../guide_manual/admin-
 
 ## Troubleshooting
 
-1. If there is something wrong when installing, you can check the bootstrap job log to see what's going on
+1. If there is something run when installing, you can check the bootstrap job log to see what's going on
 
    ```bash
    kubectl -n hub logs jobs/primehub-bootstrap
