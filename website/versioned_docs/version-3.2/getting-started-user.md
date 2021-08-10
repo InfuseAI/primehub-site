@@ -12,7 +12,7 @@ Also, resources such as image, instance type, dataset must be associated with on
 
 PrimeHub v3, furthermore, enhances this concept by introducing *Group-Context* design.
 
-Initial PrimeHub has a built-in *user* `phadmin`, a built-in *group* `phusers`, several *instance types*/*image* which are available to *Global* ready to use. A user can launch a notebook quickly by using these resources. 
+Initial PrimeHub has a built-in *user* `phadmin`, a built-in *group* `phusers`, several *instance types*/*image* which are set *Global*. A user can launch a notebook quickly by using these resources. 
 
 To add/delete/edit users, groups and other resources, users are required to switch to Admin Portal, use [administration features](getting-started-admin) there to achieve it.
 

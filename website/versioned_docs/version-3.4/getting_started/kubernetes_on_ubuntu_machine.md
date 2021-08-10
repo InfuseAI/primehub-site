@@ -215,7 +215,7 @@ Once you have a valid license file from InfuseAI. Put the `license_crd.yml` file
 
 ## New to PrimeHub
 
-Initially, PrimeHub has a built-in *user* `phadmin`, a built-in *group* `phusers`, several *instance types*/*image* which are available to *Global* ready to use. `phadmin` can launch a notebook quickly by using these resources. 
+Initially, PrimeHub has a built-in *user* `phadmin`, a built-in *group* `phusers`, several *instance types*/*image* which are set *Global*. `phadmin` can launch a notebook quickly by using these resources. 
 
 Now PrimeHub CE is ready, see [Launch Notebook](../quickstart/launch-project) to launch your very first JupyterNotebook on PrimeHub. Also see [User Guide](../quickstart/login-portal-user) to have the fundamental knowledge of PrimeHub.
 
