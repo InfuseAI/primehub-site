@@ -75,4 +75,6 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 ## 參考
 
++ [InfuseAI 提供 Images](../../guide_manual/images-list.md)
+
 + [Add InfuseAI Images](../quickstart/add-infuseai-image)
