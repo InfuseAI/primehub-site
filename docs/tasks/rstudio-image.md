@@ -27,6 +27,9 @@ Execute `jupyter-repo2docker` command to see if any output from the command
 
 ```bash
 $ jupyter-repo2docker --help | head -10
+```
+
+```bash
 usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--image-name IMAGE_NAME] [--ref REF] [--debug]
                            [--no-build]
@@ -39,21 +42,34 @@ usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--appendix APPENDIX] [--subdir SUBDIR] [--version]
 ```
 
-If `command not found`, please install it by `pip install jupyter-repo2docker`
+If we got command `command not found: jupyter-repo2docker`, please install python3-pip and jupyter-repo2docker.
 
-```
-command not found: jupyter-repo2docker
+```bash
+sudo apt install python3-pip
+pip3 install jupyter-repo2docker
 ```
 
-## Update configuration
+If we got command `bash: jupyter-repo2docker: command not found`, please export bin file to PATH.
+
+```bash
+export PATH=${HOME}/.local/bin:${PATH}
+```
+
+## Use repo2docker to build R-studio docker image.
 
 Clone the source code
 
-```
-git clone https://github.com/binder-examples/r.git
+```bash
+git clone https://github.com/binder-examples/r.git && cd r
 ```
 
 In the source, create `apt.txt` and add `sudo` in a line
+
+```bash
+echo "sudo" > apt.txt
+```
+
+Check the current file status.
 
 ```
 $ git status
@@ -75,18 +91,25 @@ $ cat apt.txt
 sudo
 ```
 
-## Build image
-
 Build a image with the tag `infuseai/r` in the source directory (`.`)
 
-```
+```bash
 jupyter-repo2docker --no-run --no-clean --user-name jovyan --user-id 1000 --push --image infuseai/r .
 ```
 
+Then Check the docker image is successfully push to dockerhub.
 
-## Add Image to PrimeHub
+## Build R-studio in PrimeHub
 
-After the image tagged`infuseai/r` is pushed, add it to the PrimeHub and start Notebook with the image in `Safe Mode`. Initially, it enters a general Jupyter Notebook.
+Add Docker image into PrimeHub images function.
+
+![](assets/task_r_studio_create_image.png)
+
+Start Notebook with the image in `Safe Mode`. 
+
+![](assets/task_safe_mode.png)
+
+Initially, it enters a general Jupyter Notebook.
 
 > For the RStudio environment, we must add the following at the end of the URL: `?urlpath=rstudio` according to the [README](https://github.com/binder-examples/r#url-addresses-for-rstudio-and-shiny-environments).
 
