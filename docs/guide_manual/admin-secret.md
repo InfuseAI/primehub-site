@@ -17,19 +17,19 @@ Secret management provides the capabilities of managing secrets which are used f
 
 ## Creating New Secrets
 
-![](assets/secret_add_v26.png)
+![](assets/secret_add_v38.png)
 
 Click `Add` to add a Secret and it will pop up the edit screen of Secret.
 
-![](assets/secret_empty_v26.png)
+![](assets/secret_empty_v38.png)
 
 You need to fill in these fields:
 
-+ `Name` (required): Only lowercase letters, numbers, hyphen `-` and a dot `.` can be filled in.
++ `Name`: (required): Only lowercase letters, numbers, hyphen `-` and a dot `.` can be filled in.
 
 + `Display Name`
 
-+ `Type` `Opaque`, `kubernetes.io/dockerconfigjson`
++ `Type`: `Git Dataset`, `Image Pull`
 
 ### Type Opaque
 

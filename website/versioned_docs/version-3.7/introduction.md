@@ -27,7 +27,7 @@ PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Depl
 
 ---
 
-**PrimeHub** platform is composed of **User Portal** and **Admin Portal**; former provides dedicated features to data scientists, latter provides dedicated features to platform administrators.
+**PrimeHub** platform is composed of **User Portal** and **Admin Portal**; former provides dedicated features to data scientists, general team members, latter provides dedicated features to platform administrators.
 
 ## User Portal
 
@@ -36,7 +36,7 @@ incorporates data-scientists-facing prominent features that scientists are able 
 ![landing-user.png](assets/v37-landing-user.png)
 
 
-### Getting Started as Users
+### Getting Started as Team/Project member
 
 + [User Portal overview](quickstart/login-portal-user.md)
 
@@ -70,11 +70,11 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Build Notebook image by repo2docker](tasks/repo2docker)
 
-#### As Group Admin
+### As Team/Project Lead
 
-+ [Add/Build group-specific images](group-image)
++ [Add/Build images for my team/project](group-image)
 
-+ [View the current settings of the managed group](group-setting)
++ [View the current settings of my team/project](group-setting)
 
 ---
 
@@ -84,7 +84,7 @@ incorporates administration features that administrators are able to do access-c
 
 ![](assets/v3-admin-portal_v31.png)
 
-### Getting Started as Platform Admin
+### Getting Started as Platform Administrator
 
 + [Admin Portal overview](quickstart/login-portal-admin)
 

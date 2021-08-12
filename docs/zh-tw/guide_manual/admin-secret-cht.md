@@ -16,11 +16,11 @@ Secret management 提供管理者 Secret 管理能力，如：新增、刪除、
 
 ## 新增 Secrets
 
-![](assets/secret_add_v26.png)
+![](assets/secret_add_v38.png)
 
 點選 `Add` 新增 Secret，會跳出編輯該 Secret 的畫面。
 
-![](assets/secret_empty_v26.png)
+![](assets/secret_empty_v38.png)
 
 需填入下列各個欄位：
 
@@ -28,7 +28,7 @@ Secret management 提供管理者 Secret 管理能力，如：新增、刪除、
 
 + `Display Name` 顯示名稱。
 
-+ `Type` `Opaque`, `kubernetes.io/dockerconfigjson`
++ `Type` `Git Dataset`, `Image Pull`
 
 ### Type Opaque
 
