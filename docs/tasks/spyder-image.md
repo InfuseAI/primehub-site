@@ -27,7 +27,10 @@ We could use [repo2docker](./repo2docker.md) to build a Jupyter Notebook with Sp
 Execute `jupyter-repo2docker` command to see if any output from the command
 
 ```bash
-$ jupyter-repo2docker --help | head -10
+jupyter-repo2docker --help | head -10
+```
+
+```bash
 usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--image-name IMAGE_NAME] [--ref REF] [--debug]
                            [--no-build]
@@ -40,15 +43,22 @@ usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--appendix APPENDIX] [--subdir SUBDIR] [--version]
 ```
 
-If `command not found`, please install it by `pip install jupyter-repo2docker`
+If `command not found: jupyter-repo2docker` shows, please install `python3-pip` and `jupyter-repo2docker` packages.
 
+```bash
+sudo apt install python3-pip
+pip3 install jupyter-repo2docker
 ```
-command not found: jupyter-repo2docker
+
+If `bash: jupyter-repo2docker: command not found` shows, please export `${HOME}/.local/bin` file to PATH.
+
+```bash
+export PATH=${HOME}/.local/bin:${PATH}
 ```
 
-## Update configuration
+## Use repo2docker to build spyder docker image.
 
-Clone the source code
+Git clone the source code
 
 ```
 git clone https://github.com/spyder-ide/binder-environments/ && cd binder-environments
@@ -60,16 +70,21 @@ Switch to stable branch
 git checkout spyder-stable
 ```
 
-In the source, update `binder/apt.txt` and add `sudo` in a line
+In the source, modify `binder/apt.txt` and add `sudo` in a line
+
+```bash
+echo "binder/sudo" > apt.txt
+```
 
 ## Build image
 
-Build a image with the tag `infuseai/r` in the source directory (`.`)
+Build a image with the tag `infuseai/spyder` in the source directory (`.`)
 
 ```
 jupyter-repo2docker --no-run --no-clean --user-name jovyan --user-id 1000 --push --image infuseai/spyder .
 ```
 
+Then Check the docker image is successfully push to DockerHub.
 
 ## Add Image to PrimeHub
 
@@ -77,7 +92,15 @@ After the image tagged`infuseai/spyder` is pushed, add it to the PrimeHub and st
 
 ## Starting Spyder
 
-After starting the image, click the Desktop VNC icon
+Add Docker image into PrimeHub images function.
+
+![](assets/task_spyder_create_image.png)
+
+Start Notebook with the image in `Safe Mode`. 
+
+![](assets/task_safe_mode.png)
+
+After starting the Notebook, click the Desktop VNC icon
 
 ![](assets/spyder-0.jpg)
 
