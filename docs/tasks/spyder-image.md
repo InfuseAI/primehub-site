@@ -27,7 +27,7 @@ We could use [repo2docker](./repo2docker.md) to build a Jupyter Notebook with Sp
 Execute `jupyter-repo2docker` command to see if any output from the command
 
 ```bash
-$ jupyter-repo2docker --help | head -10
+jupyter-repo2docker --help | head -10
 ```
 
 ```bash
@@ -43,14 +43,14 @@ usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--appendix APPENDIX] [--subdir SUBDIR] [--version]
 ```
 
-If we got command `command not found: jupyter-repo2docker`, please install python3-pip and jupyter-repo2docker.
+If `command not found: jupyter-repo2docker` shows, please install `python3-pip` and `jupyter-repo2docker` packages.
 
 ```bash
 sudo apt install python3-pip
 pip3 install jupyter-repo2docker
 ```
 
-If we got command `bash: jupyter-repo2docker: command not found`, please export bin file to PATH.
+If `bash: jupyter-repo2docker: command not found` shows, please export `${HOME}/.local/bin` file to PATH.
 
 ```bash
 export PATH=${HOME}/.local/bin:${PATH}
@@ -58,7 +58,7 @@ export PATH=${HOME}/.local/bin:${PATH}
 
 ## Use repo2docker to build spyder docker image.
 
-Clone the source code
+Git clone the source code
 
 ```
 git clone https://github.com/spyder-ide/binder-environments/ && cd binder-environments
@@ -70,20 +70,21 @@ Switch to stable branch
 git checkout spyder-stable
 ```
 
-In the source, update `binder/apt.txt` and add `sudo` in a line
+In the source, modify `binder/apt.txt` and add `sudo` in a line
+
 ```bash
 echo "binder/sudo" > apt.txt
 ```
 
 ## Build image
 
-Build a image with the tag `infuseai/spydet` in the source directory (`.`)
+Build a image with the tag `infuseai/spyder` in the source directory (`.`)
 
 ```
 jupyter-repo2docker --no-run --no-clean --user-name jovyan --user-id 1000 --push --image infuseai/spyder .
 ```
 
-Then Check the docker image is successfully push to dockerhub.
+Then Check the docker image is successfully push to DockerHub.
 
 ## Add Image to PrimeHub
 
@@ -99,7 +100,7 @@ Start Notebook with the image in `Safe Mode`.
 
 ![](assets/task_safe_mode.png)
 
-After starting the image, click the Desktop VNC icon
+After starting the Notebook, click the Desktop VNC icon
 
 ![](assets/spyder-0.jpg)
 

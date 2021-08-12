@@ -26,7 +26,7 @@ We could use [repo2docker](./repo2docker.md) to build a Jupyter Notebook with RO
 Execute `jupyter-repo2docker` command to see if any output from the command
 
 ```bash
-$ jupyter-repo2docker --help | head -10
+jupyter-repo2docker --help | head -10
 ```
 
 ```bash
@@ -42,14 +42,14 @@ usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--appendix APPENDIX] [--subdir SUBDIR] [--version]
 ```
 
-If we got command `command not found: jupyter-repo2docker`, please install python3-pip and jupyter-repo2docker.
+If `command not found: jupyter-repo2docker` shows, please install `python3-pip` and `jupyter-repo2docker` packages.
 
 ```bash
 sudo apt install python3-pip
 pip3 install jupyter-repo2docker
 ```
 
-If we got command `bash: jupyter-repo2docker: command not found`, please export bin file to PATH.
+If `bash: jupyter-repo2docker: command not found` shows, please export `${HOME}/.local/bin` file to PATH.
 
 ```bash
 export PATH=${HOME}/.local/bin:${PATH}
@@ -57,13 +57,13 @@ export PATH=${HOME}/.local/bin:${PATH}
 
 ## Update configuration
 
-Clone the source code
+Git clone the source code
 
 ```
 git clone https://github.com/RoboStack/jupyterlab-ros && cd jupyerlab-ros/binder
 ```
 
-In the source, update `binder/apt.txt` and add `sudo` in a line
+In the source directory, modify `binder/apt.txt` and add `sudo` in a line
 
 ## Build image
 
@@ -80,11 +80,11 @@ Add Docker image into PrimeHub images function.
 
 ![](assets/task_ros_create_image.png)
 
-Start Notebook with the image in `Safe Mode`. 
+Start Notebook with the image in `Safe Mode`.
 
 ![](assets/task_safe_mode.png)
 
-After starting the image, please clone example jupyter notebook to see the demo.
+After starting the Notebook, please git clone jupyter notebooks of the example.
 
 ```bash
 git clone https://github.com/RoboStack/jupyter-ros.git

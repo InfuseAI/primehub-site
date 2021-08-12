@@ -26,7 +26,7 @@ We could use [repo2docker](./repo2docker.md) to build a Jupyter Notebook with RS
 Execute `jupyter-repo2docker` command to see if any output from the command
 
 ```bash
-$ jupyter-repo2docker --help | head -10
+jupyter-repo2docker --help | head -10
 ```
 
 ```bash
@@ -42,14 +42,14 @@ usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--appendix APPENDIX] [--subdir SUBDIR] [--version]
 ```
 
-If we got command `command not found: jupyter-repo2docker`, please install python3-pip and jupyter-repo2docker.
+If command `command not found: jupyter-repo2docker` shows, please install `python3-pip` and `jupyter-repo2docker` packages.
 
 ```bash
 sudo apt install python3-pip
 pip3 install jupyter-repo2docker
 ```
 
-If we got command `bash: jupyter-repo2docker: command not found`, please export bin file to PATH.
+If `bash: jupyter-repo2docker: command not found` shows, please export `${HOME}/.local/bin` file to PATH.
 
 ```bash
 export PATH=${HOME}/.local/bin:${PATH}
@@ -57,13 +57,13 @@ export PATH=${HOME}/.local/bin:${PATH}
 
 ## Use repo2docker to build R-studio docker image.
 
-Clone the source code
+Git clone the source code
 
 ```bash
 git clone https://github.com/binder-examples/r.git && cd r
 ```
 
-In the source, create `apt.txt` and add `sudo` in a line
+In the source directory, create `apt.txt` and add `sudo` in a line
 
 ```bash
 echo "sudo" > apt.txt
@@ -113,7 +113,7 @@ Initially, it enters a general Jupyter Notebook.
 
 > For the RStudio environment, we must add the following at the end of the URL: `?urlpath=rstudio` according to the [README](https://github.com/binder-examples/r#url-addresses-for-rstudio-and-shiny-environments).
 
-Regarding accessing RStudio, the current URL looks like
+Regarding accessing RStudio, in browser the current URL looks like
 
 ```
 https://example.primehub.io/user/<username>/lab
@@ -125,6 +125,6 @@ Replace the suffix `lab` with `rstudio` to be like URL below and navigate.
 https://example.primehub.io/user/<username>/rstudio
 ```
 
-Here the RStudio is
+Here RStudio is
 
 ![](assets/repo2docker-rstudio.png)
