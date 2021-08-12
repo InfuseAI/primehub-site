@@ -27,6 +27,9 @@ Execute `jupyter-repo2docker` command to see if any output from the command
 
 ```bash
 $ jupyter-repo2docker --help | head -10
+```
+
+```bash
 usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--image-name IMAGE_NAME] [--ref REF] [--debug]
                            [--no-build]
@@ -39,10 +42,17 @@ usage: jupyter-repo2docker [-h] [--config CONFIG] [--json-logs]
                            [--appendix APPENDIX] [--subdir SUBDIR] [--version]
 ```
 
-If `command not found`, please install it by `pip install jupyter-repo2docker`
+If we got command `command not found: jupyter-repo2docker`, please install python3-pip and jupyter-repo2docker.
 
+```bash
+sudo apt install python3-pip
+pip3 install jupyter-repo2docker
 ```
-command not found: jupyter-repo2docker
+
+If we got command `bash: jupyter-repo2docker: command not found`, please export bin file to PATH.
+
+```bash
+export PATH=${HOME}/.local/bin:${PATH}
 ```
 
 ## Update configuration
@@ -66,6 +76,24 @@ jupyter-repo2docker --no-run --no-clean --user-name jovyan --user-id 1000 --push
 
 ## Add Image to PrimeHub
 
-After the image tagged`infuseai/ros` is pushed, add it to the PrimeHub and start Notebook with the image in `Safe Mode`.
+Add Docker image into PrimeHub images function.
+
+![](assets/task_ros_create_image.png)
+
+Start Notebook with the image in `Safe Mode`. 
+
+![](assets/task_safe_mode.png)
+
+After starting the image, please clone example jupyter notebook to see the demo.
+
+```bash
+git clone https://github.com/RoboStack/jupyter-ros.git
+```
+
+- Open `notebooks/ROS 3D Grid.ipynb` jupyter notebook and click `circle icon` to open live demo.
+
+![](assets/task_ros_icon_location.png)
+
+You will see the live demo in jupyterlab.
 
 ![](assets/ros-0.png)
