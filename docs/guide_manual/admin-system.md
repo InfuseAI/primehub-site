@@ -11,6 +11,9 @@ description: System Settings
   <div class="ce-only tooltip">Community
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 ## PrimeHub License
@@ -41,7 +44,7 @@ A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maxim
 
   > You are using more nodes than your license allows. Please contact your system administrator.
 
-+ when used model amount > granted model amount + 10%, a warning message appears.
++ When used model amount > granted model amount + 10%, a warning message appears.
 
   >Please contact your system administrator for assistance to upgrade your license to run more models.
 
@@ -63,7 +66,7 @@ A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maxim
 
 + `SMTP Host` Sends the Sever host location of the email.
 
-+ `SMTP port` Sends the Sever host port of Email.
++ `SMTP Port` Sends the Sever host port of Email.
 
 + `From Display Name` A user-friendly name for the "From" address.
 
