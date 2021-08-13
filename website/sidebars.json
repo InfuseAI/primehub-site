@@ -372,6 +372,7 @@
     "References": [
       "references/primehub_chart",
       "comparison",
+      "license-comparison",
       "guide_manual/ssh-vscode",
       "guide_manual/ssh-keygen"
     ],
