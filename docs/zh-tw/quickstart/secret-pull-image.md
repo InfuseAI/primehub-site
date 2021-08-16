@@ -28,7 +28,7 @@ PrimeHub 支援從 private Docker registry 下載 image。因為是 private，�
 
 2. 點擊 `+ Add` 新增 `secret`。
 
-3. 填入 `Name`、 `Display Name` (非必要)並選擇 `Type` 為 **`kubernetes.io/dockerconfigjson`**。
+3. 填入 `Name`、 `Display Name` (非必要)並選擇 `Type` 為 **`Image Pull`**。
 
 4. 填入 `Registry Host` 為 `registry.gitlab.com`.
 

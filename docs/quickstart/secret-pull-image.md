@@ -34,7 +34,7 @@ Following the guide to have a deploy token and keeping the pair of `Username` an
 
 2. Enter the `Secrets` management and click `+ Add` for adding a secret.
 
-3. Fill `Name`, `Display Name`(Optional) and select `Type` **`kubernetes.io/dockerconfigjson`**.
+3. Fill `Name`, `Display Name`(Optional) and select `Type` **`Image Pull`**.
 
 4. Fill `Registry Host` with `registry.gitlab.com`.
 

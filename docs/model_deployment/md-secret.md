@@ -34,7 +34,7 @@ You need to fill in these fields:
 
 + `Secret`: A secret of Git Dataset is used for pulling a dataset via git. The context is a private key related to a registered public key of ssh. Please see [Dataset Management](admin-dataset) to learn how to specify a pull-secret for a dataset.
 
-### Type dockerconfigjson
+### Type Image Pull
 
 ![](assets/secret_dockerconfigjson_v26.png)
 
