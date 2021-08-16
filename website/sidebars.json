@@ -6,7 +6,8 @@
       "quickstart/nb-data-store",
       "resources-quota",
       "roles",
-      "environment-variables",
+      "comparison",
+      "license-comparison",
       "quickstart/login-portal-user"
     ],
     "Installation": [
@@ -370,9 +371,8 @@
       "tasks/customize-job-runtime"
     ],
     "References": [
+      "environment-variables",
       "references/primehub_chart",
-      "comparison",
-      "license-comparison",
       "guide_manual/ssh-vscode",
       "guide_manual/ssh-keygen"
     ],
