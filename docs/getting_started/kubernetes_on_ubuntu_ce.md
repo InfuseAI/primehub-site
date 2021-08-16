@@ -26,14 +26,14 @@ This document will guide you to install [MicroK8s](https://microk8s.io/) on a si
 
 ### Clone PrimeHub Repository
 
-```
+```bash
 git clone https://github.com/InfuseAI/primehub.git
 ```
 
 
 ### Install PrimeHub required binaries
 
-```
+```bash
 ./primehub/install/primehub-install required-bin
 ```
 
@@ -58,14 +58,14 @@ Run the `create singlenode` command:
 
 After the first execution, you will see the message. Because it adds the user to `microk8s` group and needs to relogin:
 
-```
+```bash
 [Require Action] Please relogin this session and run create singlenode again
 ```
 
 After relogin, run the same command again to finish the single-node provision:
 
 ```bash
-./primehub/install/primehub-install create singlenode
+./primehub/install/primehub-install create singlenode --k8s-version 1.19
 ```
 
 >During the installation, you might run into troubles or need to modify the default settings, please check the [TroubleShooting](#troubleshooting) section.
@@ -74,13 +74,13 @@ After relogin, run the same command again to finish the single-node provision:
 
 Access nginx-ingress with your `EXTERNAL-IP`:
 
-```
-curl http://$EXTERNAL-IP
+```bash
+curl http://${EXTERNAL-IP}
 ```
 
 The output will be `404` because no `Ingress` resources are defined yet:
 
-```
+```bash
 default backend - 404
 ```
 
@@ -91,9 +91,56 @@ default backend - 404
 * Download and install Nvidia GPU drivers from official website
 * Enable GPU feature
 
-```
-microk8s.enable gpu
-```
+  **Please be aware that if MicroK8s v1.21, you need to modify the `default_runtime_name` and DO NOT enable GPU feature by microk8s enable gpu**
+
+
+  * if MicroK8s is prior to v1.20 (<= 1.20), enable gpu feature by default
+    ```bash
+    microk8s.enable gpu
+    ```
+
+  * if MicroK8s is 1.21, please follow the steps
+
+    1. Modify the file `/var/snap/microk8s/current/args/containerd-template.toml` and manually change the `default_runtime_name` to to `nvidia-container-runtime`
+
+        ```diff
+        # default_runtime_name is the default runtime name to use.
+        - default_runtime_name = "${RUNTIME}"
+        + default_runtime_name = "nvidia-container-runtime"
+        ```
+
+    2. Restart the microk8s
+
+        ```bash
+        microk8s stop
+        microk8s start
+        ```
+
+    3. Install Nvidia Device Plugin by helm
+
+        ```bash
+        helm repo add nvdp https://nvidia.github.io/k8s-device-plugin
+        helm repo update
+        helm install -n kube-system nvidia-device-plugin nvdp/nvidia-device-plugin
+
+        ```
+
+    4. Verify GPU
+
+        ```bash
+        kubectl describe node | grep 'nvidia.com/gpu'
+        ```
+
+    5. Verify within MicroK8s cluster
+
+        ```bash
+        deviceplugin_pod=$(kubectl -n kube-system get pod | grep nvidia-device-plugin | awk '{print $1}')
+
+        kubectl -n kube-system exec -t ${deviceplugin_pod} nvidia-smi
+        ```
+
+      Ref: [https://github.com/NVIDIA/gpu-operator/issues/163#issuecomment-794445253](https://github.com/NVIDIA/gpu-operator/issues/163#issuecomment-794445253)
+
 
 ### Configure snap (optional)
 
