@@ -33,7 +33,7 @@ PrimeHub 透過 `gitsync` 方式支援 `git` 型 的 dataset；也就是說我�
 
 2. 點擊 `+ Add`按鈕，建立 `Secret`。
 
-3. 填入 `Name`、`Display Name`(非必要) 及 選擇 `Type`為`Opaque`。
+3. 填入 `Name`、`Display Name`(非必要) 及 選擇 `Type`為`Git Dataset`。
 
 4. 填入 `Secret` 為先前設定的**公開金鑰**。
 

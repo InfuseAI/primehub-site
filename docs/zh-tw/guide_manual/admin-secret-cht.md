@@ -10,6 +10,9 @@ description: Secret Management
   <div class="ce-only tooltip">Community
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
+  <div class="deploy-only tooltip">Community
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
 </div>
 
 Secret management 提供管理者 Secret 管理能力，如：新增、刪除、編輯。前提我們需要先有從其它服務產生取得的 Secrets；請參照[取得參考](#取得參考)。
@@ -30,13 +33,13 @@ Secret management 提供管理者 Secret 管理能力，如：新增、刪除、
 
 + `Type` `Git Dataset`, `Image Pull`
 
-### Type Opaque
+### Type Git Dataset
 
 ![](assets/secret_opaque_key_v26.png)
 
-+ `Secret`: Opaque 的 secret 用來認證授權透過 git 下載 dataset；內容為已登錄 ssh 公開金鑰對應的私人鑰匙。請見 Dataset Management。
++ `Secret`: Git Dataset 的 secret 用來認證授權透過 git 下載 dataset；內容為已登錄 ssh 公開金鑰對應的私人鑰匙。請見 Dataset Management。
 
-### Type dockerconfigjson
+### Type Image Pull
 
 ![](assets/secret_dockerconfigjson_v26.png)
 
