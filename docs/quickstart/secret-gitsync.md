@@ -32,7 +32,7 @@ Once we have deployed our **public key** on the repo, we can add the key as a se
 
 2. Enter `Secrets` management and click `+ Add` for adding a secret.
 
-3. Fill `Name`, `Display Name`(Optional) and select `Type` **`Opaque`**.
+3. Fill `Name`, `Display Name`(Optional) and select `Type` **`Git Dataset`**.
 
 4. Fill `Secret` with your **public key**.
 
