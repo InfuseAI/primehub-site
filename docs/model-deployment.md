@@ -34,7 +34,7 @@ Please contact Admin to turn on it or switch to a group which `Model Deployment`
 
 This page indicates all of deployed services status.
 
-![](assets/mdeploy_grid_v3.png)
+![](assets/mdeploy_grid_v38.png)
 
 |**Status** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
 |---------|--------|------|---------|-------|

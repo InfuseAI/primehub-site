@@ -31,7 +31,7 @@ description: 模型部署
 
 此頁格列一覽所有已創建的部署；
 
-![](assets/mdeploy_grid_v3.png)
+![](assets/mdeploy_grid_v38.png)
 
 狀態分別由下列顏色來區別：
 
