@@ -27,7 +27,8 @@ Path | Description | Default Value
 `customImage.registryEndpoint` | The registry the built image to push  | `N/A`
 `customImage.registryUsername` | Login user name for registry | `N/A`
 `customImage.registryPassword` | Login password for registry | `N/A`
-`customImage.pushRepoPrefix` | The image prefix for the build image. The result image will be `<repo prefix>/<image>:<tag>` | `N/A`
+`customImage.pushRepo` | The image repository for the build image. The result image will be `<repo>:<image name>-<tag>` | `N/A`
+`customImage.pushRepoPrefix` | The image prefix for the build image. The result image will be `<repo prefix>/<image name>:<tag>`. This field will be ignored when `customImage.pushRepo` is set | `N/A`
 `customImage.pushSecretName` | The secret name of the registry push secret | `primehub-controller-custom-image-push-secret`
 
 ## Configure DockerHub Registry
@@ -46,7 +47,7 @@ Path | Description | Default Value
       registryEndpoint: docker.io
       registryUsername: <your_docker_hub_username>
       registryPassword: <your_access_token>
-      pushRepoPrefix: docker.io/<namespace>
+      pushRepo: docker.io/<namespace>/<repo name>
     ```
 
 ## Configure Google Container Registry (GCR)
@@ -67,7 +68,7 @@ Path | Description | Default Value
       registryEndpoint: https://gcr.io
       registryUsername: _json_key
       registryPassword: <gcr_service_account_json>
-      pushRepoPrefix: gcr.io/<gcp_project_name>
+      pushRepo: gcr.io/<gcp_project_name>/<repo name>
     ```
 
 ## Configure AWS Elastic Container Registry (ECR)
@@ -98,7 +99,7 @@ Path | Description | Default Value
     ```yaml
       customImage:
         registryEndpoint: https://8<aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com
-        pushRepoPrefix: <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com
+        pushRepo: <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/<repo name>
         pushSecretName: aws-registry
     ```
 
