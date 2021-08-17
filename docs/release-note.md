@@ -10,6 +10,7 @@ description: 3.7 Release Note
 
 ## 🚀 &NonBreakingSpace; Improvements
 
++ Rephrased secret type: *Git Dataset* (~~Opaque~~), *Image Pull* (~~kubernetes.io/dockerconfigjson~~)
 
 
 ## 🧰 &NonBreakingSpace; Bug Fixes

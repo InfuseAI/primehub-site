@@ -28,7 +28,7 @@ function Versions(props) {
           <header className="postHeader">
             <h1>{siteConfig.title} Versions</h1>
           </header>
-          <p>New versions of PrimeHub are released every 4 - 6 weeks.</p>
+          <p>A new version of PrimeHub are released every 4 - 6 weeks.</p>
           <h3 id="latest">Current version</h3>
           <table className="versions">
             <tbody>
@@ -70,7 +70,7 @@ function Versions(props) {
           <table className="versions">
             <tbody>
               <tr>
-                <th>master</th>
+                <th>next</th>
                 <td>
                   {/* You are supposed to change this href where appropriate
                         Example: href="<baseUrl>/docs(/:language)/next/:id" */}
@@ -102,7 +102,7 @@ function Versions(props) {
               </tr>
             </tbody>
           </table>
-          <p>This release candidate of document applies to an unreleased version of content. It is subject to changes in the official release</p>
+          <p>This release candidate of document applies to an unreleased version of context. It is subject to changes in the stable release</p>
           <h3 id="archive">Past Versions</h3>
           <p>Previous versions of the documentation are listed here.</p>
           <table className="versions">
