@@ -39,13 +39,13 @@ This page indicates all of deployed services status.
 |**Status** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
 |---------|--------|------|---------|-------|
 
-### Cell
+### Card
 
-Each cell represents a deployment. Clicking on a cell to view the detail.
+Each card represents a deployment. Clicking on a card to view the detail.
 
 #### *Tips*
 
-+ *Hovering the cursor over Metadata `View` of a cell, it lists the metadata view.*
++ *Hovering the cursor over Metadata `View` of a card, it lists the metadata view.*
 
 + *Hovering the cursor over Endpoint `Link` shows the entire link and clicking the link makes a copy to the clipboard.*
 
@@ -238,7 +238,7 @@ On a deployment detail page, clicking `Update` button to enter the deployment ed
 
 ## Delete
 
-Clicking on the cell of the deployment which we want to delete.
+Clicking on the card of the deployment which we want to delete.
 
 On a deployment detail page, clicking `Delete` button and inputting the name of deployment for the confirmation.
 
@@ -248,7 +248,7 @@ On a deployment detail page, clicking `Delete` button and inputting the name of 
 
 ## Stop
 
-Clicking on the cell of the deployment which we want to stop.
+Clicking on the card of the deployment which we want to stop.
 
 On a deployment detail page, clicking `Stop` button at top-right to stop the current deployed service.
 
