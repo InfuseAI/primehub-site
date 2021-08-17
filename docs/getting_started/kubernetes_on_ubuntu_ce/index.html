@@ -74,10 +74,10 @@
 <li>Networking: allow port 80 for HTTP</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="clone-primehub-repository"></a><a href="#clone-primehub-repository" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clone PrimeHub Repository</h3>
-<pre><code class="hljs">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/<span class="hljs-literal">Inf</span>useAI/primehub.git
+<pre><code class="hljs css language-bash"><span class="token function">git</span> clone https://github.com/InfuseAI/primehub.git
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="install-primehub-required-binaries"></a><a href="#install-primehub-required-binaries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install PrimeHub required binaries</h3>
-<pre><code class="hljs">./primehub/<span class="hljs-keyword">install</span>/primehub-<span class="hljs-keyword">install</span> <span class="hljs-keyword">required</span>-<span class="hljs-keyword">bin</span>
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install required-bin
 </code></pre>
 <p>This will install the required commands onto <code>~/bin</code>. You should append the <code>~/bin</code> to your <code>PATH</code> variables, or use the following command to append and read from the <code>.bashrc</code></p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$HOME</span>/bin:<span class="token environment constant">$PATH</span>"</span> <span class="token operator">>></span> ~/.bashrc
@@ -86,10 +86,10 @@
 <h3><a class="anchor" aria-hidden="true" id="install-microk8s-single-node"></a><a href="#install-microk8s-single-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install MicroK8s Single Node</h3>
 <p>We provide a install script which makes the installation much easier to create a <a href="https://microk8s.io/">MicroK8s-single-node</a> Kubernetes.</p>
 <p>Run the <code>create singlenode</code> command:</p>
-<pre><code class="hljs css language-bash">./primehub/install/primehub-install create singlenode
+<pre><code class="hljs css language-bash">./primehub/install/primehub-install create singlenode --k8s-version <span class="token number">1.19</span>
 </code></pre>
 <p>After the first execution, you will see the message. Because it adds the user to <code>microk8s</code> group and needs to relogin:</p>
-<pre><code class="hljs">[Require Action] Please relogin <span class="hljs-keyword">this</span> session <span class="hljs-keyword">and</span> <span class="hljs-built_in">run</span> create singlenode again
+<pre><code class="hljs css language-bash"><span class="token punctuation">[</span>Require Action<span class="token punctuation">]</span> Please relogin this session and run create singlenode again
 </code></pre>
 <p>After relogin, run the same command again to finish the single-node provision:</p>
 <pre><code class="hljs css language-bash">./primehub/install/primehub-install create singlenode
@@ -99,19 +99,50 @@
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="quick-verification"></a><a href="#quick-verification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quick Verification</h3>
 <p>Access nginx-ingress with your <code>EXTERNAL-IP</code>:</p>
-<pre><code class="hljs"><span class="hljs-attribute">curl</span> http://<span class="hljs-variable">$EXTERNAL</span>-IP
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> http://<span class="token variable">${EXTERNAL-IP}</span>
 </code></pre>
 <p>The output will be <code>404</code> because no <code>Ingress</code> resources are defined yet:</p>
-<pre><code class="hljs"><span class="hljs-keyword">default</span> backend - 404
+<pre><code class="hljs css language-bash">default backend - <span class="token number">404</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="configurations"></a><a href="#configurations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurations</h2>
 <h3><a class="anchor" aria-hidden="true" id="configure-gpu-optional"></a><a href="#configure-gpu-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure GPU (optional)</h3>
 <ul>
-<li>Download and install Nvidia GPU drivers from official website</li>
-<li>Enable GPU feature</li>
+<li><p>Download and install Nvidia GPU drivers from official website</p></li>
+<li><p>Enable GPU feature</p>
+<p><strong>Please be aware that if MicroK8s v1.21, you need to modify the <code>default_runtime_name</code> and DO NOT enable GPU feature by microk8s enable gpu</strong></p></li>
 </ul>
-<pre><code class="hljs">microk8s.<span class="hljs-builtin-name">enable</span> gpu
-</code></pre>
+<ul>
+<li><p>if MicroK8s is prior to v1.20 (&lt;= 1.20), enable gpu feature by default</p>
+<pre><code class="hljs css language-bash">microk8s.enable gpu
+</code></pre></li>
+<li><p>if MicroK8s is 1.21, please follow the steps</p>
+<ol>
+<li><p>Modify the file <code>/var/snap/microk8s/current/args/containerd-template.toml</code> and manually change the <code>default_runtime_name</code> to to <code>nvidia-container-runtime</code></p>
+<pre><code class="hljs css language-diff"># default_runtime_name is the default runtime name to use.
+<span class="hljs-deletion">- default_runtime_name = "${RUNTIME}"</span>
+<span class="hljs-addition">+ default_runtime_name = "nvidia-container-runtime"</span>
+</code></pre></li>
+<li><p>Restart the microk8s</p>
+<pre><code class="hljs css language-bash">microk8s stop
+microk8s start
+</code></pre></li>
+<li><p>Install Nvidia Device Plugin by helm</p>
+<pre><code class="hljs css language-bash">helm repo <span class="token function">add</span> nvdp https://nvidia.github.io/k8s-device-plugin
+helm repo update
+helm <span class="token function">install</span> -n kube-system nvidia-device-plugin nvdp/nvidia-device-plugin
+
+</code></pre></li>
+<li><p>Verify GPU</p>
+<pre><code class="hljs css language-bash">kubectl describe node <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'nvidia.com/gpu'</span>
+</code></pre></li>
+<li><p>Verify within MicroK8s cluster</p>
+<pre><code class="hljs css language-bash"><span class="token assign-left variable">deviceplugin_pod</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl -n kube-system get pod <span class="token operator">|</span> <span class="token function">grep</span> nvidia-device-plugin <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">$1</span>}'</span><span class="token variable">)</span></span>
+
+kubectl -n kube-system <span class="token builtin class-name">exec</span> -t <span class="token variable">${deviceplugin_pod}</span> nvidia-smi
+</code></pre></li>
+</ol>
+<p>Ref: <a href="https://github.com/NVIDIA/gpu-operator/issues/163#issuecomment-794445253">https://github.com/NVIDIA/gpu-operator/issues/163#issuecomment-794445253</a></p></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="configure-snap-optional"></a><a href="#configure-snap-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure snap (optional)</h3>
 <p><a href="https://snapcraft.io/">snap</a> will update packages automatically. If you plan to use it in a production-ready environment, you could</p>
 <ul>
