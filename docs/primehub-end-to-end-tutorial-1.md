@@ -46,7 +46,7 @@ Go to `Notebooks` tab in the PrimeHub UI to start a notebook server.
 After went into the notebook environment, now create a folder `screw` under our group shared volume `~/<group_name>/`. In this tutorial, the <group_name> is `phusers`.
 ![](assets/primehub-end-to-end-tutorial-create-folder.png)
 
-Next, download [tutorial_screw_train.ipynb](assets/tutorial_screw_train.ipynb) and upload it to `~/<group_name>/phusers`.
+Next, download [tutorial_screw_train.ipynb](assets/tutorial_screw_train.ipynb) and upload it to `~/<group_name>/screw`.
 
 Run the `Prepare Data` section in the notebook file to download all necessary data.
 ![](assets/primehub-end-to-end-tutorial-prepare-data.png)
