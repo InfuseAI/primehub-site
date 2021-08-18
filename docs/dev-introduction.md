@@ -6,22 +6,29 @@ sidebar_label: Overview
 
 PrimeHub is a Kubernetes-based cloud-native Machine Learning platform.
 
-We Provide PrimeHub Community and Enterprise installations. Prior to PrimeHub installation, a PrimeHub-ready Kubernetes cluster is required. PrimeHub supports multi-nodes and single-node. 
+We provides various ways of installation depending upon your requirements and resources.
 
-If you want a Kubernetes in your own way, please see the prerequisites or see guides of starting a fresh Kubernetes on GKE/EKS for PrimeHub. 
+## AWS - One-Click Installation 🚀
 
-Just want to try PrimeHub on the own desktop/laptop? you may want to check the installation on single-node(easy-installation).
+With AWS CloudFormation, the distance between you and ready-to-use PrimeHub is just 1-click away; all of you need are an AWS account, 30 minutes and a cup of tea or coffee. Visit [one.primehub.io &neArr;](https://one.primehub.io/) to start it.
 
-If a serious enterprising trial is preferred, please send the [request](https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform). We will have PrimeHub cloud dedicated to you.
+Don't have an AWS account? We have other ways for you.
+
+
+
+---
+
+## Installation
+
+Here are PrimeHub Community and Enterprise installations.  Prior to PrimeHub installation, a PrimeHub-ready Kubernetes cluster is required. PrimeHub supports both of multi-nodes Kubernetes cluster and single-node MicroK8s cluster.
+
+If you have a Kubernetes in your own way already, please see the prerequisites for having a PrimeHub-ready Kubernetes or see guides of starting a fresh Kubernetes on GKE/EKS for PrimeHub installation.
 
 
 ### Katacoda
 
-Before getting hands dirty in real circumstances, we have a [PrimeHub CE installation scenario on Katacoda↗](https://www.katacoda.com/infuseai), it helps understand the installation progress/requirements and what PrimeHub is capable of.
+Before messing around in real circumstances, we have a [PrimeHub CE installation scenario on Katacoda &neArr;](https://www.katacoda.com/infuseai), it helps understand the installation progress/requirements and what PrimeHub CE is capable of.
 
----
-
-## Getting Started
 
 ### Setup Kubernetes for PrimeHub
 
@@ -41,5 +48,13 @@ If PrimeHub on GKE/EKS is one of your preference, you may want to start from our
 
 #### Single Node
 
+Just want to have PrimeHub on the own desktop PC/laptop PC? you may want to check the installation on single-node(easy-installation).
+
 - [Install PrimeHub Community on Single Node (Ubuntu)](getting_started/kubernetes_on_ubuntu_ce)
 - [Install PrimeHub Enterprise on Single Node (Ubuntu)](getting_started/kubernetes_on_ubuntu_machine)
+
+---
+
+## Enterprising Trial
+
+If an enterprising trial is preferred, please send the [request](https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform). We will have a PrimeHub cloud dedicated to your trial.
