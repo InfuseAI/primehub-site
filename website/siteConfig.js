@@ -60,6 +60,7 @@ const siteConfig = {
     //{ blog: true, label: 'Blog'},
     //{ page: 'help', label: 'Community'},
     //{ search: true }, //algolia
+    {href: "https://one.primehub.io/", label: "1-Click Install  \u21D7", external: true},
     { href: "https://cse.google.com/cse?cx=a1b608e4a3908f544", label: "Search \u21D7", external: true }
   ],
 
