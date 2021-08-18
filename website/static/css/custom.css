@@ -231,6 +231,26 @@ span.ce-only {
     font-weight: bold;
 }
 
+span.ee-trial {
+    color: #fc6d26;
+    font-weight: bold;
+}
+
+span.ee-licensed {
+    color: #fc6d26;
+    font-weight: bold;
+}
+
+span.deploy-trial {
+    color: #0C92F0;
+    font-weight: bold;
+}
+
+span.deploy-licensed {
+    color: #0C92F0;
+    font-weight: bold;
+}
+
 .tooltip .tooltiptext {
   font-family: $PFont;
   visibility: hidden;
