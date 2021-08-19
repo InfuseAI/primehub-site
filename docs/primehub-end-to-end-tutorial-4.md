@@ -14,17 +14,23 @@ In this tutorial, we will build a screw defect detection web app with the deploy
 
 ## Streamlit App
 
-Download [tutorial_screw_app.py](assets/tutorial_screw_app.py) and upload it to `~/<group_name>/screw`. Replace the `endpoint` at line 6 with the deployed model endpoint in [3 - Manage, Compare, and Deploy the Model](primehub-end-to-end-tutorial-3).
+Download [tutorial_screw_app.py](assets/tutorial_screw_app.py) and upload it to `~/<group_name>/screw` and replace the `endpoint` at line 6 with the deployed model endpoint in [3 - Manage, Compare, and Deploy the Model](primehub-end-to-end-tutorial-3).
+```python
+endpoint = "<your_endpoint_url>"
+```
 ![](assets/primehub-end-to-end-tutorial-web-app-1.png)
 
-Fill in `FILE_PATH` with `/project/phusers/screw/tutorial_screw_app.py`.
+Install Streamlit to PrimeHub
 ![](assets/primehub-end-to-end-tutorial-web-app-2.png)
 
-Open your web app when it is ready.
+Fill in `FILE_PATH` with `/project/phusers/screw/tutorial_screw_app.py`.
 ![](assets/primehub-end-to-end-tutorial-web-app-3.png)
 
-Upload screw images from the upper-left corner. Then, the inference results are shown in the right side. You can adjust the threshold of good or bad screw. Also, you can select the column size for the result.
+Open your web app when it is ready.
 ![](assets/primehub-end-to-end-tutorial-web-app-4.png)
+
+Upload screw images from the upper-left corner. Then, the inference results are shown in the right side. You can adjust the threshold of good or bad screw. Also, you can select the column size for the result.
+![](assets/primehub-end-to-end-tutorial-web-app-5.png)
 
 
 ## Summary
@@ -44,6 +50,6 @@ In the [3 - Manage, Compare, and Deploy the Model](primehub-end-to-end-tutorial-
 - In `Model Deployment`, we can customize model input/output in model image then deploy it in a cloud-ready environment. It is no need to prepare the infrastructure for model deployment purpose by yourself, PrimeHub will setup all required resources to ensure it can respond to requests anytime from everywhere.
 
 In the [4 - Build the Web app](primehub-end-to-end-tutorial-4), we've made a screw defect detection web app with our best deployed model in `PrimeHub Apps`.
-- With `Streamlit`, you can build web apps with trainee models easily. There a a bunch of apps can be done with Streamlit, such as internal tools for data feedback, data correction, model validation, etc.
+- With `Streamlit`, you can build web apps with trained models easily. There a a bunch of apps can be done with Streamlit, such as internal tools for data feedback, data correction, model validation, etc.
 
 With PrimeHub, you will experience a wonderful machine learning journey! Enjoy it!

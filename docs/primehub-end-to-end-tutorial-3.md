@@ -186,3 +186,5 @@ Then copy the entire block to the terminal for execution, and we are sending exa
     The `positive` return value represented as `good` screw; and the `negative` return value represented as `bad` screw.
 
     Therefore, the return value `2.065972089767456` indicated that the requested screw image is a good screw!
+
+In the next tutorial, we will build a web app for screw defect detection with our deployed model.
