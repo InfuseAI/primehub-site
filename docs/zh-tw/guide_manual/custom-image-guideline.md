@@ -14,11 +14,9 @@ description: 客製 Image 指南
 
 ## 創建 Images
 
-在 `Image Builder` 功能釋出前， 管理者透過 Image Management 只能新增已經存在 registry 上的 image repo。
+管理者現在可以利用`Images`功能來為使用者創建客製 image （如：必要 Python 套件安裝、環境變數設定等等）並新增至 PrimeHub 讓使用者可以選用；如此一來，使用者可重複利用此 image 來進行不同的專案，省去每次前置設定的時間，加速專案進行。
 
-管理者現在可以利用`Image Builder`功能來為使用者創建客製 image （如：必要 Python 套件安裝、環境變數設定等等）並新增至 PrimeHub 讓使用者可以選用；如此一來，使用者可重複利用此 image 來進行不同的專案，省去每次前置設定的時間，加速專案進行。
-
-基本上我們可以用`Image Builder`客製任何的 image；對 PrimeHub 而言 image 有分兩種用途，一個是**Job Submission**用，另一個則是**JupyterHub**用。
+基本上我們可以用`Images`客製任何的 image；對 PrimeHub 而言 image 有分兩種用途，一個是**Job Submission**用，另一個則是**JupyterHub**用。
 
 ### Job Submission 用
 
@@ -52,13 +50,13 @@ PrimeHub 期待 JupyterHub 用 image 具備 JupyterHub 環境，一旦起始後�
 |minimal-notebook|`tensorflow-notebook`|TensorFlow|
 |minimal-notebook|`pytorch-notebook`|Pytorch|
 
-## Image Builder 創建 Image
+## Images 創建 Image
 
-我們可以利用`Image Builder`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Image Builder`就會根據指定規格建立並發佈 image。請見 [Image Builder](admin-build-image-cht) 功能，以及 快速上手[「創建 image」](../quickstart/build-image)。<span class="ee-only">Enterprise</span>
+我們可以利用`Images`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Images`就會根據指定規格建立並發佈 image。請見 [Images](admin-image-cht) 功能，以及 快速上手[「創建 image」](../quickstart/build-image)。<span class="ee-only">Enterprise</span>
 
 ### 利用 DockerHub Registry
 
-經由 **Image Builder** 創建的 image 會被發佈至 PrimeHub 設定的 registry 上指定的 repository；我們可以設定自己的 DockerHub registry 做為發佈目地的。
+經由 **Images** 創建的 image 會被發佈至 PrimeHub 設定的 registry 上指定的 repository；我們可以設定自己的 DockerHub registry 做為發佈目地的。
 
 ## Dockerfile 創建 Image
 

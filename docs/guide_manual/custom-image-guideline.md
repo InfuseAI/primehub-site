@@ -12,13 +12,11 @@ description: Custom Image Guideline
   </div>
 </div>
 
-## Build Images
+## Build Custom Images
 
-Before `Image Builder` feature is released, administrators can only add images from valid registries on Image Management of PrimeHub.
+With `Image` feature, administrators can build custom images for users according to requirements of environment such as pre-installed python packages, environmental variables configurations, and so on. Those prerequisites which were required to set up manually every time can be set up once in images. Users are able to re-use images to proceed to projects without spending time on environment setup after images are instantiated as containers.
 
-With `Image Builder` feature, administrators can build custom images for users according to requirements of environment such as pre-installed python packages, environmental variables configurations, and so on. Those prerequisites which were required to set up manually every time can be set up once in images. Users are able to re-use images to proceed to projects without spending time on environment setup after images are instantiated as containers.
-
-Basically, we can use `Image Builder` to build any images we want; in terms of images for PrimeHub, we use images for two conditions, one is for **Job Submission**, the other is for **JupyterHub**.
+Basically, we can use `Images` to build any images we want; in terms of images for PrimeHub, we use images for two conditions, one is for **Job Submission**, the other is for **JupyterHub**.
 
 ### For Job Submission
 
@@ -52,9 +50,9 @@ There are two official registries where we can have JupyterHub-compatible base i
 |minimal-notebook|`tensorflow-notebook`|TensorFlow|
 |minimal-notebook|`pytorch-notebook`|Pytorch|
 
-## Build Images via Image Builder
+## Build Images via Images
 
-We can build images via `Image Builder` by specification of a base image with required packages, please goes to [Image Builder](admin-build-image) feature for details and try a [build image](../quickstart/build-image) quickstart.<span class="ee-only">Enterprise</span>
+We can build images via `Images` by specification of a base image with required packages, please goes to [Images](admin-image) feature for details and try a [build image](../quickstart/build-image) quickstart.<span class="ee-only">Enterprise</span>
 
 ## Build Images via Dockerfile
 

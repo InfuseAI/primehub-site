@@ -41,7 +41,6 @@ Here we list the features comparison among licenses.
 
 **Q: What happens if the license is expired?**
 - The normal user cannot create new resources for Jobs, Schedules, and Deployments.
-- The admin cannot use image builders.
 - The existing resources would not be affected.
 
 **Q: What happens if the # of node exceeds the limitation in license?**

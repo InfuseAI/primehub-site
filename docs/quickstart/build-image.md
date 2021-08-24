@@ -14,7 +14,7 @@ This quickstart shows how to build a custom image by the feature of `Image Build
 
 1. Log in as an administrator and [switch to Admin Portal](login-portal-admin). 
 
-2. Enter `Image Builder` management and click `+ Add` for adding a custom image spec.
+2. Enter `Images` management and click `+ Add` for adding a custom image spec.
 
 3. Fill `Name` with `fastai-v1` (or other name you like).
 

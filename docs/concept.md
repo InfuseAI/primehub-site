@@ -39,7 +39,7 @@ Images are working environments to **Notebook**, **Job**, **Model**. When launch
 
 Both of Administrator and group administrator are able to add images from Images of Admin Portal and Images of User Portal respectively. Images must be associated with one group at least or be Global for being viewable
 
-See [Image Management](guide_manual/admin-image)(Admin), [Image Builder](guide_manual/admin-build-image)(Admin), [Image](group-image)(Group Admin).
+See [Image Management](guide_manual/admin-image)(Admin), [Image](group-image)(Group Admin).
 
 
 ### Datasets
