@@ -1,6 +1,6 @@
 ---
 id: build-image
-title: 創建客製 Image (Obsolete)
+title: 創建客製 Image (deprecated)
 description: 創建客製 Image
 ---
 

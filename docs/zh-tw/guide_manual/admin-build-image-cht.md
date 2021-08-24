@@ -1,6 +1,6 @@
 ---
 id: admin-build-image-cht
-title: Image Builder (此功能將自 v3.9 版移除)
+title: Image Builder (此功能將自 v3.8 版移除)
 sidebar_label: Image Builder (汰舊中)
 description: Image Builder
 ---
@@ -9,7 +9,7 @@ description: Image Builder
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
->此功能將自 v3.9 版移除；客製映像檔功能併入於 [Admin Portal / Images](admin-image-cht)，請由此使用該功能。
+>此功能將自 v3.8 版移除；客製映像檔功能併入於 [Admin Portal / Images](admin-image-cht)，請由此使用該功能。
 
 Image Builder 提供管理者可以藉由指定基礎 image 及要安裝工具及套件庫，為使用者提供客製化 image。
 

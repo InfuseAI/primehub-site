@@ -1,6 +1,6 @@
 ---
 id: image-builder
-title: Image Builder (obsolete)
+title: Image Builder
 ---
 
 Provide a way for admin to build images with custom packages.
@@ -11,7 +11,7 @@ Provide a way for admin to build images with custom packages.
 
 We use a CRD ImageSpec to get specific definition of our image setup, [primehub-controller](https://github.com/InfuseAI/primehub-controller) will base on it to generate a CRD ImageSpecJob for an image building job, ImageSpecJob likes a revision of ImageSpec. Then the controller will convert package manifest to a Dockerfile and create a corresponding pod to build the Dockerfile through [buildah](https://github.com/containers/buildah). Once the status of building pod changes, it will be updated back to `.status` in ImageSpecJob and ImageSpec. Once the building job succeeded, the built image will be pushed to the container registry that we configured.
 
-### Image Builder (obsolete) spec
+### Image Builder spec
 
 [An ImageSpec example](https://github.com/InfuseAI/primehub-controller/blob/master/config/samples/primehub_v1alpha1_imagespec.yaml). You can modify `.spec.baseImage` value to extend exisiting docker image with custom packages, we support `.spec.packages.apt`, `.spec.packages.pip` and `.spec.packages.conda`.
 

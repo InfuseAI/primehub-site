@@ -1,7 +1,7 @@
 ---
 id: admin-build-image
-title: Image Builder (is being obsolete since v3.9)
-sidebar_label: Image Builder (Obsolete)
+title: Image Builder (is being deprecated since v3.8)
+sidebar_label: Image Builder (deprecated)
 description: Image Builder
 ---
 <div class="label-sect">
@@ -10,7 +10,7 @@ description: Image Builder
   </div>
 </div>
 
-> This feature is planned to be obsolete since v3.9. The building custom image function is merged into Admin Portal / Images, please move to [Images](admin-image) instead.
+> This feature is planned to be deprecated since v3.8. The building custom image function is merged into Admin Portal / Images, please move to [Images](admin-image) instead.
 
 Administrators are able to create custom images with pre-installed tools and libraries which are required for users.
 

@@ -41,7 +41,7 @@ sidebar_label: Overview
 
 + `Images` 管理映像檔。 請見 [Image Management](../guide_manul/../guide_manual/admin-image-cht)。
 
-+ `Image Builder (obsolete)` 客製映像檔工具。請見 [Image Builder (obsolete)](../guide_manual/admin-build-image-cht)。 `Enterprise`
++ `Image Builder (deprecated)` 客製映像檔工具。請見 [Image Builder (deprecated)](../guide_manual/admin-build-image-cht)。 `Enterprise`
 
 + `Datasets` 管理資料集。 請見 [Dataset 管理](../guide_manual/admin-dataset-cht)。
 
