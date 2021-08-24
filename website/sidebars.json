@@ -410,14 +410,16 @@
     "Overview": [
       "index-zh",
       "zh-tw/quickstart/login-portal-user",
-      "zh-tw/idx-core",
-      "zh-tw/idx-tutorial"
+      "zh-tw/idx-core"
     ],
     "Installation": [
       "zh-tw/idx-installation"
     ],
     "QuickStart": [
       "zh-tw/idx-quickstart"
+    ],
+    "Tutorial": [
+      "zh-tw/idx-tutorial"
     ],
     "Notebooks": [
       "zh-tw/quickstart/launch-project",

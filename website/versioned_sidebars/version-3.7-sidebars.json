@@ -406,14 +406,16 @@
     "Overview": [
       "version-3.7-index-zh",
       "version-3.7-zh-tw/quickstart/login-portal-user",
-      "version-3.7-zh-tw/idx-core",
-      "version-3.7-zh-tw/idx-tutorial"
+      "version-3.7-zh-tw/idx-core"
     ],
     "Installation": [
       "version-3.7-zh-tw/idx-installation"
     ],
     "QuickStart": [
       "version-3.7-zh-tw/idx-quickstart"
+    ],
+    "Tutorial": [
+      "version-3.7-zh-tw/idx-tutorial"
     ],
     "Notebooks": [
       "version-3.7-zh-tw/quickstart/launch-project",

@@ -1,8 +1,10 @@
 ---
 id: idx-tutorial
 title: Tutorial
-sidebar_label: Tutorial
+sidebar_label: Origins
 description: Tutorial
 ---
 
-[請參照原英文文件](../primehub-app-tutorial-end-to-end)。
+## 請參照英文文件
+
++ [From Training to Serving Models](../primehub-end-to-end-tutorial-1)
