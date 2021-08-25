@@ -301,7 +301,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('dev-introduction')}>Getting Started</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('getting_started/install_primehub_ce')}>Install PrimeHub CE</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('getting_started/install_primehub')}>Install PrimeHub EE</a></div>` +
-                //`<div class="menu-item"><a href="https://one.primehub.io/" target="_blank">🌟 1-Click Install \u21D7</a></div>` +
+                `<div class="menu-item"><a href="https://one.primehub.io/" target="_blank">🌟 1-Click Install \u21D7</a></div>` +
               '</div>', 
           },
           /*{
