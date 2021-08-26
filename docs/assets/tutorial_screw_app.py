@@ -1,9 +1,10 @@
 import json
+import os
 
 import requests
 import streamlit as st
 
-endpoint = "<your_endpoint_url>"
+endpoint = os.getenv('ENDPOINT', '')
 
 
 @st.cache(show_spinner=False, suppress_st_warning=True)  # Avoid redundant API calls for the same image
@@ -18,6 +19,10 @@ def main():
     st.set_page_config(layout='wide')
 
     st.title('Screw Defect Detection')
+
+    if not endpoint:
+        st.error('Environment variable: ENDPOINT not set')
+        return
 
     files = st.sidebar.file_uploader('Upload Images:', type=['png', 'jpeg', 'jpg'], accept_multiple_files=True)
 
