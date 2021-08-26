@@ -66,7 +66,7 @@ After the first execution, you will see the message. Because it adds the user to
 After relogin, run the same command again to finish the single-node provision:
 
 ```bash
-./primehub/install/primehub-install create singlenode
+./primehub/install/primehub-install create singlenode --k8s-version 1.19
 ```
 
 >During the installation, you might run into troubles or need to modify the default settings, please check the [TroubleShooting](#troubleshooting) section.
