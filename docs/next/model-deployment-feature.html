@@ -78,39 +78,31 @@
 <p>Feature not available - Model Deployment is not enabled for this group. Please contact your administrator to enable it.</p>
 </blockquote>
 <p>Please contact Admin to turn on it or switch to a group which <code>Model Deployment</code> is enabled.</p>
-<h2><a class="anchor" aria-hidden="true" id="list"></a><a href="#list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>List</h2>
-<p>This page indicates all of deployed services status.</p>
+<h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<p>This page displays all of created deployments status.</p>
 <p><img src="/docs/assets/mdeploy_grid_v38.png" alt=""></p>
-<table>
-<thead>
-<tr><th><strong>Status</strong></th><th><span style="background-color: #33ea33">Deployed</span></th><th><span style="background-color: red">Failed</span></th><th><span style="background-color: #fba500">Deploying</span></th><th><span style="background-color: #aaaaaa">Stopped</span></th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<h3><a class="anchor" aria-hidden="true" id="card"></a><a href="#card" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Card</h3>
-<p>Each card represents a deployment. Clicking on a card to view the detail.</p>
-<h4><a class="anchor" aria-hidden="true" id="tips"></a><a href="#tips" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Tips</em></h4>
 <ul>
-<li><p><em>Hovering the cursor over Metadata <code>View</code> of a card, it lists the metadata view.</em></p></li>
-<li><p><em>Hovering the cursor over Endpoint <code>Link</code> shows the entire link and clicking the link makes a copy to the clipboard.</em></p></li>
+<li><p><code>Search by name</code>: Search deployments by a keyword.</p></li>
+<li><p><code>+ Create Deployment</code> button: Clicking for a deployment creation.</p></li>
+<li><p><code>Refresh</code> button: Clicking to retrieve the latest statuses of deployments.</p></li>
+<li><p><code>Deployed By Me</code>: Checkbox; list deployments deployed by &quot;me&quot;.</p></li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="card"></a><a href="#card" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Card</h3>
+<p>Each card represents a deployment.</p>
 <table>
 <thead>
 <tr><th>Info</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Title</td><td>Deployment name</td></tr>
-<tr><td>Endpoint</td><td>Where the model is deployed and serve.</td></tr>
-<tr><td>Metadata</td><td>Hovering over <code>View</code> to display the metadata info</td></tr>
-<tr><td>Last Updated</td><td>Last updated time.</td></tr>
+<tr><td>Endpoint</td><td>Where the model serve and take queries.</td></tr>
+<tr><td>Last Updated</td><td>Last updated time by <code>user</code>.</td></tr>
+<tr><td>Status</td><td><span style="background-color: #33ea33">Deployed</span> <span style="background-color: red">Failed</span> <span style="background-color: #fba500">Deploying</span> <span style="background-color: #aaaaaa">Stopped</span></td></tr>
 </tbody>
 </table>
 <ul>
-<li><p><code>Search deploy name</code>: Search deployments by a keyword.</p></li>
-<li><p><code>Create Deployment</code> button: Clicking for a deployment creation.</p></li>
-<li><p><code>Refresh</code> button: Clicking to retrieve the latest statuses of deployments.</p></li>
-<li><p><code>Deployed By Me</code>: Check; list deployments deployed by &quot;me&quot;.</p></li>
+<li><code>Manage</code>: click to view the detail.</li>
+<li><code>Start/Stop</code>: toggle the deployment.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="create"></a><a href="#create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create</h2>
 <p>Confirm if the current group is what you desire; switch the group by the <code>Group:</code> dropdown at the top of the right side.</p>
@@ -241,7 +233,7 @@
 <blockquote>
 <p>Client Token displays once only for a short while, please save it. If lost, deleting the record and generate it again.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="tips-1"></a><a href="#tips-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips:</h4>
+<h4><a class="anchor" aria-hidden="true" id="tips"></a><a href="#tips" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips:</h4>
 <p>In the predict function of a deployed model, we may want to collect the information of clients who send requests to.
 We could learn the info from the header of requests, <code>X-Forwarded-User</code> like the example below.</p>
 <pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> request <span class="hljs-keyword">as</span> req
@@ -295,4 +287,4 @@ req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class
 <p>Please contact your system administrator for assistance to upgrade your license to run more models.</p>
 </blockquote>
 <p>To learn the current PrimeHub license information, please see <a href="guide_manual/admin-system#primehub-license">PrimeHub License</a>.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/model-management-tutorial"><span class="arrow-prev">← </span><span>Manage and Deploy a Model</span></a><a class="docs-next button" href="/docs/next/model-deployment-tutorial-concepts"><span>Concepts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#list">List</a><ul class="toc-headings"><li><a href="#card">Card</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#environment-variables">Environment Variables</a></li><li><a href="#metadata">Metadata</a></li><li><a href="#resources">Resources</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deploy">Deploy</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li><li><a href="#license-warning">License warning</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/model-management-tutorial"><span class="arrow-prev">← </span><span>Manage and Deploy a Model</span></a><a class="docs-next button" href="/docs/next/model-deployment-tutorial-concepts"><span>Concepts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#enable-model-deployment-in-group-management">Enable Model Deployment in Group Management</a></li><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#card">Card</a></li></ul></li><li><a href="#create">Create</a><ul class="toc-headings"><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#environment-variables">Environment Variables</a></li><li><a href="#metadata">Metadata</a></li><li><a href="#resources">Resources</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deploy">Deploy</a></li></ul></li><li><a href="#deployment-detail">Deployment Detail</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#update">Update</a></li><li><a href="#delete">Delete</a></li><li><a href="#stop">Stop</a></li><li><a href="#monitor">Monitor</a></li><li><a href="#license-warning">License warning</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
