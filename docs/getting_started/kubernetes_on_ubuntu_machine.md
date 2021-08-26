@@ -18,7 +18,7 @@ This document will guide you to install [MicroK8s](https://microk8s.io/) on a si
 
 * Ubuntu 18.04 LTS
 * Kubernetes 1.19 version
-* IP address: 1.2.3.4
+* IP address: `EXTERNAL-IP`
 * Networking: allow port 80 for HTTP
 
 ### Install MicroK8s Single Node
