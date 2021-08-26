@@ -356,7 +356,7 @@ You may run into troubles during the installation, we list some of them, hopeful
 When hostname is invalid, the installation might suspend at the `microk8s status` phase, because the cluster is not running:
 
 ```bash
-ubuntu@foo_bar:~$ ./primehub-install create singlenode foo-bar:5000 --k8s-version 1.17
+ubuntu@foo_bar:~$ ./primehub-install create singlenode foo-bar:5000 --k8s-version 1.19
 [Search] Folder primehub-v2.6.2
 [Not Found] Folder primehub-v2.6.2
 [Search] tarball primehub-v2.6.2.tar.gz
