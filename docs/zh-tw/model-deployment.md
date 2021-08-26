@@ -29,14 +29,20 @@ description: 模型部署
 
 ## 主頁
 
-此頁格列一覽所有已創建的部署；
+此頁一覽所有已創建的部署；
 
 ![](assets/mdeploy_grid_v38.png)
 
 狀態分別由下列顏色來區別：
 
-|**狀態** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
-|---------|--------|------|---------|-------|
++ 輸入`Search by name`: 依關鍵字搜尋部署。
+
++ 點擊`+ Create Deployment` 按鈕，進入 Deployment 創建頁。
+
++ 點擊`Refresh`按鈕，更新部署狀態。
+
++ 勾選`Deployed By Me`: 僅列出由自己發佈的部署。
+
 
 ### 部署
 
@@ -44,27 +50,15 @@ description: 模型部署
 
 |Info        |Description|
 |------------|-----------|
-|Title       | 名稱|
-|Endpoint    | 佈建上線服務 URL|
-|Metadata    | 鼠標移到`View`，顯示 Metadata 資訊|
-|Last Updated| 最後更新時間|
+|Title       | 名稱      |
+|Endpoint    | 佈署上線服務 URL|
+|Last Updated| 最後更新時間 by `user`|
+|Status         |<span style="background-color: #33ea33">Deployed</span> <span style="background-color: red">Failed</span> <span style="background-color: #fba500">Deploying</span> <span style="background-color: #aaaaaa">Stopped</span>|
 
-+ 輸入`Search deploy name`: 依關鍵字搜尋部署。
++ `Manage`: 點擊進入部署詳細頁。
++ `Start/Stop`: 起動/停止部署服務。
 
-+ 點擊`Create Deployment` 按鈕，進入 Deployment 創建頁。
-
-+ 點擊`Refresh`按鈕，更新部署狀態。
-
-+ 篩選`Group`: 僅列出選定群組發佈的部署；可複選。
-
-+ 勾選`Deployed By Me`: 僅列出由自己發佈的部署。
-
-#### *小技巧*
-
-  + *鼠標移到 Endpoint 連結上，點擊會複製 URL 至剪貼簿供稍候複製。*
-  
-  + *鼠標移到 Metadata 連結上，顯示 Metadata 資訊。*
-  
+ 
 ## 創建
 
 請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 `Group:`。

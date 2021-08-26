@@ -30,39 +30,35 @@ If the current group's `Model Deployment` is not enabled, it shows a message
 
 Please contact Admin to turn on it or switch to a group which `Model Deployment` is enabled.
 
-## List
+## Overview
 
-This page indicates all of deployed services status.
+This page displays all of created deployments status.
 
 ![](assets/mdeploy_grid_v38.png)
 
-|**Status** |<span style="background-color: #33ea33">Deployed</span> |<span style="background-color: red">Failed</span>|<span style="background-color: #fba500">Deploying</span>|<span style="background-color: #aaaaaa">Stopped</span>|
-|---------|--------|------|---------|-------|
++ `Search by name`: Search deployments by a keyword.
+
++ `+ Create Deployment` button: Clicking for a deployment creation.
+
++ `Refresh` button: Clicking to retrieve the latest statuses of deployments.
+
++ `Deployed By Me`: Checkbox; list deployments deployed by "me".
 
 ### Card
 
-Each card represents a deployment. Clicking on a card to view the detail.
+Each card represents a deployment.
 
-#### *Tips*
-
-+ *Hovering the cursor over Metadata `View` of a card, it lists the metadata view.*
-
-+ *Hovering the cursor over Endpoint `Link` shows the entire link and clicking the link makes a copy to the clipboard.*
 
 |Info        |Description|
 |------------|-----------|
 |Title       | Deployment name|
-|Endpoint    | Where the model is deployed and serve.|
-|Metadata    | Hovering over `View` to display the metadata info |
-|Last Updated| Last updated time.|
+|Endpoint    | Where the model serve and take queries.|
+|Last Updated| Last updated time by `user`.|
+|Status      |<span style="background-color: #33ea33">Deployed</span> <span style="background-color: red">Failed</span> <span style="background-color: #fba500">Deploying</span> <span style="background-color: #aaaaaa">Stopped</span>|
 
-+ `Search deploy name`: Search deployments by a keyword.
++ `Manage`: click to view the detail.
++ `Start/Stop`: toggle the deployment.
 
-+ `Create Deployment` button: Clicking for a deployment creation.
-
-+ `Refresh` button: Clicking to retrieve the latest statuses of deployments.
-
-+ `Deployed By Me`: Check; list deployments deployed by "me".
 
 ## Create
 
