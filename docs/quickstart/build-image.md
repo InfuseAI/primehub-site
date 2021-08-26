@@ -8,40 +8,39 @@ description: Build Image
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-This quickstart shows how to build a custom image by the feature of `Image Builder`. Here we are going to build an image with **fastai v1 library for PyTorch** provided by [Fast.ai](https://www.fast.ai/) based on the [Jupyter base-notebook](https://github.com/jupyter/docker-stacks/tree/master/base-notebook). Fast.ai is a well-known for free online A.I. courses, please check its site if any interest.
+This quickstart shows how to build a custom image by the feature of `Images`. Here we are going to build an image with **fastai v1 library for PyTorch** provided by [Fast.ai](https://www.fast.ai/) based on the [Jupyter base-notebook](https://github.com/jupyter/docker-stacks/tree/master/base-notebook). Fast.ai is a well-known for free online A.I. courses, please check its site if any interest.
 
 ## Steps
 
-1. Log in as an administrator and [switch to Admin Portal](login-portal-admin). 
+1. `User Portal > Images` or `Admin Portal > Images`
 
-2. Enter `Images` management and click `+ Add` for adding a custom image spec.
+2. Enter `Images` management and click `+ New Image` for adding a custom image spec.
 
-3. Fill `Name` with `fastai-v1` (or other name you like).
+3. Fill `Name` with `group-image-sample` (or other name you like).
 
-4. Fill `Base Image` with `jupyter/base-notebook`.
+4. Choose `Build Custom Image`
 
-5. Don't check off `Use Image PullSecret`, a pull-secret is unnecessary since it is a public repository.
+5. Fill `Base Image` with `jupyter/base-notebook`.
 
-6. Fill `Conda` field with `-c pytorch -c fastai fastai` [[REF]](https://docs.fast.ai/index.html#Installation-and-updating) 
+6. Don't check off `Use Image PullSecret`, a pull-secret is unnecessary since it is a public repository.
+
+7. Fill `Conda` field with `-c pytorch -c fastai fastai` [[REF]](https://docs.fast.ai/index.html#Installation-and-updating) 
 
     (*Due to the full command is `conda install -c pytorch -c fastai fastai`*).
 
-7.  **(Optional)** Fill `APT` field with `vim` (or other tools).
+8. **(Optional)** Fill `APT` field with `vim` (or other tools).
 
     (Due to base image is `Ubuntu` base, `APT` is its package management tool.)
 
-8.  Click `Confirm` to save the custom image spec.
+9. Click `Create` to save the custom image spec.
 
-    ![](assets/qs-img-build-spec.png)
 
-9.  A job is created with the pending status until the image-build job is triggered.
+10. Once building is started, click `Image building in progress` to check the build details and log.
 
-10. Once the status of job turns into `Succeeded`, we can copy the url of image for adding the image later on `Images` management so that users are able to use this image with built-in fastai v1 library. (*The url varies according to your circumstance.*)
+![](assets/group-image-building.png)
 
-    ![](assets/qs-img-build.png)
 
-Alright, we have built our image successfully and gain the url of it. Go to [[quickstart] add image](add-image) to see how we add the image to be available for users on PrimeHub.
+11. Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image is added automatically and becomes available from image selection. Anytime we can click `View build details` to check the specification.
 
-## Next
+![](assets/group-image-built.png)
 
-When we add images or assign base images, pulling these images may require secrets to have the permission. Next, let's try to add these secrets on Secret Management.

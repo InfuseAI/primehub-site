@@ -11,67 +11,122 @@ description: Image Management
     <span class="tooltiptext">Applicable to Community Edition</span>
   </div>
 </div>
-Image management 提供管理者 Image 的管理能力，如：新增、刪除、編輯及群組權限。
 
-## Creating New Image
+## Overview
 
-![](assets/image_3_v26.png)
+Image management 提供管理者 Image 的管理能力，如：新增、刪除、編輯及群組權限，甚至可以進一步客製 Image。
 
-點選 `Add` 新增 Image，會跳出該 Image 的編輯畫面。
+## Add New Image
 
-![](assets/admin_img_v26.png)
+點擊 `New Image` 加入映像檔
 
-需填入以上畫面中的各個欄位：
+![](assets/group-image-info.png)
 
-+ `Name` 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）。
++ `Display name`: 必填，只能填寫小寫字母、數字、點（“.”）、連接號（“-”）。
 
-+ `Display name`
++ `Image name`: 依據 Display name 自動產生。
 
-+ `Description`
++ `Description`: 描述。
 
-+ `Container image url` 填入該 Image 的 連結位置。
 
-+ `Use Image Pull Secret` 勾選是否需要指定 pull-secret ，並從選單指定該 secret。
+選擇加入映像檔方式 `Use existing image` 或 `Build custom image`。
+
+## Use Existing Image
+
+加入已存在的映像檔。
+
+![](assets/group-image-existing.png)
+
++ `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
+
++ `Container image url`: 填入該 Image Url 的位置。[參考](#reference)
+
++ `Image Pull Secret` 勾選是否需要指定 pull-secret ，並從選單指定該 secret。
 
    ![](assets/images_pull_secret_v26.png)
 
-+ `Global` 開啟後，所有人皆可使用此 Image；若關閉，則需在 `edit groups` 連結有權限使用的 Group 。
++ `Specific container image url for GPU`: 當 Type 為 `universal` 時，可以勾選為 `GPU` 指定不同的 image。未勾選時，預設為跟 `Container image url` 一樣。
 
-最後點選 `confirm` 完成新增。
+點擊 `Create` 加入。
 
-![](assets/image_type.png)
+## Build Custom Image
 
-需要為 image 指定 Type 屬性。如此，使用者試著起始 hub 時，會先指定 `Instance Type`，只有符合該 Instance Type 需求 (`CPU`, `GPU`) 的 image 才能被選擇。
+創建客製映像檔並加入。
 
-+ `Type`: 指定該 Image 的 Type。
+![](assets/group-image-custom.png)
 
-  + `cpu`: 此 image 環境僅支援 CPU 運算。
-  + `gpu`: 此 image 環境支援 CPU 運算。
-  + `universal`: 此組 image 設定分別包括 CPU image 環境及 GPU image 環境； PrimeHub 當下會依據選擇的 Instance Type 來載入對應的環境。
++ `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
 
-+ `Container image url` 填入該 Image 的連結位置。
++ `Base image` 必填，base image 的 url。我們可以輸入任何有效的 Image URL，或是可以從自動列舉清單中選擇，已經透過 Image 管理加入至 PrimeHub 的 Image。[參考](#reference)
 
-+ `Specific container image url for GPU` 當 Type 為 `universal` 時，可以勾選為 `GPU` 指定不同的 image。未勾選時，預設為跟 `Container image url` 一樣。
++ `Image PullSecret` 如果 pull secret 為必要，請勾選。
 
-## Deleting Image
++ `Packages` 於對應的套件管理下輸入要預先安裝的套件名稱。
+
+  + `APT` Debian, Ubuntu 及其它相關的 linux distribution 的套件管理。
+
+  + `Conda` 多樣程式語言套件管理。 [[參考&neArr;]](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-packages)
+
+  + `Pip`  Python 套件管理。 [[參考&neArr;]](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)
+
+   > 如果需安裝複數個套件時，請輸入一行為一套件，換行後輸入下一個套件
+
+最後點選 `Create` 啟始創建工作。
+
+### 指定 Conda 套件符合條件
+
+特別提及： Conda 支援指定套件的來源 `channel`，並可以進一步指定套件符合條件 [[參考&neArr;]](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)。 語法如下：
+
+```txt
+(channel(/subdir):(namespace):)name(version(build))[key1=value1,key2=value2]
+```
+
+例： 安裝由`conda-forge` channel 提供的`numpy`套件，如同[原始頁面&neArr;](https://anaconda.org/conda-forge/numpy)。
+
+指定`-c conda-forge::` channel 再配合其進階條件：
+
+```bash
+-c conda-forge::numpy==1.17*
+```
+
+---
+
+### Building in progress
+
+創建中的映像檔名稱旁會有個三角提示，提示此映像檔尚未創建完成。
+
+![](assets/group-image-not-ready.png)
+
+點擊 `Image building in progress` 檢視 `Build Details` 及 `Log`。
+
+![](assets/group-image-building-detail.png)
+
+點擊 `Cancel Build` 撤消創建。
+
+### View build details and Rebuild
+
+創建完成後，映像檔名稱的三角提示即消失。映像檔則可從各個映像檔清單選用；
+
+![](assets/group-image-built.png)
+
+點擊 `View build details` 檢視客製映像檔規格內容及創建過程記錄；進一步可編輯內容來重新創建映像檔。
+
+![](assets/group-image-rebuild.png)
+
+
+更新內容且點擊 `Rebuild` 即可重新創建映像檔。
+
+## System Image
+
+加入的映像檔，不論是現有映像檔或是創建映像檔，則都可從映像檔清單選用；`i` 提示該映像檔從屬於 `Group`。
+
+![](assets/system-image-selection.png)
+
+## Actions
 
 ![](assets/actions.png)
 
-點選 `Delete`，會跳出確認對話框，確認是否刪除該 Image 。
-
-## Editing Image
-
-![](assets/actions.png)
-
-點選 `edit` 進入該 Image 的編輯頁面。
-
-## Editing Groups
-
-![](assets/edit_groups.png)
-
-若未開啟 `Global` 開放給所有使用者使用該 Image，在編輯 Image 的畫面下方點選`edit groups`，即可從現有的 Groups 列表中選取有權限使用該 Image 的 Group，將它們連結在一起。
-
-![](assets/image_8_v26.png)
+點擊「筆」圖示來編輯；點擊「垃圾桶」圖示來刪除。
 
 ## 參考
 

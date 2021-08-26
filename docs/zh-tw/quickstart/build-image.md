@@ -1,6 +1,6 @@
 ---
 id: build-image
-title: 創建客製 Image (deprecated)
+title: 創建客製 Image
 description: 創建客製 Image
 ---
 
@@ -8,7 +8,7 @@ description: 創建客製 Image
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-這份文件說明如何利用新功能 `Image Builder` 來創建客製 image。
+這份文件說明如何利用新功能 `Admin Portal > Image` 來創建客製 image。
 
 這裡我們以 [Jupyter base-notebook](https://github.com/jupyter/docker-stacks/tree/master/base-notebook) image 為基礎，在其上安裝 Fast.ai 提供的  **fastai v1 library for PyTorch** 後，產生新的 image。  
 
@@ -16,32 +16,32 @@ description: 創建客製 Image
 
 ## 步驟
 
-1. 以管理者帳號登入後[切換至 Admin Portal](login-portal-admin)，進入 `Image Builder` 管理
+1. `User Portal > Images` 或 `Admin Portal > Images`
 
-2. 點擊 `+ Add` 新增 custom image spec。
+2. 點擊 `+ New Image` 新增 custom image spec。
 
-3. 填入 `Name` 為 `fastai-v1` (或其它命名)。
+3. 填入 `Name` 為 `group-image-sample` (或其它命名)。
 
-4. 填入 `Base Image` 為 `jupyter/base-notebook`.
+4. 選擇 `Build Custom Image`
 
-5. 取消勾選 `Use Image PullSecret`，因為我們使用的 base image 存在於公開的 repo。
+5. 填入 `Base Image URL` 為 `jupyter/base-notebook`.
 
-6. 填入 `Conda` 欄位為 `-c pytorch -c fastai fastai` [[參考]](https://docs.fast.ai/index.html#Installation-and-updating)。
+6. 取消勾選 `Use Image PullSecret`，因為我們使用的 base image 存在於公開的 repo。
+
+7. 填入 `Conda` 欄位為 `-c pytorch -c fastai fastai` [[參考]](https://docs.fast.ai/index.html#Installation-and-updating)。
 
     (*由於完整 command 為 `conda install -c pytorch -c fastai fastai`*)。
 
-7. **(非必要)** 填入 `APT` 欄位為 `vim` 或其它工具
+8. **(非必要)** 填入 `APT` 欄位為 `vim` 或其它工具
    
     (因為 base image 為 `Ubuntu` base，`APT` 為其套件管理工具)。
 
-8.  點擊 `Confirm` 儲存 custom image spec。
+9. 點擊 `Create` 儲存 custom image spec。
 
-    ![](assets/qs-img-build-spec.png)
+10. 一旦開始創建，點擊 `Image building in progress` 檢視 Build Details 及 Log。
 
-9.  此時有個 job 會被生成出並處在 pending 狀態；一旦開始創建，job 為 running 狀態。
+![](assets/group-image-building.png)
 
-10. 一旦 job 完成後，狀態處於 `Succeeded`。我們可以複製 image url 作為之後在 `Images` 管理上新增該 image 之用。 Image 新增後，使用者就可以選用這個預先安裝 fastai v1 library 的 image 做為開發之用。 (*Image url 會隨實際環境而變*)
+11. 創建完成後，映像檔名稱的三角提示即消失。映像檔會被自動登錄。 使用者則可從各個映像檔清單選用這個預先安裝 fastai v1 library 的 image 做為開發之用。 (*Image url 會隨實際環境而變*)
 
-    ![](assets/qs-img-build.png)
-
-我們已經成功創建客製 image 並得到了 url。 下一步，我們可以參照 [[quickstart] add image](add-image) 為讓使用者選用，將此 image 新增至 PrimeHub。
+![](assets/group-image-built.png)
