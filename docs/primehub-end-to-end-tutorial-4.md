@@ -14,16 +14,15 @@ In this tutorial, we will build a screw defect detection web app with the deploy
 
 ## Streamlit App
 
-Download [tutorial_screw_app.py](assets/tutorial_screw_app.py) and upload it to `~/<group_name>/screw` and replace the `endpoint` at line 6 with the deployed model endpoint in [3 - Manage, Compare, and Deploy the Model](primehub-end-to-end-tutorial-3).
-```python
-endpoint = "<your_endpoint_url>"
-```
-![](assets/primehub-end-to-end-tutorial-web-app-1.png)
+Download [tutorial_screw_app.py](assets/tutorial_screw_app.py) and upload it to `~/<group_name>/screw`.
 
 Install Streamlit to PrimeHub
-![](assets/primehub-end-to-end-tutorial-web-app-2.png)
+![](assets/primehub-end-to-end-tutorial-web-app-1.png)
 
 Fill in `FILE_PATH` with `/project/phusers/screw/tutorial_screw_app.py`.
+
+Add a new field `ENDPOINT` and fill in it with the deployed model endpoint in [3 - Manage, Compare, and Deploy the Model](primehub-end-to-end-tutorial-3).
+![](assets/primehub-end-to-end-tutorial-web-app-2.png)
 ![](assets/primehub-end-to-end-tutorial-web-app-3.png)
 
 Open your web app when it is ready.
