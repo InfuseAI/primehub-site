@@ -22,7 +22,30 @@ This document will guide you to install [MicroK8s](https://microk8s.io/) on a si
 * IP address: `EXTERNAL-IP`
 * Networking: allow port 80 for HTTP
 
-### Install MicroK8s Single Node
+## Requirement
+
+### Git
+
+  > Please follow the os-specific command to install git command
+
+### cURL
+
+[cURL](https://curl.se/) is a command-line tool that allows us to do HTTP requests from shell. To install cURL, please follow the os-specific method. For example.
+
+  Ubuntu
+
+  ```
+  sudo apt update
+  sudo apt install curl
+  ```
+
+  RHEL/CentOS
+
+  ```
+  yum install curl
+  ```
+
+## Clone PrimeHub Repository
 
 We provide a install script which makes the installation much easier to create a [MicroK8s-single-node](https://microk8s.io/) Kubernetes.
 
@@ -32,13 +55,27 @@ Download the script `primehub-install`
 
 ```bash
 git clone https://github.com/InfuseAI/primehub.git
-cd primehub/install
 ```
+
+### Install PrimeHub required binaries
+
+```bash
+./primehub/install/primehub-install required-bin
+```
+
+This will install the required commands onto `~/bin`. You should append the `~/bin` to your `PATH` variables, or use the following command to append and read from the `.bashrc`
+
+```bash
+echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+
+## Install MicroK8s Single Node
 
 Run the `create singlenode` command:
 
 ```bash
-./primehub-install create singlenode --k8s-version 1.19
+./primehub/install//primehub-install create singlenode --k8s-version 1.19
 ```
 
 After the first execution, you will see the message. Because it adds the user to `microk8s` group and needs to relogin:

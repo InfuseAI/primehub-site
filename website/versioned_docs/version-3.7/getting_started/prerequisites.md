@@ -14,7 +14,9 @@ original_id: prerequisites
   </div>
 </div>
 
->Before installing PrimeHub, we need to provide a PrimeHub-ready-Kubernetes, which should contain following essentials. Make sure the cluster is ready for PrimeHub.
+>For PrimeHub installation on **single node**, please visit [Install PrimeHub CE on Single Node](kubernetes_on_ubuntu_ce) or [Install PrimeHub EE on Single Node](kubernetes_on_ubuntu_machine) directly.
+
+> For PrimeHub installation on **multiple nodes**, please read the prerequisites thoroughly. Before installing PrimeHub, we need to provide a PrimeHub-ready-Kubernetes, which should contain following essentials. Make sure the cluster is ready for PrimeHub..
 
 ## Kubernetes Cluster (1.16+)
 
