@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>PrimeHub Blog</title>
-        <link>https://jimmyliao.github.io/primehub-site//blog</link>
+        <link>https://docs.primehub.io/blog</link>
         <description>The best place to stay up-to-date with the latest PrimeHub news and events.</description>
         <lastBuildDate>Wed, 18 Sep 2019 06:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>PrimeHub Blog</title>
-            <url>https://jimmyliao.github.io/primehub-site//img/PrimeHub_icon_64.png</url>
-            <link>https://jimmyliao.github.io/primehub-site//blog</link>
+            <url>https://docs.primehub.io/img/PrimeHub_icon_64.png</url>
+            <link>https://docs.primehub.io/blog</link>
         </image>
         <copyright>Copyright © 2021 InfuseAI</copyright>
         <item>
             <title><![CDATA[The very first]]></title>
-            <link>https://jimmyliao.github.io/primehub-site//blog/2019/09/18/very-firsty.html</link>
-            <guid>https://jimmyliao.github.io/primehub-site//blog/2019/09/18/very-firsty.html</guid>
+            <link>https://docs.primehub.io/blog/2019/09/18/very-firsty.html</link>
+            <guid>https://docs.primehub.io/blog/2019/09/18/very-firsty.html</guid>
             <pubDate>Wed, 18 Sep 2019 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>It would be here if this <a href="https://app.clubhouse.io/infuseai/story/357/primehub-ce-blog-announcement">Story</a> is completed.</p> ]]></description>
         </item>
