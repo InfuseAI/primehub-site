@@ -256,7 +256,7 @@ The password of `KC_PASSWORD` and `PH_PASSWORD` will be auto generated if input 
 
 ### Enable Model Deployment (Optional)
 
-To manually enable the Model Deployment feature, please modify the file `~/.primehub/config/microk8s/primehub-values.yaml` and add following contents at the end of the file. 
+To manually enable the Model Deployment feature, please modify the file `~/.primehub/config/microk8s/helm_override/primehub.yaml` and add following contents at the end of the file. 
 
 ```yaml
 modelDeployment:
