@@ -342,7 +342,7 @@ class Index extends React.Component {
                 `<div class="menu-item"><a href=${docUrl('model-management-tutorial')}>Track Models</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('model-deployment-tutorial-concepts')}>Deploy Models</a></div>` +
                 `<div class="menu-item"><a href=${docUrl('primehub-app-tutorial-mlflow')}>Create MLflow server</a></div>` +
-                `<div class="menu-item"><a href=${docUrl('primehub-app-tutorial-label-studio')}>Labelling by Label Studio</a></div>` +
+                `<div class="menu-item"><a href=${docUrl('primehub-end-to-end-tutorial-1')}>From Training to Serving Models</a></div>` +
               '</div>', 
           },
           /*{
