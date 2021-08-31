@@ -60,7 +60,7 @@ We'll cover some examples in the following sections.
 
 ## podTemplate
 
-podTemplate is basically the same as how you describe a native kubernetes pod. But you can only define a single container in your podTemplate. We do not suopport multiple containers and initContainer for now.
+podTemplate is basically the same as how you describe a native kubernetes pod. But you can only define a single container and an initContainer in your podTemplate. We do not support multiple containers and initContainers for now.
 
 Here's an example podTemplate block:
 
