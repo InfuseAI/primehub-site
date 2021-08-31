@@ -65,7 +65,7 @@ Use the [Tensorflow2 Prepackaged Model Server](https://github.com/InfuseAI/prime
 
 ```bash
 git clone https://github.com/InfuseAI/primehub-seldon-servers.git
-cd tensorflow2/
+cd primehub-seldon-servers/tensorflow2/
 ```
 
 We can edit [tensorflow2/Model.py](https://github.com/InfuseAI/primehub-seldon-servers/blob/master/tensorflow2/tensorflow2/Model.py) to meet our input data requirements.
