@@ -1,12 +1,15 @@
 ---
 id: maintenance-resize-user-vol
 title: Increase User Volume
+sidebar_label: Increase User Volume (deprecated)
 description: Increase User Volume
 ---
 
 <div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
+
+> This maintenance notebook is planned to be deprecated since v3.8. For resizing volume, please check [HOWTO: Increase Volume Size](../tasks/howto-resize-vol)
 
 This document introduces how to increase a user volume via built-in `User Volume Size` tool on Maintenance Notebook.
 

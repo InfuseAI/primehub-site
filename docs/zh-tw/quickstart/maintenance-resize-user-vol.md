@@ -1,12 +1,15 @@
 ---
 id: maintenance-resize-user-vol
 title: 加大 User Volume
+sidebar_label: 加大 User Volume (汰舊中)
 description: 加大 User Volume
 ---
 
 <div class="ee-only tooltip">Enterprise
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
+
+>此功能將自 v3.8 版移除。
 
 這份文件介紹如何利用 Maintenance Notebook 來增加 User Volume Size。
 
