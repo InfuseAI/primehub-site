@@ -253,9 +253,7 @@
         "ids": [
           "maintenance",
           "quickstart/maintenance-resize-user-vol",
-          "quickstart/maintenance-resize-group-vol",
-          "trouble/howto-check-user-vol",
-          "trouble/howto-check-group-vol"
+          "quickstart/maintenance-resize-group-vol"
         ]
       },
       {
@@ -346,6 +344,14 @@
           "tasks/spyder-image",
           "tasks/rstudio-image",
           "tasks/ros-image"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Persistence",
+        "ids": [
+          "tasks/howto-check-vol-usage",
+          "tasks/howto-resize-vol"
         ]
       },
       {
