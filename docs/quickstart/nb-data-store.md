@@ -93,7 +93,7 @@ A Dataset Volume has the following **limitations**:
 
 - Data cannot downloaded and uploaded through API/CLI/SDK
 
-- If the volume is to be used by only group, it is recommended to use a Group Volume instead
+- If the volume is to be used by only group, it is recommended to use a Shared Volume instead
 
 A Dataset Volume is configured by the system administrator. For more information, Please see [Dataset Management](../guide_manual/admin-dataset). In some types of the dataset, we can also configure a [upload server](../guide_manual/admin-uploader) to upload data to the dataset volume.
 
