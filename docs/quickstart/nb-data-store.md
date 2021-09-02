@@ -37,7 +37,7 @@ Due to the characteristics of object storage, PHFS provides the best accessibili
 - Users can list and download files from [PrimeHub SDK/CLI](https://github.com/infuseai/primehub-python-sdk)
 
 PHFS is
-- **(Good)** Upload and download files from PHFS through [shared files](../shared-files) UI
+- **(Good)** Upload and download files from PHFS through [Shared Files](../shared-files) UI
 - **(Good)** Data exchange through [PrimeHub SDK/CLI](https://github.com/infuseai/primehub-python-sdk)
 - **(Good)** Store the [artifacts of a job's output](../job-artifact-feature)
 - **(Good)** The [source of model files](http://localhost:3000/docs/next/model-deployment-model-uri) for model deployment.
