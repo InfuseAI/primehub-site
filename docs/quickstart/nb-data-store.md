@@ -72,9 +72,8 @@ PHFS is not installed by default, please check this document to [configure Prime
 
 A Dataset Volume is a storage type that can be shared among multiple groups. The following permission settings can be configured:
 
-- Read-only for ALL groups
-- Read-only for certain groups
-- Writable for certain groups
+- Read-only on a global or per-group basis
+- Writable on a per-group basis
 
 There are **several kinds** of Dataset Volumes we can create:
 
@@ -93,7 +92,7 @@ A Dataset Volume has the following **limitations**:
 
 - Data cannot downloaded and uploaded through API/CLI/SDK
 
-- If the volume is to be used by only one group, it is recommended to use a Shared Volume instead
+- If the volume is to be used by only one group then, due to its ease of use, a Shared Volume is preferred
 
 A Dataset Volume is configured by the system administrator. For more information, Please see [Dataset Management](../guide_manual/admin-dataset). In some types of the dataset, we can also configure a [upload server](../guide_manual/admin-uploader) to upload data to the dataset volume.
 
