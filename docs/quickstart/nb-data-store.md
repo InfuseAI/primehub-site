@@ -5,41 +5,111 @@ description: Storing Data
 sidebar_label: Persistence
 ---
 
-PrimeHub provides several types of persistent data stores for user data/group data. These stores can be accessed from working environments.
+PrimeHub provides several types of persistent data stores. This document describes the characteristics of each of them, and the conditions in which they perform the best.
 
-## User Volume
+## Volume Types
+### User Volume
 
-Each user has own space called **User Volume** which is only accessible to the user to store data. The default volume capacity for everyone is 20 GB. The capacity is able to be increased, please contact Admin to learn the what capacity it is or to increase it if required. See [System Settings](../guide_manual/admin-system#system-settings).
+A user's private storage.
 
-In Notebook, it is home folder a.k.a `/home/jovyan`.
+A User Volume is **good** for:
 
-## Group Volume
+- Storing personal data. (e.g. datasets, code)
 
-Each user must be associated with one group at least. If `Shared Volume` of a Group is enabled with a specified capacity by Admin, all of group members are able to access the space called **Group Volume**. please contact Admin to learn what shared capacity it is or to enable a group volume for a group. See [Group Management](../guide_manual/admin-group#shared-volume)
+A User Volume has the following **limitations**:
 
-In Notebook which is launched under a group `<GroupId>`, users can see a mounted folder `groupid` under home folder. E.g. `InfuseAICat` -> `infuseaicat/`.
+- It can only be accessed via notebooks.
 
-## Dataset Volume
+### Shared Volume
 
-Admin is able to create a volume dedicated to a dataset via Dataset Management for users, the capacity is specified by Admin. It supports *persistent volume*, *nfs*, *host path*, *git* and *env*.
+A volume shared among group members. All members can read and write data to this volume. It is like an NFS server for a group.
 
-If one of user's groups is associated with a private dataset or global datasets, user can see the dataset folder from the Notebook which is launched under the same group.
+A Shared Volume is **good** for:
 
-The writable/read-only permission is varied with the combination of dataset *type*, flag *global* and associated *groups*. See [Dataset - Group Access Control](../guide_manual/admin-dataset#groups-access-control).
+- Storing shared data among members in a group
+- Exchanging data among notebooks, jobs, and apps
 
-In Notebook, the created dataset folders are under `datasets/<dataset_name>`. Please contact Admin to create dataset volumes for users with the proper permission.
+A Shared Volume **cannot be used** for:
 
-## PHFS Storage
+- Downloading and uploading data through an API/CLI/SDK
 
-[PHFS Storage](../design/phfs) is based on [PrimeHub Store](../design/primehub-store) technology. This storage is shared and accessed among the same group members, group members can share user data here. it seems similar to **Group Volume**, however, there are [differences between PHFS and Group Volume](../design/phfs#comparing-to-group-volume).  
+A group's Shared Volume is not enabled by default. Please contact the system administrator to enable it. For more information, Please see [Group Management](../guide_manual/admin-group#shared-volume). 
 
->PHFS, currently, supports *writing files sequentially only*; within this limitation, writing model files in `HDF5` format directly into PHFS will cause the error, `Problems closing file (file write failed: ...)` since `HDF5` uses *seek* while writing.
+### PHFS Storage
 
->Because the limitation above, users **cannot** upload a file whose size is **> 1MB** to PHFS from Notebook/JubpyerLab; there will be error occurred and the uploaded file size is only 1MB, not intact.
+PHFS (PrimeHub File System) is shared among group members, like a Shared Volume. However, PHFS has the added benefit of being [object storage](https://en.wikipedia.org/wiki/Object_storage), similar to S3. Due to the characteristics of object storage, PHFS provides the best accessibility out of all kinds of storage.
 
->In this case, we suggest this step: *writing HDF5 files into user home directory directly* rather than PHFS, then copying files to PHFS for the preparation of model deployments.
+Data stored in PHFS can be found under the subpath `/groups/<group>` of an object storage bucket.
 
-In addition, PrimeHub features also store relative group-context data in the storage, such as Job stores artifacts under `/phfs/jobArtifacts/`. Since the limitation of the storage, we don't recommend storing performance-sensitive data such as datasets, please use Dataset Volume instead.
+There are several ways to **access data stored in PHFS**:
+
+- PHFS can be mounted in notebooks, apps, and jobs.
+- Users can download/upload content from the [Shared Files](../shared-files) UI in the User Portal.
+- Users can list and download files from the [PrimeHub SDK/CLI](https://github.com/infuseai/primehub-python-sdk).
 
 
-In Notebook, the storage is under `/phfs`.
+PHFS is **good** for:
+
+- Uploading and downloading files via the [Shared Files](../shared-files) UI
+- Data exchange through [PrimeHub SDK/CLI](https://github.com/infuseai/primehub-python-sdk)
+- Storing the [artifacts of a job's output](../job-artifact-feature)
+- The [source of model files](http://localhost:3000/docs/next/model-deployment-model-uri) for model deployment
+
+
+Even though we can access the PHFS from the filesystem, the access mode is **not fully POSIX-compatible**. It does not allow *random access* and *append write*. It's only suitable for *sequential read* and *sequential write* operation.
+
+Due to this limitation PHFS **cannot be used for**:
+
+- Uploading a file with size **> 1MB** from the notebook UI (i.e. Jupterlab upload feature). An error will occur and the uploaded file will be truncated to 1MB. **To upload files larger than 1MB, please use the *Shared Files* UI.**
+
+- The output of training. Some ML frameworks cannot output training results successfully to PHFS. For example, in TensorFlow, writing model files in *HDF5* format to PHFS will cause the error `Problems closing file (file write failed: ...)` due to *HDF5* using *seek* while writing. **To store training results in PHFS, first output to a User Volume or Shared Volume, and then copy to PHFS.**
+
+- The input of training. PHFS has the worst performance out of all kinds of storage. **To train a dataset multiple runs, we recommend putting them in user volume or group volume.**
+
+PHFS is not installed by default, please check this document to [configure PrimeHub store and PHFS](../getting_started/configure-primehub-store).
+
+### Dataset Volume
+
+A Dataset Volume is a storage type that can be shared among multiple groups. The following permission settings can be configured:
+
+- Read-only on a global or per-group basis
+- Writable on a per-group basis
+
+There are **several kinds** of Dataset Volumes we can create:
+
+- **Persistent volume (PV)**: Like group volume, but can be shared among multiple groups rather than just a single group.
+- **NFS**: A volume that connects to an external NFS server.
+- **Host Path**: A special kind of volume that mounts the host filesystem.
+- **Git**: A special kind of volume which syncs the upstream git repository periodically. The actual data is stored on the host filesystem.
+- **Env**: Technically, this is not a volume, but a method to configure environment variables to be used in notebooks and jobs.
+
+A Dataset Volume is **good** for:
+
+- Sharing among groups. In an education environment, for example, datasets could be shared among multiple teams (groups) of students with read-only permissions, while the teaching assistants could be in another group with write permissions.
+- Special storage destination (e.g. external NFS server, host path, git sync)
+
+A Dataset Volume has the following **limitations**: 
+
+- Data cannot downloaded and uploaded through API/CLI/SDK
+
+- If the volume is to be used by only one group then, due to its ease of use, a Shared Volume is preferred
+
+A Dataset Volume is configured by the system administrator. For more information, Please see [Dataset Management](../guide_manual/admin-dataset). In some types of the dataset, we can also configure a [upload server](../guide_manual/admin-uploader) to upload data to the dataset volume.
+
+## Comparison
+
+|Type|Shared by| API/UI Access | Use case
+|-|-|-|-|
+| User Volume | No | No | Private data
+| Group Volume | Group members of a group | No | Shared data in group
+| PHFS | Group members of a group | Yes | Data import/export
+| Dataset Volume | Multiple groups | No | Shared data among groups
+
+All four storage options can be accessed via the file system. The following table describes the mount points and characteristics:
+
+|Type| Available in | Mount point | Characteristic
+|-|-|-|-|
+| User Volume | Notebooks | `/home/jovyan` | Best performance<br>(like block device)
+| Group Volume | Notebooks<br>Apps<br>Jobs | `/project/<group>` | Good performance <br>(like NFS)
+| PHFS | Notebooks<br>Apps<br>Jobs | `/phfs` | Limited access mode<br> Sequential Read/Write <br>(like object storage)
+| Dataset Volume | Notebooks<br>Apps<br>Jobs | `/datasets/<dataset>` | Good performace <br>(like NFS)
