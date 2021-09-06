@@ -17,7 +17,7 @@ This quickstart shows how to create new a user.
 
 1. Log in as an administrator and [switch to the Admin Portal](login-portal-admin).
 
-2. Click `Users` in the left side menu, then click the `+ Add` button.
+2. Click `Users` in the left sidebar, then click the `+ Add` button.
 
 3. Enter the user's details and toggle the `send activation email`, if required.
 
