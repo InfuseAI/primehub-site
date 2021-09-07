@@ -13,37 +13,40 @@ description: Create Group
   </div>
 </div>
 
-This quickstart shows how to create a group.
+This quickstart shows how to create a new group.
 
-PrimeHub is the group-centric design, things such as users, instance types, images and datasets have to be assigned to groups, otherwise, they cannot be utilized without assigning groups on PrimeHub. Hence, we have to make sure these things are assigned to groups.
+PrimeHub is group-centric. This means that users, instance types, images, and datasets must be assigned to a group. Without being assigned to a group, these elements cannot be utilized, and users will not be able to access any features of PrimeHub.
 
-A group, we can think it as a project group, users of the group share the same resources, datasets and conduct different tasks in a same project; hence, a group can be equipped with a shared volume for sharing project data by settings. We also can limit the resources quota for each group and ,furthermore, for each user in a group.
+Groups allow a subset of users to share storage, such as datasets and shared volumes. Available computational resources can also be configured through assigning Instance Types to groups, allowing resource allocation on a per-project basis.
 
-A user can be assigned to multiple groups.
+As users can be added to multiple groups, this means they can collaborate on many projects, and access different datasets with specific server resource configurations. 
 
-## Let's create a group
 
-1. Log in as an administrator and [switch to Admin Portal](login-portal-admin).
+## Create a Group
 
-2. Click `Groups` management on the side menu, then click `+ Add` button for the creation.
+1. Log in as an administrator and [switch to the Admin Portal](login-portal-admin).
 
-3. Input required information, such as `Name`.
+2. Click `Groups` in the left sidebar, then click the `+ Add` button.
 
-4. Enable `Shared Volume` if a volume for sharing data among the group is required.
+3. Enter required information, such as `Name`
+
+4. Toggle `Shared Volume` if a volume for sharing data among the group is required.
    1. Specify the `volume capacity`
-   2. Enabled `Launch Group Only` if this volume is accessed only by this group.
+   2. To restrict access to only this group, leave `Launch Group Only` toggled to `yes` (default)
 
    ![qs-create-group.png](assets/jobsub-tt-p1-1.png)
 
-5. Adjust `User Quota` if resource allocation limit is required for each user.
+5. Adjust the `User Quota` resource allocation limit for users in this group (if required).
 
-6. Adjust `Group Quota` if resource allocation limit is required for this group.
+6. Adjust the `Group Quota` resource allocation limit for the group (if required).
 
-7. Click `edit users`, assign `Users` to this group.
+7. Click `Edit Users` to select and assign `Users` to this group.
     ![qs-create-group2.png](assets/qs-create-group2.png)
 
-8. Confirm.
+8. Click `Confirm` to create the group.
+
+We have now created a group, configured a shared volume and user/group quota, and added users.
 
 ## Next
 
-We learn how to create a group with settings such as shared volume, quota and assigning users. Since we have a group, we can go next to add instance types, images for our groups.
+In the next quickstart, we will learn how to add instance types and images to groups.
