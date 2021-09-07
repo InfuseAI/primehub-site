@@ -49,4 +49,4 @@ We have now created a group, configured a shared volume and user/group quota, an
 
 ## Next
 
-In the next quickstart, we will learn how to add instance types and images to groups.
+In the next quickstart, we will learn how to assign a group admin.
