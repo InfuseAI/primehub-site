@@ -125,6 +125,14 @@ On the **Apps** page of the PrimeHub **User Portal**, click **Open** to start La
 
 ![](assets/primehub-end-to-end-tutorial-open-label-studio.png "Click Open to start Label Studio")
 
+If prompted to log in, the default credentials are:
+
+- username: `<group_name>@infuseai.io`
+- password: `<group_name>_password!`
+
+> Substitute <group_name> with your group. The default group for this tutorial is *phusers*
+
+
 ### Create Project
 
 Click the **Create** button to create a new project.
