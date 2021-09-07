@@ -13,18 +13,24 @@ description: Create User
   </div>
 </div>
 
-This quickstart shows how to create a user.
+This quickstart shows how to create new a user.
 
-1. Log in as an administrator and [switch to Admin Portal](login-portal-admin).
+1. Log in as an administrator and [switch to the Admin Portal](login-portal-admin).
 
-2. Click `Users` management on the side menu, then click `+ Add` button for the creation.
+2. Click `Users` in the left sidebar, then click the `+ Add` button.
 
-3. Input required information and enable `activation email` if required.
+3. Enter the user's details and toggle the `send activation email`, if required.
 
     ![img](assets/qs-create-user_v3.png)
 
-4. Confirm.
+4. Click confirm to create the new user.
+
+
+Now we learn how to create users, please create other users for a same group/project.
 
 ## Next
 
-Now we learn how to create users, please create other users for a same group/project. Next we will create a group for these users. *Without a group*, users can do nothing on PrimeHub. Let's make sure each user belonging certain groups.
+In the next quickstart guide, we will learn how to create new groups.
+
+Groups an essential part of PrimeHub. **Without being assigned to a group, users will be unable to use any features of PrimeHub.**
+
