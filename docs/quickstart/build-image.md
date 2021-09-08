@@ -32,15 +32,16 @@ This quickstart shows how to build a custom image by the feature of `Images`. He
 
     (Due to base image is `Ubuntu` base, `APT` is its package management tool.)
 
-9. Click `Create` to save the custom image spec.
+9. **(Admin Portal > Images)** Set `Global`; otherwise specify groups by `Edit Groups`.
+10. Click `Confirm` to start the building. 
 
 
-10. Once building is started, click `Image building in progress` to check the build details and log.
+11. When building is started, click `Image building in progress` to check the build details and log.
 
 ![](assets/group-image-building.png)
 
 
-11. Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image is added automatically and becomes available from image selection. Anytime we can click `View build details` to check the specification.
+12. Once the building finishes successfully, there is no triangular exclamation mark as a postfix to the image name. The image is added automatically and becomes available from image selection. Anytime we can click `View build details` to check the specification.
 
 ![](assets/group-image-built.png)
 

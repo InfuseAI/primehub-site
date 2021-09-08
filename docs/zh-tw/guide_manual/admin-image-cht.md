@@ -35,19 +35,22 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
 加入已存在的映像檔。
 
-![](assets/group-image-existing.png)
+![](assets/admin-image-use-existing.png)
 
 + `Type`: `cpu`, `gpu` and `universal`: 指定該 Image 的 Type。
 
-+ `Container image url`: 填入該 Image Url 的位置。[參考](#reference)
++ `Container Image URL`: 填入該 Image Url 的位置。[參考](#reference)
+
+
++ `Specific Container Image URL for GPU`: 當 Type 為 `universal` 時，可以勾選為 `GPU` 指定不同的 image。未勾選時，預設為跟 `Container image url` 一樣。
 
 + `Image Pull Secret` 勾選是否需要指定 pull-secret ，並從選單指定該 secret。
 
-   ![](assets/images_pull_secret_v26.png)
++ `Global`: 設定成 Global 讓所有群組都可以存取；反之， 透過`Edit Groups`指定可以存取的群組。
+  
+  ![](assets/admin-image-global.png)
 
-+ `Specific container image url for GPU`: 當 Type 為 `universal` 時，可以勾選為 `GPU` 指定不同的 image。未勾選時，預設為跟 `Container image url` 一樣。
-
-點擊 `Create` 加入。
+點擊 `Confirm` 加入。
 
 ## Build Custom Image
 
@@ -71,7 +74,11 @@ Image management 提供管理者 Image 的管理能力，如：新增、刪除�
 
    > 如果需安裝複數個套件時，請輸入一行為一套件，換行後輸入下一個套件
 
-最後點選 `Create` 啟始創建工作。
++ `Global`: 設定成 Global 讓所有群組都可以存取；反之， 透過`Edit Groups`指定可以存取的群組。
+  
+    ![](assets/admin-image-global.png)
+
+最後點選 `Confirm` 啟始創建工作。
 
 ### 指定 Conda 套件符合條件
 

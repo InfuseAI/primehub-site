@@ -31,7 +31,6 @@ Here we list the features comparison among tiers.
 |[Admin > Groups Management](guide_manual/admin-group)|✅️ |✅️ |✅️ |
 |[Admin > Instance Types Management](guide_manual/admin-instancetype)|✅️ |✅️ |✅️ |
 |[Admin > Images Management](guide_manual/admin-image)|✅️ |✅️ ||
-|[Admin > Image Builder (deprecated)](guide_manual/admin-build-image)||✅️ ||
 |[Admin > Datasets Management](guide_manual/admin-dataset)|✅️ |✅️ ||
 |[Admin > Secrets Management](guide_manual/admin-secret)|✅️ |✅️ |✅️ |
 |[Admin > Usage Report](guide_manual/admin-report)||✅️ ||

@@ -95,8 +95,7 @@ incorporates administration features that administrators are able to do access-c
 
 + [Manage instance types](guide_manual/admin-instancetype), [Manage images](guide_manual/admin-image), [Manage dataset](guide_manual/admin-dataset)
 
-+ [Build custom images for users](guide_manual/admin-build-image)
-  + [Custom Image Guideline](guide_manual/custom-image-guideline)
++ [Custom Image Guideline](guide_manual/custom-image-guideline)
 
 + [Manage secrets (credentials)](guide_manual/admin-secret.md)
 

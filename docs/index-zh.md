@@ -102,8 +102,7 @@ PrimeHub 提供三種級別： **PrimeHub Community**、**PrimeHub Enterprise** 
 
 + [管理 Instance types/映像檔/資料集](zh-tw/guide_manual/admin-instancetype-cht)
 
-+ [客製工作環境映像檔](zh-tw/guide_manual/admin-build-image-cht)
-  + [客製映像檔指南](zh-tw/guide_manual/custom-image-guideline)
++ [客製映像檔指南](zh-tw/guide_manual/custom-image-guideline)
 
 + [管理 secrets](zh-tw/guide_manual/admin-secret-cht)
 

@@ -15,14 +15,14 @@ description: Image Management
 
 ## Overview
 
-Image management provides the capabilities of managing image resources such as add, build, delete, edit images and of permission-control which associates specified-groups with images to give the access. Administrators are able to add existing images from the registry or to build a new image, automatically push it to the registry.
+Images management provides the capabilities of managing image resources such as add, delete, edit images and their permission-control which associates specified-groups with images to give the access. Administrators are even able to build a new custom image which are automatically pushed to the registry and added to the system.
 
 
 ![](assets/image_3_v26.png)
 
 ## Add New Image
 
-Click `New Image` to add an Image.
+Click `+ Add` to add an Image.
 
 ![](assets/group-image-info.png)
 
@@ -38,19 +38,21 @@ Choose `Use existing image` or `Build custom image`.
 
 Add an existing image.
 
-![](assets/group-image-existing.png)
+![](assets/admin-image-use-existing.png)
 
 + `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
 
-+ `Container image url`: Fill in the Image's url. See [Reference](#reference).
++ `Container Image URL`: Fill in the Image's url. See [Reference](#reference).
 
-+ `Image Pull Secret` Enable and select the secret if a pull-secret is required.
++ `Specific Container Image URL for GPU`: It appears when `universal` is selected. By default, it uses the same url as container image url. Enable it if a specific image url for GPU is desired.
 
-   ![](assets/images_pull_secret_v26.png)
++ `Image Pull Secret`: Enable and select the secret if a pull-secret is required.
 
-+ `Specific container image url for GPU` It appears when `universal` is selected. By default, it uses the same url as container image url. Enable it if a specific image url for GPU is desired.
++ `Global`: Toggle Global on to allow every group accessing the image; otherwise specifying groups by `Edit Groups`.
+  
+  ![](assets/admin-image-global.png)
 
-Click `Create` to complete the addition.
+Click `Confirm` to complete the addition.
 
 
 ## Build Custom Image
@@ -61,7 +63,7 @@ Instead of adding existing images, Administrators can build custom images and ad
 
 + `Type`: `cpu`, `gpu` and `universal`: Select what type of the image is.
 
-+ `Base image url` (required) The url of the base image; we can use any valid image URLs or we can choose images which are added via Image Management from autocompletion. See [Reference](#reference).
++ `Base image url` (required) The url of the base image; we can enter any valid image URLs or we can choose existing images from autocompletion. See [Reference](#reference).
 
 + `Image Pull Secret` Enable and select the secret if a pull-secret is required.
 
@@ -75,7 +77,11 @@ Instead of adding existing images, Administrators can build custom images and ad
 
   >In case of multiple packages, please using the **line break** for each package instead of putting them in one line.
 
-Click `Create` to start the building.
+  + `Global`: Toggle Global on to allow every group access the image; otherwise specifying groups by `Edit Groups`.
+  
+  ![](assets/admin-image-global.png)
+
+Click `Confirm` to start the building and the image will be added automatically once it's done.
 
 ### Conda Package Match Specification
 

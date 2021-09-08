@@ -18,7 +18,7 @@ description: 創建客製 Image
 
 1. `User Portal > Images` 或 `Admin Portal > Images`
 
-2. 點擊 `+ New Image` 新增 custom image spec。
+2. 點擊 `+ Add` 新增 custom image spec。
 
 3. 填入 `Name` 為 `group-image-sample` (或其它命名)。
 
@@ -36,12 +36,14 @@ description: 創建客製 Image
    
     (因為 base image 為 `Ubuntu` base，`APT` 為其套件管理工具)。
 
-9. 點擊 `Create` 儲存 custom image spec。
+9.  **限(Admin Portal > Images)** 設定 Global 或是指定特定群組。
+    
+10. 點擊 `Confirm` 開始創建。 
 
-10. 一旦開始創建，點擊 `Image building in progress` 檢視 Build Details 及 Log。
+11. 一旦開始創建，點擊 `Image building in progress` 檢視 Build Details 及 Log。
 
 ![](assets/group-image-building.png)
 
-11. 創建完成後，映像檔名稱的三角提示即消失。映像檔會被自動登錄。 使用者則可從各個映像檔清單選用這個預先安裝 fastai v1 library 的 image 做為開發之用。 (*Image url 會隨實際環境而變*)
+12. 創建完成後，映像檔名稱的三角提示即消失。映像檔會被自動登錄。 使用者則可從各個映像檔清單選用這個預先安裝 fastai v1 library 的 image 做為開發之用。 (*Image url 會隨實際環境而變*)
 
 ![](assets/group-image-built.png)

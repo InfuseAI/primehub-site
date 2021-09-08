@@ -52,7 +52,7 @@ PrimeHub 期待 JupyterHub 用 image 具備 JupyterHub 環境，一旦起始後�
 
 ## Images 創建 Image
 
-我們可以利用`Images`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Images`就會根據指定規格建立並發佈 image。請見 [Images](admin-image-cht#build-custom-image) 功能，以及 快速上手[「創建 image」](../quickstart/build-image)。<span class="ee-only">Enterprise</span>
+我們可以利用`Images`新增 Image Spec （如：必要 Python 套件安裝、環境變數設定等等），`Images`就會根據指定規格建立並發佈 image。請見 [Images](admin-image-cht#build-custom-image) 功能，以及 快速上手[「創建 image」](../quickstart/build-image)。
 
 ### 利用 DockerHub Registry
 
