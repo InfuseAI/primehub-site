@@ -10,106 +10,167 @@ description: Using PrimeHub from Training to Serving the Model
 </div>
 <br>
 
-In this tutorial, we will organize the labeled data and feed into the model in `PrimeHub Notebooks`. Also, we will make our notebook as a repeatable job to perform parameters tuning.
+In this tutorial we will train our model using the labeled data from [Part 1](primehub-end-to-end-tutorial-1), learn how to tweak parameter values, and submit our notebook as a job.
 
-## What we need?
+## Prerequisites
 
-- Install [MLflow](https://mlflow.org/) in `PrimeHub Apps`.
-    1. Click `Install to PrimeHub` in `MLflow`.
-    ![](assets/primehub-end-to-end-tutorial-install-mlflow-1.png)
-    2. Fill in `Name` with `mlflow`.
-    ![](assets/primehub-end-to-end-tutorial-install-mlflow-2.png)
-    3. Click `Create` button.
-    ![](assets/primehub-end-to-end-tutorial-install-mlflow-3.png)
-    4. The `MLflow` app is installed successfully.
-    ![](assets/primehub-end-to-end-tutorial-install-mlflow-4.png)
+To track our experiments, we must first install [MLflow](https://mlflow.org/), which is available as part of [PrimeHub Apps](primehub-app).
 
-- Configure `MLflow` app in your group to keep track of experiments/runs.
-    1. Click `Manage` then go to the detail page of `MLflow` app.
-    ![](assets/primehub-end-to-end-tutorial-configure-mlflow-1.png)
-    2. Copy the values of `App URL` and `Service Endpoints`.
-    ![](assets/primehub-end-to-end-tutorial-configure-mlflow-2.png)
-    3. Click `Settings` in sidebar menu and advance to `MLflow` tab.
-    ![](assets/primehub-end-to-end-tutorial-configure-mlflow-3.png)
-    4. Fill in `MLflow Tracking URI` with `http://`+`Service Endpoints`, and fill in `MLflow UI URI` with `App URL`, then click `Save`.
-    ![](assets/primehub-end-to-end-tutorial-configure-mlflow-4.png)
+### Install MLflow 
+
+In the **User Portal** left sidebar, click **Apps** and then click the **+ Applications** button. 
+
+Find **MLflow** and click **Install to PrimeHub** .
+
+![](assets/primehub-end-to-end-tutorial-install-mlflow-1.png)
+
+Enter the **Name** as **mlflow**.
+
+![](assets/primehub-end-to-end-tutorial-install-mlflow-2.png)
+
+Click the **Create** button.
+
+![](assets/primehub-end-to-end-tutorial-install-mlflow-3.png)
+
+When MFflow has finished installing, you will see the green **Ready** label.
+
+![](assets/primehub-end-to-end-tutorial-install-mlflow-4.png)
+
+### Connect PrimeHub to MLflow
+
+We can now connect MLflow to PrimeHub, which will enable the automatic exporting of notebook run results into MLflow.
+
+On the **Apps** page, find MLflow and click **Manage**. 
+
+![](assets/primehub-end-to-end-tutorial-configure-mlflow-1.png)
+
+Make a note of the **App URL** and **Service Endpoints** values.
+
+![](assets/primehub-end-to-end-tutorial-configure-mlflow-2.png)
+
+Click **Settings** in the left sidebar and then click the **MLflow** tab.
+
+![](assets/primehub-end-to-end-tutorial-configure-mlflow-3.png)
+
+In the **MLflow Tracking URI** text field enter the **service endpoints** value we copied earlier, preceded by ‘http://’. E.g. `http://your-service-endpoints`.
+
+In the **MLflow UI URI** text field enter the **App URL** value we copied earlier. Then, click the **Save** button.
+
+![](assets/primehub-end-to-end-tutorial-configure-mlflow-4.png)
 
 
 ## Train the Model
 
-Now we can run all cells after `Start Training` section.
+Now that MLflow is installed and connected to PrimeHub, we can go back to our Notebook and start training the model.
+
+Run all cells in the **Start Training** section of the script.
+
 ![](assets/primehub-end-to-end-tutorial-start-training.png)
 
-It will parse the JSON content and put all the images into the folder `~/<group_name>/screw` in the following structure:
+The script will parse our labeling results (stored in JSON files at the end of [Part 1](primehub-end-to-end-tutorial-1)) and copy the images into four folders located in  `~/<group_name>/screw`:
+
 - `data/train/good`: Good screw images as the training dataset
 - `data/train/bad`: Bad screw images as the training dataset
 - `data/val/good`: Good screw images as the validation dataset
 - `data/val/bad`: Bad screw images as the validation dataset
 
-Also, we set the experiment name with `tutorial_screw_train` and enable [MLflow autologging API](https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog) to automatically export our execution to `MLflow` app for experiment tracking.
-![](assets/primehub-end-to-end-tutorial-mlflow-cell.png)
+The script also sets the experiment name to `tutorial_screw_train` and enables the [MLflow autologging API](https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog), which will automatically export our run to MLflow for experient tracking. 
 
-We can see that achieved around 88% of validation accuracy after training.
+Checking the results at the end of the script, we can see that a validation accuracy of around 88% was achieved after training.
 ![](assets/primehub-end-to-end-tutorial-after-training.png)
 
-## Send Notebook as Job for Parameter Tuning
+## Input Parameters and API Access
 
-Now, we have a runnable notebook to train the screw classification model.
+Now that we have a runnable notebook to train the screw classification model, we can tweak parameter values and then submit our notebook as a job via the [PrimeHub Notebook Extension](ph-notebook-extension).
 
-Next, we can access [PrimeHub Notebook Extension](ph-notebook-extension) to submit our notebook as job to perform parameters tuning.
+### Tweak Parameters 
 
-Let's configure the learning rate to see how model accuracy can be better!
+First, let's allow the editing of  the `base_learning_rate` input parameter. This will enable us to submit jobs with a different learning rate and compare model accuracy.
 
-Click `cell 20` with default `base_learning_rate` configured.
+Click **cell 20** where the default `base_learning_rate` is configured.
+
 ![](assets/primehub-end-to-end-tutorial-select-cell.png)
 
-Click `Property Inspector` button.
+With cell 20 selected, click the **Property Inspector** button.
+
 ![](assets/primehub-end-to-end-tutorial-property-inspector.png)
 
-Click `Add Tag`, fill in `parameters`, and click `+` icon. This makes the input parameters to overwrite the `base_learning_rate`.
+Click **Add Tag** and enter **parameters** as the tag name, then click the **+** icon to add the tag. Adding this tag allows us to override the `base_learning_rate`.
+
 ![](assets/primehub-end-to-end-tutorial-property-inspector-parameters.png)
 
-To submit notebook as job, we need to setup [API Token](tasks/api-token) at first.
+### Set up an API Token
 
-Click on PrimeHub button to expand extension menu, then click `API Token`.
+To submit the notebook as a job, we need to set up an [API Token](tasks/api-token).
+
+Click on the **PrimeHub** dropdown menu in the toolbar, then click **API Token**.
+
 ![](assets/primehub-end-to-end-tutorial-extension-api-token.png)
 
-In the pop-up dialog, click `here` to access `API Token` page.
+In the pop-up dialog you will see the message ``Visit here to access your API token.`` Click the **here** link in the pop-up dialogue and the PrimeHub **API Token** page will open in a new tab.
+
 ![](assets/ph-extension-token.png)
 
-In the `API Token` page, click `Request API Token`.
+On the **API Token** page, click the **Request API Token** button.
+
 ![](assets/tutorial_request_api_token.png)
 
-After the token displayed, click `Copy` to store our token value.
+Click the **Copy** button to copy the API token to your clipboard.
+
 ![](assets/tutorial_copy_api_token.png)
 
-Back to notebooks, click on PrimeHub button and select `API Token` again.
-![](assets/primehub-end-to-end-tutorial-extension-api-token.png)
+Go back to your notebook and paste the API token into the text field,  then click **OK**.
 
-We can paste our token value then click `OK`.
 ![](assets/primehub-end-to-end-tutorial-extension-api-token-value.png)
 
-Next, click on PrimeHub button and select `Submit Notebook as Job`.
+## Submit Notebook Jobs
+
+With API access now configured, we can submit notebook jobs. To compare the effect of different `base_learning_rate` values on results, we will submit two jobs.
+
+Click the **PrimeHub** dropdown in the toolbar again, but this time click `Submit Notebook as Job`.
+
 ![](assets/primehub-end-to-end-tutorial-extension-submit.png)
 
-In the pop-up dialog, we can adjust `instance type` to gain more running resources, or we can adjust `image` to make notebook execution on different environment. Here is the settings: 
-- Instance Type: default value
-- Image: default value
-- Job Name: `tf-screw-training-lr-0.01`.
+In the pop-up dialog, we can adjust the following settings:
+- **Instance Type** to adjust computational resources
+- **Image** to execute the notebook in different environments
+- **Notebook Parameters** to alter parameter values
+
+### Job 1: Base Learning Rate of 0.01
+ 
+Leave the **Instance Type** and **Image** settings as default, and enter the following:
+
+- Job Name: `tf-screw-training-lr-0.01`
 - Notebook Parameters: `base_learning_rate = 0.01`
 
-Click `Submit` to start training with `base_learning_rate = 0.01`.
+Click `Submit` to start training with a `base_learning_rate` of  0.01.
+
 ![](assets/primehub-end-to-end-tutorial-submit-job-001.png)
 
-Again, click PrimeHub button and select `Submit Notebook as Job`. Let's submit another training with `base_learning_rate = 0.05` with following settings:
-- Instance Type: default value
-- Image: default value
-- Job Name: `tf-screw-training-lr-0.05`.
+### Job 2: Base Learning Rate of 0.05
+
+For the second job, as above, leave **Instance Type** and **Image** settings as default, then enter the following:
+
+- Job Name: `tf-screw-training-lr-0.05`
 - Notebook Parameters: `base_learning_rate = 0.05`
 
 ![](assets/primehub-end-to-end-tutorial-submit-job-005.png)
 
-Back to PrimeHub UI and go to [PrimeHub Jobs](job-submission-feature), our two submitted jobs are succeeded! The respective notebook training results will be automatically exported to `MLflow` app.
+Click **Submit** to start the second job.
+
+## PrimeHub Jobs
+
+The status of the jobs can be found in [PrimeHub Jobs](job-submission-feature), by clicking **Jobs** in the left sidebar of the PrimeHub **User portal**
+
+Here we can see our two recent jobs have succeeded. The results of each notebook training job has also been automatically exported to **MLflow**. 
+
 ![](assets/tutorial_jobs_succeeded.png)
 
-In the next tutorial, we will analyze these two training results, manage trained models, and deploy the best model to cloud environment.
+## Conclusion
+
+In this tutorial we have installed MLflow, connected it to PrimeHub, trained our model, and submitted two jobs, each with a different parameter value.
+
+In the next tutorial, we will analyze the two sets of results, manage the trained models, and deploy the best model to the cloud.
+
+
+
