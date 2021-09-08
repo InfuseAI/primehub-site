@@ -56,7 +56,7 @@ Click the **Create** button to install the app.
 
 ![](assets/primehub-end-to-end-tutorial-install-label-studio-3.png "Click Create to install the app")
 
-When Label Studio has finsihed installing, you will see the green **Ready** label. 
+When Label Studio has finished installing, you will see the green **Ready** label. 
 
 ![](assets/primehub-end-to-end-tutorial-install-label-studio-4.png "Label Studio is ready to use")
 
