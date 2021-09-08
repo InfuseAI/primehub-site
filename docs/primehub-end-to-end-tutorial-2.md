@@ -76,7 +76,7 @@ The script will parse our labeling results (stored in JSON files at the end of [
 - `data/val/good`: Good screw images as the validation dataset
 - `data/val/bad`: Bad screw images as the validation dataset
 
-The script also sets the experiment name to `tutorial_screw_train` and enables the [MLflow autologging API](https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog), which will automatically export our run to MLflow for experient tracking. 
+The script also sets the experiment name to **tutorial_screw_train** and enables the [MLflow autologging API](https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog), which will automatically export our run to MLflow for experient tracking. 
 
 Checking the results at the end of the script, we can see that a validation accuracy of around 88% was achieved after training.
 ![](assets/primehub-end-to-end-tutorial-after-training.png)
@@ -129,7 +129,7 @@ Go back to your notebook and paste the API token into the text field,  then clic
 
 With API access now configured, we can submit notebook jobs. To compare the effect of different `base_learning_rate` values on results, we will submit two jobs.
 
-Click the **PrimeHub** dropdown in the toolbar again, but this time click `Submit Notebook as Job`.
+Click the **PrimeHub** dropdown in the toolbar again, but this time click **Submit Notebook as Job**.
 
 ![](assets/primehub-end-to-end-tutorial-extension-submit.png)
 
@@ -145,7 +145,7 @@ Leave the **Instance Type** and **Image** settings as default, and enter the fol
 - Job Name: `tf-screw-training-lr-0.01`
 - Notebook Parameters: `base_learning_rate = 0.01`
 
-Click `Submit` to start training with a `base_learning_rate` of  0.01.
+Click **Submit** to start training with a `base_learning_rate` of  0.01.
 
 ![](assets/primehub-end-to-end-tutorial-submit-job-001.png)
 
