@@ -36,7 +36,7 @@ When MFflow has finished installing, you will see the green **Ready** label.
 
 ![](assets/primehub-end-to-end-tutorial-install-mlflow-4.png)
 
-### Connect PrimeHub to MLflow
+### Connect MLflow to PrimeHub
 
 We can now connect MLflow to PrimeHub, which will enable the automatic exporting of notebook run results into MLflow.
 
@@ -52,7 +52,9 @@ Click **Settings** in the left sidebar and then click the **MLflow** tab.
 
 ![](assets/primehub-end-to-end-tutorial-configure-mlflow-3.png)
 
-In the **MLflow Tracking URI** text field enter the **service endpoints** value we copied earlier, preceded by ‘http://’. E.g. `http://your-service-endpoints`.
+In the **MLflow Tracking URI** text field enter the **service endpoints** value we copied earlier, preceded by ‘http://’. 
+
+E.g. `http://your-service-endpoints`
 
 In the **MLflow UI URI** text field enter the **App URL** value we copied earlier. Then, click the **Save** button.
 
