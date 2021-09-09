@@ -25,13 +25,13 @@ Group Admin now can view the current settings of the managed group which are con
 
 ## Info
 
-![](assets/group_setting_info.png)
+![](assets/group_setting_info_v38.png)
 
 It displays the current settings, **Name**, **Display Name**, **Shared Volume**, **User Quota** and **Group Quota** of the working group.
 
 ## Members
 
-![](assets/group_setting_member.png)
+![](assets/group_setting_member_v38.png)
 
 It displays group members and group administrators.
 
@@ -44,7 +44,7 @@ It displays group members and group administrators.
 </div>
 <br>
 
-![](assets/group_setting_job.png)
+![](assets/group_setting_job_v38.png)
 
 + `Default Timeout Setting`: Set Minutes / Hours / Days.
 
@@ -62,7 +62,7 @@ Group Admin can apply a group-wise Job timeout setting on every jobs submitted f
 </div>
 <br>
 
-![](assets/group_setting_model.png)
+![](assets/group_setting_deployment_v38.png)
 
 It displays if **Model Deployment** is enabled to the group, i.e., if the group can use **Deployments** feature.
 
@@ -80,7 +80,7 @@ It displays if **Model Deployment** is enabled to the group, i.e., if the group 
 
 PrimeHub provides models management feature, Models, by integrating MLflow. Before starting using Models, it requires the information of the binding MLflow instance.
 
-![](assets/group-setting-mlflow.png)
+![](assets/group_setting_mlflow_v38.png)
 
 After [the installation of MLflow by PrimeHub Apps](primehub-app), we can learn `App URL` and `Service Endpoint` from the installed App detail.
 
