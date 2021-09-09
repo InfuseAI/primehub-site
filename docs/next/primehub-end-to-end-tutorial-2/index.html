@@ -65,89 +65,98 @@
   </div>
 </div>
 <br>
-<p>In this tutorial, we will organize the labeled data and feed into the model in <code>PrimeHub Notebooks</code>. Also, we will make our notebook as a repeatable job to perform parameters tuning.</p>
-<h2><a class="anchor" aria-hidden="true" id="what-we-need"></a><a href="#what-we-need" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What we need?</h2>
-<ul>
-<li><p>Install <a href="https://mlflow.org/">MLflow</a> in <code>PrimeHub Apps</code>.</p>
-<ol>
-<li>Click <code>Install to PrimeHub</code> in <code>MLflow</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-1.png" alt=""></li>
-<li>Fill in <code>Name</code> with <code>mlflow</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-2.png" alt=""></li>
-<li>Click <code>Create</code> button.
-<img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-3.png" alt=""></li>
-<li>The <code>MLflow</code> app is installed successfully.
-<img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-4.png" alt=""></li>
-</ol></li>
-<li><p>Configure <code>MLflow</code> app in your group to keep track of experiments/runs.</p>
-<ol>
-<li>Click <code>Manage</code> then go to the detail page of <code>MLflow</code> app.
-<img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-1.png" alt=""></li>
-<li>Copy the values of <code>App URL</code> and <code>Service Endpoints</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-2.png" alt=""></li>
-<li>Click <code>Settings</code> in sidebar menu and advance to <code>MLflow</code> tab.
-<img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-3.png" alt=""></li>
-<li>Fill in <code>MLflow Tracking URI</code> with <code>http://</code>+<code>Service Endpoints</code>, and fill in <code>MLflow UI URI</code> with <code>App URL</code>, then click <code>Save</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-4.png" alt=""></li>
-</ol></li>
-</ul>
+<p>In this tutorial we will train our model using the labeled data from <a href="primehub-end-to-end-tutorial-1">Part 1</a>, learn how to tweak parameter values, and submit our notebook as a job.</p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<p>To track our experiments, we must first install <a href="https://mlflow.org/">MLflow</a>, which is available as part of <a href="primehub-app">PrimeHub Apps</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="install-mlflow"></a><a href="#install-mlflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install MLflow</h3>
+<p>In the <strong>User Portal</strong> left sidebar, click <strong>Apps</strong> and then click the <strong>+ Applications</strong> button.</p>
+<p>Find <strong>MLflow</strong> and click <strong>Install to PrimeHub</strong> .</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-1.png" alt=""></p>
+<p>Enter the <strong>Name</strong> as <strong>mlflow</strong>.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-2.png" alt=""></p>
+<p>Click the <strong>Create</strong> button.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-3.png" alt=""></p>
+<p>When MFflow has finished installing, you will see the green <strong>Ready</strong> label.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-install-mlflow-4.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="connect-mlflow-to-primehub"></a><a href="#connect-mlflow-to-primehub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connect MLflow to PrimeHub</h3>
+<p>We can now connect MLflow to PrimeHub, which will enable the automatic exporting of notebook run results into MLflow.</p>
+<p>On the <strong>Apps</strong> page, find MLflow and click <strong>Manage</strong>.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-1.png" alt=""></p>
+<p>Make a note of the <strong>App URL</strong> and <strong>Service Endpoints</strong> values.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-2.png" alt=""></p>
+<p>Click <strong>Settings</strong> in the left sidebar and then click the <strong>MLflow</strong> tab.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-3.png" alt=""></p>
+<p>In the <strong>MLflow Tracking URI</strong> text field enter the <strong>service endpoints</strong> value we copied earlier, preceded by ‘http://’.</p>
+<p>E.g. <code>http://your-service-endpoints</code></p>
+<p>In the <strong>MLflow UI URI</strong> text field enter the <strong>App URL</strong> value we copied earlier. Then, click the <strong>Save</strong> button.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-configure-mlflow-4.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="train-the-model"></a><a href="#train-the-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Train the Model</h2>
-<p>Now we can run all cells after <code>Start Training</code> section.
-<img src="/docs/assets/primehub-end-to-end-tutorial-start-training.png" alt=""></p>
-<p>It will parse the JSON content and put all the images into the folder <code>~/&lt;group_name&gt;/screw</code> in the following structure:</p>
+<p>Now that MLflow is installed and connected to PrimeHub, we can go back to our Notebook and start training the model.</p>
+<p>Run all cells in the <strong>Start Training</strong> section of the script.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-start-training.png" alt=""></p>
+<p>The script will parse our labeling results (stored in JSON files at the end of <a href="primehub-end-to-end-tutorial-1">Part 1</a>) and copy the images into four folders located in  <code>~/&lt;group_name&gt;/screw</code>:</p>
 <ul>
 <li><code>data/train/good</code>: Good screw images as the training dataset</li>
 <li><code>data/train/bad</code>: Bad screw images as the training dataset</li>
 <li><code>data/val/good</code>: Good screw images as the validation dataset</li>
 <li><code>data/val/bad</code>: Bad screw images as the validation dataset</li>
 </ul>
-<p>Also, we set the experiment name with <code>tutorial_screw_train</code> and enable <a href="https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog">MLflow autologging API</a> to automatically export our execution to <code>MLflow</code> app for experiment tracking.
-<img src="/docs/assets/primehub-end-to-end-tutorial-mlflow-cell.png" alt=""></p>
-<p>We can see that achieved around 88% of validation accuracy after training.
+<p>The script also sets the experiment name to <strong>tutorial_screw_train</strong> and enables the <a href="https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog">MLflow autologging API</a>, which will automatically export our run to MLflow for experient tracking.</p>
+<p>Checking the results at the end of the script, we can see that a validation accuracy of around 88% was achieved after training.
 <img src="/docs/assets/primehub-end-to-end-tutorial-after-training.png" alt=""></p>
-<h2><a class="anchor" aria-hidden="true" id="send-notebook-as-job-for-parameter-tuning"></a><a href="#send-notebook-as-job-for-parameter-tuning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Send Notebook as Job for Parameter Tuning</h2>
-<p>Now, we have a runnable notebook to train the screw classification model.</p>
-<p>Next, we can access <a href="ph-notebook-extension">PrimeHub Notebook Extension</a> to submit our notebook as job to perform parameters tuning.</p>
-<p>Let's configure the learning rate to see how model accuracy can be better!</p>
-<p>Click <code>cell 20</code> with default <code>base_learning_rate</code> configured.
-<img src="/docs/assets/primehub-end-to-end-tutorial-select-cell.png" alt=""></p>
-<p>Click <code>Property Inspector</code> button.
-<img src="/docs/assets/primehub-end-to-end-tutorial-property-inspector.png" alt=""></p>
-<p>Click <code>Add Tag</code>, fill in <code>parameters</code>, and click <code>+</code> icon. This makes the input parameters to overwrite the <code>base_learning_rate</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-property-inspector-parameters.png" alt=""></p>
-<p>To submit notebook as job, we need to setup <a href="tasks/api-token">API Token</a> at first.</p>
-<p>Click on PrimeHub button to expand extension menu, then click <code>API Token</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-extension-api-token.png" alt=""></p>
-<p>In the pop-up dialog, click <code>here</code> to access <code>API Token</code> page.
-<img src="/docs/assets/ph-extension-token.png" alt=""></p>
-<p>In the <code>API Token</code> page, click <code>Request API Token</code>.
-<img src="/docs/assets/tutorial_request_api_token.png" alt=""></p>
-<p>After the token displayed, click <code>Copy</code> to store our token value.
-<img src="/docs/assets/tutorial_copy_api_token.png" alt=""></p>
-<p>Back to notebooks, click on PrimeHub button and select <code>API Token</code> again.
-<img src="/docs/assets/primehub-end-to-end-tutorial-extension-api-token.png" alt=""></p>
-<p>We can paste our token value then click <code>OK</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-extension-api-token-value.png" alt=""></p>
-<p>Next, click on PrimeHub button and select <code>Submit Notebook as Job</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-extension-submit.png" alt=""></p>
-<p>In the pop-up dialog, we can adjust <code>instance type</code> to gain more running resources, or we can adjust <code>image</code> to make notebook execution on different environment. Here is the settings:</p>
+<h2><a class="anchor" aria-hidden="true" id="input-parameters-and-api-access"></a><a href="#input-parameters-and-api-access" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Input Parameters and API Access</h2>
+<p>Now that we have a runnable notebook to train the screw classification model, we can tweak parameter values and then submit our notebook as a job via the <a href="ph-notebook-extension">PrimeHub Notebook Extension</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="tweak-parameters"></a><a href="#tweak-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tweak Parameters</h3>
+<p>First, let's allow the editing of  the <code>base_learning_rate</code> input parameter. This will enable us to submit jobs with a different learning rate and compare model accuracy.</p>
+<p>Click <strong>cell 20</strong> where the default <code>base_learning_rate</code> is configured.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-select-cell.png" alt=""></p>
+<p>With cell 20 selected, click the <strong>Property Inspector</strong> button.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-property-inspector.png" alt=""></p>
+<p>Click <strong>Add Tag</strong> and enter <strong>parameters</strong> as the tag name, then click the <strong>+</strong> icon to add the tag. Adding this tag allows us to override the <code>base_learning_rate</code>.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-property-inspector-parameters.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="set-up-an-api-token"></a><a href="#set-up-an-api-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set up an API Token</h3>
+<p>To submit the notebook as a job, we need to set up an <a href="tasks/api-token">API Token</a>.</p>
+<p>Click on the <strong>PrimeHub</strong> dropdown menu in the toolbar, then click <strong>API Token</strong>.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-extension-api-token.png" alt=""></p>
+<p>In the pop-up dialog you will see the message <code>Visit here to access your API token.</code> Click the <strong>here</strong> link in the pop-up dialogue and the PrimeHub <strong>API Token</strong> page will open in a new tab.</p>
+<p><img src="/docs/assets/ph-extension-token.png" alt=""></p>
+<p>On the <strong>API Token</strong> page, click the <strong>Request API Token</strong> button.</p>
+<p><img src="/docs/assets/tutorial_request_api_token.png" alt=""></p>
+<p>Click the <strong>Copy</strong> button to copy the API token to your clipboard.</p>
+<p><img src="/docs/assets/tutorial_copy_api_token.png" alt=""></p>
+<p>Go back to your notebook and paste the API token into the text field,  then click <strong>OK</strong>.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-extension-api-token-value.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="submit-notebook-jobs"></a><a href="#submit-notebook-jobs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Submit Notebook Jobs</h2>
+<p>With API access now configured, we can submit notebook jobs. To compare the effect of different <code>base_learning_rate</code> values on results, we will submit two jobs.</p>
+<p>Click the <strong>PrimeHub</strong> dropdown in the toolbar again, but this time click <strong>Submit Notebook as Job</strong>.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-extension-submit.png" alt=""></p>
+<p>In the pop-up dialog, we can adjust the following settings:</p>
 <ul>
-<li>Instance Type: default value</li>
-<li>Image: default value</li>
-<li>Job Name: <code>tf-screw-training-lr-0.01</code>.</li>
+<li><strong>Instance Type</strong> to adjust computational resources</li>
+<li><strong>Image</strong> to execute the notebook in different environments</li>
+<li><strong>Notebook Parameters</strong> to alter parameter values</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="job-1-base-learning-rate-of-001"></a><a href="#job-1-base-learning-rate-of-001" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 1: Base Learning Rate of 0.01</h3>
+<p>Leave the <strong>Instance Type</strong> and <strong>Image</strong> settings as default, and enter the following:</p>
+<ul>
+<li>Job Name: <code>tf-screw-training-lr-0.01</code></li>
 <li>Notebook Parameters: <code>base_learning_rate = 0.01</code></li>
 </ul>
-<p>Click <code>Submit</code> to start training with <code>base_learning_rate = 0.01</code>.
-<img src="/docs/assets/primehub-end-to-end-tutorial-submit-job-001.png" alt=""></p>
-<p>Again, click PrimeHub button and select <code>Submit Notebook as Job</code>. Let's submit another training with <code>base_learning_rate = 0.05</code> with following settings:</p>
+<p>Click <strong>Submit</strong> to start training with a <code>base_learning_rate</code> of  0.01.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-submit-job-001.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="job-2-base-learning-rate-of-005"></a><a href="#job-2-base-learning-rate-of-005" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 2: Base Learning Rate of 0.05</h3>
+<p>For the second job, as above, leave <strong>Instance Type</strong> and <strong>Image</strong> settings as default, then enter the following:</p>
 <ul>
-<li>Instance Type: default value</li>
-<li>Image: default value</li>
-<li>Job Name: <code>tf-screw-training-lr-0.05</code>.</li>
+<li>Job Name: <code>tf-screw-training-lr-0.05</code></li>
 <li>Notebook Parameters: <code>base_learning_rate = 0.05</code></li>
 </ul>
 <p><img src="/docs/assets/primehub-end-to-end-tutorial-submit-job-005.png" alt=""></p>
-<p>Back to PrimeHub UI and go to <a href="job-submission-feature">PrimeHub Jobs</a>, our two submitted jobs are succeeded! The respective notebook training results will be automatically exported to <code>MLflow</code> app.
-<img src="/docs/assets/tutorial_jobs_succeeded.png" alt=""></p>
-<p>In the next tutorial, we will analyze these two training results, manage trained models, and deploy the best model to cloud environment.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/primehub-end-to-end-tutorial-1"><span class="arrow-prev">← </span><span>1 - Label Data</span></a><a class="docs-next button" href="/docs/next/primehub-end-to-end-tutorial-3"><span>3 - Manage, Compare, and Deploy the Model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-we-need">What we need?</a></li><li><a href="#train-the-model">Train the Model</a></li><li><a href="#send-notebook-as-job-for-parameter-tuning">Send Notebook as Job for Parameter Tuning</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+<p>Click <strong>Submit</strong> to start the second job.</p>
+<h2><a class="anchor" aria-hidden="true" id="primehub-jobs"></a><a href="#primehub-jobs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PrimeHub Jobs</h2>
+<p>The status of the jobs can be found in <a href="job-submission-feature">PrimeHub Jobs</a>, by clicking <strong>Jobs</strong> in the left sidebar of the PrimeHub <strong>User portal</strong></p>
+<p>Here we can see our two recent jobs have succeeded. The results of each notebook training job has also been automatically exported to <strong>MLflow</strong>.</p>
+<p><img src="/docs/assets/tutorial_jobs_succeeded.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="conclusion"></a><a href="#conclusion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h2>
+<p>In this tutorial we have installed MLflow, connected it to PrimeHub, trained our model, and submitted two jobs, each with a different parameter value.</p>
+<p>In the next tutorial, we will analyze the two sets of results, manage the trained models, and deploy the best model to the cloud.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/primehub-end-to-end-tutorial-1"><span class="arrow-prev">← </span><span>1 - Label Data</span></a><a class="docs-next button" href="/docs/next/primehub-end-to-end-tutorial-3"><span>3 - Manage, Compare, and Deploy the Model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a><ul class="toc-headings"><li><a href="#install-mlflow">Install MLflow</a></li><li><a href="#connect-mlflow-to-primehub">Connect MLflow to PrimeHub</a></li></ul></li><li><a href="#train-the-model">Train the Model</a></li><li><a href="#input-parameters-and-api-access">Input Parameters and API Access</a><ul class="toc-headings"><li><a href="#tweak-parameters">Tweak Parameters</a></li><li><a href="#set-up-an-api-token">Set up an API Token</a></li></ul></li><li><a href="#submit-notebook-jobs">Submit Notebook Jobs</a><ul class="toc-headings"><li><a href="#job-1-base-learning-rate-of-001">Job 1: Base Learning Rate of 0.01</a></li><li><a href="#job-2-base-learning-rate-of-005">Job 2: Base Learning Rate of 0.05</a></li></ul></li><li><a href="#primehub-jobs">PrimeHub Jobs</a></li><li><a href="#conclusion">Conclusion</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
