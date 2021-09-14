@@ -1,7 +1,7 @@
 ---
 id: release-note
-title: 3.7 Release Note
-description: 3.7 Release Note
+title: 3.8 Release Note
+description: 3.8 Release Note
 ---
 
 ## 🌟 &NonBreakingSpace; What's New
