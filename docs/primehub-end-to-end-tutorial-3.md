@@ -10,7 +10,7 @@ description: Using PrimeHub from Training to Serving the Model
 </div>
 <br>
 
-In the previous tutorial we submitted two model training runs via Primehub Jobs. In this part, we will compare the results of these two runs. The run with the best performance will then be registered in [PrimeHub Models](model-management) and then deployed as an online service via [PrimeHub's Model Deployment](model-deployment-feature) feature.
+In the previous tutorial we submitted two model training runs via Primehub Jobs. In this part, we will compare the results of these two runs. The run with the best performance will be registered in [PrimeHub Models](model-management) and then deployed as an online service via [PrimeHub's Model Deployment](model-deployment-feature) feature.
 
 
 ## Prerequisites
@@ -28,7 +28,7 @@ A Docker account is required to follow the Customize Model Server Image section 
 
 ## Model Management (Selecting the Best Model)
 
-We will use MLflow to compare the results from our two jobs (referred to as **runs** in MLflow). As we previously connected PrimeHub to MLflow, the results will be automatically available in MLflow.
+We will use MLflow to compare the results from our two jobs (referred to as ***runs*** in MLflow). As we have already connected PrimeHub to MLflow, the results from these two runs will be automatically available there.
 
 In the User Portal, click **Models** in the left sidebar, then click the **MLflow UI** button. MLflow will open in a new tab.
 
@@ -52,13 +52,13 @@ To compare the results, click the checkbox next to each run to select them, and 
 
 The following page displays the parameters and metrics for each run in a comparison table. 
 
-Inspecting the **accuracy** and **loss** results for each run we can see that a `base_learning_rate` (referred to in the table as `opt_learning_rate`) of `0.01` performs better.
+Inspecting the **accuracy** and **loss** results for each run, we can see that a `base_learning_rate` (referred to in the table as `opt_learning_rate`) of `0.01` performs better.
 
 ![](assets/tutorial_mlflow_experiment_compare_result.png)
 
 > Note: Your accuracy and loss results may differ slightly than those shown here
 
-At the top of the page, click the **Run ID** link for the run with a base_learning_rate of 0.01
+At the top of the page, click the **Run ID** link for the run with the base_learning_rate of 0.01
 
 ![](assets/tutorial_mlflow_experiment_click_run_id.png)
 
@@ -72,11 +72,11 @@ To register this run as a model, scroll down to the **artifacts** section, click
 
 ![](assets/tutorial_mlflow_run_register_model.png)
 
-In Register model dialog, click the **Select a Model** dropdown, and then click **Create New Model**.
+In the **Register Model** dialog, click the **Select a Model** dropdown, and then click **Create New Model**.
 
 ![](assets/tutorial_mlflow_create_new_model.png)
 
-Enter the model name as **tf-screw-model** and then click the **Register** button.
+Enter the **Model Name** as **tf-screw-model** and then click the **Register** button.
 
 ![](assets/tutorial_mlflow_fill_model_name.png)
 
@@ -102,11 +102,11 @@ To follow the instructions in this section you should have a the following:
 - An x86/64 CPU  (Apple M1 currently not supported)
 
 
-We will be using this [Tensorflow2 Prepackaged Model Server](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2) pre-packaged model image as a template.
+We will be using this [Tensorflow2 Prepackaged Model Server](https://github.com/InfuseAI/primehub-seldon-servers/tree/master/tensorflow2) as a template.
 
 ### Clone and Edit Server Image
 
-On your local computer, run the following commands:
+On your local computer, run the following commands to clone the model server repository:
 
 ```bash
 git clone https://github.com/InfuseAI/primehub-seldon-servers.git
@@ -186,7 +186,7 @@ tensorflow2-prepackaged   latest       689530dd1ef9   3 minutes ago  1.67GB
 
 ### Tag and Push to Docker
 
-Tag the image into yout docker registry with the **screw-classification** tag, replacing **<username>** with your Docker username.
+Tag the image into your Docker registry with the **screw-classification** tag, replacing **\<username\>** with your Docker username.
 
 ```bash
 docker tag tensorflow2-prepackaged:latest <username>/tensorflow2-prepackaged:screw-classification
@@ -198,23 +198,21 @@ If you’re not logged into docker yet, log in now:
 docker login
 ```
 
-Push the image we just tagged to your docker registry. Again, change **<username>** to match your Docker username.
+Push the image we just tagged to your docker registry. Again, change **\<username\>** to match your Docker username.
 
 ```bash
-docker push<username>/tensorflow2-prepackaged:screw-classification
+docker push <username>/tensorflow2-prepackaged:screw-classification
 ```
 
 ## Model Deployment
 
-Once the image has been successfully pushed to docker, we can server our model with PrimeHub’s Model Deployment feature.
-
-It’s time to deploy our model!
+Once the image has been successfully pushed to docker, it’s time to deploy our model!
 
 On the **Models** page in PrimeHub, click our managed model with the name **tf-screw-model**.
 
 ![](assets/tutorial_models_managed.png)
 
-The following page shows all versions of the **tf-screw-model** model. Click the  **Deploy** button on **Version 1**.
+The following page shows all versions of the **tf-screw-model** model. Click the  **Deploy** button for **Version 1**.
 
 ![](assets/tutorial_models_version.png)
 
@@ -222,7 +220,7 @@ In the **Deploy Model** dialog, select **Create new deployment** from the **Depl
 
 ![](assets/tutorial_models_create_new_deployment.png)
 
-You will be directed to the [Create Deployment](model-deployment-feature#create) page, and the **Model URI** field will have been automatically filled with the registered model path (`models:/tf-screw-model/1`).
+You will be directed to the [Create Deployment](model-deployment-feature#create) page, and the **Model URI** field will have been automatically filled with the path of the selected model (`models:/tf-screw-model/1`).
 
 ![](assets/tutorial_deployment_model_uri.png)
 
@@ -230,7 +228,7 @@ Complete the form with the following information:
 
 In the **Deployment Name** field enter **tf-screw-deployment**.
 
-Then, in the **Model Image** field, enter the Docker path of the model we pushed to your Docker registry, e.g. `<username>/tensorflow2-prepackaged:screw-classification`, replacing <username> with your Docker username.
+Then, in the **Model Image** field, enter the Docker path of the model we pushed to your Docker registry, e.g. `<username>/tensorflow2-prepackaged:screw-classification`, replacing **\<username\>** with your Docker username.
 
 ![](assets/tutorial_deployment_name_model_image.png)
 
@@ -238,10 +236,10 @@ Configure the instance type settings - The minimal requirements for this tutoria
 
 ![](assets/mdeploy_quickstart_deployresource.png)
 
-Finally, click the **Deploy** button, and you will be redirected to the **Deployments** page. 
+Click the **Deploy** button and you will be redirected to the **Deployments** page. 
 
 
-Click the **tf-screw-deployment** card to view the details of this deployment.
+To view the details of the deployment, click the **tf-screw-deployment** card.
 
 ![](assets/tutorial_deployment_cell.png)
 
@@ -251,7 +249,7 @@ On the [deployment details](model-deployment-feature#deployment-detail) page, we
 
 ## Test Deployed Model
 
-Once the model has successfully deployed the page will automatically update and the status will show as **Deployed**. Now we can test the deployed model.
+Once the model has successfully deployed, the page will automatically update and the status will show as **Deployed**. We can now test the deployed model.
 
 Copy the value of **Endpoint** (`https://.../predictions`)
 
@@ -265,20 +263,21 @@ curl -F 'binData=@path/to/image' ${YOUR_ENDPOINT_URL}
 
 For example:
 
-    ```bash
-    curl -F 'binData=@val/good/000.png' https://xxx.primehub.io/deployment/tf-screw-deployment-xxxxx/api/v1.0/predictions
-    ```
+```bash
+curl -F 'binData=@val/good/000.png' https://xxx.primehub.io/deployment/tf-screw-deployment-xxxxx/api/v1.0/predictions
+```
+
 ![](assets/tutorial_good_screw.png)
 
 Here’s the response from the model:
 
-    ```bash
-    {"data":{"names":["t:0"],"tensor":{"shape":[1,1],"values":[2.065972089767456]}},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:screw-classification"}}}
-    ```
+```bash
+{"data":{"names":["t:0"],"tensor":{"shape":[1,1],"values":[2.065972089767456]}},"meta":{"requestPath":{"model":"infuseai/tensorflow2-prepackaged:screw-classification"}}}
+```
 
 The **positive** number returned for **values** indicates that this was a **good** screw. A **negative** return value would indicate a **bad** screw.
 
-> Note: If you try to upload your own images, not from the demo set, please resize to 1024 x 1024 and limit the size to around 600k
+> Note: If you try to upload your own images, not from the demo set, please resize to 1024 x 1024 and limit the size to under 1MB
 
 ## Conclusion
 
