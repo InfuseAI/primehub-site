@@ -94,7 +94,7 @@ To deploy our registered model, we need to set up the container environment. For
 
 ### Requirements
 
-To follow the instructions in this section you should have a the following: 
+To follow the instructions in this section you should have: 
 
 - A docker account
 - A familiarity with the command line
@@ -283,4 +283,4 @@ The **positive** number returned for **values** indicates that this was a **good
 
 In this tutorial, we compared and selected a suitable model using MLflow, customized a Tensorflow 2 Prepackaged Model Server, deployed a model, and tested the model with sample data.
 
-In part 4, we will build add a web interface to our model using Streamlit, another app available through PrimeHub Apps.
+In part 4, we will add a web interface to our model using Streamlit, another app available through PrimeHub Apps.
