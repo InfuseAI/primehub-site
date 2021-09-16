@@ -241,7 +241,7 @@ Click the **Deploy** button and you will be redirected to the **Deployments** pa
 
 To view the details of the deployment, click the **tf-screw-deployment** card.
 
-![](assets/tutorial_deployment_cell.png)
+![](assets/tutorial_deployment_card.png)
 
 On the [deployment details](model-deployment-feature#deployment-detail) page, we can see the status is currently **Deploying**
 
