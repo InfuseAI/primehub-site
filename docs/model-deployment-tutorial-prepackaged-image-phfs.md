@@ -8,9 +8,6 @@ description: Deploy a Model by Pre-packaged Server (PHFS)
   <div class="ee-only tooltip">Enterprise
     <span class="tooltiptext">Applicable to Enterprise Edition</span>
   </div>
-  <div class="deploy-only tooltip">Deploy
-    <span class="tooltiptext">Applicable to Deploy Edition</span>
-  </div>
 </div>
 
 In this tutorial, we will show how to deploy a model trained from Jupyter Notebook via PHFS storage. We deploy a MNIST model by TensorFlow2 pre-packaged server.
@@ -45,6 +42,11 @@ Also, we choosing the `TensorFlow 2.2` as our runtime image and clicking on `Sta
 
 4. If we want to deploy a model trained from Notebook, just move it to the `phfs` directory.
 ![](assets/mdeploy_quickstart_notebook_phfs.png)
+
+Alternatively, you can upload files to the `phfs` directory using the Shared Files feature in the User Portal:
+
+![](assets/mdeploy_quickstart_shared_files_upload.gif)
+
 
 5. Then, back to [User Portal](quickstart/login-portal-user) and select `Deployments`.
 6. We are in [model deployment list page](model-deployment-feature#list), now clicking on `Create Deployment` button.
