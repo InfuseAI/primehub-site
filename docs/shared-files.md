@@ -34,7 +34,7 @@ It lists files and directories with columns of `Name`, `Size`, and `Last Modifie
   
   ![](assets/shared-file-actions.png)
 
-  + `View file`: view the file in an new tab if the file format is supported. E.g. image, text.
+  + `View file`: view the file in an new tab if the file format is supported. E.g. image, text and notebook(*.ipynb*).
   + `Download file`
   + `Copy PHFS URI`: URI looks like `phfs:///<path/to/file>` (triple `/`); which can be used in Jobs.
   + `Delete`
