@@ -12,13 +12,13 @@ description: A summary of everything we have achieved in this tutorial
 
 We've acheived a lot during this tutorial, let's review what we have achieved and how PrimeHub helped us as each stage of the process.
 
-### Part 1 - Label Data
+## Part 1 - Label Data
 
 In [Part 1](primehub-end-to-end-tutorial-1), we used **Label Studio**, installed via **PrimeHub Apps**, to label a series of screw images.
 
 PrimeHub Apps provides easy access and configuration of popular apps such as [Code Server](primehub-app-builtin-code-server), [Matlab](primehub-app-builtin-matlab), [Label Studio](primehub-app-builtin-label-studio), [MLflow](primehub-app-builtin-mlflow), and [Streamlit](primehub-app-builtin-streamlit). These apps allow users to orchestrate data and provide tools to accelerate their machine learning workflow.
 
-### Part 2 - Train and Tune the Model
+## Part 2 - Train and Tune the Model
 
 In [Part 2](primehub-end-to-end-tutorial-2), we trained the model in Jupyter Notebook, and **submitted the notebook as a parameterized job**. The results from our jobs were **automatically logged into MLflow** for experiment tracking.
 
@@ -26,7 +26,7 @@ The **Submit Notebooks as Job** feature lets users configure resources through I
 
 Once connected to PrimeHub,  **MLflow autologging** means that job results can be collected and reviewed easily. Data on parameters, metrics, and artifacts are available for model training history.
 
-### Part 3 - Manage, Compare, and Deploy the Model
+## Part 3 - Manage, Compare, and Deploy the Model
 
 In [Part 3](primehub-end-to-end-tutorial-3), we **compared the results** of our jobs and **registered the better-performing model** to **Primehub Models**. After customizing a server image we then **deployed the model** as a web service endpoint.
 
@@ -34,7 +34,7 @@ PrimeHub's **Model Management** stores version-managed models for use in differe
 
 Once ready for deployment, the input and output of a model image can be customized and then deployed in a cloud-ready environment using PrimeHub's Model Deployment feature. There's no need for users to provision server resources, PrimeHub takes care of setting up all required resources.
 
-### Part 4 - Build the Web App
+## Part 4 - Build the Web App
 
 In [Part 4](primehub-end-to-end-tutorial-4), we added a web interface to our endpoint using Streamlit, also installed via PrimeHub Apps.
 
