@@ -14,9 +14,9 @@ description: PrimeHub Quickstart
   </div>
 </div>
 
-## Introduction
+## 1-Minute PrimeHub Demo
 
-<iframe width="100%" height="360" src="https://www.youtube.com/embed/RP8ln3-ry9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="360" src="https://www.youtube.com/embed/IEEwL0ISl8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Brief
 
