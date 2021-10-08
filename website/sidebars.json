@@ -1,17 +1,12 @@
 {
   "documentation": {
-    "Overview": [
-      "introduction",
-      "concept",
-      "quickstart/nb-data-store",
-      "resources-quota",
-      "roles",
-      "comparison",
-      "license-comparison",
-      "quickstart/login-portal-user"
+    "Getting Started": [
+      "quickstart/one-click-install",
+      "quickstart/qs-primehub"
     ],
     "Installation": [
-      "dev-introduction",
+      "one-click-install",
+      "install-manually",
       {
         "type": "subcategory",
         "label": "Setup Kubernetes",
@@ -40,27 +35,25 @@
       {
         "type": "subcategory",
         "label": "Upgrade",
-        "ids": [
-          "getting_started/upgrade-ce2ee"
-        ]
+        "ids": ["getting_started/upgrade-ce2ee"]
       }
     ],
-    "QuickStart": [
-      "quickstart/qs-primehub",
-      "quickstart/qs-primehub-deploy"
+    "End-to-end Tutorial": [
+      "primehub-end-to-end-tutorial-1",
+      "primehub-end-to-end-tutorial-2",
+      "primehub-end-to-end-tutorial-3",
+      "primehub-end-to-end-tutorial-4",
+      "primehub-end-to-end-tutorial-summary"
     ],
-    "Tutorial": [
-      {
-        "type": "subcategory",
-        "label": "From Training to Serving Models",
-        "ids": [
-          "primehub-end-to-end-tutorial-1",
-          "primehub-end-to-end-tutorial-2",
-          "primehub-end-to-end-tutorial-3",
-          "primehub-end-to-end-tutorial-4",
-          "primehub-end-to-end-tutorial-summary"
-        ]
-      }
+    "Our Technology": [
+      "introduction",
+      "concept",
+      "quickstart/nb-data-store",
+      "resources-quota",
+      "roles",
+      "comparison",
+      "license-comparison",
+      "quickstart/login-portal-user"
     ],
     "Notebooks": [
       "quickstart/launch-project",
@@ -70,10 +63,7 @@
       {
         "type": "subcategory",
         "label": "Notebook Extension",
-        "ids": [
-          "ph-notebook-extension",
-          "notebook-as-job"
-        ]
+        "ids": ["ph-notebook-extension", "notebook-as-job"]
       }
     ],
     "Jobs": [
@@ -92,18 +82,14 @@
         ]
       }
     ],
-    "Schedule": [
-      "job-scheduling-feature"
-    ],
+    "Schedule": ["job-scheduling-feature"],
     "Models": [
       "model-management",
       "model-configuration",
       {
         "type": "subcategory",
         "label": "Tutorial",
-        "ids": [
-          "model-management-tutorial"
-        ]
+        "ids": ["model-management-tutorial"]
       }
     ],
     "Deployments": [
@@ -149,9 +135,7 @@
         ]
       }
     ],
-    "Shared Files": [
-      "shared-files"
-    ],
+    "Shared Files": ["shared-files"],
     "Apps": [
       "primehub-app",
       {
@@ -175,22 +159,14 @@
         ]
       }
     ],
-    "Group Administration": [
-      "group-image",
-      "group-setting"
-    ],
-    "SSH Server": [
-
-    ],
+    "Group Administration": ["group-image", "group-setting"],
+    "SSH Server": [],
     "Admin Portal": [
       "quickstart/login-portal-admin",
       {
         "type": "subcategory",
         "label": "Manage users and groups",
-        "ids": [
-          "guide_manual/admin-user",
-          "guide_manual/admin-group"
-        ]
+        "ids": ["guide_manual/admin-user", "guide_manual/admin-group"]
       },
       {
         "type": "subcategory",
@@ -214,38 +190,27 @@
       {
         "type": "subcategory",
         "label": "Manage Datasets and Upload",
-        "ids": [
-          "guide_manual/admin-dataset",
-          "guide_manual/admin-uploader"
-        ]
+        "ids": ["guide_manual/admin-dataset", "guide_manual/admin-uploader"]
       },
       {
         "type": "subcategory",
         "label": "Manage and obtain secrets",
-        "ids": [
-          "guide_manual/admin-secret"
-        ]
+        "ids": ["guide_manual/admin-secret"]
       },
       {
         "type": "subcategory",
         "label": "Manage Notebook instances",
-        "ids": [
-          "guide_manual/admin-nb-admin"
-        ]
+        "ids": ["guide_manual/admin-nb-admin"]
       },
       {
         "type": "subcategory",
         "label": "Monthly Report",
-        "ids": [
-          "guide_manual/admin-report"
-        ]
+        "ids": ["guide_manual/admin-report"]
       },
       {
         "type": "subcategory",
         "label": "System",
-        "ids": [
-          "guide_manual/admin-system"
-        ]
+        "ids": ["guide_manual/admin-system"]
       },
       {
         "type": "subcategory",
@@ -274,6 +239,7 @@
     ],
     "PrimeHub Deploy": [
       "deploy-index",
+      "quickstart/qs-primehub-deploy",
       {
         "type": "subcategory",
         "label": "Admin Portal",
@@ -349,31 +315,22 @@
       {
         "type": "subcategory",
         "label": "Persistence",
-        "ids": [
-          "tasks/howto-check-vol-usage",
-          "tasks/howto-resize-vol"
-        ]
+        "ids": ["tasks/howto-check-vol-usage", "tasks/howto-resize-vol"]
       },
       {
         "type": "subcategory",
         "label": "API",
-        "ids": [
-          "tasks/api-token"
-        ]
+        "ids": ["tasks/api-token"]
       },
       {
         "type": "subcategory",
         "label": "Monitoring",
-        "ids": [
-          "tasks/monitoring"
-        ]
+        "ids": ["tasks/monitoring"]
       },
       {
         "type": "subcategory",
         "label": "MLflow",
-        "ids": [
-          "tasks/mlflow-compare"
-        ]
+        "ids": ["tasks/mlflow-compare"]
       },
       "tasks/customize-job-runtime"
     ],
@@ -388,10 +345,7 @@
       {
         "type": "subcategory",
         "label": "JupyterHub",
-        "ids": [
-          "trouble/jh-blank-page",
-          "trouble/dataset-failure"
-        ]
+        "ids": ["trouble/jh-blank-page", "trouble/dataset-failure"]
       },
       {
         "type": "subcategory",
@@ -418,15 +372,9 @@
       "zh-tw/quickstart/login-portal-user",
       "zh-tw/idx-core"
     ],
-    "Installation": [
-      "zh-tw/idx-installation"
-    ],
-    "QuickStart": [
-      "zh-tw/idx-quickstart"
-    ],
-    "Tutorial": [
-      "zh-tw/idx-tutorial"
-    ],
+    "Installation": ["zh-tw/idx-installation"],
+    "QuickStart": ["zh-tw/idx-quickstart"],
+    "Tutorial": ["zh-tw/idx-tutorial"],
     "Notebooks": [
       "zh-tw/quickstart/launch-project",
       "zh-tw/user-advanced-setting",
@@ -435,10 +383,7 @@
       {
         "type": "subcategory",
         "label": "Notebook Extension",
-        "ids": [
-          "zh-tw/ph-notebook-extension-cht",
-          "zh-tw/notebook-as-job-cht"
-        ]
+        "ids": ["zh-tw/ph-notebook-extension-cht", "zh-tw/notebook-as-job-cht"]
       }
     ],
     "Jobs": [
@@ -447,18 +392,11 @@
       {
         "type": "subcategory",
         "label": "教學",
-        "ids": [
-          "zh-tw/job-tutorial-more"
-        ]
+        "ids": ["zh-tw/job-tutorial-more"]
       }
     ],
-    "Schedule": [
-      "zh-tw/job-scheduling-feature-cht"
-    ],
-    "Models":[
-      "zh-tw/model-management-cht",
-      "zh-tw/idx-model-management"
-    ],
+    "Schedule": ["zh-tw/job-scheduling-feature-cht"],
+    "Models": ["zh-tw/model-management-cht", "zh-tw/idx-model-management"],
     "Deployments": [
       "zh-tw/model-deployment-feature",
       {
@@ -502,17 +440,13 @@
         ]
       }
     ],
-    "Shared Files": [
-      "zh-tw/shared-files-cht"
-    ],
+    "Shared Files": ["zh-tw/shared-files-cht"],
     "Apps": [
       "zh-tw/primehub-app-cht",
       {
-        "type":"subcategory",
+        "type": "subcategory",
         "label": "更多資訊",
-        "ids": [
-          "zh-tw/idx-apps"
-        ]
+        "ids": ["zh-tw/idx-apps"]
       }
     ],
     "Group Administration": [
@@ -557,30 +491,22 @@
       {
         "type": "subcategory",
         "label": "Secret 管理及取得",
-        "ids": [
-          "zh-tw/guide_manual/admin-secret-cht"
-        ]
+        "ids": ["zh-tw/guide_manual/admin-secret-cht"]
       },
       {
         "type": "subcategory",
         "label": "Notebook Instance 管理",
-        "ids": [
-          "zh-tw/guide_manual/admin-nb-admin-cht"
-        ]
+        "ids": ["zh-tw/guide_manual/admin-nb-admin-cht"]
       },
       {
         "type": "subcategory",
         "label": "使用量月報表",
-        "ids": [
-          "zh-tw/guide_manual/admin-report-cht"
-        ]
+        "ids": ["zh-tw/guide_manual/admin-report-cht"]
       },
       {
         "type": "subcategory",
         "label": "系統",
-        "ids": [
-          "zh-tw/guide_manual/admin-system-cht"
-        ]
+        "ids": ["zh-tw/guide_manual/admin-system-cht"]
       },
       {
         "type": "subcategory",
@@ -607,18 +533,10 @@
         ]
       }
     ],
-    "PrimeHub Deploy": [
-      "zh-tw/idx-deploy"
-    ],
-    "Designs and Concepts": [
-      "zh-tw/idx-design"
-    ],
-    "Configuration": [
-      "zh-tw/idx-config"
-    ],
-    "Tasks": [
-      "zh-tw/idx-tasks"
-    ],
+    "PrimeHub Deploy": ["zh-tw/idx-deploy"],
+    "Designs and Concepts": ["zh-tw/idx-design"],
+    "Configuration": ["zh-tw/idx-config"],
+    "Tasks": ["zh-tw/idx-tasks"],
     "Reference": [
       "zh-tw/idx-ref",
       "zh-tw/quickstart/nb-data-store-cht",
@@ -626,8 +544,6 @@
       "zh-tw/guide_manual/ssh-keygen-cht",
       "zh-tw/guide_manual/images-list"
     ],
-    "Trouble Shooting": [
-      "zh-tw/idx-trouble"
-    ]
+    "Trouble Shooting": ["zh-tw/idx-trouble"]
   }
 }
