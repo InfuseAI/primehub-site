@@ -30,7 +30,7 @@ PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Depl
 
 ---
 
-**PrimeHub** is composed of a **User Portal** and an **Admin Portal**. The User Portal provides features aimed at data scientists and team members, and the Admin Portal provides features configuration options relevant to platform administrators.
+**PrimeHub** is composed of a **User Portal** and an **Admin Portal**. The User Portal provides features aimed at data scientists and team members, and the Admin Portal provides configuration options relevant to platform administrators.
 
 ## User Portal
 
