@@ -5,9 +5,13 @@ sidebar_label: Introduction
 ---
 
 
-**PrimeHub** is a *Kubernetes*-based platform designed for groups of data scientists. It aims at being a all-in-one enterprise machine learning platform to provide seamless MLOps experience.
+**PrimeHub** is a *Kubernetes-based* platform designed for groups of data scientists. It aims to be an all-in-one, enterprise-level, machine learning platform that provides a seamless MLOps experience.
 
-Adopting the group-centric design, scientists can share datasets, artifacts and collaborates easily within same groups/projects, which accelerates collaborative development for project groups, besides, scientists are capable of developing models, serving models and monitoring models performance with full governance and transparency. In terms of platform administration, PrimeHub provides administrators capability of access control management, resources management and quotas control for project groups accordingly, which facilitates the efficiency of resources utilization. Furthermore, with installed 3rd-party Apps, PrimeHub capabilities can be augmented on demand.
+PrimeHub adopts a group-centric design, which accelerates collaborative development. In PrimeHub, scientists can share datasets, artifacts, and seamlessly collaborate on projects in groups. Models can be developed, deployed, and monitored with full control in a transparent group environment.
+
+Using PrimeHub’s granular controls, administrators can configure access control settings, manage resources, and adjust resource quotas for groups - All facilitating efficient resource utilization.
+
+With the addition of 3rd-party app integration, PrimeHub’s capabilities can be augmented on demand, accelerating the machine learning workflow. These 3rd-party apps also benefit from the access control and resource configurability that is available through PrimeHub, making for a true, all-in-one, MLOps solution.
 
 ## Key Capabilities
 
@@ -17,7 +21,7 @@ Adopting the group-centric design, scientists can share datasets, artifacts and 
 + Management of Resource & Quota Privileges
 + Custom Deep Learning Environments
 + Enterprise-Class Account Management
-+ Capability Augmentation with 3rd-party Apps
++ Capability Augmentation via 3rd-party Apps
 
 ## Product Tiers
 
@@ -26,16 +30,16 @@ PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Depl
 
 ---
 
-**PrimeHub** platform is composed of **User Portal** and **Admin Portal**; former provides dedicated features to data scientists, general team members, latter provides dedicated features to platform administrators.
+**PrimeHub** is composed of a **User Portal** and an **Admin Portal**. The User Portal provides features aimed at data scientists and team members, and the Admin Portal provides features configuration options relevant to platform administrators.
 
 ## User Portal
 
-incorporates data-scientists-facing prominent features that scientists are able to turn workflows into automating pipelines by Job submission/schedule, able to prepare data/develop trained models from Notebook and able to deploy container-wrapped models as services by Model Deployment.
+The User Portal provides access to a full MLOps feature set. Data scientists can turn workflows into automated pipelines via Job submission and Scheduling; prepare data and develop trained models from Notebooks; deploy container-wrapped models as services via Model Deployment, and more.
 
-![landing-user.png](assets/v37-landing-user.png)
+![landing-user.png](assets/v37-landing-user.png "The User Portal landing page")
 
 
-### Getting Started as Team/Project member
+### Get Started as a Team/Project Member
 
 + [User Portal overview](quickstart/login-portal-user.md)
 
@@ -69,7 +73,7 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 + [Build Notebook image by repo2docker](tasks/repo2docker)
 
-### As Team/Project Lead
+### Get Started as a Group Admin
 
 + [Add/Build images for my team/project](group-image)
 
@@ -79,11 +83,11 @@ incorporates data-scientists-facing prominent features that scientists are able 
 
 ## Admin Portal
 
-incorporates administration features that administrators are able to do access-control management, resources/quotas control management, and to oversight the usage, moreover, administrators are able to build custom environments by customization of images.
+The Admin Portal enables administrators to manage all aspects of Primehub, such as access-control, resource and quota control, building custom environments via image builder etc.
 
-![](assets/v3-admin-portal_v31.png)
+![](assets/v3-admin-portal_v31.png "Group Management in the Admin Portal")
 
-### Getting Started as Platform Administrator
+### Getting Started as an Administrator
 
 + [Admin Portal overview](quickstart/login-portal-admin)
 
@@ -93,12 +97,14 @@ incorporates administration features that administrators are able to do access-c
 
 + [Assign group admin](guide_manual/admin-group#members)
 
-+ [Manage instance types](guide_manual/admin-instancetype), [Manage images](guide_manual/admin-image), [Manage dataset](guide_manual/admin-dataset)
++ [Manage instance types](guide_manual/admin-instancetype)
+
++ [Manage images](guide_manual/admin-image)
+
++ [Manage datasets](guide_manual/admin-dataset)
 
 + [Custom Image Guideline](guide_manual/custom-image-guideline)
 
 + [Manage secrets (credentials)](guide_manual/admin-secret.md)
 
 + [Review monthly usage report](guide_manual/admin-report)
-
-+ [Quick start for Administration](quickstart/create-user)
