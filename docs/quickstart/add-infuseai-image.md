@@ -17,7 +17,7 @@ description: Add InfuseAI Image
 InfuseAI provides and maintain a serious of public images on DockerHub.
 This document shows how to add images provided by InfuseAI.
 
-First of all we check and pick up a pari of images from [Avaialbe Image List](../guide_manual/images-list). 
+First of all we check and pick up a pari of images from [Availabe Image List](../guide_manual/images-list). 
 
 They are `TensorFlow 2.1/CPU/Python3.7` and `TensorFlow 2.1/GPU CUDA 10.1/Python3.7`.
 
