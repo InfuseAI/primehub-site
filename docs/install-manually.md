@@ -12,7 +12,7 @@ We provide various ways of installation, depending upon your requirements and re
 
 ## Installation
 
-Prior to PrimeHub installation, a PrimeHub-ready Kubernetes cluster is required. PrimeHub supports both multi-node Kubernetes clusters, and single-node MicroK8s clusters.
+Prior to installating PrimeHub, a suitable Kubernetes cluster is required. PrimeHub supports both multi-node Kubernetes clusters, and single-node MicroK8s clusters.
 
 If you already have a your own Kubernete cluster, please ensure it meets the [prerequisites for PrimeHub](getting_started/prerequisites). For managaed Kubernetes services, please see our guides for [GKE](getting_started/kubernetes_on_gke) and [AWS EKS](getting_started/kubernetes_on_eks).
 
