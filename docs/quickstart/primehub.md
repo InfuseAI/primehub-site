@@ -20,7 +20,7 @@ description: PrimeHub Quickstart
 
 ## Brief
 
-In this quickstart we will learn how to train/generate a simple model on Notebook, in the follow-up, we will learn how to submit a parameter-tuning job for the model tuning from same Notebook.
+In this quickstart, we will learn how to use a Notebook to train/generate a simple model. Then, in the follow-up guide, we will learn how to submit a parameter-tuning job for the model tuning from same Notebook.
 
 - **Notebook** is a fundamental feature of Community/Enterprise editions.
 - **Jobs** is a feature of Enterprise edition.
@@ -31,7 +31,7 @@ In this quickstart we will learn how to train/generate a simple model on Noteboo
 
 - The image `infuseai/docker-stacks:tensorflow-notebook-v2-4-1-5b5a244c`
 - An instance type >= minimal requirement (CPU=1, GPU=0, Mem=2G)
-- The prepared notebook file of the example
+- The prepared notebook file:
 
   Download [my_model.ipynb](assets/my_model.ipynb)
 
@@ -53,9 +53,9 @@ In this quickstart we will learn how to train/generate a simple model on Noteboo
 
    ![](assets/qs_trained_model.png)
 
-We so far have trained and generated a model file on Notebook. This is achievable to Community/Enterprise users.
+So far, we have trained and generated a model file via our Notebook. This is achievable in both Community and Enterprise editions of PrimeHub.
 
-The next follow-up, _parameter-tuning job_, is for Enterprise users. Remain the Notebook environment open, let's go to the next.
+The next stage, _parameter-tuning job_, is for Enterprise users. Keep your Notebook environment open, and let's continue on...
 
 ## Parameter-tuning Job
 
