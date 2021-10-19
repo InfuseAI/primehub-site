@@ -13,14 +13,17 @@ description: Job Submission
 
 We sometimes have time-consuming tasks which have to be run sequentially, because tasks take considerable time to complete, users are not able to engage with the whole of the progress. In this case, we can use **Job Submission** to create a job of sequential multiple tasks and submit the job for execution at background, meanwhile we can monitor the progress from the log. If we want to create routine jobs that we can achieve it by [**Jobs Schedule**](job-scheduling-feature).
 
-### Lifetime
+### Limitation
 
-+ A running job can run for **24 hours** and it will be failed if the job doesn't finish within 24 hours.
++ The maximum execution time of a job is **24 hours**. A job will fail if it exceeded the limit.
 
-+ Basically, An ended job log is saved for **7 days**. Once expired, The job still remain in the list without logs since the logs is wiped out. Furthermore, a job (succeeded, failed, cancelled), by default, are only kept for **30 days**.
-  >***NOTE: According to the container runtime, the job container is possibly recycled within 7 days so that the logs doesn't exist anymore.***
++ The log of a finished job will be preserved for **7 days**. The log will be deleted after 7 days.
 
-+ The limit of *Jobs total amount*, by default, is **4000**; system will remove executed Job records automatically from oldest one when the sum exceeds the limit, i.e., it only keeps 4000 latest job records.
+  >***NOTE: Depends on the container runtime you use, the job container might be recycled before the 7 day limit. You might lost your log before the default expiration is reached***
+
++ The status of a job (succeeded, failed, cancelled) will be preserved for **30 days**.
+
++ The maximum number of jobs is **4000**. If the maximum is exceeded, the oldest job will be deleted.
 
 ## Jobs List
 
