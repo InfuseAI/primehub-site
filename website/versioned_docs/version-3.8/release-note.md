@@ -13,12 +13,9 @@ Are you AWS users? If you are 🎉, you luckily can enjoy the pleasing 1-click e
 
 ![](assets/release-v38-1-click.png)
 
-### PrimeHub EE Default License for Free
+### PrimeHub EE Trial License
 
-We are glad to release more power to users/teams for PrimeHub Enterprise evaluation  by 1 Deployment. The default licence will give teams a **fully-featured** PrimeHub with the quotas of **1 Group** and **1 Deployment**. You, of course, are welcome to purchase more quotas for the acceleration of your research & business.
-
-![](assets/release-v38-default-license.png)
-
+To help you experience the full potential of PrimeHub Enterprise's end-to-end workflow. Start by PrimeHub 3.8, we allow `1` deployment in Enterprise Edition's trial license.
 
 ### PrimeHub Python CLI/SDK
 
@@ -48,15 +45,15 @@ Since the release of Images (Group Admin), we have some good feedback regarding 
 ## 🚀 &NonBreakingSpace; Improvements
 
 + All of us agree with the card style of Apps look great. So we re-designed the Deployments page with the same style.
-  
+
   ![](assets/release-v38-card-style.png)
 
 + Rephrased secret type: *Git Dataset* (~~Opaque~~), *Image Pull* (~~kubernetes.io/dockerconfigjson~~)
-  
+
   ![](assets/release-v38-secret-type.png)
 
 + PHFS viewer supports Jupyter Notebook; you can view *.ipynb* file without launching a Notebook
-  
+
   ![](assets/release-v38-notebook-viewer.png)
 
 + PrimeHub App: Streamlit supports the installation of external package dependency [[Doc]](primehub-app-builtin-streamlit#external-dependencies)
@@ -84,7 +81,7 @@ Since the release of Images (Group Admin), we have some good feedback regarding 
 + Upgraded Helm from v3.3.4 to 3.6.2
 
 + PrimeHub CE displays EE-tier features information
-  
+
   ![](assets/release-v38-ce-pro.png)
 
 
