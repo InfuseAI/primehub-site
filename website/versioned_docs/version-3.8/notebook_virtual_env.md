@@ -130,7 +130,7 @@ sys.version_info
 
 Activate the specific virtual environment. 
 
-The Coda way
+The Conda way
 
 ```bash
 source activate myenv
