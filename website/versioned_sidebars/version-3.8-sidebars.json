@@ -379,7 +379,8 @@
       "version-3.8-environment-variables",
       "version-3.8-references/primehub_chart",
       "version-3.8-guide_manual/ssh-vscode",
-      "version-3.8-guide_manual/ssh-keygen"
+      "version-3.8-guide_manual/ssh-keygen",
+      "version-3.8-notebook-virtual-env"
     ],
     "Trouble Shooting": [
       "version-3.8-trouble-shoot-guide",
