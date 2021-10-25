@@ -42,7 +42,7 @@ In this quickstart, we will learn how to use a Notebook to train/generate a simp
 
   ![](assets/quickstart_create_notebook.png)
 
-3. Wait the notebook spwan. When the notebook is ready, you will be redirected to the notebook with prepared example notenook.
+3. Wait for the notebook spawn. When the notebook is ready, you will be redirected to the notebook with prepared example notenook.
 
   ![](assets/quickstart_notebook_spwaning.png)
 
@@ -58,7 +58,7 @@ The next stage, _parameter-tuning job_, is for Enterprise users. Keep your Noteb
 
 ## What's Next?
 
-As Enterprise users, we desperately want to verify the performance of our model, therefore, we can deploy models as services and query the services with testing data.
+As Enterprise users we want to verify the performance of our model, in order to do this we can deploy the model as a service and query the it with test data.
 
 - [Quick-start: PrimeHub Model Deployment](qs-primehub-deploy)
 
