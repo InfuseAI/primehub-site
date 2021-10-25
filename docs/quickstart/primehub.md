@@ -42,7 +42,7 @@ In this quickstart, we will learn how to use a Notebook to train/generate a simp
 
   ![](assets/quickstart_create_notebook.png)
 
-3. Wait for the notebook spawn. When the notebook is ready, you will be redirected to the notebook with prepared example notenook.
+3. Wait for the notebook spawn. When the notebook is ready, you will be redirected to the notebook with prepared example notebook.
 
   ![](assets/quickstart_notebook_spwaning.png)
 
