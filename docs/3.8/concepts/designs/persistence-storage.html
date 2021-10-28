@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Persistence Storages of a Notebook · PrimeHub</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="When spawning a user&#x27;s notebook pod, spawner mounts various type of persistent volumes. They includes"/><meta name="docsearch:version" content="3.8"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Persistence Storages of a Notebook · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="When spawning a user&#x27;s notebook pod, spawner mounts various type of persistent volumes. They includes"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.8</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.8/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.8/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://one.primehub.io/" target="_blank">🌟 1-Click Install ⇗</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Persistence Storages of a Notebook</h1></header><article><div><span><p>When spawning a user's notebook pod, spawner mounts various type of persistent volumes. They includes</p>
+<ul>
+<li>User volume</li>
+<li>Group volume (Project volume)</li>
+<li>Datasets volume</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="user-volume"></a><a href="#user-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User volume</h2>
+<p>A user volume stores users' own data. When a user spawn jupyter server for the first time, the user's PVC is created.</p>
+<p>The capacity is determined in the order</p>
+<ol>
+<li>Use user's specified <code>volumeCapacity</code></li>
+<li>If this setting is not defined, use the <strong>max</strong> <code>userVolumeCapacity</code> of all the groups the user belongs to.</li>
+<li>If none of the group set the <code>userVolumeCapacity</code>, use the system's <code>defaultUserVolumeCapacity</code></li>
+</ol>
+<p>The storage class is defined in the helm value.</p>
+<h2><a class="anchor" aria-hidden="true" id="group-volume-project-volume"></a><a href="#group-volume-project-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group volume (Project volume)</h2>
+<p>A group volume (project volume) stores the data shared by a group. To enable the group volume, the administrator should enable the <code>Shared Volume</code> in the group setting. And the volume is created if it doesn't exist at the very firt time of the mount to the group volume.</p>
+<p>The storage class is defined in the helm value</p>
+<pre><code class="hljs"><span class="hljs-symbol">primehub:</span>
+<span class="hljs-symbol">  sharedVolumeStorageClass:</span> <span class="hljs-string">"&lt;rwx-storage-class&gt;"</span>
+</code></pre>
+<p>But in most cases, we use a NFS pvc provisioned by <code>primehub-groupvolume-nfs</code>. The configuration would look like this</p>
+<pre><code class="hljs"><span class="hljs-symbol">primehub:</span>
+<span class="hljs-symbol">  sharedVolumeStorageClass:</span> <span class="hljs-string">""</span>
+<span class="hljs-symbol">groupvolume:</span>
+<span class="hljs-symbol">  storageClass:</span> standard
+</code></pre>
+<p>It means</p>
+<ol>
+<li>the group volume is manually provisioned</li>
+<li>the <code>primehub-groupvolume-nfs</code> controller would create a NFS server backed by a RWO pvc</li>
+<li>the RWO pvc uses &quot;standard&quot; storage class.</li>
+</ol>
+<p>If you didn't specify primehub-group-sc's value (&quot;standard&quot; here) in yaml, it will be set by <code>PRIMEHUB_STORAGE_CLASS</code> env.</p>
+<table>
+<thead>
+<tr><th>Attribute</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>pvc name</td><td><code>project-&lt;group-name&gt;</code></td></tr>
+<tr><td>volume mount</td><td><code>/project/&lt;group-name&gt;</code></td></tr>
+<tr><td>symbolic link</td><td><code>~/&lt;group-name&gt; -&gt; /project/&lt;group-name&gt;</code></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="dataset-volume"></a><a href="#dataset-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dataset volume</h2>
+<p>Currently, there are these types of dataset would be mounted as persistence volume</p>
+<ul>
+<li>pv</li>
+<li>pv (hostpath)</li>
+<li>git</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="pv"></a><a href="#pv" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PV</h3>
+<p>If dataset is type of <code>pv</code>, the dataset is backed by a pvc. The difference comparing to group volume is</p>
+<ul>
+<li>A dataset can be connected to multiple groups; while group volume only belongs to a group</li>
+<li>The connection from dataset to a group can be read-only or read-write</li>
+<li>Can enable a upload server</li>
+</ul>
+<p>Under the hood, the storage class is defined in the helm value</p>
+<pre><code class="hljs"><span class="hljs-symbol">groupvolume:</span>
+<span class="hljs-symbol">  storageClass:</span> standard
+</code></pre>
+<p>It will create a NFS server backed by a RWO pvc which is similar to group volume.</p>
+<p>If you didn't specify value (&quot;standard&quot; here) in yaml, it will be set by <code>PRIMEHUB_STORAGE_CLASS</code> env.</p>
+<table>
+<thead>
+<tr><th>Attribute</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>pvc name</td><td><code>dataset-&lt;volume-name&gt;</code></td></tr>
+<tr><td>volume mount</td><td><code>/dataset/&lt;dataset-name&gt;</code></td></tr>
+<tr><td>symbolic link</td><td><code>~/datasets/&lt;dataset-name&gt; -&gt; /dataset/&lt;dataset-name&gt;</code></td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>The <code>dataset-name</code> is the <code>metadata.name</code> in the CRD and the <code>volume-name</code> is <code>spec.volumeName</code> in the CRD.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="pv-hostpath"></a><a href="#pv-hostpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PV (hostpath)</h3>
+<p>A special hack of <code>pv</code> is set the <code>volumeName</code> with prefix <code>hostpath:</code>. In this way, the dataset is not backed by a pvc, instead, the volume is a hostpath volume</p>
+<table>
+<thead>
+<tr><th>Attribute</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>hostpath</td><td>path after the <code>hostpath:</code></td></tr>
+<tr><td>volume mount</td><td><code>/dataset/&lt;dataset-name&gt;</code></td></tr>
+<tr><td>symbolic link</td><td><code>~/datasets/&lt;dataset-name&gt; -&gt; /dataset/&lt;dataset-name&gt;</code></td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>The <code>hostpath</code> is not allowed to edit in the admin dashboard in the future.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git</h3>
+<p>If the dataset is type of <code>git</code>, the dataset is backed by a hostpath and periodically pull the data from a repository. Under the hood, we use <a href="https://github.com/kubernetes/git-sync">gitsync</a> daemonset to sync the data to hostpath</p>
+<table>
+<thead>
+<tr><th>Attribute</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>hostpath</td><td><code>/home/dataset</code></td></tr>
+<tr><td>volume mount</td><td><code>/gitsync/&lt;dataset-name&gt;</code></td></tr>
+<tr><td>symbolic link</td><td><code>~/datasets/&lt;dataset-name&gt; -&gt; /dataset/&lt;dataset-name&gt;/&lt;dataset-name&gt;</code></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="dataset-annotations"></a><a href="#dataset-annotations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dataset annotations</h3>
+<table>
+<thead>
+<tr><th>Annotation</th><th>Description</th><th>Default</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dataset.primehub.io/mountRoot</code></td><td>The mount path of the pv dataset.</td><td><code>/datasets/</code></td></tr>
+<tr><td><code>dataset.primehub.io/homeSymlink</code></td><td>Whether a symbolic link to the mountPath is required.</td><td><code>true</code></td></tr>
+<tr><td><code>dataset.primehub.io/gitSyncHostRoot</code></td><td>The host path to put the gitsync result.</td><td><code>/home/dataset/</code></td></tr>
+<tr><td><code>dataset.primehub.io/gitSyncRoot</code></td><td>The mount path of the git dataset</td><td><code>/gitsync/</code></td></tr>
+<tr><td><code>dataset.primehub.io/launchGroupOnly</code></td><td>Mount only when the launching group connects this dataset</td><td><code>false</code></td></tr>
+<tr><td><code>dataset.primehub.io/uploadServer</code></td><td>Only works in pv type dataset. Create a upload server.</td><td><code>null</code></td></tr>
+<tr><td><code>dataset.primehub.io/uploadServerAuthSecretName</code></td><td>Only works when upload server be created. Set http basic auth based on secret.</td><td><code>null</code></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="symbolic-links-in-home-folder"></a><a href="#symbolic-links-in-home-folder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Symbolic links in home folder</h2>
+<p>The home folder is mounted by the user volume. However, in order to locate the project volume and dataset easily, we create symbolic links in the home folder.</p>
+<ul>
+<li><strong>Group Volumes:</strong> <code>~/&lt;project-name&gt;</code></li>
+<li><strong>Dataset Volumes:</strong> <code>~/datasets/&lt;dataset-name&gt;</code></li>
+</ul>
+<p>The symbolic links to a dataset can be removed by setting the annotation <code>dataset.primehub.io/homeSymlink</code> to <code>false</code></p>
+<h2><a class="anchor" aria-hidden="true" id="launch-group-only"></a><a href="#launch-group-only" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Launch group only</h2>
+<p>By default, if a user have permissions to access the a group volume or a dataset, the spawner would mount it no matter which group the user select.</p>
+<p>But if a group volume or a dataset is configured <code>Launch Group Only</code> to <code>no</code>. The volume is only mounted while the user select the group which connects to this volume.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#user-volume">User volume</a></li><li><a href="#group-volume-project-volume">Group volume (Project volume)</a></li><li><a href="#dataset-volume">Dataset volume</a><ul class="toc-headings"><li><a href="#pv">PV</a></li><li><a href="#pv-hostpath">PV (hostpath)</a></li><li><a href="#git">Git</a></li><li><a href="#dataset-annotations">Dataset annotations</a></li></ul></li><li><a href="#symbolic-links-in-home-folder">Symbolic links in home folder</a></li><li><a href="#launch-group-only">Launch group only</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
