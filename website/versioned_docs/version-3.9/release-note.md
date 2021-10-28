@@ -9,37 +9,37 @@ original_id: release-note
 
 ### ***PrimeHub***
 
-### 📒 Sharing Notebook results between users in the same group or for public viewing
+### 📒 &NonBreakingSpace; Sharing Notebook results between users in the same group or for public viewing
 
 ![](assets/sharing-notebook.gif)
 
-### 🎉  PrimeHub App GA
+### 🎉 &NonBreakingSpace; PrimeHub App GA
 
 Portal for 3rd-party app makers: https://github.com/InfuseAI/awesome-primehub-apps
 
-### 🚀 Google Colab Notebook for getting a taste of PrimeHub within your browser!
+### 🚀 &NonBreakingSpace; Google Colab Notebook for getting a taste of PrimeHub within your browser!
 
 https://colab.research.google.com/drive/1xscjNRe9f7cDjhrPVJM52u0Ps0XZ7fcE?usp=sharing
 
 ![](assets/colab-example.png)
 
-### 🏗 Crane: Free, Standalone Image Builder to approach light-weight users
+### 🏗 &NonBreakingSpace; Crane: Free, Standalone Image Builder to approach light-weight users
 
 https://github.com/InfuseAI/crane
 
 ![](assets/crane-screenshot.png)
 
-### ⚙️ PrimeHub SDK for partners to build their own solutions on top of PrimeHub
+### ⚙️ &NonBreakingSpace; PrimeHub SDK for partners to build their own solutions on top of PrimeHub
 
 https://github.com/InfuseAI/primehub-python-sdk
 
-### 🤝 Easily to invite your friends to experience PrimeHub
+### 🤝 &NonBreakingSpace; Easily to invite your friends to experience PrimeHub
 
 ![](assets/invite-link.gif)
 
 ### ***1-click***
 
-### Simplified Onboarding Experience
+### ✉️ &NonBreakingSpace; Simplified Onboarding Experience
 
 Now you can access your newly-created PrimeHub cluster with a single click via a welcome email we send to you when the cluster is ready.
 
