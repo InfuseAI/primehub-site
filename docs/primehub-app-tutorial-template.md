@@ -32,7 +32,8 @@ There are few components you need to define in your `PhAppTemplate`:
 1. **podTemplate:** used to create the deployment of the application
 2. **svcTemplate:** used to create the service
 3. **httpPort:** The HTTP port if the application has a web interface
-4. **defaultEnvs:** The default env variables are used when creating the application. When an application is created, the values would be put in enviornment variables of the target application.
+4. **rewrite:** For certain applications, set rewrite=true if the url path change is causing trouble
+5. **defaultEnvs:** The default env variables are used when creating the application. When an application is created, the values would be put in enviornment variables of the target application.
     - ENV Name
     - Description
     - Default value
@@ -146,6 +147,12 @@ If your application requires a persistant storage to keep your data, you can use
 
 Every PrimeHub app is created inside a group context. If you have [enabled group volume feature](guide_manual/admin-group#shared-volume) for that group, then that group volume will be mounted to your application container at `<group-volume>/phapplications/<app-id>`. You can use the predefined environment variable `PRIMEHUB_APP_ROOT` to tell your application to store persistant data into that location.
 
+## Label Studio Example
+
+Let's take a look at the Label Studio phapp for an example.
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FInfuseAI%2Fawesome-primehub-apps%2Fblob%2Fmain%2Fapp-templates%2Flabel-studio.yaml&style=github"></script>
+
 ## More Examples
 
-For more examples, please check our built-in `phAppTemplate` on our [Github repo](https://github.com/InfuseAI/primehub/tree/master/chart/templates/ph-app-templates).
+For more examples, please check our built-in `phAppTemplate` on our [Github repo](https://github.com/InfuseAI/awesome-primehub-apps/tree/main/app-templates).
