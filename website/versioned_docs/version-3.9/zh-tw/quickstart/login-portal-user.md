@@ -1,8 +1,9 @@
 ---
-id: login-portal-user
+id: version-3.9-login-portal-user
 title: User Portal
 description: User Portal
 sidebar_label: User Portal
+original_id: login-portal-user
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
