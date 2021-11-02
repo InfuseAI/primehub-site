@@ -1,7 +1,8 @@
 ---
-id: index-zh
+id: version-3.9-index-zh
 title: Platform Introduction
 sidebar_label: Introduction
+original_id: index-zh
 ---
 
 >PrimeHub 的所有文件都是以英文撰寫為主，一部分文件會經翻譯繁體中文化。這裡僅列出已中文化的文件，如需最新更多技術資訊，請參照[英文文件](introduction)。

@@ -36,7 +36,7 @@ PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Depl
 
 The User Portal provides access to a full MLOps feature set. Data scientists can turn workflows into automated pipelines via Job submission and Scheduling; prepare data and develop trained models from Notebooks; deploy container-wrapped models as services via Model Deployment, and more.
 
-![landing-user.png](assets/v37-landing-user.png "The User Portal landing page")
+![landing-user.png](assets/v39-landing-user.png "The User Portal landing page")
 
 
 ### Get Started as a Team/Project Member
