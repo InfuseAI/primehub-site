@@ -73,74 +73,35 @@
 <p>In this quickstart, we will learn how to use a Notebook to train/generate a simple model. Then, in the follow-up guide, we will learn how to submit a parameter-tuning job for the model tuning from same Notebook.</p>
 <ul>
 <li><strong>Notebook</strong> is a fundamental feature of Community/Enterprise editions.</li>
-<li><strong>Jobs</strong> is a feature of Enterprise edition.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="training-a-model-on-notebook"></a><a href="#training-a-model-on-notebook" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Training a model on Notebook</h2>
 <h3><a class="anchor" aria-hidden="true" id="what-we-need"></a><a href="#what-we-need" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What we need?</h3>
 <ul>
-<li><p>The image <code>infuseai/docker-stacks:tensorflow-notebook-v2-4-1-5b5a244c</code></p></li>
-<li><p>An instance type &gt;= minimal requirement (CPU=1, GPU=0, Mem=2G)</p></li>
-<li><p>The prepared notebook file:</p>
-<p>Download <a href="/docs/assets/my_model.ipynb">my_model.ipynb</a></p></li>
-<li><p>Choose a group with enabled Shared Volume (a.k.a Group Volume)</p></li>
+<li><p>Select a group with Shared Volume enabled.</p>
+<p><img src="/docs/assets/primehub-end-to-end-tutorial-shared-volume.png" alt="" title="Enable Shared Volume in Group settings"></p></li>
 </ul>
-<blockquote>
-<p>Please have the image, the instance type on PrimeHub or request administrators for the assistance before we start.</p>
-</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="steps"></a><a href="#steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps</h3>
 <ol>
-<li>Enter Notebook from User Portal, select the image, the instance type and <a href="launch-project">start a notebook</a>.</li>
+<li><strong>Open TensorFlow Notebook</strong> from the Home page, then you will be redirected to the Notebooks page.</li>
 </ol>
-<p><img src="/docs/assets/qs_notebook.png" alt=""></p>
+<p><img src="/docs/assets/quickstart_home.png" alt=""></p>
 <ol start="2">
-<li><p>From File Browser of Notebook, navigate into the directory of <code>&lt;group_name&gt;</code> which is a Group Volume; here <strong>data-team</strong> is our working group.</p></li>
-<li><p>While inside the group volume, copy/drag the downloaded <code>my_model.ipynb</code> there in File Browser and open it.</p></li>
-<li><p><strong>Run All Cells</strong>, it will save the model file <code>my_model.h5</code> at the local.</p>
-<p><img src="/docs/assets/qs_trained_model.png" alt=""></p></li>
+<li>Click on <strong>Start Notebook</strong> to spawn a notebook with basic settings. If you want to use different instance types, click on <strong>Change Settings</strong> and <a href="launch-project">start the notebook</a>.</li>
 </ol>
+<p><img src="/docs/assets/quickstart_create_notebook.png" alt=""></p>
+<ol start="3">
+<li>Wait for the notebook spawn. When the notebook is ready, you will be redirected to the notebook with prepared example notebook.</li>
+</ol>
+<p><img src="/docs/assets/quickstart_notebook_spwaning.png" alt=""></p>
+<p><img src="/docs/assets/quickstart_notebook_started.png" alt=""></p>
+<ol start="4">
+<li><strong>Run All Cells</strong>, it will train a classification model for MNIST dataset and save it.</li>
+</ol>
+<p><img src="/docs/assets/quickstart_notebook_run_all.png" alt=""></p>
 <p>So far, we have trained and generated a model file via our Notebook. This is achievable in both Community and Enterprise editions of PrimeHub.</p>
 <p>The next stage, <em>parameter-tuning job</em>, is for Enterprise users. Keep your Notebook environment open, and let's continue on...</p>
-<h2><a class="anchor" aria-hidden="true" id="parameter-tuning-job"></a><a href="#parameter-tuning-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter-tuning Job</h2>
-<div class="label-sect">
-  <div class="ee-only tooltip">Enterprise
-    <span class="tooltiptext">Applicable to Enterprise Edition</span>
-  </div>
-</div>
-<h3><a class="anchor" aria-hidden="true" id="what-we-need-1"></a><a href="#what-we-need-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What we need?</h3>
-<ul>
-<li><p>The same image as above</p></li>
-<li><p>The same instance type as above</p></li>
-<li><p>API Token</p></li>
-<li><p>The prepared notebook file of the example</p>
-<p>Download <a href="/docs/assets/tune_params.ipynb">tune_params.ipynb</a></p></li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="steps-1"></a><a href="#steps-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps</h3>
-<ol>
-<li><p>While inside the group volume, copy/drag the downloaded <code>tune_params.ipynb</code> and open it.</p>
-<ul>
-<li><p>Click on Cell 4, from Property Inspector, we can see the notebook has set <code>epoch</code> as a <code>parameter</code></p>
-<p>See <a href="https://papermill.readthedocs.io/en/latest/usage-parameterize.html">Papermill site ⇗</a> for the detail of <em>Parameterize</em>.</p></li>
-</ul>
-<p><img src="/docs/assets/qs_tune_job_parameter.png" alt=""></p></li>
-<li><p>Back to PrimeHub tab, hover over Profile icon, generate a API Token and copy it.</p>
-<p><img src="/docs/assets/qs_api_token.png" alt=""></p></li>
-<li><p>Back to Notebook tab, click <code>PrimeHub</code> dropdown on the toolbar of the opened notebook, select API Token and paste the generated token here.</p>
-<p><img src="/docs/assets/qs_primehub_ext.png" alt=""></p>
-<p><img src="/docs/assets/qs_ext_api_token.png" alt=""></p></li>
-<li><p>Click <code>PrimeHub</code> dropdown again and select <code>Submit Notebook as Job</code> this time.</p></li>
-<li><p>Select the instance type and the image; fill in <code>Job Name</code> tune_params_epoch_tf and</p>
-<p><img src="/docs/assets/qs_notebook_job.png" alt=""></p>
-<p>Fill in<code>Notebook Parameters</code> with the code below due to <code>epoch</code> is <em>parameterized</em>.</p>
-<pre><code class="hljs"><span class="hljs-attr">epoch</span> = <span class="hljs-number">2</span>
-</code></pre></li>
-<li><p>Back to PrimeHub tab, enter <strong>Jobs</strong> and check the job <code>tune_params_epoch_tf</code> we submitted.</p>
-<p><img src="/docs/assets/qs_tune_job_detail.png" alt=""></p></li>
-<li><p>Once the job succeeded, back to Notebook, we can find a notebook <code>tune_params-&lt;datetime&gt;</code> of output by the job and the overwritten <code>my_model.h5</code> after tuning.</p>
-<p><img src="/docs/assets/qs_tune_job_output.png" alt=""></p></li>
-</ol>
-<p>We now have walked through a typical flow of training and saving a simple model file, then submitting a job of tuning the generated on Notebook. In a real project, we may want to use various combinations of jobs and notebooks to pipeline repeatable workflows.</p>
 <h2><a class="anchor" aria-hidden="true" id="whats-next"></a><a href="#whats-next" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's Next?</h2>
-<p>As Enterprise users, we desperately want to verify the performance of our model, therefore, we can deploy models as services and query the services with testing data.</p>
+<p>As Enterprise users we want to verify the performance of our model, in order to do this we can deploy the model as a service and query the it with test data.</p>
 <ul>
 <li><a href="qs-primehub-deploy">Quick-start: PrimeHub Model Deployment</a></li>
 </ul>
@@ -149,4 +110,4 @@
 <li><a href="../notebook-as-job">Submit a Notebook as a Job</a></li>
 <li><a href="../job-submission-feature">Jobs Submission</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/quickstart/one-click-install"><span class="arrow-prev">← </span><span>One-Click Install 🚀</span></a><a class="docs-next button" href="/docs/next/one-click-install"><span>One-Click Install 🚀</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-minute-primehub-demo">1-Minute PrimeHub Demo</a></li><li><a href="#brief">Brief</a></li><li><a href="#training-a-model-on-notebook">Training a model on Notebook</a><ul class="toc-headings"><li><a href="#what-we-need">What we need?</a></li><li><a href="#steps">Steps</a></li></ul></li><li><a href="#parameter-tuning-job">Parameter-tuning Job</a><ul class="toc-headings"><li><a href="#what-we-need-1">What we need?</a></li><li><a href="#steps-1">Steps</a></li></ul></li><li><a href="#whats-next">What's Next?</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/next/quickstart/one-click-install"><span class="arrow-prev">← </span><span>One-Click Install 🚀</span></a><a class="docs-next button" href="/docs/next/one-click-install"><span>One-Click Install 🚀</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-minute-primehub-demo">1-Minute PrimeHub Demo</a></li><li><a href="#brief">Brief</a></li><li><a href="#training-a-model-on-notebook">Training a model on Notebook</a><ul class="toc-headings"><li><a href="#what-we-need">What we need?</a></li><li><a href="#steps">Steps</a></li></ul></li><li><a href="#whats-next">What's Next?</a></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
