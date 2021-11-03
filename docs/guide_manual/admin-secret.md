@@ -16,7 +16,7 @@ description: Secret Management
   </div>
 </div>
 
-Secret management provides the capabilities of managing secrets which are used for pull images or datasets, such as create, delete, edit secrets. Before adding secrets, we have to gain those generated secrets from sources of services. Please see [gain and add secrets](#gain-and-add-secrets).
+Secret management provides the capabilities of managing secrets which are used for pull images or volumes, such as create, delete, edit secrets. Before adding secrets, we have to gain those generated secrets from sources of services. Please see [gain and add secrets](#gain-and-add-secrets).
 
 ## Creating New Secrets
 
@@ -38,7 +38,7 @@ You need to fill in these fields:
 
 ![](assets/secret_opaque_key_v26.png)
 
-+ `Secret`: A secret of Git Dataset is used for pulling a dataset via git. The context is a private key related to a registered public key of ssh. Please see [Dataset Management](admin-dataset) to learn how to specify a pull-secret for a dataset.
++ `Secret`: A secret of Git Dataset is used for pulling a dataset via git. The context is a private key related to a registered public key of ssh. Please see [Volume Management](admin-volume) to learn how to specify a pull-secret for a volume.
 
 ### Type Image Pull 
 

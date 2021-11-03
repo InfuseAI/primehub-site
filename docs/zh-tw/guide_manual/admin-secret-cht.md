@@ -37,7 +37,7 @@ Secret management 提供管理者 Secret 管理能力，如：新增、刪除、
 
 ![](assets/secret_opaque_key_v26.png)
 
-+ `Secret`: Git Dataset 的 secret 用來認證授權透過 git 下載 dataset；內容為已登錄 ssh 公開金鑰對應的私人鑰匙。請見 Dataset Management。
++ `Secret`: Git Dataset 的 secret 用來認證授權透過 git 下載 dataset；內容為已登錄 ssh 公開金鑰對應的私人鑰匙。請見 Volume Management。
 
 ### Type Image Pull
 

@@ -1,9 +1,9 @@
 ---
-id: dataset-upload
-title: Dataset Upload
+id: volume-upload
+title: Volume Upload
 ---
 
-Provide a upload server to upload data to `pv` type dataset.
+Provide a upload server to upload data to `pv` type volume.
 
 
 ## Configuration
@@ -43,7 +43,7 @@ And if you didn't specify value in yaml, it will be set by `PRIMEHUB_STORAGE_CLA
 
 * Check Issuer
 
-If you are using `letsencrypt-prod-dns` issuer, your dataset upload ingress annotations should contain:
+If you are using `letsencrypt-prod-dns` issuer, your volume upload ingress annotations should contain:
 ```
 certmanager.k8s.io/acme-challenge-type: "dns01"
 certmanager.k8s.io/acme-dns01-provider: "clouddns"
@@ -52,20 +52,20 @@ certmanager.k8s.io/cluster-issuer: "letsencrypt-prod-dns"
 
 
 ## Design
-We use tus protocol to do the resumable file uploads. Backend is [tusd](https://github.com/tus/tusd). Frontend package is [uppy](https://uppy.io/). In order to let user view/edit uploaded files, also have a flask server to view/edit uploaded files. The package to view files is [Flask-AutoIndex](https://pythonhosted.org/Flask-AutoIndex/). Therefore, dataset upload deployment contains two containers and both have a mounted `pv` dataset.
+We use tus protocol to do the resumable file uploads. Backend is [tusd](https://github.com/tus/tusd). Frontend package is [uppy](https://uppy.io/). In order to let user view/edit uploaded files, also have a flask server to view/edit uploaded files. The package to view files is [Flask-AutoIndex](https://pythonhosted.org/Flask-AutoIndex/). Therefore, volume upload deployment contains two containers and both have a mounted `pv` volume.
 
 Metacontroller is used to automatically create desired resources based on our settings.
 
 Application code is under modules/primehub-dataset-upload. K8s and metacontroller related code is under modules/charts/primehub.
 
-### Start/Stop Dataset Upload Server
-When dataset has an annotation `dataset.primehub.io/uploadServer: "true"`, it will start a dataset upload server.
+### Start/Stop Volume Upload Server
+When volume has an annotation `dataset.primehub.io/uploadServer: "true"`, it will start a volume upload server.
 
 Otherwise, it is stopped.
 
-Currently, dataset upload url is `https://<primehub domain>/admin/dataset/<namespace>/<dataset name>/browse/`.
+Currently, volume upload url is `https://<primehub domain>/admin/dataset/<namespace>/<dataset name>/browse/`.
 
-### Enable Http Auth to Dataset Upload Server
+### Enable Http Auth to Volume Upload Server
 First, need to have a secret which is created by `htpasswd`. EX:
 ```
 htpasswd -c auth <name>

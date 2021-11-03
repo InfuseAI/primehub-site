@@ -68,14 +68,14 @@ Due to this limitation PHFS **cannot be used for**:
 
 PHFS is not installed by default, please check this document to [configure PrimeHub store and PHFS](../getting_started/configure-primehub-store).
 
-### Dataset Volume
+### Data Volume
 
-A Dataset Volume is a storage type that can be shared among multiple groups. The following permission settings can be configured:
+A Data Volume is a storage type that can be shared among multiple groups. The following permission settings can be configured:
 
 - Read-only on a global or per-group basis
 - Writable on a per-group basis
 
-There are **several kinds** of Dataset Volumes we can create:
+There are **several kinds** of Data Volumes we can create:
 
 - **Persistent volume (PV)**: Like group volume, but can be shared among multiple groups rather than just a single group.
 - **NFS**: A volume that connects to an external NFS server.
@@ -83,18 +83,18 @@ There are **several kinds** of Dataset Volumes we can create:
 - **Git**: A special kind of volume which syncs the upstream git repository periodically. The actual data is stored on the host filesystem.
 - **Env**: Technically, this is not a volume, but a method to configure environment variables to be used in notebooks and jobs.
 
-A Dataset Volume is **good** for:
+A Data Volume is **good** for:
 
 - Sharing among groups. In an education environment, for example, datasets could be shared among multiple teams (groups) of students with read-only permissions, while the teaching assistants could be in another group with write permissions.
 - Special storage destination (e.g. external NFS server, host path, git sync)
 
-A Dataset Volume has the following **limitations**: 
+A Data Volume has the following **limitations**: 
 
 - Data cannot downloaded and uploaded through API/CLI/SDK
 
 - If the volume is to be used by only one group then, due to its ease of use, a Shared Volume is preferred
 
-A Dataset Volume is configured by the system administrator. For more information, Please see [Dataset Management](../guide_manual/admin-dataset). In some types of the dataset, we can also configure a [upload server](../guide_manual/admin-uploader) to upload data to the dataset volume.
+A Data Volume is configured by the system administrator. For more information, Please see [Volume Management](../guide_manual/admin-volume). In some types of the volume, we can also configure a [upload server](../guide_manual/admin-uploader) to upload data to the data volume.
 
 ## Comparison
 
@@ -103,7 +103,7 @@ A Dataset Volume is configured by the system administrator. For more information
 | User Volume | No | No | Private data
 | Group Volume | Group members of a group | No | Shared data in group
 | PHFS | Group members of a group | Yes | Data import/export
-| Dataset Volume | Multiple groups | No | Shared data among groups
+| Data Volume | Multiple groups | No | Shared data among groups
 
 All four storage options can be accessed via the file system. The following table describes the mount points and characteristics:
 
@@ -112,4 +112,4 @@ All four storage options can be accessed via the file system. The following tabl
 | User Volume | Notebooks | `/home/jovyan` | Best performance<br>(like block device)
 | Group Volume | Notebooks<br>Apps<br>Jobs | `/project/<group>` | Good performance <br>(like NFS)
 | PHFS | Notebooks<br>Apps<br>Jobs | `/phfs` | Limited access mode<br> Sequential Read/Write <br>(like object storage)
-| Dataset Volume | Notebooks<br>Apps<br>Jobs | `/datasets/<dataset>` | Good performace <br>(like NFS)
+| Data Volume | Notebooks<br>Apps<br>Jobs | `/datasets/<volume>` | Good performace <br>(like NFS)

@@ -8,7 +8,7 @@ description: Increase Volume Size
   <span class="tooltiptext">Applicable to Enterprise tier only</span>
 </div>
 
-As an operator, I may need to resize a volume. This document describes how to resize the usage of user volumes, group volumes, and PV dataset volumes.
+As an operator, I may need to resize a volume. This document describes how to resize the usage of user volumes, group volumes, and PV data volumes.
 
 > **Caution**: The volume size can only be **increased** and cannot be rolled back after resizing.
 
@@ -84,7 +84,7 @@ As an operator, I may need to resize a volume. This document describes how to re
     kubectl -n hub patch pvc <pvcname> -p '{"spec":{"resources":{"requests":{"storage":"50Gi"}}}}}'
     ```
 
-## Resize PV dataset volume
+## Resize PV data volume
 
 1. Find the PVC named `dataset-<dataset>`. If the storage class of the PVC is not empty, go to step 2 to resize this PVC.
 

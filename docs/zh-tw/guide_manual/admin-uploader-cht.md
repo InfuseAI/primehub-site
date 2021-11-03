@@ -12,9 +12,9 @@ description: Upload Server
   </div>
 </div>
 
-`Upload Server` 功能允許使用者以透過 upload server 事先上傳檔案至 `pv`型、 `nfs`型、 `hostpath`型 dataset volume。
+`Upload Server` 功能允許使用者以透過 upload server 事先上傳檔案至 `pv`型、 `nfs`型、 `hostpath`型 volume。
 
-編輯一個已被創建的 `pv`型、 `nfs`型、 `hostpath`型 dataset，編輯頁會顯現出 `Enable Upload Server` 開關和 `Regenerate Secret` 按鈕。
+編輯一個已被創建的 `pv`型、 `nfs`型、 `hostpath`型 volume，編輯頁會顯現出 `Enable Upload Server` 開關和 `Regenerate Secret` 按鈕。
 
 ![](assets/dataset_pv_v2_upload_server.png)
 
@@ -26,9 +26,9 @@ description: Upload Server
 
 **Note: 如果帳密不慎遺失**
 
-回到該 dataset 的編輯頁，再次按下 `Regenerate Secret` ，就可以得到一組新的帳密。
+回到該 volume 的編輯頁，再次按下 `Regenerate Secret` ，就可以得到一組新的帳密。
 
-在 dataset 列表，可以看到該 dataset 列上的 upload server 欄位上有個 `Link`。
+在 volume 列表，可以看到該 volume 列上的 upload server 欄位上有個 `Link`。
 
 ![](assets/dataset_pv_v2_upload_server_enable.png)
 
@@ -58,4 +58,4 @@ description: Upload Server
 
 ![](assets/dataset_pv_v2_file_uploaded.png)
 
-一旦 hub 啟動後，可以在 jupyter notebook 環境中，看到已上傳檔案在掛載 dataset volume 中。目前 upload server 並無提供檔案刪除功能，已上傳檔案只能透過 jupyter notebook 刪除。
+一旦 hub 啟動後，可以在 jupyter notebook 環境中，看到已上傳檔案在掛載 volume 中。目前 upload server 並無提供檔案刪除功能，已上傳檔案只能透過 jupyter notebook 刪除。

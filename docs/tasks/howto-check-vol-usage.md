@@ -11,7 +11,7 @@ title: HOWTO - Check Volume Usage
   </div>
 </div>
 
-As an operator, I may need to know the usage of a volume. This document describes how to check the usage of user volumes, group volumes, and PV dataset volumes. Before checking the volume usage, please make sure you can access your Kubernetes cluster by `kubectl`, we use `kubectl exec <pod> -- df /path/to/the/volume` to check the volume
+As an operator, I may need to know the usage of a volume. This document describes how to check the usage of user volumes, group volumes, and PV data volumes. Before checking the volume usage, please make sure you can access your Kubernetes cluster by `kubectl`, we use `kubectl exec <pod> -- df /path/to/the/volume` to check the volume
 
 ## Usage of User Volume
 
@@ -65,13 +65,13 @@ If the shared volume of a group is enabled, an NFS server is created as the grou
    /dev/rbd11                    196G   3.9M   182G   3%       /exports
    ```
 
-## Usage of PV Dataset Volume
+## Usage of PV Data Volume
 
 > Note: This method only works if the configuration `primehub.sharedVolumeStorageClass` is not set
 
-If a PV dataset is configured as [auto provisioning](../guide_manual/admin-dataset#persistent-volume), an NFS server is created as the dataset volume. To check the volume usage, we can check the usage in the NFS server pod.
+If a PV data volume is configured as [auto provisioning](../guide_manual/admin-volume#persistent-volume), an NFS server is created as the data volume. To check the volume usage, we can check the usage in the NFS server pod.
 
-1. Find the pod of the PV dataset NFS server
+1. Find the pod of the PV data volume NFS server
 
     ```bash
     kubectl -n hub get pod
