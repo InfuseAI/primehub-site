@@ -20,7 +20,7 @@ Here we list the features comparison among tiers.
 |[Models (Beta)](model-management)||✅️ |✅️ |
 |[Deployments](model-deployment-feature)||✅️ |✅️ |
 |[Shared Files](shared-files)|✅️ |✅️ |✅️ |
-|[Apps (Beta)](primehub-app)|✅️ |✅️ ||
+|[Apps](primehub-app)|✅️ |✅️ ||
 |[SSH Server](guide_manual/ssh-config)|✅️ |✅️ ||
 |[Self-Signed Certificate](getting_started/configure-self-signed-ca)|✅️ |✅️ ||
 |[PrimeHub Store](design/primehub-store)|✅️ |✅️ |✅️ |
