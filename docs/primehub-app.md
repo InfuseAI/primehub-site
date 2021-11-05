@@ -1,7 +1,7 @@
 ---
 id: primehub-app
-title: PrimeHub Apps (Beta)
-sidebar_label: Overview (Beta)
+title: PrimeHub Apps
+sidebar_label: Overview
 description: PrimeHub Apps
 ---
 
@@ -14,8 +14,6 @@ description: PrimeHub Apps
   </div>
 </div>
 <br>
-
-> This is a Beta feature. The page content is subject to change.
 
 **PrimeHub** aims at being a MLOps platform where scientists can orchestrate data/tools for the acceleration of researches. In terms of a platform, we introduce **PrimeHub Apps** that PrimeHub capability is able to be extended by integrations of 3rd-party applications such as auto ML tools, visualization tools, etc. These integrated applications also benefit from access-control and resource constraints of PrimeHub.
 
