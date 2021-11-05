@@ -25,7 +25,7 @@ It includes below operations:
 
 + Cleanup released orphan PV
 
-+ Create pv-type dataset
++ Create pv-type data volume
 
 + [Resize Group Volume](quickstart/maintenance-resize-group-vol)
 

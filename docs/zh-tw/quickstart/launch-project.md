@@ -23,7 +23,7 @@ sidebar_label: Start Notebook
 + `Images`: 此群組可選擇的 images
 + `User Limits`: 此使用者可利用運算資源的限制
 + `Group Resources`: 此群組運算資源的可用狀態，包括目前使用量及群組整體限制量
-+ `Dataset`: 此群組可存取的 dataset
++ `Volume`: 此群組可存取的 volume
 + `Show advanced settings`: 起始 Notebook 的進階設定
 
 

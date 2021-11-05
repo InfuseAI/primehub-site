@@ -9,7 +9,7 @@ Allows third-party application integrated into PrimeHub platform.
 
 1. **Shared domain**: The installed application can be accessed in the sub-path of PrimeHub's domain. We don't need an additional domain for this application.
 1. **Authorization**: Allows to restrict the applications only accessible to group members, PrimeHub logged-in users, or public users.
-1. **Data Persistence**: Allows applications to persist data in group volume and access data in other persistent storage, like datasets and PHFS.
+1. **Data Persistence**: Allows applications to persist data in group volume and access data in other persistent storage, like data volumes and PHFS.
 1. **Resource constraint**: Enforce the resource CPU, memory, GPU quota limitation in a group.
 
 ## Concepts
@@ -260,7 +260,7 @@ NOTE:
     - name `app-<app-id>`
     - Use `spec.podTemplate.spec`
     - Volumes
-        - Add group, dataset volumes
+        - Add group, data volumes
         - Add empty dir if no group volume available
     - Init Container
         - run as root
@@ -269,7 +269,7 @@ NOTE:
         - Keep only the first container
         - Set resources from instanceType
         - Prepend (not append) the primehub required envs.  `PRIMEHUB_APP_ID`, ,`PRIMEHUB_APP_ROOT` and `PRIMEHUB_APP_BASE_URL`
-        - Mount group, dataset volumes
+        - Mount group, data volumes
         - Mount empty dir if no group volume available (`/phapplications/<app-id>`)
     - The created pod should have label
         - `app=primehub-app`

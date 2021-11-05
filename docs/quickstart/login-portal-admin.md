@@ -38,7 +38,7 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + `Images` where Admin can manage images. See [Image Management](../guide_manul/../guide_manual/admin-image).
 
-+ `Datasets` where Admin can manage datasets. See [Dataset Management](../guide_manual/admin-dataset).
++ `Volumes` where Admin can manage volumes. See [Volume Management](../guide_manual/admin-volume).
 
 + `Secrets` where Admin can manage secrets. See [Secret Management](../guide_manual/admin-secret).
 

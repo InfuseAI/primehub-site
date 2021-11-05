@@ -85,13 +85,13 @@ pip install <package>
 
 ### Directories/paths the job can access if directories exits:
 
->**Notice**：The default working directory of a Job is under `/home/jovyan`; This is `/home/jovyan` inside Job Pod *rather than `/home/jovyan` inside JupyterHub Pod*, therefore, *files are located under `/home/jovyan` of JupyterHub **don't exist** here*! There are `<group volume>` and `<dataset>` only mounted here in Job Pod.
+>**Notice**：The default working directory of a Job is under `/home/jovyan`; This is `/home/jovyan` inside Job Pod *rather than `/home/jovyan` inside JupyterHub Pod*, therefore, *files are located under `/home/jovyan` of JupyterHub **don't exist** here*! There are `<group volume>` and `<data volume>` only mounted here in Job Pod.
 
 |Directory|Description|
 |---------|-----------|
 |`/home/jovyan`|A **temporary working directory** while jobs running. ***Note**: saving data here will be lost when jobs finished.*|
 |`/home/jovyan/<group> -> /project/<group>`|Using this path (or Symbolic link) to access a group volume, load files and save output persistently. ***Note:** a group volume is required, please consult administrators.*|
-|`/home/jovyan/datasets/<dataset> -> /datasets/<dataset>`|Using this path (or Symbolic link) to access a dataset volume, load datasets which connect to the group. ***Note:** a existing dataset volume is required, please consult administrators.*|
+|`/home/jovyan/datasets/<data volume> -> /datasets/<data volume>`|Using this path (or Symbolic link) to access a data volume, load data volumes which connect to the group. ***Note:** a existing data volume is required, please consult administrators.*|
 
 ### Environmental variables:
 

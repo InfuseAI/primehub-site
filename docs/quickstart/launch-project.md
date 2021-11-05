@@ -24,7 +24,7 @@ description: Start Notebook
 + `Images`: The selection of images according to the current group context
 + `User Limits`: The resources constraints are on the current user
 + `Group Resources`: The resources dashboard indicates current used resource and the limit according to the current group context
-+ `Dataset`: Datasets are associated with the current group
++ `Volume`: Volumes are associated with the current group
 + `Show advanced settings`: Display the advanced settings of launching Notebook
 
 ### Launch

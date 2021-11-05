@@ -42,19 +42,19 @@ Both of Administrator and group administrator are able to add images from Images
 See [Image Management](guide_manual/admin-image)(Admin), [Image](group-image)(Group Admin).
 
 
-### Datasets
+### Volumes
 
-PrimeHub supports several types of where datasets locate, **persist volume**, **nfs**, **host path**, **git** and **env**. It depends on where/how/what groups are going to share these datasets.
+PrimeHub supports several types of where volumes locate, **persist volume**, **nfs**, **host path**, **git** and **env**. It depends on where/how/what groups are going to share these volumes.
 
-Groups can have read-only access datasets on git repository, or can clone datasets from internet into a persist volume/nfs/host path or can share just environmental variables.
+Groups can have read-only access volumes on git repository, or can clone volumes from internet into a persist volume/nfs/host path or can share just environmental variables.
 
-Datasets must be associated with one group at least for being viewable.
+Volumes must be associated with one group at least for being viewable.
 
-See [Dataset Management](guide_manual/admin-dataset).
+See [Volume Management](guide_manual/admin-volume).
 
 ### Secrets
 
-Secrets are credentials to access certain resources if required. Usually add secrets for pulling images or pulling datasets on git repo which requires credentials, in this case, images must be associated with secrets.
+Secrets are credentials to access certain resources if required. Usually add secrets for pulling images or pulling volumes on git repo which requires credentials, in this case, images must be associated with secrets.
 
 See [Secret Management](guide_manual/admin-secret).
 
@@ -68,7 +68,7 @@ PrimeHub incorporates several prominent data-scientist-facing components.
 
 Notebook is [Jupyter Notebook](https://jupyter.org/) which is a well-known open-source web application in data science area that empowers users to create and share interactive documents that contain live code, equations, visualizations and description.
 
-On PrimeHub, users have to choose an image containing valid Jupyter environment with a specified instance type (requested resources) to launch a Notebook. From Notebook, users can access associated user volume, group volume, datasets and PHFS storage.
+On PrimeHub, users have to choose an image containing valid Jupyter environment with a specified instance type (requested resources) to launch a Notebook. From Notebook, users can access associated user volume, group volume, data volumes and PHFS storage.
 
 See [Notebook](quickstart/launch-project).
 

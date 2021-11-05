@@ -81,13 +81,13 @@ sudo apt install <package> --assume-yes
 ### Job 可存取工作目錄、專案目錄及資料集目錄
 
  >注意：Job 的預設路徑是在 `/home/jovyan`，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
- 所以 JupyterHub `/home/jovyan`下的其它檔案並 **不存在** 此時的 Job Pod 的`/home/jovyan`。Job 這裡只會有掛載的`<group volume>`及`<dataset>`。
+ 所以 JupyterHub `/home/jovyan`下的其它檔案並 **不存在** 此時的 Job Pod 的`/home/jovyan`。Job 這裡只會有掛載的`<group volume>`及`<data volume>`。
 
  |目錄|描述|
  |---------|-----------|
  |`/home/jovyan`|`job`執行時的暫存工作目錄。***注意:** 如果輸出 data 於此，此 data 將會著`job`結束而消失，只能做為暫存之用。 不再是~~`/workingdir`~~*！|
  |`/home/jovyan/<group> -> /project/<group>/`|用此路徑(或 Symbolic link)，存取群組目錄，可以做為讀取及輸出常態性資料，即使`job`已經結束。***注意：** `group volume`必須要事存在，請洽系統管理員。*|
- |`/home/jovyan/datasets/<dataset> -> /datasets/<dataset>`|用此路徑(或 Symbolic link)，存取群組資料集。***注意：** `dataset volume`必須要事先存在，請洽系統管理員。*|
+ |`/home/jovyan/datasets/<data volume> -> /datasets/<data volume>`|用此路徑(或 Symbolic link)，存取群組資料集。***注意：** `data volume`必須要事先存在，請洽系統管理員。*|
 
 ### Job 可存取環境變數
 
