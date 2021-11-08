@@ -19,7 +19,7 @@ Portal for 3rd-party app makers: https://github.com/InfuseAI/awesome-primehub-ap
 
 ### 🚀 &NonBreakingSpace; Google Colab Notebook for getting a taste of PrimeHub within your browser!
 
-https://colab.research.google.com/drive/1xscjNRe9f7cDjhrPVJM52u0Ps0XZ7fcE?usp=sharing
+https://colab.research.google.com/github/InfuseAI/primehub-demo-notebooks/blob/main/primehub-sdk-mlops/mlops.ipynb
 
 ![](assets/colab-example.png)
 
