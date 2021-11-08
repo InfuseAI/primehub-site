@@ -101,7 +101,7 @@ The Admin Portal enables administrators to manage all aspects of Primehub, such 
 
 + [Manage images](guide_manual/admin-image)
 
-+ [Manage datasets](guide_manual/admin-dataset)
++ [Manage volumes](guide_manual/admin-volume)
 
 + [Custom Image Guideline](guide_manual/custom-image-guideline)
 

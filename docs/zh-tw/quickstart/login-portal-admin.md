@@ -41,7 +41,7 @@ sidebar_label: Overview
 
 + `Images` 管理映像檔。 請見 [Image Management](../guide_manul/../guide_manual/admin-image-cht)。
 
-+ `Datasets` 管理資料集。 請見 [Dataset 管理](../guide_manual/admin-dataset-cht)。
++ `Volumes` 管理資料集。 請見 [Volume 管理](../guide_manual/admin-volume-cht)。
 
 + `Secrets` 管理 secrets。 請見 [Secret 管理](../guide_manual/admin-secret-cht)。
 

@@ -17,14 +17,14 @@ description: Start Notebook
 
 ## Overview
 
-![](assets/spawner_v38.png)
+![](assets/spawner_v310.png)
 
 
 + `Instance Types`: The selection of instance types according to the current group context
 + `Images`: The selection of images according to the current group context
 + `User Limits`: The resources constraints are on the current user
 + `Group Resources`: The resources dashboard indicates current used resource and the limit according to the current group context
-+ `Dataset`: Datasets are associated with the current group
++ `Volumes`: Volumes are associated with the current group
 + `Show advanced settings`: Display the advanced settings of launching Notebook
 
 ### Launch

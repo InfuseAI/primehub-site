@@ -13,7 +13,7 @@ The steps of launching MATLAB by using the image is below,
 
 1. Add a new image (e.g. name: matlab) with this image url, `infuseai/custom-image:matlab-proxy-r2020b`, via Images (Admin/Group admin).
 
-2. Add a dataset of type `env` with the following information, replace `<your_PrimeHub_domain>` with the full domain name of PrimeHub in your circumstance, e.g. `ai.company.com.tw`.
+2. Add a volume of type `env` with the following information, replace `<your_PrimeHub_domain>` with the full domain name of PrimeHub in your circumstance, e.g. `ai.company.com.tw`.
 
     ![](assets/dataset_primehub_config.png)
 

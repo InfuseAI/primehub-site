@@ -18,7 +18,7 @@ description: Gitsync Secret for GitHub
 
 This quickstart describes how we have/add a secret for gitsync with a repo on GitHub.
 
-PrimeHub support datasets of type `git`, in other words, we can use a dataset located on a repository via gitsync. What if the repository is private only? Then we need a `secret` to have proper privileges for access the repo.
+PrimeHub support volumes of type `git`, in other words, we can use a volume located on a repository via gitsync. What if the repository is private only? Then we need a `secret` to have proper privileges for access the repo.
 
 ### Generate deploy public key on GitHub
 
@@ -38,4 +38,4 @@ Once we have deployed our **public key** on the repo, we can add the key as a se
 
 5. Click `Confirm` to save the secret.
 
-Now we can add a dataset pointing to our private repo on GitHub and select the secret for authorization.
+Now we can add a volume pointing to our private repo on GitHub and select the secret for authorization.

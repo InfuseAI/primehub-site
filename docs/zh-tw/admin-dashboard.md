@@ -16,6 +16,6 @@ PrimeHub provides several types of management to administrators as below, please
 
 + [Image Management](guide_manual/admin-image-cht)
 
-+ [Dataset Management](guide_manual/admin-dataset-cht)
++ [Volume Management](guide_manual/admin-volume-cht)
 
 + [Secret Management](guide_manual/admin-secret-cht)

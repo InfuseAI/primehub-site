@@ -149,7 +149,7 @@ The primary volumes and locations are
 Type | Path  | Note
 --------|-------|----
 Working Directory | `/home/jovyan` | Is mounted as `emptyDir`
-Datasets | `/datasets/<dataset-name>` | symlink to `/home/jovyan/datasets`
+Volumes | `/datasets/<volume-name>` | symlink to `/home/jovyan/datasets`
 Group Volume | `/project/<project-name>` | symlink to `/home/jovyan`
 User Volume | N/A |
 
@@ -182,10 +182,10 @@ Feature | Jupyter | Job
 --------|-------| -------
 user volume | Yes | No
 group Volume | Yes | Yes
-pv dataset | Yes | Yes
-pv dataset (hostpath) | Yes | Yes
-env dataset | Yes | Yes
-git dataset | Yes | Yes
+pv data volume | Yes | Yes
+pv data volume (hostpath) | Yes | Yes
+env data volume | Yes | Yes
+git data volume | Yes | Yes
 working directory | /home/jovyan (user volume) | /home/jovyan (emptyDir)
 start-notebook script | Yes | No
 

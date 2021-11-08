@@ -94,11 +94,11 @@ description: Group Management
 
 列出所有此群組可以使用的 Image。
 
-## Datasets
+## Volumes
 
 ![](assets/admin_group_ds_v25.png)
 
-列出所有此群組可以讀取或寫入的 Datasets；我們甚至可以由此進入 Dataset 編輯。
+列出所有此群組可以讀取或寫入的 Volumes；我們甚至可以由此進入 Volume 編輯。
 
 
 ## Deleting Group

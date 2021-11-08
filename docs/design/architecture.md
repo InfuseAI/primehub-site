@@ -31,11 +31,11 @@ jupyterhub | UI Components | Third-party multiple users jupyter project. We inte
 admin notebook | UI Components | A special jupyter server for operation purposes.
 graphql | API Server | The primary API Server for PrimeHub.
 groupvolume | Controlers | A metacontroller-based controller. It is responsible for provisioning an NFS server for a shared volume. ([metacontroller](https://github.com/GoogleCloudPlatform/metacontroller) is a general-purpose controller to implement a controller.)
-gitsync | Controllers | A metacontroller-based controller. It is responsible to manage the gitsync dataset.
-dataset-upload | Controllers | A metacontroller-based controller. It is responsible to manage the dataset upload server.
+gitsync | Controllers | A metacontroller-based controller. It is responsible to manage the gitsync volume.
+volume-upload | Controllers | A metacontroller-based controller. It is responsible to manage the volume upload server.
 primehub controller | Controllers | The single process controller to manage jobs, image builder, license, etc. This component is relatively new and we hope to include all metacontroller-based controllers to this component in the future.
 admission webhook | Controllers | It implements the [admission controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) to intercept the request the creation of resources. Currently, we use it to guarantee a pod does not request more resources than the quota.
-watcher | Controllers | It monitors images, instance types, datasets custom resources and generates corresponding keycloak roles.
+watcher | Controllers | It monitors images, instance types, volumes custom resources and generates corresponding keycloak roles.
 
 
 ## Data Model
@@ -46,7 +46,7 @@ PrimeHub in the core does not have its database. The persistence state is stored
 The data respectively are
 
 - **Keycloak:** Store the users, groups, user/group binding (member), roles, and group/role binding. 
-- **Kubernetes:** Store the common resources among groups, like `image`, `instance type`, `datasets`, `imagespecs`, and `secrets`. Or user-created items, like `phjobs`.
+- **Kubernetes:** Store the common resources among groups, like `image`, `instance type`, `volumes`, `imagespecs`, and `secrets`. Or user-created items, like `phjobs`.
 
 
 In PrimeHub design, the common resources (e.g. `image`) can be associated with groups. There is a corresponding role of this resource defined in keycloak. And the relationship between resource and group is implemented by role binding. The following diagram depicts the relationship.

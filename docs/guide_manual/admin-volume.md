@@ -1,7 +1,7 @@
 ---
-id: admin-dataset
-title: Dataset Management
-description: Dataset Management
+id: admin-volume
+title: Volume Management
+description: Volume Management
 ---
 
 <div class="label-sect">
@@ -13,13 +13,13 @@ description: Dataset Management
   </div>
 </div>
 
-Dataset management provides the capabilities of managing dataset resources such as create, delete, edit datasets and of permission-control so that datasets can be accessed only by specific groups accordingly.
+Volume management provides the capabilities of managing volume resources such as create, delete, edit volumes and of permission-control so that volumes can be accessed only by specific groups accordingly.
 
-## Creating New Dataset
+## Creating New Volume
 
-![](assets/dataset_5_v26.png)
+![](assets/dataset_v310.png)
 
-Click `Add` to add a Dataset and it will pop up the edit screen of Datasets.
+Click `Add` to add a Volume and it will pop up the edit screen of Volumes.
 
 ![](assets/admin_dataset_v3.png)
 
@@ -31,11 +31,11 @@ You need to fill in these fields:
 
 + `Description`
 
-+ `Mount Root` This field is not editable. It displays the path to datasets.
++ `Mount Root` This field is not editable. It displays the path to volumes.
 
-+ `Global` If enabled, everyone can read this dataset; furthermore, we can set `Writable` groups. If disabled, linking groups with `ReadOnly` or `Writable` permission by `edit groups` is required.
++ `Global` If enabled, everyone can read this volume; furthermore, we can set `Writable` groups. If disabled, linking groups with `ReadOnly` or `Writable` permission by `edit groups` is required.
 
-+ `Type` Dataset volume type.
++ `Type` Volume type.
 
 + `Edit Groups` Set accessible groups, when `Global` is disabled.
 
@@ -49,15 +49,15 @@ There are several `type`:
 
 ![](assets/dataset_pv_auto.png)
 
-Specifying the `volume size`, once it is confirmed, there is a fixed-size volume created and the volume size is not changeable by editing the dataset.
+Specifying the `volume size`, once it is confirmed, there is a fixed-size volume created and the volume size is not changeable by editing the volume.
 
 #### Manual
 
 ![](assets/dataset_pv_manual.png)
 
-Setting provisioning `Manual` allows administrators configure the persistent volume dataset manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub Dataset. Please refer to the [Kubernetes official documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) for the configuration.
+Setting provisioning `Manual` allows administrators configure the persistent volume manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub Volume. Please refer to the [Kubernetes official documentation](https://kubernetes.io/docs/concepts/storage/persistent-datasets/) for the configuration.
 
-The only rule you need to follow is that the `PersistentVolumeClaim` name must be `dataset-{"Name" field set via UI}`.
+The only rule you need to follow is that the `PersistentVolumeClaim` name must be `volume-{"Name" field set via UI}`.
 
 Click `Confirm` to complete the addition.
 
@@ -109,7 +109,7 @@ Click `Change` to select a secret from the list if a credential is required.
 
 ![](assets/edit_groups.png)
 
-If `Global` is disabled, please click `edit groups` under the edit Dataset page to set accessible groups that have permission to use the Dataset.
+If `Global` is disabled, please click `edit groups` under the edit Volume page to set accessible groups that have permission to use the Volume.
 
 ---
 
@@ -117,9 +117,9 @@ If `Global` is disabled, please click `edit groups` under the edit Dataset page 
 
 ![](assets/dataset_env.png)
 
-If dataset is an environment variable, not a file, you can use `env` type. Clicking `+ Add field` to add fields and fill the `key` and `value`.
+If volume is an environment variable, not a file, you can use `env` type. Clicking `+ Add field` to add fields and fill the `key` and `value`.
 
-> Please be noticed that any `-` will be replaced by `_` in full variable name; the *full name* of env variables will be `<dataset_name>_<variable_key>` in the circumstance.
+> Please be noticed that any `-` will be replaced by `_` in full variable name; the *full name* of env variables will be `<volume_name>_<variable_key>` in the circumstance.
 
 ---
 
@@ -129,25 +129,25 @@ If dataset is an environment variable, not a file, you can use `env` type. Click
 
 `Type`, `Global` and `edit groups` are associated.
 
-+ When `Type` of a dataset is **writable**:
++ When `Type` of a volume is **writable**:
   + `Global` is **enabled**, required to specify groups with writable permission, the rest of groups are read-only.
   + `Global` is **disabled**, required to specify groups with writable/read-only permission respectively.
 
-+ When `Type` of a dataset is **read-only**:
++ When `Type` of a volume is **read-only**:
   + `Global` is **enabled**, all of groups are read-only by default.
   + `Global` is **disabled**, required to specify groups with read-only permission.
 
 
-## Deleting Dataset
+## Deleting Volume
 
 ![](assets/actions.png)
 
-Click `Delete` in the Datasets list, the confirmation dialog will pop up, and the Dataset will be deleted when you click `OK`.
+Click `Delete` in the Volumes list, the confirmation dialog will pop up, and the Volume will be deleted when you click `OK`.
 
 ## Editing Deataset
 
 ![](assets/actions.png)
 
-Click `Edit` to enter the edit page of the Dataset.
+Click `Edit` to enter the edit page of the Volume.
 
-In terms of type `pv`, `nfs` and `hostpath` dataset, we can turn on `Upload Server` feature on the dataset editing page. See [Upload Server](admin-uploader).
+In terms of type `pv`, `nfs` and `hostpath` volume, we can turn on `Upload Server` feature on the volume editing page. See [Upload Server](admin-uploader).

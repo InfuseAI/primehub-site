@@ -3,9 +3,9 @@ id: crds
 title: CRDs
 ---
 
-In PrimeHub data model, it mentions when a/an instance type, image, and dataset is created via Admin UI, under the hood, there are a CRD object created in Kubernetes and a Realm Role created in Keycloak. This document describes what CRDs are created for and the context of them. 
+In PrimeHub data model, it mentions when a/an instance type, image, and volume is created via Admin UI, under the hood, there are a CRD object created in Kubernetes and a Realm Role created in Keycloak. This document describes what CRDs are created for and the context of them. 
 
-CRD, CustomResourceDefinition, PrimeHub uses the custom resource mechanism to manage structured data (custom objects) stored in Kubernetes. There are three of them, `Instance Type`, `Image` and `Dataset`.
+CRD, CustomResourceDefinition, PrimeHub uses the custom resource mechanism to manage structured data (custom objects) stored in Kubernetes. There are three of them, `Instance Type`, `Image` and `Volume`.
 
 For more detail of CRD, please refer to [Extend the Kubernetes API with CustomResourceDefinitions](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/).
 
@@ -127,21 +127,21 @@ Spec:
 - `url`: The registry url where an image is located.
 - `pullSecret`: The name of a `Secret`, this is a Secret we add via Admin UI. If required, the secret is used to pull the image.
 
-## Dataset
+## Volume
 
 ### Basic
 
-A `Dataset` object contains these following setting/configuration.
+A `Volume` object contains these following setting/configuration.
 
 You can use the following commands to view the stored data.
 
-    # List image objects.
+    # List volume objects.
     kubectl -n hub get dataset
     
-    # View the stored data of an image object.
+    # View the stored data of a volume object.
     kubectl -n hub get dataset/object_name -o yaml --export
 
-The structured data (including `launchGroupOnly` if true) of a type pv `dataset` object displays in yaml format as below.
+The structured data (including `launchGroupOnly` if true) of a type pv `volume` object displays in yaml format as below.
 
     apiVersion: primehub.io/v1alpha1
     kind: Dataset
@@ -161,7 +161,7 @@ The structured data (including `launchGroupOnly` if true) of a type pv `dataset`
       variables: {}
       volumeName: data-rw-test
 
-Currently, there are types `pv`, `git`, `nfs`, `hostPath` and `env` of datasets. All of types has following data fields in common, also, each type has its own data fields.  In following sections, they are described respectively.
+Currently, there are types `pv`, `git`, `nfs`, `hostPath` and `env` of volumes. All of types has following data fields in common, also, each type has its own data fields.  In following sections, they are described respectively.
 
 Annotations:
 
@@ -179,7 +179,7 @@ Spec:
 
 ### Type pv
 
-PV, `persistent volume`, dataset has a data field,`volumeName`. The container mount point of the dataset is varied with the combination of `volumeName`, and both annotations of `mountRoot` and `homeSymlink`. PV is auto provisioning by default. There is an option so that the administrators can set the underlying settings manually.
+PV, `persistent volume`, volume has a data field,`volumeName`. The container mount point of the volume is varied with the combination of `volumeName`, and both annotations of `mountRoot` and `homeSymlink`. PV is auto provisioning by default. There is an option so that the administrators can set the underlying settings manually.
 
 ### Pv with auto provisioning
 
@@ -243,9 +243,9 @@ Symlinks `ln -s /foo/bar/test ~/test`
 
 ### Type git
 
-Git dataset has a data field, `Url`, which points to a git repo and a data field, `Secret`, which is added via Admin UI if a secret is required to pull the dataset from repo.
+Git data volume has a data field, `Url`, which points to a git repo and a data field, `Secret`, which is added via Admin UI if a secret is required to pull the data volume from repo.
 
-The container mount point of the dataset is varied with the combination of both annotations of `mountRoot` and `homeSymlink`.
+The container mount point of the data volume is varied with the combination of both annotations of `mountRoot` and `homeSymlink`.
 
     annotations:
       dataset.primehub.io/primehub-gitsync: "true"
@@ -262,13 +262,13 @@ Annotations:
 - `dataset.primehub.io/gitSyncHostRoot`: (Hidden from UI)
 The host path to put the gitsync result. `/home/dataset` by default.
 - `dataset.primehub.io/gitSyncRoot`: (*Hidden from UI*)
-The path to mount the gitsync dataset. `/gitsync` by default.
+The path to mount the gitsync data volume. `/gitsync` by default.
 
 Spec:
 
 - `url`:  The url of a repo.
 
-### Gitsync dataset with secret
+### Gitsync data volume with secret
 
     spec:
     	gitsync:
@@ -278,13 +278,13 @@ Spec:
 
 Spec:
 
-- `gitsync.secret`: A secret is used for pulling a dataset from repo.
+- `gitsync.secret`: A secret is used for pulling a data volume from repo.
 
 Container Mount Point `/gitsync/myrepo`.
 
 Symlinks `ln -s /gitsync/myrepo/myrepo /dataset/myrepo`.
 
-### Gitsync dataset with homeSymlink
+### Gitsync data volume with homeSymlink
 
     Annotations:  dataset.primehub.io/homeSymlink: true
     
@@ -299,7 +299,7 @@ Symlinks
 - `ln -s /gitsync/myrepo/myrepo /dataset/myrepo`.
 - `ln -s /dataset/myrepo ~/myrepo`.
 
-### Gitsync dataset with mountRoot
+### Gitsync data volume with mountRoot
 
     annotations:  
     	dataset.primehub.io/mountRoot: /foo/bar
@@ -312,7 +312,7 @@ Container Mount Point `/gitsync/myrepo`.
 
 Symlinks `ln -s /gitsync/myrepo/myrepo /foo/bar/myrepo`.
 
-### Gitsync dataset with homeSymlink and mountRoot
+### Gitsync data volume with homeSymlink and mountRoot
 
     annotations: 
     	dataset.primehub.io/homeSymlink: true
@@ -333,9 +333,9 @@ Symlinks
 
 ### Type nfs
 
-Nfs dataset has additional data fields `server` and `path` which set the nfs ip/domain and the nfs path. The mount point logic is the same as pv dataset.
+Nfs data volume has additional data fields `server` and `path` which set the nfs ip/domain and the nfs path. The mount point logic is the same as pv data volume.
 
-### Nfs dataset example
+### Nfs data volume example
 
     annotations:
       dataset.primehub.io/mountRoot: /datasets
@@ -351,9 +351,9 @@ Nfs dataset has additional data fields `server` and `path` which set the nfs ip/
 
 ### Type hostPath
 
-HostPath dataset has an additional data field `path` which set the path in host. The mount point logic is the same as pv dataset.
+HostPath data volume has an additional data field `path` which set the path in host. The mount point logic is the same as pv data volume.
 
-### HostPath dataset example
+### HostPath data volume example
 
     annotations:
       dataset.primehub.io/mountRoot: /datasets
@@ -368,7 +368,7 @@ HostPath dataset has an additional data field `path` which set the path in host.
 
 ### Basic env
 
-Taking environment variables as datasets.
+Taking environment variables as data volumes.
 
     spec:
       variables:

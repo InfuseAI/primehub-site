@@ -24,7 +24,7 @@ PrimeHub 提供內建維運常用工具的 Jupyter notebook。管理者可以快
 
 + Cleanup released orphan PV
 
-+ Create pv-type dataset
++ Create pv-type data volume
 
 + [Resize Group Volume](quickstart/maintenance-resize-group-vol)
 

@@ -189,8 +189,8 @@
       },
       {
         "type": "subcategory",
-        "label": "Manage Datasets and Upload",
-        "ids": ["guide_manual/admin-dataset", "guide_manual/admin-uploader"]
+        "label": "Manage Volumes and Upload",
+        "ids": ["guide_manual/admin-volume", "guide_manual/admin-uploader"]
       },
       {
         "type": "subcategory",
@@ -272,7 +272,7 @@
           "design/admission",
           "design/jupyterhub",
           "design/notebook-kernel-process",
-          "design/dataset-upload",
+          "design/volume-upload",
           "design/image-builder",
           "design/job-submission",
           "design/job-scheduler",
@@ -346,7 +346,7 @@
       {
         "type": "subcategory",
         "label": "JupyterHub",
-        "ids": ["trouble/jh-blank-page", "trouble/dataset-failure"]
+        "ids": ["trouble/jh-blank-page", "trouble/volume-failure"]
       },
       {
         "type": "subcategory",
@@ -483,9 +483,9 @@
       },
       {
         "type": "subcategory",
-        "label": "Dataset 管理及上傳",
+        "label": "Volume 管理及上傳",
         "ids": [
-          "zh-tw/guide_manual/admin-dataset-cht",
+          "zh-tw/guide_manual/admin-volume-cht",
           "zh-tw/guide_manual/admin-uploader-cht"
         ]
       },

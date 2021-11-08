@@ -35,6 +35,6 @@ Name | Description
 `PHJOB_NAME` | If available, it is in job environment.
 `PRIMEHUB_SAFE_MODE_ENABLED` | If `true`, safe mode is enabled
 
-### Dataset
+### Volume
 
-We could also add custom environment variables by creating a type `env` of Dataset. See [Dataset](guide_manual/admin-dataset#env).
+We could also add custom environment variables by creating a type `env` of Volume. See [Volume](guide_manual/admin-volume#env).

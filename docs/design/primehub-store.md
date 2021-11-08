@@ -5,7 +5,7 @@ title: PrimeHub Store
 
 PrimeHub store is the central storage of PrimeHub and its backend is object storage. We use MinIO as the object storage solution. It supports launching as a standalone object store server or a gateway to connect the most popular cloud object storage solutions (e.g. AWS s3, google cloud GCS, azure blob...)
 
-Unlike user volume, group volume, and dataset, which are designed for storing user's data, PrimeHub store is designed for storing both system and user data.
+Unlike user volume, group volume, and data volume, which are designed for storing user's data, PrimeHub store is designed for storing both system and user data.
 
 ## Features
 
@@ -16,7 +16,7 @@ Unlike user volume, group volume, and dataset, which are designed for storing us
 
 ## Non-Goal
 
-1. Does not provide a new dataset type to connect to object storage.
+1. Does not provide a new volume type to connect to object storage.
 
 ## Use cases
 

@@ -13,9 +13,9 @@ description: Upload Server
   </div>
 </div>
 
-In terms of type `pv`, `nfs` and `hostpath` dataset, we can use `Upload Server` feature that allows users to upload files to a dataset volume.
+In terms of type `pv`, `nfs` and `hostpath` volume, we can use `Upload Server` feature that allows users to upload files to a volume.
 
-**Editing** a created type `pv`, `nfs` and `hostpath` dataset, we should see `Enable Upload Server` toggle and `Regenerate Secret` button.
+**Editing** a created type `pv`, `nfs` and `hostpath` volume, we should see `Enable Upload Server` toggle and `Regenerate Secret` button.
 
 ![](assets/dataset_pv_v2_upload_server.png)
 
@@ -26,9 +26,9 @@ Toggle `Enable Upload Server` on, and click `Confirm`. There is a pop-up showing
 Since the credential shows once only, you **must** keep it in a memo before clicking `OK`.
 
 **Note: if credential is lost**
-you can go back to dataset editing page and click `Regenerate Secret` button again to have a new pair of credential.
+you can go back to volume editing page and click `Regenerate Secret` button again to have a new pair of credential.
 
-You can see a `Link` created in `Upload Server` field of the dataset.
+You can see a `Link` created in `Upload Server` field of the volume.
 
 ![](assets/dataset_pv_v2_upload_server_enable.png)
 
@@ -58,4 +58,4 @@ Close the uploader and back to the file list, uploaded files are listed.
 
 ![](assets/dataset_pv_v2_file_uploaded.png)
 
-You can find these uploaded files in the dataset volume which is mounted on the hub in your jupyter notebook. Currently these files can be removed only via notebook.
+You can find these uploaded files in the volume which is mounted on the hub in your jupyter notebook. Currently these files can be removed only via notebook.

@@ -131,11 +131,11 @@ Parameter | Description | Default
 `jupyterhub.primehub.pod-affinity-required` | The affinity setting for jupyter notebook | `[]`
 `jupyterhub.primehub.pod-anti-affinity-preferred` | The affinity setting for jupyter notebook | `[]`
 `jupyterhub.primehub.pod-anti-affinity-required` | The affinity setting for jupyter notebook | `[]`
-`datasetUpload.enabled` | If dataset upload server enabled | `true`
+`datasetUpload.enabled` | If volume upload server enabled | `true`
 `datasetUpload.interface.tusd.resources` | Pod resource requests and limits | Please see [values.yaml](https://github.com/InfuseAI/primehub/blob/master/chart/values.yaml)
-`datasetUpload.interface.webFrontEndImage.repository` | The dataset upload frontend image repository | `infuseai/dataset-upload-web-front-end`
-`datasetUpload.interface.webFrontEndImage.tag` | The dataset upload frontend image tag | Please see [values.yaml](https://github.com/InfuseAI/primehub/blob/master/chart/values.yaml)
-`datasetUpload.interface.webFrontEndImage.pullPolicy` | The dataset upload frontend image pull policy | `IfNotPresent`
+`datasetUpload.interface.webFrontEndImage.repository` | The volume upload frontend image repository | `infuseai/dataset-upload-web-front-end`
+`datasetUpload.interface.webFrontEndImage.tag` | The volume upload frontend image tag | Please see [values.yaml](https://github.com/InfuseAI/primehub/blob/master/chart/values.yaml)
+`datasetUpload.interface.webFrontEndImage.pullPolicy` | The volume upload frontend image pull policy | `IfNotPresent`
 `datasetUpload.interface.webFrontEndImage.resources` | Pod resource requests and limits | Please see [values.yaml](https://github.com/InfuseAI/primehub/blob/master/chart/values.yaml)
 `datasetUpload.metacontrollerHooks.replicas` | The number of metacontroller webhook replicas | `1`
 `datasetUpload.metacontrollerHooks.image.repository` | The metacontroller webhook image repository | `metacontroller/jsonnetd`

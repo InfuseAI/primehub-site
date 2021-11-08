@@ -18,15 +18,15 @@ PrimeHub 提供使用者幾個從 Notebook 可以存取儲存資料的空間，�
 
 在群組`<GroupId>`下啟動的 Notebook，會有掛載的 `groupid`共享資料夾，使用者可存取。例： `InfuseAICat`群組 -> `infuseaicat/`資料夾。
 
-## Dataset Volume
+## Data Volume
 
-管理者有能力透過 Dataset Management 為使用者新增資料集專用的 **Dataset Volume**，其空間大小為管理者參考上載資料集大小而指定。
+管理者有能力透過 Volume Management 為使用者新增資料集專用的 **Data Volume**，其空間大小為管理者參考上載資料集大小而指定。
 
 如果使用者群組有關聯私有資料集或是公有資料集，使用者由同群組下啟動的 Notebook 可以存取這些資料集空間。
 
-資料集空間的讀寫權限會因資料集的 *type*, *global* 及 關聯 *groups* 而異。 參照 [Dataset - Group Access Control](../guide_manual/admin-dataset#groups-access-control).
+資料集空間的讀寫權限會因資料集的 *type*, *global* 及 關聯 *groups* 而異。 參照 [Volume - Group Access Control](../guide_manual/admin-volume#groups-access-control).
 
-在 Notebook， 資料集空間資料夾掛載在 `datasets/<dataset_name>`。請洽管理者新增資料集空間或存取權限。
+在 Notebook， 資料集空間資料夾掛載在 `datasets/<volume_name>`。請洽管理者新增資料集空間或存取權限。
 
 ## PHFS Storage
 
@@ -38,6 +38,6 @@ PrimeHub 提供使用者幾個從 Notebook 可以存取儲存資料的空間，�
 
 >此情況下，我們建議直接寫入 `HDF5`檔至使用者家目錄，再複製到 PHFS 做為模型部署準備，*避免直接寫入 PHFS*。
 
-除此之外，PrimeHub 功能也會利用到此空間儲放功能相關資料，如：同群組 Job 存放產出的 artifacts 於 `/phfs/jobArtifacts/`；也因為此空間先天的限制，我們不建議存放需求 IO 效能資料集於此，建議放置在專屬資料集空間 Dataset Volume。 PrimeHub 持續會開發提供更多利用存取 PHFS 的功能。
+除此之外，PrimeHub 功能也會利用到此空間儲放功能相關資料，如：同群組 Job 存放產出的 artifacts 於 `/phfs/jobArtifacts/`；也因為此空間先天的限制，我們不建議存放需求 IO 效能資料集於此，建議放置在專屬資料集空間 Data Volume。 PrimeHub 持續會開發提供更多利用存取 PHFS 的功能。
 
 在 Notebook， 此空間位於 `/phfs`。

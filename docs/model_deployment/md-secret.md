@@ -10,15 +10,15 @@ description: Secret Management
 </div>
 <br>
 
-Secret management provides the capabilities of managing secrets which are used for pull images or datasets, such as create, delete, edit secrets. Before adding secrets, we have to gain those generated secrets from sources of services. Please see [gain and add secrets](#gain-and-add-secrets).
+Secret management provides the capabilities of managing secrets which are used for pull images or volumes, such as create, delete, edit secrets. Before adding secrets, we have to gain those generated secrets from sources of services. Please see [gain and add secrets](#gain-and-add-secrets).
 
 ## Creating New Secrets
 
-![](assets/secret_add_v38.png)
+![](assets/secret_add_v310.png)
 
 Click `Add` to add a Secret and it will pop up the edit screen of Secret.
 
-![](assets/secret_empty_v38.png)
+![](assets/secret_empty_v310.png)
 
 You need to fill in these fields:
 
@@ -26,13 +26,13 @@ You need to fill in these fields:
 
 + `Display Name`
 
-+ `Type` `Git Dataset`, `Image Pull`
++ `Type` `Git Volume`, `Image Pull`
 
-### Type Git Dataset
+### Type Git Volume
 
-![](assets/secret_opaque_key_v26.png)
+![](assets/secret_git_volume.png)
 
-+ `Secret`: A secret of Git Dataset is used for pulling a dataset via git. The context is a private key related to a registered public key of ssh. Please see [Dataset Management](admin-dataset) to learn how to specify a pull-secret for a dataset.
++ `Secret`: A secret of Git Volume is used for pulling a data volume via git. The context is a private key related to a registered public key of ssh. Please see [Volume Management](admin-volume) to learn how to specify a pull-secret for a volume.
 
 ### Type Image Pull
 

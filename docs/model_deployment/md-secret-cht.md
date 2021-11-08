@@ -14,11 +14,11 @@ Secret management 提供管理者 Secret 管理能力，如：新增、刪除、
 
 ## 新增 Secrets
 
-![](assets/secret_add_v38.png)
+![](assets/secret_add_v310.png)
 
 點選 `Add` 新增 Secret，會跳出編輯該 Secret 的畫面。
 
-![](assets/secret_empty_v38.png)
+![](assets/secret_empty_v310.png)
 
 需填入下列各個欄位：
 
@@ -26,13 +26,13 @@ Secret management 提供管理者 Secret 管理能力，如：新增、刪除、
 
 + `Display Name` 顯示名稱。
 
-+ `Type` `Git Dataset`, `Image Pull`
++ `Type` `Git Volume`, `Image Pull`
 
-### Type Git Dataset
+### Type Git Volume
 
-![](assets/secret_opaque_key_v26.png)
+![](assets/secret_git_volume.png)
 
-+ `Secret`: Git Dataset 的 secret 用來認證授權透過 git 下載 dataset；內容為已登錄 ssh 公開金鑰對應的私人鑰匙。請見 Dataset Management。
++ `Secret`: Git Volume 的 secret 用來認證授權透過 git 下載 data volume；內容為已登錄 ssh 公開金鑰對應的私人鑰匙。請見 Volume Management。
 
 ### Type Image Pull
 
