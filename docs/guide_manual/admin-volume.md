@@ -17,7 +17,7 @@ Volume management provides the capabilities of managing volume resources such as
 
 ## Creating New Volume
 
-![](assets/dataset_5_v26.png)
+![](assets/dataset_v310.png)
 
 Click `Add` to add a Volume and it will pop up the edit screen of Volumes.
 

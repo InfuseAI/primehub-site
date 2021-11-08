@@ -17,7 +17,7 @@ Volume management 提供管理者 Volume 資源管理能力，如：新增、刪
 ## 創建 Volumes
 
 
-![](assets/dataset_5_v26.png)
+![](assets/dataset_v310.png)
 
 點選 `Add` 新增 Volumes，會跳出編輯該 Volume 的畫面。
 
