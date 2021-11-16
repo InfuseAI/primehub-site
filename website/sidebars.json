@@ -209,6 +209,11 @@
       },
       {
         "type": "subcategory",
+        "label": "Manage Apps",
+        "ids": ["guide_manual/admin-app-settings"]
+      },
+      {
+        "type": "subcategory",
         "label": "System",
         "ids": ["guide_manual/admin-system"]
       },

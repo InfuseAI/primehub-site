@@ -87,7 +87,7 @@ PrimeHub provides [Models](model-management) feature by integrating with MLflow 
 1. Click `Save` button to keep the setting for binding Models to the MLflow instance.
 
 Furthermore, if we have another installed MLflow app instance, then we can learn `App URL` and `Service Endpoint` from the installed App detail.
-+ Fill in `MLflow Tracking URI` with `http://`+`Service Endpoint`
++ Fill in `MLflow Tracking URI` with `http://`+`Service Endpoint`.
 + Fill in `MLflow UI URI` with `App URL`.
 ![](assets/app_detail.png)
 
