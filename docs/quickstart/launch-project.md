@@ -49,9 +49,9 @@ description: Start Notebook
 
 5. Enabled [Advanced Settings](../user-advanced-setting) if required. Click `Start Notebook`. Your Server environment would be instantiated. Once the Notebook is spawned, it will pop up a new tab.
    
->At very first time, browser will block the pop-up from PrimeHub by default, please allow the pop-up from PrimeHub. Click `My Server` to open Notebook in a new tab once the pop-up is allowed.
+>At very first time, browser will block the pop-up from PrimeHub by default, please allow the pop-up from PrimeHub. Click `Launch Notebook Server` to open Notebook in a new tab once the pop-up is allowed.
 
-![](assets/v34-jupyter-popup-block.png)
+![](assets/v39-jupyter-popup-block.png)
 
 ## Spawning
 
@@ -71,13 +71,13 @@ Logs are retrieved from Jupyter Pod since Notebook spawning to Notebook end. The
 
 ## Stop
 
-Click `Stop My Server`. It takes a short while to stop it.
+Click `Shutdown Server`. It takes a short while to stop it.
 
 ## Notice
 
 >If switching the current working group after the Notebook is launched, it indicates the Notebook is retained in the other group.
 
-![](assets/v3-jupyter-other-group.png)
+![](assets/v39-jupyter-other-group.png)
 
 ## Reference
 
