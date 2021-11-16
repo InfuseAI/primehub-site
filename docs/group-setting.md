@@ -78,17 +78,17 @@ It displays if **Model Deployment** is enabled to the group, i.e., if the group 
 </div>
 <br>
 
-PrimeHub provides models management feature, Models, by integrating MLflow. Before starting using Models, it requires the information of the binding MLflow instance.
+PrimeHub provides [Models](model-management) feature by integrating with MLflow app instance. We can easily set up the MLflow app in the following steps:
 
-![](assets/group_setting_mlflow_v38.png)
+1. Click `Create MLflow App` link to create the [MLflow app](primehub-app-builtin-mlflow).
+![](assets/group-settings-mlflow-default.png)
+1. After the MLflow app is successfully created, we can choose it from the `Configure with Installed Apps` selector. Both the required information `MLflow Tracking URI` and `MLflow UI URI` will be automatically filled.
+![](assets/group-settings-mlflow-configured.png)
+1. Click `Save` button to keep the setting for binding Models to the MLflow instance.
 
-After [the installation of MLflow by PrimeHub Apps](primehub-app), we can learn `App URL` and `Service Endpoint` from the installed App detail.
-
-![](assets/app_detail.png)
-
+Furthermore, if we have another installed MLflow app instance, then we can learn `App URL` and `Service Endpoint` from the installed App detail.
 + Fill in `MLflow Tracking URI` with `http://`+`Service Endpoint`
 + Fill in `MLflow UI URI` with `App URL`.
-
-Save the setting for binding Models to the MLflow instance.
+![](assets/app_detail.png)
 
 >By integrating externally-hosted MLflow server, see [Configuration](model-configuration) for the detail.
