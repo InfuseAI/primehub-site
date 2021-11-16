@@ -115,15 +115,20 @@
   </div>
 </div>
 <br>
-<p>PrimeHub provides models management feature, Models, by integrating MLflow. Before starting using Models, it requires the information of the binding MLflow instance.</p>
-<p><img src="/docs/assets/group_setting_mlflow_v38.png" alt=""></p>
-<p>After <a href="primehub-app">the installation of MLflow by PrimeHub Apps</a>, we can learn <code>App URL</code> and <code>Service Endpoint</code> from the installed App detail.</p>
-<p><img src="/docs/assets/app_detail.png" alt=""></p>
+<p>PrimeHub provides <a href="model-management">Models</a> feature by integrating with MLflow app instance. We can easily set up the MLflow app in the following steps:</p>
+<ol>
+<li>Click <code>Create MLflow App</code> link to create the <a href="primehub-app-builtin-mlflow">MLflow app</a>.
+<img src="/docs/assets/group-settings-mlflow-default.png" alt=""></li>
+<li>After the MLflow app is successfully created, we can choose it from the <code>Configure with Installed Apps</code> selector. Both the required information <code>MLflow Tracking URI</code> and <code>MLflow UI URI</code> will be automatically filled.
+<img src="/docs/assets/group-settings-mlflow-configured.png" alt=""></li>
+<li>Click <code>Save</code> button to keep the setting for binding Models to the MLflow instance.</li>
+</ol>
+<p>Furthermore, if we have another installed MLflow app instance, then we can learn <code>App URL</code> and <code>Service Endpoint</code> from the installed App detail.</p>
 <ul>
 <li>Fill in <code>MLflow Tracking URI</code> with <code>http://</code>+<code>Service Endpoint</code></li>
-<li>Fill in <code>MLflow UI URI</code> with <code>App URL</code>.</li>
+<li>Fill in <code>MLflow UI URI</code> with <code>App URL</code>.
+<img src="/docs/assets/app_detail.png" alt=""></li>
 </ul>
-<p>Save the setting for binding Models to the MLflow instance.</p>
 <blockquote>
 <p>By integrating externally-hosted MLflow server, see <a href="model-configuration">Configuration</a> for the detail.</p>
 </blockquote>
