@@ -82,7 +82,6 @@
         ]
       }
     ],
-    "Schedule": ["job-scheduling-feature"],
     "Models": [
       "model-management",
       "model-configuration",
