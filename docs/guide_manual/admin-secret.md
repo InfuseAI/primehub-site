@@ -20,11 +20,11 @@ Secret management provides the capabilities of managing secrets which are used f
 
 ## Creating New Secrets
 
-![](assets/secret_add_v310.png)
+![](assets/v310_secret_add.png)
 
 Click `Add` to add a Secret and it will pop up the edit screen of Secret.
 
-![](assets/secret_empty_v310.png)
+![](assets/v310_secret_empty.png)
 
 You need to fill in these fields:
 
@@ -32,17 +32,17 @@ You need to fill in these fields:
 
 + `Display Name`
 
-+ `Type`: `Git Volume`, `Image Pull`
++ `Type`: `Git Sync`, `Image Pull`
 
-### Type Git Volume
+### Type Git Sync
 
-![](assets/secret_git_volume.png)
+![](assets/v310_secret_git_sync.png)
 
-+ `Secret`: A secret of Git Volume is used for pulling a data volume via git. The context is a private key related to a registered public key of ssh. Please see [Volume Management](admin-volume) to learn how to specify a pull-secret for a volume.
++ `Secret`: A secret of Git Sync is used for pulling a data volume via git. The context is a private key related to a registered public key of ssh. Please see [Volume Management](admin-volume) to learn how to specify a pull-secret for a volume.
 
 ### Type Image Pull 
 
-![](assets/secret_dockerconfigjson_v26.png)
+![](assets/v310_secret_image_pull.png)
 
 It uses the secret of `docker-registry` type to authenticate with a container registry to pull an image. The registry host and credentials are required. Please see [Image Management](admin-image) to learn how to specify a pull-secret for an image.
 
