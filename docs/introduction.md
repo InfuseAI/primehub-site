@@ -34,9 +34,9 @@ PrimeHub has **PrimeHub Community**, **PrimeHub Enterprise** and **PrimeHub Depl
 
 ## User Portal
 
-The User Portal provides access to a full MLOps feature set. Data scientists can turn workflows into automated pipelines via Job submission and Scheduling; prepare data and develop trained models from Notebooks; deploy container-wrapped models as services via Model Deployment, and more.
+The User Portal provides access to a full MLOps feature set. Data scientists can turn workflows into automated pipelines via Jobs/Recurring Jobs; prepare data and develop trained models from Notebooks; deploy container-wrapped models as services via Model Deployment, and more.
 
-![landing-user.png](assets/v39-landing-user.png "The User Portal landing page")
+![landing-user.png](assets/v310-landing-user.png "The User Portal landing page")
 
 
 ### Get Started as a Team/Project Member
@@ -49,9 +49,9 @@ The User Portal provides access to a full MLOps feature set. Data scientists can
 
 + [Deploy a model in a quick way](quickstart/qs-primehub-deploy) `Quick-start`
 
-+ [Submit and monitor jobs](job-submission-feature)
++ [Submit and monitor jobs](job-submission-feature#jobs)
 
-+ [Schedule routine jobs](job-scheduling-feature)
++ [Schedule routine jobs](job-submission-feature#recurring-jobs)
 
 + [Share files within a group](shared-files)
 
@@ -85,7 +85,7 @@ The User Portal provides access to a full MLOps feature set. Data scientists can
 
 The Admin Portal enables administrators to manage all aspects of Primehub, such as access-control, resource and quota control, building custom environments via image builder etc.
 
-![](assets/v3-admin-portal_v31.png "Group Management in the Admin Portal")
+![](assets/v310-landing-admin.png "Group Management in the Admin Portal")
 
 ### Getting Started as an Administrator
 

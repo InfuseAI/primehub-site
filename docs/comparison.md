@@ -15,8 +15,8 @@ Here we list the features comparison among tiers.
 |Features|<span class="ce-only">Community</span>|<span class="ee-only">Enterprise</span>|<span class="deploy-only">Deploy</span>|
 |-|-|-|-|
 |[Notebooks](quickstart/launch-project)|✅️ |✅️ ||
-|[Jobs](job-submission-feature)||✅️ ||
-|[Schedules](job-scheduling-feature)||✅️ ||
+|[Jobs](job-submission-feature#jobs)||✅️ ||
+|[Recurring Jobs](job-submission-feature#recurring-jobs)||✅️ ||
 |[Models (Beta)](model-management)||✅️ |✅️ |
 |[Deployments](model-deployment-feature)||✅️ |✅️ |
 |[Shared Files](shared-files)|✅️ |✅️ |✅️ |

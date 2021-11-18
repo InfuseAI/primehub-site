@@ -80,11 +80,11 @@ By using Jobs, user can turn a workflow into a pipeline of automatic tasks which
 
 See [Jobs](job-submission-feature), [PrimeHub Notebook Extension](ph-notebook-extension).
 
-### Schedule
+### Recurring Jobs
 
-Jobs are one-time jobs, sometimes, users may want to automate jobs regularly; then **Schedule** feature can do the work, it could create a schedule which will arrange the submission of a same job recursively.
+Jobs are one-time jobs, sometimes, users may want to automate jobs regularly; then **Recurring Jobs** feature can do the work, it could create a schedule which will arrange the submission of a same job recursively.
 
-See [Schedule](job-scheduling-feature).
+See [Recurring Job](job-submission-feature#recurring-jobs).
 
 ### Deployments
 

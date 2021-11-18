@@ -54,9 +54,9 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Notebooks**  where users can launch a Jupyter Notebook for projects. See [Notebook environment](../quickstart/launch-project).
 
-+ **Jobs** where users can submit jobs of time-consuming tasks. See [Jobs](../job-submission-feature).
++ **Jobs** where users can submit jobs of time-consuming tasks. See [Jobs](../job-submission-feature#jobs).
 
-+ **Schedule** where users can schedule jobs regularly. See [Schedule](../job-scheduling-feature).
++ **Recurring Jobs** where users can schedule jobs regularly. See [Recurring Jobs](../job-submission-feature#recurring-jobs).
 
 + **Models** where users can track registered models from MLFlow. See [Models Management (Beta)](../model-management).
  
