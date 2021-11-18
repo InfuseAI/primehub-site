@@ -17,7 +17,7 @@ Volume management provides the capabilities of managing volume resources such as
 
 ## Creating New Volume
 
-![](assets/dataset_v310.png)
+![](assets/volume_list.png)
 
 Click `Add` to add a Volume and it will pop up the edit screen of Volumes.
 
@@ -41,19 +41,19 @@ You need to fill in these fields:
 
 There are several `type`:
 
-### persistent volume
+### Persistent Volume
 
 + `Provisioning`: `Auto`, `Manual`.
 
 #### Auto
 
-![](assets/dataset_pv_auto.png)
+![](assets/volume_pv_auto.png)
 
 Specifying the `volume size`, once it is confirmed, there is a fixed-size volume created and the volume size is not changeable by editing the volume.
 
 #### Manual
 
-![](assets/dataset_pv_manual.png)
+![](assets/volume_pv_manual.png)
 
 Setting provisioning `Manual` allows administrators configure the persistent volume manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub Volume. Please refer to the [Kubernetes official documentation](https://kubernetes.io/docs/concepts/storage/persistent-datasets/) for the configuration.
 
@@ -63,9 +63,9 @@ Click `Confirm` to complete the addition.
 
 ---
 
-### nfs
+### NFS
 
-![](assets/dataset_nfs.png)
+![](assets/volume_nfs.png)
 
 An nfs volume allows an existing NFS(Network File System) share to be mounted into the pod. The data of an nfs volume is preserved even if the volume is unmounted.
 NFS can be mounted by multiple groups simultaneously.
@@ -81,9 +81,9 @@ NFS settings remain editable after the creation.
 
 ---
 
-### hostPath
+### Host Path
 
-![](assets/dataset_hostpath.png)
+![](assets/volume_hostpath.png)
 
 In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod.
 
@@ -94,9 +94,9 @@ In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesy
 
 ---
 
-### git
+### Git Sync
 
-![](assets/dataset_git.png)
+![](assets/volume_gitsync.png)
 
 Fill the URL of git repo (can be https or git). You can use `#branch` to specify the branch or tag name.
 
@@ -104,18 +104,11 @@ Click `Change` to select a secret from the list if a credential is required.
 
 ![](assets/dataset_secret_list.png)
 
-
 ---
 
-![](assets/edit_groups.png)
+### Env
 
-If `Global` is disabled, please click `edit groups` under the edit Volume page to set accessible groups that have permission to use the Volume.
-
----
-
-### env
-
-![](assets/dataset_env.png)
+![](assets/volume_env.png)
 
 If volume is an environment variable, not a file, you can use `env` type. Clicking `+ Add field` to add fields and fill the `key` and `value`.
 
