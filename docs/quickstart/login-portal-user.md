@@ -18,7 +18,7 @@ sidebar_label: User Portal
 
 After login, a user lands on User Portal.
 
-![](assets/v39-landing-user.png)
+![](assets/v310-landing-user.png)
 
 On Portal, the left side is **side menu** composed of platform user features, the right side is the **context of the current working group**. At the top-right, there is a `Group:` dropdown of switching working groups. Users can switch the working group to proceed to different projects easily.
 
@@ -63,6 +63,8 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 + **Deployments** where users can deploy and serve models as services. See [Deployments Management](../model-deployment-feature). 
 
 + **Shared Files** where users can upload files to PHFS storage to share with group members. See [Shared Files](../shared-files).
+
++ **Datasets** where users can manage datasets. See [Datasets Management](../datasets).
 
 + **Apps** where users can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps (Beta)](../primehub-app).
 
