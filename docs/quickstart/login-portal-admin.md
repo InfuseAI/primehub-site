@@ -22,7 +22,7 @@ When login as an administrator, initially, you are landed on **User Portal**, cl
 
 ## Admin Portal
 
-![](assets/v3-admin-portal_v31.png)
+![](assets/v310-landing-admin.png)
 
 ### Profile Menu
 
@@ -46,10 +46,8 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + `Usage Report` where Admin can review monthly reports of usage. See [Usage Report](../guide_manual/admin-report). <span class="ee-only">Enterprise</span>
 
++ `App Settings` where Admin can import customized apps. See [App Settings](../guide_manual/admin-app-settings).
+
 + `System Settings` where Admin can configure system-wise settings. See [System Settings](../guide_manual/admin-system).
 
-+ `Maintenance` where Admin can run several built-in useful operations. See [Maintenance](../maintenance). <span class="ee-only">Enterprise</span>
-
 + `Grafana` where Admin can view dashboards on **Grafana**.
-
-
