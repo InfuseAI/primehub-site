@@ -22,8 +22,8 @@ InfuseAI provides and maintains certain images which can be used as base images 
 |-        |-     |-     |-    |
 |TensorFlow 2.5|infuseai/docker-stacks:tensorflow-notebook-v2-5-0-1eb85fe1|`CPU`|3.7|
 |TensorFlow 2.5|infuseai/docker-stacks:tensorflow-notebook-v2-5-0-1eb85fe1-gpu-cuda-11|`GPU`<br/>`CUDA 11`|3.7|
-|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1|`CPU`|3.7|
-|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-dbdcead1-gpu-cuda-11|`GPU`<br/>`CUDA 11`|3.7|
+|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-e7725c59|`CPU`|3.7|
+|TensorFlow 2.4|infuseai/docker-stacks:tensorflow-notebook-v2-4-1-e7725c59-gpu-cuda-11|`GPU`<br/>`CUDA 11`|3.7|
 |TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-1eb85fe1|`CPU`|3.7|
 |TensorFlow 1.15|infuseai/docker-stacks:tensorflow-notebook-v1-15-4-1eb85fe1-gpu|`GPU`|3.7|
 |TensorFlow 1.14|infuseai/docker-stacks:tensorflow-notebook-b3c52f35|`CPU`|3.7|
