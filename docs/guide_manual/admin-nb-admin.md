@@ -6,11 +6,11 @@ title: Notebooks Admin
 
 ## Notebook Instances
 
-The page represents Hub of all of user Notebook instances; if an instance is running, two action buttons, `stop server`/`access server` appear. If a user who hasn't launched any Notebook instance since the account creation, the user won't be listed here since Hub doesn't have any relative record.
+The page represents Hub of all of user Notebook instances; if an instance is running, two action buttons, `Access Server`/`Stop Server` appear. If a user who hasn't launched any Notebook instance since the account creation, the user won't be listed here since Hub doesn't have any relative record.
 
-Platform Admin can take actions against the instance. `Stop All` will stop all of running instances at once.
+Platform Admin can take actions against the instance. `Stop All Activities` will stop all of running instances at once.
 
-![](assets/nb-admin-list.png)
+![](assets/v310-nb-admin-list.png)
 
 ## Out of Sync
 
@@ -22,7 +22,7 @@ For example, the page here indicates a user's Notebook instance running, but out
 kubectl -n hub get pod | grep jupyter-<user_id>
 ```
 
-In this case, use `delete user` for the reset of the user. Don't worry, it doesn't *delete user account from PrimeHub*, once the user launches a Notebook instance, the user account is listed here again. It forces Hub to synchronize with Kubernetes  when the user try launching Notebook next time.
+In this case, use `Remove From Instance` for the reset of the user. Don't worry, it doesn't *delete user account from PrimeHub*, once the user launches a Notebook instance, the user account is listed here again. It forces Hub to synchronize with Kubernetes  when the user try launching Notebook next time.
 
 
 
