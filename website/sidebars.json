@@ -135,6 +135,7 @@
       }
     ],
     "Shared Files": ["shared-files"],
+    "Datasets": ["datasets"],
     "Apps": [
       "primehub-app",
       {
