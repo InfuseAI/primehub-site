@@ -45,6 +45,26 @@ sshBastionServer:
 
 You may need to restart the hub pod manually to reload the config.
 
+#### Configuration
+
+SSH bastion server will access Kubernetes API to get pods' info. The default API port is `6443`.
+
+If your Kubernetes API listens on other ports, you need to specify the port in `helm_override/primehub.yaml`.
+For instance, microk8s is using `16443` as default API port. The configuration will look like this:
+
+```yaml
+sshBastionServer:
+  enabled: true
+  netpol:
+    kubeApiPort: 16443
+```
+
+To obtain Kubernetes API info, please run the following command.
+
+```bash
+kubectl get services kubernetes -o custom-columns=NAME:.metadata.name,IP:.spec.clusterIP,PORT:.spec.ports[0].targetPort
+```
+
 ### Allow SSH connection
 
 You'll need to allow external SSH connection to your ingress / loadbalancer
