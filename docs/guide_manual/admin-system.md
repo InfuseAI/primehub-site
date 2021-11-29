@@ -18,19 +18,21 @@ description: System Settings
 
 ## PrimeHub License
 
-![](assets/license_key_v34.png)
+![](assets/license_key_v310.png)
 
 Information of the PrimeHub license:
 
-+ `License Status`
++ `License Status`: `Activated` / `Unauthorized` / `Expired`; status of the license.
 
-+ `Utilized Nodes`: Used/Granted; a warning banner appears on User Portal when **Used > Granted**.
++ `Nodes`: Used/Granted number of nodes.
 
-+ `Deployed Models`: Used/Granted; a warning banner appears on User Portal when **Used > Granted + 10%**, furthermore, new model creation is disabled.
++ `Groups`: Used/Granted number of groups.
 
-+ `Expiration Date`
++ `Deployments`: Used/Granted number of deployed models.
 
-+ `Licensed To`
++ `Expiration Date`: The expiration date of the license.
+
++ `Licensed To`: Name of the organization that issued the license.
 
 ### License warning
 
@@ -44,7 +46,7 @@ A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maxim
 
   > You are using more nodes than your license allows. Please contact your system administrator.
 
-+ When used model amount > granted model amount + 10%, a warning message appears.
++ When used deployment amount > granted deployment amount + 10%, a warning message appears.
 
   >Please contact your system administrator for assistance to upgrade your license to run more models.
 
