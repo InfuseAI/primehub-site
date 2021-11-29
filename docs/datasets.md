@@ -53,17 +53,32 @@ All uploaded files are stored in the dataset.
 
 ## Browse Dataset
 
-### Data Tab
+### Dataset List
+
+![](assets/datasets-list.png)
+
++ `Name`: Name of the dataset.
++ `Created By`: User who created the dataset.
++ `Last Modified`: Last modified time of the dataset.
++ `Tags`: Tags for the dataset.
++ `Delete button`: Delete the dataset.
+
+### Dataset - Data Tab
 
 ![](assets/datasets-data-tab.png)
 
 The **Data** tab shows the list of files in the dataset.
 
-### Information Tab
+### Dataset - Information Tab
 
 ![](assets/datasets-info-tab.png)
 
-The **Information** tab shows the detailed information of the dataset.
++ `Dataset Name`: Name of the dataset.
++ `Created By`: User who created the dataset.
++ `Last Modified`: Last modified time of the dataset.
++ `Tags`: Tags for the dataset.
++ `Size`: Size of the dataset.
++ `Edit button`: Edit the dataset.
 
 ## Access from Jupyter
 

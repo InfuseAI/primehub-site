@@ -95,17 +95,20 @@ The list shows connecting instance types which are able to be used by this group
 
 The list shows connecting images which are able to be used by this group.
 
-## Datasets
+## Volumes
 
-![](assets/admin_group_ds_v25.png)
+![](assets/admin_group_volume.png)
 
-The list shows connecting datasets which can be read or written. We also can edit these datasets through here.
-
+The list shows connecting volumes which can be read or written. We also can edit these volumes through here.
 
 ## Deleting Group
 
-Click `Delete` button of Actions in the group list, the confirmation dialog will pop up, and the group will be deleted when you click `OK`.
+![](assets/admin_group_delete.png)
+
+Click `Delete` button in the group list, the confirmation dialog will pop up.
+
+The group and all associated resources such as [Jobs](../job-submission-feature#jobs), [Recurring Jobs](../job-submission-feature#recurring-jobs), [Deployments](../model-deployment-feature), and [Apps](../primehub-app), will be deleted when you click `Yes`.
 
 ## Editing Group
 
-Click `Edit` button of Actions to enter the edit page of the Group.
+Click `Edit` button to enter the edit page of the Group.
