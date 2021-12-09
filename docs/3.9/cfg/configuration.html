@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configuration · PrimeHub</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The configuration file is located in folder `bin/phenv --path`"/><meta name="docsearch:version" content="3.9"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Configuration · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="The configuration file is located in folder `bin/phenv --path`"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.9</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.9/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.9/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://one.primehub.io/" target="_blank">🌟 1-Click Install ⇗</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Configuration</h1></header><article><div><span><p>The configuration file is located in folder <code>bin/phenv --path</code></p>
+<p>The two main configuration files are</p>
+<ul>
+<li><code>$(bin/phenv --path)/.env</code></li>
+<li><code>$(bin/phenv --path)/helm_override/primehub.yaml</code></li>
+</ul>
+<p>For the concept of customization, please reference <a href="/docs/3.9/design/customization">here</a></p>
+<h2><a class="anchor" aria-hidden="true" id="environment-variables"></a><a href="#environment-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Variables</h2>
+<p>Configuration in <code>$(bin/phenv --path)/.env</code></p>
+<p><strong>The Environment Variables for PrimeHub</strong></p>
+<table>
+<thead>
+<tr><th>Environment</th><th>Description</th><th>Optional</th></tr>
+</thead>
+<tbody>
+<tr><td><code>PRIMEHUB_DOMAIN</code></td><td>Domain for user portal</td><td>No</td></tr>
+<tr><td><code>PRIMEHUB_SCHEME</code></td><td>Scheme for user portal</td><td>No if <code>PRIMEHUB_FEATURE_USER_PORTAL</code> is enabled</td></tr>
+<tr><td><code>PRIMEHUB_PORT</code></td><td>Port for user portal</td><td>Yes</td></tr>
+<tr><td><code>KC_DOMAIN</code></td><td>Domain for external keycloak</td><td>No</td></tr>
+<tr><td><code>KC_SCHEME</code></td><td>Scheme for external keycloak</td><td>No</td></tr>
+<tr><td><code>KC_PORT</code></td><td>Port for external keycloak</td><td>Yes</td></tr>
+<tr><td><code>KC_USER</code></td><td>Keycloak admin username</td><td>No</td></tr>
+<tr><td><code>KC_PASSWORD</code></td><td>Keycloak admin passowrd</td><td>No</td></tr>
+<tr><td><code>KC_DB_PASSWORD</code></td><td>Keycloak DB password</td><td>Yes. default is <code>$KC_PASSWORD</code></td></tr>
+<tr><td><code>KC_REALM</code></td><td>Keycloak realm to install primehub</td><td>Yes. default is <code>primehub</code></td></tr>
+<tr><td><code>PRIMEHUB_CONSOLE_DOCKER_USERNAME</code></td><td>image pulling user for admin-ui image</td><td>No</td></tr>
+<tr><td><code>PRIMEHUB_CONSOLE_DOCKER_PASSWORD</code></td><td>image pulling password for admin-ui</td><td>No</td></tr>
+<tr><td><code>PRIMEHUB_STORAGE_CLASS</code></td><td>the default storage class of all RWO PVCs</td></tr>
+<tr><td><code>ADMIN_UI_GRAPHQL_SECRET_KEY</code></td><td>The secret key for graphql.</td><td>No. Generated by <code>make init</code></td></tr>
+<tr><td><code>HUB_AUTH_STATE_CRYPTO_KEY</code></td><td>z2jh <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/reference.html#auth-state-cryptokey">auth state crypto key</a></td><td>No. Generated by <code>make init</code></td></tr>
+<tr><td><code>HUB_PROXY_SECRET_TOKEN</code></td><td>z2jh <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/reference.html#proxy-secrettoken">proxy secret token</a></td><td>No. Generated by <code>make init</code></td></tr>
+<tr><td><code>PRIMEHUB_AIRGAPPED</code></td><td>If the cluster is in airgap environment</td><td>Yes. default is <code>false</code></td></tr>
+<tr><td><code>PRIMEHUB_FEATURE_DATASET_UPLOAD</code></td><td>If the dataset upload feature is enabled</td><td>Yes. default is <code>false</code></td></tr>
+<tr><td><code>PRIMEHUB_FEATURE_JOB_SUBMISSION</code></td><td>If the job submission feature is enabled</td><td>Yes. default is <code>false</code></td></tr>
+</tbody>
+</table>
+<p><strong>The Environment Variables for Grafana</strong></p>
+<table>
+<thead>
+<tr><th>Environment</th><th>Description</th><th>Optional</th></tr>
+</thead>
+<tbody>
+<tr><td><code>GRAFANA_SCHEME</code></td><td>The url scheme of grafana</td><td>Yes. default is <code>$PH_SCHEME</code></td></tr>
+<tr><td><code>GRAFANA_DOMAIN</code></td><td>The url domain of grafana</td><td>No</td></tr>
+<tr><td><code>GRAFANA_KEYCLOAK_PROXY_CLIENT_SECRET</code></td><td>The secret of keycloak client <code>grafana-proxy</code></td><td>No</td></tr>
+</tbody>
+</table>
+<p><strong>The Environment Variables for Kibana</strong></p>
+<table>
+<thead>
+<tr><th>Environment</th><th>Description</th><th>Optional</th></tr>
+</thead>
+<tbody>
+<tr><td><code>KIBANA_KEYCLOAK_PROXY_CLIENT_SECRET</code></td><td>The secret of keycloak client <code>kibana-proxy</code></td><td>No</td></tr>
+</tbody>
+</table>
+<p><strong>Deprecated</strong></p>
+<table>
+<thead>
+<tr><th>Environment</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>PRIMEHUB_FEATURE_USER_PORTAL</code></td><td>If the user portal is enabled. Deprecated because it is enabled by default and cannot set it to false.</td></tr>
+<tr><td><code>PH_DOMAIN</code></td><td>parent domain name for this installation. (e.g. <code>example.com</code>). Deprecated because user portal is enabled by default.</td></tr>
+<tr><td><code>PH_SCHEME</code></td><td>http or https. Deprecated because user portal is enabled by default.</td></tr>
+<tr><td><code>PH_PORT</code></td><td>port. Deprecated because user portal is enabled by default.</td></tr>
+<tr><td><code>ADMIN_UI_CLIENT_SECRET</code></td><td>The secret of keycloak client <code>admin-ui</code>. Deprecated because bootstrap script would get it from keycloak and put it to secret.</td></tr>
+<tr><td><code>HUB_CLIENT_SECRET</code></td><td>The secret of keycloak client <code>jupyterhub</code>. Deprecated because bootstrap script would get it from keycloak and put it to secret.</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#environment-variables">Environment Variables</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>

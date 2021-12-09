@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Job Submission · PrimeHub</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Job Submission"/><meta name="docsearch:version" content="3.9"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Job Submission · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="Job Submission"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.9</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.9/introduction" target="_self">Documentation</a></li><li class="siteNavGroupActive"><a href="/docs/3.9/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://one.primehub.io/" target="_blank">🌟 1-Click Install ⇗</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Jobs</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/index-zh">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-core">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-installation">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">QuickStart<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-quickstart">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorial<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-tutorial">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Notebooks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/launch-project">Start Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/user-advanced-setting">Spawner 進階設定</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/ssh-config-cht">SSH Server 功能</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/notebook-tips-cht">小訣竅</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Extension</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/ph-notebook-extension-cht">PrimeHub Extension</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/notebook-as-job-cht">Notebook as a Job</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Jobs<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/3.9/zh-tw/job-submission-cht">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/job-artifact-cht">Job Artifacts</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">教學</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/job-tutorial-more">Origins</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Schedule<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/job-scheduling-feature-cht">Job Scheduler</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Models<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-management-cht">Overview (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-model-management">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deployments<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-feature">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-tutorial-concepts-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-tutorial-prepackaged-image-cht">透過 Pre-packaged Server 模型部署</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-tutorial-prepackaged-image-phfs-cht">透過 Pre-packaged Server 模型部署 (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-tutorial-model-image-cht">透過 Language Wrapper 打包模型映像檔部署</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Pre-packaged servers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-prepackaged-server-intro-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-prepackaged-server-tensorflow2-cht">TensorFlow server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-prepackaged-server-pytorch-cht">PyTorch Model Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-prepackaged-server-sklearn-cht">SKLearn server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-prepackaged-server-custom-cht">Customize Pre-packaged Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-prepackaged-server-test-cht">Run Pre-packaged Server Locally</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Package from Language Wrapper 教學</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-language-wrapper-intro-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-tutorial-package-image">建置模型部署所需之映像檔 (Python)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-tutorial-package-image-r">建置模型部署所需之映像檔 (R)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-language-wrapper-reusable-base-image-cht">透過預建置 Base Image 加速流程</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Advanced</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-prediction-apis-cht">Prediction APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/model-deployment-model-uri-cht">Model URI</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Shared Files<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/shared-files-cht">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Apps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/primehub-app-cht">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">更多資訊</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-apps">Origins</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Group Administration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/group-image-cht">Images</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/group-setting-cht">Settings</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Admin Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/login-portal-admin">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用者及群組管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-group-cht">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Instance Type 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/usecase-toleration-cht">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/usecase-nodeselector-cht">[使用案例] NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Image 創建及管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/custom-image-guideline">客製 Image 指南</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Dataset 管理及上傳</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-uploader-cht">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Secret 管理及取得</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Instance 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-nb-admin-cht">Notebooks Admin</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用量月報表</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-report-cht">Usage Reports</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系統</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/admin-system-cht">System Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">維運工具</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/maintenance-cht">Maintenance Notebook (汰舊中)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume (汰舊中)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume (汰舊中)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/assign-group-admin-cht">指定群組管理者</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/add-infuseai-image">新增 InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub Deploy<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-deploy">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-design">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-config">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-ref">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/quickstart/nb-data-store-cht">資料儲存空間</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/ssh-vscode-cht">VSCode 遠端存取 Notebooks</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/ssh-keygen-cht">SSH 金鑰生成</a></li><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/guide_manual/images-list">InfuseAI 提供 Images</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.9/zh-tw/idx-trouble">Origins</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Job Submission</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="job"></a><a href="#job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job</h2>
+<p>我們有時會需要批次完成特定工作。特別是需要長時間運算的工作，使用者又無法一直監視著整個過程的時候，我們可以利用<code>Job Submission</code>創建一個<code>Job</code>把工作指令項目批次地加入，再將<code>Job</code>送出於背景執行，隨時地監視執行的過程及結果。如果我們想要的是週期性自動發動的<code>job</code>，我們可以利用 <a href="job-scheduling-feature-cht"><strong>Job Scheduler</strong></a> 來創建這類型 job 及設定其週期性。</p>
+<h3><a class="anchor" aria-hidden="true" id="lifetime"></a><a href="#lifetime" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lifetime</h3>
+<ul>
+<li><p><code>job</code>最長可以執行 <strong>24</strong> 個小時。一旦超過 24 小時後，會被中止宣告失敗。</p></li>
+<li><p>結束<code>job</code>的工作日誌基本上會被保留 <strong>7</strong> 天；超過 7 天後，<code>job</code>還是會在列表中，但<code>Logs</code>資訊會被刪除；另外，結束<code>job</code>預設只會保留 <strong>30</strong> 天，30 天後會從列表及系統中移除。</p>
+<blockquote>
+<p><strong><em>由於 Job 容器有可能提早被其執行環境給回收，因此<code>Logs</code>有可能在 7 天內被刪除。</em></strong></p>
+</blockquote></li>
+<li><p>系統預設只保留最後 <strong>4000</strong> 筆 Job 記錄；總數超過 4000 時，系統會從最舊的記錄開始刪除。</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="job-列表"></a><a href="#job-列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 列表</h2>
+<p>此頁列出已創建 Jobs 及其對應資訊。</p>
+<p><img src="/docs/assets/jsub_main_beta_v31.png" alt=""></p>
+<p>列表中的<code>Job</code>對應資訊欄位：</p>
+<table>
+<thead>
+<tr><th>欄位</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Status</code></td><td>狀態， <code>Pending</code>, <code>Preparing</code>, <code>Running</code>, <code>Failed</code>, <code>Succeeded</code> 及 <code>Cancelled</code></td></tr>
+<tr><td><code>Job name</code></td><td>名稱</td></tr>
+<tr><td><code>Schedule</code></td><td>如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稱；反之顯示<code>-</code>。</td></tr>
+<tr><td><code>User</code></td><td>所有者</td></tr>
+<tr><td><code>Group</code></td><td>所屬群組</td></tr>
+<tr><td><code>Timing</code></td><td>執行時間</td></tr>
+<tr><td><code>Action</code></td><td>我們可以<ul><li><code>Rerun</code>已結束的工作</li><li><code>Cancel</code>正在執行的工作</li><li><code>Clone</code>複製同樣設定的工作來建立新的</li></ul></td></tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>New Job</code>: 點擊按鈕，創建<code>job</code>。</p></li>
+<li><p><code>Refresh</code>: 點擊按鈕，刷新<code>job</code>列表。</p></li>
+<li><p><code>Job name</code> link: 點擊名稱連結，進入 Job 詳細頁。</p></li>
+<li><p><code>Schedule</code> link: 點擊名稱連結，進入 Job Scheduler 詳細頁。</p></li>
+<li><p><code>Submitted by Me</code>勾選，只列出該使用者創建的<code>job</code>。</p></li>
+<li><p><code>Search job name</code> 關鍵字搜尋。</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="創建-job"></a><a href="#創建-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>創建 Job</h2>
+<p>請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 <code>Group:</code>。</p>
+<p><img src="/docs/assets/jsub_create_v33.png" alt=""></p>
+<ul>
+<li><p><code>InstanceTypes</code>: 選擇<code>job</code>所需<code>instance type</code>資源佈屬。</p></li>
+<li><p><code>Images</code>: 選擇<code>job</code>的執行環境。</p></li>
+<li><p><code>Job name</code>: 指定<code>job</code>名稱。</p></li>
+<li><p><code>Command</code>: 指定<code>job</code>批次工作項目。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="command"></a><a href="#command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command</h3>
+<p>使用者可以在任務內執行 <code>sudo apt &lt;command&gt;</code> 安裝軟體套件。</p>
+<p>例如：</p>
+<pre><code class="hljs">sudo apt <span class="hljs-keyword">update</span>
+sudo apt <span class="hljs-keyword">install</span> &lt;<span class="hljs-keyword">package</span>&gt; <span class="hljs-comment">--assume-yes</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="job-可存取工作目錄專案目錄及資料集目錄"></a><a href="#job-可存取工作目錄專案目錄及資料集目錄" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 可存取工作目錄、專案目錄及資料集目錄</h3>
+<blockquote>
+<p>注意：Job 的預設路徑是在 <code>/home/jovyan</code>，但這是在 Job Pod 裡的環境，不是 JupyterHub Pod 裡！
+所以 JupyterHub <code>/home/jovyan</code>下的其它檔案並 <strong>不存在</strong> 此時的 Job Pod 的<code>/home/jovyan</code>。Job 這裡只會有掛載的<code>&lt;group volume&gt;</code>及<code>&lt;dataset&gt;</code>。</p>
+</blockquote>
+<table>
+<thead>
+<tr><th>目錄</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td><code>/home/jovyan</code></td><td><code>job</code>執行時的暫存工作目錄。<em><strong>注意:</strong> 如果輸出 data 於此，此 data 將會著<code>job</code>結束而消失，只能做為暫存之用。 不再是<del><code>/workingdir</code></del></em>！</td></tr>
+<tr><td><code>/home/jovyan/&lt;group&gt; -&gt; /project/&lt;group&gt;/</code></td><td>用此路徑(或 Symbolic link)，存取群組目錄，可以做為讀取及輸出常態性資料，即使<code>job</code>已經結束。<em><strong>注意：</strong> <code>group volume</code>必須要事存在，請洽系統管理員。</em></td></tr>
+<tr><td><code>/home/jovyan/datasets/&lt;dataset&gt; -&gt; /datasets/&lt;dataset&gt;</code></td><td>用此路徑(或 Symbolic link)，存取群組資料集。<em><strong>注意：</strong> <code>dataset volume</code>必須要事先存在，請洽系統管理員。</em></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="job-可存取環境變數"></a><a href="#job-可存取環境變數" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job 可存取環境變數</h3>
+<table>
+<thead>
+<tr><th>變數名稱</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td><code>$PRIMEHUB_USER</code></td><td>Job 所有者</td></tr>
+<tr><td><code>$PRIMEHUB_GROUP</code></td><td>Job 所屬群組</td></tr>
+</tbody>
+</table>
+<p><strong>Python command option</strong></p>
+<ul>
+<li><code>python -u</code> 我們可以用 <code>-u</code> 強制輸出訊息不經由緩衝，如此可以在<code>Logs</code>看到即時訊息。
+<strong>Example 1</strong>: 假設<code>train_mint.py</code>事先存在名叫<code>research</code>的<code>group volume</code>，我們可以進<code>/project/research</code>下，執行該 python file 做為一個<code>job</code>。<code>job</code>執行期間輸出的 data 則存在此路徑的相對位置。</li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> /project/research/
+python -u train_minst.py
+</code></pre>
+<p><strong>Example 2</strong>: 如果我們直接執行下列指令，沒有變更路徑，<code>job</code>的工作目錄位在<code>/home/jovyan</code> job 執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在<code>/home/jovyan</code>的 data 資料會隨著<code>job</code>結束而消失。</p>
+<pre><code class="hljs css language-bash">python -u /project/research/train_minst.py
+</code></pre>
+<p><code>Submit</code>: 點擊按鈕，送出工作執行。</p>
+<blockquote>
+<p>有時我們會發現重覆安裝常用的套件在每次的執行環境，此時我們可以請 Group admin/Admin 客製映像檔包函這些常用套件，或是我們可以自行有程度地客製執行環境來減少重覆安裝常用套件的情況。 參照 <a href="#reference">Reference</a>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="查看-job"></a><a href="#查看-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看 Job</h2>
+<p>在列表上點擊想要查看的<code>job</code>名稱，查看內容資訊及執行記錄；可以<code>Rerun</code>或<code>Clone</code>此 Job。</p>
+<h3><a class="anchor" aria-hidden="true" id="panel"></a><a href="#panel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Panel</h3>
+<p>It shows the brief information of the job.</p>
+<p><img src="/docs/assets/jsub_panel.png" alt=""></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Status</code></td><td>狀態，<code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Failed</code>, <code>Succeeded</code> 及 <code>Cancelled</code></td></tr>
+<tr><td><code>Duration</code></td><td>執行時間</td></tr>
+<tr><td><code>Finished</code></td><td>多久前結束</td></tr>
+<tr><td><code>Schedule</code></td><td>如果此 Job 是被 scheduler 根據排程時間發動的話，這裡會顯示 Scheduler 名稠；反之顯示<code>-</code>；點擊名稱連結，進入 Job Scheduler 詳細頁。</td></tr>
+<tr><td><code>User</code></td><td>所有者</td></tr>
+</tbody>
+</table>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="tabs"></a><a href="#tabs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tabs</h3>
+<p><img src="/docs/assets/jsub_view_tabs_v32.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
+<p><code>Job</code>記載內容資訊如下：</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Message</code></td><td>執行回傳訊息</td></tr>
+<tr><td><code>Job ID</code></td><td>ID</td></tr>
+<tr><td><code>Job name</code></td><td>名稱</td></tr>
+<tr><td><code>Creation Time</code></td><td>創建時間</td></tr>
+<tr><td><code>Start Time</code></td><td>開始時間</td></tr>
+<tr><td><code>Finished Time</code></td><td>結束時間</td></tr>
+<tr><td><code>Group</code></td><td>所屬群組</td></tr>
+<tr><td><code>Instance type</code></td><td>所佈屬 <code>instance type</code>資源</td></tr>
+<tr><td><code>Image</code></td><td>所屬執行環境</td></tr>
+<tr><td><code>Command</code></td><td>批次工作項目內容</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="artifacts"></a><a href="#artifacts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Artifacts</h3>
+<p>如果工作在執竹的過程中有產出資料 (Artifacts) 存放在 <code>artifacts/</code>，這裡會列舉出在此 <a href="../design/phfs">PHFS 儲存空間</a> 下的所有檔案；同時，在 Notebook 裡這些 artifacts 是位在此路徑  <code>/phfs/jobArtifacts/job-xxxxx</code>。請參照 <a href="job-artifacts-simple-cht">Job Artifacts 初階範例</a>。</p>
+<h3><a class="anchor" aria-hidden="true" id="monitoring"></a><a href="#monitoring" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monitoring</h3>
+<blockquote>
+<p>此功能需要 <a href="../design/phfs">PHFS</a> 開啟；當 PHFS 功能未開啟時，顯示訊息 &quot;feature not enabled, please contact admin&quot;.</p>
+</blockquote>
+<p>監測表顯示此 Job 所用到的資源。</p>
+<ul>
+<li><p><code>15 mins</code>, <code>1 hour</code>, <code>3 hours</code>, <code>Lifetime</code>: 15mins 顯示最近 15 分內的數據， Lifetime 顯示從開始到結束的數據。請見各區間<a href="../design/job-monitoring#data-format">取樣刷新頻率設計</a>。</p>
+<blockquote>
+<p>選擇「最近時間區間內」顯示的平均數據；</p>
+</blockquote></li>
+<li><p><code>Overall Usage</code>: CPU 及 Memory(MB).</p></li>
+<li><p><code>GPU Device Usage</code>: 當此 Job 有配置到 GPU 時才顯示 GPU 及 Memory(MB)。</p></li>
+</ul>
+<p><img src="/docs/assets/jsub-monitoring-15m.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
+<blockquote>
+<p>預設此頁只顯示<strong>最新的 2000 行</strong>資訊；按下<code>Download</code>下載完整記錄。</p>
+</blockquote>
+<p>當工作執行「成功」或「失敗」，我們可以由此查看整個執行過程、結果、甚至除錯。</p>
+<p>當工作是被「取消」或「中止」，無法由此查到任何記錄！因為此時的 Pod 已被刪除回收。</p>
+<p>有時，我們只想看最後的輸出結果，可以點擊<code>Scroll to Bottom</code>跳過攏長記錄直接到記錄尾端。</p>
+<p>另外，由於介面上只顯示最後的 2000 行記錄，我們可以點擊<code>Download</code>下載完整的記錄檔來檢查。</p>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<ul>
+<li><a href="../tasks/customize-job-runtime">Customize Runtime Environment</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.9/zh-tw/notebook-as-job-cht"><span class="arrow-prev">← </span><span>Notebook as a Job</span></a><a class="docs-next button" href="/docs/3.9/zh-tw/job-artifact-cht"><span>Artifacts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#job">Job</a><ul class="toc-headings"><li><a href="#lifetime">Lifetime</a></li></ul></li><li><a href="#job-列表">Job 列表</a></li><li><a href="#創建-job">創建 Job</a><ul class="toc-headings"><li><a href="#command">Command</a></li><li><a href="#job-可存取工作目錄專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></li><li><a href="#job-可存取環境變數">Job 可存取環境變數</a></li></ul></li><li><a href="#查看-job">查看 Job</a><ul class="toc-headings"><li><a href="#panel">Panel</a></li><li><a href="#tabs">Tabs</a></li><li><a href="#information">Information</a></li><li><a href="#artifacts">Artifacts</a></li><li><a href="#monitoring">Monitoring</a></li><li><a href="#logs">Logs</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2021 InfuseAI</section></footer></div></body></html>
