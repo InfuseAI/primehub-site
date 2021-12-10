@@ -1,7 +1,8 @@
 ---
-id: prerequisites
+id: version-3.10-prerequisites
 title: Prerequisites
 description: Prerequisites
+original_id: prerequisites
 ---
 
 <div class="label-sect">
