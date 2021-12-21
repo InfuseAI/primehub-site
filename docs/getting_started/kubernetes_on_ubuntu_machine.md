@@ -17,7 +17,7 @@ This document will guide you to install [MicroK8s](https://microk8s.io/) on a si
 [MicroK8s](https://microk8s.io/) supports multi-platform, we demonstrate it in the following spec:
 
 * Ubuntu 18.04 LTS
-* Kubernetes 1.19 version
+* Kubernetes 1.21 version
 * IP address: `EXTERNAL-IP`
 * Networking: allow port 80 for HTTP
 
@@ -74,7 +74,7 @@ source ~/.bashrc
 Run the `create singlenode` command:
 
 ```bash
-./primehub/install//primehub-install create singlenode --k8s-version 1.19
+./primehub/install//primehub-install create singlenode --k8s-version 1.21
 ```
 
 After the first execution, you will see the message. Because it adds the user to `microk8s` group and needs to relogin:
@@ -86,7 +86,7 @@ After the first execution, you will see the message. Because it adds the user to
 After relogin, run the same command again to finish the single-node provision:
 
 ```bash
-./primehub-install create singlenode --k8s-version 1.19
+./primehub-install create singlenode --k8s-version 1.21
 ```
 
 >During the installation, you might run into troubles or need to modify the default settings, please check the [TroubleShooting](#troubleshooting) section.
@@ -339,7 +339,7 @@ You may run into troubles during the installation, we list some of them, hopeful
 When hostname is invalid, the installation might suspend at the `microk8s status` phase, because the cluster is not running:
 
 ```bash
-ubuntu@foo_bar:~$ ./primehub-install create singlenode --insecure-registry foo-bar:5000 --k8s-version 1.19
+ubuntu@foo_bar:~$ ./primehub-install create singlenode --insecure-registry foo-bar:5000 --k8s-version 1.21
 [Search] Folder primehub-v2.6.2
 [Not Found] Folder primehub-v2.6.2
 [Search] tarball primehub-v2.6.2.tar.gz
@@ -434,7 +434,7 @@ The install script supports `--insecure-registry` to create a node with extra do
 It is possible that we execute installation command multiple times, in this case , it would have set up duplicated registries in the containerd's configuration file.
 
 ```bash
-./primehub-install create singlenode --insecure-registry foo-bar:5000 --k8s-version 1.19
+./primehub-install create singlenode --insecure-registry foo-bar:5000 --k8s-version 1.21
 ```
 
 #### Symptom
