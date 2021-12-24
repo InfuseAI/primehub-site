@@ -42,15 +42,25 @@ It lists files and directories with columns of `Name`, `Size`, and `Last Modifie
 
 ## Upload
 
-Click `Upload` to pop up a uploader.
+Click `Upload` to pop up an uploader.
 
-![](assets/files-uploader.png)
+![](assets/v311-files-uploader.png)
 
-Drop files, paste or click `Browse files` to start uploading files.
+Click or drag files to start uploading them.
 
-![](assets/files-uploaded.png)
+During uploading, the progress bar will show the progress of uploading.
 
-Click `OK` to close the dialogue or click `Done`/`+` to upload additional files.
+![](assets/files-uploading.png)
+
+We can click `Upload in Background` to move the uploading action to the background.
+
+![](assets/files-uploading-in-background.png)
+
+Once the uploading is done, the file will be listed in the `Shared Files` page.
+
+Click `OK` to close the dialogue or click/drag to upload additional files.
+
+![](assets/v311-files-uploaded.png)
 
 > Uploaded files can been only accessed by same group; please confirm the selected working group if files are not listed.
 
