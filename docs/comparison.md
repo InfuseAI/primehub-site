@@ -17,7 +17,7 @@ Here we list the features comparison among tiers.
 |[Notebooks](quickstart/launch-project)|✅️ |✅️ ||
 |[Jobs](job-submission-feature#jobs)||✅️ ||
 |[Recurring Jobs](job-submission-feature#recurring-jobs)||✅️ ||
-|[Models (Beta)](model-management)||✅️ |✅️ |
+|[Models](model-management)||✅️ |✅️ |
 |[Deployments](model-deployment-feature)||✅️ |✅️ |
 |[Shared Files](shared-files)|✅️ |✅️ |✅️ |
 |[Datasets](datasets)|✅️ |✅️ |✅️ |

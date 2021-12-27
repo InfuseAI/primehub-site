@@ -18,7 +18,7 @@ sidebar_label: User Portal
 
 After login, a user lands on User Portal.
 
-![](assets/v310-landing-user.png)
+![](assets/v311-landing-user.png)
 
 On Portal, the left side is **side menu** composed of platform user features, the right side is the **context of the current working group**. At the top-right, there is a `Group:` dropdown of switching working groups. Users can switch the working group to proceed to different projects easily.
 
@@ -58,7 +58,7 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Recurring Jobs** where users can schedule jobs regularly. See [Recurring Jobs](../job-submission-feature#recurring-jobs).
 
-+ **Models** where users can track registered models from MLFlow. See [Models Management (Beta)](../model-management).
++ **Models** where users can track registered models from MLFlow. See [Models Management](../model-management).
  
 + **Deployments** where users can deploy and serve models as services. See [Deployments Management](../model-deployment-feature). 
 
@@ -66,7 +66,7 @@ Hovering over top-right icon, there is a Profile Menu containing **User Profile*
 
 + **Datasets** where users can manage datasets. See [Datasets Management](../datasets).
 
-+ **Apps** where users can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps (Beta)](../primehub-app).
++ **Apps** where users can install 3rd-party applications to extend capabilities of PrimeHub. See [PrimeHub Apps](../primehub-app).
 
 ### Group admin feature
 

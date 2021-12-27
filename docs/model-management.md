@@ -1,8 +1,8 @@
 ---
 id: model-management
-title: Models (Beta)
+title: Models
 description: Models Management
-sidebar_label: Overview (Beta)
+sidebar_label: Overview
 ---
 
 <div class="label-sect">
@@ -15,13 +15,11 @@ sidebar_label: Overview (Beta)
 </div>
 <br>
 
-> This is a Beta feature. The page content is subject to change.
-
 Data scientists requires to repeat training models with various combinations of dataset, feature, parameters etc., and conducting experiments on models, furthermore, to register/to version models which have decent performance according to results. Nowadays, this is one part of MLOps. 
 
 Regarding managing versioned models, PrimeHub, by integrating well-known *MLflow*, provides models management feature, **Models** that scientists can examine the performance of versioned/registered models and deploy a selected model directly as a service by **Deployments** on PrimeHub.
 
-![](assets/model-mgt.png)
+![](assets/v311-model-mgt.png)
 
 ## MLflow is required
 

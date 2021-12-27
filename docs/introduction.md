@@ -55,9 +55,9 @@ The User Portal provides access to a full MLOps feature set. Data scientists can
 
 + [Share files within a group](shared-files)
 
-+ [Start tracking versioned models with Model Management](model-management) `New` `Beta`
++ [Start tracking versioned models with Model Management](model-management)
 
-+ [Install the first 3rd-party application from built-in Apps](primehub-app) `New` `Beta`
++ [Install the first 3rd-party application from built-in Apps](primehub-app)
 
 + [Notebook extension and submit notebooks as jobs](ph-notebook-extension)
 
