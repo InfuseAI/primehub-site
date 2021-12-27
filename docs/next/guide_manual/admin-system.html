@@ -71,18 +71,19 @@
   </div>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="primehub-license"></a><a href="#primehub-license" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PrimeHub License</h2>
-<p><img src="/docs/assets/license_key_v310.png" alt=""></p>
+<p><img src="/docs/assets/license_key_v311.png" alt=""></p>
 <p>Information of the PrimeHub license:</p>
 <ul>
 <li><p><code>License Status</code>: <code>Activated</code> / <code>Unauthorized</code> / <code>Expired</code>; status of the license.</p></li>
-<li><p><code>Nodes</code>: Used/Granted number of nodes.</p></li>
-<li><p><code>Groups</code>: Used/Granted number of groups.</p></li>
-<li><p><code>Deployments</code>: Used/Granted number of deployed models.</p></li>
 <li><p><code>Expiration Date</code>: The expiration date of the license.</p></li>
 <li><p><code>Licensed To</code>: Name of the organization that issued the license.</p></li>
+<li><p><code>Nodes</code>: Used/Granted number of nodes.</p></li>
+<li><p><code>Users</code>: Used/Granted number of users.</p></li>
+<li><p><code>Groups</code>: Used/Granted number of groups.</p></li>
+<li><p><code>Deployments</code>: Used/Granted number of deployed models.</p></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="license-warning"></a><a href="#license-warning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License warning</h3>
-<p>A license issued by InfuseAI contains <code>Expiration Date</code>, <code>Maximum Nodes</code>, <code>Maximum Deployments</code>.</p>
+<p>A license issued by InfuseAI contains <code>Expiration Date</code>, <code>Maximum Nodes</code>, <code>Maximum Users</code>, and <code>Maximum Deployments</code>.</p>
 <ul>
 <li><p>When a license has expired, a warning message appears.</p>
 <blockquote>
@@ -92,9 +93,13 @@
 <blockquote>
 <p>You are using more nodes than your license allows. Please contact your system administrator.</p>
 </blockquote></li>
+<li><p>When used user amount &gt; granted user amount, a warning message appears.</p>
+<blockquote>
+<p>Exceed Quota - Number of users exceeds license limitation.</p>
+</blockquote></li>
 <li><p>When used deployment amount &gt; granted deployment amount + 10%, a warning message appears.</p>
 <blockquote>
-<p>Please contact your system administrator for assistance to upgrade your license to run more models.</p>
+<p>Exceed Quota - Group Maximum Deployments exceeded</p>
 </blockquote></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="system-settings"></a><a href="#system-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>System Settings</h2>
