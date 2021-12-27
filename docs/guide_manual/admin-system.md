@@ -18,37 +18,45 @@ description: System Settings
 
 ## PrimeHub License
 
-![](assets/license_key_v310.png)
+![](assets/license_key_v311.png)
 
 Information of the PrimeHub license:
 
 + `License Status`: `Activated` / `Unauthorized` / `Expired`; status of the license.
 
++ `Expiration Date`: The expiration date of the license.
+
++ `Licensed To`: Name of the organization that issued the license.
+
 + `Nodes`: Used/Granted number of nodes.
+
++ `Users`: Used/Granted number of users.
 
 + `Groups`: Used/Granted number of groups.
 
 + `Deployments`: Used/Granted number of deployed models.
 
-+ `Expiration Date`: The expiration date of the license.
 
-+ `Licensed To`: Name of the organization that issued the license.
 
 ### License warning
 
-A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maximum Deployments`.
+A license issued by InfuseAI contains `Expiration Date`, `Maximum Nodes`, `Maximum Users`, and `Maximum Deployments`.
 
 + When a license has expired, a warning message appears.
 
-  >Your license has expired. Please contact your sales team to extend your license.
+  > Your license has expired. Please contact your sales team to extend your license.
 
 + When used node amount > granted node amount, a warning message appears.
 
   > You are using more nodes than your license allows. Please contact your system administrator.
 
++ When used user amount > granted user amount, a warning message appears.
+
+  > Exceed Quota - Number of users exceeds license limitation.
+
 + When used deployment amount > granted deployment amount + 10%, a warning message appears.
 
-  >Please contact your system administrator for assistance to upgrade your license to run more models.
+  > Exceed Quota - Group Maximum Deployments exceeded
 
 ## System Settings
 
