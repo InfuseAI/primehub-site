@@ -36,9 +36,9 @@ Please refer to the [Available Images List](images-list) for details on images m
 
 |Provider|Registry|Reference|
 |------|--------|----|
-|Jupyter|`jupyter/docker-stacks`|https://github.com/jupyter/docker-stacks|
+|Jupyter|`jupyter/docker-stacks`|[Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html)|
 |InfuseAI|`registry.gitlab.com/infuseai/docker-stacks/`|A **read_registry token** is required to access the registry, please contact **InfuseAI** to acquire the token.|
-|InfuseAI|`infuseai/docker-stacks/`|https://hub.docker.com/r/infuseai/docker-stacks/tags|
+|InfuseAI|`infuseai/docker-stacks/`|[InfuseAI Docker Stacks](https://hub.docker.com/r/infuseai/docker-stacks/tags)|
 
 
 ## Build Images via Images
