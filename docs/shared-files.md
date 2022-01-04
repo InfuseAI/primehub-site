@@ -18,9 +18,9 @@ description: Shared Files
 </div>
 <BR>
 
-**Shared Files** feature is based on [PHFS Storage](quickstart/nb-data-store#phfs-storage) to store shared files. Group members are able to browse shared files and able to upload files for sharing with same group other members.
+The **Shared Files** feature is based on [PHFS Storage](quickstart/nb-data-store#phfs-storage) to store shared files. Group members are able to browse shared files and able to upload files for sharing with other group members.
 
-![](assets/shared-file-list.png)
+![](assets/v311-shared-file-list.png)
 
 ## Browse
 
@@ -66,16 +66,68 @@ Click `OK` to close the dialogue or click/drag to upload additional files.
 
 ### Create directory
 
-![](assets/shared-file-directory-icon.png)
+Firstly, click the `+` icon.
 
-Click the icon, then input the name of sub-directory, press `Enter`.
+![](assets/v311-shared-file-directory-icon.png)
 
-![](assets/shared-file-create-directory.png)
+Then input the name of sub-directory and click `Confirm`.
 
-or even a path like `path/to/file`, press `Enter`.
+![](assets/v311-shared-file-create-directory.png)
 
-![](assets/shared-file-directory-path.png)
+Example of typing the `path/to/file`.
 
-Then upload files.
+![](assets/v311-shared-file-directory-path.png)
 
 > The nested directories won't be created until a file is uploaded into, in other words, when showing `No data`, at this moment, no directories is created yet.
+
+## Create/Update a Dataset
+
+The `Shared Files` is the whole files storage and the [Datasets](datasets) is the specified collection of files that based on the `Shared Files`.
+
+We can directly choose some files or directories from the `Shared Files` list, it will pop-up dialogue to `Create new dataset` or `Add to existing dataset`.
+
+![](assets/shared-file-select-file.png)
+
+### Create new dataset
+
+Select `Create new dataset`, it will pop-up dialogue and we can input the `Dataset Name`, specify `Tags`, and view the file contents.
+
+![](assets/shared-file-create-new-dataset-1.png)
+
+  + `Dataset Name`: name of the dataset.
+  + `Tags`: tags of the dataset.
+  + `Contents`: the file contents of the current creation.
+
+After specifying the values, click `Create Dataset`.
+
+The dataset `image-test` is created successfully.
+
+![](assets/shared-file-create-new-dataset-2.png)
+
+### Add to existing dataset
+
+In addition to creating a new dataset from the `Shared Files`, we can also add the files to an existing dataset.
+
+Select `Add to existing dataset`, it will pop-up dialogue and we can select the existing dataset and view the file contents.
+
+![](assets/shared-file-update-existing-dataset-1.png)
+
+View selectable datasets. Here we select `cv-test`.
+
+![](assets/shared-file-update-existing-dataset-2.png)
+
+We can add files to the `cv-test` dataset directly or even add a sub-directory to the `cv-test` dataset by clicking the `Add folder`.
+
+![](assets/shared-file-update-existing-dataset-3.png)
+
+Input the sub-directory name `view` and click `Confirm`.
+
+![](assets/shared-file-update-existing-dataset-4.png)
+
+Ensure the update location and file contents are correct, click `Add files to Dataset`.
+
+![](assets/shared-file-update-existing-dataset-5.png)
+
+The dataset `cv-test` is updated successfully.
+
+![](assets/shared-file-update-existing-dataset-6.png)
