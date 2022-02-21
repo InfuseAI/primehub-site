@@ -103,11 +103,11 @@ The list shows connecting volumes which can be read or written. We also can edit
 
 ## Deleting Group
 
-![](assets/admin_group_delete.png)
+![](assets/admin_group_delete_v311.png)
 
 Click `Delete` button in the group list, the confirmation dialog will pop up.
 
-The group and all associated resources such as [Jobs](../job-submission-feature#jobs), [Recurring Jobs](../job-submission-feature#recurring-jobs), [Deployments](../model-deployment-feature), and [Apps](../primehub-app), will be deleted when you click `Yes`.
+The group and all associated resources such as [Jobs](../job-submission-feature#jobs), [Recurring Jobs](../job-submission-feature#recurring-jobs), [Deployments](../model-deployment-feature), [Apps](../primehub-app), [Datasets](../datasets), and all the [Shared Files](../shared-files) will be deleted when you click `Yes`.
 
 ## Editing Group
 
