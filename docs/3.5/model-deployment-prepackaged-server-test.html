@@ -73,13 +73,13 @@
 <span class="token assign-left variable">MODEL_URI</span><span class="token operator">=</span>gs://primehub-models/tensorflow2/mnist
 </code></pre>
 <p>Download the model files to local</p>
-<pre><code class="hljs css language-bash">docker run -v <span class="token string">"<span class="token variable">${<span class="token environment constant">PWD</span>}</span>/models:/mnt/models"</span> --rm  <span class="token punctuation">\</span>
+<pre><code class="hljs css language-bash"><span class="token function">docker</span> run -v <span class="token string">"<span class="token variable">${<span class="token environment constant">PWD</span>}</span>/models:/mnt/models"</span> --rm  <span class="token punctuation">\</span>
   gcr.io/kfserving/storage-initializer:latest <span class="token punctuation">\</span>
   <span class="token string">"<span class="token variable">${MODEL_URI}</span>"</span> <span class="token punctuation">\</span>
   /mnt/models
 </code></pre>
 <p>Run the model server</p>
-<pre><code class="hljs css language-bash">docker run -v <span class="token string">"<span class="token variable">${<span class="token environment constant">PWD</span>}</span>/models:/mnt/models"</span> --rm -ti <span class="token punctuation">\</span>
+<pre><code class="hljs css language-bash"><span class="token function">docker</span> run -v <span class="token string">"<span class="token variable">${<span class="token environment constant">PWD</span>}</span>/models:/mnt/models"</span> --rm -ti <span class="token punctuation">\</span>
   -p <span class="token number">9000</span>:9000 <span class="token punctuation">\</span>
   -e <span class="token assign-left variable">PREDICTIVE_UNIT_PARAMETERS</span><span class="token operator">=</span><span class="token string">'[{"name":"model_uri","value":"/mnt/models","type":"STRING"}]'</span> <span class="token punctuation">\</span>
   <span class="token string">"<span class="token variable">${MODEL_IMAGE}</span>"</span>

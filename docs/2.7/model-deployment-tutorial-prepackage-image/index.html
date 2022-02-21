@@ -118,10 +118,10 @@
 <p>(Please replace the <code>export_path</code> to your path)</p>
 <p>This means you copy your model files into the path that you pre-defined in the base image code.</p>
 <p>Then, you can build the model deployment image by:</p>
-<pre><code class="hljs css language-bash">docker build -t tensorflow2-prepackage-model <span class="token builtin class-name">.</span>
+<pre><code class="hljs css language-bash"><span class="token function">docker</span> build -t tensorflow2-prepackage-model <span class="token builtin class-name">.</span>
 </code></pre>
 <p>In order to verify the image, you can run it:</p>
-<pre><code class="hljs css language-bash">docker run -p <span class="token number">5000</span>:5000 --rm tensorflow2-prepackage-model
+<pre><code class="hljs css language-bash"><span class="token function">docker</span> run -p <span class="token number">5000</span>:5000 --rm tensorflow2-prepackage-model
 </code></pre>
 <p>And send a post request by the following format:</p>
 <pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>

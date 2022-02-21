@@ -119,10 +119,10 @@
 <p>(請取代 <code>export_path</code> 成為模型的路徑)</p>
 <p>這代表將模型拷貝進 Base Image 所預先定義的模型路徑上。</p>
 <p>接著便可以透過 <code>docker</code> 建置模型部署的 Image ：</p>
-<pre><code class="hljs css language-bash">docker build -t tensorflow2-prepackage-model <span class="token builtin class-name">.</span>
+<pre><code class="hljs css language-bash"><span class="token function">docker</span> build -t tensorflow2-prepackage-model <span class="token builtin class-name">.</span>
 </code></pre>
 <p>建置完成後，將其跑起來，測試剛剛建置好的 Image。</p>
-<pre><code class="hljs css language-bash">docker run -p <span class="token number">5000</span>:5000 --rm tensorflow2-prepackage-model
+<pre><code class="hljs css language-bash"><span class="token function">docker</span> run -p <span class="token number">5000</span>:5000 --rm tensorflow2-prepackage-model
 </code></pre>
 <p>送出 Post Request 並觀察回傳的訊息是否符合預期。</p>
 <pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
