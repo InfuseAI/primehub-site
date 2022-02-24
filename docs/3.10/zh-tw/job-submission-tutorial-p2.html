@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>(Part2) MNIST classifier 訓練範例程式 · PrimeHub</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta name="docsearch:version" content="3.10"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="(Part2) MNIST classifier 訓練範例程式 · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="&lt;div class=&quot;ee-only tooltip&quot;&gt;Enterprise"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.10</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.10/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.10/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://one.primehub.io/" target="_blank">🌟 1-Click Install ⇗</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">(Part2) MNIST classifier 訓練範例程式</h1></header><article><div><span><div class="ee-only tooltip">Enterprise
+  <span class="tooltiptext">Applicable to Enterprise tier only</span>
+</div>
+<ol>
+<li><p>登入後，進入 <code>Notebooks</code>。</p></li>
+<li><p>選擇至少有 1 virtual CPU 及 2GB RAM 的 <code>instance type</code>。</p></li>
+<li><p>選擇有<code>Tensorflow 1.14</code>環境的<code>image</code>。</p></li>
+<li><p>點擊<code>start Notebook</code>起始 Notebook。</p>
+<p><img src="/docs/assets/jobsub-tt-p2-2.png" alt="image"></p></li>
+</ol>
+<p>我們將會利用已開啟的<code>group volume</code>；依照步驟將程式存在<code>group volume</code>：</p>
+<ol>
+<li><p>雙擊進入 group volume folder</p></li>
+<li><p>點擊右方工作區<code>Other</code>下的 <code>Text File</code>，開啟文字編輯檔。</p></li>
+<li><p>按右鍵選擇<code>rename</code>將<code>untitled.txt</code>改名為<code>train_mnist.py</code>。</p></li>
+<li><p>輸入下方的程式碼；此為 MNIST classifier 訓練用的範例程式。</p>
+<pre><code class="hljs">import tensorflow <span class="hljs-keyword">as</span> <span class="hljs-keyword">tf</span>
+import argparse
+import shutil
+import os
+
+parser = argparse.ArgumentParser(description=<span class="hljs-string">'Process some integers.'</span>)
+parser.add_argument(<span class="hljs-string">'--dropout'</span>, <span class="hljs-built_in">type</span>=float, default=<span class="hljs-number">0.2</span>)
+<span class="hljs-keyword">args</span> = parser.parse_args()
+
+mnist = <span class="hljs-keyword">tf</span>.keras.datasets.mnist
+
+(x_train, y_train),(x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / <span class="hljs-number">255.0</span>, x_test / <span class="hljs-number">255.0</span>
+
+model = <span class="hljs-keyword">tf</span>.keras.models.Sequential([
+    <span class="hljs-keyword">tf</span>.keras.layers.Flatten(input_shape=(<span class="hljs-number">28</span>, <span class="hljs-number">28</span>)),
+    <span class="hljs-keyword">tf</span>.keras.layers.Dense(<span class="hljs-number">512</span>, activation=<span class="hljs-keyword">tf</span>.<span class="hljs-keyword">nn</span>.relu),
+    <span class="hljs-keyword">tf</span>.keras.layers.Dropout(<span class="hljs-keyword">args</span>.dropout),
+    <span class="hljs-keyword">tf</span>.keras.layers.Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-keyword">tf</span>.<span class="hljs-keyword">nn</span>.softmax)
+])
+
+model.compile(optimizer=<span class="hljs-string">'adam'</span>,
+                loss=<span class="hljs-string">'sparse_categorical_crossentropy'</span>,
+                metrics=[<span class="hljs-string">'accuracy'</span>])
+
+model.fit(x_train, y_train, epochs=<span class="hljs-number">5</span>)
+model.evaluate(x_test, y_test)
+
+export_path = <span class="hljs-string">"params_dropout-{}"</span>.format(<span class="hljs-keyword">args</span>.dropout)
+<span class="hljs-keyword">if</span> os.path.isdir(export_path):
+    <span class="hljs-keyword">print</span>(<span class="hljs-string">'Cleaning up\n'</span>)
+    shutil.rmtree(export_path)
+os.<span class="hljs-built_in">mkdir</span>(export_path)
+
+model.save(os.path.<span class="hljs-keyword">join</span>(export_path, <span class="hljs-string">'my_model'</span>))
+</code></pre></li>
+</ol>
+<p><em>請注意： 在範例程式中，我們將 model 存在 group volume 的相對路徑。</em></p>
+<p>到此，我們已經把<code>job submission</code>前置準備都做好了。</p>
+<h2><a class="anchor" aria-hidden="true" id="submit-a-job"></a><a href="#submit-a-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Submit a Job</h2>
+<p>回到<code>user portal</code>，進入<code>Jobs</code>。</p>
+<p>請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 <code>Group:</code>。</p>
+<ol>
+<li><p>點擊右上方的<code>Create Job</code>按鈕。</p></li>
+<li><p>從左方選擇 <code>instance type</code> 及 <code>image</code>；確保跟我們用來起始<code>Notebook</code>的環境一致。</p></li>
+<li><p>在右方將 job 命名為<code>training mnist</code>。</p></li>
+<li><p>因為我們的範例程式存放在 group volume 且 group volume 會被掛載在<code>/home/jovyan/&lt;group name&gt; -&gt; /project/&lt;group name&gt;</code>，在<code>Commnad</code>欄位輸入下方指令； 請置換 <code>&lt;group name&gt;</code> 為實際名稱 ：</p>
+<pre><code class="hljs"><span class="hljs-keyword">cd</span> <span class="hljs-string">/project/</span>&lt;group name&gt;/
+python -u train_mnist.py <span class="hljs-params">--dropout</span> 0.2
+</code></pre>
+<p>參考：<a href="job-submission-cht#job-可存取工作目錄-專案目錄及資料集目錄">Job 可存取工作目錄、專案目錄及資料集目錄</a></p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="command-範例說明"></a><a href="#command-範例說明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command 範例說明：</h3>
+<ul>
+<li>因為我們產出 <code>my_model</code> 在 group volume 相對路徑，所以我們需要先<code>cd /project/&lt;group name&gt;</code> or <code>cd &lt;group name&gt;/</code>。</li>
+<li><code>&lt;group name&gt;</code> 大小寫有差別；</li>
+<li>python command 參數<code>-u</code> 強制 python 直接輸出 log 不要先 buffer；在 logs 頁籤可以更即時看到 log。</li>
+<li>參數<code>--dropout</code>是範例程式中，指定要接收的輸入參數。</li>
+<li>Job Submission 會依序執行一行一行的指令，如同執行 script 般。</li>
+<li>滑鼠指標移到小圖示<code>?</code>上方，可以看到更多提示。</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="jobs-列舉及-refresh-按鈕"></a><a href="#jobs-列舉及-refresh-按鈕" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jobs 列舉及 refresh 按鈕</h4>
+<p><img src="/docs/assets/jobsub-tt-p2-5.png" alt="image"></p>
+<p>當 job 遞交後，起初會在<code>Pending</code>狀態；點擊右上方<code>Refresh</code>按鈕可以更新其狀態。</p>
+<h4><a class="anchor" aria-hidden="true" id="logs-頁籤"></a><a href="#logs-頁籤" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs 頁籤</h4>
+<p><img src="/docs/assets/jobsub-tt-p2-6.png" alt="image"></p>
+<p>點擊<code>Logs</code>頁籤可以查看 job 即時執行記錄。此時 job 正在背景執行，我們可以離開此頁面去做其它事，不必開啟頁面等候；事後回來查看狀態及記錄。</p>
+<p>當完成後，範例會輸出<code>my_model</code>至 group volume，我們可以開啟 JupyterLab 查看。</p>
+<h2><a class="anchor" aria-hidden="true" id="test-outputted-model-in-jupyterlab"></a><a href="#test-outputted-model-in-jupyterlab" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test Outputted Model in JupyterLab</h2>
+<p>到了驗證我們訓練 MNIST classifier 的時候。</p>
+<h4><a class="anchor" aria-hidden="true" id="outputted-model-file-located-in-juypterlab"></a><a href="#outputted-model-file-located-in-juypterlab" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Outputted model file located in JuypterLab</h4>
+<p><img src="/docs/assets/jobsub-tt-p2-7.png" alt="image"></p>
+<p>先在同樣環境下起始 JupyterLab tab， 我們可以在 group volume 下看到<code>params_dropout-0.2/my_model</code>。</p>
+<p><em>如果沒有看到輸出的檔案，那就須回到該 job 的 Logs 頁籤，查看記錄及問題；查明並修正問題後，再次遞交 job。</em></p>
+<p>讓我們來依照步驟來驗證 MNIST classifier：</p>
+<ol>
+<li><p>先進入 <code>group volume</code></p></li>
+<li><p>點擊右方工作區<code>Notebook</code>下的 <code>Python 3</code>。</p></li>
+<li><p>輸入下方驗證用的程式碼至第一個<code>cell</code>：</p>
+<p><img src="/docs/assets/jobsub-tt-p2-8.png" alt="image"></p>
+<p><strong>Example Code</strong></p>
+<pre><code class="hljs">    import tensorflow as tf
+    
+    mnist = tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.datasets</span><span class="hljs-selector-class">.mnist</span>
+    (x_train, y_train),(x_test, y_test) = mnist.load_data()
+    x_train, x_test = x_train / <span class="hljs-number">255.0</span>, x_test / <span class="hljs-number">255.0</span>
+    
+    model = tf<span class="hljs-selector-class">.keras</span><span class="hljs-selector-class">.models</span>.load_model(<span class="hljs-string">'params_dropout-0.2/my_model'</span>)
+    model.evaluate(x_test, y_test)
+</code></pre></li>
+<li><p>按下 <code>shift + enter</code>執行該<code>cell</code>。</p>
+<p><img src="/docs/assets/jobsub-tt-p2-9.png" alt="image"></p>
+<p><em>model accuracy 將近 ~0.98；我們可以忽略 warning。</em></p></li>
+</ol>
+<p>至此我們已經透過<code>Job Submission</code>訓練出一個<code>MNIST classifier</code>。之後我們可以遞交多個 job 帶入不同的 drop rates 來驗證分別產出的結果。</p>
+<p><em>建議：先用 notebook 來快速驗證程式，沒問題後，再轉成 python file 交付給 job submission。</em></p>
+<h2><a class="anchor" aria-hidden="true" id="job-submission-進階教學"></a><a href="#job-submission-進階教學" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job Submission 進階教學</h2>
+<p>想要試試其它 job submission 進階教學，請參考英文教學文件：</p>
+<ul>
+<li><p><a href="../job-submission-tutorial-p3">[(Advanced) Use Job Submission to Tune Hyperparameters]</a></p></li>
+<li><p><a href="../job-submission-tutorial-p4">[(Advanced) Model Serving by Seldon]</a></p></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#submit-a-job">Submit a Job</a><ul class="toc-headings"><li><a href="#command-範例說明">Command 範例說明：</a></li></ul></li><li><a href="#test-outputted-model-in-jupyterlab">Test Outputted Model in JupyterLab</a></li><li><a href="#job-submission-進階教學">Job Submission 進階教學</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2022 InfuseAI</section></footer></div></body></html>
