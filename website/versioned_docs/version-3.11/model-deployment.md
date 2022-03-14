@@ -1,8 +1,9 @@
 ---
-id: model-deployment-feature
+id: version-3.11-model-deployment-feature
 title: Deployments
-sidebar_label: Overview
 description: Model Deployment
+sidebar_label: Overview
+original_id: model-deployment-feature
 ---
 
 <div class="label-sect">
