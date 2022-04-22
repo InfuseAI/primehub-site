@@ -153,6 +153,7 @@ const siteConfig = {
   deletedDocs: {
     "3.0": [
       "install_helper",
+      "getting_started/install_keycloak",
       "migrate-v2",
       "dotenv",
       "envs",
