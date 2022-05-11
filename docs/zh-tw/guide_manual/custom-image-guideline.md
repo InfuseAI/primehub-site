@@ -65,7 +65,7 @@ PrimeHub 期待 JupyterHub 用 image 具備 JupyterHub 環境，一旦起始後�
 例： Dockerfile 指定 Jupyter base image
 
 ``` dockerfile
-FROM jupyter/minimal-notebook:177037d09156
+FROM jupyter/minimal-notebook
 # Get the latest image tag at:
 # https://hub.docker.com/r/jupyter/minimal-notebook/tags/
 # Inspect the Dockerfile at:
