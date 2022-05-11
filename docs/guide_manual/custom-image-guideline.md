@@ -52,7 +52,7 @@ We can build images via `Images` by specification of a base image with required 
 E.g. a Dockerfile using a existing Jupyter image.
 
 ``` dockerfile
-FROM jupyter/minimal-notebook:177037d09156
+FROM jupyter/minimal-notebook
 # Get the latest image tag at:
 # https://hub.docker.com/r/jupyter/minimal-notebook/tags/
 # Inspect the Dockerfile at:
@@ -70,6 +70,8 @@ E.g. a Dockerfile using a existing image provided by InfuseAI.
 ``` dockerfile
 FROM infuseai/docker-stacks/<image>
 ```
+
+Please refer to [Available Images List](images-list) for the latest InfuseAI provided images.
 
 ### Dockerfile Reference
 
