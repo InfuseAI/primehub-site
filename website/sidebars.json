@@ -2,41 +2,8 @@
   "documentation": {
     "Getting Started": [
       "quickstart/one-click-install",
-      "quickstart/qs-primehub"
-    ],
-    "Installation": [
-      "one-click-install",
-      "install-manually",
-      {
-        "type": "subcategory",
-        "label": "Setup Kubernetes",
-        "ids": [
-          "getting_started/prerequisites",
-          "getting_started/kubernetes_on_gke",
-          "getting_started/kubernetes_on_eks"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Setup PrimeHub Community",
-        "ids": [
-          "getting_started/install_primehub_ce",
-          "getting_started/kubernetes_on_ubuntu_ce"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Setup PrimeHub Enterprise",
-        "ids": [
-          "getting_started/install_primehub",
-          "getting_started/kubernetes_on_ubuntu_machine"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Upgrade",
-        "ids": ["getting_started/upgrade-ce2ee"]
-      }
+      "quickstart/qs-primehub",
+      "quickstart/manual-install"
     ],
     "End-to-end Tutorial": [
       "primehub-end-to-end-tutorial-1",
