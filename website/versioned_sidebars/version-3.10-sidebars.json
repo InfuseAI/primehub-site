@@ -2,43 +2,8 @@
   "version-3.10-documentation": {
     "Getting Started": [
       "version-3.10-quickstart/one-click-install",
+      "version-3.10-quickstart/manual-install",
       "version-3.10-quickstart/qs-primehub"
-    ],
-    "Installation": [
-      "version-3.10-one-click-install",
-      "version-3.10-install-manually",
-      {
-        "type": "subcategory",
-        "label": "Setup Kubernetes",
-        "ids": [
-          "version-3.10-getting_started/prerequisites",
-          "version-3.10-getting_started/kubernetes_on_gke",
-          "version-3.10-getting_started/kubernetes_on_eks"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Setup PrimeHub Community",
-        "ids": [
-          "version-3.10-getting_started/install_primehub_ce",
-          "version-3.10-getting_started/kubernetes_on_ubuntu_ce"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Setup PrimeHub Enterprise",
-        "ids": [
-          "version-3.10-getting_started/install_primehub",
-          "version-3.10-getting_started/kubernetes_on_ubuntu_machine"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Upgrade",
-        "ids": [
-          "version-3.10-getting_started/upgrade-ce2ee"
-        ]
-      }
     ],
     "End-to-end Tutorial": [
       "version-3.10-primehub-end-to-end-tutorial-1",

@@ -2,8 +2,8 @@
   "documentation": {
     "Getting Started": [
       "quickstart/one-click-install",
-      "quickstart/qs-primehub",
-      "quickstart/manual-install"
+      "quickstart/manual-install",
+      "quickstart/qs-primehub"
     ],
     "End-to-end Tutorial": [
       "primehub-end-to-end-tutorial-1",
