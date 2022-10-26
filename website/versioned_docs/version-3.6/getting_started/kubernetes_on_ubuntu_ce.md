@@ -166,7 +166,7 @@ Reference
 
 ## Install PrimeHub CE
 
-Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.6.2`.
+Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.6.2`.
 
 ```bash
 ./primehub/install/primehub-install create primehub --primehub-version <version> --primehub-ce

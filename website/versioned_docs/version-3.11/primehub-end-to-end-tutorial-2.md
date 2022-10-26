@@ -1,8 +1,9 @@
 ---
-id: primehub-end-to-end-tutorial-2
+id: version-3.11-primehub-end-to-end-tutorial-2
 title: Part 2 - Train and Manage the Model
 sidebar_label: 2 - Train & Manage Model
 description: Train and Manage the Model
+original_id: primehub-end-to-end-tutorial-2
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

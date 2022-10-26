@@ -1,8 +1,9 @@
 ---
-id: primehub-end-to-end-tutorial-4
+id: version-3.11-primehub-end-to-end-tutorial-4
 title: 4 - Build the Web Application
 sidebar_label: 4 - Build Web App
 description: Build the Web Application
+original_id: primehub-end-to-end-tutorial-4
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

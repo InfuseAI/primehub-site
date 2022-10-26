@@ -61,7 +61,7 @@ The top-level folder is PrimeHub store relative features.
 ├── <feature2>
 ├── logs        # Log Persistence
 └── groups      # PHFS
-    ├── phusers
-    ├── <group1>
-    └── <group2>
+    ├── phusers
+    ├── <group1>
+    └── <group2>
 ```

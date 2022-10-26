@@ -1,8 +1,9 @@
 ---
-id: primehub-end-to-end-tutorial-3
+id: version-3.11-primehub-end-to-end-tutorial-3
 title: 3 - Compare, Register and Deploy the Model
 sidebar_label: 3 - Deploy Model
 description: Compare, Register and Deploy the Model
+original_id: primehub-end-to-end-tutorial-3
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

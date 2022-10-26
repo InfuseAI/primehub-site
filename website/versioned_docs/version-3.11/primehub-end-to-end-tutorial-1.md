@@ -1,8 +1,9 @@
 ---
-id: primehub-end-to-end-tutorial-1
+id: version-3.11-primehub-end-to-end-tutorial-1
 title: Part 1 - MLOps Introduction and Scoping the Project
 sidebar_label: 1 - Scoping Project
 description: MLOps Introduction and Scoping the Project
+original_id: primehub-end-to-end-tutorial-1
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

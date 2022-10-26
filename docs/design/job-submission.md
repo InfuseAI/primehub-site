@@ -156,19 +156,19 @@ User Volume | N/A |
 
 ```
 ├── datasets
-│   ├── ds1
-│   ├── ds2
-│   └── ds3
+│   ├── ds1
+│   ├── ds2
+│   └── ds3
 ├── project
-│   ├── group1
-│   ├── group2
-│   └── group3
+│   ├── group1
+│   ├── group2
+│   └── group3
 └── home
     └── jovyan
         ├── datasets -> /datasets
-        │   ├── ds1
-        │   ├── ds2
-        │   └── ds3
+        │   ├── ds1
+        │   ├── ds2
+        │   └── ds3
         ├── group1 -> /project/group1
         ├── group2 -> /project/group2
         └── group3 -> /project/group3
