@@ -1,6 +1,6 @@
 ---
 id: version-3.11-primehub-end-to-end-tutorial-advanced-2
-title: Advanced 2 Submit PrimeHub Notebook as a PrimeHub Job
+title: Advanced - Submit PrimeHub Notebook as a PrimeHub Job
 sidebar_label: Advanced - Notebook Job
 description: Submit PrimeHub Notebook as a PrimeHub Job
 original_id: primehub-end-to-end-tutorial-advanced-2

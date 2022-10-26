@@ -1,6 +1,6 @@
 ---
 id: version-3.11-primehub-end-to-end-tutorial-advanced-4
-title: Advanced 4 PrimeHub SDK/CLI Tools
+title: Advanced - PrimeHub SDK/CLI Tools
 sidebar_label: Advanced - PrimeHub SDK/CLI
 description: PrimeHub SDK/CLI Tools
 original_id: primehub-end-to-end-tutorial-advanced-4

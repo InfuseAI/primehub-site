@@ -108,7 +108,7 @@ When we successfully build the machine learning model, we need to give experimen
     
     Please change the `base_learning_rate` variable value and run the Notebook again:
     
-    `base_learning_rate **=** 0.01` → `base_learning_rate **=** 0.05`
+    `base_learning_rate = 0.01` → `base_learning_rate = 0.05`
     
 2. Then you will see the second experiment result in MLFlow platform.
     

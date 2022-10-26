@@ -1,6 +1,6 @@
 ---
 id: version-3.11-primehub-end-to-end-tutorial-advanced-3
-title: Advanced 3 How to custom build the Seldon server
+title: Advanced - How to custom build the Seldon server
 sidebar_label: Advanced - Custom Deploy Server
 description: How to custom build the Seldon server
 original_id: primehub-end-to-end-tutorial-advanced-3

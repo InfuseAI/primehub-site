@@ -1,6 +1,6 @@
 ---
 id: version-3.11-primehub-end-to-end-tutorial-advanced-1
-title: Advanced 1 Labeling the data
+title: Advanced - Labeling the data
 sidebar_label: Advanced - Label Data
 description: Labeling the data
 original_id: primehub-end-to-end-tutorial-advanced-1
