@@ -33,7 +33,7 @@
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> /var/lib/kubelet/pods/<span class="token operator">&lt;</span><span class="token environment constant">UID</span><span class="token operator">></span>/volumes/ceph.rook.io~rook-system/pvc-xxxxxxxxxxxxxx/prometheus-db
 
 <span class="token comment">#(there should be a meta.json file of size 0 )</span>
-<span class="token function">find</span> ./ -name meta.json -size <span class="token number">0</span>
+<span class="token function">find</span> ./ <span class="token parameter variable">-name</span> meta.json <span class="token parameter variable">-size</span> <span class="token number">0</span>
 </code></pre></li>
 <li><p>Remove the folder where the size zero files locate.</p></li>
 </ol>

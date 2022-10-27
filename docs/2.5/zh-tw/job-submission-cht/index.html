@@ -132,10 +132,10 @@
 </ul>
 <p><strong>Example 1</strong>: 假設<code>train_mint.py</code>事先存在名叫<code>research</code>的<code>group volume</code>，我們可以進入<code>/project/research</code>下，執行該 python file 做為一個<code>job</code>。<code>job</code>執行期間輸出的 data 則會存在此路徑的相對位置。</p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> /project/research/
-python -u train_minst.py
+python <span class="token parameter variable">-u</span> train_minst.py
 </code></pre>
 <p><strong>Example 2</strong>: 如果我們直接執行下列指令，沒有變更路徑，<code>job</code>的工作目錄位在<code>/workingdir</code>，<code>job</code>執行期間輸出的 data 則會存在此路徑的相對位置。但此為暫存目錄，換而言之， 輸出在<code>/workingdir</code>的 data 資料會隨著<code>job</code>結束而消失。</p>
-<pre><code class="hljs css language-bash">python -u /project/research/train_minst.py
+<pre><code class="hljs css language-bash">python <span class="token parameter variable">-u</span> /project/research/train_minst.py
 </code></pre></li>
 </ul>
 <p><code>Submit</code>: 點擊按鈕，送出工作執行。</p>

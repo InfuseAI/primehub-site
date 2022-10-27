@@ -224,10 +224,10 @@
 <p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
 <p>填入<code>Client Name</code>及點擊 <code>Add client</code>產生該帳號的對應<code>Client Token</code>。</p>
 <p>必須帶入此 Token 才能存取私人 endpoint；我們可以將其帶入 curl 命令參數<code>-u &lt;client-name&gt;:&lt;client-token&gt;</code>。</p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST <span class="token punctuation">\</span>
-    -u <span class="token operator">&lt;</span>client-name<span class="token operator">></span>:<span class="token operator">&lt;</span>client-token<span class="token operator">></span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{"data":{"names":["a","b"],"tensor":{"shape":[2,2],"values":[0,0,1,1]}}}'</span> <span class="token punctuation">\</span>
-    -H <span class="token string">"Content-Type: application/json"</span> <span class="token punctuation">\</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token punctuation">\</span>
+    <span class="token parameter variable">-u</span> <span class="token operator">&lt;</span>client-name<span class="token operator">></span>:<span class="token operator">&lt;</span>client-token<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{"data":{"names":["a","b"],"tensor":{"shape":[2,2],"values":[0,0,1,1]}}}'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token punctuation">\</span>
     https://<span class="token operator">&lt;</span>primehub<span class="token operator">></span>/deployment/<span class="token operator">&lt;</span>model<span class="token operator">></span>/api/<span class="token operator">&lt;</span>version<span class="token operator">></span>/predictions
 </code></pre>
 <blockquote>

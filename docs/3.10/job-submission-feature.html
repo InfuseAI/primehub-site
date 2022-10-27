@@ -222,10 +222,10 @@ pip <span class="hljs-keyword">install</span> &lt;<span class="hljs-keyword">pac
 <p><code>python -u</code> we can use <code>-u</code> to force stdin, stdout and stderr to be totally unbuffered, so we can see logs in real time.</p>
 <p><strong>Example 1</strong>: There is a file, <code>train_mint.py</code>, stored in group volume, <code>research</code>, then we can execute the python file as a job like below. Since the python file is executed under <code>/project/research</code>, the data output by the job is saved under the path relatively.</p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> /project/research/
-python -u train_minst.py
+python <span class="token parameter variable">-u</span> train_minst.py
 </code></pre>
 <p><strong>Example 2</strong>: If we execute the job like below, the output data will be saved under <code>/home/jovyan</code> which is a <em>temporary</em> directory while the job is running. In other words, data saved under <code>/home/jovyan</code> will be lost.</p>
-<pre><code class="hljs css language-bash">python -u /project/research/train_minst.py
+<pre><code class="hljs css language-bash">python <span class="token parameter variable">-u</span> /project/research/train_minst.py
 </code></pre>
 <blockquote>
 <p>We, sometimes, may find ourselves repeating frequently-used packages installation in every runtime. Either we can request Group admin/Admin to build a custom image with those packages to avoid the repetition or we can customize own runtime environments at our convenience. See <a href="tasks/customize-job-runtime">Reference</a>.</p>

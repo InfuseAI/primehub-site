@@ -89,7 +89,7 @@
 <span class="token function">make</span> show-rook-pods
 
 <span class="token comment"># use 'kubectl_stasis.sh' to scale down all controllers using ceph.</span>
-kubectl_stasis.sh -n <span class="token operator">&lt;</span>ns<span class="token operator">></span> freeze <span class="token operator">&lt;</span>sts<span class="token operator">|</span>deploy<span class="token operator">|</span>rc<span class="token operator">|</span>rs<span class="token operator">></span> <span class="token operator">&lt;</span>name<span class="token operator">></span>
+kubectl_stasis.sh <span class="token parameter variable">-n</span> <span class="token operator">&lt;</span>ns<span class="token operator">></span> freeze <span class="token operator">&lt;</span>sts<span class="token operator">|</span>deploy<span class="token operator">|</span>rc<span class="token operator">|</span>rs<span class="token operator">></span> <span class="token operator">&lt;</span>name<span class="token operator">></span>
 </code></pre></li>
 <li><p>Stop ceph</p>
 <pre><code class="hljs css language-bash"><span class="token function">make</span> down-ceph

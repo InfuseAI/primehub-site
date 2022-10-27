@@ -88,17 +88,17 @@
 <p>部署成功後(綠色)，點擊該部署查看詳細資訊。</p>
 <p><img src="/docs/assets/mdeploy_quickstart_detailpage_1.png" alt=""></p></li>
 <li><p>頁面顯示所有詳細資訊；準備測試部署的模型， 複製 <code>endpoint URL</code> 並取代下列指令中 <code>${YOUR_ENDPOINT_URL}</code>。</p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST <span class="token variable">${YOUR_ENDPOINT_URL}</span> <span class="token punctuation">\</span>
-    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token variable">${YOUR_ENDPOINT_URL}</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
 </code></pre>
 <p>在 Terminal 執行整串指令； 指令中我們帶入 tensor 並送出請求。</p></li>
 </ol>
 <ul>
 <li>請求範例
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST https://hub.xxx.aws.primehub.io/deployment/quickstart-iris-xxx/api/v1.0/predictions <span class="token punctuation">\</span>
-    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://hub.xxx.aws.primehub.io/deployment/quickstart-iris-xxx/api/v1.0/predictions <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
 </code></pre></li>
 <li>回應範例 (it predicts the species is <code>Iris setosa</code> as the first index has the highest prediction value)
 <pre><code class="hljs css language-bash"><span class="token punctuation">{</span>

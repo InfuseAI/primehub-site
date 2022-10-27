@@ -91,7 +91,7 @@ By installing packages specifically in <a href="../quickstart/nb-data-store#grou
 <h2><a class="anchor" aria-hidden="true" id="pip"></a><a href="#pip" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PIP</h2>
 <p>For python application, using <code>pip</code> package installer is simpler way to customize job runtime. Packages could be installed into assigned directory by <code>--target</code>.</p>
 <p>E.g. Install  <code>mlflow</code> libraries into <code>&lt;GROUP_VOLUME&gt;/mlflow-library</code> by <code>--target</code> option with specified <code>&lt;GROUP_Volme&gt;</code>.</p>
-<pre><code class="hljs css language-bash">pip <span class="token function">install</span> --target <span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/mlflow-library mlflow sklearn
+<pre><code class="hljs css language-bash">pip <span class="token function">install</span> <span class="token parameter variable">--target</span> <span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/mlflow-library mlflow sklearn
 </code></pre>
 <p>Then specify <code>PYTHONPATH</code> variables with python package path to Group Volume.</p>
 <pre><code class="hljs css language-bash">jovyan@jupyter-phadmin:~/mlflow$ <span class="token assign-left variable">PYTHONPATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/mlflow-library/
@@ -115,7 +115,7 @@ Elasticnet model <span class="token punctuation">(</span>alpha<span class="token
 <p>In this case, we have to build the <code>libwarpctc.so</code> first and copy it to <code>&lt;GROUP_VOLUME&gt;/warp-ctc/libwarpctc.so</code>, then build the Python package with <code>--prefix</code> and <code>WARP_CTC_PATH</code> environment variables</p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">cd</span> pytorch_binding
 <span class="token assign-left variable">WARP_CTC_PATH</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc <span class="token punctuation">\</span>
-python setup.py <span class="token function">install</span> --prefix<span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc
+python setup.py <span class="token function">install</span> <span class="token parameter variable">--prefix</span><span class="token operator">=</span><span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc
 </code></pre>
 <p>In the build log, it points the installed path, set <code>PYTHONPATH</code> the path</p>
 <pre><code class="hljs css language-bash">Installed <span class="token operator">&lt;</span>GROUP_VOLUME<span class="token operator">></span>/warp-ctc/lib/python3.7/site-packages/warpctc_pytorch-0.1-py3.7-linux-x86_64.egg

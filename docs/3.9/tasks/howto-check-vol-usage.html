@@ -72,11 +72,11 @@
 <p>Because user volume can only be mounted by a notebook pod, we need to check the usage by the user's running notebook pod.</p>
 <ol>
 <li><p>Find the user's notebook pod. If the pod is not launched, you cannot check the user volume usage.</p>
-<pre><code class="hljs css language-bash">kubectl -n hub get pod
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub get pod
 </code></pre>
 <p>Find the pod <code>jupyter-&lt;username&gt;</code>.</p></li>
 <li><p>The user volume is mounted at <code>/home/jovyan</code>. Use the command <code>df</code> to check the usage.</p>
-<pre><code class="hljs css language-bash">kubectl -n hub <span class="token builtin class-name">exec</span> jupyter-<span class="token operator">&lt;</span>username<span class="token operator">></span> -- <span class="token function">df</span> -h /home/jovyan
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub <span class="token builtin class-name">exec</span> jupyter-<span class="token operator">&lt;</span>username<span class="token operator">></span> -- <span class="token function">df</span> <span class="token parameter variable">-h</span> /home/jovyan
 </code></pre>
 <p>The sample output</p>
 <pre><code class="hljs css language-text">Filesystem                   Size  Used  Avail  Capacity    Mounted on
@@ -90,11 +90,11 @@
 <p>If the shared volume of a group is enabled, an NFS server is created as the group volume. To check the volume usage, we can check the usage in the NFS server pod.</p>
 <ol>
 <li><p>Find the group NFS server pod</p>
-<pre><code class="hljs css language-bash">kubectl -n hub get pod
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub get pod
 </code></pre>
 <p>Find the pod <code>nfs-project-&lt;group&gt;-0</code>.</p></li>
 <li><p>The disk is mounted at <code>/exports</code></p>
-<pre><code class="hljs css language-bash">kubectl -n hub <span class="token builtin class-name">exec</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">></span> --  <span class="token function">df</span> /exports
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub <span class="token builtin class-name">exec</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">></span> --  <span class="token function">df</span> /exports
 </code></pre>
 <p>The sample output</p>
 <pre><code class="hljs css language-text">Filesystem                   Size  Used  Avail  Capacity    Mounted on
@@ -108,11 +108,11 @@
 <p>If a PV dataset is configured as <a href="../guide_manual/admin-dataset#persistent-volume">auto provisioning</a>, an NFS server is created as the dataset volume. To check the volume usage, we can check the usage in the NFS server pod.</p>
 <ol>
 <li><p>Find the pod of the PV dataset NFS server</p>
-<pre><code class="hljs css language-bash">kubectl -n hub get pod
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub get pod
 </code></pre>
 <p>Find the pod <code>nfs-dataset-&lt;dataset&gt;-0</code>.</p></li>
 <li><p>The disk is mounted at <code>/exports</code></p>
-<pre><code class="hljs css language-bash">kubectl -n hub <span class="token builtin class-name">exec</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">></span> --  <span class="token function">df</span> /exports
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub <span class="token builtin class-name">exec</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">></span> --  <span class="token function">df</span> /exports
 </code></pre>
 <p>The sample output.</p>
 <pre><code class="hljs css language-text">Filesystem                   Size  Used  Avail  Capacity    Mounted on

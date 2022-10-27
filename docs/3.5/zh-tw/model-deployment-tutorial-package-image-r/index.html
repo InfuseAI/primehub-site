@@ -140,7 +140,7 @@ initialise_seldon &lt;- <span class="hljs-keyword">function</span>(params) {
 <p>建立映像檔的工作資料夾需包含：<code>install.R</code> 、 <code>Dockerfile</code> 、 <code>R scripts</code> 以及 <code>model file</code>。</p>
 <p>如果該資料夾有使用 <code>Git</code>，需要將所有的改變 Commit 。</p>
 <p>建置模型部署映像檔 <code>my-model-image</code>：</p>
-<pre><code class="hljs css language-bash"><span class="token function">docker</span> build <span class="token builtin class-name">.</span> -t my-model-image
+<pre><code class="hljs css language-bash"><span class="token function">docker</span> build <span class="token builtin class-name">.</span> <span class="token parameter variable">-t</span> my-model-image
 </code></pre>
 <p>透過 <code>docker images</code> 檢查建置完成的映像檔，範例結果如下所示：</p>
 <pre><code class="hljs">$ docker images | grep my-model-image

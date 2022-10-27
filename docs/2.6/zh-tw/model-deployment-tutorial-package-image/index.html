@@ -81,9 +81,9 @@
 <pre><code class="hljs">docker run -p <span class="hljs-number">5000</span>:<span class="hljs-number">5000</span> --rm my-model-image
 </code></pre>
 <p>透過 curl 進行測試：</p>
-<pre><code class="hljs css language-bash">    <span class="token function">curl</span> -X POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
-         -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-         -d <span class="token string">'{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'</span>
+<pre><code class="hljs css language-bash">    <span class="token function">curl</span> <span class="token parameter variable">-X</span> POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
+         <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+         <span class="token parameter variable">-d</span> <span class="token string">'{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'</span>
 </code></pre>
 <p>其中 <code>ndarray</code> 的內容請根據你的應用給予不同的值。</p>
 <p>到此我們已經成功建置出可以給 PrimeHub 模型部署功能使用的映像檔。</p>

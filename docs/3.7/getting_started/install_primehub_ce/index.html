@@ -132,7 +132,7 @@
 <pre><code class="hljs css language-bash"><span class="token function">watch</span> <span class="token string">'kubectl -n hub get pods'</span>
 </code></pre>
 <p>Or once the <code>primehub-bootstrap</code> is running, check the progress of bootstrapping.</p>
-<pre><code class="hljs css language-bash">kubectl logs -n hub <span class="token variable"><span class="token variable">$(</span>kubectl get pod -n hub <span class="token operator">|</span> <span class="token function">grep</span> primehub-bootstrap <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">' '</span> -f1<span class="token variable">)</span></span> -f
+<pre><code class="hljs css language-bash">kubectl logs <span class="token parameter variable">-n</span> hub <span class="token variable"><span class="token variable">$(</span>kubectl get pod <span class="token parameter variable">-n</span> hub <span class="token operator">|</span> <span class="token function">grep</span> primehub-bootstrap <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">' '</span> <span class="token parameter variable">-f1</span><span class="token variable">)</span></span> <span class="token parameter variable">-f</span>
 </code></pre>
 <p>Once to see most pods with Running STATUS except <strong>primehub-bootstrap-xxx</strong> pod in <strong>Completed</strong> STATUS and the READY indicator should be <strong>N/N</strong>.</p>
 <p>Example watch console for the completed installation:</p>

@@ -70,7 +70,7 @@
 <li><p>Select a instance type and image for a job.</p></li>
 <li><p>Fill in <code>Job name</code> with <em>artifacts-simple</em>.</p></li>
 <li><p>Fill in <code>Command</code>; it creates a directory <code>artifacts/</code> which must be specified for storing generated artifacts. (Or creating a symbolic link of the other directory points to <code>artifacts/</code> works as well.)</p>
-<pre><code class="hljs css language-bash"><span class="token function">mkdir</span> -p artifacts/simple
+<pre><code class="hljs css language-bash"><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> artifacts/simple
 <span class="token function">date</span> <span class="token operator">></span> artifacts/date.txt
 <span class="token function">date</span> <span class="token operator">></span> artifacts/simple/date.txt
 </code></pre></li>

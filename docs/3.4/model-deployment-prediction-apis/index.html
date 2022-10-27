@@ -69,35 +69,35 @@
 <p>Please check <a href="https://github.com/SeldonIO/seldon-core/blob/v1.5.0/python/seldon_core/utils.py#L588-L639">Github</a> for more detail.</p>
 <h3><a class="anchor" aria-hidden="true" id="ndarray"></a><a href="#ndarray" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ndarray</h3>
 <p><strong>Format</strong></p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
-    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{ "data": {"ndarray": [[5.964,4.006,2.081,1.031]]} }'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{ "data": {"ndarray": [[5.964,4.006,2.081,1.031]]} }'</span>
 </code></pre>
 <p><strong>Equivalent Code</strong></p>
 <pre><code class="hljs css language-python">X = np.array([[<span class="hljs-number">5.964</span>,<span class="hljs-number">4.006</span>,<span class="hljs-number">2.081</span>,<span class="hljs-number">1.031</span>]])
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="tensor"></a><a href="#tensor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>tensor</h3>
 <p><strong>Format</strong></p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
-    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{ "data": {"tensor": {"shape":[1,4],"values":[5.964,4.006,2.081,1.031]}} }'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{ "data": {"tensor": {"shape":[1,4],"values":[5.964,4.006,2.081,1.031]}} }'</span>
 </code></pre>
 <p><strong>Equivalent Code</strong></p>
 <pre><code class="hljs css language-python">X = np.array([<span class="hljs-number">5.964</span>,<span class="hljs-number">4.006</span>,<span class="hljs-number">2.081</span>,<span class="hljs-number">1.031</span>]).reshape([<span class="hljs-number">1</span>,<span class="hljs-number">4</span>])
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="strdata"></a><a href="#strdata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>strData</h3>
 <p><strong>Format</strong></p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
-    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{ "strData": "any string" }'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{ "strData": "any string" }'</span>
 </code></pre>
 <p><strong>Equivalent Code</strong></p>
 <pre><code class="hljs css language-python">X = <span class="hljs-string">"any string"</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="bindata"></a><a href="#bindata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>binData</h3>
 <p><strong>Format</strong></p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
-    -F <span class="token string">'binData=@your_image.jpg'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST http<span class="token punctuation">(</span>s<span class="token punctuation">)</span>://<span class="token variable">${endpoint}</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-F</span> <span class="token string">'binData=@your_image.jpg'</span>
 </code></pre>
 <p><strong>Equivalent Code</strong></p>
 <pre><code class="hljs css language-python">X = bytes(&lt;content of your_image.jpg&gt;)

@@ -103,10 +103,10 @@ gke-primehub-example-default-pool-51960bca-wr9l   Ready    <none>   98s   v1.15.
 helm repo update
 </code></pre>
 <p>Helm install</p>
-<pre><code class="hljs css language-bash">helm <span class="token function">install</span> nginx-ingress --create-namespace --namespace ingress-nginx --version<span class="token operator">=</span><span class="token number">1.31</span>.0 --set controller.hostNetwork<span class="token operator">=</span>true --set rbac.create<span class="token operator">=</span>true
+<pre><code class="hljs css language-bash">helm <span class="token function">install</span> nginx-ingress --create-namespace <span class="token parameter variable">--namespace</span> ingress-nginx <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token number">1.31</span>.0 <span class="token parameter variable">--set</span> <span class="token assign-left variable">controller.hostNetwork</span><span class="token operator">=</span>true <span class="token parameter variable">--set</span> <span class="token assign-left variable">rbac.create</span><span class="token operator">=</span>true
 </code></pre>
 <p>Find the <code>EXTERNAL-IP</code></p>
-<pre><code class="hljs css language-bash">kubectl get svc -n ingress-nginx
+<pre><code class="hljs css language-bash">kubectl get svc <span class="token parameter variable">-n</span> ingress-nginx
 </code></pre>
 <p>You might see <code>&lt;pending&gt;</code> status in <code>EXTERNAL-IP</code>:</p>
 <pre><code class="hljs css language-text">NAME                            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                      AGE

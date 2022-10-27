@@ -137,9 +137,9 @@ seldonio/seldon-core-s2i-python3   0.18                0380e4efa66e        7 wee
 <pre><code class="hljs">docker run -p 5000:5000 --rm my-model-image
 </code></pre>
 <p>and curl:</p>
-<pre><code class="hljs css language-bash">    <span class="token function">curl</span> -X POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
-         -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-         -d <span class="token string">'{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'</span>
+<pre><code class="hljs css language-bash">    <span class="token function">curl</span> <span class="token parameter variable">-X</span> POST localhost:5000/api/v1.0/predictions <span class="token punctuation">\</span>
+         <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+         <span class="token parameter variable">-d</span> <span class="token string">'{ "data": { "ndarray": [[5.964,4.006,2.081,1.031]]}}'</span>
 </code></pre>
 <p>Replace <code>ndarray</code> content in curl example according to your application.</p>
 <p>You have built the docker image for a PrimeHub model deployment successfully now.</p>

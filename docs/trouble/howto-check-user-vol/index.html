@@ -15,11 +15,11 @@
 <ol>
 <li><p>Determine a username for checking.</p></li>
 <li><p>Substitute <code>&lt;username&gt;</code> with the username in the command and run it to gain user pod name.</p>
-<pre><code class="hljs css language-bash">kubectl -n hub get pod <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">&lt;</span>username<span class="token operator">></span>
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub get pod <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">&lt;</span>username<span class="token operator">></span>
 </code></pre>
 <p>Note down the user pod name like <code>jupyter-&lt;username&gt;-xxxx</code>.</p></li>
 <li><p>Substitute <code>jupyter-&lt;username&gt;-xxxx</code> with the real name in the command and run ti to learn the usage.</p>
-<pre><code class="hljs css language-bash">kubectl -n hub <span class="token builtin class-name">exec</span> jupyter-<span class="token operator">&lt;</span>username<span class="token operator">></span>-xxx -- <span class="token function">sh</span> -c <span class="token string">'df -h | grep rbd'</span>
+<pre><code class="hljs css language-bash">kubectl <span class="token parameter variable">-n</span> hub <span class="token builtin class-name">exec</span> jupyter-<span class="token operator">&lt;</span>username<span class="token operator">></span>-xxx -- <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">'df -h | grep rbd'</span>
 </code></pre>
 <p>We should see a similar output of usage info:</p>
 <pre><code class="hljs css language-text">Filesystem                   Size  Used  Avail  Capacity    Mounted on

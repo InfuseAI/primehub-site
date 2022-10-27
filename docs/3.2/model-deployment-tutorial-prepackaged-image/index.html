@@ -87,16 +87,16 @@
 <p>When the deployment is deployed successfully, we can click on cell to check its detail.</p>
 <p><img src="/docs/assets/mdeploy_quickstart_detailpage_1.png" alt=""></p></li>
 <li><p>We can view some detailed information in detail page, now let's test our deployed model! Copy the <code>endpoint URL</code> and replace the <code>${YOUR_ENDPOINT_URL}</code> in the following block.</p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST <span class="token variable">${YOUR_ENDPOINT_URL}</span> <span class="token punctuation">\</span>
-    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token variable">${YOUR_ENDPOINT_URL}</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
 </code></pre>
 <p>Then copy the entire block to the terminal for execution, and we are sending tensor as request data.</p>
 <ul>
 <li>Example of request data
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -X POST https://hub.xxx.aws.primehub.io/deployment/quickstart-iris-xxx/api/v1.0/predictions <span class="token punctuation">\</span>
-    -H <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
-    -d <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://hub.xxx.aws.primehub.io/deployment/quickstart-iris-xxx/api/v1.0/predictions <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{ "data": {"tensor": {"shape": [1, 4], "values": [5.3, 3.5, 1.4, 0.2]}} }'</span>
 </code></pre></li>
 <li>Example of response data (it predicts the species is <code>Iris setosa</code> as the first index has the highest prediction value)
 <pre><code class="hljs css language-bash"><span class="token punctuation">{</span>

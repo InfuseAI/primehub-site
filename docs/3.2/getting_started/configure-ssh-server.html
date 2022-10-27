@@ -120,8 +120,8 @@
 </ul></li>
 <li><p>How do I refresh the SSH key cache manually?</p>
 <p>If you are able to reach your Kubernetes cluster, you can run the following command to refresh the SSH key cache manually.</p>
-<pre><code class="hljs css language-bash">$ <span class="token assign-left variable">POD_NAME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get pod -n hub --selector<span class="token operator">=</span>ssh-bastion-server/bastion<span class="token operator">=</span>true -o <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">'{.items[*].metadata.name}'</span><span class="token variable">)</span></span>
-$ kubectl <span class="token builtin class-name">exec</span> -it -n hub <span class="token variable">$POD_NAME</span> <span class="token function">bash</span>
+<pre><code class="hljs css language-bash">$ <span class="token assign-left variable">POD_NAME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get pod <span class="token parameter variable">-n</span> hub <span class="token parameter variable">--selector</span><span class="token operator">=</span>ssh-bastion-server/bastion<span class="token operator">=</span>true <span class="token parameter variable">-o</span> <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">'{.items[*].metadata.name}'</span><span class="token variable">)</span></span>
+$ kubectl <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> <span class="token parameter variable">-n</span> hub <span class="token variable">$POD_NAME</span> <span class="token function">bash</span>
 root@ssh-bastion-server:/<span class="token comment"># cd /etc/ssh</span>
 root@ssh-bastion-server:/<span class="token comment"># python update_authorized_keys.py full</span>
 root@ssh-bastion-server:/<span class="token comment"># exit</span>

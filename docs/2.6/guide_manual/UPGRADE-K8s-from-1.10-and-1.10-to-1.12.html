@@ -25,7 +25,7 @@
 <pre><code class="hljs css language-bash"><span class="token function">mv</span> <span class="token variable">$RKE_LOCATION</span>/rke <span class="token variable">$RKE_LOCATION</span>/rke.bak
 </code></pre></li>
 <li><p>Download RKE version <code>v0.1.15</code> (We assumed that you are using GNU/Linux OS platform and X86-64 system here):</p>
-<pre><code class="hljs css language-bash"><span class="token function">curl</span> -Lo <span class="token variable">$RKE_LOCATION</span>/rke-0.1.15 https://github.com/rancher/rke/releases/download/v0.1.15/rke_linux-amd64 <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> u+x r<span class="token variable">$RKE_LOCATION</span>/ke-0.1.15 <span class="token operator">&amp;&amp;</span> <span class="token function">ln</span> -s <span class="token variable">$RKE_LOCATION</span>/rke-0.1.15 <span class="token variable">$RKE_LOCATION</span>/rke
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-Lo</span> <span class="token variable">$RKE_LOCATION</span>/rke-0.1.15 https://github.com/rancher/rke/releases/download/v0.1.15/rke_linux-amd64 <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> u+x r<span class="token variable">$RKE_LOCATION</span>/ke-0.1.15 <span class="token operator">&amp;&amp;</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> <span class="token variable">$RKE_LOCATION</span>/rke-0.1.15 <span class="token variable">$RKE_LOCATION</span>/rke
 </code></pre></li>
 <li><p>Run <code>rke</code> again to verify that you have RKE version <code>v0.1.15</code> now.</p></li>
 <li><p>Unset the <code>RKE_LOCATION</code> environment variable:</p>
@@ -86,7 +86,7 @@ system_images:
 <pre><code class="hljs css language-bash"><span class="token function">cp</span> cluster.yml cluster.yml.bak
 </code></pre></li>
 <li><p>After editing <code>cluster.yml</code>, please re-provisioning your K8s cluster by running:</p>
-<pre><code class="hljs css language-bash">rke up --config cluster.yml
+<pre><code class="hljs css language-bash">rke up <span class="token parameter variable">--config</span> cluster.yml
 </code></pre></li>
 <li><p>If re-provisioning is completed successfully, your K8s will be version 1.12, you may verify it by running:</p>
 <pre><code class="hljs css language-bash">kubectl version

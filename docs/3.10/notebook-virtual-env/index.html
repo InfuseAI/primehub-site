@@ -78,7 +78,7 @@
 <pre><code class="hljs css language-bash">conda update conda
 </code></pre>
 <p>Create a new environment with desired Python version</p>
-<pre><code class="hljs css language-bash">conda create --name myenv <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.6</span>.8
+<pre><code class="hljs css language-bash">conda create <span class="token parameter variable">--name</span> myenv <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.6</span>.8
 </code></pre>
 <p>Activate the new environment</p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">source</span> activate myenv
@@ -87,7 +87,7 @@
 <pre><code class="hljs css language-bash">conda <span class="token function">install</span> ipykernel
 </code></pre>
 <p>Register a new ipykernel</p>
-<pre><code class="hljs css language-bash">python -m ipykernel <span class="token function">install</span> --user --name myenv
+<pre><code class="hljs css language-bash">python <span class="token parameter variable">-m</span> ipykernel <span class="token function">install</span> <span class="token parameter variable">--user</span> <span class="token parameter variable">--name</span> myenv
 </code></pre>
 <p>Launch a new Notebook using the <code>myenv</code> kernel</p>
 <p><img src="/docs/assets/coda_python_version.png" alt=""></p>
@@ -98,14 +98,14 @@
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="use-virtualenvvenv"></a><a href="#use-virtualenvvenv" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use virtualenv(venv)</h2>
 <p>Open Terminal and run, it will create a venv corresponding to the specific_python_version</p>
-<pre><code class="hljs css language-bash">/path/to/specific_python_version -m venv myenv_py_version
+<pre><code class="hljs css language-bash">/path/to/specific_python_version <span class="token parameter variable">-m</span> venv myenv_py_version
 </code></pre>
 <p>and activate/switch to the venv:</p>
 <pre><code class="hljs css language-bash"><span class="token builtin class-name">source</span> myenv_py_version/bin/activate
 </code></pre>
 <p>then install iPython kernel package and register a new ipykernel in the current venv:</p>
 <pre><code class="hljs css language-bash">pip <span class="token function">install</span> ipykernel
-python -m ipykernel <span class="token function">install</span> --user --name<span class="token operator">=</span>myenv_py_version --display-name <span class="token string">"Python &lt;specific_version>"</span>
+python <span class="token parameter variable">-m</span> ipykernel <span class="token function">install</span> <span class="token parameter variable">--user</span> <span class="token parameter variable">--name</span><span class="token operator">=</span>myenv_py_version --display-name <span class="token string">"Python &lt;specific_version>"</span>
 </code></pre>
 <p>list available kernel spec for the verification</p>
 <pre><code class="hljs css language-bash">jupyter kernelspec list

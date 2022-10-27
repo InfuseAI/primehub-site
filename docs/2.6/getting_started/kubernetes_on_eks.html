@@ -65,7 +65,7 @@
 <h3><a class="anchor" aria-hidden="true" id="generate-access-key"></a><a href="#generate-access-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generate Access Key</h3>
 <p>Visiting <a href="https://aws.amazon.com/console/">AWS Console</a> and IAM service page to generate your own access key.</p>
 <h3><a class="anchor" aria-hidden="true" id="prepare-aws-credentials"></a><a href="#prepare-aws-credentials" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare AWS credentials</h3>
-<pre><code class="hljs css language-bash"><span class="token function">mkdir</span> -p ~/.aws
+<pre><code class="hljs css language-bash"><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> ~/.aws
 <span class="token function">touch</span> ~/.aws/credentials
 </code></pre>
 <p>Edit <code>credentials</code> and add the content with the generated access key.</p>
@@ -94,7 +94,7 @@ eksctl version
 <span class="token assign-left variable">EKS_ZONE</span><span class="token operator">=</span><span class="token variable">${EKS_REGION}</span>-c
 
 <span class="token comment"># Running eksctl to create EKS cluster</span>
-eksctl create cluster -f - <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+eksctl create cluster <span class="token parameter variable">-f</span> - <span class="token operator">&lt;&lt;</span><span class="token string">EOF
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
@@ -124,7 +124,7 @@ EOF</span>
 <pre><code class="hljs css language-bash">eksctl get cluster
 </code></pre>
 <p>Update kube-config with the newly created cluster info.</p>
-<pre><code class="hljs css language-bash">aws eks update-kubeconfig --name <span class="token variable">${EKS_CLUSTER_NAME}</span> --alias <span class="token variable">${EKS_CLUSTER_NAME}</span>
+<pre><code class="hljs css language-bash">aws eks update-kubeconfig <span class="token parameter variable">--name</span> <span class="token variable">${EKS_CLUSTER_NAME}</span> <span class="token parameter variable">--alias</span> <span class="token variable">${EKS_CLUSTER_NAME}</span>
 </code></pre>
 <p>Try to get nodes to verify the added kubeconfig:</p>
 <pre><code class="hljs css language-bash">kubectl get nodes
@@ -135,11 +135,11 @@ ip-192-168-74-187.ap-northeast-1.compute.internal   Ready    <span class="token 
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="install-helm"></a><a href="#install-helm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install helm</h2>
 <p>Install helm 2.x binary. Please see the installation steps in <a href="/docs/2.6/getting_started/prerequisites">prerequisites</a>. Make sure the helm binary version is <code>v2.x.x</code> (<code>v3.x.x</code> is <em>not supported</em> yet)</p>
-<pre><code class="hljs css language-bash">helm version --client
+<pre><code class="hljs css language-bash">helm version <span class="token parameter variable">--client</span>
 Client: <span class="token operator">&amp;</span>version.Version<span class="token punctuation">{</span>SemVer:<span class="token string">"v2.16.3"</span>, GitCommit:<span class="token string">"1ee0254c86d4ed6887327dabed7aa7da29d7eb0d"</span>, GitTreeState:<span class="token string">"clean"</span><span class="token punctuation">}</span>
 </code></pre>
 <p>Apply RBAC resources for helm</p>
-<pre><code class="hljs css language-bash">kubectl apply -f - <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+<pre><code class="hljs css language-bash">kubectl apply <span class="token parameter variable">-f</span> - <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -161,10 +161,10 @@ subjects:
 EOF</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="nginx-ingress"></a><a href="#nginx-ingress" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nginx Ingress</h2>
-<pre><code class="hljs css language-bash">helm <span class="token function">install</span> stable/nginx-ingress --namespace ingress-nginx --name nginx-ingress --set rbac.create<span class="token operator">=</span>true
+<pre><code class="hljs css language-bash">helm <span class="token function">install</span> stable/nginx-ingress <span class="token parameter variable">--namespace</span> ingress-nginx <span class="token parameter variable">--name</span> nginx-ingress <span class="token parameter variable">--set</span> <span class="token assign-left variable">rbac.create</span><span class="token operator">=</span>true
 </code></pre>
 <p>Find the <code>EXTERNAL-IP</code></p>
-<pre><code class="hljs css language-bash">kubectl get svc -n ingress-nginx
+<pre><code class="hljs css language-bash">kubectl get svc <span class="token parameter variable">-n</span> ingress-nginx
 
 NAME                               TYPE           CLUSTER-IP       EXTERNAL-IP                                                                          PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>                      AGE
 nginx-ingress-controller           LoadBalancer   <span class="token number">10.100</span>.253.162   a3ee868bc0f194ac19c04948497bc8ca-a179fb405d10a39f.elb.ap-northeast-1.amazonaws.com   <span class="token number">80</span>:31938/TCP,443:30853/TCP   21d
