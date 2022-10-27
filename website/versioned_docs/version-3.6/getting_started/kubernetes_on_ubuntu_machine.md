@@ -149,7 +149,7 @@ Reference
 
 ## Install PrimeHub
 
-Run the `create primehub` command with a specified version.
+Run the `create primehub` command with a specified version.
 
 ```bash
 ./primehub-install create primehub

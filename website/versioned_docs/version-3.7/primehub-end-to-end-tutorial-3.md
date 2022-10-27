@@ -154,15 +154,15 @@ Choose the instance type, the minimal requirements in this tutorial is `CPU: 0.5
 
 Then, click `Deploy`.
 
-Our model is deploying, let's click the `tf-screw-deployment` cell.
+Our model is deploying, let's click the `tf-screw-deployment` cell.
 ![](assets/tutorial_deployment_cell.png)
 
 In the [deployment detail](model-deployment-feature#deployment-detail) page, we can see the status is `Deploying`.
 ![](assets/tutorial_deployment_deploying.png)
 
-Wait for a while and our model is `Deployed` now!
+Wait for a while and our model is `Deployed` now!
 
-We can view some detailed information, now let's copy the value of `Endpoint` (`https://.../predictions`) to test our deployed model!
+We can view some detailed information, now let's copy the value of `Endpoint` (`https://.../predictions`) to test our deployed model!
 ![](assets/tutorial_deployment_deployed.png)
 
 Replace `${YOUR_ENDPOINT_URL}` with your `Endpoint` value in the following block.

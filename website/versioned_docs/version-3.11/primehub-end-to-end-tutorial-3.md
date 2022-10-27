@@ -1,8 +1,9 @@
 ---
-id: primehub-end-to-end-tutorial-3
+id: version-3.11-primehub-end-to-end-tutorial-3
 title: 3 - Compare, Register and Deploy the Model
 sidebar_label: 3 - Deploy Model
 description: Compare, Register and Deploy the Model
+original_id: primehub-end-to-end-tutorial-3
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise
@@ -14,9 +15,9 @@ description: Compare, Register and Deploy the Model
 
 In the previous part, we used PrimeHub Notebook to train and manage the base model. In this part, we will:
 
-1. Compare the results of these two experiment. 
+1. Compare the results of these two experiments.
 2. The experiment with the best performance will be registered in PrimeHub Models
-3. Deploy as an online API service via PrimeHub's Model Deployment feature.
+3. Deploy the model as an online API service via PrimeHub's Model Deployment feature.
 4. Use the command line to test the API service.
 
 ## Prerequisites
@@ -67,7 +68,6 @@ Enter the model information to register the model.
 
 <img src="assets/primehub-end-to-end-tutorial-mlflow-register-model-2.png" alt="drawing" width="500"/>
 
-
 ## Step 2: Deploy and test the model service
 
 ### 1. Model Deployment
@@ -116,8 +116,8 @@ You can get the output result:
 
 ## Conclusion
 
-In this tutorial, we compared and selected a suitable model using MLflow, deployed a model, and tested the model with sample data.
+In this tutorial, we compared and selected a better model using MLflow, deployed a model, and tested the model with sample data.
 
 ## Next Section
 
-In the next article, we will add a web application interface to our model using Streamlit, another app available through PrimeHub Apps.
+In the next article, we will wrap our model as a web application by using [Streamlit](https://streamlit.io/) and load it into PrimeHub Apps.

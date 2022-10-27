@@ -6,7 +6,7 @@ original_id: release-note
 
 ### PrimeHub-Ready Kubernetes
 
-We have simplified our overall PrimeHub installation process! Simply use the new `helm install` command. To equip you with what you need to get started, please view our documentation here.
+We have simplified our overall PrimeHub installation process! Simply use the new `helm install` command. To equip you with what you need to get started, please view our documentation here.
 
 **Documentation:**
 

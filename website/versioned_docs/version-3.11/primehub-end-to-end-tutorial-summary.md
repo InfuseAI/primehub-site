@@ -1,8 +1,9 @@
 ---
-id: primehub-end-to-end-tutorial-summary
-title: Summary
+id: version-3.11-primehub-end-to-end-tutorial-summary
+title: 5 - Summary
 sidebar_label: 5 - Summary
 description: A summary of everything we have achieved in this tutorial
+original_id: primehub-end-to-end-tutorial-summary
 ---
 <div class="label-sect">
   <div class="ee-only tooltip">Enterprise

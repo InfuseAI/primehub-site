@@ -149,7 +149,7 @@ Reference
 
 ## Install PrimeHub CE
 
-Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.1.0`.
+Run the `create primehub` command with `--primehub-ce` and with a specified version such `v3.1.0`.
 
 ```bash
 ./primehub-install create primehub --primehub-version <version> --primehub-ce --helm-timeout 20m
