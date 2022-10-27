@@ -13,13 +13,13 @@ original_id: primehub-end-to-end-tutorial-advanced-1
 
 ## Introduction
 
-The aim of the model is to detect a good or bad example of a screw from a given photograph. In this section, you will label photographs of screws that will be used to train your model.
+The aim of the model is to detect a good or bad example of a screw from a given image. In this section, you will label images of screws that will be used to train your model.
 
 Data labeling is a critical part of model development for machine learning. By using a well-defined dataset, data scientists can train effective models.
 
 In this tutorial, we will:
 
-1. Using [Label Studio](https://labelstud.io/), an open-source data labeling tool, to label data and train a model.  Label Studio is available as part of [PrimeHub Apps](https://docs.primehub.io/docs/primehub-app), a convenient way to integrate 3rd-party apps into your ML Workflow.
+1. Using [Label Studio](https://labelstud.io/), an open-source data labeling tool, to label data and train a model.  Label Studio is available as one app of [PrimeHub Apps](https://docs.primehub.io/docs/primehub-app), a convenient way to integrate 3rd-party apps into your ML Workflow.
 2. Configure the Label Studio project setting and label the images.
 3. Export the labeling Json-format output file.
 
@@ -89,9 +89,9 @@ For each image, click either the **good** or **bad** checkbox, use the keyboard 
     
 ![](assets/primehub-end-to-end-tutorial-label-studio-labeling.png)
     
-### Step 5: Export the labeling output.
+### Step 5: Export the labeling output
     
-You can use the export UI to download the JSON-formatted files to your local computer.
+You can use the *Export* button to download the JSON-formatted files to your local computer.
 
 ![](Advanced%20Labeling%20the%20data%2040b6d65441494ebaa5e5a0b025b1045d/Untitled%201.png)
     
@@ -100,6 +100,6 @@ You can use the export UI to download the JSON-formatted files to your local com
 
 In this tutorial, we have enabled a group volume, installed Label Studio via PrimeHub Apps, and labeled a set of images. Using the labeled dataset, we can move on to the next step.
 
-# Next Section
+## Next Section
 
 In the following tutorial, we will create a notebook to train the screw classification model and manage the model via MLFlow.

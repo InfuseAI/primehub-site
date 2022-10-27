@@ -13,7 +13,7 @@ original_id: primehub-end-to-end-tutorial-advanced-2
 
 ## Introduction
 
-If you want to run the jupyter notebook in the background, you can submit your PrimeHub Notebook to the Job, and then we can see the result after the Job is done.
+If you want to run the jupyter notebook in the background, you can submit your PrimeHub Notebook as a Job, and then we can see the result after the Job is done.
 
 ## Input Parameters and API Access
 

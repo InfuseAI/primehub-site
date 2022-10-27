@@ -20,19 +20,19 @@ In this tutorial, we will do the following.
 
 ## What is MLFlow?
 
-MLFlow is an open-source platform to manage the machine learning model, including training parameters, metrics, and artifacts. All the data scientists can check the information in the platform and know how to improve the machine learning model. Find out more at the following links.
+MLFlow is an open-source platform to manage the machine learning model, including training parameters, metrics, and artifacts. All of the information the data scientists can check in the platform and know how to improve the machine learning model. Find out more at the following links.
 
 
 - [MLflow Website](https://mlflow.org/)
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html)
     
 
-The PrimeHub platform integrates MLFlow as the model management function. You can see the result on the [PrimeHub model page](model-management-tutorial). You can see the detailed information here:
+The PrimeHub platform integrates MLFlow as the model management. You can see the result on the [PrimeHub model page](model-management-tutorial). You can see the detailed information here:
 
 
 ## Step 1: Create the MLflow Server
 
-To track our experiments, we must first install MLflow, which is available as part of PrimeHub Apps. Use the guide at the following link to install MLflow:
+To track our experiments, we must first install MLflow, which is available as one of PrimeHub Apps. Follow the guide below to install MLflow:
     
 - [Create an MLflow server](primehub-app-tutorial-mlflow)
     
@@ -55,7 +55,7 @@ When the notebook has started, you will see the My Server Information page:
         
 ### 2. Download the tutorial project code
     
-Jupyter Notebook → Create terminal → Run the following commands
+Launch Jupyter Notebook → Create terminal → Run the following commands
         
 ```bash
 $ cd <group-name>
@@ -63,7 +63,7 @@ $ git clone https://github.com/InfuseAI/primehub-screw-detection.git
 $ cd primehub-screw-detection
 ```
         
-Open the Notebook and modify the variables
+Open the Notebook `tutorial_screw_training.ipynb` and modify the variables
                 
 ```bash
 # Kaggle connection
@@ -103,7 +103,7 @@ As a result, we can go back to the PrimeHub user portal, open the MLFlow platfor
 
 ## Step 4: Change the parameter for tuning the model
 
-When we successfully build the machine learning model, we need to give experiments for tuning the machine learning model to be the best. 
+When we successfully build the machine learning model, we need to tune the machine learning model by conducting experiments with tweaked variables.
 
 1. Change the variable value and run the Notebook again:
     
@@ -123,8 +123,8 @@ In this tutorial we have done the following.
 1. Installed MLflow in PrimeHub Apps
 2. Connected the MLFlow to PrimeHub in the PrimeHub settings
 3. Trained our model in PrimeHub Notebook
-4. Check the modal management content in the MLFlow Platform.
-5. Use different parameters for tuning the model.
+4. Checked the modal management content in the MLFlow Platform.
+5. Used different parameters for tuning the model.
 
 ## Next Section
 

@@ -17,14 +17,14 @@ This tutorial will add a web interface to our deployed model using [Streamlit](h
 
 ## What is Streamlit?
 
-For most of the data scientists, we did not know how to write the front-end code. Therefore, we can use the streamlit to build the web service and share the data and the model result. It is convenient for data scientists to use python code to create a new application. For more detail, you can see the Streamlit website and documentation.
+For most of the data scientists who don't know how to program the front-end. Therefore, we can use the Streamlit to build the web service easily and share the data and the model result. It is convenient for data scientists to use python code to create a new application. For more detail, you can see the Streamlit website and documentation.
 
 - [Streamlit Website](https://streamlit.io/)
 - [Streamlit Documentation](https://docs.streamlit.io/)
 
 ## Prerequisites
 
-Find the `tutorial_screw_app.py` file in the project folder.
+Find the `streamlit/tutorial_screw_app.py` file in the project folder.
     
 → You can see the python code file in the`./<group-name>/primehub-screw-detection/streamlit/` folder.
     
