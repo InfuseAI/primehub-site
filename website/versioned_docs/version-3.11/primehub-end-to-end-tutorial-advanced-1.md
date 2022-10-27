@@ -55,7 +55,8 @@ PrimeHub user portal → Apps → `+ Application` → Label Studio → Fill in t
 
 ### Step 2: Log into Label Studio.
     
-![](assets/primehub-end-to-end-tutorial-label-studio-userpass.png)
+<img src="assets/primehub-end-to-end-tutorial-label-studio-userpass.png" alt="drawing" width="400"/>
+
 > Tip: The account and password are in the environment variables.
 
 ### Step 3: Create a Label Studio project.

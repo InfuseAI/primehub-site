@@ -23,9 +23,7 @@ Now that we have a runnable notebook to train the screw classification model, we
 
 First, let's allow the editing of the `base_learning_rate` input parameter. This will enable us to submit jobs with a different learning rate and compare model accuracy.
 
-![](assets/primehub-end-to-end-tutorial-base-learning-rate.png)
-
-![](assets/primehub-end-to-end-tutorial-select-cell.png)
+<img src="assets/primehub-end-to-end-tutorial-base-learning-rate.png" alt="drawing" width="500"/>
 
 Click the **Property Inspector** button.
 
@@ -76,11 +74,11 @@ In the pop-up dialog, we can adjust the following settings:
 | Job Name | The job of name | tf-screw-training-lr-0.05 |
 | Notebook Parameters | The parameters we can modify without changing the Notebook value. | base_learning_rate = 0.05 |
 
-![](assets/primehub-end-to-end-tutorial-submit-notebook-as-job.png)
+<img src="assets/primehub-end-to-end-tutorial-submit-notebook-as-job.png" alt="drawing" width="400"/>
 
 After you Submit the Job, you can see the following message.
 
-![](assets/primehub-end-to-end-tutorial-job-submitted.png)
+<img src="assets/primehub-end-to-end-tutorial-job-submitted.png" alt="drawing" width="500"/>
 
 You can click `view your job details here` to get the job information.
 

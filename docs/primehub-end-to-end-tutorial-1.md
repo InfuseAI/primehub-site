@@ -26,15 +26,7 @@ Plan and check that the project or product scope is suitable for Machine Learnin
 
 The example table of project scope:
         
-        
-| Variable | Content |
-| --- | --- |
-| Project Name |  |
-| Dataset |  |
-| Dataset Resource Link |  |
-| Project Goal |  |
-| Measurement |  |
-| Delivery |  |
+<img src="assets/primehub-end-to-end-tutorial-project-scope-example.png" alt="drawing" width="600"/>
 
 ### 2. Data Engineering
 
@@ -58,7 +50,7 @@ Here are some steps to build up a modeling pipeline.
 3. **Model Evaluation**: Check the model is ready for deployment. For example, if the accuracy rate is bigger than 0.95, then we can change to the new model.
 4. **Model Registry:** Register the model and Put the model into the production waiting line.
 4. **Model** **Deployment**: Use the ‘Dockerize’ method to package the model and deploy it into the cloud or edge devices as endpoints. The package method could be an API server or serverless method.
-5. **Monitoring**: Monitor the model service performance, which contains two parts:
+5. **Model Monitoring**: Monitor the model service performance, which contains two parts:
     1. Monitor the infrastructure where we deploy: E.g. load, usage, storage, and health.
     2. Monitor the model for its performance: Model and data performance that we need to retrain or not.
 

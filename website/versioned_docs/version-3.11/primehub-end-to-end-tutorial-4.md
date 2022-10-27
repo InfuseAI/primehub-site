@@ -38,7 +38,7 @@ User portal → Apps → Click `+ Application` → Click `+ Install in PrimeHub`
 | Variable | Value |
 | --- | --- |
 | Name | Screw Defect Detection |
-| [Env] FILE_PATH | /project/<group-name>/primehub-screw-detection/streamlit/tutorial_screw_app.py |
+| [Env] FILE_PATH | /project/<group-name>/primehub-screw-detection/streamlit/tutorial_screw_app.<br>py |
 | [Env] ENDPOINT | <PrimeHub-Deployment-endpoint-url> |
 | InstanceTypes | CPU-1 |
     

@@ -15,7 +15,7 @@ original_id: primehub-end-to-end-tutorial-2
 
 In this tutorial, we will do the following.
 
-1. Train our model using the labeled data from Part 2.
+1. Train our model using the labeled data.
 2. Use MLFLow to manage the model parameters, metrics, and artifact files.
 
 ## What is MLFlow?
@@ -42,7 +42,7 @@ To track our experiments, we must first install MLflow, which is available as pa
 
 ### 1. Create Jupyter Notebook
     
-→ PrimeHub UI → User portal → Notebook → Choose the instance type and Jupyter image → Start the Notebook
+PrimeHub UI → User portal → Notebook → Choose the instance type and Jupyter image → Start the Notebook
 
 | Variable | Value |
 | --- | --- |
@@ -81,7 +81,7 @@ label_data_file_path = "project-6-at-2022-09-19-04-17-b9f72b54.json"
 ![](assets/primehub-end-to-end-tutorial-train-model.png)
     
 
-> Note: If you want to run the training Notebook in the background job, we also support submitting the Jupyter Notebook as a job method. Please see the [advanced tutorial section](https://www.notion.so/Advanced-Submit-PrimeHub-Notebook-as-a-PrimeHub-Job-1e5b1491b436427d81175eac3190183c) for details.
+> Note: If you want to run the training Notebook in the background job, we also support submitting the Jupyter Notebook as a job method. Please see the [advanced tutorial section](primehub-end-to-end-tutorial-advanced-2) for details.
 > 
 
 ## Step 3: Use MLFlow to manage the model

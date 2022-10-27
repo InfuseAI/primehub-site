@@ -50,7 +50,8 @@ If you see the content that want us to insert the authorization code, please cli
         
 ![](assets/primehub-end-to-end-tutorial-auth-code.png)
 
-![](assets/primehub-end-to-end-tutorial-paste-code.png)
+<img src="assets/primehub-end-to-end-tutorial-paste-code.png" alt="drawing" width="500"/>
+
         
 
 ### Step 3: Check the group information

@@ -63,7 +63,9 @@ In the Artifact, register the model folder as our model registry.
 
 ![](assets/primehub-end-to-end-tutorial-mlflow-register-model-1.png)
 
-![](assets/primehub-end-to-end-tutorial-mlflow-register-model-2.png)
+Enter the model information to register the model.
+
+<img src="assets/primehub-end-to-end-tutorial-mlflow-register-model-2.png" alt="drawing" width="500"/>
 
 
 ## Step 2: Deploy and test the model service
