@@ -12,5 +12,6 @@ website/node_modules
 website/i18n/*
 website/package-lock.json
 publish.sh
+website/publish.sh
 website/publish_ver.sh
 website/package.json
