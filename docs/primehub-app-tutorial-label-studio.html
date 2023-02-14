@@ -95,8 +95,35 @@
 <li><p>Enter your <code>Project Name</code>. Skip the <code>Data Import</code> step. And choose the <code>Labeling Setup</code>. Here we choose <code>Semantic Segmentation with Polygons</code>.</p></li>
 <li><p>Delete the original <code>Labels</code> settings and <code>Add</code> our own label names.</p>
 <p><img src="/docs/assets/app_tutorial_labelstudio_labeling_setup.png" alt=""></p></li>
-<li><p>Click the <code>Settings</code> on the upper-right. Click <code>Cloud Storage</code> and <code>Add Source Storage</code> to sync the <code>/datasets/dog-demo</code> data volume to label. You need to set <code>Local path</code> to <code>/datasets/dog-demo</code>, turn on toggle of <code>Treat every bucket object as a source file</code> and click <code>Sync Storage</code></p>
-<p><img src="/docs/assets/app_tutorial_labelstudio_sync_source.gif" alt=""></p></li>
+<li><p>Sync the data file folder with the Label Studio</p>
+<ol>
+<li>Click the <em>Settings</em> on the upper-right</li>
+</ol>
+<p><img src="/docs/assets/label_4a.png" alt=""></p>
+<ol start="2">
+<li>Click <em>Cloud Storage</em> and <em>Add Source Storage</em> to sync the data volume to label</li>
+</ol>
+<p><img src="/docs/assets/label_4b.png" alt=""></p>
+<ol start="3">
+<li>Configure the source storage setting:</li>
+</ol>
+<table>
+<thead>
+<tr><th>Variable</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Storage type</td><td>Local Path</td></tr>
+<tr><td>Absolute local path</td><td>/datasets/dog-demo/</td></tr>
+<tr><td>File Filter Regex</td><td>.*jpeg</td></tr>
+<tr><td>Treat every bucket object as a source file</td><td>enable</td></tr>
+</tbody>
+</table>
+<p><img src="/docs/assets/label_4c.png" alt=""></p>
+<ol start="4">
+<li>Click <em>Sync Storage</em> to sync the data volume</li>
+</ol></li>
+</ol>
+<ol start="5">
 <li><p>Click <code>Add Target Storage</code> to sync to labeled results to <code>/project/&lt;group_name&gt;/dog-demo-labeled</code>. You need to set <code>Local path</code> to <code>/project/&lt;group_name&gt;/dog-demo-labeled</code>.</p>
 <p><img src="/docs/assets/app_tutorial_labelstudio_sync_target.gif" alt=""></p></li>
 <li><p>Back to the project in Label Studio. The data in the data volume has been shown on the UI. And you can click each row of data to label.</p>
@@ -152,4 +179,4 @@
 <img src="/docs/assets/app_tutorial_labelstudio_screw_train_completed.png" alt=""></p></li>
 </ol>
 <p>We successfully use our labeled data to train a model which can classify whether the screw is good or bad!</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/primehub-app-tutorial-mlflow"><span class="arrow-prev">← </span><span>Create an MLflow server</span></a><a class="docs-next button" href="/docs/primehub-app-builtin-code-server"><span>Code Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install-label-studio">Install Label Studio</a></li><li><a href="#label-studio-ui">Label Studio UI</a></li><li><a href="#label-dataset">Label Dataset</a><ul class="toc-headings"><li><a href="#what-we-need">What we need?</a></li><li><a href="#steps">Steps</a></li></ul></li><li><a href="#how-to-use-labeled-data-to-train-a-model">How to Use Labeled Data to Train a Model</a><ul class="toc-headings"><li><a href="#what-we-need-1">What we need?</a></li><li><a href="#steps-1">Steps</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2022 InfuseAI</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/primehub-app-tutorial-mlflow"><span class="arrow-prev">← </span><span>Create an MLflow server</span></a><a class="docs-next button" href="/docs/primehub-app-builtin-code-server"><span>Code Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install-label-studio">Install Label Studio</a></li><li><a href="#label-studio-ui">Label Studio UI</a></li><li><a href="#label-dataset">Label Dataset</a><ul class="toc-headings"><li><a href="#what-we-need">What we need?</a></li><li><a href="#steps">Steps</a></li></ul></li><li><a href="#how-to-use-labeled-data-to-train-a-model">How to Use Labeled Data to Train a Model</a><ul class="toc-headings"><li><a href="#what-we-need-1">What we need?</a></li><li><a href="#steps-1">Steps</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2023 InfuseAI</section></footer></div></body></html>
