@@ -54,9 +54,29 @@ It will open a new window and show the Label Studio UI. You can find your login 
 
     ![](assets/app_tutorial_labelstudio_labeling_setup.png)
 
-4. Click the `Settings` on the upper-right. Click `Cloud Storage` and `Add Source Storage` to sync the `/datasets/dog-demo` data volume to label. You need to set `Local path` to `/datasets/dog-demo`, turn on toggle of `Treat every bucket object as a source file` and click `Sync Storage`
+4. Sync the data file folder with the Label Studio
 
-    ![](assets/app_tutorial_labelstudio_sync_source.gif)
+   1. Click the *Settings* on the upper-right
+
+   ![](assets/label_4a.png)
+
+   2. Click *Cloud Storage* and *Add Source Storage* to sync the data volume to label
+   
+   ![](assets/label_4b.png)
+    
+   3. Configure the source storage setting:
+
+    |Variable|Value|
+    |--------|-----|
+    |Storage type|Local Path|
+    |Absolute local path|/datasets/dog-demo/|
+    |File Filter Regex|.*jpeg|
+    |Treat every bucket object as a source file|enable|
+
+   ![](assets/label_4c.png)
+
+   4. Click *Sync Storage* to sync the data volume
+
 
 5. Click `Add Target Storage` to sync to labeled results to `/project/<group_name>/dog-demo-labeled`. You need to set `Local path` to `/project/<group_name>/dog-demo-labeled`.
 
