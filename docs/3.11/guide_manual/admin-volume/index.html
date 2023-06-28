@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Volume Management · PrimeHub</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Volume Management"/><meta name="docsearch:version" content="3.11"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Volume Management · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="Volume Management"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.11</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.11/introduction" target="_self">Documentation</a></li><li class=""><a href="/docs/3.11/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://docs-v4.primehub.io/" target="_blank">🌟 Doc v4 ⇗</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Volume Management</h1></header><article><div><span><div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="ce-only tooltip">Community
+    <span class="tooltiptext">Applicable to Community Edition</span>
+  </div>
+</div>
+<p>Volume management provides the capabilities of managing volume resources such as create, delete, edit volumes and of permission-control so that volumes can be accessed only by specific groups accordingly.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-new-volume"></a><a href="#creating-new-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating New Volume</h2>
+<p><img src="/docs/assets/volume_list.png" alt=""></p>
+<p>Click <code>Add</code> to add a Volume and it will pop up the edit screen of Volumes.</p>
+<p><img src="/docs/assets/admin_dataset_v3.png" alt=""></p>
+<p>You need to fill in these fields:</p>
+<ul>
+<li><p><code>Name</code> (required): Only lowercase letters, numbers, hyphen <code>-</code> and a dot <code>.</code> can be filled in.</p></li>
+<li><p><code>Display name</code></p></li>
+<li><p><code>Description</code></p></li>
+<li><p><code>Mount Root</code> This field is not editable. It displays the path to volumes.</p></li>
+<li><p><code>Global</code> If enabled, everyone can read this volume; furthermore, we can set <code>Writable</code> groups. If disabled, linking groups with <code>ReadOnly</code> or <code>Writable</code> permission by <code>edit groups</code> is required.</p></li>
+<li><p><code>Type</code> Volume type.</p></li>
+<li><p><code>Edit Groups</code> Set accessible groups, when <code>Global</code> is disabled.</p></li>
+</ul>
+<p>There are several <code>type</code>:</p>
+<h3><a class="anchor" aria-hidden="true" id="persistent-volume"></a><a href="#persistent-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Persistent Volume</h3>
+<ul>
+<li><code>Provisioning</code>: <code>Auto</code>, <code>Manual</code>.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="auto"></a><a href="#auto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auto</h4>
+<p><img src="/docs/assets/volume_pv_auto.png" alt=""></p>
+<p>Specifying the <code>volume size</code>, once it is confirmed, there is a fixed-size volume created and the volume size is not changeable by editing the volume.</p>
+<h4><a class="anchor" aria-hidden="true" id="manual"></a><a href="#manual" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual</h4>
+<p><img src="/docs/assets/volume_pv_manual.png" alt=""></p>
+<p>Setting provisioning <code>Manual</code> allows administrators configure the persistent volume manually with an existing storage. Generally, it is used for storages types which are not listed in PrimeHub Volume. Please refer to the <a href="https://kubernetes.io/docs/concepts/storage/persistent-datasets/">Kubernetes official documentation</a> for the configuration.</p>
+<p>The only rule you need to follow is that the <code>PersistentVolumeClaim</code> name must be <code>volume-{&quot;Name&quot; field set via UI}</code>.</p>
+<p>Click <code>Confirm</code> to complete the addition.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="nfs"></a><a href="#nfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NFS</h3>
+<p><img src="/docs/assets/volume_nfs.png" alt=""></p>
+<p>An nfs volume allows an existing NFS(Network File System) share to be mounted into the pod. The data of an nfs volume is preserved even if the volume is unmounted.
+NFS can be mounted by multiple groups simultaneously.</p>
+<p>NFS settings remain editable after the creation.</p>
+<blockquote>
+<p>You must have an existing NFS server running with the share exported before you can use it, otherwise unexpected behaviors which are varied with circumstances occur.
+Please see <a href="../trouble/dataset-failure">trouble-shooting</a>.</p>
+</blockquote>
+<ul>
+<li><p><code>NFS Server</code> Fill in the URL of the server.</p></li>
+<li><p><code>NFS Path</code> Fill in the path to the share.</p></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="host-path"></a><a href="#host-path" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Host Path</h3>
+<p><img src="/docs/assets/volume_hostpath.png" alt=""></p>
+<p>In PrimeHub, a hostPath volume mounts a directory from the hosting node's filesystem into the pod.</p>
+<blockquote>
+<p>The hostpath/to/directory must exist on nodes and corresponding permissions must be granted, otherwise unexpected behaviors which are varied with circumstances occur.
+Please see <a href="../trouble/dataset-failure">trouble-shooting</a>.</p>
+</blockquote>
+<ul>
+<li><code>HostPath</code> Fill in the path to a directory. The setting remains editable after the creation.</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="git-sync"></a><a href="#git-sync" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git Sync</h3>
+<p><img src="/docs/assets/volume_gitsync.png" alt=""></p>
+<p>Fill the URL of git repo (can be https or git). You can use <code>#branch</code> to specify the branch or tag name.</p>
+<p>Click <code>Change</code> to select a secret from the list if a credential is required.</p>
+<p><img src="/docs/assets/dataset_secret_list.png" alt=""></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="env"></a><a href="#env" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Env</h3>
+<p><img src="/docs/assets/volume_env.png" alt=""></p>
+<p>If volume is an environment variable, not a file, you can use <code>env</code> type. Clicking <code>+ Add field</code> to add fields and fill the <code>key</code> and <code>value</code>.</p>
+<blockquote>
+<p>Please be noticed that any <code>-</code> will be replaced by <code>_</code> in full variable name; the <em>full name</em> of env variables will be <code>&lt;volume_name&gt;_&lt;variable_key&gt;</code> in the circumstance.</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="groups-access-control"></a><a href="#groups-access-control" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Groups Access Control</h3>
+<p><img src="/docs/assets/edit_groups.png" alt=""></p>
+<p><code>Type</code>, <code>Global</code> and <code>edit groups</code> are associated.</p>
+<ul>
+<li><p>When <code>Type</code> of a volume is <strong>writable</strong>:</p>
+<ul>
+<li><code>Global</code> is <strong>enabled</strong>, required to specify groups with writable permission, the rest of groups are read-only.</li>
+<li><code>Global</code> is <strong>disabled</strong>, required to specify groups with writable/read-only permission respectively.</li>
+</ul></li>
+<li><p>When <code>Type</code> of a volume is <strong>read-only</strong>:</p>
+<ul>
+<li><code>Global</code> is <strong>enabled</strong>, all of groups are read-only by default.</li>
+<li><code>Global</code> is <strong>disabled</strong>, required to specify groups with read-only permission.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="deleting-volume"></a><a href="#deleting-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting Volume</h2>
+<p><img src="/docs/assets/actions.png" alt=""></p>
+<p>Click <code>Delete</code> in the Volumes list, the confirmation dialog will pop up, and the Volume will be deleted when you click <code>OK</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="editing-deataset"></a><a href="#editing-deataset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing Deataset</h2>
+<p><img src="/docs/assets/actions.png" alt=""></p>
+<p>Click <code>Edit</code> to enter the edit page of the Volume.</p>
+<p>In terms of type <code>pv</code>, <code>nfs</code> and <code>hostpath</code> volume, we can turn on <code>Upload Server</code> feature on the volume editing page. See <a href="admin-uploader">Upload Server</a>.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-new-volume">Creating New Volume</a><ul class="toc-headings"><li><a href="#persistent-volume">Persistent Volume</a></li><li><a href="#nfs">NFS</a></li><li><a href="#host-path">Host Path</a></li><li><a href="#git-sync">Git Sync</a></li><li><a href="#env">Env</a></li><li><a href="#groups-access-control">Groups Access Control</a></li></ul></li><li><a href="#deleting-volume">Deleting Volume</a></li><li><a href="#editing-deataset">Editing Deataset</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2023 InfuseAI</section></footer></div></body></html>

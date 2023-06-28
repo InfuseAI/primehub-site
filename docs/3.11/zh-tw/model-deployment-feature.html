@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>模型部署 · PrimeHub</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="模型部署"/><meta name="docsearch:version" content="3.11"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="模型部署 · PrimeHub"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.primehub.io/"/><meta property="og:description" content="模型部署"/><meta property="og:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.primehub.io/img/primehub_icon.svg"/><link rel="shortcut icon" href="/img/PrimeHub_icon_32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123266454-3"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-123266454-3');
+            </script><link rel="stylesheet" href="/css/code-block-buttons.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Lato:400,400i,700"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/PrimeHub_icon_64.png" alt="PrimeHub"/><h2 class="headerTitleWithLogo">PrimeHub</h2></a><a href="/versions"><h3>3.11</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/3.11/introduction" target="_self">Documentation</a></li><li class="siteNavGroupActive"><a href="/docs/3.11/index-zh" target="_self">繁中文件</a></li><li class=""><a href="https://docs-v4.primehub.io/" target="_blank">🌟 Doc v4 ⇗</a></li><li class=""><a href="https://cse.google.com/cse?cx=a1b608e4a3908f544" target="_blank">Search ⇗</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Deployments</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/index-zh">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/login-portal-user">User Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-core">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-installation">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">QuickStart<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-quickstart">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorial<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-tutorial">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Notebooks<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/launch-project">Start Notebook</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/user-advanced-setting">Spawner 進階設定</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/ssh-config-cht">SSH Server 功能</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/notebook-tips-cht">小訣竅</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Extension</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/ph-notebook-extension-cht">PrimeHub Extension</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/notebook-as-job-cht">Notebook as a Job</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Jobs<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/job-submission-cht">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/job-artifact-cht">Job Artifacts</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">教學</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/job-tutorial-more">Origins</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Schedule<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/job-scheduling-feature-cht">Job Scheduler</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Models<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-management-cht">Overview (Beta)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-model-management">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deployments<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-feature">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tutorials</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-tutorial-concepts-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-tutorial-prepackaged-image-cht">透過 Pre-packaged Server 模型部署</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-tutorial-prepackaged-image-phfs-cht">透過 Pre-packaged Server 模型部署 (PHFS)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-tutorial-model-image-cht">透過 Language Wrapper 打包模型映像檔部署</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Pre-packaged servers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-prepackaged-server-intro-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-prepackaged-server-tensorflow2-cht">TensorFlow server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-prepackaged-server-pytorch-cht">PyTorch Model Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-prepackaged-server-sklearn-cht">SKLearn server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-prepackaged-server-custom-cht">Customize Pre-packaged Server</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-prepackaged-server-test-cht">Run Pre-packaged Server Locally</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Package from Language Wrapper 教學</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-language-wrapper-intro-cht">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-tutorial-package-image">建置模型部署所需之映像檔 (Python)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-tutorial-package-image-r">建置模型部署所需之映像檔 (R)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-language-wrapper-reusable-base-image-cht">透過預建置 Base Image 加速流程</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Advanced</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-prediction-apis-cht">Prediction APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/model-deployment-model-uri-cht">Model URI</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Shared Files<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/shared-files-cht">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Apps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/primehub-app-cht">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">更多資訊</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-apps">Origins</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Group Administration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/group-image-cht">Images</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/group-setting-cht">Settings</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Admin Portal<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/login-portal-admin">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用者及群組管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-user-cht">User Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-group-cht">Group Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Instance Type 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-instancetype-cht">Instance Type Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/usecase-toleration-cht">Toleration</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/usecase-nodeselector-cht">[使用案例] NodeSelector</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Image 創建及管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-image-cht">Image Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/custom-image-guideline">客製 Image 指南</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Dataset 管理及上傳</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-dataset-cht">Dataset Management</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-uploader-cht">Upload Server</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Secret 管理及取得</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-secret-cht">Secret Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Notebook Instance 管理</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-nb-admin-cht">Notebooks Admin</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">使用量月報表</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-report-cht">Usage Reports</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系統</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/admin-system-cht">System Management</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">維運工具</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/maintenance-cht">Maintenance Notebook (汰舊中)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/maintenance-resize-user-vol">加大 User Volume (汰舊中)</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/maintenance-resize-group-vol">加大 Group Volume (汰舊中)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速上手</h4><ul><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/create-user">建立使用者</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/create-group">建立群組</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/assign-group-admin-cht">指定群組管理者</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/add-instance-type">新增/計劃 Instance Type</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/add-infuseai-image">新增 InfuseAI Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/add-image">增加 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/build-image">創建客製 Image</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/secret-pull-image">GitLab 用 pull secret</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/secret-gitsync">GitHub 用 gitsync secret</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">PrimeHub Deploy<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-deploy">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designs and Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-design">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-config">Origins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-ref">Origins</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/quickstart/nb-data-store-cht">資料儲存空間</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/ssh-vscode-cht">VSCode 遠端存取 Notebooks</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/ssh-keygen-cht">SSH 金鑰生成</a></li><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/guide_manual/images-list">InfuseAI 提供 Images</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Trouble Shooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/3.11/zh-tw/idx-trouble">Origins</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">模型部署</h1></header><article><div><span><div class="label-sect">
+  <div class="ee-only tooltip">Enterprise
+    <span class="tooltiptext">Applicable to Enterprise Edition</span>
+  </div>
+  <div class="deploy-only tooltip">Deploy
+    <span class="tooltiptext">Applicable to Deploy Edition</span>
+  </div>
+</div>
+<p>透過 Model Deployment 功能，使用者可以對 Deployment 進行新增、刪除、更新及佈建等操作。當 Deployment 功能於 Group 設定中開啟時，該 Group 的成員就可以使用此功能。在資源分配上，佈建上線的 model service 須在同 Group quota 限制下，才能佈建成功。管理者可透過 Grafana 來監測該佈建上線服務的使用狀態及資源使用數據；使用者可以檢視佈建的歷史記錄。</p>
+<h2><a class="anchor" aria-hidden="true" id="開啟功能"></a><a href="#開啟功能" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>開啟功能</h2>
+<p>首先開啟指定 Group 的 <code>Model Deployment</code> 功能。</p>
+<p><img src="/docs/assets/mdeploy_enable.png" alt=""></p>
+<p>如果先決的專案群組並沒有開啟<code>Model Deployment</code>，將會看到此訊息</p>
+<blockquote>
+<p>Feature not available - Model Deployment is not enabled for this group. Please contact your administrator to enable it.</p>
+</blockquote>
+<p>請將洽管理員為此專案群組開啟 <code>Model Deployment</code> 或切換至其它已開啟功能的專案群組。</p>
+<h2><a class="anchor" aria-hidden="true" id="主頁"></a><a href="#主頁" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>主頁</h2>
+<p>此頁一覽所有已創建的部署；</p>
+<p><img src="/docs/assets/mdeploy_grid_v38.png" alt=""></p>
+<p>狀態分別由下列顏色來區別：</p>
+<ul>
+<li><p>輸入<code>Search by name</code>: 依關鍵字搜尋部署。</p></li>
+<li><p>點擊<code>+ Create Deployment</code> 按鈕，進入 Deployment 創建頁。</p></li>
+<li><p>點擊<code>Refresh</code>按鈕，更新部署狀態。</p></li>
+<li><p>勾選<code>Deployed By Me</code>: 僅列出由自己發佈的部署。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="部署"></a><a href="#部署" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署</h3>
+<p>各部署列出下列簡短資訊；點擊各部署可查看詳細資訊。</p>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Title</td><td>名稱</td></tr>
+<tr><td>Endpoint</td><td>佈署上線服務 URL</td></tr>
+<tr><td>Last Updated</td><td>最後更新時間 by <code>user</code></td></tr>
+<tr><td>Status</td><td><span style="background-color: #33ea33">Deployed</span> <span style="background-color: red">Failed</span> <span style="background-color: #fba500">Deploying</span> <span style="background-color: #aaaaaa">Stopped</span></td></tr>
+</tbody>
+</table>
+<ul>
+<li><code>Manage</code>: 點擊進入部署詳細頁。</li>
+<li><code>Start/Stop</code>: 起動/停止部署服務。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="創建"></a><a href="#創建" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>創建</h2>
+<p>請確認目前預先決定的專案群組，是否為設想的群組；切換專案群組請用下拉選單 <code>Group:</code>。</p>
+<p><img src="/docs/assets/mdeploy_create_v37.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="deployment-details"></a><a href="#deployment-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment Details</h3>
+<ul>
+<li><p><code>Deployment Name</code>: 名稱。</p></li>
+<li><p><code>Deployment ID</code>: 系統產生或使用者自行輸入唯一 ID。</p></li>
+<li><p><code>Model Image</code>:</p>
+<ul>
+<li><p>可以直接部署的映像檔 (<a href="model-deployment-tutorial-model-image-cht">Tutorial: 透過 Language Wrapper 打包模型映像檔部署</a>).</p></li>
+<li><p>或是採用 pre-packaged model server 映像檔搭配 model file (<a href="model-deployment-tutorial-prepackaged-image-cht">Tutorial: 透過 Pre-packaged Server 模型部署</a><a href="model-deployment-tutorial-prepackaged-image-phfs-cht">、Tutorial: 透過 Pre-packaged Server 模型部署 (PHFS)</a>).</p>
+<p>選擇建議合適的 pre-packaged model server 映像檔；可以點擊連結查看相關教學。
+<img src="/docs/assets/mdeploy_create_model_image_suggestion.png" alt=""></p></li>
+</ul></li>
+<li><p><code>Model URI</code>: 模型檔案路徑；<a href="model-deployment-model-uri-cht">支援的 URIs</a>。</p></li>
+<li><p><code>Image Pull Secret</code>: 如果必要，請指定下拉 Model Image 所需的 pull secret。</p></li>
+<li><p><code>Descriptions</code>: 使用者輸入描述。</p></li>
+</ul>
+<blockquote>
+<p>模型部署有兩種方式，直接部署 <a href="../model-deployment-language-wrapper-intro">已包裝模型檔的映像檔</a>(由使用者事先包裝) 及指定模型檔 <code>Model URI</code> 搭配指定<a href="../model-deployment-prepackaged-server-intro">包裝用的映像檔</a>在機制下自動部署成服務。 請根據部署方法帶入合適的<code>Model Image</code>及模型檔 <code>Model URI</code> 。</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="environment-variables"></a><a href="#environment-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Variables</h3>
+<p>可加入多個環境變數。</p>
+<ul>
+<li><code>Name</code>: 變數名。</li>
+<li><code>Value</code>: 數值。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h3>
+<p>可加入多個額外「鍵/值」組合。</p>
+<ul>
+<li><code>Name</code>: 鍵名。</li>
+<li><code>Value</code>: 數值。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="resources"></a><a href="#resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resources</h3>
+<ul>
+<li><p><code>InstanceTypes</code>: 指定資源配置請求的 instance type。</p></li>
+<li><p><code>Replicas</code>: 指定上線副本的數量。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="endpoint"></a><a href="#endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoint</h3>
+<ul>
+<li><code>Private Access</code>: 設定 Endpoint 存取為公開或私人開關；如果開啟私人，則部署詳細頁上會顯示<code>Clients</code>頁籤，可由此產生存取 Token。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h3>
+<ul>
+<li><code>Update Message</code>: 使用者針對每次更新附上說明。</li>
+</ul>
+<p>點擊<code>Deploy</code>鈕，進行部署。</p>
+<p>佈建啟動時會跳出對話框，點擊可查看部署詳細內容頁。</p>
+<h2><a class="anchor" aria-hidden="true" id="部署詳細資訊"></a><a href="#部署詳細資訊" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署詳細資訊</h2>
+<p><img src="/docs/assets/mdeploy_detail_v35.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="information"></a><a href="#information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Information</h3>
+<table>
+<thead>
+<tr><th>欄位</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>Status</td><td>狀態</td></tr>
+<tr><td>Message</td><td>相關訊息</td></tr>
+<tr><td>Endpoint</td><td>佈建上線服務 URL</td></tr>
+<tr><td>Creation Time</td><td>創建時間</td></tr>
+<tr><td>Last Updated</td><td>最後更新時間</td></tr>
+<tr><td>Model Image</td><td>指定的 Model Image</td></tr>
+<tr><td>Model URI</td><td>指定的模型檔案路徑</td></tr>
+<tr><td>Image Pull Secret</td><td>下拉此 Image 用的 Secret</td></tr>
+<tr><td>Description</td><td>使用者輸入描述</td></tr>
+<tr><td>Instance Type</td><td>佈建用資源配請求</td></tr>
+<tr><td>Replicas</td><td>副本個數</td></tr>
+<tr><td>Access Type</td><td>Public 或 Private</td></tr>
+<tr><td>Run an Example</td><td>以實際資料來替代 <code>Curl</code> 範例中 <code>${YOUR_DATA}</code> 來驗證部署服務；範例依據 <code>Private</code> 或 <code>Public</code> 而有差異</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Metadata 表</li>
+<li>Environment Variables 表: 按下小眼睛圖示來顯示變數內容。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logs</h3>
+<ul>
+<li><code>Replicas</code>: 查看指定副本。</li>
+</ul>
+<p><img src="/docs/assets/mdeploy_log_v28.png" alt=""></p>
+<p>Logs 頁上顯示目前 部署 的記錄。</p>
+<blockquote>
+<p>Timestamp 以 Universal Time Coordinated (UTC) 為基準。</p>
+</blockquote>
+<p>點擊<code>Scroll to Bottom</code>可直接跳至記錄最尾端。</p>
+<blockquote>
+<p>預設只顯示最新的 2000 行記錄；點擊<code>Download</code>可下載完整記錄檔。</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h3>
+<p>History 頁上顯示過去已部署的 Deployment 的記錄。</p>
+<p><img src="/docs/assets/mdeploy_history_v32.png" alt=""></p>
+<p>點擊<code>View</code>連結來查看查看各個部署詳細記錄。</p>
+<p><img src="/docs/assets/mdeploy_history_view_v32.png" alt=""></p>
+<table>
+<thead>
+<tr><th>Info</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>User</td><td>當時啟動部署的使用者</td></tr>
+<tr><td>Deployment Stopped</td><td><em>true</em> 或 <em>false</em></td></tr>
+<tr><td>Model Image</td><td>使用 model image url</td></tr>
+<tr><td>Model URI</td><td>指定的模型檔案路徑</td></tr>
+<tr><td>Replicas</td><td>副本個數</td></tr>
+<tr><td>Group</td><td>當時啟動部署的群組</td></tr>
+<tr><td>Instance Type</td><td>使用的 Instance Type 資源</td></tr>
+<tr><td>Timestamp</td><td>最後更新時間</td></tr>
+<tr><td>Description</td><td>使用者輸入描述</td></tr>
+<tr><td>Access Type</td><td>Public 或 Private</td></tr>
+<tr><td>Clients</td><td>當 Access Type 為 Private 時，可存取的 clients</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Metadata 表</li>
+<li>Environment Variables 表: 按下小眼睛圖示來顯示變數內容。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="clients"></a><a href="#clients" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clients</h3>
+<p>只有當<code>Private Access</code>開啟時，才會顯示此頁籤。</p>
+<p><img src="/docs/assets/mdeploy_token_v27.png" alt=""></p>
+<p>填入<code>Client Name</code>及點擊 <code>Add client</code>產生該帳號的對應<code>Client Token</code>。</p>
+<p>必須帶入此 Token 才能存取私人 endpoint；我們可以將其帶入 curl 命令參數<code>-u &lt;client-name&gt;:&lt;client-token&gt;</code>。</p>
+<pre><code class="hljs css language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token punctuation">\</span>
+    <span class="token parameter variable">-u</span> <span class="token operator">&lt;</span>client-name<span class="token operator">></span>:<span class="token operator">&lt;</span>client-token<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-d</span> <span class="token string">'{"data":{"names":["a","b"],"tensor":{"shape":[2,2],"values":[0,0,1,1]}}}'</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token punctuation">\</span>
+    https://<span class="token operator">&lt;</span>primehub<span class="token operator">></span>/deployment/<span class="token operator">&lt;</span>model<span class="token operator">></span>/api/<span class="token operator">&lt;</span>version<span class="token operator">></span>/predictions
+</code></pre>
+<blockquote>
+<p>Client Token 產生後，在介面上只會短暫地顯示一次，請記錄下來；若遺失，請刪除再重新產生。</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="小技巧"></a><a href="#小技巧" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>小技巧</em></h4>
+<p>如果希望在模型預測時，知道「誰<code>Client Name</code>」發送請求；可以在預測函式中，從請求的 header <code>X-Forwarded-User</code>取得資訊，如下：</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> request <span class="hljs-keyword">as</span> req
+
+...
+req.headers.get(<span class="hljs-string">'X-Forwarded-User'</span>) <span class="hljs-comment"># you can get the client name from the header</span>
+...
+
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="變更"></a><a href="#變更" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>變更</h2>
+<p>在 Deployment 頁，點擊 <code>Update</code> 對此部署內容進行更動及部署更新。</p>
+<p>其中有<code>Group</code>、 <code>Deployment name</code>、 <code>Deployment ID</code> 無法更動，其餘欄位皆可更新。</p>
+<p><img src="/docs/assets/mdeploy_update_v32.png" alt=""></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="刪除"></a><a href="#刪除" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>刪除</h2>
+<p>點擊各個 Deployment 框，在部署詳細頁，點擊右上方<code>Delete</code> 鈕，並輸入欲刪除的部署名稱做為確認。</p>
+<p><img src="/docs/assets/deployment_deletion_confirmation.gif" alt=""></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="停止服務"></a><a href="#停止服務" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止服務</h2>
+<p>點擊各個 Deployment 框，在部署詳細頁，點擊右上方<code>Stop</code> 鈕，停止服務。</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="監測服務"></a><a href="#監測服務" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>監測服務</h2>
+<p>PrimeHub 提供一個基於 <strong>Seldon Core Analytics</strong> 的 Grafana 監測板，我們可以根據 <strong>deployment</strong>/<strong>model</strong>/<strong>model version</strong> 來選擇監測目標。</p>
+<ol>
+<li><p>首先從 User Portal 進入 Grafana。</p></li>
+<li><p>選擇 <code>PrimeHub / Model Deployments</code> 監測板, 此時會列舉出所有已佈署提供服務的模型。</p>
+<p><img src="/docs/assets/mdeploy_grafana_list.png" alt=""></p></li>
+<li><p>選擇要監測的佈署，即可監測模型的運作。</p>
+<p><img src="/docs/assets/mdeploy_grafana_metrics.png" alt=""></p></li>
+</ol>
+<p>預設監測指標:</p>
+<ul>
+<li><p>QPS (Queries Per Second)</p></li>
+<li><p>Success rate</p></li>
+<li><p>4xx, error if any</p></li>
+<li><p>5xx, error is any</p></li>
+<li><p>Predict QPS</p></li>
+<li><p>Reward</p>
+<blockquote>
+<p>The reward is interpreted as the proportion of successes in the batch of data samples. Thus this implementation inherently assumes binary rewards for each sample in the batch. The helper function <em>n_success_failures</em> calculates the number of successes and failures given the batch of data samples and the reward. -<a href="https://github.com/SeldonIO/seldon-core/blob/master/components/routers/epsilon-greedy/README.md">Reference</a>.</p>
+</blockquote></li>
+<li><p>Latency</p></li>
+</ul>
+<p>此監測板基於 <strong>Seldon Core Analytics</strong>；更多詳細進階資訊可以參照 <a href="https://docs.seldon.io/projects/seldon-core/en/v0.3.0/analytics/analytics.html">document</a> 及 <a href="https://github.com/SeldonIO/seldon-core/tree/master/helm-charts/seldon-core-analytics">code</a>。</p>
+<h2><a class="anchor" aria-hidden="true" id="授權警示"></a><a href="#授權警示" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>授權警示</h2>
+<p>當已使用模型部署數量 &gt; 授權模型部署數量 + 10%，警示訊息會顯示，更進一步，<code>Create Deployment</code> 將無法使用。</p>
+<blockquote>
+<p>Please contact your system administrator for assistance to upgrade your license to run more models.</p>
+</blockquote>
+<p>想要得知目前授權資訊，請見 <a href="guide_manual/admin-system-cht#primehub-license">PrimeHub License</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/3.11/zh-tw/idx-model-management"><span class="arrow-prev">← </span><span>Origins</span></a><a class="docs-next button" href="/docs/3.11/zh-tw/model-deployment-tutorial-concepts-cht"><span>Origins</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#開啟功能">開啟功能</a></li><li><a href="#主頁">主頁</a><ul class="toc-headings"><li><a href="#部署">部署</a></li></ul></li><li><a href="#創建">創建</a><ul class="toc-headings"><li><a href="#deployment-details">Deployment Details</a></li><li><a href="#environment-variables">Environment Variables</a></li><li><a href="#metadata">Metadata</a></li><li><a href="#resources">Resources</a></li><li><a href="#endpoint">Endpoint</a></li><li><a href="#deploy">Deploy</a></li></ul></li><li><a href="#部署詳細資訊">部署詳細資訊</a><ul class="toc-headings"><li><a href="#information">Information</a></li><li><a href="#logs">Logs</a></li><li><a href="#history">History</a></li><li><a href="#clients">Clients</a></li></ul></li><li><a href="#變更">變更</a></li><li><a href="#刪除">刪除</a></li><li><a href="#停止服務">停止服務</a></li><li><a href="#監測服務">監測服務</a></li><li><a href="#授權警示">授權警示</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/PrimeHub_icon_128.png" alt="PrimeHub" width="66" height="58"/></a><div><h5></h5><a href="https://discord.gg/CrAxQznedH">Discord</a><a href="https://github.com/infuseai">GitHub</a><a href="https://medium.com/infuseai">Medium</a><a href="https://www.facebook.com/InfuseAI">Facebook</a><a href="https://www.katacoda.com/infuseai">Katacoda</a></div><div><h5>More</h5><a href="https://infuseai.io">About InfuseAI</a><a href="/docs/comparison">Community | Enterprise | Deploy</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Z8JfIbYnvhOampGN_XXle4d3GVX04E8evnNI_Py3abth-A/viewform">Request Trial</a></div></section><section class="copyright">Copyright © 2023 InfuseAI</section></footer></div></body></html>
