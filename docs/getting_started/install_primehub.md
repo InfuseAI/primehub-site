@@ -155,10 +155,10 @@ Id Server:  http://`$PRIMEHUB_DOMAIN`/auth/admin/ ( keycloak / `$KC_PASSWORD` )
 >By default, a trial license is applied. See [trial license limitations](../comparison#license-limitations).
 >Please contact InfuseAI for the license inquiry for a valid commercial license.
 
-If you have a valid license file from InfuseAI, run this command to apply a license key. 
+If you have a valid license file from InfuseAI, saving the file at `$HOME` directory and run this command to apply a license key. 
 
 ```bash
-./primehub/install/primehub-install apply-license <path/to/license_key_yaml_file>
+./primehub/install/primehub-install apply-license license_key_yaml_file
 ```
 
 You can check the license status from [System Management](../guide_manual/admin-system#primehub-license) in the admin dashboard.
