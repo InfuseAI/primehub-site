@@ -158,7 +158,7 @@ Id Server:  http://`$PRIMEHUB_DOMAIN`/auth/admin/ ( keycloak / `$KC_PASSWORD` )
 If you have a valid license file from InfuseAI, saving the file at `$HOME` directory and run this command to apply a license key. 
 
 ```bash
-./primehub/install/primehub-install apply-license license_key_yaml_file
+./primehub/install/primehub-install apply-license
 ```
 
 You can check the license status from [System Management](../guide_manual/admin-system#primehub-license) in the admin dashboard.
