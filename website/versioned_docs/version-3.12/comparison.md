@@ -1,7 +1,8 @@
 ---
-id: comparison
+id: version-3.12-comparison
 title: Tiers Feature Comparison
 description: Tiers Feature Comparison
+original_id: comparison
 ---
 
 **PrimeHub** has three tiers: **Community**, **Enterprise**, and **Deploy**.
